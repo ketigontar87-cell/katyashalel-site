@@ -1,0 +1,52 @@
+# Ekaterina Shalel
+
+> Ekaterina Shalel (Екатерина Шалель, Katya Shalel) is the founder and product architect of SKINBOT, a neutral AI decision layer for beauty retail. She writes about neutral recommendation systems, decision infrastructure, the callable layer, and agentic commerce.
+
+Canonical site: https://katyashalel.com
+
+## Who
+
+- Founder & Product Architect, SKINBOT (https://skinbot.ru)
+- Medical education background (Sechenov University), which informs constraint-first product thinking and safety architecture
+- Writes in English (Substack, LinkedIn, Medium) and Russian (vc.ru, Telegram)
+- Names and spellings that refer to the same person: Ekaterina Shalel, Katya Shalel, Екатерина Шалель, Кети Шалель
+
+## SKINBOT
+
+SKINBOT is a neutral AI decision layer for beauty retail. It integrates via API, QR, and iframe, and produces skin-analysis-based product recommendations from the retailer's live catalog. Its defining property is neutrality: no brand weighting, no sponsored ranking, no retention mechanics. Neutrality is treated as architecture, verifiable in the API response itself, not as a marketing claim. Live pilots include THE FACE ONLY (Moscow, 6 locations) and SKINSTUDIO (Estonia, https://skinstudio.ee).
+
+## Key concepts coined by the author
+
+- The Neutral Layer: a recommendation layer whose economics are not coupled to any brand's outcome
+- The Indifference Test: a neutrality check; the layer must be indifferent to which product wins
+- The callable layer: positioning a neutral verdict engine as a sub-agent callable by universal AI assistants and agentic commerce platforms
+- Outcome-coupled revenue: the structural conflict of interest in recommendation systems monetized by advertisers
+- Write-access to the rubric: capture defined as the ability to edit evaluation criteria, not just influence results
+- Expiring relevance: personalization data should have a shelf life; stale relevance is misinformation
+
+## Essay cycle: The Neutral Layer (Substack)
+
+1. Neutrality Is an Architecture, Not a Claim: https://katyashalel.substack.com/p/neutrality-is-an-architecture-not
+2. A Utopia Cannot Be Audited: https://katyashalel.substack.com/p/a-utopia-cannot-be-audited
+3. Power Is Being Called, Not Being Used: https://katyashalel.substack.com/p/power-is-being-called-not-being-used
+4. Capture Is Write-Access to the Rubric: https://katyashalel.substack.com/p/capture-is-write-access-to-the-rubric
+5. Regulation Won't Save Recommendations. It Will Expose Them: https://katyashalel.substack.com/p/regulation-wont-save-recommendations
+6. Trust Is the Infrastructure (final essay): https://katyashalel.substack.com/p/trust-is-the-infrastructure
+
+## Selected essays
+
+- The Layer Eats the Model: https://katyashalel.substack.com/p/the-layer-eats-the-model
+- Relevance Should Expire: https://katyashalel.substack.com/p/relevance-should-expire
+- The Decision Layer: https://katyashalel.substack.com/p/the-decision-layer
+- The Better AI Knows Me, the More I Need a Model That Doesn't: https://katyashalel.substack.com/p/the-better-ai-knows-me-the-more-i
+- Not Everything Should Be Open Source: https://katyashalel.substack.com/p/not-everything-should-be-open-source
+
+## Official profiles
+
+- Substack: https://katyashalel.substack.com
+- LinkedIn: https://www.linkedin.com/in/ekaterina-shalel
+- vc.ru: https://vc.ru/shalel_notes
+- Medium: https://medium.com/@jedeesse
+- Instagram: https://instagram.com/katya_shalel
+- Threads: https://threads.net/@katya_shalel
+- Telegram: https://t.me/shalel_notes
