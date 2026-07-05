@@ -703,16 +703,6 @@
   }
 
 
-  .hero { position: relative; }
-  #sphere {
-    position: absolute;
-    inset: 0;
-    width: 100%;
-    height: 100%;
-    z-index: 0;
-    pointer-events: none;
-  }
-  .hero > div { position: relative; z-index: 1; }
 
   .reveal {
     opacity: 0;
@@ -725,6 +715,85 @@
   @media (prefers-reduced-motion: reduce) {
     .reveal { opacity: 1; transform: none; transition: none; }
   }
+
+
+  /* --- micro interactions --- */
+  #progress {
+    position: fixed;
+    top: 0; left: 0;
+    height: 2px;
+    width: 0;
+    background: var(--accent);
+    z-index: 100;
+    transition: width 0.15s ease-out;
+  }
+
+  a, button { -webkit-tap-highlight-color: transparent; }
+
+  .hero-cta, .skinbot-btn, .about-btn, .nav-cta {
+    transition: transform 0.35s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.35s ease;
+  }
+  .hero-cta:hover, .skinbot-btn:hover, .about-btn:hover, .nav-cta:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 30px rgba(14, 22, 32, 0.14);
+  }
+  .hero-cta:active, .skinbot-btn:active, .about-btn:active, .nav-cta:active {
+    transform: scale(0.97);
+    transition-duration: 0.1s;
+  }
+
+  .essay-card { transition: transform 0.5s cubic-bezier(0.22, 1, 0.36, 1); }
+  .essay-card .essay-image { transition: transform 0.6s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.6s ease; }
+  .essay-card:hover .essay-image {
+    transform: scale(1.03);
+    box-shadow: 0 16px 40px rgba(14, 22, 32, 0.10);
+  }
+
+  .media-card { transition: border-color 0.4s ease, transform 0.4s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.4s ease; }
+  .media-card:hover { transform: translateY(-4px); box-shadow: 0 12px 32px rgba(14, 22, 32, 0.08); }
+  .media-card:active { transform: scale(0.98); }
+
+  .cycle-list a { position: relative; }
+  .cycle-list a::after {
+    content: '\2192';
+    font-size: 14px;
+    color: var(--accent);
+    opacity: 0;
+    transform: translateX(-8px);
+    transition: opacity 0.35s ease, transform 0.35s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+  .cycle-list a:hover::after { opacity: 1; transform: translateX(0); }
+  .cycle-list a:hover { padding-left: 10px; }
+  .cycle-list a { transition: opacity 0.3s ease, padding-left 0.35s cubic-bezier(0.22, 1, 0.36, 1); }
+
+  .section-label { position: relative; padding-bottom: 4px; }
+  .section-label::after {
+    content: '';
+    position: absolute;
+    left: 0; bottom: 0;
+    height: 1px;
+    width: 0;
+    background: var(--accent);
+    transition: width 0.9s cubic-bezier(0.22, 1, 0.36, 1) 0.2s;
+  }
+  .reveal.in .section-label::after, .section-header.in .section-label::after { width: 100%; }
+
+  .view-all { position: relative; }
+  .view-all::after {
+    content: '';
+    position: absolute;
+    left: 0; bottom: -3px;
+    height: 1px;
+    width: 100%;
+    background: var(--ink);
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform 0.45s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+  .view-all:hover::after { transform: scaleX(1); transform-origin: left; }
+
+  .portrait-img { transition: transform 1.2s cubic-bezier(0.22, 1, 0.36, 1); }
+  .hero-image:hover .portrait-img, .about-image:hover .portrait-img { transform: scale(1.025); }
 
   /* === THEMES === */
   .themes-grid {
@@ -1041,6 +1110,7 @@
 </style>
 </head>
 <body>
+<div id="progress" aria-hidden="true"></div>
 
 <nav>
   <div class="logo">Ekaterina Shalel</div>
@@ -1057,7 +1127,6 @@
 
 <!-- HERO -->
 <section class="hero">
-  <canvas id="sphere" aria-hidden="true"></canvas>
   <div>
     <div class="hero-label">FOUNDER HUB</div>
     <h1 class="serif">
@@ -1408,96 +1477,6 @@
 
 <script>
 (function(){
-  var canvas = document.getElementById('sphere');
-  if (!canvas) return;
-  var ctx = canvas.getContext('2d');
-  var reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  var dpr = Math.min(window.devicePixelRatio || 1, 2);
-  var W, H, cx, cy, R;
-  var px = 0, py = 0, tx = 0, ty = 0;
-
-  function resize(){
-    var r = canvas.parentElement.getBoundingClientRect();
-    W = r.width; H = r.height;
-    canvas.width = W * dpr; canvas.height = H * dpr;
-    ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
-    cx = W * 0.30; cy = H * 0.50;
-    R = Math.min(W, H) * 0.34;
-  }
-  resize();
-  window.addEventListener('resize', resize);
-
-  // Сфера Фибоначчи
-  var N = 420, pts = [];
-  var GA = Math.PI * (3 - Math.sqrt(5));
-  for (var i = 0; i < N; i++){
-    var y = 1 - (i / (N - 1)) * 2;
-    var rad = Math.sqrt(1 - y * y);
-    var th = GA * i;
-    pts.push({ x: Math.cos(th) * rad, y: y, z: Math.sin(th) * rad, s: 0.8 + Math.random() * 1.4 });
-  }
-  // Свободные точки вокруг
-  var amb = [];
-  for (var j = 0; j < 46; j++){
-    amb.push({ x: Math.random(), y: Math.random(), r: 0.6 + Math.random() * 1.3,
-               vx: (Math.random() - 0.5) * 0.00012, vy: (Math.random() - 0.5) * 0.00012,
-               ph: Math.random() * Math.PI * 2 });
-  }
-
-  window.addEventListener('pointermove', function(e){
-    tx = (e.clientX / window.innerWidth - 0.5);
-    ty = (e.clientY / window.innerHeight - 0.5);
-  }, { passive: true });
-
-  var t = 0;
-  function frame(){
-    t += 0.0035;
-    px += (tx - px) * 0.04; py += (ty - py) * 0.04;
-    ctx.clearRect(0, 0, W, H);
-
-    // фоновые точки
-    for (var j = 0; j < amb.length; j++){
-      var a = amb[j];
-      a.x = (a.x + a.vx + 1) % 1; a.y = (a.y + a.vy + 1) % 1;
-      var tw = 0.25 + 0.2 * Math.sin(t * 2.2 + a.ph);
-      ctx.beginPath();
-      ctx.arc(a.x * W, a.y * H, a.r, 0, 6.2832);
-      ctx.fillStyle = 'rgba(107,138,168,' + tw.toFixed(3) + ')';
-      ctx.fill();
-    }
-
-    var breath = 1 + 0.035 * Math.sin(t * 1.7);
-    var ry = t + px * 1.2, rx = 0.35 + py * 0.8;
-    var cosY = Math.cos(ry), sinY = Math.sin(ry), cosX = Math.cos(rx), sinX = Math.sin(rx);
-
-    for (var i = 0; i < N; i++){
-      var p = pts[i];
-      var x1 = p.x * cosY + p.z * sinY;
-      var z1 = -p.x * sinY + p.z * cosY;
-      var y1 = p.y * cosX - z1 * sinX;
-      var z2 = p.y * sinX + z1 * cosX;
-      var depth = (z2 + 1) / 2;
-      var sx = cx + x1 * R * breath;
-      var sy = cy + y1 * R * breath;
-      var al = 0.12 + depth * 0.55;
-      var sz = p.s * (0.5 + depth * 0.9);
-      ctx.beginPath();
-      ctx.arc(sx, sy, sz, 0, 6.2832);
-      ctx.fillStyle = depth > 0.62
-        ? 'rgba(14,22,32,' + al.toFixed(3) + ')'
-        : 'rgba(107,138,168,' + (al * 0.9).toFixed(3) + ')';
-      ctx.fill();
-    }
-    requestAnimationFrame(frame);
-  }
-  if (reduced){ t = 1.2; px = py = 0; ctx.clearRect(0,0,W,H); frame = null;
-    // один статичный кадр
-    (function(){ var e = 0; })();
-  }
-  requestAnimationFrame(frame || function(){});
-})();
-
-(function(){
   var groups = [
     '.section-header', '.essay-card', '.cycle-list li', '.media-card',
     '.about-content > *', '.about-image', '.skinbot-text > *', '.themes-grid > *',
@@ -1524,6 +1503,28 @@
     });
   }, { threshold: 0.12, rootMargin: '0px 0px -8% 0px' });
   items.forEach(function(el){ io.observe(el); });
+})();
+
+(function(){
+  var bar = document.getElementById('progress');
+  var ticking = false;
+  function update(){
+    var st = window.scrollY;
+    var max = document.documentElement.scrollHeight - window.innerHeight;
+    bar.style.width = (max > 0 ? (st / max) * 100 : 0) + '%';
+    ticking = false;
+  }
+  window.addEventListener('scroll', function(){
+    if (!ticking){ requestAnimationFrame(update); ticking = true; }
+  }, { passive: true });
+  update();
+})();
+
+(function(){
+  if (!('vibrate' in navigator)) return;
+  document.addEventListener('click', function(e){
+    if (e.target.closest('a, button')) navigator.vibrate(6);
+  }, { passive: true });
 })();
 </script>
 </body>
