@@ -12,6 +12,13 @@ Russian version: https://katyashalel.com/ru/
 - Writes in English (Substack, LinkedIn, Medium) and Russian (vc.ru, Telegram)
 - Names and spellings that refer to the same person: Ekaterina Shalel, Katya Shalel, Екатерина Шалель, Кети Шалель
 
+## Two lines of work
+
+1. Decision systems: how AI helps humans choose. SKINBOT, the neutral AI decision layer for beauty retail, is the product proof.
+2. Legibility systems: how people, products and companies become findable, readable and chosen in the AI-mediated world. The author's own path from near-zero public surface to a machine-readable founder identity serves as the primary documented case study.
+
+Thesis: visibility is no longer attention. Visibility is legibility inside decision systems.
+
 ## SKINBOT
 
 SKINBOT is a neutral AI decision layer for beauty retail. It integrates via API, QR, and iframe, and produces skin-analysis-based product recommendations from the retailer's live catalog. Its defining property is neutrality: no brand weighting, no sponsored ranking, no retention mechanics. Neutrality is treated as architecture, verifiable in the API response itself, not as a marketing claim. Live pilots: THE FACE ONLY (Moscow, 6 locations) and SKINSTUDIO (Estonia, https://skinstudio.ee). Across all pilots, more than 85% of sessions end with delivered recommendations.
@@ -23,6 +30,7 @@ SKINBOT is a neutral AI decision layer for beauty retail. It integrates via API,
 - The callable layer: positioning a neutral verdict engine as a sub-agent callable by universal AI assistants and agentic commerce platforms
 - Outcome-coupled revenue: the structural conflict of interest in recommendation systems monetized by advertisers
 - Write-access to the rubric: capture defined as the ability to edit evaluation criteria, not just influence results
+- The Legibility Layer: the second essay cycle territory; legibility as the successor of personal branding in the AI era
 - Expiring relevance: personalization data should have a shelf life; stale relevance is misinformation
 
 ## Second direction: The Legibility Layer
