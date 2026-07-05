@@ -907,6 +907,62 @@
     margin-bottom: 30px;
   }
 
+
+  /* === MOTION2 === */
+  .mask-line { display: block; overflow: hidden; }
+  .mask-line > span { display: block; transform: translateY(115%); }
+
+  #intro {
+    position: fixed; inset: 0; z-index: 200;
+    background: var(--bg);
+    display: flex; align-items: center; justify-content: center;
+  }
+  #intro .intro-name {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(34px, 6vw, 72px);
+    color: var(--ink);
+    display: flex; overflow: hidden;
+  }
+  #intro .intro-name span { display: inline-block; transform: translateY(120%); white-space: pre; }
+
+  .marquee {
+    overflow: hidden;
+    border-top: 1px solid var(--line);
+    border-bottom: 1px solid var(--line);
+    padding: 18px 0;
+    margin: 40px 0 0;
+  }
+  .marquee-track {
+    display: flex; gap: 48px; width: max-content;
+    will-change: transform;
+  }
+  .marquee-track span {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 22px;
+    color: var(--ink-soft);
+    white-space: nowrap;
+  }
+
+  #cursor-dot, #cursor-ring {
+    position: fixed; top: 0; left: 0; pointer-events: none; z-index: 300;
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+  }
+  #cursor-dot { width: 6px; height: 6px; background: var(--ink); }
+  #cursor-ring {
+    width: 34px; height: 34px;
+    border: 1px solid var(--accent);
+    transition: width 0.25s ease, height 0.25s ease, opacity 0.25s ease;
+  }
+  #cursor-ring.on { width: 56px; height: 56px; opacity: 0.7; }
+  @media (hover: none) { #cursor-dot, #cursor-ring { display: none; } }
+
+  @media (prefers-reduced-motion: reduce) {
+    #intro { display: none; }
+    .mask-line > span { transform: none; }
+  }
+
   /* === THEMES === */
   .themes-grid {
     display: grid;
@@ -1725,6 +1781,132 @@ ym(109037029, "init", { clickmap:true, trackLinks:true, accurateTrackBounce:true
   document.addEventListener('click', function(e){
     if (e.target.closest('a, button')) navigator.vibrate(6);
   }, { passive: true });
+})();
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script>
+(function(){
+  var reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (reduced || !window.gsap) { return; }
+  gsap.registerPlugin(ScrollTrigger);
+  var mobile = window.matchMedia('(hover: none)').matches;
+
+  /* --- интро: имя буквами, занавес вверх --- */
+  var intro = document.createElement('div');
+  intro.id = 'intro';
+  var name = document.createElement('div');
+  name.className = 'intro-name';
+  var brand = document.documentElement.lang === 'ru' ? 'Екатерина Шалель' : 'Ekaterina Shalel';
+  brand.split('').forEach(function(ch){
+    var s = document.createElement('span'); s.textContent = ch; name.appendChild(s);
+  });
+  intro.appendChild(name);
+  document.body.appendChild(intro);
+  document.body.style.overflow = 'hidden';
+
+  /* --- маски на hero h1 --- */
+  var heroSpans = document.querySelectorAll('.hero h1 > span');
+  heroSpans.forEach(function(sp){
+    var wrap = document.createElement('span');
+    wrap.className = 'mask-line';
+    if (sp.classList.contains('h-mission')) wrap.classList.add('h-mission-wrap');
+    sp.parentNode.insertBefore(wrap, sp);
+    var inner = document.createElement('span');
+    inner.style.transform = 'translateY(115%)';
+    inner.style.display = 'block';
+    inner.appendChild(sp);
+    wrap.appendChild(inner);
+  });
+
+  var tl = gsap.timeline();
+  tl.to('#intro .intro-name span', { y: 0, duration: 0.7, stagger: 0.028, ease: 'power3.out' })
+    .to('#intro .intro-name span', { y: '-120%', duration: 0.5, stagger: 0.015, ease: 'power3.in' }, '+=0.5')
+    .to('#intro', { yPercent: -100, duration: 0.8, ease: 'power4.inOut', onComplete: function(){
+        intro.remove(); document.body.style.overflow = '';
+      }}, '-=0.25')
+    .to('.hero h1 .mask-line > span > span, .hero h1 .mask-line > span', { y: 0, duration: 1.0, stagger: 0.09, ease: 'power4.out' }, '-=0.35')
+    .from('.hero-image', { clipPath: 'inset(100% 0 0 0)', duration: 1.1, ease: 'power4.inOut' }, '-=0.9')
+    .from('.hero-image .portrait-img', { scale: 1.25, duration: 1.4, ease: 'power3.out' }, '<');
+
+  /* --- параллакс портретов --- */
+  gsap.utils.toArray('.hero-image .portrait-img, .about-image .portrait-img').forEach(function(img){
+    gsap.to(img, {
+      yPercent: 8, ease: 'none',
+      scrollTrigger: { trigger: img.parentElement, start: 'top bottom', end: 'bottom top', scrub: true }
+    });
+  });
+
+  /* --- заголовки секций: слова из-под маски --- */
+  if (!mobile) {
+    gsap.utils.toArray('section h2.serif').forEach(function(h){
+      var html = h.innerHTML.split(/<br\s*\/?>/i);
+      h.innerHTML = html.map(function(line){
+        return '<span class="mask-line"><span>' + line + '</span></span>';
+      }).join('');
+      gsap.to(h.querySelectorAll('.mask-line > span'), {
+        y: 0, duration: 0.9, stagger: 0.12, ease: 'power4.out',
+        scrollTrigger: { trigger: h, start: 'top 82%' }
+      });
+    });
+  }
+
+  /* --- цитата: наплыв при скролле --- */
+  var q = document.querySelector('.quote-section');
+  if (q && !mobile) {
+    gsap.fromTo(q, { scale: 0.94, opacity: 0.5 }, {
+      scale: 1, opacity: 1, ease: 'none',
+      scrollTrigger: { trigger: q, start: 'top 90%', end: 'center 55%', scrub: true }
+    });
+  }
+
+  /* --- обложки эссе: внутренний параллакс --- */
+  gsap.utils.toArray('.essay-image img').forEach(function(img){
+    img.style.height = '116%';
+    gsap.fromTo(img, { yPercent: -8 }, {
+      yPercent: 0, ease: 'none',
+      scrollTrigger: { trigger: img.closest('.essay-card'), start: 'top bottom', end: 'bottom top', scrub: true }
+    });
+  });
+
+  /* --- бегущая строка перед контактами --- */
+  var contact = document.querySelector('.contact');
+  if (contact) {
+    var words = document.documentElement.lang === 'ru'
+      ? ['Системы решений', 'Системы видимости', 'Neutral Layer', 'Legibility', 'Архитектура выбора']
+      : ['Decision systems', 'Legibility systems', 'Neutral Layer', 'The Indifference Test', 'Architecture of choice'];
+    var m = document.createElement('div'); m.className = 'marquee';
+    var track = document.createElement('div'); track.className = 'marquee-track';
+    for (var r = 0; r < 4; r++) words.forEach(function(w){
+      var s = document.createElement('span'); s.textContent = w + '  ·'; track.appendChild(s);
+    });
+    m.appendChild(track);
+    contact.parentNode.insertBefore(m, contact);
+    var half = track.scrollWidth / 2;
+    gsap.to(track, { x: -half, duration: 40, ease: 'none', repeat: -1 });
+  }
+
+  /* --- курсор на десктопе --- */
+  if (!mobile) {
+    var dot = document.createElement('div'); dot.id = 'cursor-dot';
+    var ring = document.createElement('div'); ring.id = 'cursor-ring';
+    document.body.appendChild(dot); document.body.appendChild(ring);
+    var rx = 0, ry = 0, mx = 0, my = 0;
+    window.addEventListener('pointermove', function(e){
+      mx = e.clientX; my = e.clientY;
+      dot.style.left = mx + 'px'; dot.style.top = my + 'px';
+    }, { passive: true });
+    gsap.ticker.add(function(){
+      rx += (mx - rx) * 0.16; ry += (my - ry) * 0.16;
+      ring.style.left = rx + 'px'; ring.style.top = ry + 'px';
+    });
+    document.addEventListener('mouseover', function(e){
+      if (e.target.closest('a, button')) ring.classList.add('on');
+    });
+    document.addEventListener('mouseout', function(e){
+      if (e.target.closest('a, button')) ring.classList.remove('on');
+    });
+  }
 })();
 </script>
 </body>
