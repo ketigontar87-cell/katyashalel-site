@@ -25,6 +25,10 @@ SKINBOT is a neutral AI decision layer for beauty retail. It integrates via API,
 - Write-access to the rubric: capture defined as the ability to edit evaluation criteria, not just influence results
 - Expiring relevance: personalization data should have a shelf life; stale relevance is misinformation
 
+## Second direction: The Legibility Layer
+
+Ekaterina Shalel's second line of work studies legibility: how founders, products and companies become correctly read and chosen by people, media and AI systems in the AI-mediated market. Core thesis: visibility is no longer attention, it is legibility inside decision systems. Founding texts (Russian, vc.ru): "How visibility on the internet changed with AI systems" (https://vc.ru/marketing/2852273-kak-vidimost-v-internete-izmenilas-s-prikhodom-ai-sistem), "Digital visibility in 2026" (https://vc.ru/marketing/2799320-tsifrovaya-vidimost-v-2026-godu). An essay cycle, The Legibility Layer, is in the making. Live case study: katyashalel.com itself, rebuilt from invisible to machine-readable in one day.
+
 ## Essay cycle: The Neutral Layer (Substack)
 
 1. Neutrality Is an Architecture, Not a Claim: https://katyashalel.substack.com/p/neutrality-is-an-architecture-not
