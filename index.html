@@ -13,7 +13,11 @@
 <meta property="og:site_name" content="Ekaterina Shalel">
 <meta property="og:locale" content="en_US">
 <meta property="og:locale:alternate" content="ru_RU">
-<meta name="twitter:card" content="summary">
+<meta property="og:image" content="https://katyashalel.com/images/og-image.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://katyashalel.com/images/og-image.jpg">
 <meta name="twitter:title" content="Ekaterina Shalel — Founder. Category thinker.">
 <meta name="twitter:description" content="Founder and product architect of SKINBOT, a neutral AI decision layer for beauty retail. Essays on neutrality, the callable layer, and agentic commerce.">
 <link rel="alternate" type="text/plain" href="https://katyashalel.com/llms.txt" title="LLM-friendly summary">
@@ -27,6 +31,7 @@
   "name": "Ekaterina Shalel",
   "alternateName": ["Katya Shalel", "Екатерина Шалель", "Кетi Шалель"],
   "url": "https://katyashalel.com/",
+  "image": "https://katyashalel.com/images/hero-portrait.jpg",
   "jobTitle": "Founder & Product Architect",
   "worksFor": {
     "@type": "Organization",
@@ -227,6 +232,15 @@
     display: flex;
     align-items: flex-end;
     justify-content: center;
+  }
+
+  .portrait-img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 1;
   }
 
   .hero-image::before {
@@ -1032,7 +1046,7 @@
     <a href="#essays" class="hero-cta">Explore my work</a>
   </div>
   <div class="hero-image">
-    <div class="hero-image-placeholder">[ portrait ]</div>
+    <img src="/images/hero-portrait.jpg" alt="Ekaterina Shalel, founder of SKINBOT" class="portrait-img">
   </div>
 </section>
 
@@ -1090,7 +1104,7 @@
 
 <!-- ABOUT -->
 <section class="about" id="about">
-  <div class="about-image"></div>
+  <div class="about-image"><img src="/images/about-portrait.jpg" alt="Katya Shalel portrait" class="portrait-img"></div>
   <div class="about-content">
     <div class="section-header">
       <span class="section-num">02</span>
