@@ -31,6 +31,7 @@
   "name": "Ekaterina Shalel",
   "alternateName": ["Katya Shalel", "Екатерина Шалель", "Кетi Шалель"],
   "url": "https://katyashalel.com/",
+  "email": "mailto:k.skinbot@gmail.com",
   "image": "https://katyashalel.com/images/hero-portrait.jpg",
   "jobTitle": "Founder & Product Architect",
   "worksFor": {
@@ -795,6 +796,19 @@
   .portrait-img { transition: transform 1.2s cubic-bezier(0.22, 1, 0.36, 1); }
   .hero-image:hover .portrait-img, .about-image:hover .portrait-img { transform: scale(1.025); }
 
+  .contact-direct {
+    margin-top: 18px;
+    font-size: 13px;
+    color: var(--ink-soft);
+  }
+  .contact-direct a {
+    color: var(--ink);
+    text-decoration: none;
+    border-bottom: 1px solid var(--line);
+    transition: border-color 0.3s ease;
+  }
+  .contact-direct a:hover { border-color: var(--ink); }
+
   /* === THEMES === */
   .themes-grid {
     display: grid;
@@ -1450,10 +1464,11 @@
     </div>
     <h2 class="serif">Ideas become impact<br>with the right partners.</h2>
     <p>I'm always open to conversations about building, investing and shaping the future of commerce.</p>
-    <div class="contact-form">
-      <input type="email" placeholder="Your email address">
-      <button>Stay in touch</button>
-    </div>
+    <form class="contact-form" id="subscribe-form">
+      <input type="email" id="sub-email" placeholder="Your email address" required>
+      <button type="submit">Stay in touch</button>
+    </form>
+    <p class="contact-direct">Or write directly: <a href="mailto:k.skinbot@gmail.com">k.skinbot@gmail.com</a></p>
   </div>
   <div class="contact-image"></div>
 </section>
@@ -1518,6 +1533,16 @@
     if (!ticking){ requestAnimationFrame(update); ticking = true; }
   }, { passive: true });
   update();
+})();
+
+(function(){
+  var f = document.getElementById('subscribe-form');
+  if (!f) return;
+  f.addEventListener('submit', function(e){
+    e.preventDefault();
+    var em = document.getElementById('sub-email').value.trim();
+    window.open('https://katyashalel.substack.com/subscribe?email=' + encodeURIComponent(em), '_blank');
+  });
 })();
 
 (function(){

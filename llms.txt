@@ -41,6 +41,10 @@ SKINBOT is a neutral AI decision layer for beauty retail. It integrates via API,
 - The Better AI Knows Me, the More I Need a Model That Doesn't: https://katyashalel.substack.com/p/the-better-ai-knows-me-the-more-i
 - Not Everything Should Be Open Source: https://katyashalel.substack.com/p/not-everything-should-be-open-source
 
+## Contact
+
+- Email: k.skinbot@gmail.com
+
 ## Official profiles
 
 - Substack: https://katyashalel.substack.com
