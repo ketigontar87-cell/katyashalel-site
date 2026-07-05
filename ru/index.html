@@ -404,6 +404,16 @@
   .skinbot-btn::after { content: '↗'; }
   .skinbot-btn:hover { background: var(--ink-soft); }
 
+  .skinbot-actions { display: flex; gap: 14px; flex-wrap: wrap; align-items: center; }
+
+  .skinbot-btn-ghost {
+    background: transparent;
+    color: var(--ink);
+    border: 1px solid var(--ink);
+  }
+  .skinbot-btn-ghost::after { content: '→'; }
+  .skinbot-btn-ghost:hover { background: rgba(14,22,32,0.06); }
+
   .skinbot-mockup {
     background: linear-gradient(135deg, #fdf3f5 0%, #f3f0f7 45%, #e9f1f8 100%);
     border-radius: 16px;
@@ -1197,7 +1207,7 @@ ym(109037029, "init", { clickmap:true, trackLinks:true, accurateTrackBounce:true
         <li>Privacy-first архитектура</li>
       </ul>
 
-      <a href="/skinbot-deck.pdf" target="_blank" class="skinbot-btn">Смотреть SKINBOT</a>
+      <div class="skinbot-actions"><a href="/skinbot-deck.pdf" target="_blank" class="skinbot-btn">Смотреть SKINBOT</a><a href="https://skinbot.ru" target="_blank" rel="noopener" class="skinbot-btn skinbot-btn-ghost">Запросить демо</a></div>
     </div>
     <div class="skinbot-mockup">
       <div class="mockup-header">
