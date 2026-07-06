@@ -1899,11 +1899,6 @@ function copyPrompt(btn){
 
 </script>
 <script>
-function wlSubmit(e, inputId){
-  e.preventDefault();
-  var em = document.getElementById(inputId).value.trim();
-  if(em) window.open('https://katyashalel.substack.com/subscribe?email=' + encodeURIComponent(em), '_blank');
-  return false;
-}</script>
+function wlSubmit(e,i){e.preventDefault();var f=e.target,b=f.querySelector('button'),inp=document.getElementById(i),em=inp.value.trim();if(!em)return false;b.disabled=true;var o=b.textContent;b.textContent='...';fetch('https://formsubmit.co/ajax/k.skinbot@gmail.com',{method:'POST',headers:{'Content-Type':'application/json','Accept':'application/json'},body:JSON.stringify({email:em,_subject:'Лист ожидания курса',page:location.pathname,_template:'table',_captcha:'false'})}).then(function(r){if(!r.ok)throw 0;return r.json()}).then(function(){b.textContent='You are in';inp.value=''}).catch(function(){b.textContent='Error, try again';b.disabled=false});return false}</script>
 </body>
 </html>
