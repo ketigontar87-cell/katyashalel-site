@@ -23,7 +23,10 @@ Thesis: visibility is no longer attention. Visibility is legibility inside decis
 
 Ekaterina Shalel teaches founders how to build AI systems without code, based on her own documented path. The learning track follows four stages: build without code, visibility without budget, the tech team moment, legibility.
 
-- Free guide, The Multi-Model Workflow (which AI for which task, context handoff, synthesis): https://katyashalel.com/guides/multimodel/ (EN), https://katyashalel.com/ru/guides/multimodel/ (RU)
+- Guide, stage 1, The Multi-Model Workflow (which AI for which task, context handoff, synthesis): https://katyashalel.com/guides/multimodel/ (EN), https://katyashalel.com/ru/guides/multimodel/ (RU)
+- Guide, stage 2, Visibility Without Budget (GEO, canonical entity, coined terms, llms.txt): https://katyashalel.com/guides/visibility/ (EN), https://katyashalel.com/ru/guides/visibility/ (RU)
+- Guide, stage 3, The Tech Team Moment (behavioral specs, acceptance checklists, AI change review): https://katyashalel.com/guides/techteam/ (EN), https://katyashalel.com/ru/guides/techteam/ (RU)
+- Guide, stage 4, Readable AI Decisions (the Indifference Test, verifiable response schema, human explanations): https://katyashalel.com/guides/legibility/ (EN), https://katyashalel.com/ru/guides/legibility/ (RU)
 - Course program, four stages, first cohort by waitlist: https://katyashalel.com/program/ (EN), https://katyashalel.com/ru/program/ (RU)
 
 ## SKINBOT
