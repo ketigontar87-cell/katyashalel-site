@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 520">
+<defs>
+<linearGradient id="bg4" x1="0" y1="0" x2="0.8" y2="1">
+<stop offset="0" stop-color="#F8F4ED"/><stop offset="1" stop-color="#EDE4D6"/>
+</linearGradient>
+</defs>
+<rect width="720" height="520" fill="url(#bg4)"/>
+<text x="500" y="430" font-family="Georgia, 'Times New Roman', serif" font-style="italic" font-size="420" fill="#C4342E" opacity="0.10">L</text>
+<g>
+<rect x="80" y="90" width="300" height="12" rx="6" fill="#1A1A1A" opacity="0.75"/>
+<rect x="80" y="140" width="430" height="12" rx="6" fill="#1A1A1A" opacity="0.35"/>
+<rect x="80" y="190" width="380" height="12" rx="6" fill="#1A1A1A" opacity="0.35"/>
+<rect x="66" y="240" width="470" height="60" rx="8" fill="none" stroke="#C4342E" stroke-width="2.5"/>
+<rect x="88" y="258" width="150" height="12" rx="6" fill="#C4342E"/>
+<rect x="258" y="258" width="90" height="12" rx="6" fill="#C4342E" opacity="0.6"/>
+<rect x="368" y="258" width="130" height="12" rx="6" fill="#C4342E" opacity="0.35"/>
+<rect x="80" y="340" width="410" height="12" rx="6" fill="#1A1A1A" opacity="0.35"/>
+<rect x="80" y="390" width="260" height="12" rx="6" fill="#1A1A1A" opacity="0.5"/>
+</g>
+<circle cx="620" cy="110" r="5" fill="#C4342E" opacity="0.7"/>
+</svg>
