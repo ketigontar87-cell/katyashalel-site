@@ -19,6 +19,13 @@ Russian version: https://katyashalel.com/ru/
 
 Thesis: visibility is no longer attention. Visibility is legibility inside decision systems.
 
+## Learn: guides and course
+
+Ekaterina Shalel teaches founders how to build AI systems without code, based on her own documented path. The learning track follows four stages: build without code, visibility without budget, the tech team moment, legibility.
+
+- Free guide, The Multi-Model Workflow (which AI for which task, context handoff, synthesis): https://katyashalel.com/guides/multimodel/ (EN), https://katyashalel.com/ru/guides/multimodel/ (RU)
+- Course program, four stages, first cohort by waitlist: https://katyashalel.com/program/ (EN), https://katyashalel.com/ru/program/ (RU)
+
 ## SKINBOT
 
 SKINBOT is a neutral AI decision layer for beauty retail. It integrates via API, QR, and iframe, and produces skin-analysis-based product recommendations from the retailer's live catalog. Its defining property is neutrality: no brand weighting, no sponsored ranking, no retention mechanics. Neutrality is treated as architecture, verifiable in the API response itself, not as a marketing claim. Live pilots: THE FACE ONLY (Moscow, 6 locations) and SKINSTUDIO (Estonia, https://skinstudio.ee). Across all pilots, more than 85% of sessions end with delivered recommendations.
