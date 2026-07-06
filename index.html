@@ -1281,11 +1281,11 @@ header{background:var(--cream);padding:22px 16px 18px;text-align:center;border-b
 .legibility{background:var(--ink);color:var(--cream);padding:86px 20px;position:relative;overflow:hidden}.lz .legibility .wrap{max-width:640px;margin:0 auto;position:relative;z-index:2}.lz .legibility .eyebrow{color:#E27A73}.lz .legibility h2{font-family:'Instrument Serif',serif;font-weight:400;font-size:clamp(42px,9.5vw,72px);line-height:1;margin-top:16px}.lz .legibility h2 .script{color:#E27A73;font-size:1.15em}.lz .legibility p{margin-top:20px;font-size:16px;color:#CFCFCF;max-width:540px}.lz .leg-script-bg{position:absolute;right:-40px;bottom:-60px;font-family:'Ephesis',cursive;font-size:280px;color:rgba(226,122,115,.07);line-height:1;pointer-events:none}.lz /* ===== masterclass ===== */
 .master{background:var(--red);color:var(--cream);padding:86px 20px;text-align:center}.lz .master .wrap{max-width:620px;margin:0 auto}.lz .master .eyebrow{color:var(--cream);opacity:.85}.lz .master h2{font-family:'Instrument Serif',serif;font-weight:400;font-size:clamp(38px,8.5vw,62px);line-height:1.04;margin-top:16px}.lz .master h2 .script{display:block;font-size:1.12em;margin-top:-.08em}.lz .master p{margin:22px auto 0;font-size:16.5px;max-width:500px;color:rgba(244,237,225,.92)}.lz footer{background:var(--cream);text-align:center;padding:36px 20px;font-size:10.5px;letter-spacing:.2em;text-transform:uppercase;font-weight:600;color:#8B8B8B;border-top:1px solid rgba(26,26,26,.12)}.lz footer a{color:var(--ink);text-decoration:none}.lz footer .cred{display:block;margin-top:10px;letter-spacing:.14em;color:#A5A5A5}
 
-@media (min-width:760px){.lz .polaroids{grid-template-columns:repeat(4,1fr);gap:18px}.lz .pol-img{height:135px}
+@media (min-width:760px){.lz .polaroids{grid-template-columns:repeat(4,1fr);gap:18px}.lz .pol-img{height:135px}.lz .proof{flex-direction:row;justify-content:center;gap:10px 26px}
 }
 
 
-.lz .proof{display:flex;flex-wrap:wrap;gap:10px 26px;padding:18px 24px;background:var(--ink);color:#EDEDED;font-size:12.5px;letter-spacing:.06em;text-transform:uppercase;font-weight:600;justify-content:center}
+.lz .proof{display:flex;flex-direction:column;align-items:center;gap:9px;padding:18px 14px;background:var(--ink);color:#EDEDED;font-size:12px;letter-spacing:.05em;text-transform:uppercase;font-weight:600}.lz .proof span{white-space:nowrap}
 .lz .proof span b{color:#FFFFFF}
 .lz .proof span i{color:var(--red);font-style:normal;margin-right:7px}
 .lz .biz-line{display:block;text-align:center;padding:13px 16px;background:var(--cream-warm);color:#5A5A5A;font-size:12px;letter-spacing:.14em;text-transform:uppercase;font-weight:600;text-decoration:none}
@@ -1319,6 +1319,7 @@ header{background:var(--cream);padding:22px 16px 18px;text-align:center;border-b
   </ul>
   <button class="nav-cta">+</button>
 </nav>
+<div id="rubar" style="display:none;background:#F4EDE1;color:#1A1A1A;padding:11px 16px;text-align:center;font-size:12px;letter-spacing:.12em;text-transform:uppercase;font-weight:600">Читать по-русски: <a href="/ru/" style="color:#C4342E">katyashalel.com/ru</a><button onclick="document.getElementById('rubar').style.display='none';try{sessionStorage.setItem('rubar','1')}catch(e){}" style="background:none;border:none;font-size:15px;margin-left:14px;cursor:pointer;color:#8B8B8B">&times;</button></div>
 <div class="lz">
 <div class="ribbon">
   <div class="r-label">First cohort waitlist closes in</div>
@@ -1900,5 +1901,7 @@ function copyPrompt(btn){
 </script>
 <script>
 function wlSubmit(e,i){e.preventDefault();var f=e.target,b=f.querySelector('button'),inp=document.getElementById(i),em=inp.value.trim();if(!em)return false;b.disabled=true;var o=b.textContent;b.textContent='...';fetch('https://formsubmit.co/ajax/k.skinbot@gmail.com',{method:'POST',headers:{'Content-Type':'application/json','Accept':'application/json'},body:JSON.stringify({email:em,_subject:'Лист ожидания курса',page:location.pathname,_template:'table',_captcha:'false'})}).then(function(r){if(!r.ok)throw 0;return r.json()}).then(function(){b.textContent='You are in';inp.value=''}).catch(function(){b.textContent='Error, try again';b.disabled=false});return false}</script>
-</body>
+<script>
+try{if((navigator.language||'').toLowerCase().indexOf('ru')===0&&!sessionStorage.getItem('rubar')){document.getElementById('rubar').style.display='block'}}catch(e){}
+</script></body>
 </html>
