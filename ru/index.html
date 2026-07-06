@@ -907,6 +907,25 @@
     margin-bottom: 30px;
   }
 
+
+  .logo {
+    background: linear-gradient(100deg, var(--ink) 0%, var(--ink) 40%, #dfaebc 50%, #e7c3cd 54%, var(--ink) 66%, var(--ink) 100%);
+    background-size: 240% 100%;
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+    animation: nameShimmer 6s ease-in-out infinite;
+  }
+  @keyframes nameShimmer {
+    0% { background-position: 125% 0; }
+    60% { background-position: -50% 0; }
+    100% { background-position: -50% 0; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .logo { animation: none; background-position: 125% 0; }
+  }
+
   /* === THEMES === */
   .themes-grid {
     display: grid;
@@ -1287,7 +1306,7 @@ ym(109037029, "init", { clickmap:true, trackLinks:true, accurateTrackBounce:true
         <li>Privacy-first архитектура</li>
       </ul>
 
-      <div class="skinbot-actions"><a href="/skinbot-deck.pdf" target="_blank" class="skinbot-btn">Смотреть SKINBOT</a><a href="https://skinbot.ru" target="_blank" rel="noopener" class="skinbot-btn skinbot-btn-ghost">Запросить демо</a></div>
+      <div class="skinbot-actions"><a href="/skinbot-deck.pdf" target="_blank" class="skinbot-btn">Смотреть SKINBOT</a><a href="mailto:k.skinbot@gmail.com?subject=SKINBOT%20demo%20request" class="skinbot-btn skinbot-btn-ghost">Запросить демо</a></div>
     </div>
     <div class="skinbot-mockup">
       <div class="mockup-header">
