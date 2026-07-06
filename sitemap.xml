@@ -12,7 +12,24 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://katyashalel.com/"/>
     <xhtml:link rel="alternate" hreflang="ru" href="https://katyashalel.com/ru/"/>
   </url>
-  <url><loc>https://katyashalel.com/program/</loc></url>
-  <url><loc>https://katyashalel.com/ru/program/</loc></url>
-  <url><loc>https://katyashalel.com/ru/guides/multimodel/</loc></url>
+  <url>
+    <loc>https://katyashalel.com/program/</loc>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://katyashalel.com/ru/program/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://katyashalel.com/program/"/>
+  </url>
+  <url>
+    <loc>https://katyashalel.com/ru/program/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://katyashalel.com/program/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://katyashalel.com/ru/program/"/>
+  </url>
+  <url>
+    <loc>https://katyashalel.com/guides/multimodel/</loc>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://katyashalel.com/ru/guides/multimodel/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://katyashalel.com/guides/multimodel/"/>
+  </url>
+  <url>
+    <loc>https://katyashalel.com/ru/guides/multimodel/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://katyashalel.com/guides/multimodel/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://katyashalel.com/ru/guides/multimodel/"/>
+  </url>
 </urlset>
