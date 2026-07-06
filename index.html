@@ -852,6 +852,21 @@
     border-radius: 14px;
     padding: 34px 32px;
   }
+  .direction-banner {
+    margin: -34px -32px 22px;
+    border-radius: 14px 14px 0 0;
+    overflow: hidden;
+    aspect-ratio: 2.5 / 1;
+  }
+  .direction-banner img {
+    width: 100%; height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 1s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+  .direction-card { overflow: hidden; }
+  .direction-card:hover .direction-banner img { transform: scale(1.03); }
+
   .direction-tag {
     font-size: 10px;
     letter-spacing: 0.2em;
@@ -1363,6 +1378,7 @@ ym(109037029, "init", { clickmap:true, trackLinks:true, accurateTrackBounce:true
   <div class="directions-intro">Two lines of one architecture: how AI helps humans choose products, and how markets and machines choose people, companies and categories</div>
   <div class="directions-grid">
     <div class="direction-card">
+      <div class="direction-banner"><img src="/images/direction-decision.jpg" alt="Decision systems" loading="lazy"></div>
       <div class="direction-tag">Direction 01 · Decision systems</div>
       <h3>SKINBOT</h3>
       <p>A neutral AI decision layer for beauty retail: the side of choice where humans pick products, and neutrality is verifiable in the architecture itself</p>
@@ -1372,6 +1388,7 @@ ym(109037029, "init", { clickmap:true, trackLinks:true, accurateTrackBounce:true
       </ul>
     </div>
     <div class="direction-card">
+      <div class="direction-banner"><img src="/images/direction-legibility.jpg" alt="The Legibility Layer" loading="lazy"></div>
       <div class="direction-tag">Direction 02 · Legibility</div>
       <h3>The Legibility Layer</h3>
       <p>How founders, products and companies become correctly read and chosen by people, media and AI systems: visibility is no longer attention, it is legibility inside decision systems</p>
