@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Readable AI Decisions · free guide · Katya Shalel</title>
+<meta name="description" content="How to design AI recommendations that require no blind trust: the Indifference Test, a verifiable response schema, human explanations. Ready prompts inside">
+<link rel="canonical" href="https://katyashalel.com/guides/legibility/">
+<link rel="alternate" hreflang="en" href="https://katyashalel.com/guides/legibility/">
+<link rel="alternate" hreflang="ru" href="https://katyashalel.com/ru/guides/legibility/">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Instrument+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--red:#C4342E;--red-deep:#A32420;--white:#FFFFFF;--grey:#F0F0F0;--ink:#1A1A1A}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Instrument Sans',sans-serif;background:var(--white);color:var(--ink);line-height:1.65}
+.serif{font-family:'Instrument Serif',serif;font-weight:400}
+.top{background:var(--ink);color:#EDEDED;padding:16px 20px;font-size:12px;letter-spacing:.16em;text-transform:uppercase;font-weight:600;display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
+.top a{color:#FFFFFF;text-decoration:none}
+.top a:hover{color:var(--red)}
+.hero{background:var(--red);color:var(--white);padding:64px 22px}
+.wrap{max-width:640px;margin:0 auto}
+.eyebrow{display:inline-block;background:var(--white);color:var(--red-deep);font-size:10.5px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;padding:7px 12px}
+h1{font-family:'Instrument Serif',serif;font-weight:400;font-size:clamp(38px,9vw,64px);line-height:1.03;margin-top:18px}
+.hero p{margin-top:20px;font-size:17px;max-width:520px;color:rgba(255,255,255,.94)}
+.stepbar{background:var(--red);color:var(--white);padding:20px 22px;margin-top:56px}
+.stepbar .wrap{display:flex;align-items:center;gap:14px}
+.tag{background:var(--white);color:var(--red-deep);font-size:10.5px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;padding:6px 11px;white-space:nowrap}
+.stepbar h2{font-weight:600;text-transform:uppercase;font-size:clamp(17px,4.4vw,24px);letter-spacing:.03em}
+section{padding:44px 22px 8px}
+section p{font-size:16.5px;color:#3D3D3D;max-width:600px}
+section p+p{margin-top:16px}
+section b{color:var(--ink)}
+.prompt{background:var(--ink);color:#F2F2F2;padding:28px 22px;margin:30px 0 8px;position:relative}
+.p-title{font-size:11px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:#B9B9B9;margin-bottom:14px;padding-right:84px}
+.p-body{font-size:15px;line-height:1.7}
+.copy{position:absolute;top:22px;right:18px;background:var(--red);color:#FFF;border:none;font-family:inherit;font-size:10px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;padding:10px 15px;cursor:pointer}
+.copy:active{background:var(--red-deep)}
+.next{border:2px solid var(--ink);padding:22px 20px;margin:36px 22px 0;max-width:640px}
+.next a{color:var(--red-deep);font-weight:600;text-decoration:none}
+.wl{background:var(--ink);color:var(--white);padding:64px 22px;text-align:center;margin-top:60px}
+.wl h2{font-family:'Instrument Serif',serif;font-weight:400;font-size:clamp(30px,7vw,46px);line-height:1.05}
+.wl p{margin-top:14px;color:#CFCFCF;font-size:15.5px}
+.wl-form{display:flex;gap:10px;margin:28px auto 0;max-width:460px;flex-wrap:wrap;justify-content:center}
+.wl-form input{flex:1;min-width:210px;padding:15px 16px;border:none;font-family:inherit;font-size:15px}
+.wl-form button{background:var(--red);color:#FFF;border:none;font-family:inherit;font-size:11.5px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;padding:15px 26px;cursor:pointer}
+footer{padding:30px 20px;text-align:center;font-size:11px;letter-spacing:.16em;text-transform:uppercase;font-weight:600;color:#8B8B8B}
+footer a{color:var(--ink);text-decoration:none}
+</style>
+</head>
+<body>
+<div class="top"><a href="/">&larr; home</a><span>Katya Shalel</span></div>
+<div class="hero"><div class="wrap"><span class="eyebrow">Free guide</span><h1>Readable AI Decisions</h1><p>AI already advises people on what to buy and whom to trust. Here is a system where every recommendation is explainable and verifiable by architecture, not by promise</p></div></div><section><div class="wrap"><p><b>Why it matters:</b> a recommendation without grounds is a request to believe, and a user believes once. A system that shows the grounds of every decision wins not by honesty as a gesture, but by being checkable. Verifiability is the new currency of trust in a world where AI advises.</p></div></section><div class="stepbar"><div class="wrap"><span class="tag">Step 1</span><h2>Run the Indifference Test</h2></div></div><section><div class="wrap"><p>Neutrality is checked with one question: does the system benefit when a specific product wins. If yes, the output is skewed regardless of intent. The Indifference Test walks the whole chain from monetization to ranking and finds every point where revenue is coupled to the outcome of choice.</p><div class="prompt"><div class="p-title">Prompt · Indifference Test</div><button class="copy" onclick="copyP(this)">Copy</button><div class="p-body">Here is how monetization and ranking work in my recommendation system: [describe]. Run the Indifference Test: list every point where the system benefits when a specific product or brand wins. For each point, explain how it skews the output, and propose how to decouple revenue from the outcome of choice without killing the business model.</div></div></div></section><div class="stepbar"><div class="wrap"><span class="tag">Step 2</span><h2>A response schema that shows its grounds</h2></div></div><section><div class="wrap"><p>A neutrality claim requires trust, a field in the API response does not. When every response carries the ranking basis, a sponsorship flag and the brand weighting, neutrality turns from a promise into a property of the architecture, verifiable by an outside auditor from a single response.</p><div class="prompt"><div class="p-title">Prompt · verifiable response schema</div><button class="copy" onclick="copyP(this)">Copy</button><div class="p-body">Design the response schema of my recommendation API so that neutrality is verifiable inside the response itself. Required fields: ranking basis, sponsorship flag, brand weighting. Give one full example response and explain how an outside auditor would verify neutrality from that single response with no access to code or database.</div></div></div></section><div class="stepbar"><div class="wrap"><span class="tag">Step 3</span><h2>Explain the decision to the user</h2></div></div><section><div class="wrap"><p>The schema is for the auditor, the explanation is for the human. Two or three lines: why this one, what it was chosen from, what would change the result. No superlatives, no marketing, only grounds. A user who sees the grounds comes back because the system can be checked, not because it demands belief.</p><div class="prompt"><div class="p-title">Prompt · human explanation</div><button class="copy" onclick="copyP(this)">Copy</button><div class="p-body">Here is the system's structured response: [paste JSON]. Turn it into a two-to-three line explanation for the user: why this recommendation, what it was chosen from, what would change the result. Superlatives, marketing words and any claims not present in the response itself are forbidden.</div></div></div></section><div class="stepbar"><div class="wrap"><span class="tag">Level up</span><h2>Neutrality as architecture</h2></div></div><section><div class="wrap"><p>Neutrality is not a footer statement, it is a property that lives in every response the system gives. In SKINBOT it is verifiable in the API response itself, the only format of a neutrality claim that requires no trust. Any system where AI advises and a human chooses is built on the same logic.</p></div></section><div class="wl"><div class="wrap"><h2>Go deeper</h2><p>This is the stage four guide, the final one. The full course runs on a waitlist</p>
+<form class="wl-form" onsubmit="return wlSubmit(event,'wl-email')"><input type="email" id="wl-email" required placeholder="Your email"><button type="submit">Join the waitlist</button></form>
+<p style="font-size:12.5px;margin-top:16px;color:#9A9A9A">First cohort · the waitlist closes August 6</p></div></div><footer><a href="/">katyashalel.com</a></footer><script>
+function copyP(btn){var t=btn.parentNode.querySelector('.p-body').innerText;navigator.clipboard.writeText(t).then(function(){var o=btn.textContent;btn.textContent='Copied';setTimeout(function(){btn.textContent=o},1400)})}
+function wlSubmit(e,i){e.preventDefault();var em=document.getElementById(i).value.trim();if(em)window.open('https://katyashalel.substack.com/subscribe?email='+encodeURIComponent(em),'_blank');return false}
+</script></body></html>

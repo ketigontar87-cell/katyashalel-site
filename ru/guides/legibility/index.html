@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Читаемые AI решения · бесплатный гайд · Katya Shalel</title>
+<meta name="description" content="Как проектировать AI-рекомендации, которым не нужно верить на слово: Indifference Test, проверяемая схема ответа, объяснение для пользователя. Готовые промпты внутри">
+<link rel="canonical" href="https://katyashalel.com/ru/guides/legibility/">
+<link rel="alternate" hreflang="en" href="https://katyashalel.com/guides/legibility/">
+<link rel="alternate" hreflang="ru" href="https://katyashalel.com/ru/guides/legibility/">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Instrument+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--red:#C4342E;--red-deep:#A32420;--white:#FFFFFF;--grey:#F0F0F0;--ink:#1A1A1A}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Instrument Sans',sans-serif;background:var(--white);color:var(--ink);line-height:1.65}
+.serif{font-family:'Instrument Serif',serif;font-weight:400}
+.top{background:var(--ink);color:#EDEDED;padding:16px 20px;font-size:12px;letter-spacing:.16em;text-transform:uppercase;font-weight:600;display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
+.top a{color:#FFFFFF;text-decoration:none}
+.top a:hover{color:var(--red)}
+.hero{background:var(--red);color:var(--white);padding:64px 22px}
+.wrap{max-width:640px;margin:0 auto}
+.eyebrow{display:inline-block;background:var(--white);color:var(--red-deep);font-size:10.5px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;padding:7px 12px}
+h1{font-family:'Instrument Serif',serif;font-weight:400;font-size:clamp(38px,9vw,64px);line-height:1.03;margin-top:18px}
+.hero p{margin-top:20px;font-size:17px;max-width:520px;color:rgba(255,255,255,.94)}
+.stepbar{background:var(--red);color:var(--white);padding:20px 22px;margin-top:56px}
+.stepbar .wrap{display:flex;align-items:center;gap:14px}
+.tag{background:var(--white);color:var(--red-deep);font-size:10.5px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;padding:6px 11px;white-space:nowrap}
+.stepbar h2{font-weight:600;text-transform:uppercase;font-size:clamp(17px,4.4vw,24px);letter-spacing:.03em}
+section{padding:44px 22px 8px}
+section p{font-size:16.5px;color:#3D3D3D;max-width:600px}
+section p+p{margin-top:16px}
+section b{color:var(--ink)}
+.prompt{background:var(--ink);color:#F2F2F2;padding:28px 22px;margin:30px 0 8px;position:relative}
+.p-title{font-size:11px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:#B9B9B9;margin-bottom:14px;padding-right:84px}
+.p-body{font-size:15px;line-height:1.7}
+.copy{position:absolute;top:22px;right:18px;background:var(--red);color:#FFF;border:none;font-family:inherit;font-size:10px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;padding:10px 15px;cursor:pointer}
+.copy:active{background:var(--red-deep)}
+.next{border:2px solid var(--ink);padding:22px 20px;margin:36px 22px 0;max-width:640px}
+.next a{color:var(--red-deep);font-weight:600;text-decoration:none}
+.wl{background:var(--ink);color:var(--white);padding:64px 22px;text-align:center;margin-top:60px}
+.wl h2{font-family:'Instrument Serif',serif;font-weight:400;font-size:clamp(30px,7vw,46px);line-height:1.05}
+.wl p{margin-top:14px;color:#CFCFCF;font-size:15.5px}
+.wl-form{display:flex;gap:10px;margin:28px auto 0;max-width:460px;flex-wrap:wrap;justify-content:center}
+.wl-form input{flex:1;min-width:210px;padding:15px 16px;border:none;font-family:inherit;font-size:15px}
+.wl-form button{background:var(--red);color:#FFF;border:none;font-family:inherit;font-size:11.5px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;padding:15px 26px;cursor:pointer}
+footer{padding:30px 20px;text-align:center;font-size:11px;letter-spacing:.16em;text-transform:uppercase;font-weight:600;color:#8B8B8B}
+footer a{color:var(--ink);text-decoration:none}
+</style>
+</head>
+<body>
+<div class="top"><a href="/ru/">&larr; на главную</a><span>Katya Shalel</span></div>
+<div class="hero"><div class="wrap"><span class="eyebrow">Бесплатный гайд</span><h1>Читаемые AI решения</h1><p>AI уже советует людям, что купить и кому доверять. Здесь система, в которой каждая рекомендация объяснима и проверяема архитектурой, а не обещанием</p></div></div><section><div class="wrap"><p><b>Почему это важно:</b> рекомендация без оснований это просьба поверить, а пользователь верит один раз. Система, которая показывает основания каждого решения, выигрывает не честностью как жестом, а тем, что её можно проверить. Проверяемость и есть новая валюта доверия в мире, где советует AI.</p></div></section><div class="stepbar"><div class="wrap"><span class="tag">Шаг 1</span><h2>Прогоните Indifference Test</h2></div></div><section><div class="wrap"><p>Нейтральность проверяется одним вопросом: выгодно ли системе, чтобы выиграл конкретный продукт. Если да, выдача искажена независимо от намерений. Indifference Test проходит по всей цепочке от монетизации до ранжирования и находит каждое место, где доход связан с исходом выбора.</p><div class="prompt"><div class="p-title">Промпт · Indifference Test</div><button class="copy" onclick="copyP(this)">Copy</button><div class="p-body">Вот как устроены монетизация и ранжирование моей рекомендательной системы: [опиши]. Проведи Indifference Test: перечисли все места, где системе выгодно, чтобы выиграл конкретный продукт или бренд. Для каждого места объясни, как это искажает выдачу, и предложи, как разорвать связь дохода с исходом выбора, не убив бизнес-модель.</div></div></div></section><div class="stepbar"><div class="wrap"><span class="tag">Шаг 2</span><h2>Схема ответа, которая показывает основания</h2></div></div><section><div class="wrap"><p>Заявление о нейтральности требует доверия, поле в API-ответе нет. Когда каждый ответ системы несёт основание ранжирования, признак спонсорства и вес бренда, нейтральность превращается из обещания в свойство архитектуры, проверяемое внешним аудитором по одному ответу.</p><div class="prompt"><div class="p-title">Промпт · проверяемая схема ответа</div><button class="copy" onclick="copyP(this)">Copy</button><div class="p-body">Спроектируй схему ответа моего рекомендательного API так, чтобы нейтральность была проверяема в самом ответе. Обязательные поля: основание ранжирования, признак спонсорства, вес бренда. Дай пример полного ответа и объясни, как внешний аудитор проверит нейтральность по одному этому ответу без доступа к коду и базе.</div></div></div></section><div class="stepbar"><div class="wrap"><span class="tag">Шаг 3</span><h2>Объясните решение пользователю</h2></div></div><section><div class="wrap"><p>Схема для аудитора, объяснение для человека. Две-три строки: почему именно это, из чего выбирали, что изменило бы результат. Без превосходных степеней и маркетинга, только основания. Пользователь, который видит основания, возвращается, потому что систему можно проверить, а не потому что ей велено верить.</p><div class="prompt"><div class="p-title">Промпт · объяснение для человека</div><button class="copy" onclick="copyP(this)">Copy</button><div class="p-body">Вот структурированный ответ системы: [вставь JSON]. Преврати его в объяснение для пользователя из двух-трёх строк: почему именно эта рекомендация, из чего выбирали, что изменило бы результат. Запрещены превосходные степени, маркетинговые слова и любые утверждения, которых нет в самом ответе.</div></div></div></section><div class="stepbar"><div class="wrap"><span class="tag">Level up</span><h2>Нейтральность как архитектура</h2></div></div><section><div class="wrap"><p>Нейтральность это не заявление в футере, а свойство, которое живёт в каждом ответе системы. В SKINBOT она проверяется в самом API-ответе, и это единственный формат заявления о нейтральности, которому не нужно верить на слово. Любая система, где AI советует, а человек выбирает, строится по этой же логике.</p></div></section><div class="wl"><div class="wrap"><h2>Дальше глубже</h2><p>Это гайд четвёртой стадии, финал пути. Курс целиком по листу ожидания</p>
+<form class="wl-form" onsubmit="return wlSubmit(event,'wl-email')"><input type="email" id="wl-email" required placeholder="Ваш email"><button type="submit">В лист ожидания</button></form>
+<p style="font-size:12.5px;margin-top:16px;color:#9A9A9A">Первый поток · лист закрывается 6 августа</p></div></div><footer><a href="/ru/">katyashalel.com</a></footer><script>
+function copyP(btn){var t=btn.parentNode.querySelector('.p-body').innerText;navigator.clipboard.writeText(t).then(function(){var o=btn.textContent;btn.textContent='Скопировано';setTimeout(function(){btn.textContent=o},1400)})}
+function wlSubmit(e,i){e.preventDefault();var em=document.getElementById(i).value.trim();if(em)window.open('https://katyashalel.substack.com/subscribe?email='+encodeURIComponent(em),'_blank');return false}
+</script></body></html>
