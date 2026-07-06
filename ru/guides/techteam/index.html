@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Момент техкоманды · бесплатный гайд · Katya Shalel</title>
+<meta name="description" content="Как ставить задачи разработчикам, принимать работу и держать качество, не читая код: поведенческая спека, чек-лист приёмки, AI-разбор изменений. Готовые промпты внутри">
+<link rel="canonical" href="https://katyashalel.com/ru/guides/techteam/">
+<link rel="alternate" hreflang="en" href="https://katyashalel.com/guides/techteam/">
+<link rel="alternate" hreflang="ru" href="https://katyashalel.com/ru/guides/techteam/">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Instrument+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--red:#C4342E;--red-deep:#A32420;--white:#FFFFFF;--grey:#F0F0F0;--ink:#1A1A1A}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Instrument Sans',sans-serif;background:var(--white);color:var(--ink);line-height:1.65}
+.serif{font-family:'Instrument Serif',serif;font-weight:400}
+.top{background:var(--ink);color:#EDEDED;padding:16px 20px;font-size:12px;letter-spacing:.16em;text-transform:uppercase;font-weight:600;display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
+.top a{color:#FFFFFF;text-decoration:none}
+.top a:hover{color:var(--red)}
+.hero{background:var(--red);color:var(--white);padding:64px 22px}
+.wrap{max-width:640px;margin:0 auto}
+.eyebrow{display:inline-block;background:var(--white);color:var(--red-deep);font-size:10.5px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;padding:7px 12px}
+h1{font-family:'Instrument Serif',serif;font-weight:400;font-size:clamp(38px,9vw,64px);line-height:1.03;margin-top:18px}
+.hero p{margin-top:20px;font-size:17px;max-width:520px;color:rgba(255,255,255,.94)}
+.stepbar{background:var(--red);color:var(--white);padding:20px 22px;margin-top:56px}
+.stepbar .wrap{display:flex;align-items:center;gap:14px}
+.tag{background:var(--white);color:var(--red-deep);font-size:10.5px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;padding:6px 11px;white-space:nowrap}
+.stepbar h2{font-weight:600;text-transform:uppercase;font-size:clamp(17px,4.4vw,24px);letter-spacing:.03em}
+section{padding:44px 22px 8px}
+section p{font-size:16.5px;color:#3D3D3D;max-width:600px}
+section p+p{margin-top:16px}
+section b{color:var(--ink)}
+.prompt{background:var(--ink);color:#F2F2F2;padding:28px 22px;margin:30px 0 8px;position:relative}
+.p-title{font-size:11px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:#B9B9B9;margin-bottom:14px;padding-right:84px}
+.p-body{font-size:15px;line-height:1.7}
+.copy{position:absolute;top:22px;right:18px;background:var(--red);color:#FFF;border:none;font-family:inherit;font-size:10px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;padding:10px 15px;cursor:pointer}
+.copy:active{background:var(--red-deep)}
+.next{border:2px solid var(--ink);padding:22px 20px;margin:36px 22px 0;max-width:640px}
+.next a{color:var(--red-deep);font-weight:600;text-decoration:none}
+.wl{background:var(--ink);color:var(--white);padding:64px 22px;text-align:center;margin-top:60px}
+.wl h2{font-family:'Instrument Serif',serif;font-weight:400;font-size:clamp(30px,7vw,46px);line-height:1.05}
+.wl p{margin-top:14px;color:#CFCFCF;font-size:15.5px}
+.wl-form{display:flex;gap:10px;margin:28px auto 0;max-width:460px;flex-wrap:wrap;justify-content:center}
+.wl-form input{flex:1;min-width:210px;padding:15px 16px;border:none;font-family:inherit;font-size:15px}
+.wl-form button{background:var(--red);color:#FFF;border:none;font-family:inherit;font-size:11.5px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;padding:15px 26px;cursor:pointer}
+footer{padding:30px 20px;text-align:center;font-size:11px;letter-spacing:.16em;text-transform:uppercase;font-weight:600;color:#8B8B8B}
+footer a{color:var(--ink);text-decoration:none}
+</style>
+</head>
+<body>
+<div class="top"><a href="/ru/">&larr; на главную</a><span>Katya Shalel</span></div>
+<div class="hero"><div class="wrap"><span class="eyebrow">Бесплатный гайд</span><h1>Момент техкоманды</h1><p>Продукт вырос из no-code, появились разработчики, и вы больше не видите, что происходит внутри. Здесь система, в которой вы ставите задачи, принимаете работу и держите качество, не читая код</p></div></div><section><div class="wrap"><p><b>Почему это важно:</b> основатель без кода теряет контроль не тогда, когда в продукте появляется код, а когда задачи начинают формулироваться словами разработчиков. Ваша власть в продукте держится на одном: вы описываете поведение, команда выбирает реализацию, а приёмка идёт по поведению. Эта граница и есть вся система.</p></div></section><div class="stepbar"><div class="wrap"><span class="tag">Шаг 1</span><h2>Пишите спеку поведением, не решением</h2></div></div><section><div class="wrap"><p>Пока вы описываете, что видит и получает пользователь, вы главный в разговоре. Как только начинаете обсуждать, как это устроено внутри, вы гость. Спека на языке поведения продукта проверяема без чтения кода, и именно она остаётся вашей территорией навсегда.</p><div class="prompt"><div class="p-title">Промпт · поведенческая спека</div><button class="copy" onclick="copyP(this)">Copy</button><div class="p-body">Преврати мою идею фичи в поведенческую спеку: [опиши идею своими словами]. Структура: что пользователь видит до, во время и после, что происходит при каждой ошибке, что считается выполненным. Критерии приёмки дай списком, каждый должен быть проверяем руками без чтения кода. Технических решений не предлагай, это зона команды.</div></div></div></section><div class="stepbar"><div class="wrap"><span class="tag">Шаг 2</span><h2>Принимайте работу сценариями</h2></div></div><section><div class="wrap"><p>Готово не эмоция и не слово разработчика, а прогон сценариев. Чек-лист приёмки превращает сдачу работы из разговора о доверии в процедуру: вы проходите продукт руками как пользователь, и результат либо совпадает с ожиданием, либо нет.</p><div class="prompt"><div class="p-title">Промпт · чек-лист приёмки</div><button class="copy" onclick="copyP(this)">Copy</button><div class="p-body">Вот поведенческая спека: [вставь]. Собери из неё чек-лист приёмки: 10-15 сценариев, которые я прогоняю руками как пользователь, включая граничные случаи и ошибки. Для каждого сценария: шаги, ожидаемый результат, что именно считается провалом. Отсортируй от критичных к второстепенным.</div></div></div></section><div class="stepbar"><div class="wrap"><span class="tag">Шаг 3</span><h2>Пусть AI читает код за вас</h2></div></div><section><div class="wrap"><p>Вам не нужно читать код, вам нужно знать, что в нём произошло. Дифф или описание изменений от команды прогоняется через модель против спеки, и вы получаете человеческий отчёт: что закрыто, что нет, что сделано сверх задачи. Отдельное внимание всему, что трогает данные.</p><div class="prompt"><div class="p-title">Промпт · разбор изменений</div><button class="copy" onclick="copyP(this)">Copy</button><div class="p-body">Вот спека и вот изменения от команды: [вставь спеку и дифф или описание]. Объясни человеческим языком, что реально изменилось. Раздели на три списка: что из спеки закрыто, что из спеки не закрыто, что сделано вне спеки. Отдельным четвёртым списком отметь всё, что расширяет доступ к данным, внешним сервисам или правам, с объяснением риска.</div></div></div></section><div class="stepbar"><div class="wrap"><span class="tag">Level up</span><h2>Поставьте это на недельный ритм</h2></div></div><section><div class="wrap"><p>Понедельник: спеки на неделю. Среда: вопросы команды и уточнения. Пятница: приёмка сценариями и разбор изменений. Так я веду техкоманду SKINBOT, не прочитав ни строки кода, и качество держится не на доверии, а на процедуре.</p></div></section><div class="wl"><div class="wrap"><h2>Дальше глубже</h2><p>Это гайд третьей стадии из четырёх. Курс целиком по листу ожидания</p>
+<form class="wl-form" onsubmit="return wlSubmit(event,'wl-email')"><input type="email" id="wl-email" required placeholder="Ваш email"><button type="submit">В лист ожидания</button></form>
+<p style="font-size:12.5px;margin-top:16px;color:#9A9A9A">Первый поток · лист закрывается 6 августа</p></div></div><footer><a href="/ru/">katyashalel.com</a></footer><script>
+function copyP(btn){var t=btn.parentNode.querySelector('.p-body').innerText;navigator.clipboard.writeText(t).then(function(){var o=btn.textContent;btn.textContent='Скопировано';setTimeout(function(){btn.textContent=o},1400)})}
+function wlSubmit(e,i){e.preventDefault();var em=document.getElementById(i).value.trim();if(em)window.open('https://katyashalel.substack.com/subscribe?email='+encodeURIComponent(em),'_blank');return false}
+</script></body></html>

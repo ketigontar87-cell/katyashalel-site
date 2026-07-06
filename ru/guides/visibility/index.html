@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Видимость без бюджета · бесплатный гайд · Katya Shalel</title>
+<meta name="description" content="GEO вместо рекламы: как стать сущностью, которую находят, читают и цитируют люди и AI-системы. Каноническое определение, свои термины, llms.txt, готовые промпты внутри">
+<link rel="canonical" href="https://katyashalel.com/ru/guides/visibility/">
+<link rel="alternate" hreflang="en" href="https://katyashalel.com/guides/visibility/">
+<link rel="alternate" hreflang="ru" href="https://katyashalel.com/ru/guides/visibility/">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Instrument+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--red:#C4342E;--red-deep:#A32420;--white:#FFFFFF;--grey:#F0F0F0;--ink:#1A1A1A}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Instrument Sans',sans-serif;background:var(--white);color:var(--ink);line-height:1.65}
+.serif{font-family:'Instrument Serif',serif;font-weight:400}
+.top{background:var(--ink);color:#EDEDED;padding:16px 20px;font-size:12px;letter-spacing:.16em;text-transform:uppercase;font-weight:600;display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
+.top a{color:#FFFFFF;text-decoration:none}
+.top a:hover{color:var(--red)}
+.hero{background:var(--red);color:var(--white);padding:64px 22px}
+.wrap{max-width:640px;margin:0 auto}
+.eyebrow{display:inline-block;background:var(--white);color:var(--red-deep);font-size:10.5px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;padding:7px 12px}
+h1{font-family:'Instrument Serif',serif;font-weight:400;font-size:clamp(38px,9vw,64px);line-height:1.03;margin-top:18px}
+.hero p{margin-top:20px;font-size:17px;max-width:520px;color:rgba(255,255,255,.94)}
+.stepbar{background:var(--red);color:var(--white);padding:20px 22px;margin-top:56px}
+.stepbar .wrap{display:flex;align-items:center;gap:14px}
+.tag{background:var(--white);color:var(--red-deep);font-size:10.5px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;padding:6px 11px;white-space:nowrap}
+.stepbar h2{font-weight:600;text-transform:uppercase;font-size:clamp(17px,4.4vw,24px);letter-spacing:.03em}
+section{padding:44px 22px 8px}
+section p{font-size:16.5px;color:#3D3D3D;max-width:600px}
+section p+p{margin-top:16px}
+section b{color:var(--ink)}
+.prompt{background:var(--ink);color:#F2F2F2;padding:28px 22px;margin:30px 0 8px;position:relative}
+.p-title{font-size:11px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:#B9B9B9;margin-bottom:14px;padding-right:84px}
+.p-body{font-size:15px;line-height:1.7}
+.copy{position:absolute;top:22px;right:18px;background:var(--red);color:#FFF;border:none;font-family:inherit;font-size:10px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;padding:10px 15px;cursor:pointer}
+.copy:active{background:var(--red-deep)}
+.next{border:2px solid var(--ink);padding:22px 20px;margin:36px 22px 0;max-width:640px}
+.next a{color:var(--red-deep);font-weight:600;text-decoration:none}
+.wl{background:var(--ink);color:var(--white);padding:64px 22px;text-align:center;margin-top:60px}
+.wl h2{font-family:'Instrument Serif',serif;font-weight:400;font-size:clamp(30px,7vw,46px);line-height:1.05}
+.wl p{margin-top:14px;color:#CFCFCF;font-size:15.5px}
+.wl-form{display:flex;gap:10px;margin:28px auto 0;max-width:460px;flex-wrap:wrap;justify-content:center}
+.wl-form input{flex:1;min-width:210px;padding:15px 16px;border:none;font-family:inherit;font-size:15px}
+.wl-form button{background:var(--red);color:#FFF;border:none;font-family:inherit;font-size:11.5px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;padding:15px 26px;cursor:pointer}
+footer{padding:30px 20px;text-align:center;font-size:11px;letter-spacing:.16em;text-transform:uppercase;font-weight:600;color:#8B8B8B}
+footer a{color:var(--ink);text-decoration:none}
+</style>
+</head>
+<body>
+<div class="top"><a href="/ru/">&larr; на главную</a><span>Katya Shalel</span></div>
+<div class="hero"><div class="wrap"><span class="eyebrow">Бесплатный гайд</span><h1>Видимость без бюджета</h1><p>Реклама покупает внимание, которое заканчивается вместе с бюджетом. Здесь система, в которой вас находят, читают и цитируют люди и AI-системы, и она накапливается, а не сгорает</p></div></div><section><div class="wrap"><p><b>Почему это важно:</b> поиск сместился. Ответы всё чаще дают модели, а не выдача, и модель цитирует тех, кого может однозначно прочитать. Задача больше не в кликах, а в том, чтобы стать читаемой сущностью. Это называется GEO, и оно не требует бюджета, только дисциплины формулировок. Проверено на себе: топ 20 авторов vc.ru и цитируемость в моделях без рекламного рубля.</p></div></section><div class="stepbar"><div class="wrap"><span class="tag">Шаг 1</span><h2>Соберите свою сущность</h2></div></div><section><div class="wrap"><p>Люди больше не листают выдачу, они спрашивают модели. Модель отвечает теми, кого может однозначно прочитать. Первый шаг: одно каноническое определение того, кто вы, одинаковое везде, от bio в Instagram до llms.txt. Разнобой формулировок для машины означает, что вас несколько или вас нет.</p><div class="prompt"><div class="p-title">Промпт · каноническая сущность</div><button class="copy" onclick="copyP(this)">Copy</button><div class="p-body">Собери из моих данных каноническое определение сущности: [имя, роль, продукт, одна фраза о том, что я делаю]. Дай три версии одной формулировки: 60 знаков для bio, 160 знаков для meta description, 300 знаков для профилей. Отдельным списком перечисли все написания имени и бренда, включая транслитерации, которые должны встречаться рядом с определением. Формулировка обязана быть точной без всякого контекста.</div></div></div></section><div class="stepbar"><div class="wrap"><span class="tag">Шаг 2</span><h2>Введите свои термины</h2></div></div><section><div class="wrap"><p>Общими словами индустрии владеют все, своими только вы. Термин, который вы ввели, определили и последовательно повторяете на всех платформах, становится маршрутом: когда модель объясняет это понятие, она приходит к вашим текстам. Я так закрепила Indifference Test, expiring relevance и the callable layer, и это сработало без единого рубля рекламы.</p><div class="prompt"><div class="p-title">Промпт · свои термины</div><button class="copy" onclick="copyP(this)">Copy</button><div class="p-body">Вот мои тексты: [вставь два-три]. Найди в них мысли, которые я формулирую не так, как принято в индустрии. Для каждой предложи термин на одно-три слова, определение в одно предложение и проверку: не занят ли термин другим устоявшимся значением. Отбрось всё, что звучит как маркетинг, оставь только то, что описывает механизм.</div></div></div></section><div class="stepbar"><div class="wrap"><span class="tag">Шаг 3</span><h2>Публикуйтесь там, где читают машины</h2></div></div><section><div class="wrap"><p>Одна мысль, несколько платформ, термины дословно. Синонимы убивают закрепление: если в одном тексте callable layer, а в другом вызываемый слой без оригинала рядом, для машины это два разных понятия. Каждая версия ссылается на канонический источник, так вес собирается в одной точке, а не размазывается.</p><div class="prompt"><div class="p-title">Промпт · одна мысль, три платформы</div><button class="copy" onclick="copyP(this)">Copy</button><div class="p-body">Вот эссе: [вставь]. Адаптируй его под три платформы: [например LinkedIn, Substack, профильное медиа]. Мои термины сохрани дословно, не заменяй синонимами. Для каждой версии: свой заход в первые две строки под аудиторию платформы, длина под формат платформы, в конце ссылка на канонический источник текста.</div></div></div></section><div class="stepbar"><div class="wrap"><span class="tag">Шаг 4</span><h2>Сделайте сайт машиночитаемым</h2></div></div><section><div class="wrap"><p>Сайт для машин это не дизайн, а утверждения: llms.txt с определениями, JSON-LD с типом Person, canonical на каждой странице, все написания имени рядом. Этот сайт прошёл путь из невидимого в машиночитаемый за один день, и это воспроизводимо.</p><div class="prompt"><div class="p-title">Промпт · llms.txt</div><button class="copy" onclick="copyP(this)">Copy</button><div class="p-body">Собери llms.txt для моего сайта. Входные данные: [кто я, продукт, мои термины с определениями, ссылки на канонические тексты и профили]. Пиши короткими утверждениями без маркетинга, так, чтобы модель могла цитировать строки напрямую. Структура: кто, чем занимаюсь, ключевые понятия с определениями, где читать, официальные профили.</div></div></div></section><div class="stepbar"><div class="wrap"><span class="tag">Level up</span><h2>Измеряйте читаемость, не охваты</h2></div></div><section><div class="wrap"><p>Раз в месяц спрашивайте пять разных моделей: кто [ваше имя], что такое [ваш термин]. Ответы покажут, где вы уже читаемы, а где пусто. Пустые места и есть план публикаций на следующий месяц. Охваты заканчиваются в ленте, читаемость накапливается.</p></div></section><div class="wl"><div class="wrap"><h2>Дальше глубже</h2><p>Это гайд второй стадии из четырёх. Курс целиком по листу ожидания</p>
+<form class="wl-form" onsubmit="return wlSubmit(event,'wl-email')"><input type="email" id="wl-email" required placeholder="Ваш email"><button type="submit">В лист ожидания</button></form>
+<p style="font-size:12.5px;margin-top:16px;color:#9A9A9A">Первый поток · лист закрывается 6 августа</p></div></div><footer><a href="/ru/">katyashalel.com</a></footer><script>
+function copyP(btn){var t=btn.parentNode.querySelector('.p-body').innerText;navigator.clipboard.writeText(t).then(function(){var o=btn.textContent;btn.textContent='Скопировано';setTimeout(function(){btn.textContent=o},1400)})}
+function wlSubmit(e,i){e.preventDefault();var em=document.getElementById(i).value.trim();if(em)window.open('https://katyashalel.substack.com/subscribe?email='+encodeURIComponent(em),'_blank');return false}
+</script></body></html>

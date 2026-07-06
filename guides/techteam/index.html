@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Tech Team Moment · free guide · Katya Shalel</title>
+<meta name="description" content="How to brief developers, accept work and hold quality without reading code: behavioral specs, acceptance checklists, AI change review. Ready prompts inside">
+<link rel="canonical" href="https://katyashalel.com/guides/techteam/">
+<link rel="alternate" hreflang="en" href="https://katyashalel.com/guides/techteam/">
+<link rel="alternate" hreflang="ru" href="https://katyashalel.com/ru/guides/techteam/">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Instrument+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--red:#C4342E;--red-deep:#A32420;--white:#FFFFFF;--grey:#F0F0F0;--ink:#1A1A1A}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Instrument Sans',sans-serif;background:var(--white);color:var(--ink);line-height:1.65}
+.serif{font-family:'Instrument Serif',serif;font-weight:400}
+.top{background:var(--ink);color:#EDEDED;padding:16px 20px;font-size:12px;letter-spacing:.16em;text-transform:uppercase;font-weight:600;display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
+.top a{color:#FFFFFF;text-decoration:none}
+.top a:hover{color:var(--red)}
+.hero{background:var(--red);color:var(--white);padding:64px 22px}
+.wrap{max-width:640px;margin:0 auto}
+.eyebrow{display:inline-block;background:var(--white);color:var(--red-deep);font-size:10.5px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;padding:7px 12px}
+h1{font-family:'Instrument Serif',serif;font-weight:400;font-size:clamp(38px,9vw,64px);line-height:1.03;margin-top:18px}
+.hero p{margin-top:20px;font-size:17px;max-width:520px;color:rgba(255,255,255,.94)}
+.stepbar{background:var(--red);color:var(--white);padding:20px 22px;margin-top:56px}
+.stepbar .wrap{display:flex;align-items:center;gap:14px}
+.tag{background:var(--white);color:var(--red-deep);font-size:10.5px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;padding:6px 11px;white-space:nowrap}
+.stepbar h2{font-weight:600;text-transform:uppercase;font-size:clamp(17px,4.4vw,24px);letter-spacing:.03em}
+section{padding:44px 22px 8px}
+section p{font-size:16.5px;color:#3D3D3D;max-width:600px}
+section p+p{margin-top:16px}
+section b{color:var(--ink)}
+.prompt{background:var(--ink);color:#F2F2F2;padding:28px 22px;margin:30px 0 8px;position:relative}
+.p-title{font-size:11px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:#B9B9B9;margin-bottom:14px;padding-right:84px}
+.p-body{font-size:15px;line-height:1.7}
+.copy{position:absolute;top:22px;right:18px;background:var(--red);color:#FFF;border:none;font-family:inherit;font-size:10px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;padding:10px 15px;cursor:pointer}
+.copy:active{background:var(--red-deep)}
+.next{border:2px solid var(--ink);padding:22px 20px;margin:36px 22px 0;max-width:640px}
+.next a{color:var(--red-deep);font-weight:600;text-decoration:none}
+.wl{background:var(--ink);color:var(--white);padding:64px 22px;text-align:center;margin-top:60px}
+.wl h2{font-family:'Instrument Serif',serif;font-weight:400;font-size:clamp(30px,7vw,46px);line-height:1.05}
+.wl p{margin-top:14px;color:#CFCFCF;font-size:15.5px}
+.wl-form{display:flex;gap:10px;margin:28px auto 0;max-width:460px;flex-wrap:wrap;justify-content:center}
+.wl-form input{flex:1;min-width:210px;padding:15px 16px;border:none;font-family:inherit;font-size:15px}
+.wl-form button{background:var(--red);color:#FFF;border:none;font-family:inherit;font-size:11.5px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;padding:15px 26px;cursor:pointer}
+footer{padding:30px 20px;text-align:center;font-size:11px;letter-spacing:.16em;text-transform:uppercase;font-weight:600;color:#8B8B8B}
+footer a{color:var(--ink);text-decoration:none}
+</style>
+</head>
+<body>
+<div class="top"><a href="/">&larr; home</a><span>Katya Shalel</span></div>
+<div class="hero"><div class="wrap"><span class="eyebrow">Free guide</span><h1>The Tech Team Moment</h1><p>The product outgrew no-code, developers arrived, and you can no longer see what happens inside. Here is a system where you brief tasks, accept work and hold quality without reading code</p></div></div><section><div class="wrap"><p><b>Why it matters:</b> a no-code founder loses control not when code enters the product, but when tasks start being phrased in the developers' words. Your power in the product rests on one thing: you describe behavior, the team chooses implementation, and acceptance runs on behavior. That boundary is the whole system.</p></div></section><div class="stepbar"><div class="wrap"><span class="tag">Step 1</span><h2>Spec the behavior, not the solution</h2></div></div><section><div class="wrap"><p>As long as you describe what the user sees and gets, you own the conversation. The moment you start discussing how it works inside, you are a guest. A spec written in product behavior is verifiable without reading code, and it stays your territory forever.</p><div class="prompt"><div class="p-title">Prompt · behavioral spec</div><button class="copy" onclick="copyP(this)">Copy</button><div class="p-body">Turn my feature idea into a behavioral spec: [describe the idea in your own words]. Structure: what the user sees before, during and after, what happens on every error, what counts as done. Give acceptance criteria as a list, each one checkable by hand without reading code. Do not propose technical solutions, that is the team's territory.</div></div></div></section><div class="stepbar"><div class="wrap"><span class="tag">Step 2</span><h2>Accept work through scenarios</h2></div></div><section><div class="wrap"><p>Done is not an emotion and not the developer's word, it is a scenario run. An acceptance checklist turns delivery from a conversation about trust into a procedure: you walk the product as a user, and the result either matches the expectation or it does not.</p><div class="prompt"><div class="p-title">Prompt · acceptance checklist</div><button class="copy" onclick="copyP(this)">Copy</button><div class="p-body">Here is a behavioral spec: [paste]. Build an acceptance checklist from it: 10 to 15 scenarios I run by hand as a user, including edge cases and errors. For each scenario: the steps, the expected result, and what exactly counts as a failure. Sort from critical to minor.</div></div></div></section><div class="stepbar"><div class="wrap"><span class="tag">Step 3</span><h2>Let AI read the code for you</h2></div></div><section><div class="wrap"><p>You do not need to read code, you need to know what happened in it. Run the team's diff or change description through a model against the spec and get a human report: what is closed, what is not, what was done beyond the task. Special attention to anything that touches data.</p><div class="prompt"><div class="p-title">Prompt · change review</div><button class="copy" onclick="copyP(this)">Copy</button><div class="p-body">Here is the spec and here are the team's changes: [paste the spec and the diff or description]. Explain in plain language what actually changed. Split into three lists: what from the spec is closed, what from the spec is not closed, what was done outside the spec. As a separate fourth list, flag everything that expands access to data, external services or permissions, with the risk explained.</div></div></div></section><div class="stepbar"><div class="wrap"><span class="tag">Level up</span><h2>Put it on a weekly rhythm</h2></div></div><section><div class="wrap"><p>Monday: specs for the week. Wednesday: the team's questions and clarifications. Friday: acceptance by scenarios and change review. This is how I run the SKINBOT tech team without reading a line of code, and quality rests on procedure, not on trust.</p></div></section><div class="wl"><div class="wrap"><h2>Go deeper</h2><p>This is the stage three guide of four. The full course runs on a waitlist</p>
+<form class="wl-form" onsubmit="return wlSubmit(event,'wl-email')"><input type="email" id="wl-email" required placeholder="Your email"><button type="submit">Join the waitlist</button></form>
+<p style="font-size:12.5px;margin-top:16px;color:#9A9A9A">First cohort · the waitlist closes August 6</p></div></div><footer><a href="/">katyashalel.com</a></footer><script>
+function copyP(btn){var t=btn.parentNode.querySelector('.p-body').innerText;navigator.clipboard.writeText(t).then(function(){var o=btn.textContent;btn.textContent='Copied';setTimeout(function(){btn.textContent=o},1400)})}
+function wlSubmit(e,i){e.preventDefault();var em=document.getElementById(i).value.trim();if(em)window.open('https://katyashalel.substack.com/subscribe?email='+encodeURIComponent(em),'_blank');return false}
+</script></body></html>
