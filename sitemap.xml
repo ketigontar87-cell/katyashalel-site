@@ -12,5 +12,7 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://katyashalel.com/"/>
     <xhtml:link rel="alternate" hreflang="ru" href="https://katyashalel.com/ru/"/>
   </url>
-  <url><loc>https://katyashalel.com/learn/</loc></url>
+  <url><loc>https://katyashalel.com/program/</loc></url>
+  <url><loc>https://katyashalel.com/ru/program/</loc></url>
+  <url><loc>https://katyashalel.com/ru/guides/multimodel/</loc></url>
 </urlset>
