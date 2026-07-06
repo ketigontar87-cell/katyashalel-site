@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Build AI with Katya Shalel · гайды и курс по AI системам</title>
+<meta name="description" content="Как строить AI системы без кода, делать видимость без бюджета и работать с техкомандой. Гайды и курс от Кети Шалель, основателя SKINBOT">
+<meta name="author" content="Keti Shalel">
+<link rel="canonical" href="https://katyashalel.com/learn/">
+<link rel="icon" type="image/png" sizes="32x32" href="https://katyashalel.com/favicon-32.png">
+<link rel="apple-touch-icon" href="https://katyashalel.com/apple-touch-icon.png">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Build AI with Katya Shalel">
+<meta property="og:description" content="Гайды и курс: AI системы без кода, visibility без бюджета, работа с техкомандой">
+<meta property="og:url" content="https://katyashalel.com/learn/">
+<meta property="og:image" content="https://katyashalel.com/images/og-image.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebSite","name":"Build AI with Katya Shalel","url":"https://katyashalel.com/learn/","author":{"@type":"Person","name":"Keti Shalel","url":"https://katyashalel.com/","sameAs":["https://katyashalel.com/"]}}
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Instrument+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Ephesis&display=swap" rel="stylesheet">
+<style>
+:root{
+  --red:#C4342E;
+  --red-deep:#A32420;
+  --cream:#F7F4ED;
+  --cream-warm:#F1EDE3;
+  --ink:#1A1A1A;
+  --white:#FFFFFF;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:'Instrument Sans',sans-serif;background:var(--cream);color:var(--ink);line-height:1.6}
+.script{font-family:'Ephesis',cursive;font-weight:400;text-transform:none;letter-spacing:0}
+.serif{font-family:'Instrument Serif',serif;font-weight:400}
+.serif i{font-style:italic}
+
+/* ===== ribbon ===== */
+.ribbon{background:var(--red);color:var(--cream);padding:12px 16px;text-align:center}
+.r-label{font-size:11px;font-weight:600;letter-spacing:.22em;text-transform:uppercase;margin-bottom:8px}
+.timer{display:flex;justify-content:center;gap:8px}
+.t-cell{border:1px solid rgba(244,237,225,.4);padding:6px 0;min-width:60px}
+.t-num{font-family:'Instrument Serif',serif;font-size:24px;line-height:1}
+.t-unit{font-size:9px;letter-spacing:.18em;text-transform:uppercase;opacity:.75;margin-top:2px}
+
+/* ===== nav ===== */
+header{background:var(--cream);padding:22px 16px 18px;text-align:center;border-bottom:1px solid rgba(26,26,26,.12)}
+.brand{font-family:'Instrument Serif',serif;font-size:20px;letter-spacing:.04em}
+.brand .script{font-size:26px;margin-left:2px}
+nav{display:flex;flex-wrap:wrap;justify-content:center;gap:4px;margin-top:14px}
+nav a{color:var(--ink);text-decoration:none;font-size:11px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;padding:8px 12px}
+nav a.active{color:var(--red)}
+nav a:hover{color:var(--red)}
+
+/* ===== hero ===== */
+.hero{position:relative;overflow:hidden}
+.hero-photos{display:grid;grid-template-columns:1.2fr 1fr;gap:2px;height:46vh;min-height:320px}
+.ph{background:url('https://katyashalel.com/images/hero-portrait.jpg') center 20%/cover;position:relative}
+.ph.b{background:url('https://katyashalel.com/images/about-portrait.jpg') center 15%/cover;filter:grayscale(65%) contrast(1.04)}
+.ph::after{content:'';position:absolute;inset:0;background:linear-gradient(rgba(26,26,26,.28),transparent 40%,rgba(26,26,26,.15))}
+.ph-note{position:absolute;top:18px;left:18px;color:var(--cream);font-size:9.5px;letter-spacing:.2em;text-transform:uppercase;font-weight:600;max-width:200px;line-height:1.7;z-index:2}
+.ph-note.right{left:auto;right:18px;top:auto;bottom:18px;text-align:right}
+.hero-script{position:absolute;left:0;right:0;bottom:-6vw;text-align:center;z-index:3;pointer-events:none}
+.hero-script span{font-family:'Ephesis',cursive;font-size:clamp(90px,24vw,240px);color:var(--cream);line-height:1;text-shadow:0 2px 30px rgba(26,26,26,.25)}
+.hero-text{padding:110px 24px 70px;text-align:center;position:relative}
+.eyebrow{font-size:10.5px;font-weight:600;letter-spacing:.24em;text-transform:uppercase;color:var(--red)}
+.eyebrow::before{content:'[ '}
+.eyebrow::after{content:' ]'}
+h1{font-family:'Instrument Serif',serif;font-weight:400;font-size:clamp(44px,10vw,88px);line-height:1.02;margin-top:18px;letter-spacing:-.01em}
+h1 .script{font-size:1.15em;color:var(--red);display:block;margin-top:-.12em}
+.hero-text p{margin:26px auto 0;font-size:16.5px;max-width:480px;color:#4A4A4A}
+.cta{display:inline-block;margin-top:32px;background:var(--red);color:var(--cream);font-size:12px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;padding:16px 34px;text-decoration:none;transition:background .15s}
+.cta:hover{background:var(--red-deep)}
+.cta.ghost{background:transparent;border:1px solid var(--cream);color:var(--cream)}
+.cta.ghost:hover{background:rgba(244,237,225,.12)}
+
+/* ===== stages on red ===== */
+.stages{background:var(--red);color:var(--cream);padding:80px 20px 90px;position:relative;overflow:hidden}
+.stages .wrap{max-width:720px;margin:0 auto;text-align:center}
+.stages h2{font-family:'Instrument Serif',serif;font-weight:400;font-size:clamp(38px,8.5vw,64px);line-height:1.04;margin-top:16px}
+.stages h2 .script{font-size:1.1em;display:block;margin-top:-.1em}
+.stages .eyebrow{color:var(--cream);opacity:.85}
+.polaroids{display:grid;grid-template-columns:repeat(2,1fr);gap:22px;margin-top:54px;text-align:left}
+.pol{background:var(--white);color:var(--ink);padding:12px 12px 18px;box-shadow:0 14px 34px rgba(0,0,0,.22)}
+.pol:nth-child(1){transform:rotate(-2.4deg)}
+.pol:nth-child(2){transform:rotate(1.8deg)}
+.pol:nth-child(3){transform:rotate(2.2deg)}
+.pol:nth-child(4){transform:rotate(-1.6deg)}
+.pol-img{height:120px;margin-bottom:14px;position:relative;background:url('https://katyashalel.com/images/direction-decision.jpg') center/cover;filter:grayscale(50%)}
+.pol:nth-child(2) .pol-img{background:linear-gradient(150deg,#D8442F,#9E1F18)}
+.pol:nth-child(3) .pol-img{background:linear-gradient(150deg,#3A322B,#1C1714)}
+.pol:nth-child(4) .pol-img{background:url('https://katyashalel.com/images/direction-legibility.jpg') center/cover;filter:grayscale(50%)}
+.pol-num{position:absolute;top:10px;left:12px;font-family:'Instrument Serif',serif;font-style:italic;font-size:30px;color:rgba(255,255,255,.9)}
+.pol h3{font-family:'Instrument Serif',serif;font-weight:400;font-size:20px;line-height:1.12;margin-bottom:7px}
+.pol p{font-size:13px;color:#5A5A5A;line-height:1.55}
+
+/* ===== guide sample ===== */
+.sample{padding:78px 20px}
+.sample .wrap{max-width:640px;margin:0 auto}
+.sample h2{font-family:'Instrument Serif',serif;font-weight:400;font-size:clamp(34px,7.5vw,54px);line-height:1.05;margin-top:14px}
+.sample h2 i{color:var(--red)}
+.sample .lead{margin-top:20px;font-size:16.5px;color:#4A4A4A;max-width:520px}
+.prompt-card{background:var(--ink);color:var(--cream);padding:30px 24px;margin-top:36px;position:relative}
+.p-title{font-size:11px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:#C9C5BB;margin-bottom:16px;padding-right:86px}
+.p-body{font-size:15px;line-height:1.7;color:#F0EDE5}
+.copy-btn{position:absolute;top:24px;right:20px;background:var(--red);color:var(--cream);border:none;font-family:inherit;font-size:10px;font-weight:600;letter-spacing:.18em;text-transform:uppercase;padding:10px 16px;cursor:pointer}
+.copy-btn:active{background:var(--red-deep)}
+.after-note{margin-top:26px;font-size:15.5px;color:#4A4A4A}
+.after-note b{color:var(--ink);font-weight:600}
+
+/* ===== legibility ===== */
+.legibility{background:var(--ink);color:var(--cream);padding:86px 20px;position:relative;overflow:hidden}
+.legibility .wrap{max-width:640px;margin:0 auto;position:relative;z-index:2}
+.legibility .eyebrow{color:#E8A19A}
+.legibility h2{font-family:'Instrument Serif',serif;font-weight:400;font-size:clamp(42px,9.5vw,72px);line-height:1;margin-top:16px}
+.legibility h2 .script{color:#E8A19A;font-size:1.15em}
+.legibility p{margin-top:20px;font-size:16px;color:#CFCCC3;max-width:540px}
+.leg-script-bg{position:absolute;right:-40px;bottom:-60px;font-family:'Ephesis',cursive;font-size:280px;color:rgba(232,161,154,.07);line-height:1;pointer-events:none}
+
+/* ===== masterclass ===== */
+.master{background:var(--red);color:var(--cream);padding:86px 20px;text-align:center}
+.master .wrap{max-width:620px;margin:0 auto}
+.master .eyebrow{color:var(--cream);opacity:.85}
+.master h2{font-family:'Instrument Serif',serif;font-weight:400;font-size:clamp(38px,8.5vw,62px);line-height:1.04;margin-top:16px}
+.master h2 .script{display:block;font-size:1.12em;margin-top:-.08em}
+.master p{margin:22px auto 0;font-size:16.5px;max-width:500px;color:rgba(244,237,225,.92)}
+
+footer{background:var(--cream);text-align:center;padding:36px 20px;font-size:10.5px;letter-spacing:.2em;text-transform:uppercase;font-weight:600;color:#8B8781;border-top:1px solid rgba(26,26,26,.12)}
+footer a{color:var(--ink);text-decoration:none}
+footer .cred{display:block;margin-top:10px;letter-spacing:.14em;color:#A5A19A}
+
+@media (min-width:760px){
+  .polaroids{grid-template-columns:repeat(4,1fr);gap:18px}
+  .pol-img{height:110px}
+}
+</style>
+</head>
+<body>
+
+<div class="ribbon">
+  <div class="r-label">Набор в поток закрывается через</div>
+  <div class="timer">
+    <div class="t-cell"><div class="t-num" id="d">7</div><div class="t-unit">дней</div></div>
+    <div class="t-cell"><div class="t-num" id="h">08</div><div class="t-unit">часов</div></div>
+    <div class="t-cell"><div class="t-num" id="m">41</div><div class="t-unit">мин</div></div>
+    <div class="t-cell"><div class="t-num" id="s">19</div><div class="t-unit">сек</div></div>
+  </div>
+</div>
+
+<header>
+  <div class="brand">Katya <span class="script">Shalel</span></div>
+  <nav>
+    <a href="#" class="active">Главная</a>
+    <a href="#stages">Гайды</a>
+    <a href="#legibility">Legibility</a>
+    <a href="#master">Курс</a>
+    <a href="#">Контакт</a>
+  </nav>
+</header>
+
+<div class="hero">
+  <div class="hero-photos">
+    <div class="ph"><div class="ph-note">Строю AI продукты и учу проходить этот путь быстрее чем прошла его я</div></div>
+    <div class="ph b"><div class="ph-note right">Moscow · Tallinn · Dubai</div></div>
+    <div class="hero-script"><span>Katya</span></div>
+  </div>
+  <div class="hero-text">
+    <span class="eyebrow">Гайды · Воркфлоу · Курс</span>
+    <h1>Как строить AI системы<span class="script">без кода</span></h1>
+    <p>И как делать видимость без бюджета, собирать техкоманду и говорить с ней на одном языке, когда продукт вырастает из no-code</p>
+    <a class="cta" href="#stages">Смотреть гайды</a>
+  </div>
+</div>
+
+<section class="stages" id="stages">
+  <div class="wrap">
+    <span class="eyebrow">Что внутри</span>
+    <h2>Путь фаундера <span class="script">по стадиям</span></h2>
+    <div class="polaroids">
+      <div class="pol">
+        <div class="pol-img"><span class="pol-num">I</span></div>
+        <h3>Строй без кода</h3>
+        <p>Мультимодельная оркестрация, воркфлоу и промпты для первых прототипов</p>
+      </div>
+      <div class="pol">
+        <div class="pol-img"><span class="pol-num">II</span></div>
+        <h3>Visibility без бюджета</h3>
+        <p>Личный бренд, GEO и LLM цитируемость, публикации, топ 20 vc.ru как доказательство</p>
+      </div>
+      <div class="pol">
+        <div class="pol-img"><span class="pol-num">III</span></div>
+        <h3>Момент техкоманды</h3>
+        <p>Как собрать команду, писать ТЗ и проверять работу, не читая код</p>
+      </div>
+      <div class="pol">
+        <div class="pol-img"><span class="pol-num">IV</span></div>
+        <h3>Legibility</h3>
+        <p>Проектирование AI систем, которые объясняют свои решения</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sample">
+  <div class="wrap">
+    <span class="eyebrow">Так выглядит гайд внутри</span>
+    <h2>Каждый шаг заканчивается <i>готовым промптом</i></h2>
+    <p class="lead">Ничего не нужно адаптировать, копируешь и запускаешь в своей модели</p>
+    <div class="prompt-card">
+      <div class="p-title">Промпт · план, делегируй, проверяй</div>
+      <button class="copy-btn" onclick="copyPrompt(this)">Copy</button>
+      <div class="p-body" id="prompt-text">Напиши детальный план реализации для [задача]. Пока не выполняй. Затем передай план на исполнение, а когда результат готов, проверь его сам против плана и исправь всё что расходится.</div>
+    </div>
+    <p class="after-note"><b>Почему это работает:</b> сильная модель тратит ресурс только на стратегию и контроль качества, а рутину выполняет быстрая и дешёвая</p>
+  </div>
+</section>
+
+<section class="legibility" id="legibility">
+  <div class="leg-script-bg">L</div>
+  <div class="wrap">
+    <span class="eyebrow">Новое направление</span>
+    <h2>The Legibility <span class="script">Layer</span></h2>
+    <p>AI уже принимает решения за людей: что купить, кому доверять, что рекомендовать. Проблема в том, что эти решения нечитаемы.</p>
+    <p>Я учу проектировать нейтральные AI слои, где каждая рекомендация объяснима и проверяема: архитектура, критерии нейтральности, Indifference Test, схемы ответов, которые делают решение прозрачным.</p>
+    <p>Это знание работает в любой индустрии, где AI советует, а человек выбирает</p>
+    <a class="cta ghost" href="#master" style="margin-top:30px">Узнать программу</a>
+  </div>
+</section>
+
+<section class="master" id="master">
+  <div class="wrap">
+    <span class="eyebrow">Курс</span>
+    <h2>От идеи до AI продукта <span class="script">и команды</span></h2>
+    <p>Весь путь по четырём стадиям: строишь без кода, набираешь видимость без бюджета, встречаешь момент техкоманды готовой, проектируешь читаемые AI решения.</p>
+    <p>Один урок и один билд в день</p>
+    <a class="cta" href="#" style="background:var(--ink)">Присоединиться</a>
+  </div>
+</section>
+
+<footer>
+  <a href="https://katyashalel.com">katyashalel.com</a> · Instagram · LinkedIn · Substack
+  <span class="cred">Founder of a live AI product · пилоты в двух странах</span>
+</footer>
+
+<script>
+const end = Date.now() + (7*24*3600 + 8*3600 + 41*60 + 19) * 1000;
+function tick(){
+  let t = Math.max(0, Math.floor((end - Date.now())/1000));
+  const d = Math.floor(t/86400); t%=86400;
+  const h = Math.floor(t/3600); t%=3600;
+  const m = Math.floor(t/60), s = t%60;
+  const pad = n => String(n).padStart(2,'0');
+  document.getElementById('d').textContent = d;
+  document.getElementById('h').textContent = pad(h);
+  document.getElementById('m').textContent = pad(m);
+  document.getElementById('s').textContent = pad(s);
+}
+setInterval(tick, 1000); tick();
+
+function copyPrompt(btn){
+  navigator.clipboard.writeText(document.getElementById('prompt-text').textContent).then(()=>{
+    btn.textContent = 'Готово';
+    setTimeout(()=>btn.textContent='Copy', 1500);
+  });
+}
+</script>
+</body>
+</html>
