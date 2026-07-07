@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI-словарь без паники · бесплатный гайд · Katya Shalel</title>
+<meta name="description" content="Агенты, скиллы, коннекторы, MCP, токены и галлюцинации простым языком. 12 терминов, после которых разговоры про AI перестают звучать как чужой язык">
+<link rel="canonical" href="https://katyashalel.com/ru/guides/dictionary/">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Instrument+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--red:#C4342E;--red-deep:#A32420;--white:#FFFFFF;--grey:#F0F0F0;--ink:#1A1A1A}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Instrument Sans',sans-serif;background:var(--white);color:var(--ink);line-height:1.65}
+.serif{font-family:'Instrument Serif',serif;font-weight:400}
+.top{background:var(--ink);color:#EDEDED;padding:16px 20px;font-size:12px;letter-spacing:.16em;text-transform:uppercase;font-weight:600;display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
+.top a{color:#FFFFFF;text-decoration:none}
+.top a:hover{color:var(--red)}
+.hero{background:linear-gradient(168deg,#C93A33,#9E211C);color:var(--white);padding:64px 22px}
+.wrap{max-width:640px;margin:0 auto}
+.eyebrow{display:inline-block;background:var(--white);color:var(--red-deep);font-size:10.5px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;padding:7px 12px}
+h1{font-family:'Instrument Serif',serif;font-weight:400;font-size:clamp(38px,9vw,64px);line-height:1.03;margin-top:18px}
+.hero p{margin-top:20px;font-size:17px;max-width:520px;color:rgba(255,255,255,.94)}
+.stepbar{background:var(--red);color:var(--white);padding:20px 22px;margin-top:56px}
+.stepbar .wrap{display:flex;align-items:center;gap:14px}
+.tag{background:var(--white);color:var(--red-deep);font-size:10.5px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;padding:6px 11px;white-space:nowrap}
+.stepbar h2{font-weight:600;text-transform:uppercase;font-size:clamp(17px,4.4vw,24px);letter-spacing:.03em}
+section{padding:44px 22px 8px}
+section p{font-size:16.5px;color:#3D3D3D;max-width:600px}
+section p+p{margin-top:16px}
+section b{color:var(--ink)}
+.entry{border:2px solid var(--ink);margin:0 0 16px;background:var(--white)}
+.entry-head{display:flex;align-items:baseline;gap:12px;padding:20px 20px 0;flex-wrap:wrap}
+.entry h3{font-family:'Instrument Serif',serif;font-weight:400;font-size:27px}
+.entry .en{font-size:11px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:#8B8B8B}
+.entry .plain{padding:10px 20px 0;font-size:15.5px;color:#3D3D3D}
+.entry .life{margin:16px 0 0;background:var(--grey);border-top:2px solid var(--ink);padding:14px 20px 16px;font-size:14.5px;color:#4A4A4A}
+.entry .life span{display:block;font-size:10px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--red-deep);margin-bottom:5px}
+.prompt{background:var(--ink);color:#F2F2F2;padding:28px 22px;margin:30px 0 8px;position:relative}
+.p-title{font-size:11px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:#B9B9B9;margin-bottom:14px;padding-right:84px}
+.p-body{font-size:15px;line-height:1.7}
+.copy{position:absolute;top:22px;right:18px;background:var(--red);color:#FFF;border:none;font-family:inherit;font-size:10px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;padding:10px 15px;cursor:pointer}
+.copy:active{background:var(--red-deep)}
+.wl{background:var(--ink);color:var(--white);padding:64px 22px;text-align:center;margin-top:60px}
+.wl h2{font-family:'Instrument Serif',serif;font-weight:400;font-size:clamp(30px,7vw,46px);line-height:1.05}
+.wl p{margin-top:14px;color:#CFCFCF;font-size:15.5px}
+.wl-form{display:flex;gap:10px;margin:28px auto 0;max-width:460px;flex-wrap:wrap;justify-content:center}
+.wl-form input{flex:1;min-width:210px;padding:15px 16px;border:none;font-family:inherit;font-size:15px}
+.wl-form button{background:var(--red);color:#FFF;border:none;font-family:inherit;font-size:11.5px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;padding:15px 26px;cursor:pointer}
+footer{padding:30px 20px;text-align:center;font-size:11px;letter-spacing:.16em;text-transform:uppercase;font-weight:600;color:#8B8B8B}
+footer a{color:var(--ink);text-decoration:none}
+</style>
+</head>
+<body>
+<div class="top"><a href="/ru/">Katya Shalel</a><span>Бесплатный гайд</span></div>
+<div class="hero"><div class="wrap">
+<span class="eyebrow">Гайд · словарь</span>
+<h1>AI-словарь без паники</h1>
+<p>12 слов, после которых разговоры про AI перестают звучать как чужой язык. Без учебников и без кода: что это на самом деле и где оно встретится вам уже завтра.</p>
+</div></div>
+
+<div class="stepbar"><div class="wrap"><span class="tag">База</span><h2>Как это вообще работает</h2></div></div>
+<section><div class="wrap">
+
+<div class="entry"><div class="entry-head"><h3>Нейросеть, LLM</h3><span class="en">Large Language Model</span></div>
+<div class="plain">Программа, которая прочитала огромную часть интернета и научилась продолжать текст так, как продолжил бы человек. ChatGPT, Claude, Gemini: всё это LLM с разными характерами.</div>
+<div class="life"><span>В жизни</span>Вы пишете вопрос, модель отвечает. Никакой магии: она предсказывает, какой ответ был бы самым уместным.</div></div>
+
+<div class="entry"><div class="entry-head"><h3>Промпт</h3><span class="en">Prompt</span></div>
+<div class="plain">Всё, что вы отправляете модели: вопрос, задача, инструкция. Чем точнее промпт, тем точнее ответ. Это не программирование, это умение ставить задачу.</div>
+<div class="life"><span>В жизни</span>«Напиши пост» даст воду. «Напиши пост на 100 слов для мам-предпринимателей, тон дружеский, без клише» даст результат.</div></div>
+
+<div class="entry"><div class="entry-head"><h3>Контекст</h3><span class="en">Context</span></div>
+<div class="plain">Всё, что модель видит в текущем разговоре: ваши сообщения, её ответы, приложенные файлы. Вышло за пределы контекста, значит модель это «забыла».</div>
+<div class="life"><span>В жизни</span>Если в длинном чате модель вдруг путается в том, о чём вы договорились в начале, вы упёрлись в границу контекста. Начните новый чат и коротко перескажите главное.</div></div>
+
+<div class="entry"><div class="entry-head"><h3>Токены</h3><span class="en">Tokens</span></div>
+<div class="plain">Единица, которой модель измеряет текст: примерно кусочек слова. Все лимиты и цены в AI считаются в токенах, поэтому слово встречается везде.</div>
+<div class="life"><span>В жизни</span>«Закончился лимит» почти всегда значит «потрачены токены». Длинные чаты и большие файлы тратят их быстрее.</div></div>
+
+<div class="entry"><div class="entry-head"><h3>Галлюцинация</h3><span class="en">Hallucination</span></div>
+<div class="plain">Момент, когда модель уверенно выдаёт неправду: несуществующую ссылку, выдуманную цифру, фальшивую цитату. Не злой умысел, а свойство технологии.</div>
+<div class="life"><span>В жизни</span>Правило простое: всё, что вы собираетесь опубликовать, процитировать или на чём построить решение, проверяется руками.</div></div>
+</div></section>
+
+<div class="stepbar"><div class="wrap"><span class="tag">Инструменты</span><h2>Слова из новостей про AI</h2></div></div>
+<section><div class="wrap">
+
+<div class="entry"><div class="entry-head"><h3>Агент</h3><span class="en">Agent</span></div>
+<div class="plain">AI, который не просто отвечает, а действует: сам ищет в интернете, открывает файлы, запускает шаги один за другим до результата. Чат отвечает, агент делает.</div>
+<div class="life"><span>В жизни</span>«Найди три отеля, сравни цены и собери таблицу» для агента одна задача, а не три ваших захода в чат.</div></div>
+
+<div class="entry"><div class="entry-head"><h3>Скилл</h3><span class="en">Skill</span></div>
+<div class="plain">Сохранённая инструкция, которую AI применяет сам, когда она нужна. Один раз объяснили, как вы любите: дальше не повторяете это в каждом чате.</div>
+<div class="life"><span>В жизни</span>Мой скилл «каскад» публикует текст сразу в несколько соцсетей по одной голосовой команде.</div></div>
+
+<div class="entry"><div class="entry-head"><h3>Коннектор</h3><span class="en">Connector</span></div>
+<div class="plain">Мостик между AI и вашими сервисами: почтой, календарём, соцсетями, таблицами. Подключили один раз, и модель работает с ними напрямую.</div>
+<div class="life"><span>В жизни</span>«Проверь, ответили ли мне на письмо» работает только если подключён коннектор почты. Без него AI ваших писем не видит.</div></div>
+
+<div class="entry"><div class="entry-head"><h3>MCP</h3><span class="en">Model Context Protocol</span></div>
+<div class="plain">Общий стандарт, по которому AI подключается к внешним сервисам. Если коннектор это мостик, то MCP это правила, по которым такие мостики строят.</div>
+<div class="life"><span>В жизни</span>Видите «MCP-сервер» в настройках или новостях: это просто способ дать модели доступ к очередному сервису. Пугаться нечего.</div></div>
+</div></section>
+
+<div class="stepbar"><div class="wrap"><span class="tag">Практика</span><h2>Слова из ежедневной работы</h2></div></div>
+<section><div class="wrap">
+
+<div class="entry"><div class="entry-head"><h3>Артефакт</h3><span class="en">Artifact</span></div>
+<div class="plain">Готовый объект, который AI создаёт отдельно от переписки: документ, страница, презентация, работающее мини-приложение. То, что можно открыть, скачать и отправить.</div>
+<div class="life"><span>В жизни</span>Ответ в чате вы читаете. Артефакт вы забираете и используете.</div></div>
+
+<div class="entry"><div class="entry-head"><h3>Память</h3><span class="en">Memory</span></div>
+<div class="plain">Способность AI помнить вас между разговорами: чем занимаетесь, как любите получать ответы, над чем работаете. Без памяти каждый чат начинается с чистого листа.</div>
+<div class="life"><span>В жизни</span>Когда модель в новом чате сама помнит название вашего проекта, работает память. Ей можно управлять: попросить запомнить или забыть.</div></div>
+
+<div class="entry"><div class="entry-head"><h3>Воркфлоу</h3><span class="en">Workflow</span></div>
+<div class="plain">Ваша повторяемая связка шагов с AI: что за чем идёт от идеи до результата. Отличие людей, у которых AI «работает», ровно одно: у них есть воркфлоу, а не случайные вопросы.</div>
+<div class="life"><span>В жизни</span>Мой утренний воркфлоу: голосом надиктовать идею, получить черновик, поправить, опубликовать каскадом. Четыре шага, один и тот же порядок, каждый день.</div></div>
+
+<p>Хотите проверить себя: объясните любые три слова из этого словаря близкому человеку своими словами. Если получилось без подглядывания, термин ваш.</p>
+
+<div class="prompt"><div class="p-title">Промпт · перевести любой термин</div><button class="copy" onclick="copyP(this)">Copy</button><div class="p-body">Объясни мне термин [вставь слово] так, как объяснил бы человеку без технического образования. Сначала одной фразой, потом на примере из моей жизни: я [чем вы занимаетесь]. В конце скажи, где я встречу этот термин на практике в ближайший месяц.</div></div>
+</div></section>
+
+<div class="wl"><div class="wrap"><h2>Дальше глубже</h2><p>Это входной гайд серии. Как собрать из этих слов работающую систему: курс по листу ожидания</p>
+<form class="wl-form" onsubmit="return wlSubmit(event,'wl-email')"><input type="email" id="wl-email" required placeholder="Ваш email"><button type="submit">В лист ожидания</button></form>
+<p style="font-size:12.5px;margin-top:16px;color:#9A9A9A">Первый поток · лист закрывается 6 августа</p>
+<p style="font-size:12.5px;margin-top:10px;color:#9A9A9A">Живая лента и разборы в Telegram: <a href="https://t.me/shalel_notes" target="_blank" rel="noopener" style="color:#EDEDED">@shalel_notes</a></p></div></div>
+<footer><a href="/ru/">katyashalel.com</a></footer><script>
+function copyP(btn){var t=btn.parentNode.querySelector('.p-body').innerText;navigator.clipboard.writeText(t).then(function(){var o=btn.textContent;btn.textContent='Скопировано';setTimeout(function(){btn.textContent=o},1400)})}
+function wlSubmit(e,i){e.preventDefault();var f=e.target,b=f.querySelector('button'),inp=document.getElementById(i),em=inp.value.trim();if(!em)return false;b.disabled=true;var o=b.textContent;b.textContent='...';fetch('https://formsubmit.co/ajax/k.skinbot@gmail.com',{method:'POST',headers:{'Content-Type':'application/json','Accept':'application/json'},body:JSON.stringify({email:em,_subject:'Лист ожидания курса',page:location.pathname,_template:'table',_captcha:'false'})}).then(function(r){if(!r.ok)throw 0;return r.json()}).then(function(){b.textContent='Вы в листе';inp.value=''}).catch(function(){b.textContent='Ошибка, ещё раз';b.disabled=false});return false}
+</script></body></html>
