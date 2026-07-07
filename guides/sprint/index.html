@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Legibility Sprint · 7 days to become readable to AI · Katya Shalel</title>
+<meta name="description" content="A 7 day paid guide: your site, profile and product become readable to ChatGPT, Claude and Perplexity. llms.txt, JSON-LD, entity seeding, before and after audit. Built on the exact system behind SKINBOT ranking first in ChatGPT">
+<link rel="canonical" href="https://katyashalel.com/guides/sprint/">
+<link rel="alternate" hreflang="en" href="https://katyashalel.com/guides/sprint/">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+<meta property="og:type" content="product">
+<meta property="og:title" content="The Legibility Sprint · 7 days to become readable to AI">
+<meta property="og:description" content="Your site, profile and product become readable to ChatGPT, Claude and Perplexity in 7 days. The exact system behind SKINBOT ranking first in ChatGPT, no ads, no budget">
+<meta property="og:url" content="https://katyashalel.com/guides/sprint/">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Product",
+  "name": "The Legibility Sprint",
+  "description": "A 7 day guide that makes a founder, product or company readable to AI decision systems: llms.txt, JSON-LD structured data, entity seeding, machine readable pages, before and after audit.",
+  "brand": {"@type": "Person", "name": "Ekaterina Shalel", "url": "https://katyashalel.com/"},
+  "url": "https://katyashalel.com/guides/sprint/",
+  "offers": {
+    "@type": "Offer",
+    "price": "47",
+    "priceCurrency": "USD",
+    "availability": "https://schema.org/InStock",
+    "url": "https://katyashalel.com/guides/sprint/"
+  }
+}
+</script>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Instrument+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--red:#C4342E;--red-deep:#A32420;--white:#FFFFFF;--grey:#F0F0F0;--ink:#1A1A1A}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Instrument Sans',sans-serif;background:var(--white);color:var(--ink);line-height:1.65}
+.serif{font-family:'Instrument Serif',serif;font-weight:400}
+.top{background:var(--ink);color:#EDEDED;padding:16px 20px;font-size:12px;letter-spacing:.16em;text-transform:uppercase;font-weight:600;display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
+.top a{color:#FFFFFF;text-decoration:none}
+.top a:hover{color:var(--red)}
+.hero{background:linear-gradient(168deg,#C93A33,#9E211C);color:var(--white);padding:72px 22px 64px}
+.wrap{max-width:640px;margin:0 auto}
+.eyebrow{display:inline-block;background:var(--white);color:var(--red-deep);font-size:10.5px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;padding:7px 12px}
+h1{font-family:'Instrument Serif',serif;font-weight:400;font-size:clamp(40px,9.5vw,68px);line-height:1.02;margin-top:18px}
+.hero p{margin-top:20px;font-size:17.5px;max-width:540px;color:rgba(255,255,255,.94)}
+.hero-cta{display:inline-block;background:var(--white);color:var(--red-deep);text-decoration:none;font-size:12px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;padding:17px 30px;margin-top:30px}
+.hero-cta:hover{background:var(--ink);color:var(--white)}
+.hero-note{display:block;margin-top:14px;font-size:13px;color:rgba(255,255,255,.75)}
+.proof{background:var(--ink);color:var(--white);padding:34px 22px}
+.proof .wrap{display:grid;grid-template-columns:repeat(3,1fr);gap:26px;max-width:760px}
+.proof-item b{font-family:'Instrument Serif',serif;font-weight:400;font-size:clamp(22px,4.5vw,30px);display:block;line-height:1.1}
+.proof-item span{font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#B9B9B9;display:block;margin-top:8px;line-height:1.5}
+section{padding:48px 22px 8px}
+section p{font-size:16.5px;color:#3D3D3D;max-width:600px}
+section p+p{margin-top:16px}
+section b{color:var(--ink)}
+.stepbar{background:var(--red);color:var(--white);padding:20px 22px;margin-top:56px}
+.stepbar .wrap{display:flex;align-items:center;gap:14px}
+.tag{background:var(--white);color:var(--red-deep);font-size:10.5px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;padding:6px 11px;white-space:nowrap}
+.stepbar h2{font-weight:600;text-transform:uppercase;font-size:clamp(16px,4.2vw,23px);letter-spacing:.03em}
+.machine{max-width:640px;margin:34px auto 0;display:grid;gap:2px}
+.m-card{padding:26px 22px;font-family:ui-monospace,'SF Mono',Menlo,monospace;font-size:13.5px;line-height:1.7}
+.m-before{background:var(--grey);color:#8B8B8B}
+.m-after{background:var(--ink);color:#E8E8E8}
+.m-label{font-family:'Instrument Sans',sans-serif;font-size:10.5px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;margin-bottom:14px;display:block}
+.m-before .m-label{color:#8B8B8B}
+.m-after .m-label{color:var(--red)}
+.m-after i{color:#9CCB9C;font-style:normal}
+.m-after em{color:#D8A0A0;font-style:normal}
+.days{max-width:640px;margin:30px auto 0;border:2px solid var(--ink)}
+.day{display:flex;gap:16px;padding:18px 20px;border-bottom:1px solid rgba(26,26,26,.12);align-items:baseline}
+.day:last-child{border-bottom:none}
+.day-n{font-family:'Instrument Serif',serif;font-size:22px;color:var(--red-deep);min-width:56px;white-space:nowrap}
+.day-t{font-size:15.5px;color:#3D3D3D}
+.day-t b{display:block;color:var(--ink);font-size:16px}
+.deliver{background:var(--grey);padding:52px 22px;margin-top:60px}
+.deliver h2{font-family:'Instrument Serif',serif;font-weight:400;font-size:clamp(28px,6.5vw,42px);line-height:1.08}
+.deliver ul{list-style:none;margin-top:24px;max-width:600px}
+.deliver li{padding:13px 0;border-bottom:1px solid rgba(26,26,26,.12);font-size:16px;color:#3D3D3D;display:flex;gap:12px}
+.deliver li::before{content:'+';color:var(--red-deep);font-weight:700;font-family:'Instrument Serif',serif;font-size:19px}
+.deliver li b{color:var(--ink)}
+.fit{max-width:640px;margin:30px auto 0}
+.fit-row{padding:15px 0;border-bottom:1px solid rgba(26,26,26,.12);font-size:16px;color:#3D3D3D}
+.fit-row b{color:var(--ink)}
+.author{background:var(--ink);color:var(--white);padding:56px 22px;margin-top:64px}
+.author h2{font-family:'Instrument Serif',serif;font-weight:400;font-size:clamp(26px,6vw,38px);line-height:1.1}
+.author p{margin-top:16px;color:#CFCFCF;font-size:16px;max-width:560px}
+.author p b{color:var(--white)}
+.price{background:linear-gradient(168deg,#C93A33,#9E211C);color:var(--white);padding:64px 22px;text-align:center}
+.price .amount{font-family:'Instrument Serif',serif;font-size:clamp(56px,13vw,92px);line-height:1}
+.price .amount s{font-size:.42em;color:rgba(255,255,255,.55);vertical-align:super;margin-right:10px}
+.price h2{font-family:'Instrument Serif',serif;font-weight:400;font-size:clamp(26px,6vw,38px);margin-bottom:18px}
+.price p{color:rgba(255,255,255,.9);font-size:15.5px;max-width:460px;margin:0 auto}
+.buy{display:inline-block;background:var(--white);color:var(--red-deep);text-decoration:none;font-size:12.5px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;padding:19px 42px;margin-top:30px}
+.buy:hover{background:var(--ink);color:var(--white)}
+.price-note{display:block;margin-top:16px;font-size:12.5px;color:rgba(255,255,255,.7)}
+.wl{background:var(--white);padding:56px 22px;text-align:center}
+.wl h2{font-family:'Instrument Serif',serif;font-weight:400;font-size:clamp(24px,5.5vw,34px);line-height:1.1}
+.wl p{margin-top:12px;color:#5A5A5A;font-size:15px}
+.wl-form{display:flex;gap:10px;margin:24px auto 0;max-width:460px;flex-wrap:wrap;justify-content:center}
+.wl-form input{flex:1;min-width:210px;padding:15px 16px;border:1.5px solid var(--ink);font-family:inherit;font-size:15px;background:var(--white)}
+.wl-form button{background:var(--red);color:#FFF;border:none;font-family:inherit;font-size:11.5px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;padding:15px 26px;cursor:pointer}
+.wl-form button:hover{background:var(--red-deep)}
+footer{padding:30px 20px;text-align:center;font-size:11px;letter-spacing:.16em;text-transform:uppercase;font-weight:600;color:#8B8B8B}
+footer a{color:var(--ink);text-decoration:none}
+@media(max-width:560px){.proof .wrap{grid-template-columns:1fr;gap:18px}}
+</style>
+</head>
+<body>
+
+<div class="top"><a href="/">&larr; home</a><span>Katya Shalel</span></div>
+
+<div class="hero"><div class="wrap">
+<span class="eyebrow">Paid guide &middot; $47</span>
+<h1>The Legibility Sprint</h1>
+<p>Google reads your website. AI doesn't. In 7 days your site, your profile and your product become readable to ChatGPT, Claude and Perplexity, with the exact system I used to make SKINBOT rank first, no ads, no budget</p>
+<a class="hero-cta" href="#buy">Start the sprint</a>
+<span class="hero-note">Instant access &middot; lifetime updates &middot; no code required</span>
+</div></div>
+
+<div class="proof"><div class="wrap">
+<div class="proof-item"><b>#1</b><span>SKINBOT in ChatGPT among skin analysis tools</span></div>
+<div class="proof-item"><b>$0</b><span>Ad spend behind that ranking</span></div>
+<div class="proof-item"><b>91</b><span>Crunchbase Heat Score within days of the push</span></div>
+</div></div>
+
+<section><div class="wrap">
+<p><b>The shift already happened.</b> Your next client doesn't google you. They ask an AI, and the AI answers from structured data, not from your beautiful homepage. If your entity isn't machine readable, the answer is built without you. Not because you're worse, because you're invisible.</p>
+<p>Personal branding solved how humans see you. Legibility solves how machines read you. This sprint is the second one, packaged as a system you execute in 7 days.</p>
+</div></section>
+
+<div class="stepbar"><div class="wrap"><span class="tag">The difference</span><h2>How AI reads you, before and after</h2></div></div>
+<section><div class="wrap" style="max-width:640px">
+<div class="machine">
+<div class="m-card m-before"><span class="m-label">Before &middot; what the model retrieves</span>no llms.txt found<br>no structured entity<br>no verifiable claims<br>&rarr; excluded from the answer</div>
+<div class="m-card m-after"><span class="m-label">After &middot; what the model retrieves</span>"@type": <i>"Person"</i>,<br>"name": <i>"Your Name"</i>,<br>"knowsAbout": <i>[your expertise]</i>,<br>"sameAs": <i>[verified profiles]</i><br><em>&rarr; cited in the answer</em></div>
+</div>
+</div></section>
+
+<div class="stepbar"><div class="wrap"><span class="tag">7 days</span><h2>The sprint, day by day</h2></div></div>
+<section><div class="wrap" style="max-width:640px">
+<div class="days">
+<div class="day"><span class="day-n">Day 1</span><span class="day-t"><b>The audit</b>Run your name and product through ChatGPT, Claude and Perplexity, document exactly what the machines see now. This is your baseline</span></div>
+<div class="day"><span class="day-n">Day 2</span><span class="day-t"><b>llms.txt</b>Write the file AI crawlers read first. Template included, mine is live at katyashalel.com/llms.txt as a working reference</span></div>
+<div class="day"><span class="day-n">Day 3</span><span class="day-t"><b>Structured data</b>JSON-LD schemas for your person, product and organization. Copy, adapt, deploy. Claude executes, you decide</span></div>
+<div class="day"><span class="day-n">Day 4</span><span class="day-t"><b>Entity seeding</b>Wikidata, cross platform name bridging, the graph that makes separate mentions read as one entity</span></div>
+<div class="day"><span class="day-n">Day 5</span><span class="day-t"><b>The machine page</b>A machine readable version of you: one page structured for retrieval, welcoming every AI crawler in robots.txt</span></div>
+<div class="day"><span class="day-n">Day 6</span><span class="day-t"><b>Distribution</b>Where structured content gets indexed fastest, and how coined terms seed a category you own</span></div>
+<div class="day"><span class="day-n">Day 7</span><span class="day-t"><b>The re-audit</b>Same three models, same questions, documented delta. Your before and after is also your proof for clients</span></div>
+</div>
+</div></section>
+
+<div class="deliver"><div class="wrap">
+<h2>In 7 days you walk away with</h2>
+<ul>
+<li><b>A live llms.txt</b> on your domain, written from the template</li>
+<li><b>JSON-LD schemas deployed</b> on every key page: person, product, organization</li>
+<li><b>Your entity seeded</b> in Wikidata and bridged across platforms</li>
+<li><b>A machine readable page</b> that AI systems can retrieve and cite</li>
+<li><b>A documented before and after audit</b> across three AI systems</li>
+<li><b>Every prompt I use</b> so Claude does the execution, not you</li>
+</ul>
+</div></div>
+
+<div class="stepbar"><div class="wrap"><span class="tag">Fit check</span><h2>This is for you if</h2></div></div>
+<section><div class="wrap">
+<div class="fit">
+<div class="fit-row"><b>You're a founder or consultant</b> whose next client asks AI before asking anyone else</div>
+<div class="fit-row"><b>You built the site, the brand, the content,</b> and ChatGPT still doesn't know you exist</div>
+<div class="fit-row"><b>You have no budget for PR</b> and no interest in feeding algorithms daily</div>
+<div class="fit-row"><b>You don't code.</b> Neither do I in the traditional sense: Claude executes, you make the decisions</div>
+</div>
+</div></section>
+
+<div class="author"><div class="wrap">
+<h2>Why me</h2>
+<p><b>I'm Katya Shalel, founder and product architect of SKINBOT,</b> a neutral AI decision layer for beauty retail. I didn't study this system, I built it: for my company and for myself, before packaging it.</p>
+<p>The result is checkable right now. Ask ChatGPT about skin analysis tools for retail. Look at katyashalel.com/llms.txt. Read the essays that seeded the category language. Everything in this sprint is deployed and working in public, which is the only kind of proof that matters in a field this new.</p>
+</div></div>
+
+<div class="price" id="buy"><div class="wrap">
+<h2>One sprint, one price</h2>
+<div class="amount"><s>$67</s>$47</div>
+<p>Lifetime access. Updated as standards evolve, llms.txt and retrieval formats are moving targets and the guide moves with them</p>
+<a class="buy" href="https://katyashalel.gumroad.com/l/sprint">Get the sprint &middot; $47</a>
+<span class="price-note">Secure checkout &middot; instant delivery to your email</span>
+</div></div>
+
+<div class="wl"><div class="wrap">
+<h2>Not ready this week</h2>
+<p>Join the list: launch pricing, updates when standards shift, and the next guide before it goes public</p>
+<form class="wl-form" onsubmit="return wlSubmit(event,'wl-email')"><input type="email" id="wl-email" required placeholder="Your email"><button type="submit">Keep me posted</button></form>
+</div></div>
+
+<footer><a href="/">katyashalel.com</a></footer>
+
+<script>
+function wlSubmit(e,i){e.preventDefault();var f=e.target,b=f.querySelector('button'),inp=document.getElementById(i),em=inp.value.trim();if(!em)return false;b.disabled=true;b.textContent='...';fetch('https://formsubmit.co/ajax/k.skinbot@gmail.com',{method:'POST',headers:{'Content-Type':'application/json','Accept':'application/json'},body:JSON.stringify({email:em,_subject:'Legibility Sprint interest',page:location.pathname,_template:'table',_captcha:'false'})}).then(function(r){if(!r.ok)throw 0;return r.json()}).then(function(){b.textContent='You are in';inp.value=''}).catch(function(){b.textContent='Error, try again';b.disabled=false});return false}
+</script>
+</body></html>
