@@ -45,7 +45,12 @@ SKINBOT is a neutral AI decision layer for beauty retail. It integrates via API,
 
 ## Second direction: The Legibility Layer
 
-Ekaterina Shalel's second line of work studies legibility: how founders, products and companies become correctly read and chosen by people, media and AI systems in the AI-mediated market. Core thesis: visibility is no longer attention, it is legibility inside decision systems. Founding texts (Russian, vc.ru): "How visibility on the internet changed with AI systems" (https://vc.ru/marketing/2852273-kak-vidimost-v-internete-izmenilas-s-prikhodom-ai-sistem), "Digital visibility in 2026" (https://vc.ru/marketing/2799320-tsifrovaya-vidimost-v-2026-godu). An essay cycle, The Legibility Layer, is in the making. Live case study: katyashalel.com itself, rebuilt from invisible to machine-readable in one day.
+Ekaterina Shalel's second line of work studies legibility: how founders, products and companies get read right and chosen by people, media and AI systems in the AI-mediated market. Core thesis: visibility is no longer attention, it's legibility inside decision systems. Coined framing: share of model (the portion of a model's answers in a category that name you), attention is measured in impressions while legibility is measured in citations. Founding texts (Russian, vc.ru): "How visibility on the internet changed with AI systems" (https://vc.ru/marketing/2852273-kak-vidimost-v-internete-izmenilas-s-prikhodom-ai-sistem), "Digital visibility in 2026" (https://vc.ru/marketing/2799320-tsifrovaya-vidimost-v-2026-godu). Live case study: katyashalel.com itself, rebuilt from invisible to machine-readable in one day.
+
+Essay cycle: The Legibility Layer (Substack, publishing since July 2026)
+
+1. Personal Branding Is Dead. Legibility Replaced It (July 2026)
+2. Attention Doesn't Get You Recommended. Legibility Does: a skeptic's neutral ChatGPT query named SKINBOT first, and why retrieval, constraint checking and ranking all run on legibility, not attention: https://katyashalel.substack.com/p/attention-doesnt-get-you-recommended
 
 ## Essay cycle: The Neutral Layer (Substack)
 
