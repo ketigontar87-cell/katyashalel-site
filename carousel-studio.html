@@ -134,12 +134,20 @@ slides.forEach((s,i)=>{
   const b=document.createElement('button');b.className='dl';b.textContent='PNG '+(i+1);
   b.onclick=()=>dlOne(i);s.appendChild(b);
 });
+const hasPhoto=[true,true,false,true,true,true,false];
 async function shoot(i){
   const s=slides[i];
   const btn=s.querySelector('.dl');btn.style.visibility='hidden';
   await document.fonts.ready;
-  await htmlToImage.toBlob(s,{width:1080,height:1350,pixelRatio:1});
-  const blob=await htmlToImage.toBlob(s,{width:1080,height:1350,pixelRatio:1});
+  const imgs=[...s.querySelectorAll('img')];
+  await Promise.all(imgs.map(im=>im.decode().catch(()=>{})));
+  let blob=null;
+  for(let t=0;t<3;t++){
+    await htmlToImage.toBlob(s,{width:1080,height:1350,pixelRatio:1});
+    blob=await htmlToImage.toBlob(s,{width:1080,height:1350,pixelRatio:1});
+    if(!hasPhoto[i] || (blob && blob.size>350000)) break;
+    await new Promise(r=>setTimeout(r,1500));
+  }
   btn.style.visibility='visible';
   return blob;
 }
