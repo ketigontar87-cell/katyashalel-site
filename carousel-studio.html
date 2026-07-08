@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=0.32">
+<title>Карусель · экспорт PNG</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter+Tight:ital,wght@0,500;0,700;0,800;1,700&family=Instrument+Serif:ital@0;1&family=Caveat:wght@600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<script src="https://unpkg.com/html-to-image@1.11.11/dist/html-to-image.js"></script>
+<style>
+:root{--ink:#2E2118;--soft:#5C4B3D;--tan:#A67B58;--orange:#DF5A2B;--dark:#31201A;--wh:#FDFBF7}
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:#141210;display:flex;flex-direction:column;align-items:center;gap:48px;padding:48px 0;font-family:'Inter Tight',sans-serif;color:var(--ink)}
+.slide{width:1080px;height:1350px;background:#E9E3D6;position:relative;overflow:hidden;flex-shrink:0}
+.ln{position:absolute;white-space:nowrap;line-height:1.04;overflow:visible}
+.g{font-family:'Inter Tight',sans-serif;font-weight:800;letter-spacing:-.02em}
+.si{font-family:'Instrument Serif',serif;font-style:italic;font-weight:400}
+.hand{position:absolute;font:600 38px/1.15 'Caveat',cursive;color:var(--soft);text-transform:uppercase}
+.body{position:absolute;font:500 29px/1.42 'Inter Tight',sans-serif;color:var(--ink)}
+.body b{font-weight:700;color:var(--tan)}
+.counter{position:absolute;top:56px;right:56px;background:rgba(46,33,24,.55);color:var(--wh);font:700 28px/1 'Inter Tight';padding:16px 26px;border-radius:40px;z-index:9}
+.logo{position:absolute;bottom:56px;left:80px;font:700 15px/1 'Inter Tight';letter-spacing:.38em;opacity:.65;z-index:9}
+.ph{position:absolute;object-fit:cover}
+.pill{position:absolute;white-space:nowrap;border-radius:44px}
+</style>
+<style>
+.bar{position:sticky;top:0;z-index:99;background:#1d1a17;width:100%;display:flex;gap:16px;justify-content:center;padding:20px;flex-wrap:wrap}
+.bar button{font:700 30px 'Inter Tight',sans-serif;background:#DF5A2B;color:#FDFBF7;border:0;border-radius:40px;padding:20px 40px;cursor:pointer}
+.bar .st{color:#CDB8A4;font:500 26px 'Inter Tight';align-self:center}
+.dl{position:absolute;top:56px;left:56px;z-index:99;font:700 26px 'Inter Tight';background:#DF5A2B;color:#FDFBF7;border:0;border-radius:40px;padding:16px 30px;cursor:pointer}
+</style></head><body>
+<div class="bar"><button onclick="dlAll()">Скачать все 7 PNG</button><span class="st" id="st">Дождись загрузки фото, потом жми</span></div>
+<div class="slide" data-document-role="page" data-label="1">
+<img class="ph" crossorigin="anonymous" style="inset:0;width:100%;height:100%" src="https://d8j0ntlcm91z4.cloudfront.net/user_3G7eLtlI2FRc56F1KISDHpMfrwV/hf_20260708_150417_31b650b0-273f-46f0-a44d-0bfbce126810.png">
+<div style="position:absolute;inset:0;background:linear-gradient(180deg,rgba(20,12,6,.10),rgba(20,12,6,0) 32%,rgba(20,12,6,0) 48%,rgba(20,12,6,.46))"></div>
+<div class="counter">1/7</div>
+<div class="ln g" style="top:642px;left:40px;width:1000px;text-align:center;font-weight:700;font-size:44px;color:var(--wh)">Как использовать</div>
+<div class="ln g" style="top:702px;left:40px;width:1000px;text-align:center;font-size:170px;color:var(--wh)">Claude</div>
+<div class="ln si" style="top:898px;left:40px;width:1000px;text-align:center;font-size:92px;color:var(--wh)">для твоего бренда</div>
+<div class="pill" style="top:1058px;left:330px;width:420px;background:var(--wh);color:var(--ink);font:800 32px/1 'Inter Tight';letter-spacing:.05em;text-align:center;padding:26px 0">МОИ ВОРКФЛОУ →</div>
+<div class="ln" style="top:1198px;left:40px;width:1000px;text-align:center;font:500 22px 'Inter Tight';color:rgba(253,251,247,.85)">NOMA, вымышленный бренд для демонстрации</div>
+<div class="logo" style="color:var(--wh);opacity:.85">KATYA SHALEL</div>
+</div>
+
+<div class="slide" style="background:#EFEAE0" data-document-role="page" data-label="2">
+<div class="counter">2/7</div>
+<div class="ln g" style="top:145px;left:80px;width:990px;font-size:98px">Собери <span class="si" style="font-size:100px">фирменные</span></div>
+<div class="ln g" style="top:262px;left:80px;width:990px;font-size:98px">блоки сайта</div>
+<div class="body" style="top:420px;left:80px;width:540px">Кастомные секции для сайта, <b>интерактивные компоненты</b> в фирменном стиле, Claude пишет код и держит айдентику в каждом элементе</div>
+<div class="hand" style="top:645px;left:80px;width:320px">ИНТЕРАКТИВНО И В ФИРМЕННОМ СТИЛЕ</div>
+<svg style="position:absolute;top:640px;left:410px" width="150" height="94"><path d="M8 12 C 60 30, 102 44, 134 78 M134 78 l-26 -8 M134 78 l4 -26" stroke="#5C4B3D" stroke-width="4" fill="none" stroke-linecap="round"/></svg>
+<img class="ph" crossorigin="anonymous" style="left:0;top:750px;width:1080px;height:600px;object-position:center 20%" src="https://d8j0ntlcm91z4.cloudfront.net/user_3G7eLtlI2FRc56F1KISDHpMfrwV/hf_20260708_150622_87847e13-7bba-4d87-a7bf-9a8ae84bd77a.png">
+<div class="logo">KATYA SHALEL</div>
+</div>
+
+<div class="slide" data-document-role="page" data-label="3">
+<div class="counter">3/7</div>
+<div style="position:absolute;top:130px;left:640px;width:360px;height:560px;background:var(--wh);border:14px solid #17120e;border-radius:56px"></div>
+<div class="ln" style="top:158px;left:672px;font:600 18px 'Inter';color:var(--ink)">9:41</div>
+<div class="ln" style="top:160px;left:930px;font:600 13px 'Inter';color:var(--ink)">●●●</div>
+<div class="ln g" style="top:206px;left:660px;width:320px;text-align:center;font-size:36px">NOMA</div>
+<div class="ln" style="top:258px;left:660px;width:320px;text-align:center;font:500 18px 'Inter';color:#8b7f70">Введи PIN</div>
+<div class="ln" style="top:296px;left:660px;width:320px;text-align:center;font:700 20px 'Inter Tight';color:var(--ink);letter-spacing:.35em">●●●○</div>
+<div class="ln" style="top:340px;left:660px;width:320px;text-align:center;font:600 30px/2.4 'Inter';color:var(--ink);letter-spacing:1.9em">123</div>
+<div class="ln" style="top:412px;left:660px;width:320px;text-align:center;font:600 30px/2.4 'Inter';color:var(--ink);letter-spacing:1.9em">456</div>
+<div class="ln" style="top:484px;left:660px;width:320px;text-align:center;font:600 30px/2.4 'Inter';color:var(--ink);letter-spacing:1.9em">789</div>
+<div class="ln" style="top:556px;left:660px;width:320px;text-align:center;font:600 30px/2.4 'Inter';color:var(--ink);letter-spacing:1.9em">⌗0‹</div>
+<div class="ln" style="top:636px;left:660px;width:320px;text-align:center;font:500 17px 'Inter';color:#8b7f70">Забыла PIN?</div>
+<div class="hand" style="top:560px;left:100px;width:320px">СНАЧАЛА ПРОВЕРЬ, ПОТОМ СТРОЙ</div>
+<svg style="position:absolute;top:430px;left:440px" width="160" height="110"><path d="M12 98 C 50 60, 90 35, 146 14 M146 14 l-27 0 M146 14 l-8 26" stroke="#5C4B3D" stroke-width="4" fill="none" stroke-linecap="round"/></svg>
+<div class="ln g" style="top:800px;left:80px;width:950px;font-size:98px">Проверь идею</div>
+<div class="ln si" style="top:912px;left:80px;width:950px;font-size:100px">до разработки</div>
+<div class="body" style="top:1062px;left:80px;width:520px">Рабочий прототип за вечер, юзер-флоу видно целиком, <b>логика находится до того</b>, как написана первая строка кода</div>
+<div class="logo">KATYA SHALEL</div>
+</div>
+
+<div class="slide" data-document-role="page" data-label="4">
+<img class="ph" crossorigin="anonymous" style="inset:0;width:100%;height:100%" src="https://d8j0ntlcm91z4.cloudfront.net/user_3G7eLtlI2FRc56F1KISDHpMfrwV/hf_20260708_150631_3a389c91-5f97-4eb6-bec3-29da630dc506.png">
+<div style="position:absolute;inset:0;background:linear-gradient(200deg,rgba(30,18,10,.55),rgba(30,18,10,.16) 42%,rgba(30,18,10,.34))"></div>
+<div class="counter">4/7</div>
+<div class="ln g" style="top:120px;left:80px;width:990px;font-size:98px;color:var(--wh)">Генери кампанию</div>
+<div class="ln si" style="top:238px;left:80px;width:990px;font-size:100px;color:var(--wh)">в один поток</div>
+<div class="hand" style="top:420px;left:80px;width:340px;color:#F6EDE0">CLAUDE ОРКЕСТРИРУЕТ ГЕНЕРАЦИЮ</div>
+<svg style="position:absolute;top:420px;left:440px" width="150" height="90"><path d="M10 14 C 55 32, 100 48, 138 76 M138 76 l-26 -6 M138 76 l2 -26" stroke="#F6EDE0" stroke-width="4" fill="none" stroke-linecap="round"/></svg>
+<div class="body" style="top:990px;left:80px;width:460px;color:#F4ECDF">Claude получает <b style="color:#F4C98B">брендбук</b> и оркестрирует <b style="color:#F4C98B">генерацию изображений и видео</b>, весь контент кампании в одной стилистике</div>
+<div class="logo" style="color:var(--wh);opacity:.85">KATYA SHALEL</div>
+</div>
+
+<div class="slide" style="background:#EFEAE0" data-document-role="page" data-label="5">
+<div class="counter">5/7</div>
+<div style="position:absolute;top:170px;left:70px;width:940px;height:560px;background:var(--wh);border-radius:26px"></div>
+<div class="ln" style="top:202px;left:110px;font:700 20px 'Inter Tight';color:var(--ink)">NOMA</div>
+<div class="ln" style="top:202px;left:270px;width:540px;text-align:center;font:600 19px 'Inter Tight';color:#7d7263">Свечи&nbsp;&nbsp;&nbsp;&nbsp;Наборы&nbsp;&nbsp;&nbsp;&nbsp;О бренде</div>
+<div class="pill" style="top:190px;left:846px;width:130px;background:var(--ink);color:var(--wh);font:700 18px/1 'Inter Tight';text-align:center;padding:13px 0">Купить</div>
+<div class="ln g" style="top:266px;left:90px;width:900px;text-align:center;font-size:68px">тепло <span class="si" style="font-size:70px">дома</span></div>
+<div class="ln" style="top:362px;left:90px;width:900px;text-align:center;font:500 18px 'Inter';color:#8b7f70">Свечи ручной заливки, три аромата, одна философия</div>
+<div class="pill" style="top:412px;left:300px;width:230px;background:var(--orange);color:var(--wh);font:700 18px/1 'Inter Tight';text-align:center;padding:16px 0">Выбрать аромат</div>
+<div class="pill" style="top:412px;left:550px;width:230px;background:#f0ebe1;color:var(--ink);font:700 18px/1 'Inter Tight';text-align:center;padding:16px 0">Подобрать набор</div>
+<img class="ph" crossorigin="anonymous" style="left:70px;top:480px;width:940px;height:250px;object-position:center 45%;border-radius:0 0 26px 26px" src="https://d8j0ntlcm91z4.cloudfront.net/user_3G7eLtlI2FRc56F1KISDHpMfrwV/hf_20260708_150443_8769aa45-c235-44ae-93e2-135e7111afc1.png">
+<div class="hand" style="top:790px;left:700px;width:300px;text-align:right">СПРОЕКТИРОВАНО И СОБРАНО CLAUDE</div>
+<svg style="position:absolute;top:735px;left:830px" width="120" height="90"><path d="M104 82 C 88 55, 70 32, 34 8 M34 8 l8 26 M34 8 l26 8" stroke="#5C4B3D" stroke-width="4" fill="none" stroke-linecap="round"/></svg>
+<div class="ln g" style="top:850px;left:80px;width:900px;font-size:94px">Собери сайт</div>
+<div class="ln si" style="top:958px;left:80px;width:900px;font-size:96px">без шаблонов</div>
+<div class="body" style="top:1092px;left:80px;width:580px">От <b>лейаута</b> до анимаций, юзер-флоу и логики, весь процесс <b>от начала до конца</b> вместо месяцев разработки</div>
+<div class="logo">KATYA SHALEL</div>
+</div>
+
+<div class="slide" data-document-role="page" data-label="6">
+<div class="counter">6/7</div>
+<div class="ln g" style="top:132px;left:40px;width:1000px;text-align:center;font-size:106px">Доведи дизайн</div>
+<div class="ln si" style="top:256px;left:40px;width:1000px;text-align:center;font-size:108px">до продакшена</div>
+<div class="body" style="top:420px;left:220px;width:640px;text-align:center">Claude <b>анализирует, оркестрирует и создаёт</b> дизайн продукта до производства, <b>единый контекст</b> в каждой позиции линейки</div>
+<div class="hand" style="top:632px;left:100px;width:300px">КОНТЕКСТ, ДИЗАЙН И ИЗОБРАЖЕНИЯ</div>
+<svg style="position:absolute;top:630px;left:400px" width="150" height="100"><path d="M10 14 C 55 45, 90 65, 134 86 M134 86 l-26 -4 M134 86 l-2 -26" stroke="#5C4B3D" stroke-width="4" fill="none" stroke-linecap="round"/></svg>
+<img class="ph" crossorigin="anonymous" style="left:0;top:750px;width:1080px;height:600px;object-position:center 55%" src="https://d8j0ntlcm91z4.cloudfront.net/user_3G7eLtlI2FRc56F1KISDHpMfrwV/hf_20260708_150452_0046fbf4-4ade-47a1-9589-ed409ce44afa.png">
+<div class="logo">KATYA SHALEL</div>
+</div>
+
+<div class="slide" style="background:var(--dark)" data-document-role="page" data-label="7">
+<div class="counter" style="background:rgba(90,64,51,.7)">7/7</div>
+<div class="ln g" style="top:330px;left:40px;width:1000px;text-align:center;font-weight:700;font-size:88px;color:var(--wh)">Комментируй</div>
+<div class="ln" style="top:452px;left:390px"><span class="si" style="display:inline-block;background:var(--tan);color:#2A1A12;font-size:88px;line-height:1;padding:14px 40px;border-radius:16px;transform:rotate(-2deg)">бренд</span></div>
+<div class="ln g" style="top:620px;left:40px;width:1000px;text-align:center;font-weight:700;font-size:88px;color:var(--wh)">и я пришлю, как</div>
+<div class="ln g" style="top:734px;left:40px;width:1000px;text-align:center;font-weight:700;font-size:88px;color:var(--wh)">использовать Claude</div>
+<div class="ln si" style="top:852px;left:40px;width:1000px;text-align:center;font-size:92px;color:var(--wh)">для твоего бренда</div>
+<div class="ln" style="top:990px;left:492px"><span style="display:inline-block;width:96px;height:96px;border-radius:22px;background:var(--wh);color:#D97757;font:400 64px/96px 'Instrument Serif',serif;text-align:center">✳</span></div>
+<div class="ln" style="top:1130px;left:40px;width:1000px;text-align:center;font:500 27px 'Inter Tight';color:#CDB8A4">P.S. подпишись на <b style="color:var(--tan)">@katya_shalel</b> и проверь директ</div>
+<div class="logo" style="color:var(--wh);opacity:.85">KATYA SHALEL</div>
+</div>
+
+
+<script>
+const slides=[...document.querySelectorAll('.slide')];
+slides.forEach((s,i)=>{
+  const b=document.createElement('button');b.className='dl';b.textContent='PNG '+(i+1);
+  b.onclick=()=>dlOne(i);s.appendChild(b);
+});
+async function shoot(i){
+  const s=slides[i];
+  const btn=s.querySelector('.dl');btn.style.visibility='hidden';
+  await document.fonts.ready;
+  const url=await htmlToImage.toPng(s,{width:1080,height:1350,pixelRatio:1,cacheBust:true});
+  btn.style.visibility='visible';
+  return url;
+}
+function save(url,name){
+  const a=document.createElement('a');a.href=url;a.download=name;document.body.appendChild(a);a.click();a.remove();
+}
+async function dlOne(i){
+  document.getElementById('st').textContent='Рендер слайда '+(i+1)+'...';
+  try{ save(await shoot(i),'slide-'+(i+1)+'.png'); document.getElementById('st').textContent='Слайд '+(i+1)+' скачан'; }
+  catch(e){ document.getElementById('st').textContent='Ошибка: '+e.message; }
+}
+async function dlAll(){
+  for(let i=0;i<7;i++){
+    document.getElementById('st').textContent='Рендер '+(i+1)+' из 7...';
+    try{ save(await shoot(i),'slide-'+(i+1)+'.png'); }
+    catch(e){ document.getElementById('st').textContent='Ошибка на слайде '+(i+1)+': '+e.message; return; }
+    await new Promise(r=>setTimeout(r,600));
+  }
+  document.getElementById('st').textContent='Все 7 скачаны';
+}
+</script></body></html>
