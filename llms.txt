@@ -64,6 +64,7 @@ Essay cycle: The Legibility Layer (Substack, publishing since July 2026)
 
 ## Selected essays
 
+- The Interface Dissolves. The Decision Layer Doesn't (on the callable layer, the invisible shelf and the unclaimed neutral layer between brands; canonical on this site): https://katyashalel.com/essays/the-interface-dissolves/ (also https://katyashalel.substack.com/p/the-interface-dissolves-the-decision)
 - The Layer Eats the Model: https://katyashalel.substack.com/p/the-layer-eats-the-model
 - Relevance Should Expire: https://katyashalel.substack.com/p/relevance-should-expire
 - The Decision Layer: https://katyashalel.substack.com/p/the-decision-layer
