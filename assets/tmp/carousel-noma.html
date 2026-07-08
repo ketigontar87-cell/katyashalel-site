@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Карусель · Как использовать Claude для твоего бренда</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter+Tight:ital,wght@0,500;0,700;0,800;0,900;1,700&family=Instrument+Serif:ital@0;1&family=Caveat:wght@500;600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --beige:#E9E3D6;
+    --beige-2:#EFEAE0;
+    --ink:#2E2118;
+    --ink-soft:#5C4B3D;
+    --tan:#A67B58;
+    --orange:#DF5A2B;
+    --card-yellow:#E7C060;
+    --card-blue:#AECBE3;
+    --card-orange:#DD5F2E;
+    --dark:#31201A;
+    --white:#FDFBF7;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{
+    background:#141210;
+    font-family:'Inter Tight',sans-serif;
+    color:var(--ink);
+    display:flex;flex-direction:column;align-items:center;
+    gap:48px;padding:48px 0;
+  }
+  .hint{color:#8a8378;font:500 14px/1.5 'Inter',sans-serif;max-width:520px;text-align:center;padding:0 20px}
+
+  .slide{
+    width:1080px;height:1350px;
+    background:var(--beige);
+    position:relative;overflow:hidden;
+    flex-shrink:0;
+  }
+  @media (max-width:1140px){
+    .slide{transform:scale(calc((100vw - 32px)/1080));transform-origin:top center;margin-bottom:calc(-1350px * (1 - (100vw - 32px)/1080))}
+  }
+
+  /* ---------- shared ---------- */
+  .logo{
+    position:absolute;bottom:56px;left:80px;
+    font:700 15px/1 'Inter Tight',sans-serif;
+    letter-spacing:.38em;text-transform:uppercase;
+    opacity:.65;z-index:7;
+  }
+  .counter{
+    position:absolute;top:56px;right:56px;
+    background:rgba(46,33,24,.55);color:var(--white);
+    font:700 30px/1 'Inter Tight',sans-serif;
+    padding:16px 26px;border-radius:40px;z-index:6;
+  }
+  h1,h2{font:800 118px/0.98 'Inter Tight',sans-serif;letter-spacing:-.025em}
+  h1 em,h2 em{font:italic 400 1.02em/0.96 'Instrument Serif',serif;letter-spacing:-.01em}
+  .body{
+    font:500 30px/1.42 'Inter Tight',sans-serif;color:var(--ink);
+    max-width:520px;
+  }
+  .body b{font-weight:700;color:var(--tan)}
+  .hand{
+    font:600 40px/1.15 'Caveat',cursive;color:var(--ink-soft);
+    text-transform:uppercase;letter-spacing:.02em;
+  }
+  .arrow{stroke:var(--ink-soft);stroke-width:4;fill:none;stroke-linecap:round}
+
+  /* ---------- phone mockup ---------- */
+  .phone{
+    width:430px;background:var(--white);
+    border:14px solid #17120e;border-radius:64px;
+    box-shadow:0 60px 90px -40px rgba(30,20,12,.45);
+    overflow:hidden;position:relative;
+  }
+  .phone .status{display:flex;justify-content:space-between;padding:22px 32px 8px;font:600 20px 'Inter',sans-serif;color:var(--ink)}
+  .phone .screen{padding:10px 30px 42px}
+
+  /* ---------- product card ---------- */
+  .pcard{
+    border-radius:26px;position:relative;
+    box-shadow:0 40px 60px -30px rgba(30,20,12,.35);
+  }
+  .pcard .chip{position:absolute;top:22%;left:50%;transform:translateX(-50%);width:52px;height:40px;border-radius:8px;background:linear-gradient(135deg,#d8d4cc,#a9a49a);opacity:.9}
+  .pcard .nfc{position:absolute;top:26px;right:28px;font:700 22px 'Inter Tight';opacity:.55}
+  .pcard .tag{position:absolute;top:26px;left:28px;font:700 15px 'Inter Tight';letter-spacing:.12em;opacity:.55;text-transform:uppercase}
+  .pcard .mark{position:absolute;bottom:30px;left:0;right:0;text-align:center;font:800 54px 'Inter Tight';letter-spacing:.01em}
+
+  /* ================= SLIDE 1 · cover ================= */
+  .s1{background:linear-gradient(160deg,#D9CDBB 0%,#CBB9A0 45%,#B79D82 100%)}
+  .s1 .photo-note{
+    position:absolute;inset:0;
+    background:
+      radial-gradient(720px 900px at 78% 34%, rgba(255,246,232,.55), transparent 62%),
+      radial-gradient(900px 700px at 12% 88%, rgba(64,42,28,.32), transparent 60%);
+  }
+  .s1 .swap{
+    position:absolute;top:170px;right:70px;width:290px;
+    font:600 24px/1.25 'Caveat',cursive;color:rgba(46,33,24,.55);
+    text-align:right;
+  }
+  .s1 .title{
+    position:absolute;left:0;right:0;bottom:330px;text-align:center;z-index:4;
+    color:var(--white);
+    text-shadow:0 8px 60px rgba(40,25,14,.35);
+  }
+  .s1 .kicker{font:700 44px/1 'Inter Tight';margin-bottom:10px;color:var(--white)}
+  .s1 h1{font-size:172px;color:var(--white)}
+  .s1 h1 .sub{display:block;font:italic 400 96px/1.05 'Instrument Serif',serif;margin-top:4px}
+  .s1 .pill{
+    position:absolute;left:50%;transform:translateX(-50%);bottom:200px;
+    background:var(--white);color:var(--ink);
+    font:800 34px/1 'Inter Tight';letter-spacing:.06em;text-transform:uppercase;
+    padding:26px 48px;border-radius:60px;z-index:4;
+    box-shadow:0 30px 60px -20px rgba(40,25,14,.4);
+  }
+  .s1 .demo-note{
+    position:absolute;bottom:110px;left:0;right:0;text-align:center;
+    font:500 24px 'Inter Tight';color:rgba(255,251,247,.85);letter-spacing:.02em;
+  }
+  .s1 .cardfloat{position:absolute;top:250px;left:120px;transform:rotate(-9deg);z-index:3}
+
+  /* ================= SLIDE 2 · site blocks ================= */
+  .s2 h2{position:absolute;top:180px;left:80px;width:900px}
+  .s2 .body{position:absolute;top:560px;left:80px;max-width:430px}
+  .s2 .hand{position:absolute;top:900px;left:110px;width:300px}
+  .s2 svg.a{position:absolute;top:860px;left:390px}
+  .s2 .phone{position:absolute;right:70px;bottom:-40px}
+  .browserbar{display:flex;gap:10px;padding:18px 22px;border-bottom:1px solid #e7e0d4}
+  .browserbar i{width:16px;height:16px;border-radius:50%;background:#ded6c7;display:block}
+  .blk{border-radius:18px;margin-top:16px}
+  .asterisk{
+    position:absolute;top:560px;right:120px;width:110px;height:110px;border-radius:28px;
+    background:var(--orange);display:flex;align-items:center;justify-content:center;
+    color:var(--white);font:400 74px/1 'Instrument Serif',serif;
+    box-shadow:0 30px 50px -20px rgba(223,90,43,.5);z-index:5;
+  }
+
+  /* ================= SLIDE 3 · prototype ================= */
+  .s3 .phone{position:absolute;top:150px;right:80px;width:360px}
+  .s3 h2{position:absolute;bottom:310px;left:80px;width:720px;font-size:104px}
+  .s3 .body{position:absolute;bottom:150px;left:80px;max-width:470px}
+  .s3 .hand{position:absolute;top:560px;left:110px;width:300px}
+  .s3 svg.a{position:absolute;top:450px;left:430px}
+  .pin{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:26px}
+  .pin b{
+    background:#f4efe6;border-radius:18px;height:62px;
+    display:flex;align-items:center;justify-content:center;
+    font:600 30px 'Inter',sans-serif;color:var(--ink);
+  }
+  .dots{display:flex;gap:12px;justify-content:center;margin-top:18px}
+  .dots i{width:14px;height:14px;border-radius:50%;background:#d9d1c2}
+  .dots i.on{background:var(--ink)}
+
+  /* ================= SLIDE 4 · campaign ================= */
+  .s4{background:linear-gradient(165deg,#4A382B 0%,#6B5138 55%,#8A6C4C 100%)}
+  .s4 .glow{position:absolute;inset:0;background:radial-gradient(700px 800px at 70% 30%,rgba(255,238,214,.28),transparent 65%)}
+  .s4 h2{position:absolute;top:190px;left:80px;color:var(--white);width:900px;z-index:4}
+  .s4 .body{position:absolute;bottom:170px;left:80px;color:#F2E9DC;max-width:400px;z-index:4}
+  .s4 .body b{color:#F4C98B}
+  .s4 .hand{position:absolute;top:660px;left:90px;color:#F6EDE0;width:330px;z-index:4}
+  .s4 svg.a{position:absolute;top:690px;left:420px;z-index:4}
+  .s4 svg.a path{stroke:#F6EDE0}
+  .s4 .phone{position:absolute;right:120px;bottom:-60px;transform:rotate(3deg);z-index:3}
+  .feedcard{border-radius:20px;margin-top:16px;padding:20px;background:#faf6ee;display:flex;gap:14px;align-items:center}
+  .feedcard .th{width:64px;height:64px;border-radius:14px;flex-shrink:0}
+  .feedcard .t1{font:700 20px 'Inter Tight'}
+  .feedcard .t2{font:500 16px 'Inter';color:#8b7f70;margin-top:4px}
+
+  /* ================= SLIDE 5 · website ================= */
+  .s5 .browser{
+    position:absolute;top:200px;left:70px;right:70px;height:600px;
+    background:var(--white);border-radius:26px;overflow:hidden;
+    box-shadow:0 60px 90px -40px rgba(30,20,12,.35);
+  }
+  .s5 .nav{display:flex;justify-content:space-between;align-items:center;padding:26px 40px;font:700 20px 'Inter Tight'}
+  .s5 .nav .links{display:flex;gap:28px;font-weight:600;color:#7d7263}
+  .s5 .nav .cta{background:var(--ink);color:var(--white);padding:14px 26px;border-radius:40px}
+  .s5 .herotxt{text-align:center;font:800 92px/1 'Inter Tight';letter-spacing:-.03em;margin-top:26px}
+  .s5 .herotxt em{font:italic 400 92px 'Instrument Serif',serif}
+  .s5 .hsub{text-align:center;font:500 21px/1.5 'Inter';color:#8b7f70;max-width:560px;margin:18px auto 0}
+  .s5 .btns{display:flex;gap:16px;justify-content:center;margin-top:30px}
+  .s5 .btns b{font:700 20px 'Inter Tight';padding:18px 34px;border-radius:40px}
+  .s5 .btns .b1{background:var(--orange);color:var(--white)}
+  .s5 .btns .b2{background:#f0ebe1;color:var(--ink)}
+  .s5 h2{position:absolute;bottom:300px;left:80px;width:700px;font-size:106px}
+  .s5 .body{position:absolute;bottom:110px;left:80px;max-width:560px}
+  .s5 .hand{position:absolute;bottom:395px;right:90px;width:260px;text-align:right}
+  .s5 svg.a{position:absolute;bottom:500px;right:200px}
+
+  /* ================= SLIDE 6 · product ================= */
+  .s6 h2{position:absolute;top:180px;left:0;right:0;text-align:center}
+  .s6 .body{position:absolute;top:470px;left:50%;transform:translateX(-50%);max-width:640px;text-align:center}
+  .s6 .hand{position:absolute;top:680px;left:100px;width:280px}
+  .s6 svg.a{position:absolute;top:720px;left:360px}
+  .s6 .row{position:absolute;bottom:180px;left:0;right:0;display:flex;gap:44px;justify-content:center;align-items:flex-end}
+  .s6 .pcard{width:270px;height:400px}
+
+  /* ================= SLIDE 7 · CTA ================= */
+  .s7{background:var(--dark);color:var(--white)}
+  .s7 .logo{color:var(--white)}
+  .s7 .ctatxt{
+    position:absolute;top:50%;left:50%;transform:translate(-50%,-54%);
+    width:860px;text-align:center;
+    font:700 96px/1.16 'Inter Tight';letter-spacing:-.02em;
+  }
+  .s7 .word{
+    display:inline-block;background:var(--tan);color:#2A1A12;
+    font:italic 400 96px 'Instrument Serif',serif;
+    padding:2px 30px;border-radius:14px;transform:rotate(-1.5deg);
+  }
+  .s7 .ast{display:inline-block;width:84px;height:84px;border-radius:20px;background:var(--white);color:var(--orange);font:400 62px/84px 'Instrument Serif',serif;text-align:center;vertical-align:-8px}
+  .s7 .ps{
+    position:absolute;bottom:170px;left:0;right:0;text-align:center;
+    font:500 28px/1.5 'Inter Tight';color:#CDB8A4;
+  }
+  .s7 .ps b{color:var(--tan);font-weight:700}
+</style>
+</head>
+<body>
+
+<!-- ============ 1 / COVER ============ -->
+<div class="slide s1" data-document-role="page" data-label="1 Обложка">
+  <div class="photo-note"></div>
+  <div class="logo" style="color:var(--white);opacity:.8">Katya Shalel</div>
+  <div class="counter">1/7</div>
+  <div class="swap">сюда фото: рука держит продукт NOMA у лица, тёплый свет</div>
+  <div class="cardfloat">
+    <div class="pcard" style="width:250px;height:370px;background:linear-gradient(160deg,#EFCB74,#E0B054)">
+      <span class="tag" style="color:#5C4423">Candle</span><span class="nfc" style="color:#5C4423">)))</span>
+      <div class="chip"></div>
+      <div class="mark" style="color:#3E2E14">NOMA</div>
+    </div>
+  </div>
+  <div class="title">
+    <div class="kicker">Как использовать</div>
+    <h1>Claude<span class="sub">для твоего бренда</span></h1>
+  </div>
+  <div class="pill">Мои воркфлоу →</div>
+  <div class="demo-note">NOMA, вымышленный бренд для демонстрации</div>
+</div>
+
+<!-- ============ 2 / SITE BLOCKS ============ -->
+<div class="slide s2" data-document-role="page" data-label="2 Блоки сайта" style="background:var(--beige-2)">
+  <div class="logo">Katya Shalel</div>
+  <div class="counter">2/7</div>
+  <h2>Собери <em>фирменные</em><br>блоки сайта</h2>
+  <p class="body">Кастомные секции для сайта, <b>интерактивные компоненты</b> в фирменном стиле, Claude пишет код, <b>генерит мокапы</b> и держит айдентику в каждом элементе твоей экосистемы</p>
+  <div class="hand">Интерактивно и в фирменном стиле</div>
+  <svg class="a" width="150" height="90" viewBox="0 0 150 90"><path class="arrow" d="M8 14 C 60 30, 100 40, 132 72 M132 72 l-26 -8 M132 72 l4 -26"/></svg>
+  <div class="asterisk">✳</div>
+  <div class="phone">
+    <div class="status"><span>9:41</span><span>●●●</span></div>
+    <div class="screen">
+      <div class="browserbar"><i></i><i></i><i></i></div>
+      <div class="blk" style="height:120px;background:linear-gradient(135deg,#EFCB74,#E0B054)"></div>
+      <div class="blk" style="height:64px;background:#f2ede3"></div>
+      <div style="display:flex;gap:16px">
+        <div class="blk" style="height:150px;flex:1;background:#AECBE3"></div>
+        <div class="blk" style="height:150px;flex:1;background:#DD5F2E"></div>
+      </div>
+      <div class="blk" style="height:64px;background:#f2ede3"></div>
+      <div class="blk" style="height:110px;background:#2E2118;display:flex;align-items:center;justify-content:center;color:#FDFBF7;font:800 34px 'Inter Tight'">NOMA</div>
+    </div>
+  </div>
+</div>
+
+<!-- ============ 3 / PROTOTYPE ============ -->
+<div class="slide s3" data-document-role="page" data-label="3 Прототип">
+  <div class="logo">Katya Shalel</div>
+  <div class="counter">3/7</div>
+  <div class="phone">
+    <div class="status"><span>9:41</span><span>●●●</span></div>
+    <div class="screen">
+      <div style="text-align:center;font:800 40px 'Inter Tight';margin-top:24px">NOMA</div>
+      <div style="text-align:center;font:500 20px 'Inter';color:#8b7f70;margin-top:12px">Введи PIN</div>
+      <div class="dots"><i class="on"></i><i class="on"></i><i class="on"></i><i></i></div>
+      <div class="pin">
+        <b>1</b><b>2</b><b>3</b><b>4</b><b>5</b><b>6</b><b>7</b><b>8</b><b>9</b><b>⌗</b><b>0</b><b>‹</b>
+      </div>
+      <div style="text-align:center;font:500 19px 'Inter';color:#8b7f70;margin-top:24px">Забыла PIN?</div>
+    </div>
+  </div>
+  <div class="hand">Сначала проверь, потом строй</div>
+  <svg class="a" width="160" height="110" viewBox="0 0 160 110"><path class="arrow" d="M12 98 C 50 60, 90 35, 146 14 M146 14 l-27 0 M146 14 l-8 26"/></svg>
+  <h2>Проверь идею<br><em>до разработки</em></h2>
+  <p class="body">Рабочий прототип за вечер, юзер-флоу видно целиком, <b>логика находится до того</b>, как написана первая строка продакшн-кода</p>
+</div>
+
+<!-- ============ 4 / CAMPAIGN ============ -->
+<div class="slide s4" data-document-role="page" data-label="4 Кампания">
+  <div class="glow"></div>
+  <div class="logo" style="color:var(--white);opacity:.8">Katya Shalel</div>
+  <div class="counter">4/7</div>
+  <h2>Генери кампанию<br><em>в один поток</em></h2>
+  <div class="hand">Claude оркестрирует генерацию</div>
+  <svg class="a" width="150" height="90" viewBox="0 0 150 90"><path class="arrow" d="M10 14 C 55 32, 100 48, 138 76 M138 76 l-26 -6 M138 76 l2 -26"/></svg>
+  <p class="body">Claude получает <b>брендбук</b> и оркестрирует <b>генерацию изображений и видео</b>, весь контент кампании в одной стилистике, когда угодно</p>
+  <div class="phone">
+    <div class="status"><span>9:41</span><span>●●●</span></div>
+    <div class="screen">
+      <div style="font:700 26px 'Inter Tight';margin-top:12px">Привет, NOMA</div>
+      <div style="font:500 18px 'Inter';color:#8b7f70;margin-top:6px">Кампания · осень</div>
+      <div class="feedcard"><div class="th" style="background:linear-gradient(135deg,#EFCB74,#E0B054)"></div><div><div class="t1">Hero-визуал</div><div class="t2">Сгенерирован · 08:12</div></div></div>
+      <div class="feedcard"><div class="th" style="background:linear-gradient(135deg,#AECBE3,#8FB4D4)"></div><div><div class="t1">Карусель ×7</div><div class="t2">Сгенерирована · 09:41</div></div></div>
+      <div class="feedcard"><div class="th" style="background:linear-gradient(135deg,#DD5F2E,#C24E22)"></div><div><div class="t1">Видео 15 сек</div><div class="t2">Рендер · вчера</div></div></div>
+    </div>
+  </div>
+</div>
+
+<!-- ============ 5 / WEBSITE ============ -->
+<div class="slide s5" data-document-role="page" data-label="5 Сайт" style="background:var(--beige-2)">
+  <div class="logo">Katya Shalel</div>
+  <div class="counter">5/7</div>
+  <div class="browser">
+    <div class="nav">
+      <span>NOMA</span>
+      <span class="links"><span>Свечи</span><span>Наборы</span><span>О бренде</span></span>
+      <span class="cta">Купить</span>
+    </div>
+    <div class="herotxt">тепло <em>дома</em></div>
+    <div class="hsub">Свечи ручной заливки, три аромата, одна философия, доставка по всему миру</div>
+    <div class="btns"><b class="b1">Выбрать аромат</b><b class="b2">Подобрать набор</b></div>
+  </div>
+  <div class="hand">Спроектировано и собрано Claude</div>
+  <svg class="a" width="120" height="100" viewBox="0 0 120 100"><path class="arrow" d="M104 92 C 88 60, 70 35, 34 10 M34 10 l8 26 M34 10 l26 8"/></svg>
+  <h2>Собери сайт<br><em>без шаблонов</em></h2>
+  <p class="body">От <b>лейаута</b> до анимаций, юзер-флоу и функциональной логики, весь процесс <b>от начала до конца</b> вместо месяцев разработки</p>
+</div>
+
+<!-- ============ 6 / PRODUCT ============ -->
+<div class="slide s6" data-document-role="page" data-label="6 Продукт">
+  <div class="logo">Katya Shalel</div>
+  <div class="counter">6/7</div>
+  <h2>Доведи дизайн<br><em>до продакшена</em></h2>
+  <p class="body">Claude <b>анализирует, оркестрирует и создаёт</b> дизайн продукта до производства, брендбук как фундамент, <b>единый контекст</b> в каждой позиции линейки</p>
+  <div class="hand">Контекст, дизайн и изображения</div>
+  <svg class="a" width="150" height="100" viewBox="0 0 150 100"><path class="arrow" d="M10 14 C 55 45, 90 65, 134 86 M134 86 l-26 -4 M134 86 l-2 -26"/></svg>
+  <div class="row">
+    <div class="pcard" style="height:360px;background:linear-gradient(160deg,#EFCB74,#E0B054)">
+      <span class="tag" style="color:#5C4423">Amber</span><span class="nfc" style="color:#5C4423">)))</span>
+      <div class="chip"></div>
+      <div class="mark" style="color:#3E2E14">NOMA</div>
+    </div>
+    <div class="pcard" style="background:linear-gradient(160deg,#BCD5EA,#9DBEDC)">
+      <span class="tag" style="color:#2F4B63">Sky</span><span class="nfc" style="color:#2F4B63">)))</span>
+      <div class="chip"></div>
+      <div class="mark" style="color:#1F3448">NOMA</div>
+    </div>
+    <div class="pcard" style="height:360px;background:linear-gradient(160deg,#E36A38,#C94E20)">
+      <span class="tag" style="color:#FFE3D2">Terra</span><span class="nfc" style="color:#FFE3D2">)))</span>
+      <div class="chip"></div>
+      <div class="mark" style="color:#FFF4EC">NOMA</div>
+    </div>
+  </div>
+</div>
+
+<!-- ============ 7 / CTA ============ -->
+<div class="slide s7" data-document-role="page" data-label="7 CTA">
+  <div class="logo">Katya Shalel</div>
+  <div class="counter">7/7</div>
+  <div class="ctatxt">
+    Комментируй <span class="word">бренд</span><br>
+    и я пришлю, как<br>
+    использовать Claude <span class="ast">✳</span><br>
+    для твоего бренда
+  </div>
+  <div class="ps">P.S. подпишись на <b>@katya_shalel</b><br>и проверь запросы в директе</div>
+</div>
+
+</body>
+</html>
