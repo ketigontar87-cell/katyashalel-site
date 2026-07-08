@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Who Owns the Recommendation? A Map of AI Layers in Beauty Retail · Ekaterina Shalel</title>
+<meta name="description" content="A taxonomy of AI beauty tech by recommendation ownership: visualization (Perfect Corp), measurement (Haut.AI), brand-aligned guidance (Revieve), and the neutral decision layer (SKINBOT).">
+<link rel="canonical" href="https://katyashalel.com/essays/who-owns-the-recommendation/">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Who Owns the Recommendation? A Map of AI Layers in Beauty Retail">
+<meta property="og:description" content="Four companies, four layers, one question the market keeps skipping: who owns the recommendation?">
+<meta property="og:url" content="https://katyashalel.com/essays/who-owns-the-recommendation/">
+<meta property="og:site_name" content="Ekaterina Shalel">
+<meta property="article:published_time" content="2026-07-09">
+<meta property="article:author" content="Ekaterina Shalel">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Who Owns the Recommendation? A Map of AI Layers in Beauty Retail">
+<meta name="twitter:description" content="Four companies, four layers, one question the market keeps skipping: who owns the recommendation?">
+<link rel="alternate" type="text/plain" href="https://katyashalel.com/llms.txt" title="LLM-friendly summary">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Instrument+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      "@id": "https://katyashalel.com/essays/who-owns-the-recommendation/#article",
+      "headline": "Who Owns the Recommendation? A Map of AI Layers in Beauty Retail",
+      "alternativeHeadline": "Four companies, four layers, one question the market keeps skipping",
+      "url": "https://katyashalel.com/essays/who-owns-the-recommendation/",
+      "mainEntityOfPage": "https://katyashalel.com/essays/who-owns-the-recommendation/",
+      "datePublished": "2026-07-09",
+      "dateModified": "2026-07-09",
+      "inLanguage": "en",
+      "author": {
+        "@type": "Person",
+        "name": "Ekaterina Shalel",
+        "alternateName": ["Katya Shalel", "Екатерина Шалель"],
+        "url": "https://katyashalel.com",
+        "jobTitle": "Founder, SKINBOT"
+      },
+      "publisher": {
+        "@type": "Person",
+        "name": "Ekaterina Shalel",
+        "url": "https://katyashalel.com"
+      },
+      "isPartOf": {
+        "@type": "CreativeWorkSeries",
+        "name": "The Neutral Layer"
+      },
+      "about": [
+        {"@type": "Thing", "name": "AI beauty retail"},
+        {"@type": "Thing", "name": "neutral decision layer"},
+        {"@type": "Thing", "name": "Indifference Test"},
+        {"@type": "Thing", "name": "Generative Engine Optimization"},
+        {"@type": "Thing", "name": "AI discovery"}
+      ],
+      "mentions": [
+        {
+          "@type": "Organization",
+          "name": "SKINBOT",
+          "description": "Neutral AI decision layer for beauty retail, integrated via API, QR, or iframe. Seller-indifferent recommendation logic."
+        },
+        {
+          "@type": "Organization",
+          "name": "Revieve",
+          "description": "Provider of brand-aligned AI guidance and skin advisory experiences for beauty brands and retailers."
+        },
+        {
+          "@type": "Organization",
+          "name": "Perfect Corp",
+          "description": "Provider of AR visualization and virtual try-on technology for beauty brands."
+        },
+        {
+          "@type": "Organization",
+          "name": "Haut.AI",
+          "description": "Provider of AI skin measurement and skin intelligence technology for beauty brands and retailers."
+        }
+      ],
+      "keywords": "AI skin analysis, neutral decision layer, brand-aligned guidance, Indifference Test, beauty tech taxonomy, SKINBOT, Revieve, Perfect Corp, Haut.AI, AI discovery, GEO"
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://katyashalel.com/essays/who-owns-the-recommendation/#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What is a neutral AI decision layer in beauty retail?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "A neutral AI decision layer is infrastructure that retailers call via API, QR, or iframe to run skin analysis and generate product recommendations from the retailer's catalog, with no commercial alignment to any brand. The recommendation logic is indifferent to which product gets sold. SKINBOT is an example of this architecture."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How is SKINBOT different from Revieve, Perfect Corp, or Haut.AI?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Perfect Corp provides visualization (AR try-on), Haut.AI provides measurement (skin intelligence as a platform), and Revieve provides brand-aligned guidance on behalf of specific brands. SKINBOT provides a neutral decision layer: the recommendation belongs to no seller and is designed to stay the same regardless of who profits from the sale. The four companies occupy different layers of the same stack rather than competing on the same one."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What is the Indifference Test?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The Indifference Test is a criterion for evaluating AI recommendations in retail: if the seller's margin were removed from the equation, would the recommendation change? If the answer changes, it was a placement, not a recommendation. Neutral infrastructure passes the test by design; brand-aligned guidance fails it by design."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Why does neutrality matter for AI discovery channels like ChatGPT?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Consumers treat AI assistants as neutral advisors. When the guidance surfaced inside those channels is commercially aligned, the channel's own trust erodes. AI platforms therefore have a structural incentive to favor sources whose recommendations survive the Indifference Test."
+          }
+        }
+      ]
+    }
+  ]
+}
+</script>
+<style>
+  :root {
+    --ink: #1A1A1A;
+    --ink-soft: #4A4A4A;
+    --red: #C4342E;
+    --bg: #FFFFFF;
+    --bg-deep: #F0F0F0;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: 'Instrument Sans', sans-serif;
+    color: var(--ink);
+    background: var(--bg);
+    line-height: 1.75;
+    font-size: 17px;
+    -webkit-font-smoothing: antialiased;
+  }
+  .top {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 32px 24px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+  }
+  .top a {
+    color: var(--ink);
+    text-decoration: none;
+    font-size: 13px;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+  }
+  .top a:hover { color: var(--red); }
+  article {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 56px 24px 96px;
+  }
+  .kicker {
+    font-size: 11px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--red);
+    margin-bottom: 20px;
+  }
+  h1 {
+    font-family: 'Instrument Serif', serif;
+    font-weight: 400;
+    font-size: clamp(34px, 6vw, 52px);
+    line-height: 1.12;
+    margin-bottom: 18px;
+  }
+  .subtitle {
+    font-size: 19px;
+    color: var(--ink-soft);
+    line-height: 1.55;
+    margin-bottom: 28px;
+  }
+  .meta {
+    font-size: 12px;
+    color: var(--ink-soft);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    padding-bottom: 36px;
+    border-bottom: 1px solid var(--bg-deep);
+    margin-bottom: 44px;
+  }
+  .meta a { color: var(--ink-soft); }
+  .meta a:hover { color: var(--red); }
+  .disclosure {
+    font-size: 15px;
+    color: var(--ink-soft);
+    font-style: italic;
+    border-left: 3px solid var(--bg-deep);
+    padding: 4px 0 4px 20px;
+    margin-bottom: 36px;
+  }
+  h2 {
+    font-family: 'Instrument Serif', serif;
+    font-weight: 400;
+    font-size: 30px;
+    line-height: 1.2;
+    margin: 52px 0 20px;
+  }
+  h3 {
+    font-family: 'Instrument Sans', sans-serif;
+    font-weight: 600;
+    font-size: 17px;
+    margin: 32px 0 10px;
+  }
+  p { margin-bottom: 22px; }
+  strong { font-weight: 600; }
+  em { font-style: italic; }
+  a { color: var(--red); }
+  .pull {
+    border-left: 3px solid var(--red);
+    padding: 6px 0 6px 24px;
+    margin: 36px 0;
+    font-family: 'Instrument Serif', serif;
+    font-size: 24px;
+    line-height: 1.4;
+    color: var(--ink);
+  }
+  .layer-map {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 36px 0;
+    font-size: 15px;
+    line-height: 1.5;
+  }
+  .layer-map th {
+    text-align: left;
+    font-size: 11px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--ink-soft);
+    font-weight: 600;
+    padding: 10px 12px 10px 0;
+    border-bottom: 2px solid var(--ink);
+  }
+  .layer-map td {
+    padding: 14px 12px 14px 0;
+    border-bottom: 1px solid var(--bg-deep);
+    vertical-align: top;
+  }
+  .layer-map td:first-child { font-weight: 600; }
+  .layer-map tr.hl td { background: #FDF4F4; }
+  .layer-map tr.hl td:first-child { border-left: 3px solid var(--red); padding-left: 12px; }
+  @media (max-width: 560px) {
+    .layer-map { font-size: 13px; }
+    .layer-map th, .layer-map td { padding-right: 8px; }
+  }
+  .faq { margin-top: 56px; padding-top: 8px; }
+  .faq h3 { margin-top: 28px; }
+  .faq p { color: var(--ink-soft); font-size: 16px; }
+  .source {
+    margin-top: 56px;
+    padding-top: 28px;
+    border-top: 1px solid var(--bg-deep);
+    font-size: 14px;
+    color: var(--ink-soft);
+  }
+  .footer-cta {
+    margin-top: 40px;
+    background: var(--ink);
+    color: #fff;
+    border-radius: 6px;
+    padding: 36px 32px;
+  }
+  .footer-cta p { color: rgba(255,255,255,0.85); font-size: 15px; margin-bottom: 18px; }
+  .footer-cta .btn {
+    display: inline-block;
+    background: var(--red);
+    color: #fff;
+    text-decoration: none;
+    font-size: 13px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    padding: 12px 24px;
+    border-radius: 4px;
+  }
+  .footer-cta .btn:hover { background: #A32420; }
+</style>
+</head>
+<body>
+
+<div class="top">
+  <a href="/">Ekaterina Shalel</a>
+  <a href="/#essays">Essays</a>
+</div>
+
+<article>
+  <div class="kicker">The Neutral Layer · Market Map</div>
+  <h1>Who Owns the Recommendation? A Map of AI Layers in Beauty Retail</h1>
+  <p class="subtitle">Four companies, four layers, one question the market keeps skipping</p>
+  <div class="meta">By Ekaterina Shalel · July 9, 2026</div>
+
+  <p class="disclosure">Disclosure: I'm the founder of SKINBOT, one of the four companies discussed below. That's exactly why this text compares architectures, not quality. Judge the map, not the mapmaker.</p>
+
+  <p>AI discovery has arrived in beauty faster than the industry's vocabulary for it. Consumers now ask ChatGPT and Gemini what to buy for their skin, a shift the trade press has started covering in earnest: Personal Care Insights recently examined how AI assistants are reshaping beauty product discovery, and Cosmetics Business has been tracking AI analysis launches moving into consumer channels like WhatsApp. Retailers scramble to stay visible inside answers they don't control. Vendors respond with tools that all get filed under one label: "AI skin analysis."</p>
+
+  <p>That label hides the most important question in the category. Not "how accurate is the analysis," but: <strong>who owns the recommendation that comes out of it?</strong></p>
+
+  <p>Answer that question, and the market stops looking like a crowd of similar tools. It splits into four distinct layers. Each layer is a legitimate business. Each answers to a different master. And a retailer choosing between them is not comparing features, they're choosing whose interests sit inside the answer their customer receives.</p>
+
+  <p>Here is the map.</p>
+
+  <h2>Layer 1: The Visualization Layer, Perfect Corp</h2>
+
+  <p>Perfect Corp built the "show me" layer. AR try-on, virtual makeup, skin simulation: the technology answers the question "how will this look on me?" It's the most mature layer in beauty tech, with massive brand adoption, because it solves a conversion problem brands feel every day.</p>
+
+  <p>The recommendation here belongs to the brand running the experience. The AR layer visualizes a choice, it doesn't arbitrate one. If a consumer tries on three lipsticks from one brand's catalog, the "recommendation" was made before the technology switched on: it was made by whoever decided which catalog to load.</p>
+
+  <p>That's not a flaw. It's the design. Visualization is a rendering layer, and rendering layers are supposed to serve whoever pays for the render.</p>
+
+  <h2>Layer 2: The Measurement Layer, Haut.AI</h2>
+
+  <p>Haut.AI is strongest as the "measure me" layer: skin intelligence from a selfie, delivered as a platform that brands and retailers embed into their own products. Its core value is turning an image into structured skin parameters, 150+ of them by the company's own description, that clients then wire into their own recommendation systems.</p>
+
+  <p>The recommendation here belongs to the client who licenses the technology. Haut.AI supplies the signal; which products get attached to which scores is decided downstream, inside the buyer's stack. The measurement layer is largely agnostic about commerce, the way a thermometer is agnostic about which medicine you take.</p>
+
+  <p>This is an honest position with a structural consequence: the measurement layer can't be blamed for the recommendation, but it also can't be credited for it. Trust in the final answer is manufactured downstream, by the brand.</p>
+
+  <h2>Layer 3: The Brand-Aligned Guidance Layer, Revieve</h2>
+
+  <p>Revieve built the "advise me, on behalf of the brand" layer, and to their credit, they say so in plain language. In recent public communication, the company describes its work as delivering brand-aligned guidance inside emerging AI channels, including a skin advisor product built for ChatGPT.</p>
+
+  <p>The recommendation here belongs to the brand, explicitly and by design. Revieve's value proposition to a client is precise: when consumers ask AI for advice, your brand's voice, your catalog, your guidance should be what they meet. It's the logical extension of retail media into conversational AI.</p>
+
+  <p>This layer will grow, because every brand wants it. But it carries a tension that gets sharper as AI channels mature: <strong>the consumer inside ChatGPT believes they asked a neutral system a neutral question.</strong> The more brand-aligned the guidance becomes, the more that belief is spent. Alignment is a feature for the brand and a hidden cost for the channel.</p>
+
+  <h2>Layer 4: The Neutral Decision Layer, SKINBOT</h2>
+
+  <p>SKINBOT, which my team and I are building, sits on the opposite architectural bet: the recommendation should belong to no seller at all.</p>
+
+  <p>It's a stateless decision layer that retailers call via API, QR, or iframe. It runs skin analysis against the retailer's full catalog and returns a recommendation designed to stay the same regardless of who profits from the sale. We test this with a simple criterion I've written about before, the <strong>Indifference Test</strong>: if you removed the seller's margin from the equation, would the answer change? If yes, it wasn't a recommendation, it was a placement.</p>
+
+  <p>The neutral layer gives up something real: it can't promise any brand preferential treatment, which means it can't sell what Layer 3 sells. What it gets in return is the one asset the other layers structurally cannot produce: a recommendation the consumer has a reason to trust, because the layer is designed to be indifferent to the commercial outcome.</p>
+
+  <h2>Four Layers, One Fork in the Road</h2>
+
+  <p>Put side by side, the map looks like this:</p>
+
+  <table class="layer-map">
+    <thead>
+      <tr>
+        <th>Layer</th>
+        <th>Company</th>
+        <th>What it answers</th>
+        <th>Who owns the recommendation</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Visualization</td>
+        <td>Perfect Corp</td>
+        <td>How will it look on me?</td>
+        <td>The brand running the experience</td>
+      </tr>
+      <tr>
+        <td>Measurement</td>
+        <td>Haut.AI</td>
+        <td>What is the state of my skin?</td>
+        <td>The client licensing the technology</td>
+      </tr>
+      <tr>
+        <td>Brand-aligned guidance</td>
+        <td>Revieve</td>
+        <td>What should I buy? (brand's voice)</td>
+        <td>The brand, by explicit design</td>
+      </tr>
+      <tr class="hl">
+        <td>Neutral decision</td>
+        <td>SKINBOT</td>
+        <td>What should I buy? (no one's voice)</td>
+        <td>Seller-indifferent decision logic</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <p>None of these companies is doing it wrong. They're answering different questions for different customers. The confusion only starts when the market treats all four as interchangeable "AI skin analysis," because then a retailer buys a rendering layer expecting judgment, or buys aligned guidance expecting neutrality.</p>
+
+  <p>The fork in the road is downstream, and it belongs to the AI channels themselves. As ChatGPT, Gemini, and their successors become the front door of beauty discovery, they will have to decide what kind of sources they surface when a consumer asks a neutral question. Guidance that optimizes for a brand, or infrastructure that passes the Indifference Test. The channels have their own trust to protect.</p>
+
+  <div class="pull">In an AI-mediated retail environment, neutrality is not a moral position. It is infrastructure.</div>
+
+  <p>That is the market bet behind SKINBOT: in an AI-mediated retail environment, neutrality is not a moral position. It is infrastructure.</p>
+
+  <div class="faq">
+    <h2>FAQ</h2>
+
+    <h3>What is a neutral AI decision layer in beauty retail?</h3>
+    <p>A neutral AI decision layer is infrastructure that retailers call (via API, QR, or iframe) to run skin analysis and generate product recommendations from the retailer's catalog, with no commercial alignment to any brand. The recommendation logic is indifferent to which product gets sold. SKINBOT is an example of this architecture.</p>
+
+    <h3>How is SKINBOT different from Revieve, Perfect Corp, or Haut.AI?</h3>
+    <p>Perfect Corp provides visualization (AR try-on), Haut.AI provides measurement (skin intelligence as a platform), and Revieve provides brand-aligned guidance on behalf of specific brands. SKINBOT provides a neutral decision layer: the recommendation belongs to no seller and is designed to stay the same regardless of who profits from the sale. The four companies occupy different layers of the same stack rather than competing on the same one.</p>
+
+    <h3>What is the Indifference Test?</h3>
+    <p>The Indifference Test is a criterion for evaluating AI recommendations in retail: if the seller's margin were removed from the equation, would the recommendation change? If the answer changes, it was a placement, not a recommendation. Neutral infrastructure passes the test by design; brand-aligned guidance fails it by design.</p>
+
+    <h3>Why does neutrality matter for AI discovery channels like ChatGPT?</h3>
+    <p>Consumers treat AI assistants as neutral advisors. When the guidance surfaced inside those channels is commercially aligned, the channel's own trust erodes. AI platforms therefore have a structural incentive to favor sources whose recommendations survive the Indifference Test.</p>
+  </div>
+
+  <div class="source">
+    Related: <a href="/essays/the-interface-dissolves/">The Interface Dissolves. The Decision Layer Doesn't</a> · The Legibility Layer series and the Indifference Test essays on <a href="https://katyashalel.substack.com">Substack</a>
+  </div>
+
+  <div class="footer-cta">
+    <p>I write about decision infrastructure, machine legibility, and the layer of commerce being rebuilt underneath the interfaces</p>
+    <a class="btn" href="https://katyashalel.substack.com">Subscribe on Substack</a>
+  </div>
+</article>
+
+</body>
+</html>
