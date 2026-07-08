@@ -27,7 +27,7 @@ body{background:#141210;display:flex;flex-direction:column;align-items:center;ga
 .bar .st{color:#CDB8A4;font:500 26px 'Inter Tight';align-self:center}
 .dl{position:absolute;top:56px;left:56px;z-index:99;font:700 26px 'Inter Tight';background:#DF5A2B;color:#FDFBF7;border:0;border-radius:40px;padding:16px 30px;cursor:pointer}
 </style></head><body>
-<div class="bar"><button onclick="dlAll()">Скачать все 7 PNG</button><span class="st" id="st">Дождись загрузки фото, потом жми</span></div>
+<div class="bar"><button onclick="dlAll()">Скачать все 7 PNG</button><span class="st" id="st">Дождись фото, жми, картинки появятся вверху</span></div>
 <div class="slide" data-document-role="page" data-label="1">
 <img class="ph" crossorigin="anonymous" style="inset:0;width:100%;height:100%" src="/api/img?u=https%3A%2F%2Fd8j0ntlcm91z4.cloudfront.net%2Fuser_3G7eLtlI2FRc56F1KISDHpMfrwV%2Fhf_20260708_150417_31b650b0-273f-46f0-a44d-0bfbce126810.png">
 <div style="position:absolute;inset:0;background:linear-gradient(180deg,rgba(20,12,6,.10),rgba(20,12,6,0) 32%,rgba(20,12,6,0) 48%,rgba(20,12,6,.46))"></div>
@@ -129,6 +129,7 @@ body{background:#141210;display:flex;flex-direction:column;align-items:center;ga
 
 <script>
 const slides=[...document.querySelectorAll('.slide')];
+const isIOS=/iPad|iPhone|iPod/.test(navigator.userAgent);
 slides.forEach((s,i)=>{
   const b=document.createElement('button');b.className='dl';b.textContent='PNG '+(i+1);
   b.onclick=()=>dlOne(i);s.appendChild(b);
@@ -137,25 +138,50 @@ async function shoot(i){
   const s=slides[i];
   const btn=s.querySelector('.dl');btn.style.visibility='hidden';
   await document.fonts.ready;
-  const url=await htmlToImage.toPng(s,{width:1080,height:1350,pixelRatio:1,cacheBust:true});
+  // двойной прогон: Safari иногда отдаёт пустой первый рендер
+  await htmlToImage.toPng(s,{width:1080,height:1350,pixelRatio:1});
+  const url=await htmlToImage.toPng(s,{width:1080,height:1350,pixelRatio:1});
   btn.style.visibility='visible';
   return url;
 }
-function save(url,name){
-  const a=document.createElement('a');a.href=url;a.download=name;document.body.appendChild(a);a.click();a.remove();
+function showResult(url,i){
+  let g=document.getElementById('gallery');
+  if(!g){
+    g=document.createElement('div');g.id='gallery';
+    g.style.cssText='background:#1d1a17;padding:30px;display:flex;flex-direction:column;gap:30px;align-items:center;width:100%';
+    const h=document.createElement('div');
+    h.style.cssText="color:#F4C98B;font:700 34px 'Inter Tight'";
+    h.textContent='Готовые PNG: зажми картинку → Сохранить в Фото';
+    g.appendChild(h);
+    document.body.insertBefore(g,document.querySelector('.slide'));
+  }
+  const wrap=document.createElement('div');
+  wrap.style.cssText='display:flex;flex-direction:column;gap:10px;align-items:center';
+  const cap=document.createElement('div');
+  cap.style.cssText="color:#CDB8A4;font:600 26px 'Inter Tight'";
+  cap.textContent='Слайд '+(i+1);
+  const img=document.createElement('img');
+  img.src=url;img.style.cssText='width:1080px;max-width:100%;border:2px solid #DF5A2B';
+  wrap.appendChild(cap);wrap.appendChild(img);g.appendChild(wrap);
+  if(!isIOS){
+    const a=document.createElement('a');a.href=url;a.download='slide-'+(i+1)+'.png';
+    document.body.appendChild(a);a.click();a.remove();
+  }
 }
 async function dlOne(i){
-  document.getElementById('st').textContent='Рендер слайда '+(i+1)+'...';
-  try{ save(await shoot(i),'slide-'+(i+1)+'.png'); document.getElementById('st').textContent='Слайд '+(i+1)+' скачан'; }
-  catch(e){ document.getElementById('st').textContent='Ошибка: '+e.message; }
+  const st=document.getElementById('st');
+  st.textContent='Рендер слайда '+(i+1)+'...';
+  try{ showResult(await shoot(i),i); st.textContent='Слайд '+(i+1)+' готов, он появился вверху страницы'; window.scrollTo({top:0,behavior:'smooth'}); }
+  catch(e){ st.textContent='Ошибка: '+e.message; }
 }
 async function dlAll(){
+  const st=document.getElementById('st');
   for(let i=0;i<7;i++){
-    document.getElementById('st').textContent='Рендер '+(i+1)+' из 7...';
-    try{ save(await shoot(i),'slide-'+(i+1)+'.png'); }
-    catch(e){ document.getElementById('st').textContent='Ошибка на слайде '+(i+1)+': '+e.message; return; }
-    await new Promise(r=>setTimeout(r,600));
+    st.textContent='Рендер '+(i+1)+' из 7...';
+    try{ showResult(await shoot(i),i); }
+    catch(e){ st.textContent='Ошибка на слайде '+(i+1)+': '+e.message; return; }
   }
-  document.getElementById('st').textContent='Все 7 скачаны';
+  st.textContent='Все 7 готовы и лежат вверху страницы';
+  window.scrollTo({top:0,behavior:'smooth'});
 }
 </script></body></html>
