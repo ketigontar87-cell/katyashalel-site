@@ -48,7 +48,7 @@ section b{color:var(--ink)}
 .wl-form button{background:var(--red);color:#FFF;border:none;font-family:inherit;font-size:11.5px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;padding:15px 26px;cursor:pointer}
 footer{padding:30px 20px;text-align:center;font-size:11px;letter-spacing:.16em;text-transform:uppercase;font-weight:600;color:#8B8B8B}
 footer a{color:var(--ink);text-decoration:none}
-</style>
+.tg{background:linear-gradient(168deg,#C93A33,#9E211C);color:var(--white);padding:56px 22px;text-align:center}.tg h2{font-family:'Instrument Serif',serif;font-weight:400;font-size:clamp(28px,6.5vw,42px);line-height:1.05}.tg p{margin:14px auto 0;color:#FFE3E1;font-size:15.5px;max-width:520px}.tg-btn{display:inline-block;margin-top:26px;background:var(--white);color:var(--red-deep);text-decoration:none;font-size:11.5px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;padding:15px 28px}.tg-btn:active{opacity:.85}</style>
 </head>
 <body>
 <div class="top"><a href="/ru/">Katya Shalel</a><span>Бесплатный гайд</span></div>
@@ -125,7 +125,12 @@ footer a{color:var(--ink);text-decoration:none}
 <div class="wl"><div class="wrap"><h2>Дальше глубже</h2><p>Это входной гайд серии. Как собрать из этих слов работающую систему: курс по листу ожидания</p>
 <form class="wl-form" onsubmit="return wlSubmit(event,'wl-email')"><input type="email" id="wl-email" required placeholder="Ваш email"><button type="submit">В лист ожидания</button></form>
 <p style="font-size:12.5px;margin-top:16px;color:#9A9A9A">Первый поток · лист закрывается 6 августа</p>
-<p style="font-size:12.5px;margin-top:10px;color:#9A9A9A">Живая лента и разборы в Telegram: <a href="https://t.me/shalel_notes" target="_blank" rel="noopener" style="color:#EDEDED">@shalel_notes</a></p></div></div>
+</div></div>
+<div class="tg"><div class="wrap">
+<h2>Мастерская в Telegram</h2>
+<p>Здесь витрина, там процесс: разборы длиннее формата ленты, черновики решений и то, как AI-системы собираются руками</p>
+<a class="tg-btn" href="https://t.me/shalel_notes" target="_blank" rel="noopener">Подписаться · @shalel_notes</a>
+</div></div>
 <footer><a href="/ru/">katyashalel.com</a></footer><script>
 function copyP(btn){var t=btn.parentNode.querySelector('.p-body').innerText;navigator.clipboard.writeText(t).then(function(){var o=btn.textContent;btn.textContent='Скопировано';setTimeout(function(){btn.textContent=o},1400)})}
 function wlSubmit(e,i){e.preventDefault();var f=e.target,b=f.querySelector('button'),inp=document.getElementById(i),em=inp.value.trim();if(!em)return false;b.disabled=true;var o=b.textContent;b.textContent='...';fetch('https://formsubmit.co/ajax/k.skinbot@gmail.com',{method:'POST',headers:{'Content-Type':'application/json','Accept':'application/json'},body:JSON.stringify({email:em,_subject:'Лист ожидания курса',page:location.pathname,_template:'table',_captcha:'false'})}).then(function(r){if(!r.ok)throw 0;return r.json()}).then(function(){b.textContent='Вы в листе';inp.value=''}).catch(function(){b.textContent='Ошибка, ещё раз';b.disabled=false});return false}
