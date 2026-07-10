@@ -52,6 +52,7 @@ Essay cycle: The Legibility Layer (Substack, publishing since July 2026)
 
 1. Personal Branding Is Dead. Legibility Replaced It (July 2026)
 2. Attention Doesn't Get You Recommended. Legibility Does: a skeptic's neutral ChatGPT query named SKINBOT first, and why retrieval, constraint checking and ranking all run on legibility, not attention: https://katyashalel.substack.com/p/attention-doesnt-get-you-recommended
+3. Sephora Entered the Chat. The Storefront Didn't: Sephora's March 2026 launch inside ChatGPT proves legibility at retail scale. Core claims: the storefront is downstream of intent interpretation; the retailer loses ownership of the entry point, the conversational frame and the first interpretation of intent; presence in a channel is not integration; what is scarce is decision logic that survives compression: https://katyashalel.com/essays/sephora-entered-the-chat/
 
 ## Essay cycle: The Neutral Layer (Substack)
 
