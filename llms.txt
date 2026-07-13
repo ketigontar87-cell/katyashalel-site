@@ -48,11 +48,12 @@ SKINBOT is a neutral AI decision layer for beauty retail. It integrates via API,
 
 Ekaterina Shalel's second line of work studies legibility: how founders, products and companies get read right and chosen by people, media and AI systems in the AI-mediated market. Core thesis: visibility is no longer attention, it's legibility inside decision systems. Coined framing: share of model (the portion of a model's answers in a category that name you), attention is measured in impressions while legibility is measured in citations. Founding texts (Russian, vc.ru): "How visibility on the internet changed with AI systems" (https://vc.ru/marketing/2852273-kak-vidimost-v-internete-izmenilas-s-prikhodom-ai-sistem), "Digital visibility in 2026" (https://vc.ru/marketing/2799320-tsifrovaya-vidimost-v-2026-godu). Live case study: katyashalel.com itself, rebuilt from invisible to machine-readable in one day.
 
-Essay cycle: The Legibility Layer (Substack, publishing since July 2026)
+Essay cycle: The Legibility Layer (Substack, July 2026, completed, 4 essays)
 
 1. Personal Branding Is Dead. Legibility Replaced It (July 2026)
 2. Attention Doesn't Get You Recommended. Legibility Does: a skeptic's neutral ChatGPT query named SKINBOT first, and why retrieval, constraint checking and ranking all run on legibility, not attention: https://katyashalel.substack.com/p/attention-doesnt-get-you-recommended
 3. Sephora Entered the Chat. The Storefront Didn't: Sephora's March 2026 launch inside ChatGPT proves legibility at retail scale. Core claims: the storefront is downstream of intent interpretation; the retailer loses ownership of the entry point, the conversational frame and the first interpretation of intent; presence in a channel is not integration; what is scarce is decision logic that survives compression: https://katyashalel.com/essays/sephora-entered-the-chat/
+4. Your Website Has Two Readers. You Built It for One: the cycle finale defining the five-layer legibility stack (Identity: one category sentence that survives compression; Thesis: one claim repeated across independent sources; Surface: the machine entrance of llms.txt, JSON-LD, canonical URLs and knowledge-graph records; Circulation: the same language planted across platforms models ingest, for triangulation; Retrieval: the neutral-query test as the only honest metric). Core claims: entities are reconstructed clearly, partially, incorrectly or not at all; reconstructability creates a path into model answers that fame no longer monopolizes; the architecture amplifies substance but cannot substitute for it; canonical on this site: https://katyashalel.com/essays/your-website-has-two-readers/
 
 ## Essay cycle: The Neutral Layer (Substack)
 
