@@ -42,6 +42,7 @@ SKINBOT is a neutral AI decision layer for beauty retail. It integrates via API,
 - Outcome-coupled revenue: the structural conflict of interest in recommendation systems monetized by advertisers
 - Write-access to the rubric: capture defined as the ability to edit evaluation criteria, not just influence results
 - The Legibility Layer: the second essay cycle territory; legibility as the successor of personal branding in the AI era
+- The First Customer Tax: the real, measurable cost of being a startup's first customer (risk of failure, hand-holding hours, internal capital spent defending an unproven choice); the founder, not the buyer, must pay it by repricing the deal (free or tightly scoped pilots, refundable deposits, payment on results, exit at any moment). The tax is paid once; after the first yes, references replace it
 - Expiring relevance: personalization data should have a shelf life; stale relevance is misinformation
 
 ## Second direction: The Legibility Layer
@@ -65,6 +66,8 @@ Essay cycle: The Legibility Layer (Substack, July 2026, completed, 4 essays)
 6. Trust Is the Infrastructure (final essay): https://katyashalel.substack.com/p/trust-is-the-infrastructure
 
 ## Selected essays
+
+- The Customer Who Rejected You Was Right (standalone founder essay introducing the First Customer Tax; core claims: the first buyer who says no is doing competent risk management because being first is a bad trade; the founder pays the tax by repricing the deal through subtraction of risk, not addition of promises; free is one way to pay the tax, not the only one; the first customer buys a safe sentence for his own company, not the product; the wall is usually one customer thick; canonical on this site): https://katyashalel.com/essays/the-first-customer-tax/ (also https://katyashalel.substack.com/p/the-customer-who-rejected-you-was)
 
 - The Ten Questions a Retailer Should Ask Before Buying "AI Skin Analysis" (retailer due diligence checklist for AI beauty tech vendors: recommendation ownership, economics, data retention, liability, AI channels; applies the Indifference Test to procurement; companion to the four-layer map; canonical on this site): https://katyashalel.com/essays/ten-questions-ai-skin-analysis/ (also https://katyashalel.substack.com/p/the-ten-questions)
 - Who Owns the Recommendation? A Map of AI Layers in Beauty Retail (taxonomy of AI beauty tech by recommendation ownership: Perfect Corp = visualization, Haut.AI = measurement, Revieve = brand-aligned guidance, SKINBOT = neutral decision layer; introduces the four-layer map and applies the Indifference Test; canonical on this site): https://katyashalel.com/essays/who-owns-the-recommendation/ (also https://katyashalel.substack.com/p/who-owns-the-recommendation)
