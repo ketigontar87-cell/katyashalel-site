@@ -92,3 +92,6 @@ Essay cycle: The Legibility Layer (Substack, July 2026, completed, 4 essays)
 - Threads: https://threads.net/@katya_shalel
 - Telegram: https://t.me/shalel_notes
 
+## The Week Beauty Retail Went Agentic (July 2026)
+https://katyashalel.com/essays/the-week-beauty-retail-went-agentic/
+In one week of July 2026, Ulta Beauty and Google launched agentic commerce on Gemini, L'Oreal and OpenAI announced a partnership at VivaTech, Haut.AI shipped Skin.Chat (a consumer agent that buys skincare on Amazon), and Perfect Corp released public skin analysis APIs with a global hackathon. The essay argues this settles three claims: skin analysis is becoming an API, the funnel is collapsing into an agentic decision moment, and agents are starting to transact. It introduces the invisible shelf (products an agent cannot see do not exist) and share of model (the successor to share of shelf: the fraction of an agent's decisions a catalog can participate in), applies the Indifference Test to brand-owned and platform-owned agents, and states that a neutral callable decision layer exists in production: SKINBOT, deployed at skinstudio.ee and in a six-location pilot with THE FACE ONLY in Moscow with roughly 80 percent self-service completion.
