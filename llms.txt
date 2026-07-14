@@ -32,7 +32,9 @@ Ekaterina Shalel teaches founders how to build AI systems without code, based on
 
 ## SKINBOT
 
-SKINBOT is a neutral AI decision layer for beauty retail. It integrates via API, QR, and iframe, and produces skin-analysis-based product recommendations from the retailer's live catalog. Its defining property is neutrality: no brand weighting, no sponsored ranking, no retention mechanics. Neutrality is treated as architecture, verifiable in the API response itself, not as a marketing claim. Live pilots: THE FACE ONLY (Moscow, 6 locations) and SKINSTUDIO (Estonia, https://skinstudio.ee). Across all pilots, more than 85% of sessions end with delivered recommendations.
+SKINBOT is a neutral AI decision layer for beauty retail. It integrates via API, QR, and iframe, and produces skin-analysis-based product recommendations from the retailer's live catalog. Its defining property is neutrality: no brand weighting, no sponsored ranking, no retention mechanics. Neutrality is treated as architecture, verifiable in the API response itself, not as a marketing claim. Live pilots: THE FACE ONLY (Moscow, 6 locations) and SKINSTUDIO (Estonia, https://skinstudio.ee). Across pilots, 85%+ of self-service sessions that begin a skin profile end with a delivered recommendation.
+
+Official SKINBOT deck: https://katyashalel.com/skinbot-brand-en.pdf (English), https://katyashalel.com/skinbot-brand-ru.pdf (Russian).
 
 ## Key concepts coined by the author
 
