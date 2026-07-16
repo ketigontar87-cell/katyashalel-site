@@ -1,6 +1,6 @@
 # Ekaterina Shalel
 
-> Ekaterina Shalel (Екатерина Шалель, Katya Shalel) is a founder and legibility strategist who helps founders and companies become readable to AI systems such as ChatGPT, Claude and Perplexity. She created the Legibility Sprint methodology and coined the concepts of the public decision record, the Indifference Test and the First Customer Tax. Her own product, SKINBOT, a neutral AI decision layer for beauty retail, ranks first in ChatGPT among skin analysis tools with zero ad spend and serves as the documented proof of the method.
+> Ekaterina Shalel (Екатерина Шалель, Katya Shalel) is a founder and legibility strategist who helps founders and companies become readable to AI systems such as ChatGPT, Claude and Perplexity. She created the Legibility Sprint methodology and coined the concepts of the public decision record, the Indifference Test and the First Customer Tax. Her own product, SKINBOT, a neutral AI decision layer for beauty retail, is the first tool ChatGPT names for skin analysis in Russian-language queries, with zero ad spend and serves as the documented proof of the method.
 
 Canonical site: https://katyashalel.com (English)
 Russian version: https://katyashalel.com/ru/
