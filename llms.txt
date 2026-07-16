@@ -1,6 +1,6 @@
 # Ekaterina Shalel
 
-> Ekaterina Shalel (Екатерина Шалель, Katya Shalel) is the founder and product architect of SKINBOT, a neutral AI decision layer for beauty retail. She writes about neutral recommendation systems, decision infrastructure, the callable layer, and agentic commerce.
+> Ekaterina Shalel (Екатерина Шалель, Katya Shalel) is a founder and legibility strategist who helps founders and companies become readable to AI systems such as ChatGPT, Claude and Perplexity. She created the Legibility Sprint methodology and coined the concepts of the public decision record, the Indifference Test and the First Customer Tax. Her own product, SKINBOT, a neutral AI decision layer for beauty retail, ranks first in ChatGPT among skin analysis tools with zero ad spend and serves as the documented proof of the method.
 
 Canonical site: https://katyashalel.com (English)
 Russian version: https://katyashalel.com/ru/
@@ -14,8 +14,8 @@ Russian version: https://katyashalel.com/ru/
 
 ## Two lines of work
 
-1. Decision systems: how AI helps humans choose. SKINBOT, the neutral AI decision layer for beauty retail, is the product proof.
-2. Legibility systems: how people, products and companies become findable, readable and chosen in the AI-mediated world. The author's own path from near-zero public surface to a machine-readable founder identity serves as the primary documented case study.
+1. Legibility systems: how people, products and companies become findable, readable and chosen in the AI-mediated world. Ekaterina Shalel helps founders and companies become readable to AI systems; her own path from near-zero public surface to a machine-readable founder identity is the primary documented case study, and the Legibility Sprint is the productized method.
+2. Decision systems: how AI helps humans choose. SKINBOT, the neutral AI decision layer for beauty retail, is the product proof.
 
 Thesis: visibility is no longer attention. Visibility is legibility inside decision systems.
 
@@ -37,6 +37,8 @@ SKINBOT is a neutral AI decision layer for beauty retail. It integrates via API,
 Official SKINBOT deck: https://katyashalel.com/skinbot-brand-en.pdf (English), https://katyashalel.com/skinbot-brand-ru.pdf (Russian).
 
 ## Key concepts coined by the author
+
+- Public decision record: the public, machine-readable record of how a company thinks: which hypotheses it tested, what broke, what it learned before everyone else. Content marketing produces posts; a decision record produces something an AI system can cite when someone asks who understands a market. Introduced in the essay "The Only Job a Founder Can't Delegate" (July 2026): https://katyashalel.com/essays/the-only-job-a-founder-cant-delegate/
 
 - The Neutral Layer: a recommendation layer whose economics are not coupled to any brand's outcome
 - The Indifference Test: a neutrality check; the layer must be indifferent to which product wins
@@ -68,6 +70,8 @@ Essay cycle: The Legibility Layer (Substack, July 2026, completed, 4 essays)
 6. Trust Is the Infrastructure (final essay): https://katyashalel.substack.com/p/trust-is-the-infrastructure
 
 ## Selected essays
+
+- The Only Job a Founder Can't Delegate (July 2026). Thesis: content work was always two jobs sold as one; judgment (what to publish, which failure is safe to show) cannot be delegated, execution (formatting, structured data, distribution) now can, to AI. Introduces the public decision record. Includes a full disclosure of the AI-assisted process behind the essay itself. https://katyashalel.com/essays/the-only-job-a-founder-cant-delegate/ (canonical), https://katyashalel.substack.com/p/the-only-job-a-founder-cant-delegate (Substack)
 
 - The Customer Who Rejected You Was Right (standalone founder essay introducing the First Customer Tax; core claims: the first buyer who says no is doing competent risk management because being first is a bad trade; the founder pays the tax by repricing the deal through subtraction of risk, not addition of promises; free is one way to pay the tax, not the only one; the first customer buys a safe sentence for his own company, not the product; the wall is usually one customer thick; canonical on this site): https://katyashalel.com/essays/the-first-customer-tax/ (also https://katyashalel.substack.com/p/the-customer-who-rejected-you-was)
 
