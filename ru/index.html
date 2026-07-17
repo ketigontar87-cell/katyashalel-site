@@ -1191,8 +1191,43 @@ header{background:var(--cream);padding:22px 16px 18px;text-align:center;border-b
 .lz .sprint-actions { display:flex;gap:14px;justify-content:center;flex-wrap:wrap;margin-top:6px }
 .lz .sprint-divider { margin:48px auto 30px;max-width:420px;border-top:1px solid rgba(255,255,255,.28) }
 .lz .sprint-course-label { font-size:11px;font-weight:600;letter-spacing:.22em;text-transform:uppercase;opacity:.9 }
+.lz .term-cards { display:grid;grid-template-columns:repeat(2,1fr);gap:18px;margin-top:54px }
+.lz .term-card { display:block;border-radius:14px;overflow:hidden;box-shadow:0 18px 44px rgba(0,0,0,.35);transition:transform .18s ease }
+.lz .term-card:hover { transform:translateY(-4px) }
+.lz .term-card img { display:block;width:100%;height:auto }
+@media (min-width:760px){ .lz .term-cards { grid-template-columns:repeat(4,1fr);gap:16px } }
 @media (max-width:760px){.lz .hero-photos{height:38vh;min-height:260px}}
 </style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "DefinedTermSet",
+  "name": "Legibility vocabulary by Ekaterina Shalel",
+  "url": "https://katyashalel.com/#legibility",
+  "hasDefinedTerm": [
+    {
+      "@type": "DefinedTerm",
+      "name": "Indifference Test",
+      "description": "Neutrality you can verify: the system shouldn't care which brand wins the recommendation. Coined by Ekaterina Shalel in The Neutral Layer essay series."
+    },
+    {
+      "@type": "DefinedTerm",
+      "name": "Public Decision Record",
+      "description": "A public trail of a founder's judgment calls: the one part of a founder's job that doesn't delegate. Coined by Ekaterina Shalel."
+    },
+    {
+      "@type": "DefinedTerm",
+      "name": "First Customer Tax",
+      "description": "The first customer is mathematically right to say no, and the fix is repricing the deal, not persuasion. Coined by Ekaterina Shalel."
+    },
+    {
+      "@type": "DefinedTerm",
+      "name": "Share of Model",
+      "description": "Not share of voice but share of model: how much of a person or company an AI model can reconstruct from public sources. Coined by Ekaterina Shalel in The Legibility Layer essay series."
+    }
+  ]
+}
+</script>
 </head>
 <body>
 <div id="progress" aria-hidden="true"></div>
@@ -1238,27 +1273,11 @@ header{background:var(--cream);padding:22px 16px 18px;text-align:center;border-b
   <div class="wrap">
     <span class="eyebrow">Мой словарь</span>
     <h2>Термины, которые <span class="script">я ввела</span></h2>
-    <div class="polaroids">
-      <a class="pol" href="https://katyashalel.substack.com/p/neutrality-is-an-architecture-not" target="_blank" rel="noopener">
-        <div class="pol-img"><span class="pol-num">I</span></div>
-        <h3>Indifference Test</h3>
-        <p>Нейтральность, которую можно проверить: системе должно быть всё равно, какой бренд выиграет рекомендацию</p>
-      <span class="pol-status">Из цикла The Neutral Layer</span></a>
-      <a class="pol" href="/essays/the-only-job-a-founder-cant-delegate/">
-        <div class="pol-img"><span class="pol-num">II</span></div>
-        <h3>Public Decision Record</h3>
-        <p>Публичный след ваших решений: единственная часть работы фаундера, которая не делегируется</p>
-      <span class="pol-status">Читать эссе</span></a>
-      <a class="pol" href="/essays/the-first-customer-tax/">
-        <div class="pol-img"><span class="pol-num">III</span></div>
-        <h3>First Customer Tax</h3>
-        <p>Первый клиент математически прав, отказывая вам, и решение не в уговорах, а в переоценке сделки</p>
-      <span class="pol-status">Читать эссе</span></a>
-      <a class="pol" href="/essays/your-website-has-two-readers/">
-        <div class="pol-img"><span class="pol-num">IV</span></div>
-        <h3>Share of Model</h3>
-        <p>Не доля голоса, а доля модели: сколько вас AI может восстановить из открытых источников</p>
-      <span class="pol-status">Из цикла The Legibility Layer</span></a>
+    <div class="term-cards">
+      <a class="term-card" href="https://katyashalel.substack.com/p/neutrality-is-an-architecture-not" target="_blank" rel="noopener"><img src="/images/terms/term-indifference-test.jpg" alt="Indifference Test. Нейтральность, которую можно проверить: системе должно быть всё равно, какой бренд выиграет рекомендацию. Из цикла The Neutral Layer" loading="lazy"></a>
+      <a class="term-card" href="/essays/the-only-job-a-founder-cant-delegate/"><img src="/images/terms/term-public-decision-record.jpg" alt="Public Decision Record. Публичный след ваших решений: единственная часть работы фаундера, которая не делегируется. Читать эссе" loading="lazy"></a>
+      <a class="term-card" href="/essays/the-first-customer-tax/"><img src="/images/terms/term-first-customer-tax.jpg" alt="First Customer Tax. Первый клиент математически прав, отказывая вам, и решение не в уговорах, а в переоценке сделки. Читать эссе" loading="lazy"></a>
+      <a class="term-card" href="/essays/your-website-has-two-readers/"><img src="/images/terms/term-share-of-model.jpg" alt="Share of Model. Не доля голоса, а доля модели: сколько вас AI может восстановить из открытых источников. Из цикла The Legibility Layer" loading="lazy"></a>
     </div>
   </div>
 </section>
