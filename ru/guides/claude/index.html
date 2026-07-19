@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Claude для фаундера · бесплатный урок · Katya Shalel</title>
+<meta name="description" content="Пять задач фаундера в одном окне: контент, аналитика, карусели, презентации, сайт. Готовые промпты, которые можно забрать и использовать сегодня">
+<link rel="canonical" href="https://katyashalel.com/ru/guides/claude/">
+<link rel="alternate" hreflang="ru" href="https://katyashalel.com/ru/guides/claude/">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Claude для фаундера · бесплатный урок">
+<meta property="og:description" content="Пять задач фаундера в одном окне: контент, аналитика, карусели, презентации, сайт. С готовыми промптами">
+<meta property="og:url" content="https://katyashalel.com/ru/guides/claude/">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "HowTo",
+  "name": "Claude для фаундера",
+  "description": "Пять задач фаундера в одном окне: контент, аналитика, карусели, презентации, сайт. С готовыми промптами",
+  "inLanguage": "ru",
+  "url": "https://katyashalel.com/ru/guides/claude/",
+  "author": {
+    "@type": "Person",
+    "name": "Екатерина Шалель",
+    "alternateName": ["Katya Shalel", "Ekaterina Shalel"],
+    "jobTitle": "Founder and legibility strategist",
+    "url": "https://katyashalel.com/",
+    "sameAs": ["https://www.wikidata.org/wiki/Q138801513", "https://katyashalel.substack.com/"],
+    "knowsAbout": ["machine legibility", "AI visibility", "founder visibility", "public decision record"]
+  },
+  "step": [
+    {"@type": "HowToStep", "name": "Контент", "text": "Соберите карту тона и производите посты по ней, а не с чистого листа"},
+    {"@type": "HowToStep", "name": "Анализ", "text": "Отдайте выгрузку ленты на разбор и требуйте назвать, чего в данных не хватает для вывода"},
+    {"@type": "HowToStep", "name": "Карусели", "text": "Разложите одну идею на карточки от хука к действию"},
+    {"@type": "HowToStep", "name": "Презентации", "text": "Соберите дек по правилу один слайд, один тезис, одно доказательство"},
+    {"@type": "HowToStep", "name": "Сайт", "text": "Постройте структуру лендинга и FAQ, который читают и люди, и AI-системы"}
+  ]
+}
+</script>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Instrument+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--red:#C4342E;--red-deep:#A32420;--white:#FFFFFF;--grey:#F0F0F0;--ink:#1A1A1A}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Instrument Sans',sans-serif;background:var(--white);color:var(--ink);line-height:1.65}
+.serif{font-family:'Instrument Serif',serif;font-weight:400}
+.top{background:var(--ink);color:#EDEDED;padding:16px 20px;font-size:12px;letter-spacing:.16em;text-transform:uppercase;font-weight:600;display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
+.top a{color:#FFFFFF;text-decoration:none}
+.top a:hover{color:var(--red)}
+.hero{background:linear-gradient(168deg,#C93A33,#9E211C);color:var(--white);padding:64px 22px}
+.wrap{max-width:640px;margin:0 auto}
+.eyebrow{display:inline-block;background:var(--white);color:var(--red-deep);font-size:10.5px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;padding:7px 12px}
+h1{font-family:'Instrument Serif',serif;font-weight:400;font-size:clamp(38px,9vw,64px);line-height:1.03;margin-top:18px}
+.hero p{margin-top:20px;font-size:17px;max-width:520px;color:rgba(255,255,255,.94)}
+.stepbar{background:var(--red);color:var(--white);padding:20px 22px;margin-top:56px}
+.stepbar .wrap{display:flex;align-items:center;gap:14px}
+.tag{background:var(--white);color:var(--red-deep);font-size:10.5px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;padding:6px 11px;white-space:nowrap}
+.stepbar h2{font-weight:600;text-transform:uppercase;font-size:clamp(17px,4.4vw,24px);letter-spacing:.03em}
+section{padding:44px 22px 8px}
+section p{font-size:16.5px;color:#3D3D3D;max-width:600px}
+section p+p{margin-top:16px}
+section b{color:var(--ink)}
+.prompt{background:var(--ink);color:#F2F2F2;padding:28px 22px;margin:30px 0 8px;position:relative}
+.p-title{font-size:11px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:#B9B9B9;margin-bottom:14px;padding-right:84px}
+.p-body{font-size:15px;line-height:1.7}
+.copy{position:absolute;top:22px;right:18px;background:var(--red);color:#FFF;border:none;font-family:inherit;font-size:10px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;padding:10px 15px;cursor:pointer}
+.copy:active{background:var(--red-deep)}
+.module{border:2px solid var(--ink);padding:24px 20px;margin:0 0 16px;background:var(--grey)}
+.module h3{font-family:'Instrument Serif',serif;font-weight:400;font-size:23px;margin:10px 0 8px}
+.module p{font-size:15px;color:#4A4A4A}
+.next{border:2px solid var(--ink);padding:26px 22px;margin:30px 0 0;background:var(--grey)}
+.next h3{font-family:'Instrument Serif',serif;font-weight:400;font-size:24px;margin-bottom:10px}
+.next a{display:inline-block;margin-top:14px;background:var(--ink);color:#FFF;text-decoration:none;font-size:11px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;padding:14px 22px}
+.wl{background:var(--ink);color:var(--white);padding:64px 22px;text-align:center;margin-top:60px}
+.wl h2{font-family:'Instrument Serif',serif;font-weight:400;font-size:clamp(30px,7vw,46px);line-height:1.05}
+.wl p{margin-top:14px;color:#CFCFCF;font-size:15.5px}
+.wl-form{display:flex;gap:10px;margin:28px auto 0;max-width:460px;flex-wrap:wrap;justify-content:center}
+.wl-form input{flex:1;min-width:210px;padding:15px 16px;border:none;font-family:inherit;font-size:15px}
+.wl-form button{background:var(--red);color:#FFF;border:none;font-family:inherit;font-size:11.5px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;padding:15px 26px;cursor:pointer}
+footer{padding:30px 20px;text-align:center;font-size:11px;letter-spacing:.16em;text-transform:uppercase;font-weight:600;color:#8B8B8B}
+footer a{color:var(--ink);text-decoration:none}
+</style>
+</head>
+<body>
+<div class="top"><a href="/ru/">&larr; на главную</a><span>Katya Shalel</span></div>
+
+<div class="hero"><div class="wrap"><span class="eyebrow">Бесплатный урок</span><h1>Claude для фаундера</h1><p>Пять задач, которые фаундер закрывает в одном окне: контент, аналитика, карусели, презентации, сайт. Ниже промпты, которыми я пользуюсь сама, забирайте и вставляйте как есть</p></div></div>
+
+<section><div class="wrap"><p><b>Почему это важно:</b> фаундер теряет время не на сложных задачах, а на чистом листе. Пост, разбор цифр, структура презентации, тексты для сайта, каждая из этих задач начинается с нуля и съедает по часу. Модель не принимает за вас решения, она убирает чистый лист и возвращает вам роль редактора.</p><p>Правило, на котором держится вся работа ниже: <b>решение остаётся за вами, делегируется исполнение</b>. Поэтому в каждом промпте есть место, где модель обязана показать слабые точки, а не заполнить их красиво.</p></div></section>
+
+<div class="stepbar"><div class="wrap"><span class="tag">Шаг 1</span><h2>Контент: посты и Reels</h2></div></div>
+<section><div class="wrap"><p>Главная ошибка: просить «напиши пост». Получите средний текст, потому что модель не знает, как звучите вы. Сначала соберите карту тона один раз, дальше вставляйте её в начало любой задачи на текст.</p>
+<div class="prompt"><div class="p-title">Промпт · карта тона</div><button class="copy" onclick="copyP(this)">Copy</button><div class="p-body">Вот 5 моих текстов, которые собрали лучший отклик: [вставьте тексты]. Собери карту моего тона: длина фраз, характерная лексика, как я начинаю и как заканчиваю, какие приёмы повторяются, что я не пишу никогда. Верни это одним блоком-инструкцией, который я буду вставлять в начало каждой задачи на текст. Отдельно назови 3 привычки, которые ослабляют мои тексты.</div></div>
+<div class="prompt"><div class="p-title">Промпт · пост</div><button class="copy" onclick="copyP(this)">Copy</button><div class="p-body">[Карта тона]. Тема: [тема]. Площадка: [Instagram, Telegram или LinkedIn]. Напиши пост: первая строка держит внимание без обещаний, дальше одна мысль, один конкретный пример из моей практики, финал с одним действием. Без общих слов и без слов, которые я не смогу подтвердить фактом. Отдельным списком дай 3 варианта первой строки и скажи, какой сильнее и почему.</div></div>
+</div></section>
+
+<div class="stepbar"><div class="wrap"><span class="tag">Шаг 2</span><h2>Анализ: лента и аудитория</h2></div></div>
+<section><div class="wrap"><p>Аналитика в приложении показывает цифры, но не показывает причину. Отдайте выгрузку и требуйте разделять то, что видно в данных, и то, что додумано.</p>
+<div class="prompt"><div class="p-title">Промпт · разбор ленты</div><button class="copy" onclick="copyP(this)">Copy</button><div class="p-body">Вот мои последние 20 публикаций: тема, формат, охват, сохранения, комментарии, дата. [вставьте таблицу]. Найди, что реально даёт результат. Раздели выводы на три группы: подтверждено данными, похоже на закономерность но выборка мала, недостаточно данных чтобы судить. Отдельно выпиши повторяющиеся вопросы из комментариев и преврати их в 5 тем следующих публикаций.</div></div>
+</div></section>
+
+<div class="stepbar"><div class="wrap"><span class="tag">Шаг 3</span><h2>Карусели</h2></div></div>
+<section><div class="wrap"><p>Карусель это не семь картинок, это одна мысль, разложенная на шаги. Модель хорошо держит логику перехода от хука к действию, если задать ей рамку по карточкам.</p>
+<div class="prompt"><div class="p-title">Промпт · карусель</div><button class="copy" onclick="copyP(this)">Copy</button><div class="p-body">Идея: [одна мысль в одном предложении]. Аудитория: [кто]. Разложи на 7 карточек: карточка 1 хук, карточки 2 до 6 по одной мысли каждая, карточка 7 действие. Для каждой карточки дай надзаголовок из одного слова, заголовок до 5 слов и 2 строки текста. Убери всё, что повторяет соседнюю карточку. Проверь финал: он должен звучать как продолжение мысли, а не как реклама.</div></div>
+</div></section>
+
+<div class="stepbar"><div class="wrap"><span class="tag">Шаг 4</span><h2>Презентации</h2></div></div>
+<section><div class="wrap"><p>Слабый дек это красивый дек без доказательств. Правило простое: один слайд, один тезис, одно доказательство. И модель обязана честно отметить слайды, где доказательства у вас нет.</p>
+<div class="prompt"><div class="p-title">Промпт · структура дека</div><button class="copy" onclick="copyP(this)">Copy</button><div class="p-body">Задача: [питч инвестору, продажа клиенту, выступление]. Продукт: [описание]. Что я хочу получить в конце встречи: [одно действие]. Собери структуру на 10 слайдов: на каждом один тезис и одно доказательство. Где доказательства у меня нет, поставь пометку «нужен факт» и не придумывай его. В конце дай 5 вопросов, которые мне зададут, и слабое место в моей логике.</div></div>
+</div></section>
+
+<div class="stepbar"><div class="wrap"><span class="tag">Шаг 5</span><h2>Сайт и тексты</h2></div></div>
+<section><div class="wrap"><p>У сайта сегодня два читателя: человек и AI-система, которая соберёт из вашей страницы ответ для того, кто про вас спросил. Первый смотрит на смысл и порядок блоков, второй на структуру и проверяемость. Поэтому FAQ это не украшение внизу страницы, а самый читаемый машиной блок.</p>
+<div class="prompt"><div class="p-title">Промпт · структура лендинга</div><button class="copy" onclick="copyP(this)">Copy</button><div class="p-body">Продукт: [что это]. Для кого: [аудитория]. Чем отличается: [1 предложение]. Собери структуру лендинга: порядок блоков и по 2 строки текста для каждого. Первый экран должен объяснять продукт человеку, который видит его впервые, без метафор. Добавь блок FAQ из 8 вопросов ровно в тех формулировках, которыми люди спрашивают вслух, с короткими прямыми ответами. Отметь утверждения, которые нужно подтвердить цифрой или ссылкой, прежде чем публиковать.</div></div>
+</div></section>
+
+<div class="stepbar"><div class="wrap"><span class="tag">Level up</span><h2>Что не делегируется</h2></div></div>
+<section><div class="wrap"><p>Модель соберёт текст, структуру и разбор. Она не выберет, во что вы вкладываете следующий месяц, кому говорите нет и какое обещание вы готовы подтвердить фактом. Исполнение делегируется, суждение нет.</p><p>Практика, которая экономит больше всего: держите публичную запись решений. Что вы решили, на каком основании, что произошло дальше. Она даёт вам память, а системам, которые про вас спрашивают, даёт проверяемый след.</p>
+<div class="next"><h3>Следующий шаг</h3><p>Когда тексты, дек и сайт собраны, остаётся вопрос, видят ли вас те, кто спрашивает про вас у ChatGPT, Claude и Perplexity. Об этом отдельная система на 7 дней.</p><a href="/guides/sprint/">The Legibility Sprint</a></div>
+</div></section>
+
+<div class="wl"><div class="wrap"><h2>Дальше глубже</h2><p>Курс о работе с AI по четырём стадиям, от первого промпта до систем, которым не нужно верить на слово. Первый поток по листу ожидания</p>
+<form class="wl-form" onsubmit="return wlSubmit(event,'wl-email')"><input type="email" id="wl-email" required placeholder="Ваш email"><button type="submit">В лист ожидания</button></form>
+<p style="font-size:12.5px;margin-top:16px;color:#9A9A9A">Ещё 5 бесплатных гайдов: <a href="/ru/guides/" style="color:#EDEDED">katyashalel.com/ru/guides</a></p>
+<p style="font-size:12.5px;margin-top:10px;color:#9A9A9A">Живая лента и разборы в Telegram: <a href="https://t.me/shalel_notes" target="_blank" rel="noopener" style="color:#EDEDED">@shalel_notes</a></p></div></div>
+
+<footer><a href="/ru/">katyashalel.com</a></footer>
+<script>
+function copyP(btn){var t=btn.parentNode.querySelector('.p-body').innerText;navigator.clipboard.writeText(t).then(function(){var o=btn.textContent;btn.textContent='Скопировано';setTimeout(function(){btn.textContent=o},1400)})}
+function wlSubmit(e,i){e.preventDefault();var f=e.target,b=f.querySelector('button'),inp=document.getElementById(i),em=inp.value.trim();if(!em)return false;b.disabled=true;var o=b.textContent;b.textContent='...';fetch('https://formsubmit.co/ajax/k.skinbot@gmail.com',{method:'POST',headers:{'Content-Type':'application/json','Accept':'application/json'},body:JSON.stringify({email:em,_subject:'Лист ожидания курса',page:location.pathname,_template:'table',_captcha:'false'})}).then(function(r){if(!r.ok)throw 0;return r.json()}).then(function(){b.textContent='Вы в листе';inp.value=''}).catch(function(){b.textContent='Ошибка, ещё раз';b.disabled=false});return false}
+</script></body></html>
