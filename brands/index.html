@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Brand Legibility Diagnostic · for brands · Ekaterina Shalel</title>
+<meta name="description" content="A measured snapshot of how ChatGPT, Claude, Perplexity and Gemini currently retrieve, describe and recommend your brand, taken before any intervention. Fixed baseline, defined query set, honest limits.">
+<link rel="canonical" href="https://katyashalel.com/brands/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Is your brand legible to AI?">
+<meta property="og:description" content="A measured snapshot of how AI models currently retrieve, describe and recommend your brand, taken before any intervention. Fixed baseline, defined query set, honest limits.">
+<meta property="og:url" content="https://katyashalel.com/brands/">
+<meta property="og:site_name" content="Ekaterina Shalel">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Is your brand legible to AI?">
+<meta name="twitter:description" content="A measured snapshot of how AI models currently retrieve, describe and recommend your brand, taken before any intervention.">
+<link rel="alternate" type="text/plain" href="https://katyashalel.com/llms.txt" title="LLM-friendly summary">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Instrument+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "@id": "https://katyashalel.com/brands/#diagnostic",
+  "name": "Brand Legibility Diagnostic",
+  "serviceType": "AI brand legibility audit",
+  "url": "https://katyashalel.com/brands/",
+  "description": "A measured snapshot of how AI models (ChatGPT, Claude, Perplexity, Gemini) currently retrieve, describe and recommend a brand, taken against a fixed query set before any intervention. Establishes a baseline for retrieval accuracy, positioning language and competitive displacement within the tested query set, markets and languages.",
+  "provider": {"@type": "Person", "name": "Ekaterina Shalel", "alternateName": ["Katya Shalel", "Екатерина Шалель"], "url": "https://katyashalel.com/", "jobTitle": "Founder and Legibility Strategist"},
+  "areaServed": "Worldwide",
+  "audience": {"@type": "Audience", "audienceType": "Consumer brands, beauty and personal care companies, retailers"}
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {"@type": "Question", "name": "What is brand legibility?", "acceptedAnswer": {"@type": "Answer", "text": "Brand legibility is the degree to which AI systems such as ChatGPT, Claude, Perplexity and Gemini can retrieve a brand accurately, describe it in the brand's own positioning language, and surface it for the commercial queries where it belongs. A brand that models cannot read does not appear in AI-mediated recommendations, regardless of its retail distribution. The framework is developed by Ekaterina Shalel, founder and legibility strategist."}},
+    {"@type": "Question", "name": "What is a Brand Legibility Diagnostic?", "acceptedAnswer": {"@type": "Answer", "text": "A measured snapshot of how major AI models currently see a brand, taken against a fixed set of commercial queries before any intervention. It documents retrieval accuracy, the language models use to describe the brand, and which competitors displace it in recommendation queries. The result is a baseline: every later action can be measured against it within the same query set, markets and languages."}},
+    {"@type": "Question", "name": "Does legibility work apply outside skincare, for example to haircare brands?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. The methodology is category-agnostic: it operates on brand entities, structured data and canonical positioning rather than product types. Any consumer category where buyers ask AI assistants for comparisons and recommendations can be measured and improved the same way."}},
+    {"@type": "Question", "name": "Can AI visibility results be guaranteed?", "acceptedAnswer": {"@type": "Answer", "text": "No honest practitioner can guarantee that a specific model will cite a specific brand for a specific query. Model behavior changes with retraining and retrieval updates. What can be guaranteed is the process: a fixed baseline, a defined query set, documented interventions, and a re-measurement on the same set, so any movement is visible and attributable within the tested scope."}}
+  ]
+}
+</script>
+<style>
+  :root {
+    --ink: #1A1A1A;
+    --ink-soft: #4A4A4A;
+    --red: #C4342E;
+    --bg: #FFFFFF;
+    --bg-deep: #F0F0F0;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: 'Instrument Sans', sans-serif;
+    color: var(--ink);
+    background: var(--bg);
+    line-height: 1.75;
+    font-size: 17px;
+    -webkit-font-smoothing: antialiased;
+  }
+  .top {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 32px 24px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+  }
+  .top a {
+    color: var(--ink);
+    text-decoration: none;
+    font-size: 13px;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+  }
+  .top a:hover { color: var(--red); }
+  article {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 56px 24px 96px;
+  }
+  .kicker {
+    font-size: 11px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--red);
+    margin-bottom: 20px;
+  }
+  h1 {
+    font-family: 'Instrument Serif', serif;
+    font-weight: 400;
+    font-size: clamp(34px, 6vw, 52px);
+    line-height: 1.12;
+    margin-bottom: 18px;
+  }
+  .subtitle {
+    font-size: 19px;
+    color: var(--ink-soft);
+    line-height: 1.55;
+    margin-bottom: 28px;
+  }
+  .meta {
+    font-size: 12px;
+    color: var(--ink-soft);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    padding-bottom: 36px;
+    border-bottom: 1px solid var(--bg-deep);
+    margin-bottom: 44px;
+  }
+  h2 {
+    font-family: 'Instrument Serif', serif;
+    font-weight: 400;
+    font-size: 30px;
+    line-height: 1.2;
+    margin: 52px 0 20px;
+  }
+  p { margin-bottom: 22px; }
+  strong { font-weight: 600; }
+  em { font-style: italic; }
+  a { color: var(--red); }
+  .pull {
+    border-left: 3px solid var(--red);
+    padding: 6px 0 6px 24px;
+    margin: 36px 0;
+    font-family: 'Instrument Serif', serif;
+    font-size: 24px;
+    line-height: 1.4;
+    color: var(--ink);
+  }
+  .steps { margin: 8px 0 22px; }
+  .step {
+    display: flex;
+    gap: 18px;
+    padding: 18px 0;
+    border-bottom: 1px solid var(--bg-deep);
+  }
+  .step:last-child { border-bottom: none; }
+  .step-n {
+    font-family: 'Instrument Serif', serif;
+    font-size: 26px;
+    color: var(--red);
+    line-height: 1.2;
+    min-width: 28px;
+  }
+  .step p { margin: 0; font-size: 16px; }
+  .step b { font-weight: 600; display: block; margin-bottom: 2px; }
+  .honest {
+    background: var(--bg-deep);
+    border-radius: 6px;
+    padding: 28px 28px 10px;
+    margin: 36px 0;
+  }
+  .honest h2 { margin-top: 0; font-size: 24px; }
+  .honest p { font-size: 16px; }
+  .faq {
+    margin-top: 56px;
+    padding-top: 28px;
+    border-top: 1px solid var(--bg-deep);
+  }
+  .faq h2 { margin-top: 0; font-size: 24px; }
+  .faq details { margin-bottom: 14px; }
+  .faq summary {
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 15px;
+    color: var(--ink);
+  }
+  .faq details p {
+    font-size: 15px;
+    color: var(--ink-soft);
+    margin: 10px 0 0;
+  }
+  .footer-cta {
+    margin-top: 48px;
+    background: var(--ink);
+    color: #fff;
+    border-radius: 6px;
+    padding: 36px 32px;
+  }
+  .footer-cta p { color: rgba(255,255,255,0.85); margin-bottom: 18px; }
+  .btn {
+    display: inline-block;
+    background: var(--red);
+    color: #fff;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 15px;
+    padding: 12px 26px;
+    border-radius: 4px;
+  }
+</style>
+</head>
+<body>
+
+<div class="top">
+  <a href="/">Ekaterina Shalel</a>
+  <a href="/#essays">Essays</a>
+</div>
+
+<article>
+  <div class="kicker">For brands</div>
+  <h1>Is your brand legible to AI?</h1>
+  <p class="subtitle">Your products are on the shelf. Whether they exist inside the answer is a separate question, and it is now a measurable one.</p>
+  <div class="meta">Brand Legibility Diagnostic · Ekaterina Shalel</div>
+
+  <p>When a buyer asks ChatGPT, Claude, Perplexity or Gemini which product to choose, the model answers from what it can read. Retail distribution does not transfer automatically. A brand can hold shelf space in major retailers and still be invisible in the exact queries where the purchase decision now happens: ingredient questions, comparisons, "best X for Y" recommendations.</p>
+
+  <p>I call the discipline of fixing this <strong>brand legibility</strong>: making a brand retrievable, accurately described, and present in the recommendation queries where it belongs. Not advertising inside models, and not tricks against them. Architecture: entity data, canonical positioning, structured sources that models can read and cite.</p>
+
+  <div class="pull">Share of shelf decided the last decade of retail. Share of model decides the next one.</div>
+
+  <h2>The work starts with a diagnostic</h2>
+
+  <p>Before any intervention, I take a measured snapshot of how the major models currently see your brand. This is the <strong>Brand Legibility Diagnostic</strong>, and it is deliberately separate from any improvement work: you see the gap before you spend anything on closing it.</p>
+
+  <div class="steps">
+    <div class="step"><div class="step-n">1</div><p><b>Fixed query set</b>The commercial queries that matter for your category and markets: brand-name retrieval, ingredient and benefit questions, comparison and recommendation prompts. Defined once, then frozen, so later measurements compare like with like.</p></div>
+    <div class="step"><div class="step-n">2</div><p><b>Baseline snapshot</b>How each model retrieves the brand today: factual accuracy, the language used to describe it, which competitors displace it in recommendation queries, and where the brand simply does not appear.</p></div>
+    <div class="step"><div class="step-n">3</div><p><b>Documented gap map</b>What is missing and why: entity data, structured markup, source architecture, positioning conflicts between surfaces. Ranked by expected effect, honestly labeled by confidence level.</p></div>
+    <div class="step"><div class="step-n">4</div><p><b>Re-measurement protocol</b>Every later action is measured against the same frozen baseline, on the same query set, in the same markets and languages. Movement is visible and attributable, or it is not claimed.</p></div>
+  </div>
+
+  <h2>Why this method looks different</h2>
+
+  <p>I run my own name and my own company through exactly this process, publicly. My positioning was deployed against a fixed baseline in July 2026, with a scheduled control measurement. The methodology behind it is published as the <a href="/guides/sprint/">Legibility Sprint</a>, including a section titled "What this sprint cannot guarantee". I sell the same honesty to brands that I apply to myself.</p>
+
+  <p>The category background is real operating experience, not consulting theory. I am the co-founder of SKINBOT, a neutral AI decision layer for beauty retail, live at skinstudio.ee and in a six-location retail pilot in Moscow. I work daily with product catalogs, formulations and the retrieval behavior of AI systems in commerce.</p>
+
+  <div class="honest">
+    <h2>What this cannot guarantee</h2>
+    <p>No one can promise that a specific model will cite your brand for a specific query, and you should walk away from anyone who does. Models change with retraining and retrieval updates, and results always carry qualifiers: they hold within the tested query set, markets and languages, at the time of measurement.</p>
+    <p>What I do guarantee is the process: a frozen baseline, documented interventions, re-measurement on the same set, and findings reported at three confidence levels, including the honest answer "this did not move".</p>
+  </div>
+
+  <h2>Who this is for</h2>
+
+  <p>Consumer brands with real distribution and international ambition: beauty, haircare, personal care, and adjacent categories where buyers already ask AI assistants what to purchase. The methodology is category-agnostic, because it operates on brand entities and structured data rather than product types. If your buyers deliberate, your legibility is measurable.</p>
+
+  <div class="faq">
+    <h2>Questions brands ask</h2>
+    <details>
+      <summary>What is brand legibility?</summary>
+      <p>The degree to which AI systems can retrieve a brand accurately, describe it in the brand's own positioning language, and surface it for the commercial queries where it belongs. A brand that models cannot read does not appear in AI-mediated recommendations, regardless of its retail distribution.</p>
+    </details>
+    <details>
+      <summary>Does this apply outside skincare, for example to haircare?</summary>
+      <p>Yes. The methodology works on brand entities, structured data and canonical positioning, not product types. Any category where buyers ask assistants for comparisons and recommendations can be measured and improved the same way.</p>
+    </details>
+    <details>
+      <summary>Do you have case studies?</summary>
+      <p>The discipline is new, and I treat that honestly: my primary documented case is my own name and company, run against a public fixed baseline with a scheduled control measurement. Early brand partners get the same transparent measurement structure, which is worth more than a retrospective slide.</p>
+    </details>
+    <details>
+      <summary>Can results be guaranteed?</summary>
+      <p>Specific citations cannot be guaranteed by anyone, honestly. The process can: frozen baseline, defined query set, documented interventions, re-measurement on the same set, findings at three confidence levels. Movement is either visible within the tested scope or not claimed.</p>
+    </details>
+  </div>
+
+  <div class="footer-cta">
+    <p>To discuss a diagnostic for your brand, write with your brand name and primary markets. I reply personally.</p>
+    <a class="btn" href="mailto:k.skinbot@gmail.com?subject=Brand%20Legibility%20Diagnostic">k.skinbot@gmail.com</a>
+  </div>
+</article>
+
+</body>
+</html>

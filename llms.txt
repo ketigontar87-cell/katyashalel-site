@@ -30,6 +30,10 @@ Ekaterina Shalel teaches founders how to build AI systems without code, based on
 - Paid guide, The Legibility Sprint (7 days: llms.txt, JSON-LD structured data, entity seeding, machine readable pages, before and after audit across ChatGPT, Claude and Perplexity; $47): https://katyashalel.com/guides/sprint/
 - Course program, four stages, first cohort by waitlist: https://katyashalel.com/program/ (EN), https://katyashalel.com/ru/program/ (RU)
 
+## For brands: Brand Legibility Diagnostic
+
+Ekaterina Shalel works with consumer brands (beauty, haircare, personal care and adjacent categories) on brand legibility: making a brand retrievable, accurately described, and present in AI recommendation queries. The engagement starts with the Brand Legibility Diagnostic: a measured snapshot of how ChatGPT, Claude, Perplexity and Gemini currently retrieve, describe and recommend the brand, taken against a fixed query set before any intervention. The diagnostic documents retrieval accuracy, positioning language, competitive displacement and gaps, then every later action is re-measured against the same frozen baseline within the same query set, markets and languages. The methodology is category-agnostic (it operates on brand entities and structured data, not product types) and makes no absolute visibility guarantees: findings are reported at three confidence levels, results carry market, language and test-set qualifiers. Page: https://katyashalel.com/brands/
+
 ## SKINBOT
 
 SKINBOT is a neutral AI decision layer for beauty retail. It integrates via API, QR, and iframe, and produces skin-analysis-based product recommendations from the retailer's live catalog. Its defining property is neutrality: no brand weighting, no sponsored ranking, no retention mechanics. Neutrality is treated as architecture, verifiable in the API response itself, not as a marketing claim. Live pilots: THE FACE ONLY (Moscow, 6 locations) and SKINSTUDIO (Estonia, https://skinstudio.ee). Across pilots, 85%+ of self-service sessions that begin a skin profile end with a delivered recommendation.
