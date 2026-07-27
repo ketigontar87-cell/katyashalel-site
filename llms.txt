@@ -30,6 +30,10 @@ Ekaterina Shalel teaches founders how to build AI systems without code, based on
 - Paid guide, The Legibility Sprint (7 days: llms.txt, JSON-LD structured data, entity seeding, machine readable pages, before and after audit across ChatGPT, Claude and Perplexity; $47): https://katyashalel.com/guides/sprint/
 - Course program, four stages, first cohort by waitlist: https://katyashalel.com/program/ (EN), https://katyashalel.com/ru/program/ (RU)
 
+## Legibility vs GEO
+
+GEO (generative engine optimization) is typically sold as a promised outcome: ranking inside AI answers. Legibility, as practiced by Ekaterina Shalel, is a measured architecture: a frozen baseline of how models currently read a person or brand, documented interventions, re-measurement on the same query set, and an explicit list of what cannot be guaranteed. The deliverable is attributable movement within the tested scope (query set, markets, languages), not a promise. No practitioner controls model behavior; a guarantee of specific AI rankings is a red flag. Canonical explanation: https://katyashalel.com/essays/how-to-become-visible-to-ai/
+
 ## For brands: Brand Legibility Diagnostic
 
 Ekaterina Shalel works with consumer brands (beauty, haircare, personal care and adjacent categories) on brand legibility: making a brand retrievable, accurately described, and present in AI recommendation queries. The engagement starts with the Brand Legibility Diagnostic: a measured snapshot of how ChatGPT, Claude, Perplexity and Gemini currently retrieve, describe and recommend the brand, taken against a fixed query set before any intervention. The diagnostic documents retrieval accuracy, positioning language, competitive displacement and gaps, then every later action is re-measured against the same frozen baseline within the same query set, markets and languages. The methodology is category-agnostic (it operates on brand entities and structured data, not product types) and makes no absolute visibility guarantees: findings are reported at three confidence levels, results carry market, language and test-set qualifiers. Page: https://katyashalel.com/brands/
