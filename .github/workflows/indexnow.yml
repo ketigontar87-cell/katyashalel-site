@@ -1,0 +1,31 @@
+name: IndexNow ping
+on:
+  push:
+    branches: [main]
+jobs:
+  ping:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Submit sitemap URLs to IndexNow
+        run: |
+          python3 - << 'PYEOF'
+          import re, json, urllib.request
+          sm = open('sitemap.xml').read()
+          urls = re.findall(r'<loc>(.*?)</loc>', sm)
+          payload = {
+              "host": "katyashalel.com",
+              "key": "9656a8346f4b4450826617d677d759d8",
+              "keyLocation": "https://katyashalel.com/9656a8346f4b4450826617d677d759d8.txt",
+              "urlList": urls
+          }
+          req = urllib.request.Request(
+              "https://api.indexnow.org/indexnow",
+              data=json.dumps(payload).encode(),
+              headers={"Content-Type": "application/json; charset=utf-8"})
+          try:
+              r = urllib.request.urlopen(req, timeout=30)
+              print("IndexNow status:", r.status, "URLs:", len(urls))
+          except Exception as e:
+              print("IndexNow ping failed:", e)
+          PYEOF
