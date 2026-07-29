@@ -101,6 +101,15 @@ def check(folder, source, prefix):
             company = "" if domain in FREEMAIL else domain.rsplit(".", 1)[0].replace("-", " ").title()
             phone = extract_phone(snippet)
             notion_lead(name, addr, company, phone, subj, snippet, source, date_iso)
+            card = "\U0001F5C2 \u041a\u0430\u0440\u0442\u043e\u0447\u043a\u0430 \u043b\u0438\u0434\u0430\n"
+            card += f"\n\u0418\u043c\u044f: {name or '\u2014'}"
+            card += f"\nEmail: {addr}"
+            card += f"\n\u041a\u043e\u043c\u043f\u0430\u043d\u0438\u044f: {company or '\u2014'}"
+            card += f"\n\u0422\u0435\u043b\u0435\u0444\u043e\u043d: {phone or '\u2014'}"
+            card += f"\n\u0422\u0435\u043c\u0430: {subj}"
+            card += f"\n\u0418\u0441\u0442\u043e\u0447\u043d\u0438\u043a: {source}"
+            card += f"\n\n\u0421\u0443\u0442\u044c: {snippet[:500]}"
+            tg(card)
         M.uid("STORE", uid, "+FLAGS", f"({FLAG})")
 
 check("INBOX", "\u0412\u0445\u043e\u0434\u044f\u0449\u0438\u0435", "\U0001F4E9 skinbot.ru \u2014 \u043d\u043e\u0432\u043e\u0435 \u043f\u0438\u0441\u044c\u043c\u043e")
