@@ -1,0 +1,34 @@
+name: Test Notion lead pipeline
+on:
+  workflow_dispatch: {}
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Create test lead and confirm via Telegram
+        env:
+          NOTION_TOKEN: ${{ secrets.NOTION_TOKEN }}
+          TG_BOT_TOKEN: ${{ secrets.TG_BOT_TOKEN }}
+          TG_CHAT_ID: ${{ secrets.TG_CHAT_ID }}
+        run: |
+          python3 - << 'PYEOF'
+          import os, json, urllib.request, urllib.parse, datetime
+          NT = os.environ["NOTION_TOKEN"]; DB = "cdd74a45dc02441b80de559ff9ed0e61"
+          props = {
+            "Имя / отправитель": {"title": [{"text": {"content": "\u2705 Тест: конвейер лидов работает"}}]},
+            "Email": {"email": "test@skinbot.ru"},
+            "Компания": {"rich_text": [{"text": {"content": "Legibot"}}]},
+            "Тема письма": {"rich_text": [{"text": {"content": "Тестовая карточка, можно удалить"}}]},
+            "Источник": {"select": {"name": "Входящие"}},
+            "Статус": {"select": {"name": "Закрыт"}},
+            "Дата письма": {"date": {"start": datetime.date.today().isoformat()}},
+          }
+          body = json.dumps({"parent": {"database_id": DB}, "properties": props}).encode()
+          req = urllib.request.Request("https://api.notion.com/v1/pages", data=body, headers={
+              "Authorization": f"Bearer {NT}", "Content-Type": "application/json", "Notion-Version": "2022-06-28"})
+          r = urllib.request.urlopen(req, timeout=20)
+          print("notion create:", r.status)
+          tg = os.environ["TG_BOT_TOKEN"]; chat = os.environ["TG_CHAT_ID"]
+          data = urllib.parse.urlencode({"chat_id": chat, "text": "\u2705 \u041a\u043e\u043d\u0432\u0435\u0439\u0435\u0440 \u043b\u0438\u0434\u043e\u0432 \u0440\u0430\u0431\u043e\u0442\u0430\u0435\u0442: \u0442\u0435\u0441\u0442\u043e\u0432\u0430\u044f \u043a\u0430\u0440\u0442\u043e\u0447\u043a\u0430 \u0441\u043e\u0437\u0434\u0430\u043d\u0430 \u0432 \u0431\u0430\u0437\u0435 \u00ab\u0412\u0445\u043e\u0434\u044f\u0449\u0438\u0435 \u043b\u0438\u0434\u044b \u00b7 skinbot.ru\u00bb"}).encode()
+          urllib.request.urlopen(f"https://api.telegram.org/bot{tg}/sendMessage", data=data, timeout=20)
+          PYEOF
