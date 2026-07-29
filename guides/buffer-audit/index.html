@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Canonical Buffer Audit · Ekaterina Shalel</title>
+<meta name="description" content="A five-question audit of your evidence environment: what AI systems must be able to prove about you, where they currently forage, which version of you is winning, what lives in your canonical buffer, and which claims exist only in your own words. By Ekaterina Shalel.">
+<link rel="canonical" href="https://katyashalel.com/guides/buffer-audit/">
+<meta property="og:type" content="article">
+<meta property="og:title" content="The Canonical Buffer Audit">
+<meta property="og:description" content="Five questions that reveal the state of your evidence environment before you build anything for AI visibility.">
+<meta property="og:url" content="https://katyashalel.com/guides/buffer-audit/">
+<meta property="og:site_name" content="Ekaterina Shalel">
+<meta property="og:image" content="https://katyashalel.com/assets/covers/every-model-has-a-different-diet-og.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="The Canonical Buffer Audit">
+<meta name="twitter:description" content="Five questions that reveal the state of your evidence environment before you build anything for AI visibility.">
+<meta name="twitter:image" content="https://katyashalel.com/assets/covers/every-model-has-a-different-diet-og.jpg">
+<link rel="alternate" type="text/plain" href="https://katyashalel.com/llms.txt" title="LLM-friendly summary">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Instrument+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "HowTo",
+  "@id": "https://katyashalel.com/guides/buffer-audit/#howto",
+  "name": "The Canonical Buffer Audit",
+  "description": "A five-question audit of an entity's evidence environment, used before building anything for AI visibility. Created by Ekaterina Shalel as the companion method to the canonical buffer concept.",
+  "url": "https://katyashalel.com/guides/buffer-audit/",
+  "author": {"@type": "Person", "@id": "https://katyashalel.com/#person", "name": "Ekaterina Shalel", "url": "https://katyashalel.com/"},
+  "step": [
+    {"@type": "HowToStep", "name": "Define what AI systems should be able to answer about you", "text": "List the ten commercial and identity questions that matter: who you are, what category you belong to, what you are the answer to. These are the questions the evidence environment must support."},
+    {"@type": "HowToStep", "name": "Map where the engines currently forage", "text": "Ask the same questions in ChatGPT, Claude, Gemini, and Perplexity. Record which sources each one cites. Expect little overlap between engines; that divergence is normal, and the record of it is your map."},
+    {"@type": "HowToStep", "name": "Identify which version of you wins", "text": "Look for the strongest contradiction: an old bio, a stale profile, an outdated description that keeps surfacing. Engines tend to reproduce the version most consistently supported by retrievable sources, not the newest one. Find what is outproving you."},
+    {"@type": "HowToStep", "name": "Inspect the canonical buffer", "text": "Check whether your site contains the current one-sentence definition of the entity, dated facts, and your terms, in a form a machine can extract. Positioning that exists only in your head or your pitch deck does not exist in the evidence environment."},
+    {"@type": "HowToStep", "name": "Find claims confirmed only by you", "text": "A claim that appears solely in your own materials is weak evidence. Identify the two or three facts that most need independent confirmation, and earn that confirmation externally."}
+  ]
+}
+</script>
+<style>
+
+  :root {
+    --ink: #1A1A1A;
+    --ink-soft: #4A4A4A;
+    --red: #C4342E;
+    --bg: #FFFFFF;
+    --bg-deep: #F0F0F0;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: 'Instrument Sans', sans-serif;
+    color: var(--ink);
+    background: var(--bg);
+    line-height: 1.75;
+    font-size: 17px;
+    -webkit-font-smoothing: antialiased;
+  }
+  .top {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 32px 24px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+  }
+  .top a {
+    color: var(--ink);
+    text-decoration: none;
+    font-size: 13px;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+  }
+  .top a:hover { color: var(--red); }
+  article {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 56px 24px 96px;
+  }
+  .kicker {
+    font-size: 11px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--red);
+    margin-bottom: 20px;
+  }
+  h1 {
+    font-family: 'Instrument Serif', serif;
+    font-weight: 400;
+    font-size: clamp(34px, 6vw, 52px);
+    line-height: 1.12;
+    margin-bottom: 18px;
+  }
+  .subtitle {
+    font-size: 19px;
+    color: var(--ink-soft);
+    line-height: 1.55;
+    margin-bottom: 28px;
+  }
+  .meta {
+    font-size: 12px;
+    color: var(--ink-soft);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    padding-bottom: 36px;
+    border-bottom: 1px solid var(--bg-deep);
+    margin-bottom: 44px;
+  }
+  .meta a { color: var(--ink-soft); }
+  .meta a:hover { color: var(--red); }
+  h2 {
+    font-family: 'Instrument Serif', serif;
+    font-weight: 400;
+    font-size: 30px;
+    line-height: 1.2;
+    margin: 52px 0 20px;
+  }
+  p { margin-bottom: 22px; }
+  strong { font-weight: 600; }
+  em { font-style: italic; }
+  a { color: var(--red); }
+  .step {
+    border-left: 3px solid var(--bg-deep);
+    padding: 4px 0 4px 24px;
+    margin: 32px 0;
+  }
+  .step:hover { border-color: var(--red); }
+  .step h2 { margin: 0 0 12px; font-size: 24px; }
+  .step p:last-child { margin-bottom: 0; }
+  .note {
+    background: var(--bg-deep);
+    border-radius: 6px;
+    padding: 24px 28px;
+    margin: 40px 0;
+    font-size: 15.5px;
+    color: var(--ink-soft);
+  }
+  .note p { margin: 0; }
+  .footer-cta {
+    margin-top: 56px;
+    background: var(--ink);
+    color: #fff;
+    border-radius: 6px;
+    padding: 36px 32px;
+  }
+  .footer-cta p { color: rgba(255,255,255,0.85); font-size: 15px; margin-bottom: 18px; }
+  .footer-cta .btn {
+    display: inline-block;
+    background: var(--red);
+    color: #fff;
+    text-decoration: none;
+    font-size: 13px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    padding: 12px 24px;
+    border-radius: 4px;
+  }
+  .footer-cta .btn:hover { background: #A32420; }
+
+</style>
+</head>
+<body>
+
+<div class="top">
+  <a href="/">Ekaterina Shalel</a>
+  <a href="/#essays">Essays</a>
+</div>
+
+<article>
+  <div class="kicker">Method · Companion to the canonical buffer</div>
+  <h1>The Canonical Buffer Audit</h1>
+  <p class="subtitle">Five questions that reveal the state of your evidence environment before you build anything.</p>
+  <div class="meta">By Ekaterina Shalel · July 29, 2026 · Concept: <a href="/essays/every-model-has-a-different-diet/">Every Model Has a Different Diet</a></div>
+
+  <p>A <strong>canonical buffer</strong> is the controlled layer between what is true inside a business and what AI systems can prove outside it. It holds the current, dated, verifiable version of an entity: its one-sentence definition, its facts, its terms, its history of updates. External platforms distribute and confirm that version. The buffer is where it is kept current.</p>
+
+  <p>Before building or fixing one, audit the environment it has to work in. Five questions, in order. Each produces a written artifact, and the artifacts together are the specification for your buffer.</p>
+
+  <div class="step">
+    <h2>1. What questions should AI systems be able to answer about you?</h2>
+    <p>List the ten commercial and identity questions that matter: who you are, what category you belong to, what you are the answer to. Not what you want said about you. What a system assembling an answer for a stranger must be able to support.</p>
+    <p><em>Artifact: the question set. It becomes your fixed test set for every future measurement.</em></p>
+  </div>
+
+  <div class="step">
+    <h2>2. Where do the engines currently forage when they answer those questions?</h2>
+    <p>Ask the same questions in ChatGPT, Claude, Gemini, and Perplexity. Record which sources each one cites. Expect little overlap between engines; published citation studies suggest the majority of cited domains appear in only one engine. That divergence is normal, and the record of it is your map.</p>
+    <p><em>Artifact: a source map per engine, dated.</em></p>
+  </div>
+
+  <div class="step">
+    <h2>3. Which version of you wins, and is it the current one?</h2>
+    <p>Look for the strongest contradiction: an old bio, a stale profile, an outdated description that keeps surfacing. Engines tend to reproduce the version most consistently supported by the sources they can retrieve, not necessarily the version you published most recently. Find what is outproving you.</p>
+    <p><em>Artifact: a contradiction list, ranked by how often each outdated source appears.</em></p>
+  </div>
+
+  <div class="step">
+    <h2>4. What lives in your canonical buffer, and when was it last dated?</h2>
+    <p>Check whether your site actually contains the current one-sentence definition of the entity, dated facts, and your terms, in a form a machine can extract. If your positioning exists only in your head and your pitch deck, it does not exist in the evidence environment.</p>
+    <p><em>Artifact: a gap list between what the buffer should hold and what it holds today.</em></p>
+  </div>
+
+  <div class="step">
+    <h2>5. What is confirmed only by you?</h2>
+    <p>A claim that appears solely in your own materials is weak evidence. Identify the two or three facts that most need independent confirmation, and go earn it there: a client's page, a publication, a registry, a dataset someone else maintains.</p>
+    <p><em>Artifact: a confirmation backlog, with an owner and a target surface for each claim.</em></p>
+  </div>
+
+  <div class="note">
+    <p>Honest limits: this audit describes and organizes your evidence environment; it does not guarantee citation or ranking. No published technique has demonstrated a durable, cross-platform, causal effect on AI visibility. Findings apply within the query set, markets, and languages you test, and engine behavior changes over time, so the audit is repeated against the same frozen question set, not performed once.</p>
+  </div>
+
+  <p>The audit is the diagnostic. The <a href="/guides/sprint/">Legibility Sprint</a> is the seven-day protocol that acts on it: llms.txt, structured data, entity seeding, machine-readable pages, and a before-and-after measurement across ChatGPT, Claude, and Perplexity on your fixed question set.</p>
+
+  <div class="footer-cta">
+    <p>I write about machine legibility, the canonical buffer, and how founders and companies become readable to AI systems</p>
+    <a class="btn" href="https://katyashalel.substack.com">Subscribe on Substack</a>
+  </div>
+</article>
+
+</body>
+</html>
