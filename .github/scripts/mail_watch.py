@@ -2,7 +2,7 @@ import imaplib, email, os, ssl, re, json, urllib.request, urllib.parse
 from email.header import decode_header
 
 HOST = os.environ["MAIL_HOST"]; USER = os.environ["MAIL_USER"]; PASS = os.environ["MAIL_PASS"]
-TG_TOKEN = os.environ.get("TG_BOT_TOKEN", ""); TG_CHAT = os.environ.get("TG_CHAT_ID", "")
+TG_TOKEN = os.environ.get("TG_BOT_TOKEN", ""); TG_CHATS = [x for x in [os.environ.get("TG_CHAT_ID", ""), os.environ.get("TG_CHAT_ID_2", "")] if x]
 NOTION_TOKEN = os.environ.get("NOTION_TOKEN", "")
 NOTION_DB = "cdd74a45dc02441b80de559ff9ed0e61"
 FLAG = "TGNotified"
@@ -17,10 +17,14 @@ def dec(s):
     return out
 
 def tg(text):
-    if not TG_TOKEN or not TG_CHAT:
+    if not TG_TOKEN or not TG_CHATS:
         print("TG absent:", text[:60]); return
-    data = urllib.parse.urlencode({"chat_id": TG_CHAT, "text": text}).encode()
-    urllib.request.urlopen(f"https://api.telegram.org/bot{TG_TOKEN}/sendMessage", data=data, timeout=20)
+    for chat in TG_CHATS:
+        data = urllib.parse.urlencode({"chat_id": chat, "text": text}).encode()
+        try:
+            urllib.request.urlopen(f"https://api.telegram.org/bot{TG_TOKEN}/sendMessage", data=data, timeout=20)
+        except Exception as e:
+            print("tg error:", chat[:3], e)
 
 def notion_lead(name, addr, company, phone, subj, snippet, source, date_iso):
     if not NOTION_TOKEN:
