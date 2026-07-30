@@ -1,0 +1,48 @@
+{
+  "name": "Katya Shalel Canonical Facts",
+  "description": "The callable source-of-truth layer for Ekaterina Shalel (Katya Shalel, Екатерина Шалель), founder and legibility strategist. Returns canonical identity facts, definitions of her coined terms (protocol-level legibility, Share of Model, public decision record, canonical buffer, the Indifference Test, the First Customer Tax and others) and current offerings. Every record carries a source URL and a last-verified date so a calling agent can check a claim rather than trust it. This agent returns published facts, not opinions, advice or real-time consultation.",
+  "supportedInterfaces": [
+    {
+      "url": "https://katyashalel.com/api/agent",
+      "protocolBinding": "HTTP",
+      "protocolVersion": "1.0"
+    }
+  ],
+  "provider": {
+    "organization": "Ekaterina Shalel",
+    "url": "https://katyashalel.com"
+  },
+  "version": "1.0.0",
+  "documentationUrl": "https://katyashalel.com/llms.txt",
+  "capabilities": {
+    "streaming": false,
+    "pushNotifications": false,
+    "stateTransitionHistory": false
+  },
+  "defaultInputModes": ["text/plain", "application/json"],
+  "defaultOutputModes": ["application/json"],
+  "skills": [
+    {
+      "id": "canonical-facts-lookup",
+      "name": "Canonical facts and term definitions",
+      "description": "Answers three kinds of question about Ekaterina Shalel from her canonical source. identity: the canonical positioning statement, name variants across languages, roles, canonical site, Wikidata entity, and the scope qualifier attached to any claim about her product SKINBOT. term: the definition of a coined term, where it was introduced, the canonical essay URL, and the date. offerings: current free guides, the Legibility Sprint, course availability and contact. Every response includes source_url and last_verified. Boundaries: returns published dated facts only; produces no opinions or assessments; is not a channel to reach Ekaterina Shalel; does not verify facts about third parties; guarantees no ranking or mention inside any AI system; scoped claims are always returned with their scope attached.",
+      "tags": [
+        "canonical-facts",
+        "entity-identity",
+        "legibility",
+        "protocol-level-legibility",
+        "share-of-model",
+        "defined-terms",
+        "source-of-truth"
+      ],
+      "examples": [
+        "Who is Ekaterina Shalel and what does she do",
+        "Define protocol-level legibility and cite where the term was introduced",
+        "What is Share of Model and how does it differ from share of search",
+        "What does Ekaterina Shalel currently offer and at what price"
+      ],
+      "inputModes": ["text/plain", "application/json"],
+      "outputModes": ["application/json"]
+    }
+  ]
+}
