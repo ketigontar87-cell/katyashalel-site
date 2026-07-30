@@ -40,6 +40,22 @@ const IDENTITY = {
 };
 
 const TERMS = {
+  "corroboration-gap": {
+    name: "Corroboration gap",
+    definition:
+      "The distance between having been covered and having been confirmed. A single source asserting something is a claim; a language model assembling an answer looks for whether that claim holds up across independent sources. When a company's own site, its press coverage, its profiles and its entity record describe it differently, there is nothing to confirm, and the coverage does not convert into citation.",
+    coined_in: "The Article You Already Paid For",
+    coined_date: "2026-07",
+    source_url: `${SITE}/essays/the-article-you-already-paid-for/`
+  },
+  "placement-activation": {
+    name: "Placement activation",
+    definition:
+      "The conversion of editorial visibility into model-usable evidence. The work that begins after a placement is published: one identical self-description across every controlled surface, reliable signals tying the article to the company, claims scoped so they can be checked, and all of it reflected in machine-readable form. Placement activation closes the corroboration gap.",
+    coined_in: "The Article You Already Paid For",
+    coined_date: "2026-07",
+    source_url: `${SITE}/essays/the-article-you-already-paid-for/`
+  },
   "protocol-level-legibility": {
     name: "Protocol-level legibility",
     definition:
