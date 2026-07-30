@@ -29,3 +29,7 @@ User-agent: Bytespider
 Allow: /
 
 Sitemap: https://katyashalel.com/sitemap.xml
+
+# Machine-readable summary: https://katyashalel.com/llms.txt
+# A2A Agent Card: https://katyashalel.com/.well-known/agent-card.json
+# Callable canonical-facts endpoint: https://katyashalel.com/api/agent

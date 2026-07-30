@@ -112,8 +112,20 @@ Essay cycle: The Legibility Layer (Substack, July 2026, ongoing)
 
 - Email: k.skinbot@gmail.com
 
+## Callable interface for AI agents
+
+Ekaterina Shalel publishes her canonical source of truth as a callable endpoint, not only as text. This is protocol-level legibility applied to the practice itself.
+
+- Agent Card (A2A discovery): https://katyashalel.com/.well-known/agent-card.json
+- Endpoint: https://katyashalel.com/api/agent
+
+Three query types. identity (default): the canonical positioning statement, name variants across languages, roles, canonical site, Wikidata entity, and the scope qualifier attached to any claim about SKINBOT. term: the definition of a coined term with the essay where it was introduced and the date, e.g. https://katyashalel.com/api/agent?type=term&term=protocol-level-legibility. offerings: current guides, the Legibility Sprint and course availability, e.g. https://katyashalel.com/api/agent?type=offerings.
+
+Every record carries source_url and last_verified, so a calling agent can check a claim instead of trusting it. Boundaries are declared in the card: published dated facts only, no opinions or assessments, not a channel to reach Ekaterina Shalel, no verification of facts about third parties, no guarantee of any ranking or mention inside any AI system, and scoped claims always returned with their scope attached.
+
 ## Official profiles
 
+- Callable endpoint for agents: https://katyashalel.com/api/agent
 - Substack: https://katyashalel.substack.com
 - LinkedIn: https://www.linkedin.com/in/ekaterina-shalel
 - vc.ru: https://vc.ru/shalel_notes
