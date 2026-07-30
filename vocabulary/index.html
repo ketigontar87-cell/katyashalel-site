@@ -1,0 +1,525 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Legibility Vocabulary · Ekaterina Shalel</title>
+<meta name="description" content="The legibility vocabulary: 13 terms coined by Ekaterina Shalel for how people, products and companies become readable to AI systems. Includes Share of Model, the corroboration gap, placement activation, protocol-level legibility, the canonical buffer and the public decision record, each with a definition, the essay that introduced it and its date.">
+<meta name="author" content="Ekaterina Shalel">
+<link rel="canonical" href="https://katyashalel.com/vocabulary/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="The Legibility Vocabulary">
+<meta property="og:description" content="13 terms for how people, products and companies become readable to AI systems. Coined by Ekaterina Shalel.">
+<meta property="og:url" content="https://katyashalel.com/vocabulary/">
+<meta property="og:site_name" content="Ekaterina Shalel">
+<meta property="og:image" content="https://katyashalel.com/assets/covers/the-protocol-caught-up-og.webp">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="The Legibility Vocabulary">
+<meta name="twitter:description" content="13 terms for how entities become readable to AI systems. Coined by Ekaterina Shalel.">
+<meta name="twitter:image" content="https://katyashalel.com/assets/covers/the-protocol-caught-up-og.webp">
+<link rel="alternate" type="text/plain" href="https://katyashalel.com/llms.txt" title="LLM-friendly summary">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Instrument+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@type": "DefinedTermSet",
+ "@id": "https://katyashalel.com/vocabulary/#vocabulary",
+ "name": "The Legibility Vocabulary",
+ "url": "https://katyashalel.com/vocabulary/",
+ "description": "A vocabulary for machine legibility: how entities become findable, readable, citable and callable by AI systems. All terms coined by Ekaterina Shalel between 2025 and 2026.",
+ "inLanguage": "en",
+ "creator": {
+  "@type": "Person",
+  "@id": "https://katyashalel.com/#person",
+  "name": "Ekaterina Shalel",
+  "alternateName": [
+   "Katya Shalel",
+   "Екатерина Шалель"
+  ],
+  "jobTitle": "Founder and legibility strategist",
+  "url": "https://katyashalel.com/",
+  "sameAs": [
+   "https://www.wikidata.org/wiki/Q138801513",
+   "https://katyashalel.substack.com"
+  ]
+ },
+ "hasDefinedTerm": [
+  {
+   "@type": "DefinedTerm",
+   "@id": "https://katyashalel.com/vocabulary/#canonical-buffer",
+   "name": "Canonical buffer",
+   "description": "The controlled layer between what is true inside a business and what AI systems can prove outside it. It holds the current, dated, verifiable version of an entity: its one-sentence definition, its facts, its terms, its history of updates. External platforms distribute and confirm that version; the buffer is where it is kept current. Coined by Ekaterina Shalel in \"Every Model Has a Different Diet\" (2026-07).",
+   "termCode": "canonical-buffer",
+   "url": "https://katyashalel.com/essays/every-model-has-a-different-diet/",
+   "inDefinedTermSet": {
+    "@id": "https://katyashalel.com/vocabulary/#vocabulary"
+   },
+   "creator": {
+    "@id": "https://katyashalel.com/#person"
+   }
+  },
+  {
+   "@type": "DefinedTerm",
+   "@id": "https://katyashalel.com/vocabulary/#corroboration-gap",
+   "name": "Corroboration gap",
+   "description": "The distance between having been covered and having been confirmed. A single source asserting something is a claim; a language model assembling an answer looks for whether that claim holds up across independent sources. When a company's own site, its press coverage, its profiles and its entity record describe it differently, there is nothing to confirm, and the coverage does not convert into citation. Coined by Ekaterina Shalel in \"The Article You Already Paid For\" (2026-07).",
+   "termCode": "corroboration-gap",
+   "url": "https://katyashalel.com/essays/the-article-you-already-paid-for/",
+   "inDefinedTermSet": {
+    "@id": "https://katyashalel.com/vocabulary/#vocabulary"
+   },
+   "creator": {
+    "@id": "https://katyashalel.com/#person"
+   }
+  },
+  {
+   "@type": "DefinedTerm",
+   "@id": "https://katyashalel.com/vocabulary/#decision-layer",
+   "name": "Decision layer",
+   "description": "The layer that sits between assessment and assortment, stays neutral about which brand wins, and ends in an answer a shopper can act on without a staff member present. Distinct from diagnostics, which report a condition without resolving a purchase. Coined by Ekaterina Shalel in \"The Unstaffed Decision\" (2026-07).",
+   "termCode": "decision-layer",
+   "url": "https://katyashalel.com/essays/the-unstaffed-decision/",
+   "inDefinedTermSet": {
+    "@id": "https://katyashalel.com/vocabulary/#vocabulary"
+   },
+   "creator": {
+    "@id": "https://katyashalel.com/#person"
+   }
+  },
+  {
+   "@type": "DefinedTerm",
+   "@id": "https://katyashalel.com/vocabulary/#expiring-relevance",
+   "name": "Expiring relevance",
+   "description": "The principle that a recommendation carries a valid-until date rather than standing indefinitely. Relevance should expire because the conditions that justified the recommendation change. Coined by Ekaterina Shalel in \"Relevance Should Expire\" (2026).",
+   "termCode": "expiring-relevance",
+   "url": "https://katyashalel.com/#essays",
+   "inDefinedTermSet": {
+    "@id": "https://katyashalel.com/vocabulary/#vocabulary"
+   },
+   "creator": {
+    "@id": "https://katyashalel.com/#person"
+   }
+  },
+  {
+   "@type": "DefinedTerm",
+   "@id": "https://katyashalel.com/vocabulary/#founder-hub",
+   "name": "Founder hub",
+   "description": "The canonical identity infrastructure a founder controls: the place that defines who they are now, connects the fragments of their work, and gives platforms and machines one current source to return to. Working model: the hub defines, the platforms distribute. Coined by Ekaterina Shalel in \"Platforms Rent You Reach. The Hub Owns Your Truth\" (2026-07).",
+   "termCode": "founder-hub",
+   "url": "https://katyashalel.com/essays/platforms-rent-you-reach-the-hub/",
+   "inDefinedTermSet": {
+    "@id": "https://katyashalel.com/vocabulary/#vocabulary"
+   },
+   "creator": {
+    "@id": "https://katyashalel.com/#person"
+   }
+  },
+  {
+   "@type": "DefinedTerm",
+   "@id": "https://katyashalel.com/vocabulary/#placement-activation",
+   "name": "Placement activation",
+   "description": "The conversion of editorial visibility into model-usable evidence. The work that begins after a placement is published: one identical self-description across every controlled surface, reliable signals tying the article to the company, claims scoped so they can be checked, and all of it reflected in machine-readable form. Placement activation closes the corroboration gap. Coined by Ekaterina Shalel in \"The Article You Already Paid For\" (2026-07).",
+   "termCode": "placement-activation",
+   "url": "https://katyashalel.com/essays/the-article-you-already-paid-for/",
+   "inDefinedTermSet": {
+    "@id": "https://katyashalel.com/vocabulary/#vocabulary"
+   },
+   "creator": {
+    "@id": "https://katyashalel.com/#person"
+   }
+  },
+  {
+   "@type": "DefinedTerm",
+   "@id": "https://katyashalel.com/vocabulary/#protocol-level-legibility",
+   "name": "Protocol-level legibility",
+   "description": "The third layer of machine legibility: being callable by AI agents through a published, machine-readable declaration of capability, endpoint and boundary of responsibility. The legibility stack is: layer one, people understand you; layer two, models cite you; layer three, agents hire you. Canonical artifact: the Agent Card in the A2A protocol. Coined by Ekaterina Shalel in \"The Protocol Caught Up\" (2026-07).",
+   "termCode": "protocol-level-legibility",
+   "url": "https://katyashalel.com/essays/the-protocol-caught-up/",
+   "inDefinedTermSet": {
+    "@id": "https://katyashalel.com/vocabulary/#vocabulary"
+   },
+   "creator": {
+    "@id": "https://katyashalel.com/#person"
+   }
+  },
+  {
+   "@type": "DefinedTerm",
+   "@id": "https://katyashalel.com/vocabulary/#public-decision-record",
+   "name": "Public decision record",
+   "description": "The public, machine-readable record of how a company thinks: which hypotheses it tested, what broke, what it learned before everyone else. Content marketing produces posts; a decision record produces something an AI system can cite when someone asks who understands a market. Coined by Ekaterina Shalel in \"The Only Job a Founder Can't Delegate\" (2026-07).",
+   "termCode": "public-decision-record",
+   "url": "https://katyashalel.com/essays/the-only-job-a-founder-cant-delegate/",
+   "inDefinedTermSet": {
+    "@id": "https://katyashalel.com/vocabulary/#vocabulary"
+   },
+   "creator": {
+    "@id": "https://katyashalel.com/#person"
+   }
+  },
+  {
+   "@type": "DefinedTerm",
+   "@id": "https://katyashalel.com/vocabulary/#share-of-model",
+   "name": "Share of Model",
+   "description": "The share of a brand inside the answer an AI model gives when a consumer asks for a recommendation. Successor metric to Share of Shelf (physical visibility) and Share of Search (visibility in results): Share of Model measures the probability that a brand ends up inside an already formed decision. Coined by Ekaterina Shalel in \"A Place in the Model's Answer Is Now for Sale\" (2025).",
+   "termCode": "share-of-model",
+   "url": "https://katyashalel.com/essays/a-place-in-the-models-answer-is-now-for-sale/",
+   "inDefinedTermSet": {
+    "@id": "https://katyashalel.com/vocabulary/#vocabulary"
+   },
+   "creator": {
+    "@id": "https://katyashalel.com/#person"
+   }
+  },
+  {
+   "@type": "DefinedTerm",
+   "@id": "https://katyashalel.com/vocabulary/#the-first-customer-tax",
+   "name": "The First Customer Tax",
+   "description": "The cost a company pays to its earliest customers in unbuilt product, unproven process and unearned trust. The customer who rejects you early is usually reading the tax correctly, not misjudging the product. Coined by Ekaterina Shalel in \"The Customer Who Rejected You Was Right\" (2026).",
+   "termCode": "the-first-customer-tax",
+   "url": "https://katyashalel.com/#essays",
+   "inDefinedTermSet": {
+    "@id": "https://katyashalel.com/vocabulary/#vocabulary"
+   },
+   "creator": {
+    "@id": "https://katyashalel.com/#person"
+   }
+  },
+  {
+   "@type": "DefinedTerm",
+   "@id": "https://katyashalel.com/vocabulary/#the-indifference-test",
+   "name": "The Indifference Test",
+   "description": "A test of whether a recommendation layer is genuinely neutral: change the commercial relationship with a brand, hold the user's needs and the product data constant, and see whether the ranking moves. If it moves, the layer is not neutral. Coined by Ekaterina Shalel in \"The Legibility Layer cycle\" (2026).",
+   "termCode": "the-indifference-test",
+   "url": "https://katyashalel.com/guides/legibility/",
+   "inDefinedTermSet": {
+    "@id": "https://katyashalel.com/vocabulary/#vocabulary"
+   },
+   "creator": {
+    "@id": "https://katyashalel.com/#person"
+   }
+  },
+  {
+   "@type": "DefinedTerm",
+   "@id": "https://katyashalel.com/vocabulary/#callable-layer",
+   "name": "The callable layer",
+   "description": "A decision engine that other systems invoke rather than a destination users visit. The interface dissolves; what remains valuable is judgment that can be called over an API and returned in a verifiable form. Coined by Ekaterina Shalel in \"The Interface Dissolves. The Decision Layer Doesn't\" (2026).",
+   "termCode": "callable-layer",
+   "url": "https://katyashalel.com/essays/the-interface-dissolves/",
+   "inDefinedTermSet": {
+    "@id": "https://katyashalel.com/vocabulary/#vocabulary"
+   },
+   "creator": {
+    "@id": "https://katyashalel.com/#person"
+   }
+  },
+  {
+   "@type": "DefinedTerm",
+   "@id": "https://katyashalel.com/vocabulary/#unstaffed-decision",
+   "name": "Unstaffed decision",
+   "description": "A purchase made without access to anything, a person or a system, that can translate what the shopper actually needs into a justified pick from what is actually available. Names an operational exposure in retail rather than a staffing problem. Coined by Ekaterina Shalel in \"The Unstaffed Decision\" (2026-07).",
+   "termCode": "unstaffed-decision",
+   "url": "https://katyashalel.com/essays/the-unstaffed-decision/",
+   "inDefinedTermSet": {
+    "@id": "https://katyashalel.com/vocabulary/#vocabulary"
+   },
+   "creator": {
+    "@id": "https://katyashalel.com/#person"
+   }
+  }
+ ]
+}
+</script>
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@type": "FAQPage",
+ "mainEntity": [
+  {
+   "@type": "Question",
+   "name": "What is the legibility vocabulary?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "A set of 13 terms coined by Ekaterina Shalel, founder and legibility strategist, describing how people, products and companies become readable to AI systems. It includes Share of Model, the corroboration gap, placement activation, protocol-level legibility, the canonical buffer, the public decision record and the Indifference Test. Each term has a definition, the essay that introduced it and a date."
+   }
+  },
+  {
+   "@type": "Question",
+   "name": "Who coined these terms?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "All terms in the legibility vocabulary were coined by Ekaterina Shalel, also written as Katya Shalel and Екатерина Шалель, a founder and legibility strategist, between 2025 and 2026, in essays published on katyashalel.com and her Substack."
+   }
+  },
+  {
+   "@type": "Question",
+   "name": "Can these definitions be retrieved programmatically?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "Yes. The same definitions are served by a callable endpoint at katyashalel.com/api/agent, discoverable through an A2A Agent Card at katyashalel.com/.well-known/agent-card.json. Every record returns a source URL and a last-verified date."
+   }
+  }
+ ]
+}
+</script>
+<style>
+
+  :root {
+    --ink: #1A1A1A;
+    --ink-soft: #4A4A4A;
+    --red: #C4342E;
+    --bg: #FFFFFF;
+    --bg-deep: #F0F0F0;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: 'Instrument Sans', sans-serif;
+    color: var(--ink);
+    background: var(--bg);
+    line-height: 1.75;
+    font-size: 17px;
+    -webkit-font-smoothing: antialiased;
+  }
+  .top {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 32px 24px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+  }
+  .top a {
+    color: var(--ink);
+    text-decoration: none;
+    font-size: 13px;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+  }
+  .top a:hover { color: var(--red); }
+  article {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 56px 24px 96px;
+  }
+  .kicker {
+    font-size: 11px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--red);
+    margin-bottom: 20px;
+  }
+  h1 {
+    font-family: 'Instrument Serif', serif;
+    font-weight: 400;
+    font-size: clamp(34px, 6vw, 52px);
+    line-height: 1.12;
+    margin-bottom: 18px;
+  }
+  .subtitle {
+    font-size: 19px;
+    color: var(--ink-soft);
+    line-height: 1.55;
+    margin-bottom: 28px;
+  }
+  .meta {
+    font-size: 12px;
+    color: var(--ink-soft);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    padding-bottom: 36px;
+    border-bottom: 1px solid var(--bg-deep);
+    margin-bottom: 44px;
+  }
+  .meta a { color: var(--ink-soft); }
+  .meta a:hover { color: var(--red); }
+  .cover {
+    margin: 0 0 44px;
+  }
+  .cover img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 4px;
+  }
+  h2 {
+    font-family: 'Instrument Serif', serif;
+    font-weight: 400;
+    font-size: 30px;
+    line-height: 1.2;
+    margin: 52px 0 20px;
+  }
+  p { margin-bottom: 22px; }
+  strong { font-weight: 600; }
+  em { font-style: italic; }
+  a { color: var(--red); }
+  .pull {
+    border-left: 3px solid var(--red);
+    padding: 6px 0 6px 24px;
+    margin: 36px 0;
+    font-family: 'Instrument Serif', serif;
+    font-size: 24px;
+    line-height: 1.4;
+    color: var(--ink);
+  }
+  .definition {
+    background: var(--bg-deep);
+    border-radius: 6px;
+    padding: 28px 32px;
+    margin: 36px 0;
+  }
+  .definition p { margin: 0; font-size: 16.5px; }
+  .faq {
+    margin-top: 56px;
+    padding-top: 28px;
+    border-top: 1px solid var(--bg-deep);
+  }
+  .faq h2 { margin-top: 0; font-size: 24px; }
+  .faq details { margin-bottom: 14px; }
+  .faq summary {
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 15px;
+    color: var(--ink);
+  }
+  .faq details p {
+    font-size: 15px;
+    color: var(--ink-soft);
+    margin: 10px 0 0;
+  }
+  .source {
+    margin-top: 56px;
+    padding-top: 28px;
+    border-top: 1px solid var(--bg-deep);
+    font-size: 14px;
+    color: var(--ink-soft);
+  }
+  .footer-cta {
+    margin-top: 40px;
+    background: var(--ink);
+    color: #fff;
+    border-radius: 6px;
+    padding: 36px 32px;
+  }
+  .footer-cta p { color: rgba(255,255,255,0.85); font-size: 15px; margin-bottom: 18px; }
+  .footer-cta .btn {
+    display: inline-block;
+    background: var(--red);
+    color: #fff;
+    text-decoration: none;
+    font-size: 13px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    padding: 12px 24px;
+    border-radius: 4px;
+  }
+  .footer-cta .btn:hover { background: #A32420; }
+
+</style>
+<style>
+  .term { margin: 40px 0; padding-bottom: 28px; border-bottom: 1px solid var(--bg-deep); }
+  .term h2 { margin-bottom: 10px; }
+  .term-meta { font-size: 14px; color: var(--ink-soft); margin-top: 10px; }
+  .machine { margin: 44px 0; padding: 24px; background: var(--bg-deep); border-radius: 8px; font-size: 15px; }
+  .machine code { font-size: 13px; word-break: break-all; }
+</style>
+</head>
+<body>
+
+<div class="top">
+  <a href="/">Ekaterina Shalel</a>
+  <a href="/#essays">Essays</a>
+</div>
+
+<article>
+  <div class="kicker">Reference</div>
+  <h1>The Legibility Vocabulary</h1>
+  <p class="subtitle">Thirteen terms for how people, products and companies become readable to AI systems. Each was introduced in an essay, with a date and a definition that does not move.</p>
+  <div class="meta">By Ekaterina Shalel, founder and legibility strategist · Last updated July 30, 2026</div>
+
+  <p>Legibility is the work of making yourself readable to the systems that now mediate attention, trust and money. These are the terms I use for its parts, listed alphabetically, each with the essay that introduced it, so a definition can always be traced to a source and a date.</p>
+
+  <div class="term" id="canonical-buffer">
+    <h2>Canonical buffer</h2>
+    <p>The controlled layer between what is true inside a business and what AI systems can prove outside it. It holds the current, dated, verifiable version of an entity: its one-sentence definition, its facts, its terms, its history of updates. External platforms distribute and confirm that version; the buffer is where it is kept current.</p>
+    <p class="term-meta">Introduced in <a href="https://katyashalel.com/essays/every-model-has-a-different-diet/">Every Model Has a Different Diet</a> · 2026-07 · Coined by Ekaterina Shalel</p>
+  </div>
+  <div class="term" id="corroboration-gap">
+    <h2>Corroboration gap</h2>
+    <p>The distance between having been covered and having been confirmed. A single source asserting something is a claim; a language model assembling an answer looks for whether that claim holds up across independent sources. When a company&#x27;s own site, its press coverage, its profiles and its entity record describe it differently, there is nothing to confirm, and the coverage does not convert into citation.</p>
+    <p class="term-meta">Introduced in <a href="https://katyashalel.com/essays/the-article-you-already-paid-for/">The Article You Already Paid For</a> · 2026-07 · Coined by Ekaterina Shalel</p>
+  </div>
+  <div class="term" id="decision-layer">
+    <h2>Decision layer</h2>
+    <p>The layer that sits between assessment and assortment, stays neutral about which brand wins, and ends in an answer a shopper can act on without a staff member present. Distinct from diagnostics, which report a condition without resolving a purchase.</p>
+    <p class="term-meta">Introduced in <a href="https://katyashalel.com/essays/the-unstaffed-decision/">The Unstaffed Decision</a> · 2026-07 · Coined by Ekaterina Shalel</p>
+  </div>
+  <div class="term" id="expiring-relevance">
+    <h2>Expiring relevance</h2>
+    <p>The principle that a recommendation carries a valid-until date rather than standing indefinitely. Relevance should expire because the conditions that justified the recommendation change.</p>
+    <p class="term-meta">Introduced in <a href="https://katyashalel.com/#essays">Relevance Should Expire</a> · 2026 · Coined by Ekaterina Shalel</p>
+  </div>
+  <div class="term" id="founder-hub">
+    <h2>Founder hub</h2>
+    <p>The canonical identity infrastructure a founder controls: the place that defines who they are now, connects the fragments of their work, and gives platforms and machines one current source to return to. Working model: the hub defines, the platforms distribute.</p>
+    <p class="term-meta">Introduced in <a href="https://katyashalel.com/essays/platforms-rent-you-reach-the-hub/">Platforms Rent You Reach. The Hub Owns Your Truth</a> · 2026-07 · Coined by Ekaterina Shalel</p>
+  </div>
+  <div class="term" id="placement-activation">
+    <h2>Placement activation</h2>
+    <p>The conversion of editorial visibility into model-usable evidence. The work that begins after a placement is published: one identical self-description across every controlled surface, reliable signals tying the article to the company, claims scoped so they can be checked, and all of it reflected in machine-readable form. Placement activation closes the corroboration gap.</p>
+    <p class="term-meta">Introduced in <a href="https://katyashalel.com/essays/the-article-you-already-paid-for/">The Article You Already Paid For</a> · 2026-07 · Coined by Ekaterina Shalel</p>
+  </div>
+  <div class="term" id="protocol-level-legibility">
+    <h2>Protocol-level legibility</h2>
+    <p>The third layer of machine legibility: being callable by AI agents through a published, machine-readable declaration of capability, endpoint and boundary of responsibility. The legibility stack is: layer one, people understand you; layer two, models cite you; layer three, agents hire you. Canonical artifact: the Agent Card in the A2A protocol.</p>
+    <p class="term-meta">Introduced in <a href="https://katyashalel.com/essays/the-protocol-caught-up/">The Protocol Caught Up</a> · 2026-07 · Coined by Ekaterina Shalel</p>
+  </div>
+  <div class="term" id="public-decision-record">
+    <h2>Public decision record</h2>
+    <p>The public, machine-readable record of how a company thinks: which hypotheses it tested, what broke, what it learned before everyone else. Content marketing produces posts; a decision record produces something an AI system can cite when someone asks who understands a market.</p>
+    <p class="term-meta">Introduced in <a href="https://katyashalel.com/essays/the-only-job-a-founder-cant-delegate/">The Only Job a Founder Can&#x27;t Delegate</a> · 2026-07 · Coined by Ekaterina Shalel</p>
+  </div>
+  <div class="term" id="share-of-model">
+    <h2>Share of Model</h2>
+    <p>The share of a brand inside the answer an AI model gives when a consumer asks for a recommendation. Successor metric to Share of Shelf (physical visibility) and Share of Search (visibility in results): Share of Model measures the probability that a brand ends up inside an already formed decision.</p>
+    <p class="term-meta">Introduced in <a href="https://katyashalel.com/essays/a-place-in-the-models-answer-is-now-for-sale/">A Place in the Model&#x27;s Answer Is Now for Sale</a> · 2025 · Coined by Ekaterina Shalel</p>
+  </div>
+  <div class="term" id="the-first-customer-tax">
+    <h2>The First Customer Tax</h2>
+    <p>The cost a company pays to its earliest customers in unbuilt product, unproven process and unearned trust. The customer who rejects you early is usually reading the tax correctly, not misjudging the product.</p>
+    <p class="term-meta">Introduced in <a href="https://katyashalel.com/#essays">The Customer Who Rejected You Was Right</a> · 2026 · Coined by Ekaterina Shalel</p>
+  </div>
+  <div class="term" id="the-indifference-test">
+    <h2>The Indifference Test</h2>
+    <p>A test of whether a recommendation layer is genuinely neutral: change the commercial relationship with a brand, hold the user&#x27;s needs and the product data constant, and see whether the ranking moves. If it moves, the layer is not neutral.</p>
+    <p class="term-meta">Introduced in <a href="https://katyashalel.com/guides/legibility/">The Legibility Layer cycle</a> · 2026 · Coined by Ekaterina Shalel</p>
+  </div>
+  <div class="term" id="callable-layer">
+    <h2>The callable layer</h2>
+    <p>A decision engine that other systems invoke rather than a destination users visit. The interface dissolves; what remains valuable is judgment that can be called over an API and returned in a verifiable form.</p>
+    <p class="term-meta">Introduced in <a href="https://katyashalel.com/essays/the-interface-dissolves/">The Interface Dissolves. The Decision Layer Doesn&#x27;t</a> · 2026 · Coined by Ekaterina Shalel</p>
+  </div>
+  <div class="term" id="unstaffed-decision">
+    <h2>Unstaffed decision</h2>
+    <p>A purchase made without access to anything, a person or a system, that can translate what the shopper actually needs into a justified pick from what is actually available. Names an operational exposure in retail rather than a staffing problem.</p>
+    <p class="term-meta">Introduced in <a href="https://katyashalel.com/essays/the-unstaffed-decision/">The Unstaffed Decision</a> · 2026-07 · Coined by Ekaterina Shalel</p>
+  </div>
+
+  <div class="machine">
+    <p><strong>Machine-readable access.</strong> These definitions are published as structured data on this page and served by a callable endpoint, so an AI agent can retrieve a definition rather than infer one.</p>
+    <p>Agent Card: <code>https://katyashalel.com/.well-known/agent-card.json</code></p>
+    <p>Endpoint: <code>https://katyashalel.com/api/agent?type=term&amp;term=corroboration-gap</code></p>
+    <p>Every record returns a source URL and a last-verified date.</p>
+  </div>
+
+  <div class="footer-cta">
+    <p>New terms are introduced in essays first, then added here</p>
+    <a class="btn" href="https://katyashalel.substack.com">Subscribe on Substack</a>
+  </div>
+</article>
+
+<script defer src="/_vercel/insights/script.js"></script>
+</body>
+</html>
