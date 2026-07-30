@@ -92,9 +92,9 @@ const TERMS = {
     name: "The Indifference Test",
     definition:
       "A test of whether a recommendation layer is genuinely neutral: change the commercial relationship with a brand, hold the user's needs and the product data constant, and see whether the ranking moves. If it moves, the layer is not neutral.",
-    coined_in: "The Legibility Layer cycle",
-    coined_date: "2026",
-    source_url: `${SITE}/guides/legibility/`
+    coined_in: "A Place in the Model's Answer Is Now for Sale",
+    coined_date: "2025",
+    source_url: `${SITE}/essays/a-place-in-the-models-answer-is-now-for-sale/`
   },
   "the-first-customer-tax": {
     name: "The First Customer Tax",
@@ -102,7 +102,7 @@ const TERMS = {
       "The cost a company pays to its earliest customers in unbuilt product, unproven process and unearned trust. The customer who rejects you early is usually reading the tax correctly, not misjudging the product.",
     coined_in: "The Customer Who Rejected You Was Right",
     coined_date: "2026",
-    source_url: `${SITE}/#essays`
+    source_url: `${SITE}/essays/the-first-customer-tax/`
   },
   "founder-hub": {
     name: "Founder hub",
