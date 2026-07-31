@@ -618,7 +618,23 @@ header{background:var(--cream);padding:22px 16px 18px;text-align:center;border-b
 .lz .term-card:hover{transform:translateY(-4px)}
 .lz .term-card img{display:block;width:100%;height:auto}
 @media (min-width:760px){.lz .term-cards{grid-template-columns:repeat(4,1fr);gap:16px}}
-@media (max-width:760px){.lz .hero-photos{height:38vh;min-height:260px}}</style>
+@media (max-width:760px){.lz .hero-photos{height:38vh;min-height:260px}}
+/* === SKINBOT DEMO MODAL === */
+.sbm-overlay{position:fixed;inset:0;background:rgba(20,18,15,.55);display:none;align-items:center;justify-content:center;z-index:1000;padding:20px}
+.sbm-overlay.open{display:flex}
+.sbm{background:#FBF8F2;max-width:430px;width:100%;padding:34px 30px;border:1px solid var(--line,#E3DCCE);position:relative;max-height:90vh;overflow:auto}
+.sbm h3{font-family:'Instrument Serif',serif;font-weight:400;font-size:26px;margin:0 0 6px}
+.sbm-note{font-size:13px;color:#6f6a60;margin:0 0 18px}
+.sbm label{display:block;font-size:11px;letter-spacing:.1em;text-transform:uppercase;margin:12px 0 5px;color:#6f6a60}
+.sbm input,.sbm textarea{width:100%;box-sizing:border-box;padding:10px 12px;border:1px solid var(--line,#E3DCCE);background:#fff;font:inherit;font-size:14px}
+.sbm textarea{min-height:74px;resize:vertical}
+.sbm-send{margin-top:18px;width:100%;padding:13px;background:#1A1A1A;color:#FBF8F2;border:none;font-size:12px;letter-spacing:.14em;text-transform:uppercase;cursor:pointer}
+.sbm-send[disabled]{opacity:.5;cursor:default}
+.sbm-close{position:absolute;top:10px;right:14px;background:none;border:none;font-size:22px;cursor:pointer;color:#6f6a60}
+.sbm-status{font-size:13px;margin-top:12px;display:none}
+.sbm-status.ok{display:block;color:#2c6e49}
+.sbm-status.err{display:block;color:#C4342E}
+</style>
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -766,7 +782,7 @@ header{background:var(--cream);padding:22px 16px 18px;text-align:center;border-b
         <li>Stateless и privacy-first архитектура</li>
       </ul>
 
-      <div class="skinbot-actions"><a href="/skinbot-brand-ru.pdf" target="_blank" class="skinbot-btn">Презентация SKINBOT</a><a href="/skinbot-brand-en.pdf" target="_blank" class="skinbot-btn skinbot-btn-ghost">Deck in English</a><a href="mailto:k.skinbot@gmail.com?subject=SKINBOT%20demo%20request" class="skinbot-btn skinbot-btn-ghost">Запросить демо</a></div>
+      <div class="skinbot-actions"><a href="/skinbot-brand-ru.pdf" target="_blank" class="skinbot-btn">Презентация SKINBOT</a><a href="/skinbot-brand-en.pdf" target="_blank" class="skinbot-btn skinbot-btn-ghost">Deck in English</a><a href="#" onclick="sbmOpen();return false" class="skinbot-btn skinbot-btn-ghost">Запросить демо</a></div>
     </div>
   </div>
 </section>
@@ -965,5 +981,39 @@ b.addEventListener('click',function(){var o=n.classList.toggle('nav-open');b.set
 n.querySelectorAll('.nav-links a').forEach(function(a){a.addEventListener('click',function(){n.classList.remove('nav-open');b.setAttribute('aria-expanded','false');});});})();
 </script>
 <script defer src="/_vercel/insights/script.js"></script>
+
+<div class="sbm-overlay" id="sbm-overlay" role="dialog" aria-modal="true">
+  <div class="sbm">
+    <button type="button" class="sbm-close" onclick="sbmClose()">&times;</button>
+    <h3>Запросить демо SKINBOT</h3>
+    <p class="sbm-note">Отвечаем в течение 24 часов</p>
+    <label for="sbm-name">Имя</label><input id="sbm-name" type="text" maxlength="200">
+    <label for="sbm-email">Email</label><input id="sbm-email" type="email" maxlength="200">
+    <label for="sbm-phone">Телефон</label><input id="sbm-phone" type="tel" maxlength="60">
+    <label for="sbm-org">Компания</label><input id="sbm-org" type="text" maxlength="200">
+    <label for="sbm-msg">Сообщение</label><textarea id="sbm-msg" maxlength="1500"></textarea>
+    <button type="button" class="sbm-send" id="sbm-send" onclick="sbmSend()">Отправить</button>
+    <div class="sbm-status" id="sbm-status"></div>
+  </div>
+</div>
+<script>
+function sbmOpen(){document.getElementById('sbm-overlay').classList.add('open');}
+function sbmClose(){document.getElementById('sbm-overlay').classList.remove('open');}
+document.getElementById('sbm-overlay').addEventListener('click',function(e){if(e.target===this)sbmClose();});
+async function sbmSend(){
+  var g=function(id){return document.getElementById(id).value.trim();};
+  var st=document.getElementById('sbm-status');var btn=document.getElementById('sbm-send');
+  if(!g('sbm-name')&&!g('sbm-email')&&!g('sbm-phone')){st.className='sbm-status err';st.textContent='Не получилось отправить, напишите на hello@skinbot.ru';return;}
+  btn.disabled=true;st.className='sbm-status';
+  try{
+    var r=await fetch('https://skinbot.ru/api/demo-request',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({name:g('sbm-name'),email:g('sbm-email'),phone:g('sbm-phone'),organization:g('sbm-org'),message:g('sbm-msg'),language:'ru',placement:'katyashalel_home',pageUrl:location.href})});
+    var d=await r.json();
+    if(d&&d.ok){st.className='sbm-status ok';st.textContent='Заявка отправлена, спасибо';setTimeout(sbmClose,1800);}
+    else{st.className='sbm-status err';st.textContent='Не получилось отправить, напишите на hello@skinbot.ru';}
+  }catch(e){st.className='sbm-status err';st.textContent='Не получилось отправить, напишите на hello@skinbot.ru';}
+  btn.disabled=false;
+}
+</script>
+
 </body>
 </html>
