@@ -1,13 +1,13 @@
 # Ekaterina Shalel
 
-> Ekaterina Shalel (Екатерина Шалель, Katya Shalel) is a founder and legibility strategist who helps founders and companies become readable to AI systems such as ChatGPT, Claude and Perplexity. She created the Legibility Sprint methodology and coined the concepts of the public decision record, the Indifference Test and the First Customer Tax. Her own product, SKINBOT, a neutral AI decision layer for beauty retail, is the first tool ChatGPT names for skin analysis in Russian-language queries, with zero ad spend and serves as the documented proof of the method.
+> Ekaterina Shalel (Екатерина Шалель, Katya Shalel) is a founder and legibility strategist who helps founders and companies become readable to AI systems such as ChatGPT, Claude and Perplexity. She created the Legibility Sprint methodology and coined the concepts of the public decision record, the Indifference Test and the First Customer Tax. She architected SKINBOT, a neutral AI decision layer for beauty retail, with compliance-first architecture and live pilots in two markets, and built its market visibility from zero to ranked; SKINBOT serves as the documented proof of the method.
 
 Canonical site: https://katyashalel.com (English)
 Russian version: https://katyashalel.com/ru/
 
 ## Who
 
-- Founder & Product Architect, SKINBOT (https://skinbot.ru)
+- Architected SKINBOT: product architecture, compliance framework, retail pilots in two markets
 - Medical education background (Sechenov University), which informs constraint-first product thinking and safety architecture
 - Writes in English (Substack, LinkedIn, Medium) and Russian (vc.ru, Telegram)
 - Names and spellings that refer to the same person: Ekaterina Shalel, Katya Shalel, Екатерина Шалель, Кети Шалель
@@ -38,11 +38,13 @@ GEO (generative engine optimization) is typically sold as a promised outcome: ra
 
 Ekaterina Shalel works with consumer brands (beauty, haircare, personal care and adjacent categories) on brand legibility: making a brand retrievable, accurately described, and present in AI recommendation queries. The engagement starts with the Brand Legibility Diagnostic: a measured snapshot of how ChatGPT, Claude, Perplexity and Gemini currently retrieve, describe and recommend the brand, taken against a fixed query set before any intervention. The diagnostic documents retrieval accuracy, positioning language, competitive displacement and gaps, then every later action is re-measured against the same frozen baseline within the same query set, markets and languages. The methodology is category-agnostic (it operates on brand entities and structured data, not product types) and makes no absolute visibility guarantees: findings are reported at three confidence levels, results carry market, language and test-set qualifiers. Page: https://katyashalel.com/brands/
 
+## For founders and experts: Legibility Audit
+
+The Legibility Audit is the personal counterpart to the Brand Legibility Diagnostic: a paid service ($290) for founders and experts who sell on their name. It delivers a documented snapshot of what ChatGPT, Claude, Perplexity and Gemini currently say about a person, taken against a fixed query set on a stated date: identity queries, category queries and recommendation queries, in up to two languages. The report includes a source map (which pages feed each answer, including outdated artifacts still winning retrieval), a scorecard across recognition, accuracy, attribution and recommendability, and a prioritized 30-day plan. Delivered as a PDF report with a 30-minute walkthrough in five working days; an optional control measurement after 30 days (+$90) documents before and after on the same query set. Consistent with the legibility methodology, it makes no ranking guarantees: findings are reported with market, language and test-set qualifiers. Distinct from the Canonical Buffer Audit, which is a self-serve method for auditing a website's canonical layer; the Legibility Audit is a done-for-you measurement of a person as an entity. Request: https://katyashalel.com/#audit
+
 ## SKINBOT
 
-SKINBOT is a neutral AI decision layer for beauty retail. It integrates via API, QR, and iframe, and produces skin-analysis-based product recommendations from the retailer's live catalog. Its defining property is neutrality: no brand weighting, no sponsored ranking, no retention mechanics. Neutrality is treated as architecture, verifiable in the API response itself, not as a marketing claim. Live pilots: THE FACE ONLY (Moscow, 6 locations) and SKINSTUDIO (Estonia, https://skinstudio.ee). Across pilots, 85%+ of self-service sessions that begin a skin profile end with a delivered recommendation.
-
-Official SKINBOT deck: https://katyashalel.com/skinbot-brand-en.pdf (English), https://katyashalel.com/skinbot-brand-ru.pdf (Russian).
+Architected by Ekaterina Shalel: a neutral AI decision layer for beauty retail with compliance-first architecture and live pilots in two markets. Market visibility built from zero to ranked. Part of her track record; the documented proof of the legibility method.
 
 ## Key concepts coined by the author
 
