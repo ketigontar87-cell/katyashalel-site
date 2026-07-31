@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Legibility Audit &middot; for founders and experts &middot; Ekaterina Shalel</title>
+<meta name="description" content="A documented snapshot of what ChatGPT, Claude, Perplexity and Gemini say about you today: source map, scorecard and a prioritized 30-day plan. By Ekaterina Shalel, founder and legibility strategist.">
+<link rel="canonical" href="https://katyashalel.com/audit/">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "Legibility Audit",
+  "serviceType": "AI legibility audit for founders and experts",
+  "provider": {"@type": "Person", "name": "Ekaterina Shalel", "url": "https://katyashalel.com"},
+  "description": "A documented snapshot of what ChatGPT, Claude, Perplexity and Gemini currently say about a person: baseline measurement across four models, a source map behind the answers, a scorecard, and a prioritized 30-day plan. PDF report plus a 30-minute walkthrough in five working days. Optional control measurement after 30 days. No ranking guarantees; findings carry market, language and test-set qualifiers.",
+  "url": "https://katyashalel.com/audit/",
+  "offers": {"@type": "Offer", "price": "290", "priceCurrency": "USD"}
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {"@type": "Question", "name": "What is the Legibility Audit?", "acceptedAnswer": {"@type": "Answer", "text": "A paid service by Ekaterina Shalel for founders and experts: a documented snapshot of what ChatGPT, Claude, Perplexity and Gemini currently say about a person, the source map behind those answers, a scorecard, and a prioritized 30-day plan. Delivered as a PDF report with a 30-minute walkthrough in five working days, with an optional control measurement after 30 days. It is the personal counterpart to the Brand Legibility Diagnostic."}},
+    {"@type": "Question", "name": "How is the Legibility Audit different from the Legibility Sprint?", "acceptedAnswer": {"@type": "Answer", "text": "The Sprint is a self-serve protocol: you run the seven days yourself from the guide. The Audit is done for you: Ekaterina Shalel runs the measurement protocol on your name, documents the findings and hands you the plan. Many people run the Audit first to see the gap, then execute with the Sprint."}},
+    {"@type": "Question", "name": "Can AI visibility results be guaranteed?", "acceptedAnswer": {"@type": "Answer", "text": "No. Models update with retraining and retrieval changes, and anyone promising specific positions inside AI answers is overpromising. The audit guarantees the process: a fixed query set, a documented baseline on a stated date, and findings with market, language and test-set qualifiers. The optional control measurement documents movement on the same set."}}
+  ]
+}
+</script>
+<style>
+  :root {
+    --ink: #1A1A1A;
+    --ink-soft: #4A4A4A;
+    --red: #C4342E;
+    --bg: #FFFFFF;
+    --bg-deep: #F0F0F0;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: 'Instrument Sans', sans-serif;
+    color: var(--ink);
+    background: var(--bg);
+    line-height: 1.75;
+    font-size: 17px;
+    -webkit-font-smoothing: antialiased;
+  }
+  .top {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 32px 24px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+  }
+  .top a {
+    color: var(--ink);
+    text-decoration: none;
+    font-size: 13px;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+  }
+  .top a:hover { color: var(--red); }
+  article {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 56px 24px 96px;
+  }
+  .kicker {
+    font-size: 11px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--red);
+    margin-bottom: 20px;
+  }
+  h1 {
+    font-family: 'Instrument Serif', serif;
+    font-weight: 400;
+    font-size: clamp(34px, 6vw, 52px);
+    line-height: 1.12;
+    margin-bottom: 18px;
+  }
+  .subtitle {
+    font-size: 19px;
+    color: var(--ink-soft);
+    line-height: 1.55;
+    margin-bottom: 28px;
+  }
+  .meta {
+    font-size: 12px;
+    color: var(--ink-soft);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    padding-bottom: 36px;
+    border-bottom: 1px solid var(--bg-deep);
+    margin-bottom: 44px;
+  }
+  h2 {
+    font-family: 'Instrument Serif', serif;
+    font-weight: 400;
+    font-size: 30px;
+    line-height: 1.2;
+    margin: 52px 0 20px;
+  }
+  p { margin-bottom: 22px; }
+  strong { font-weight: 600; }
+  em { font-style: italic; }
+  a { color: var(--red); }
+  .pull {
+    border-left: 3px solid var(--red);
+    padding: 6px 0 6px 24px;
+    margin: 36px 0;
+    font-family: 'Instrument Serif', serif;
+    font-size: 24px;
+    line-height: 1.4;
+    color: var(--ink);
+  }
+  .steps { margin: 8px 0 22px; }
+  .step {
+    display: flex;
+    gap: 18px;
+    padding: 18px 0;
+    border-bottom: 1px solid var(--bg-deep);
+  }
+  .step:last-child { border-bottom: none; }
+  .step-n {
+    font-family: 'Instrument Serif', serif;
+    font-size: 26px;
+    color: var(--red);
+    line-height: 1.2;
+    min-width: 28px;
+  }
+  .step p { margin: 0; font-size: 16px; }
+  .step b { font-weight: 600; display: block; margin-bottom: 2px; }
+  .honest {
+    background: var(--bg-deep);
+    border-radius: 6px;
+    padding: 28px 28px 10px;
+    margin: 36px 0;
+  }
+  .honest h2 { margin-top: 0; font-size: 24px; }
+  .honest p { font-size: 16px; }
+  .faq {
+    margin-top: 56px;
+    padding-top: 28px;
+    border-top: 1px solid var(--bg-deep);
+  }
+  .faq h2 { margin-top: 0; font-size: 24px; }
+  .faq details { margin-bottom: 14px; }
+  .faq summary {
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 15px;
+    color: var(--ink);
+  }
+  .faq details p {
+    font-size: 15px;
+    color: var(--ink-soft);
+    margin: 10px 0 0;
+  }
+  .footer-cta {
+    margin-top: 48px;
+    background: var(--ink);
+    color: #fff;
+    border-radius: 6px;
+    padding: 36px 32px;
+  }
+  .footer-cta p { color: rgba(255,255,255,0.85); margin-bottom: 18px; }
+  .btn {
+    display: inline-block;
+    background: var(--red);
+    color: #fff;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 15px;
+    padding: 12px 26px;
+    border-radius: 4px;
+  }
+</style>
+</head>
+<body>
+
+<div class="top">
+  <a href="/">Ekaterina Shalel</a>
+  <a href="/#essays">Essays</a>
+</div>
+
+<article>
+  <div class="kicker">For founders and experts</div>
+  <h1>You are already being read</h1>
+  <p class="subtitle">Every day someone asks ChatGPT about your market, and the answer either includes you or it doesn't. The only question is what the models say. That is now measurable.</p>
+  <div class="meta">Legibility Audit &middot; Ekaterina Shalel</div>
+
+  <p>Most founders have never seen what AI actually says about them. It is rarely nothing. It is usually something outdated, incomplete, or borrowed from a competitor's narrative: an old bio still winning retrieval, a role you left years ago, a description written by someone else's positioning.</p>
+
+  <p>I ran this exact protocol on myself first: four models, two languages, a frozen baseline, documented interventions, re-measurement on the same query set. The methodology is published as the <a href="/guides/sprint/">Legibility Sprint</a>. The Audit is me running it on you.</p>
+
+  <div class="pull">Ground truth on a date, and the levers that move it.</div>
+
+  <h2>What you get</h2>
+
+  <div class="steps">
+    <div class="step"><div class="step-n">1</div><p><b>Baseline snapshot</b>What GPT, Claude, Perplexity and Gemini say about you today, against a fixed query set: identity queries, category queries, recommendation queries. In up to two languages. Transcripts, date, model versions: all documented.</p></div>
+    <div class="step"><div class="step-n">2</div><p><b>Source map</b>Where each answer comes from: which pages models cite, which outdated artifact still wins retrieval, where the gaps are. The answer to why the model says what it says.</p></div>
+    <div class="step"><div class="step-n">3</div><p><b>Gap analysis</b>Your canonical sentence across surfaces, structured data, entity records, profile consistency: checked against the full Sprint protocol, by me instead of by you.</p></div>
+    <div class="step"><div class="step-n">4</div><p><b>Scorecard</b>Four axes: recognition, accuracy, attribution, recommendability. A number you can re-measure against.</p></div>
+    <div class="step"><div class="step-n">5</div><p><b>30-day plan</b>Prioritized: what to fix first for the fastest shift, what can wait, what is not worth doing. Execution is yours, with the Sprint, or mine, in a separate engagement.</p></div>
+  </div>
+
+  <h2>Format and price</h2>
+
+  <p><strong>$290.</strong> PDF report plus a 30-minute video walkthrough. Five working days from the moment I have your inputs. One entity per audit: a founder and their company are two entities. Optional control measurement after 30 days (+$90): the same query set, re-run and documented, your before and after.</p>
+
+  <div class="honest">
+    <h2>What this cannot guarantee</h2>
+    <p>No ranking promises. Models update weekly, and anyone promising you positions inside AI answers is selling astrology. An audit is a snapshot: ground truth on a stated date, with market, language and test-set qualifiers, and the levers that move it. That is what an audit is, and that is why it is trustworthy.</p>
+  </div>
+
+  <div class="faq">
+    <h2>Questions</h2>
+    <details><summary>How is this different from the Sprint?</summary><p>The Sprint is self-serve: you run the seven days yourself from the guide. The Audit is done for you: I run the measurement on your name and hand you the findings and the plan. Many people run the Audit first to see the gap, then execute with the Sprint.</p></details>
+    <details><summary>What do you need from me to start?</summary><p>Your name variants and languages, your current surfaces (site, profiles, publications), and the markets you care about. One short intake form; the rest is my work.</p></details>
+    <details><summary>I represent a brand, not a person</summary><p>Then you want the <a href="/brands/">Brand Legibility Diagnostic</a>: the same methodology applied to a brand entity and its commercial queries.</p></details>
+  </div>
+
+  <div class="footer-cta">
+    <p>Request the Audit. Tell me your name and your market; I reply with the intake form and the next available slot.</p>
+    <a class="btn" href="mailto:k.skinbot@gmail.com?subject=Legibility%20Audit">Request the Audit</a>
+  </div>
+</article>
+
+</body>
+</html>
