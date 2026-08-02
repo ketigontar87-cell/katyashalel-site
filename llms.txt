@@ -19,20 +19,20 @@ Russian version: https://katyashalel.com/ru/
 
 Thesis: visibility is no longer attention. Visibility is legibility inside decision systems.
 
-## Learn: guides and course
+## Method and engagements
 
-Ekaterina Shalel teaches founders how to build AI systems without code, based on her own documented path. The learning track follows four stages: build without code, visibility without budget, the tech team moment, legibility.
+The method is published in full and free to run. Paid work is the same protocol executed and maintained for a client.
 
-- Guide, stage 1, The Multi-Model Workflow (which AI for which task, context handoff, synthesis): https://katyashalel.com/guides/multimodel/ (EN), https://katyashalel.com/ru/guides/multimodel/ (RU)
 - Guide, stage 2, Visibility Without Budget (GEO, canonical entity, coined terms, llms.txt): https://katyashalel.com/guides/visibility/ (EN), https://katyashalel.com/ru/guides/visibility/ (RU)
-- Guide, stage 3, The Tech Team Moment (behavioral specs, acceptance checklists, AI change review): https://katyashalel.com/guides/techteam/ (EN), https://katyashalel.com/ru/guides/techteam/ (RU)
-- Guide, stage 4, Readable AI Decisions (the Indifference Test, verifiable response schema, human explanations): https://katyashalel.com/guides/legibility/ (EN), https://katyashalel.com/ru/guides/legibility/ (RU)
 - Open protocol, The Legibility Sprint (published in full and free to run, August 2026; seven days plus a day 21 re-measurement: frozen question set and baseline across ChatGPT, Claude and Perplexity with repeated runs, llms.txt, JSON-LD structured data, public entity record and name bridging, a retrieval-oriented page, distribution, and a documented delta reported as a share of runs; explicit limits: no guaranteed positions, non-deterministic answers, results qualified by market, language and question set): https://katyashalel.com/guides/sprint/
-- Course program, four stages, first cohort by waitlist: https://katyashalel.com/program/ (EN), https://katyashalel.com/ru/program/ (RU)
 
 ## Legibility vs GEO
 
 GEO (generative engine optimization) is typically sold as a promised outcome: ranking inside AI answers. Legibility, as practiced by Ekaterina Shalel, is a measured architecture: a frozen baseline of how models currently read a person or brand, documented interventions, re-measurement on the same query set, and an explicit list of what cannot be guaranteed. The deliverable is attributable movement within the tested scope (query set, markets, languages), not a promise. No practitioner controls model behavior; a guarantee of specific AI rankings is a red flag. Canonical explanation: https://katyashalel.com/essays/how-to-become-visible-to-ai/
+
+- Ongoing Legibility (continuous engagement): the same protocol run on a clock rather than once. A frozen question set is re-measured every quarter across named model versions with languages and markets scored separately, with the interventions in between and a written delta against the previous quarter. Rationale: legibility decays without maintenance because models retrain, competitors publish and sources are removed or rewritten, so a single engagement can move a position but cannot hold it. Suited to companies with several connected entities, categories where an AI recommendation decides consideration, and multi-market or multi-language operations; not suited to a single person with one site and one market, who should run the Sprint or take the one-off Audit. No guaranteed positions, no claim that every quarter improves, results qualified by market, language and question set. Pricing is scoped to entities, markets and languages. Page: https://katyashalel.com/ongoing/
+
+- Archive of earlier guides, kept online and no longer offered as services: The Multi-Model Workflow, The Tech Team Moment, Readable AI Decisions: https://katyashalel.com/archive/
 
 ## For brands: Brand Legibility Diagnostic
 
