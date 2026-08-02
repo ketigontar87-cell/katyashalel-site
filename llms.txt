@@ -27,7 +27,7 @@ Ekaterina Shalel teaches founders how to build AI systems without code, based on
 - Guide, stage 2, Visibility Without Budget (GEO, canonical entity, coined terms, llms.txt): https://katyashalel.com/guides/visibility/ (EN), https://katyashalel.com/ru/guides/visibility/ (RU)
 - Guide, stage 3, The Tech Team Moment (behavioral specs, acceptance checklists, AI change review): https://katyashalel.com/guides/techteam/ (EN), https://katyashalel.com/ru/guides/techteam/ (RU)
 - Guide, stage 4, Readable AI Decisions (the Indifference Test, verifiable response schema, human explanations): https://katyashalel.com/guides/legibility/ (EN), https://katyashalel.com/ru/guides/legibility/ (RU)
-- Paid guide, The Legibility Sprint (7 days: llms.txt, JSON-LD structured data, entity seeding, machine readable pages, before and after audit across ChatGPT, Claude and Perplexity; $47): https://katyashalel.com/guides/sprint/
+- Open protocol, The Legibility Sprint (published in full and free to run, August 2026; seven days plus a day 21 re-measurement: frozen question set and baseline across ChatGPT, Claude and Perplexity with repeated runs, llms.txt, JSON-LD structured data, public entity record and name bridging, a retrieval-oriented page, distribution, and a documented delta reported as a share of runs; explicit limits: no guaranteed positions, non-deterministic answers, results qualified by market, language and question set): https://katyashalel.com/guides/sprint/
 - Course program, four stages, first cohort by waitlist: https://katyashalel.com/program/ (EN), https://katyashalel.com/ru/program/ (RU)
 
 ## Legibility vs GEO
