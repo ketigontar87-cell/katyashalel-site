@@ -18,7 +18,7 @@
   "provider": {"@type": "Person", "name": "Ekaterina Shalel", "url": "https://katyashalel.com"},
   "description": "A documented snapshot of what ChatGPT, Claude, Perplexity and Gemini currently say about a person: baseline measurement across four models, a source map behind the answers, a scorecard, and a prioritized 30-day plan. PDF report plus a 30-minute walkthrough in five working days. Optional control measurement after 30 days. No ranking guarantees; findings carry market, language and test-set qualifiers.",
   "url": "https://katyashalel.com/audit/",
-  "offers": {"@type": "Offer", "price": "290", "priceCurrency": "USD"}
+  "offers": {"@type": "Offer", "availability": "https://schema.org/InStock", "url": "https://katyashalel.com/audit/"}
 }
 </script>
 <script type="application/ld+json">
@@ -211,9 +211,9 @@
     <div class="step"><div class="step-n">5</div><p><b>30-day plan</b>Prioritized: what to fix first for the fastest shift, what can wait, what is not worth doing. Execution is yours, with the Sprint, or mine, in a separate engagement.</p></div>
   </div>
 
-  <h2>Format and price</h2>
+  <h2>Format</h2>
 
-  <p><strong>$290.</strong> PDF report plus a 30-minute video walkthrough. Five working days from the moment I have your inputs. One entity per audit: a founder and their company are two entities. Optional control measurement after 30 days (+$90): the same query set, re-run and documented, your before and after.</p>
+  <p>A PDF report plus a 30-minute walkthrough, delivered in five working days from the moment I have your inputs. One entity per audit: a founder and their company are two entities. An optional control measurement after 30 days re-runs the same query set and documents your before and after. Scope drives the price, so tell me how many entities, markets and languages are in play and I will come back with a number.</p>
 
   <div class="honest">
     <h2>What this cannot guarantee</h2>
@@ -227,10 +227,97 @@
     <details><summary>I represent a brand, not a person</summary><p>Then you want the <a href="/brands/">Brand Legibility Diagnostic</a>: the same methodology applied to a brand entity and its commercial queries.</p></details>
   </div>
 
-  <div class="footer-cta">
-    <p>Request the Audit. Tell me your name and your market; I reply with the intake form and the next available slot.</p>
-    <a class="btn" href="mailto:k.skinbot@gmail.com?subject=Legibility%20Audit">Request the Audit</a>
+<!-- Request form. Drop into any page. Posts to /api/lead, delivered to Telegram. -->
+<section class="request" id="request">
+  <h2>Request the Audit</h2>
+  <p class="request-lead">Tell me your name, the markets you care about and where you are visible now. I read every enquiry myself and reply within one business day.</p>
+
+  <div class="form-grid">
+    <label>Name<input type="text" id="f-name" autocomplete="name"></label>
+    <label>Email<input type="email" id="f-email" autocomplete="email" required></label>
+    <label>Company or brand<input type="text" id="f-company" autocomplete="organization"></label>
+    <label>Website<input type="text" id="f-site" placeholder="example.com"></label>
+    <label>Related entities
+      <select id="f-entities">
+        <option value="">Select</option>
+        <option>One</option>
+        <option>Two or three</option>
+        <option>Four or more</option>
+        <option>Not sure</option>
+      </select>
+    </label>
+    <label>Markets and languages<input type="text" id="f-markets" placeholder="EU, EN and RU"></label>
+    <label class="wide">How did you find this page?<input type="text" id="f-source" placeholder="LinkedIn, ChatGPT, a referral"></label>
+    <label class="wide">What are you trying to fix?<textarea id="f-message" rows="4"></textarea></label>
+    <label class="hp" aria-hidden="true">Leave this empty<input type="text" id="f-website-url" tabindex="-1" autocomplete="off"></label>
   </div>
+
+  <button class="btn" id="f-send" type="button">Send</button>
+  <p class="form-note" id="f-note"></p>
+</section>
+
+<style>
+  .request { margin-top: 56px; padding-top: 28px; border-top: 1px solid var(--bg-deep, #F0F0F0); }
+  .request-lead { color: var(--ink-soft, #4A4A4A); font-size: 15px; margin-bottom: 22px; }
+  .form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px 18px; }
+  .form-grid label { display: flex; flex-direction: column; font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--ink-soft, #4A4A4A); }
+  .form-grid label.wide { grid-column: 1 / -1; }
+  .form-grid input, .form-grid select, .form-grid textarea {
+    margin-top: 6px; padding: 11px 12px; border: 1px solid #DDD; border-radius: 4px;
+    font-family: inherit; font-size: 15px; color: var(--ink, #1A1A1A); background: #fff;
+    text-transform: none; letter-spacing: 0;
+  }
+  .form-grid input:focus, .form-grid select:focus, .form-grid textarea:focus { outline: none; border-color: var(--red, #C4342E); }
+  .form-grid .hp { position: absolute; left: -9999px; width: 1px; height: 1px; overflow: hidden; }
+  .request .btn {
+    margin-top: 20px; display: inline-block; background: var(--red, #C4342E); color: #fff;
+    border: none; cursor: pointer; font-family: inherit; font-size: 13px; letter-spacing: 0.08em;
+    text-transform: uppercase; padding: 13px 26px; border-radius: 4px;
+  }
+  .request .btn:disabled { opacity: 0.5; cursor: default; }
+  .form-note { margin-top: 14px; font-size: 14px; color: var(--ink-soft, #4A4A4A); min-height: 20px; }
+  @media (max-width: 600px) { .form-grid { grid-template-columns: 1fr; } }
+</style>
+
+<script>
+(function () {
+  var btn = document.getElementById('f-send');
+  var note = document.getElementById('f-note');
+  if (!btn) return;
+  btn.addEventListener('click', function () {
+    var val = function (id) { var el = document.getElementById(id); return el ? el.value : ''; };
+    var email = val('f-email').trim();
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(email)) {
+      note.textContent = 'Please add a valid email so I can reply.';
+      return;
+    }
+    btn.disabled = true;
+    note.textContent = 'Sending';
+    fetch('/api/lead', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        form: document.title,
+        name: val('f-name'), email: email, company: val('f-company'),
+        site: val('f-site'), entities: val('f-entities'), markets: val('f-markets'),
+        source: val('f-source'), message: val('f-message'),
+        website_url: val('f-website-url')
+      })
+    }).then(function (r) { return r.json(); }).then(function (d) {
+      if (d && d.ok) {
+        note.textContent = 'Received. I will reply within one business day.';
+      } else {
+        btn.disabled = false;
+        note.innerHTML = 'Something went wrong. Write to <a href="mailto:k.skinbot@gmail.com">k.skinbot@gmail.com</a>.';
+      }
+    }).catch(function () {
+      btn.disabled = false;
+      note.innerHTML = 'Something went wrong. Write to <a href="mailto:k.skinbot@gmail.com">k.skinbot@gmail.com</a>.';
+    });
+  });
+})();
+</script>
+
 </article>
 
 </body>
