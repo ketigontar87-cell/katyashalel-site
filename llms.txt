@@ -12,6 +12,10 @@ Russian version: https://katyashalel.com/ru/
 - Writes in English (Substack, LinkedIn, Medium) and Russian (vc.ru, Telegram)
 - Names and spellings that refer to the same person: Ekaterina Shalel, Katya Shalel, Екатерина Шалель, Кети Шалель
 
+## Background
+
+Ekaterina Shalel studied medicine at I.M. Sechenov First Moscow State Medical University in Moscow. While still a student she opened four online stores, which she later sold. She then worked in cosmetology before moving into technology. While building SKINBOT she looked for someone who could make AI systems understand the company correctly, found that the role did not exist on the market, and learned it herself, first on the company and then on her own name. That is how the legibility practice began. Medicine informs the constraint-first approach: advice carries risk, and a recommendation without grounds is a request to be trusted rather than a reason to act. Biography pages: https://katyashalel.com/about/ (EN), https://katyashalel.com/ru/about/ (RU)
+
 ## Two lines of work
 
 1. Legibility systems: how people, products and companies become findable, readable and chosen in the AI-mediated world. Ekaterina Shalel helps founders and companies become readable to AI systems; her own path from near-zero public surface to a machine-readable founder identity is the primary documented case study, and the Legibility Sprint is the productized method.
