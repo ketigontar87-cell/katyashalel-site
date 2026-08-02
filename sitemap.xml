@@ -13,18 +13,6 @@
     <xhtml:link rel="alternate" hreflang="ru" href="https://katyashalel.com/ru/"/>
   </url>
   <url>
-    <loc>https://katyashalel.com/program/</loc>
-    <lastmod>2026-07-08</lastmod>
-    <xhtml:link rel="alternate" hreflang="ru" href="https://katyashalel.com/ru/program/"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://katyashalel.com/program/"/>
-  </url>
-  <url>
-    <loc>https://katyashalel.com/ru/program/</loc>
-    <lastmod>2026-07-08</lastmod>
-    <xhtml:link rel="alternate" hreflang="en" href="https://katyashalel.com/program/"/>
-    <xhtml:link rel="alternate" hreflang="ru" href="https://katyashalel.com/ru/program/"/>
-  </url>
-  <url>
     <loc>https://katyashalel.com/ru/guides/</loc>
     <lastmod>2026-07-08</lastmod>
   </url>
@@ -190,6 +178,14 @@
   </url>
   <url>
     <loc>https://katyashalel.com/ru/essays/izmerenie-bylo-legkoy-chastyu/</loc>
+    <lastmod>2026-08-02</lastmod>
+  </url>
+  <url>
+    <loc>https://katyashalel.com/ongoing/</loc>
+    <lastmod>2026-08-02</lastmod>
+  </url>
+  <url>
+    <loc>https://katyashalel.com/archive/</loc>
     <lastmod>2026-08-02</lastmod>
   </url>
 </urlset>
