@@ -1,200 +1,513 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>The Legibility Sprint · 7 days to become readable to AI · Katya Shalel</title>
-<meta name="description" content="A 7 day paid guide: build the source-of-truth layer that helps ChatGPT, Claude and Perplexity identify, describe and cite you correctly. llms.txt, JSON-LD, entity seeding, before and after audit. Built on a documented case, with its limits stated. Behind SKINBOT ranking first in ChatGPT">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Legibility Sprint · Open protocol · Ekaterina Shalel</title>
+<meta name="description" content="The Legibility Sprint: a free, published seven-day protocol for making a person or company readable to AI systems. Baseline measurement, llms.txt, structured data, entity records, a machine-readable page, distribution, and a documented re-measurement on day 21.">
 <link rel="canonical" href="https://katyashalel.com/guides/sprint/">
-<link rel="alternate" hreflang="en" href="https://katyashalel.com/guides/sprint/">
-<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
-<meta property="og:type" content="product">
-<meta property="og:title" content="The Legibility Sprint · 7 days to become readable to AI">
-<meta property="og:description" content="Build the source-of-truth layer that helps ChatGPT, Claude and Perplexity identify, describe and cite you correctly. A documented system with its limits stated, no ads, no budget">
+<meta property="og:type" content="article">
+<meta property="og:title" content="The Legibility Sprint">
+<meta property="og:description" content="The Legibility Sprint: a free, published seven-day protocol for making a person or company readable to AI systems. Baseline measurement, llms.txt, structured data, entity records, a machine-readable page, distribution, and a documented re-measurement on day 21.">
 <meta property="og:url" content="https://katyashalel.com/guides/sprint/">
+<meta property="og:site_name" content="Ekaterina Shalel">
+<meta property="og:image" content="https://katyashalel.com/assets/covers/the-measurement-was-the-easy-part-og.webp">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="The Legibility Sprint">
+<meta name="twitter:description" content="The Legibility Sprint: a free, published seven-day protocol for making a person or company readable to AI systems. Baseline measurement, llms.txt, structured data, entity records, a machine-readable page, distribution, and a documented re-measurement on day 21.">
+<link rel="alternate" type="text/plain" href="https://katyashalel.com/llms.txt" title="LLM-friendly summary">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Instrument+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "Product",
-  "name": "The Legibility Sprint",
-  "description": "A 7 day guide that makes a founder, product or company readable to AI decision systems: llms.txt, JSON-LD structured data, entity seeding, machine readable pages, before and after audit.",
-  "brand": {"@type": "Person", "name": "Ekaterina Shalel", "url": "https://katyashalel.com/"},
-  "url": "https://katyashalel.com/guides/sprint/",
-  "offers": {
-    "@type": "Offer",
-    "price": "47",
-    "priceCurrency": "USD",
-    "availability": "https://schema.org/InStock",
-    "url": "https://katyashalel.com/guides/sprint/"
-  }
+  "@graph": [
+    {
+      "@type": "HowTo",
+      "name": "The Legibility Sprint",
+      "description": "The Legibility Sprint: a free, published seven-day protocol for making a person or company readable to AI systems. Baseline measurement, llms.txt, structured data, entity records, a machine-readable page, distribution, and a documented re-measurement on day 21.",
+      "url": "https://katyashalel.com/guides/sprint/",
+      "inLanguage": "en",
+      "datePublished": "2026-07-16",
+      "dateModified": "2026-08-02",
+      "totalTime": "P21D",
+      "estimatedCost": {
+        "@type": "MonetaryAmount",
+        "currency": "USD",
+        "value": "0"
+      },
+      "author": {
+        "@type": "Person",
+        "name": "Ekaterina Shalel",
+        "alternateName": [
+          "Katya Shalel",
+          "Екатерина Шалель"
+        ],
+        "url": "https://katyashalel.com",
+        "jobTitle": "Founder and legibility strategist"
+      },
+      "about": [
+        {
+          "@type": "DefinedTerm",
+          "name": "AI legibility",
+          "description": "Whether a model can identify an entity correctly, place it in relation to the entities around it, and attach a claim to it without taking on risk.",
+          "url": "https://katyashalel.com/essays/the-measurement-was-the-easy-part/"
+        }
+      ],
+      "step": [
+        {
+          "@type": "HowToStep",
+          "position": 1,
+          "name": "Day 1: Measure what the models say now",
+          "text": "Write down a fixed list of questions and do not change it later. Three kinds: identity (who is [name]), category (who works on [your field]), and recommendation (who should I hire for [your problem]). Eight to fifteen questions is enough. Run every question in ChatGPT, Claude and Perplexity. Run each one three times, in a fresh chat, with no personalization and no memory. Answers vary between runs, so a single run tells you almost nothing. Save the raw answers, not your summary of them. Note the date and the model version. Score each answer on four things: does it recognize you at all, is the description accurate, does it attribute your work to you, and would it recommend you. Count how many of the runs got each one right. This is your baseline. Everything later is measured against it, and you never rewrite it.",
+          "url": "https://katyashalel.com/guides/sprint/#day-1"
+        },
+        {
+          "@type": "HowToStep",
+          "position": 2,
+          "name": "Day 2: Write your llms.txt",
+          "text": "Create a plain text file at yourdomain.com/llms.txt. It is a summary of who you are, written in the order a machine reads rather than the order a human browses. Open with one sentence that defines you: name, role, what you do, for whom. This exact sentence goes everywhere else too, word for word. Then list, in short blocks: your work and what each thing is, any terms you coined with a definition and a date, your other profiles, and how to contact you. Write every claim so it can be checked. \"Live pilots in two markets\" is checkable. \"Industry leader\" is not. Mine is public at katyashalel.com/llms.txt. Copy the structure, not the content.",
+          "url": "https://katyashalel.com/guides/sprint/#day-2"
+        },
+        {
+          "@type": "HowToStep",
+          "position": 3,
+          "name": "Day 3: Deploy structured data",
+          "text": "Add JSON-LD to your key pages. These are invisible labels in the page code: a human sees a paragraph, a machine sees \"this is a person, this is her role, this is her company.\" Minimum set: Person on your about page, Organization on your company page, Article or BlogPosting on every essay, and DefinedTerm anywhere you define a term you invented. In the Person block, fill sameAs with every profile that is really yours. That is the property that tells a model the scattered mentions are one entity. Keep the same one-sentence definition in the description field. Same words as llms.txt. Consistency is the signal; variation reads as uncertainty. Validate the output before you ship it. A broken JSON-LD block is ignored silently, and you will never know.",
+          "url": "https://katyashalel.com/guides/sprint/#day-3"
+        },
+        {
+          "@type": "HowToStep",
+          "position": 4,
+          "name": "Day 4: Put your entity in the public record",
+          "text": "Models look for confirmation outside your own website. A claim only on your site is a claim; the same claim in an independent record is a fact they can use. Create or correct your Wikidata item. It needs a label, a description, an occupation, and sourced statements. Notability rules are real, so cite external coverage rather than your own pages. Bridge your names. If you appear as two spellings or in two alphabets, connect them explicitly in Wikidata, llms.txt and your sameAs list, or they stay two different people. Make sure your professional profiles carry the same defining sentence. A profile that describes an old role will keep winning retrieval long after the role ended.",
+          "url": "https://katyashalel.com/guides/sprint/#day-4"
+        },
+        {
+          "@type": "HowToStep",
+          "position": 5,
+          "name": "Day 5: Build the page a machine can read",
+          "text": "Make one page that answers, in plain sentences, the questions from your Day 1 list. Not marketing copy. Answers. Structure it so any single paragraph makes sense pulled out on its own, because that is how it gets used. Define your terms on the page, each with a definition, an example and a date. Check robots.txt actually allows AI crawlers. Many templates block them by default and nobody notices.",
+          "url": "https://katyashalel.com/guides/sprint/#day-5"
+        },
+        {
+          "@type": "HowToStep",
+          "position": 6,
+          "name": "Day 6: Put it where it gets picked up",
+          "text": "Structured content gets indexed fastest where indexing already happens: your own domain first, then the platforms that publish quickly and get crawled often. Repeat the same defining sentence on every platform. Not a variation. The same words. If you coined a term, define it once in a dated public place and link every later use back to that definition, so the term stays attached to you. Get at least one independent source to describe you the way your own pages do. One corroborating source outweighs ten of your own pages.",
+          "url": "https://katyashalel.com/guides/sprint/#day-6"
+        },
+        {
+          "@type": "HowToStep",
+          "position": 7,
+          "name": "Day 21: Re-measure",
+          "text": "Wait. Retrieval and indexing move on their own schedule and a week is not enough to see anything. Re-run the exact Day 1 questions, same three models, same three runs each, same scoring. Report the delta as a share of runs, not as a screenshot. \"Named in 7 of 9 identity runs, up from 2 of 9\" is a result. One good screenshot is an anecdote. Log everything that changed in the period, including things you did not control, so you do not credit the protocol for a model update. Then repeat quarterly. Models retrain, competitors publish, sources decay. This does not stay done.",
+          "url": "https://katyashalel.com/guides/sprint/#day-21"
+        }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Why is this free?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Because a method that models cannot read is a bad advertisement for legibility work. Published in full, the protocol is citable, checkable and repeatable by anyone, which is worth more to me than the price of a PDF."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Do I need to write code?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. Every step is text, files and settings. An AI assistant can execute all of it; the part that does not delegate is deciding which entity is canonical and which claims you are willing to stand behind."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How long does it really take?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The work is roughly seven working sessions, but the calendar is longer: the day 21 re-measurement is part of the protocol, and quarterly repeats are part of keeping the result."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What if I have several companies or brands?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Then the ordering matters more than any single step. You have to decide which entity carries the authority and which ones inherit it, and get that wrong and you spend a quarter reinforcing the weakest one. That is the case where people usually ask me to run it with them."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is llms.txt an official standard?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. It is an emerging convention that several crawlers read today and no one is obliged to honor. It is cheap to add and easy to remove, which is why it is in the protocol despite the uncertainty."
+          }
+        }
+      ]
+    }
+  ]
 }
 </script>
-<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Instrument+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+
 <style>
-:root{--red:#C4342E;--red-deep:#A32420;--white:#FFFFFF;--grey:#F0F0F0;--ink:#1A1A1A}
-*{margin:0;padding:0;box-sizing:border-box}
-body{font-family:'Instrument Sans',sans-serif;background:var(--white);color:var(--ink);line-height:1.65}
-.serif{font-family:'Instrument Serif',serif;font-weight:400}
-.top{background:var(--ink);color:#EDEDED;padding:16px 20px;font-size:12px;letter-spacing:.16em;text-transform:uppercase;font-weight:600;display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
-.top a{color:#FFFFFF;text-decoration:none}
-.top a:hover{color:var(--red)}
-.hero{background:linear-gradient(168deg,#C93A33,#9E211C);color:var(--white);padding:72px 22px 64px}
-.wrap{max-width:640px;margin:0 auto}
-.eyebrow{display:inline-block;background:var(--white);color:var(--red-deep);font-size:10.5px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;padding:7px 12px}
-h1{font-family:'Instrument Serif',serif;font-weight:400;font-size:clamp(40px,9.5vw,68px);line-height:1.02;margin-top:18px}
-.hero p{margin-top:20px;font-size:17.5px;max-width:540px;color:rgba(255,255,255,.94)}
-.hero-cta{display:inline-block;background:var(--white);color:var(--red-deep);text-decoration:none;font-size:12px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;padding:17px 30px;margin-top:30px}
-.hero-cta:hover{background:var(--ink);color:var(--white)}
-.hero-note{display:block;margin-top:14px;font-size:13px;color:rgba(255,255,255,.75)}
-.proof{background:var(--ink);color:var(--white);padding:34px 22px}
-.proof .wrap{display:grid;grid-template-columns:repeat(3,1fr);gap:26px;max-width:760px}
-.proof-item b{font-family:'Instrument Serif',serif;font-weight:400;font-size:clamp(22px,4.5vw,30px);display:block;line-height:1.1}
-.proof-item span{font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#B9B9B9;display:block;margin-top:8px;line-height:1.5}
-section{padding:48px 22px 8px}
-section p{font-size:16.5px;color:#3D3D3D;max-width:600px}
-section p+p{margin-top:16px}
-section b{color:var(--ink)}
-.stepbar{background:var(--red);color:var(--white);padding:20px 22px;margin-top:56px}
-.stepbar .wrap{display:flex;align-items:center;gap:14px}
-.tag{background:var(--white);color:var(--red-deep);font-size:10.5px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;padding:6px 11px;white-space:nowrap}
-.stepbar h2{font-weight:600;text-transform:uppercase;font-size:clamp(16px,4.2vw,23px);letter-spacing:.03em}
-.machine{max-width:640px;margin:34px auto 0;display:grid;gap:2px}
-.m-card{padding:26px 22px;font-family:ui-monospace,'SF Mono',Menlo,monospace;font-size:13.5px;line-height:1.7}
-.m-before{background:var(--grey);color:#8B8B8B}
-.m-after{background:var(--ink);color:#E8E8E8}
-.m-label{font-family:'Instrument Sans',sans-serif;font-size:10.5px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;margin-bottom:14px;display:block}
-.m-before .m-label{color:#8B8B8B}
-.m-after .m-label{color:var(--red)}
-.m-after i{color:#9CCB9C;font-style:normal}
-.m-after em{color:#D8A0A0;font-style:normal}
-.days{max-width:640px;margin:30px auto 0;border:2px solid var(--ink)}
-.day{display:flex;gap:16px;padding:18px 20px;border-bottom:1px solid rgba(26,26,26,.12);align-items:baseline}
-.day:last-child{border-bottom:none}
-.day-n{font-family:'Instrument Serif',serif;font-size:22px;color:var(--red-deep);min-width:56px;white-space:nowrap}
-.day-t{font-size:15.5px;color:#3D3D3D}
-.day-t b{display:block;color:var(--ink);font-size:16px}
-.deliver{background:var(--grey);padding:52px 22px;margin-top:60px}
-.deliver h2{font-family:'Instrument Serif',serif;font-weight:400;font-size:clamp(28px,6.5vw,42px);line-height:1.08}
-.deliver ul{list-style:none;margin-top:24px;max-width:600px}
-.deliver li{padding:13px 0;border-bottom:1px solid rgba(26,26,26,.12);font-size:16px;color:#3D3D3D;display:flex;gap:12px}
-.deliver li::before{content:'+';color:var(--red-deep);font-weight:700;font-family:'Instrument Serif',serif;font-size:19px}
-.deliver li b{color:var(--ink)}
-.fit{max-width:640px;margin:30px auto 0}
-.fit-row{padding:15px 0;border-bottom:1px solid rgba(26,26,26,.12);font-size:16px;color:#3D3D3D}
-.fit-row b{color:var(--ink)}
-.author{background:var(--ink);color:var(--white);padding:56px 22px;margin-top:64px}
-.author h2{font-family:'Instrument Serif',serif;font-weight:400;font-size:clamp(26px,6vw,38px);line-height:1.1}
-.author p{margin-top:16px;color:#CFCFCF;font-size:16px;max-width:560px}
-.author p b{color:var(--white)}
-.price{background:linear-gradient(168deg,#C93A33,#9E211C);color:var(--white);padding:64px 22px;text-align:center}
-.price .amount{font-family:'Instrument Serif',serif;font-size:clamp(56px,13vw,92px);line-height:1}
-.price .amount s{font-size:.42em;color:rgba(255,255,255,.55);vertical-align:super;margin-right:10px}
-.price h2{font-family:'Instrument Serif',serif;font-weight:400;font-size:clamp(26px,6vw,38px);margin-bottom:18px}
-.price p{color:rgba(255,255,255,.9);font-size:15.5px;max-width:460px;margin:0 auto}
-.buy{display:inline-block;background:var(--white);color:var(--red-deep);text-decoration:none;font-size:12.5px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;padding:19px 42px;margin-top:30px}
-.buy:hover{background:var(--ink);color:var(--white)}
-.price-note{display:block;margin-top:16px;font-size:12.5px;color:rgba(255,255,255,.7)}
-.wl{background:var(--white);padding:56px 22px;text-align:center}
-.wl h2{font-family:'Instrument Serif',serif;font-weight:400;font-size:clamp(24px,5.5vw,34px);line-height:1.1}
-.wl p{margin-top:12px;color:#5A5A5A;font-size:15px}
-.wl-form{display:flex;gap:10px;margin:24px auto 0;max-width:460px;flex-wrap:wrap;justify-content:center}
-.wl-form input{flex:1;min-width:210px;padding:15px 16px;border:1.5px solid var(--ink);font-family:inherit;font-size:15px;background:var(--white)}
-.wl-form button{background:var(--red);color:#FFF;border:none;font-family:inherit;font-size:11.5px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;padding:15px 26px;cursor:pointer}
-.wl-form button:hover{background:var(--red-deep)}
-footer{padding:30px 20px;text-align:center;font-size:11px;letter-spacing:.16em;text-transform:uppercase;font-weight:600;color:#8B8B8B}
-footer a{color:var(--ink);text-decoration:none}
-@media(max-width:560px){.proof .wrap{grid-template-columns:1fr;gap:18px}}
+
+  :root {
+    --ink: #1A1A1A;
+    --ink-soft: #4A4A4A;
+    --red: #C4342E;
+    --bg: #FFFFFF;
+    --bg-deep: #F0F0F0;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: 'Instrument Sans', sans-serif;
+    color: var(--ink);
+    background: var(--bg);
+    line-height: 1.75;
+    font-size: 17px;
+    -webkit-font-smoothing: antialiased;
+  }
+  .top {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 32px 24px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+  }
+  .top a {
+    color: var(--ink);
+    text-decoration: none;
+    font-size: 13px;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+  }
+  .top a:hover { color: var(--red); }
+  article {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 56px 24px 96px;
+  }
+  .kicker {
+    font-size: 11px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--red);
+    margin-bottom: 20px;
+  }
+  h1 {
+    font-family: 'Instrument Serif', serif;
+    font-weight: 400;
+    font-size: clamp(34px, 6vw, 52px);
+    line-height: 1.12;
+    margin-bottom: 18px;
+  }
+  .subtitle {
+    font-size: 19px;
+    color: var(--ink-soft);
+    line-height: 1.55;
+    margin-bottom: 28px;
+  }
+  .meta {
+    font-size: 12px;
+    color: var(--ink-soft);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    padding-bottom: 36px;
+    border-bottom: 1px solid var(--bg-deep);
+    margin-bottom: 44px;
+  }
+  .meta a { color: var(--ink-soft); }
+  .meta a:hover { color: var(--red); }
+  h2 {
+    font-family: 'Instrument Serif', serif;
+    font-weight: 400;
+    font-size: 30px;
+    line-height: 1.2;
+    margin: 52px 0 20px;
+  }
+  p { margin-bottom: 22px; }
+  strong { font-weight: 600; }
+  em { font-style: italic; }
+  a { color: var(--red); }
+  .step {
+    border-left: 3px solid var(--bg-deep);
+    padding: 4px 0 4px 24px;
+    margin: 32px 0;
+  }
+  .step:hover { border-color: var(--red); }
+  .step h2 { margin: 0 0 12px; font-size: 24px; }
+  .step p:last-child { margin-bottom: 0; }
+  .note {
+    background: var(--bg-deep);
+    border-radius: 6px;
+    padding: 24px 28px;
+    margin: 40px 0;
+    font-size: 15.5px;
+    color: var(--ink-soft);
+  }
+  .note p { margin: 0; }
+  .footer-cta {
+    margin-top: 56px;
+    background: var(--ink);
+    color: #fff;
+    border-radius: 6px;
+    padding: 36px 32px;
+  }
+  .footer-cta p { color: rgba(255,255,255,0.85); font-size: 15px; margin-bottom: 18px; }
+  .footer-cta .btn {
+    display: inline-block;
+    background: var(--red);
+    color: #fff;
+    text-decoration: none;
+    font-size: 13px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    padding: 12px 24px;
+    border-radius: 4px;
+  }
+  .footer-cta .btn:hover { background: #A32420; }
+
+</style>
+
+<style>
+  .day { color: var(--red); font-size: 13px; letter-spacing: 0.1em; text-transform: uppercase; display: block; margin-bottom: 4px; }
+  .step ul { margin: 14px 0 0 20px; }
+  .step li { margin-bottom: 10px; }
+  .caveat { font-size: 14px; color: var(--ink-soft); border-left: 2px solid var(--bg-deep); padding-left: 14px; margin-top: 16px; }
+  .honest ul { margin: 12px 0 0 20px; }
+  .honest li { margin-bottom: 8px; font-size: 15px; color: var(--ink-soft); }
 </style>
 </head>
 <body>
 
-<div class="top"><a href="/">&larr; home</a><span>Katya Shalel</span></div>
-
-<div class="hero"><div class="wrap">
-<span class="eyebrow">Paid guide &middot; $47</span>
-<h1>The Legibility Sprint</h1>
-<p>Traditional search indexes pages. AI systems reconstruct you from fragments. In 7 days you build the source-of-truth layer that helps ChatGPT, Claude and Perplexity identify, describe and cite you correctly: the documented system from my own case, no ads, no budget</p>
-<a class="hero-cta" href="#buy">Start the sprint</a>
-<span class="hero-note">Instant access &middot; lifetime updates &middot; no code required</span>
-</div></div>
-
-<div class="proof"><div class="wrap">
-<div class="proof-item"><b>#1</b><span>SKINBOT in ChatGPT skin analysis, documented RU test set</span></div>
-<div class="proof-item"><b>$0</b><span>Ad spend behind that ranking</span></div>
-<div class="proof-item"><b>91</b><span>Crunchbase Heat Score within days of the push</span></div>
-</div></div>
-
-<section><div class="wrap">
-<p><b>The shift already happened.</b> Your next client doesn't google you. They ask an AI, and the AI answers from structured data, not from your beautiful homepage. If your entity isn't machine readable, the answer is built without you. Not because you're worse, because you're invisible.</p>
-<p>Personal branding solved how humans see you. Legibility solves how machines read you. This sprint is the second one, packaged as a system you execute in 7 days.</p>
-</div></section>
-
-<div class="stepbar"><div class="wrap"><span class="tag">The difference</span><h2>How AI reads you, before and after</h2></div></div>
-<section><div class="wrap" style="max-width:640px">
-<div class="machine">
-<div class="m-card m-before"><span class="m-label">Before &middot; what the model retrieves</span>no llms.txt found<br>no structured entity<br>no verifiable claims<br>&rarr; excluded from the answer</div>
-<div class="m-card m-after"><span class="m-label">After &middot; what the model retrieves</span>"@type": <i>"Person"</i>,<br>"name": <i>"Your Name"</i>,<br>"knowsAbout": <i>[your expertise]</i>,<br>"sameAs": <i>[verified profiles]</i><br><em>&rarr; cited in the answer</em></div>
+<div class="top">
+  <a href="/">Ekaterina Shalel</a>
+  <a href="/#essays">Essays</a>
 </div>
-</div></section>
 
-<div class="stepbar"><div class="wrap"><span class="tag">7 days</span><h2>The sprint, day by day</h2></div></div>
-<section><div class="wrap" style="max-width:640px">
-<div class="days">
-<div class="day"><span class="day-n">Day 1</span><span class="day-t"><b>The audit</b>Run your name and product through ChatGPT, Claude and Perplexity, document exactly what the machines see now. This is your baseline</span></div>
-<div class="day"><span class="day-n">Day 2</span><span class="day-t"><b>llms.txt</b>Write the file AI crawlers read first. Template included, mine is live at katyashalel.com/llms.txt as a working reference</span></div>
-<div class="day"><span class="day-n">Day 3</span><span class="day-t"><b>Structured data</b>JSON-LD schemas for your person, product and organization. Copy, adapt, deploy. Claude executes, you decide</span></div>
-<div class="day"><span class="day-n">Day 4</span><span class="day-t"><b>Entity seeding</b>Wikidata, cross platform name bridging, the graph that makes separate mentions read as one entity</span></div>
-<div class="day"><span class="day-n">Day 5</span><span class="day-t"><b>The machine page</b>A machine readable version of you: one page structured for retrieval, welcoming every AI crawler in robots.txt</span></div>
-<div class="day"><span class="day-n">Day 6</span><span class="day-t"><b>Distribution</b>Where structured content gets indexed fastest, and how coined terms seed a category you own</span></div>
-<div class="day"><span class="day-n">Day 7</span><span class="day-t"><b>The re-audit</b>Same three models, same questions, documented delta. Your before and after is also your proof for clients</span></div>
-</div>
-</div></section>
+<article>
+  <div class="kicker">Open protocol · Free · Version 4, August 2026</div>
+  <h1>The Legibility Sprint</h1>
+  <p class="subtitle">A seven-day protocol for making a person or company readable to AI systems. Published in full, free to run.</p>
+  <div class="meta">By Ekaterina Shalel · Updated August 2, 2026 · Concept: <a href="/essays/the-measurement-was-the-easy-part/">The Measurement Was the Easy Part</a></div>
 
-<div class="deliver"><div class="wrap">
-<h2>In 7 days you walk away with</h2>
-<ul>
-<li><b>A live llms.txt</b> on your domain, written from the template</li>
-<li><b>JSON-LD schemas deployed</b> on every key page: person, product, organization</li>
-<li><b>Your entity seeded</b> in Wikidata and bridged across platforms</li>
-<li><b>A machine readable page</b> that AI systems can retrieve and cite</li>
-<li><b>A documented before and after audit</b> across three AI systems</li>
-<li><b>Every prompt I use</b> so Claude does the execution, not you</li>
-</ul>
-</div></div>
+  <p>Search used to index pages. AI systems reconstruct you from fragments, and if the fragments are thin, stale or tangled with someone else's, the answer gets built without you. Not because you are worse than the person named instead. Because you are harder to read.</p>
 
-<div class="stepbar"><div class="wrap"><span class="tag">Fit check</span><h2>This is for you if</h2></div></div>
-<section><div class="wrap">
-<div class="fit">
-<div class="fit-row"><b>You're a founder or consultant</b> whose next client asks AI before asking anyone else</div>
-<div class="fit-row"><b>You built the site, the brand, the content,</b> and ChatGPT still doesn't know you exist</div>
-<div class="fit-row"><b>You have no budget for PR</b> and no interest in feeding algorithms daily</div>
-<div class="fit-row"><b>You don't code.</b> Neither do I in the traditional sense: Claude executes, you make the decisions</div>
-</div>
-</div></section>
+  <p>This is the protocol I ran on myself before I ran it for anyone else. It was a paid PDF until August 2026. It is now published in full, for a plain reason: a method that models cannot read is a poor advertisement for legibility work.</p>
 
-<div class="author"><div class="wrap">
-<h2>Why me</h2>
-<p><b>I'm Katya Shalel, founder and product architect of SKINBOT,</b> a neutral AI decision layer for beauty retail. I didn't study this system, I built it: for my company and for myself, before packaging it.</p>
-<p>The result is checkable right now. Ask ChatGPT about skin analysis tools for retail. Look at katyashalel.com/llms.txt. Read the essays that seeded the category language. Everything in this sprint is deployed and working in public, which is the only kind of proof that matters in a field this new.</p>
-</div></div>
+  <p>Two definitions before the steps, because everything below depends on them. <strong>Visibility</strong> is how often you are mentioned. <strong>Legibility</strong> is whether a model can identify you correctly, place you in relation to the things around you, and attach a claim to you without taking on risk. Most people who feel invisible have a legibility problem, not a volume problem.</p>
 
-<div class="price" id="buy"><div class="wrap">
-<h2>One sprint, one price</h2>
-<div class="amount"><s>$67</s>$47</div>
-<p>Lifetime access. Updated as standards evolve, llms.txt and retrieval formats are moving targets and the guide moves with them</p>
-<a class="buy" href="https://skinbot.gumroad.com/l/sprint">Get the sprint &middot; $47</a>
-<span class="price-note">Secure checkout &middot; instant delivery to your email</span>
-</div></div>
+  <div class="step" id="day-1">
+    <h2><span class="day">Day 1</span> Measure what the models say now</h2>
+    <ul>
+      <li>Write down a fixed list of questions and do not change it later. Three kinds: identity (who is [name]), category (who works on [your field]), and recommendation (who should I hire for [your problem]). Eight to fifteen questions is enough.</li>
+      <li>Run every question in ChatGPT, Claude and Perplexity. Run each one three times, in a fresh chat, with no personalization and no memory. Answers vary between runs, so a single run tells you almost nothing.</li>
+      <li>Save the raw answers, not your summary of them. Note the date and the model version.</li>
+      <li>Score each answer on four things: does it recognize you at all, is the description accurate, does it attribute your work to you, and would it recommend you. Count how many of the runs got each one right.</li>
+      <li>This is your baseline. Everything later is measured against it, and you never rewrite it.</li>
+    </ul>
+    <p class="caveat"><b>Caveat.</b> Nothing here is optional. If you skip the baseline you will have opinions later instead of results.</p>
+  </div>
 
-<div class="wl"><div class="wrap">
-<h2>Not ready this week</h2>
-<p>Join the list: launch pricing, updates when standards shift, and the next guide before it goes public</p>
-<form class="wl-form" onsubmit="return wlSubmit(event,'wl-email')"><input type="email" id="wl-email" required placeholder="Your email"><button type="submit">Keep me posted</button></form>
-</div></div>
+  <div class="step" id="day-2">
+    <h2><span class="day">Day 2</span> Write your llms.txt</h2>
+    <ul>
+      <li>Create a plain text file at yourdomain.com/llms.txt. It is a summary of who you are, written in the order a machine reads rather than the order a human browses.</li>
+      <li>Open with one sentence that defines you: name, role, what you do, for whom. This exact sentence goes everywhere else too, word for word.</li>
+      <li>Then list, in short blocks: your work and what each thing is, any terms you coined with a definition and a date, your other profiles, and how to contact you.</li>
+      <li>Write every claim so it can be checked. "Live pilots in two markets" is checkable. "Industry leader" is not.</li>
+      <li>Mine is public at katyashalel.com/llms.txt. Copy the structure, not the content.</li>
+    </ul>
+    <p class="caveat"><b>Caveat.</b> llms.txt is an emerging convention, not a standard anyone is obliged to honor. It costs an hour and it is read by several crawlers today; treat it as cheap insurance, not as a guarantee.</p>
+  </div>
 
-<footer><a href="/">katyashalel.com</a></footer>
+  <div class="step" id="day-3">
+    <h2><span class="day">Day 3</span> Deploy structured data</h2>
+    <ul>
+      <li>Add JSON-LD to your key pages. These are invisible labels in the page code: a human sees a paragraph, a machine sees "this is a person, this is her role, this is her company."</li>
+      <li>Minimum set: Person on your about page, Organization on your company page, Article or BlogPosting on every essay, and DefinedTerm anywhere you define a term you invented.</li>
+      <li>In the Person block, fill sameAs with every profile that is really yours. That is the property that tells a model the scattered mentions are one entity.</li>
+      <li>Keep the same one-sentence definition in the description field. Same words as llms.txt. Consistency is the signal; variation reads as uncertainty.</li>
+      <li>Validate the output before you ship it. A broken JSON-LD block is ignored silently, and you will never know.</li>
+    </ul>
+  </div>
+
+  <div class="step" id="day-4">
+    <h2><span class="day">Day 4</span> Put your entity in the public record</h2>
+    <ul>
+      <li>Models look for confirmation outside your own website. A claim only on your site is a claim; the same claim in an independent record is a fact they can use.</li>
+      <li>Create or correct your Wikidata item. It needs a label, a description, an occupation, and sourced statements. Notability rules are real, so cite external coverage rather than your own pages.</li>
+      <li>Bridge your names. If you appear as two spellings or in two alphabets, connect them explicitly in Wikidata, llms.txt and your sameAs list, or they stay two different people.</li>
+      <li>Make sure your professional profiles carry the same defining sentence. A profile that describes an old role will keep winning retrieval long after the role ended.</li>
+    </ul>
+    <p class="caveat"><b>Caveat.</b> If Wikidata declines the item, do not force it. Use the alternative track: consistent profiles, third-party mentions, and structured data on your own domain.</p>
+  </div>
+
+  <div class="step" id="day-5">
+    <h2><span class="day">Day 5</span> Build the page a machine can read</h2>
+    <ul>
+      <li>Make one page that answers, in plain sentences, the questions from your Day 1 list. Not marketing copy. Answers.</li>
+      <li>Structure it so any single paragraph makes sense pulled out on its own, because that is how it gets used.</li>
+      <li>Define your terms on the page, each with a definition, an example and a date.</li>
+      <li>Check robots.txt actually allows AI crawlers. Many templates block them by default and nobody notices.</li>
+    </ul>
+  </div>
+
+  <div class="step" id="day-6">
+    <h2><span class="day">Day 6</span> Put it where it gets picked up</h2>
+    <ul>
+      <li>Structured content gets indexed fastest where indexing already happens: your own domain first, then the platforms that publish quickly and get crawled often.</li>
+      <li>Repeat the same defining sentence on every platform. Not a variation. The same words.</li>
+      <li>If you coined a term, define it once in a dated public place and link every later use back to that definition, so the term stays attached to you.</li>
+      <li>Get at least one independent source to describe you the way your own pages do. One corroborating source outweighs ten of your own pages.</li>
+    </ul>
+  </div>
+
+  <div class="step" id="day-21">
+    <h2><span class="day">Day 21</span> Re-measure</h2>
+    <ul>
+      <li>Wait. Retrieval and indexing move on their own schedule and a week is not enough to see anything.</li>
+      <li>Re-run the exact Day 1 questions, same three models, same three runs each, same scoring.</li>
+      <li>Report the delta as a share of runs, not as a screenshot. "Named in 7 of 9 identity runs, up from 2 of 9" is a result. One good screenshot is an anecdote.</li>
+      <li>Log everything that changed in the period, including things you did not control, so you do not credit the protocol for a model update.</li>
+      <li>Then repeat quarterly. Models retrain, competitors publish, sources decay. This does not stay done.</li>
+    </ul>
+  </div>
+
+  <div class="note">
+    <h2>What you have at the end</h2>
+    <ul>
+      <li>A live llms.txt on your domain.</li>
+      <li>JSON-LD deployed on your key pages: person, organization, articles, defined terms.</li>
+      <li>An entity record in the public graph, with your name variants bridged.</li>
+      <li>One page written to be retrieved rather than browsed.</li>
+      <li>A frozen question set and two dated measurements against it, twenty-one days apart.</li>
+      <li>A repeatable quarterly routine, because none of this stays done.</li>
+    </ul>
+  </div>
+
+  <div class="honest">
+    <h2>What this protocol cannot do</h2>
+    <ul>
+      <li>No one can guarantee a position in an AI answer. Anyone who does is selling astrology.</li>
+      <li>Model answers are not deterministic. The same question can return different answers in the same hour, which is exactly why the protocol asks for repeated runs and a fixed question set.</li>
+      <li>Results are specific to the markets, languages and questions you tested. A gain in Russian-language queries says nothing about English-language ones, and vice versa.</li>
+      <li>Structure amplifies substance, it does not replace it. If there is nothing verifiable to find about you, legibility work makes the absence easier to read.</li>
+    </ul>
+  </div>
+
+  <div class="faq">
+    <h2>Questions</h2>
+    <details><summary>Why is this free?</summary><p>Because a method that models cannot read is a bad advertisement for legibility work. Published in full, the protocol is citable, checkable and repeatable by anyone, which is worth more to me than the price of a PDF.</p></details>
+    <details><summary>Do I need to write code?</summary><p>No. Every step is text, files and settings. An AI assistant can execute all of it; the part that does not delegate is deciding which entity is canonical and which claims you are willing to stand behind.</p></details>
+    <details><summary>How long does it really take?</summary><p>The work is roughly seven working sessions, but the calendar is longer: the day 21 re-measurement is part of the protocol, and quarterly repeats are part of keeping the result.</p></details>
+    <details><summary>What if I have several companies or brands?</summary><p>Then the ordering matters more than any single step. You have to decide which entity carries the authority and which ones inherit it, and get that wrong and you spend a quarter reinforcing the weakest one. That is the case where people usually ask me to run it with them.</p></details>
+    <details><summary>Is llms.txt an official standard?</summary><p>No. It is an emerging convention that several crawlers read today and no one is obliged to honor. It is cheap to add and easy to remove, which is why it is in the protocol despite the uncertainty.</p></details>
+  </div>
+
+<!-- Request form. Drop into any page. Posts to /api/lead, delivered to Telegram. -->
+<section class="request" id="request">
+  <h2>Want this done for you</h2>
+  <p class="request-lead">The protocol above is the whole method, free, and plenty of people run it themselves. If you would rather not, or your setup has several connected entities and the ordering matters, tell me what you are working with. I read every enquiry myself and reply within one business day.</p>
+
+  <div class="form-grid">
+    <label>Name<input type="text" id="f-name" autocomplete="name"></label>
+    <label>Email<input type="email" id="f-email" autocomplete="email" required></label>
+    <label>Company or brand<input type="text" id="f-company" autocomplete="organization"></label>
+    <label>Website<input type="text" id="f-site" placeholder="example.com"></label>
+    <label>Related entities
+      <select id="f-entities">
+        <option value="">Select</option>
+        <option>One</option>
+        <option>Two or three</option>
+        <option>Four or more</option>
+        <option>Not sure</option>
+      </select>
+    </label>
+    <label>Markets and languages<input type="text" id="f-markets" placeholder="EU, EN and RU"></label>
+    <label class="wide">How did you find this page?<input type="text" id="f-source" placeholder="LinkedIn, ChatGPT, a referral"></label>
+    <label class="wide">What are you trying to fix?<textarea id="f-message" rows="4"></textarea></label>
+    <label class="hp" aria-hidden="true">Leave this empty<input type="text" id="f-website-url" tabindex="-1" autocomplete="off"></label>
+  </div>
+
+  <button class="btn" id="f-send" type="button">Send</button>
+  <p class="form-note" id="f-note"></p>
+</section>
+
+<style>
+  .request { margin-top: 56px; padding-top: 28px; border-top: 1px solid var(--bg-deep, #F0F0F0); }
+  .request-lead { color: var(--ink-soft, #4A4A4A); font-size: 15px; margin-bottom: 22px; }
+  .form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px 18px; }
+  .form-grid label { display: flex; flex-direction: column; font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--ink-soft, #4A4A4A); }
+  .form-grid label.wide { grid-column: 1 / -1; }
+  .form-grid input, .form-grid select, .form-grid textarea {
+    margin-top: 6px; padding: 11px 12px; border: 1px solid #DDD; border-radius: 4px;
+    font-family: inherit; font-size: 15px; color: var(--ink, #1A1A1A); background: #fff;
+    text-transform: none; letter-spacing: 0;
+  }
+  .form-grid input:focus, .form-grid select:focus, .form-grid textarea:focus { outline: none; border-color: var(--red, #C4342E); }
+  .form-grid .hp { position: absolute; left: -9999px; width: 1px; height: 1px; overflow: hidden; }
+  .request .btn {
+    margin-top: 20px; display: inline-block; background: var(--red, #C4342E); color: #fff;
+    border: none; cursor: pointer; font-family: inherit; font-size: 13px; letter-spacing: 0.08em;
+    text-transform: uppercase; padding: 13px 26px; border-radius: 4px;
+  }
+  .request .btn:disabled { opacity: 0.5; cursor: default; }
+  .form-note { margin-top: 14px; font-size: 14px; color: var(--ink-soft, #4A4A4A); min-height: 20px; }
+  @media (max-width: 600px) { .form-grid { grid-template-columns: 1fr; } }
+</style>
 
 <script>
-function wlSubmit(e,i){e.preventDefault();var f=e.target,b=f.querySelector('button'),inp=document.getElementById(i),em=inp.value.trim();if(!em)return false;b.disabled=true;b.textContent='...';fetch('https://formsubmit.co/ajax/k.skinbot@gmail.com',{method:'POST',headers:{'Content-Type':'application/json','Accept':'application/json'},body:JSON.stringify({email:em,_subject:'Legibility Sprint interest',page:location.pathname,_template:'table',_captcha:'false'})}).then(function(r){if(!r.ok)throw 0;return r.json()}).then(function(){b.textContent='You are in';inp.value=''}).catch(function(){b.textContent='Error, try again';b.disabled=false});return false}
+(function () {
+  var btn = document.getElementById('f-send');
+  var note = document.getElementById('f-note');
+  if (!btn) return;
+  btn.addEventListener('click', function () {
+    var val = function (id) { var el = document.getElementById(id); return el ? el.value : ''; };
+    var email = val('f-email').trim();
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(email)) {
+      note.textContent = 'Please add a valid email so I can reply.';
+      return;
+    }
+    btn.disabled = true;
+    note.textContent = 'Sending';
+    fetch('/api/lead', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        form: document.title,
+        name: val('f-name'), email: email, company: val('f-company'),
+        site: val('f-site'), entities: val('f-entities'), markets: val('f-markets'),
+        source: val('f-source'), message: val('f-message'),
+        website_url: val('f-website-url')
+      })
+    }).then(function (r) { return r.json(); }).then(function (d) {
+      if (d && d.ok) {
+        note.textContent = 'Received. I will reply within one business day.';
+      } else {
+        btn.disabled = false;
+        note.innerHTML = 'Something went wrong. Write to <a href="mailto:k.skinbot@gmail.com">k.skinbot@gmail.com</a>.';
+      }
+    }).catch(function () {
+      btn.disabled = false;
+      note.innerHTML = 'Something went wrong. Write to <a href="mailto:k.skinbot@gmail.com">k.skinbot@gmail.com</a>.';
+    });
+  });
+})();
 </script>
+
+</article>
+
 <script defer src="/_vercel/insights/script.js"></script>
-</body></html>
+</body>
+</html>
