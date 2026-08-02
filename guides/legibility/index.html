@@ -2,11 +2,12 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Readable AI Decisions · free guide · Katya Shalel</title>
+<title>Readable AI Decisions · free guide · Ekaterina Shalel</title>
 <meta name="description" content="How to design AI recommendations that require no blind trust: the Indifference Test, a verifiable response schema, human explanations. Ready prompts inside">
 <link rel="canonical" href="https://katyashalel.com/guides/legibility/">
 <link rel="alternate" hreflang="en" href="https://katyashalel.com/guides/legibility/">
 <link rel="alternate" hreflang="ru" href="https://katyashalel.com/ru/guides/legibility/">
+<link rel="alternate" hreflang="x-default" href="https://katyashalel.com/guides/legibility/">
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
 <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Instrument+Sans:wght@400;600;700&display=swap" rel="stylesheet">
 <style>
@@ -46,6 +47,52 @@ section b{color:var(--ink)}
 footer{padding:30px 20px;text-align:center;font-size:11px;letter-spacing:.16em;text-transform:uppercase;font-weight:600;color:#8B8B8B}
 footer a{color:var(--ink);text-decoration:none}
 </style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "HowTo",
+  "name": "Readable AI Decisions",
+  "description": "How to design AI recommendations that require no blind trust: the Indifference Test, a verifiable response schema, human explanations. Ready prompts inside",
+  "url": "https://katyashalel.com/guides/legibility/",
+  "inLanguage": "en",
+  "isAccessibleForFree": true,
+  "author": {
+    "@type": "Person",
+    "name": "Ekaterina Shalel",
+    "alternateName": [
+      "Katya Shalel",
+      "Екатерина Шалель"
+    ],
+    "url": "https://katyashalel.com",
+    "jobTitle": "Founder and legibility strategist"
+  },
+  "publisher": {
+    "@type": "Person",
+    "name": "Ekaterina Shalel",
+    "url": "https://katyashalel.com"
+  },
+  "step": [
+    {
+      "@type": "HowToStep",
+      "position": 1,
+      "name": "Run the Indifference Test",
+      "text": "Neutrality is checked with one question: does the system benefit when a specific product wins. If yes, the output is skewed regardless of intent. The Indifference Test walks the whole chain from monetization to ranking and finds every point where revenue is coupled to the outcome of choice."
+    },
+    {
+      "@type": "HowToStep",
+      "position": 2,
+      "name": "A response schema that shows its grounds",
+      "text": "A neutrality claim requires trust, a field in the API response does not. When every response carries the ranking basis, a sponsorship flag and the brand weighting, neutrality turns from a promise into a property of the architecture, verifiable by an outside auditor from a single response."
+    },
+    {
+      "@type": "HowToStep",
+      "position": 3,
+      "name": "Explain the decision to the user",
+      "text": "The schema is for the auditor, the explanation is for the human. Two or three lines: why this one, what it was chosen from, what would change the result. No superlatives, no marketing, only grounds. A user who sees the grounds comes back because the system can be checked, not because it demands belief."
+    }
+  ]
+}
+</script>
 </head>
 <body>
 <div class="top"><a href="/">&larr; home</a><span>Katya Shalel</span></div>
