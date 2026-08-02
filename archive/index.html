@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Archive · Ekaterina Shalel</title>
+<meta name="description" content="Earlier guides and working notes by Ekaterina Shalel, kept online for reference: multi-model workflow, briefing a technical team, and readable AI decisions.">
+<link rel="canonical" href="https://katyashalel.com/archive/">
+<link rel="alternate" hreflang="en" href="https://katyashalel.com/archive/">
+<link rel="alternate" hreflang="x-default" href="https://katyashalel.com/archive/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Archive">
+<meta property="og:description" content="Earlier guides and working notes by Ekaterina Shalel, kept online for reference: multi-model workflow, briefing a technical team, and readable AI decisions.">
+<meta property="og:url" content="https://katyashalel.com/archive/">
+<meta property="og:site_name" content="Ekaterina Shalel">
+<link rel="alternate" type="text/plain" href="https://katyashalel.com/llms.txt" title="LLM-friendly summary">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Instrument+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "CollectionPage",
+  "name": "Archive",
+  "description": "Earlier guides and working notes by Ekaterina Shalel, kept online for reference: multi-model workflow, briefing a technical team, and readable AI decisions.",
+  "url": "https://katyashalel.com/archive/",
+  "inLanguage": "en",
+  "author": {
+    "@type": "Person",
+    "name": "Ekaterina Shalel",
+    "alternateName": [
+      "Katya Shalel",
+      "Екатерина Шалель"
+    ],
+    "url": "https://katyashalel.com",
+    "jobTitle": "Founder and legibility strategist"
+  },
+  "isPartOf": {
+    "@type": "WebSite",
+    "name": "Ekaterina Shalel",
+    "url": "https://katyashalel.com"
+  },
+  "hasPart": [
+    {
+      "@type": "HowTo",
+      "name": "The Multi-Model Workflow",
+      "url": "https://katyashalel.com/guides/multimodel/",
+      "description": "Which model to use for which task, how to hand context between them, and how to keep one chat from turning a strong model into a mediocre generalist."
+    },
+    {
+      "@type": "HowTo",
+      "name": "The Tech Team Moment",
+      "url": "https://katyashalel.com/guides/techteam/",
+      "description": "How to brief work and accept it without reading code: specify behaviour rather than implementation, and keep acceptance on the behaviour."
+    },
+    {
+      "@type": "HowTo",
+      "name": "Readable AI Decisions",
+      "url": "https://katyashalel.com/guides/legibility/",
+      "description": "How a recommendation system can make its grounds checkable rather than asking to be trusted. Where the Indifference Test comes from."
+    }
+  ]
+}
+</script>
+
+<style>
+
+  :root {
+    --ink: #1A1A1A;
+    --ink-soft: #4A4A4A;
+    --red: #C4342E;
+    --bg: #FFFFFF;
+    --bg-deep: #F0F0F0;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: 'Instrument Sans', sans-serif;
+    color: var(--ink);
+    background: var(--bg);
+    line-height: 1.75;
+    font-size: 17px;
+    -webkit-font-smoothing: antialiased;
+  }
+  .top {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 32px 24px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+  }
+  .top a {
+    color: var(--ink);
+    text-decoration: none;
+    font-size: 13px;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+  }
+  .top a:hover { color: var(--red); }
+  article {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 56px 24px 96px;
+  }
+  .kicker {
+    font-size: 11px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--red);
+    margin-bottom: 20px;
+  }
+  h1 {
+    font-family: 'Instrument Serif', serif;
+    font-weight: 400;
+    font-size: clamp(34px, 6vw, 52px);
+    line-height: 1.12;
+    margin-bottom: 18px;
+  }
+  .subtitle {
+    font-size: 19px;
+    color: var(--ink-soft);
+    line-height: 1.55;
+    margin-bottom: 28px;
+  }
+  .meta {
+    font-size: 12px;
+    color: var(--ink-soft);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    padding-bottom: 36px;
+    border-bottom: 1px solid var(--bg-deep);
+    margin-bottom: 44px;
+  }
+  .meta a { color: var(--ink-soft); }
+  .meta a:hover { color: var(--red); }
+  h2 {
+    font-family: 'Instrument Serif', serif;
+    font-weight: 400;
+    font-size: 30px;
+    line-height: 1.2;
+    margin: 52px 0 20px;
+  }
+  p { margin-bottom: 22px; }
+  strong { font-weight: 600; }
+  em { font-style: italic; }
+  a { color: var(--red); }
+  .step {
+    border-left: 3px solid var(--bg-deep);
+    padding: 4px 0 4px 24px;
+    margin: 32px 0;
+  }
+  .step:hover { border-color: var(--red); }
+  .step h2 { margin: 0 0 12px; font-size: 24px; }
+  .step p:last-child { margin-bottom: 0; }
+  .note {
+    background: var(--bg-deep);
+    border-radius: 6px;
+    padding: 24px 28px;
+    margin: 40px 0;
+    font-size: 15.5px;
+    color: var(--ink-soft);
+  }
+  .note p { margin: 0; }
+  .footer-cta {
+    margin-top: 56px;
+    background: var(--ink);
+    color: #fff;
+    border-radius: 6px;
+    padding: 36px 32px;
+  }
+  .footer-cta p { color: rgba(255,255,255,0.85); font-size: 15px; margin-bottom: 18px; }
+  .footer-cta .btn {
+    display: inline-block;
+    background: var(--red);
+    color: #fff;
+    text-decoration: none;
+    font-size: 13px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    padding: 12px 24px;
+    border-radius: 4px;
+  }
+  .footer-cta .btn:hover { background: #A32420; }
+
+</style>
+
+</head>
+<body>
+
+<div class="top">
+  <a href="/">Ekaterina Shalel</a>
+  <a href="/#essays">Essays</a>
+</div>
+
+<article>
+  <div class="kicker">Archive · Kept for reference</div>
+  <h1>Archive</h1>
+  <p class="subtitle">Earlier guides, still online, no longer part of what I offer.</p>
+  <div class="meta">By Ekaterina Shalel</div>
+
+  <p>These were written while I was working on two adjacent problems: building products with AI without a large team, and designing recommendation systems that can show their grounds. Both fed into the legibility work, and neither is something I sell.</p>
+
+  <p>They stay published because they are cited, because the methods still hold, and because removing work you did is a strange way to argue for a legible public record. If you are here for what I do now, that is the <a href="/guides/sprint/">Legibility Sprint</a> and <a href="/ongoing/">ongoing legibility work</a>.</p>
+
+  <div class="step">
+    <h2>The Multi-Model Workflow</h2>
+    <p>Which model to use for which task, how to hand context between them, and how to keep one chat from turning a strong model into a mediocre generalist.</p>
+    <p><a href="/guides/multimodel/">Read in English</a> · <a href="/ru/guides/multimodel/">Читать по-русски</a></p>
+  </div>
+
+  <div class="step">
+    <h2>The Tech Team Moment</h2>
+    <p>How to brief work and accept it without reading code: specify behaviour rather than implementation, and keep acceptance on the behaviour.</p>
+    <p><a href="/guides/techteam/">Read in English</a> · <a href="/ru/guides/techteam/">Читать по-русски</a></p>
+  </div>
+
+  <div class="step">
+    <h2>Readable AI Decisions</h2>
+    <p>How a recommendation system can make its grounds checkable rather than asking to be trusted. Where the Indifference Test comes from.</p>
+    <p><a href="/guides/legibility/">Read in English</a> · <a href="/ru/guides/legibility/">Читать по-русски</a></p>
+  </div>
+
+  <div class="note">
+    <h2>Also here</h2>
+    <p>The <a href="/guides/buffer-audit/">Canonical Buffer Audit</a> and <a href="/guides/visibility/">Visibility Without Budget</a> are not archived. They are part of the current method and live alongside the Sprint.</p>
+  </div>
+</article>
+
+<script defer src="/_vercel/insights/script.js"></script>
+</body>
+</html>
