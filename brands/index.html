@@ -262,10 +262,97 @@
     </details>
   </div>
 
-  <div class="footer-cta">
-    <p>To discuss a diagnostic for your brand, write with your brand name and primary markets. I reply personally.</p>
-    <a class="btn" href="mailto:k.skinbot@gmail.com?subject=Brand%20Legibility%20Diagnostic">k.skinbot@gmail.com</a>
+<!-- Request form. Drop into any page. Posts to /api/lead, delivered to Telegram. -->
+<section class="request" id="request">
+  <h2>Request a diagnostic</h2>
+  <p class="request-lead">Tell me about the brand and the markets that matter. I read every enquiry myself and reply within one business day.</p>
+
+  <div class="form-grid">
+    <label>Name<input type="text" id="f-name" autocomplete="name"></label>
+    <label>Email<input type="email" id="f-email" autocomplete="email" required></label>
+    <label>Company or brand<input type="text" id="f-company" autocomplete="organization"></label>
+    <label>Website<input type="text" id="f-site" placeholder="example.com"></label>
+    <label>Related entities
+      <select id="f-entities">
+        <option value="">Select</option>
+        <option>One</option>
+        <option>Two or three</option>
+        <option>Four or more</option>
+        <option>Not sure</option>
+      </select>
+    </label>
+    <label>Markets and languages<input type="text" id="f-markets" placeholder="EU, EN and RU"></label>
+    <label class="wide">How did you find this page?<input type="text" id="f-source" placeholder="LinkedIn, ChatGPT, a referral"></label>
+    <label class="wide">What are you trying to fix?<textarea id="f-message" rows="4"></textarea></label>
+    <label class="hp" aria-hidden="true">Leave this empty<input type="text" id="f-website-url" tabindex="-1" autocomplete="off"></label>
   </div>
+
+  <button class="btn" id="f-send" type="button">Send</button>
+  <p class="form-note" id="f-note"></p>
+</section>
+
+<style>
+  .request { margin-top: 56px; padding-top: 28px; border-top: 1px solid var(--bg-deep, #F0F0F0); }
+  .request-lead { color: var(--ink-soft, #4A4A4A); font-size: 15px; margin-bottom: 22px; }
+  .form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px 18px; }
+  .form-grid label { display: flex; flex-direction: column; font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--ink-soft, #4A4A4A); }
+  .form-grid label.wide { grid-column: 1 / -1; }
+  .form-grid input, .form-grid select, .form-grid textarea {
+    margin-top: 6px; padding: 11px 12px; border: 1px solid #DDD; border-radius: 4px;
+    font-family: inherit; font-size: 15px; color: var(--ink, #1A1A1A); background: #fff;
+    text-transform: none; letter-spacing: 0;
+  }
+  .form-grid input:focus, .form-grid select:focus, .form-grid textarea:focus { outline: none; border-color: var(--red, #C4342E); }
+  .form-grid .hp { position: absolute; left: -9999px; width: 1px; height: 1px; overflow: hidden; }
+  .request .btn {
+    margin-top: 20px; display: inline-block; background: var(--red, #C4342E); color: #fff;
+    border: none; cursor: pointer; font-family: inherit; font-size: 13px; letter-spacing: 0.08em;
+    text-transform: uppercase; padding: 13px 26px; border-radius: 4px;
+  }
+  .request .btn:disabled { opacity: 0.5; cursor: default; }
+  .form-note { margin-top: 14px; font-size: 14px; color: var(--ink-soft, #4A4A4A); min-height: 20px; }
+  @media (max-width: 600px) { .form-grid { grid-template-columns: 1fr; } }
+</style>
+
+<script>
+(function () {
+  var btn = document.getElementById('f-send');
+  var note = document.getElementById('f-note');
+  if (!btn) return;
+  btn.addEventListener('click', function () {
+    var val = function (id) { var el = document.getElementById(id); return el ? el.value : ''; };
+    var email = val('f-email').trim();
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(email)) {
+      note.textContent = 'Please add a valid email so I can reply.';
+      return;
+    }
+    btn.disabled = true;
+    note.textContent = 'Sending';
+    fetch('/api/lead', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        form: document.title,
+        name: val('f-name'), email: email, company: val('f-company'),
+        site: val('f-site'), entities: val('f-entities'), markets: val('f-markets'),
+        source: val('f-source'), message: val('f-message'),
+        website_url: val('f-website-url')
+      })
+    }).then(function (r) { return r.json(); }).then(function (d) {
+      if (d && d.ok) {
+        note.textContent = 'Received. I will reply within one business day.';
+      } else {
+        btn.disabled = false;
+        note.innerHTML = 'Something went wrong. Write to <a href="mailto:k.skinbot@gmail.com">k.skinbot@gmail.com</a>.';
+      }
+    }).catch(function () {
+      btn.disabled = false;
+      note.innerHTML = 'Something went wrong. Write to <a href="mailto:k.skinbot@gmail.com">k.skinbot@gmail.com</a>.';
+    });
+  });
+})();
+</script>
+
 </article>
 
 <script defer src="/_vercel/insights/script.js"></script>
