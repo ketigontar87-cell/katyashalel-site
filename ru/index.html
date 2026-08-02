@@ -533,6 +533,21 @@ footer{padding: 20px;}
   nav.nav-open .nav-cta{transform:rotate(45deg)}
 }
 .nav-cta:focus-visible,a:focus-visible,button:focus-visible{outline:2px solid #C4342E;outline-offset:3px}
+
+  .plain-words{margin-top:28px;border-top:1px solid rgba(0,0,0,0.08);padding-top:20px}
+  .plain-words p{font-size:15px;line-height:1.6;margin:0 0 12px}
+  .plain-words b{display:block;font-size:12px;letter-spacing:0.1em;text-transform:uppercase;margin-bottom:2px}
+  .plain-note{font-size:14px;opacity:0.72;margin-top:10px}
+  .machine-links{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;border:0}
+  .lead-form{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:22px;max-width:520px}
+  .lead-form input,.lead-form textarea{padding:12px 13px;border:1px solid rgba(0,0,0,0.18);border-radius:4px;font-family:inherit;font-size:15px;background:#fff;color:inherit;width:100%}
+  .lead-form textarea,.lead-form button,.lead-form .lf-note{grid-column:1/-1}
+  .lead-form input:focus,.lead-form textarea:focus{outline:none;border-color:#C4342E}
+  .lead-form .lf-hp{position:absolute;left:-9999px;width:1px;height:1px}
+  .lead-form button{padding:13px 26px;border:none;border-radius:4px;background:#C4342E;color:#fff;font-family:inherit;font-size:13px;letter-spacing:0.08em;text-transform:uppercase;cursor:pointer;justify-self:start}
+  .lead-form button:disabled{opacity:0.5;cursor:default}
+  .lf-note{font-size:14px;min-height:20px;margin:0}
+  @media (max-width:600px){.lead-form{grid-template-columns:1fr}}
 </style>
 <script type="text/javascript">
 (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
@@ -675,12 +690,14 @@ header{background:var(--cream);padding:22px 16px 18px;text-align:center;border-b
 <nav>
   <div class="logo">Ekaterina Shalel</div>
   <ul class="nav-links" id="nav-links">
-    <li><a href="#legibility">Legibility</a></li>
+    <li><a href="#what">Что это</a></li>
     <li><a href="#sprint">Sprint</a></li>
-    <li><a href="#skinbot">SKINBOT</a></li>
+    <li><a href="#audit">Аудит</a>
+        <a href="#skinbot">SKINBOT</a></li>
     <li><a href="#essays">Эссе</a></li>
     <li><a href="#about">Обо мне</a></li>
-    <li><a href="/ru/guides/">Гайды</a></li>
+    <li><a href="/ru/guides/">Гайды</a>
+        <a href="/brands/">Для брендов</a></li>
     <li><a href="#contact">Контакты</a></li>
     <li><a href="/">EN</a></li>
   </ul>
@@ -709,6 +726,22 @@ header{background:var(--cream);padding:22px 16px 18px;text-align:center;border-b
 
 
 
+<section class="stages" id="what">
+  <div class="wrap">
+    <span class="eyebrow">Начните отсюда</span>
+    <h2>Что такое <span class="script">читаемость</span></h2>
+    <p>Раньше вас находили через поиск. Теперь спрашивают у ChatGPT, Claude или Perplexity, и модель отвечает из того, что смогла собрать о вас по открытым источникам. Если эта картина неполная, устарела или перепуталась с чьей-то чужой, вас просто не назовут. Не потому что вы неизвестны. Потому что вас нельзя прочитать.</p>
+    <p>Вот на этой разнице я и работаю. <strong>Видимость</strong> это как часто вас упоминают. <strong>Читаемость</strong> это может ли модель точно понять, кто вы, увидеть связь между вашими компаниями и проектами и повторить утверждение о вас, не догадываясь. Многие известные люди нечитаемы, и это стоит им рекомендации.</p>
+    <p>Сама работа скучная: одно предложение, которое одинаково описывает вас везде, код страницы, понятный машине, публичная запись, связывающая имя с тем, что вы построили, и фиксированный набор вопросов, который вы прогоняете повторно, чтобы увидеть, изменилось ли что-то. Почти никто этого не делает, поэтому это и работает.</p>
+    <div class="plain-words">
+      <p><b>llms.txt</b> Простой текстовый файл на вашем сайте, который рассказывает AI-системам, кто вы, в удобном для них порядке, а не в человеческом.</p>
+      <p><b>Структурированные данные (JSON-LD)</b> Невидимые пометки в коде страницы. Человек видит абзац, машина видит: это человек, это её роль, это её компания.</p>
+      <p><b>Wikidata</b> Открытая база, куда модели заглядывают, когда хотят подтвердить факт о человеке или компании чем-то, кроме вашего же сайта.</p>
+      <p><b>Тест-сет</b> Фиксированный список вопросов, который вы задаёте моделям до и после работы, чтобы изменение было измеренным, а не показавшимся.</p>
+    </div>
+  </div>
+</section>
+
 <section class="stages" id="legibility">
   <div class="wrap">
     <span class="eyebrow">Мой словарь</span>
@@ -722,11 +755,21 @@ header{background:var(--cream);padding:22px 16px 18px;text-align:center;border-b
   </div>
 </section>
 
+<section class="master" id="audit">
+  <div class="wrap">
+    <span class="eyebrow">Услуга</span>
+    <h2>The Legibility <span class="script">Audit</span></h2>
+    <p>Задокументированный снимок того, что GPT, Claude, Perplexity и Gemini говорят о вас сегодня, разбор источников, из которых они это берут, и план работ на 30 дней по приоритетам. Сначала я прогнала протокол на себе, аудит это тот же протокол, применённый к вам</p>
+    <div class="sprint-actions"><a class="cta ghost" href="/audit/">Подробнее об аудите</a><a class="cta ghost" href="/brands/">Для брендов</a></div>
+  </div>
+</section>
+
 <section class="master" id="sprint">
   <div class="wrap">
     <span class="eyebrow">Продукт</span>
     <h2>The Legibility <span class="script">Sprint</span></h2>
-    <p>Семь дней, чтобы собрать свой source-of-truth слой и стать читаемым для AI-систем. Пошаговый протокол: сайт-хаб, llms.txt, JSON-LD, Wikidata, scorecard и контрольная проверка на 21-й день</p>
+    <p>Семь дней, чтобы собрать одно место, которое говорит о вас правду, и сделать его читаемым для машин. По дням: свой сайт как источник, llms.txt, структурированные данные, запись в Wikidata, оценочная таблица и контрольная проверка на 21-й день</p>
+    <p class="plain-note">Если совсем просто: вы перестаёте надеяться, что модели поймут вас правильно, и даёте им верный текст для чтения.</p>
     <div class="sprint-price">$47 · PDF на английском и русском</div>
     <div class="sprint-actions"><a class="cta ghost" href="https://skinbot.gumroad.com/l/sprint" target="_blank" rel="noopener">Купить Sprint</a><a class="cta ghost" href="/guides/sprint/">Что внутри</a></div>
     <div class="sprint-divider"></div>
@@ -763,7 +806,6 @@ header{background:var(--cream);padding:22px 16px 18px;text-align:center;border-b
 
 <section class="skinbot" id="skinbot">
   <div class="section-header">
-    <span class="section-num">01</span>
     <span class="section-label">Что я строю</span>
   </div>
   <div class="skinbot-grid">
@@ -789,7 +831,6 @@ header{background:var(--cream);padding:22px 16px 18px;text-align:center;border-b
 
 <section id="essays">
   <div class="section-header">
-    <span class="section-num">02</span>
     <span class="section-label">Эссе</span>
     <a href="https://katyashalel.substack.com/archive" target="_blank" rel="noopener" class="view-all">Все эссе</a>
   </div>
@@ -825,7 +866,6 @@ header{background:var(--cream);padding:22px 16px 18px;text-align:center;border-b
   <div class="about-image"><img src="/images/about-coat.webp" alt="Katya Shalel portrait" class="portrait-img" width="1100" height="1650"></div>
   <div class="about-content">
     <div class="section-header">
-      <span class="section-num">03</span>
       <span class="section-label">Обо мне</span>
     </div>
     <h2 class="serif">Основатель ·<br>Legibility-стратег</h2>
@@ -835,56 +875,35 @@ header{background:var(--cream);padding:22px 16px 18px;text-align:center;border-b
   </div>
 </section>
 
-<section>
-  <div class="section-header">
-    <span class="section-num">04</span>
-    <span class="section-label">Цифровые площадки</span>
-  </div>
-  <div class="digital-grid">
-    <a href="https://www.linkedin.com/in/ekaterina-shalel" target="_blank" class="digital-card">
-      <span class="digital-icon">in</span>
-      <span>LinkedIn</span>
-    </a>
-    <a href="https://vc.ru/shalel_notes" target="_blank" class="digital-card">
-      <span class="digital-icon">vc</span>
-      <span>VC.ru</span>
-    </a>
-    <a href="https://medium.com/@jedeesse" target="_blank" class="digital-card">
-      <span class="digital-icon">M</span>
-      <span>Medium</span>
-    </a>
-    <a href="https://katyashalel.substack.com" target="_blank" class="digital-card">
-      <span class="digital-icon">S</span>
-      <span>Substack</span>
-    </a>
-    <a href="https://t.me/shalel_notes" target="_blank" class="digital-card">
-      <span class="digital-icon">✈</span>
-      <span>Telegram</span>
-    </a>
-    <a href="https://instagram.com/katya_shalel" target="_blank" class="digital-card">
-      <span class="digital-icon">◯</span>
-      <span>Instagram</span>
-    </a>
-    <a href="https://threads.net/@katya_shalel" target="_blank" class="digital-card">
-      <span class="digital-icon">@</span>
-      <span>Threads</span>
-    </a>
-  </div>
-</section>
+<!-- Канонические ссылки на профили. Остаются в документе для машин и скринридеров, скрыты из визуальной раскладки на время сборки профилей. -->
+<nav class="machine-links" aria-label="Профили">
+  <a href="https://www.linkedin.com/in/ekaterina-shalel" rel="me noopener" target="_blank">LinkedIn</a>
+  <a href="https://vc.ru/shalel_notes" rel="me noopener" target="_blank">VC.ru</a>
+  <a href="https://medium.com/@jedeesse" rel="me noopener" target="_blank">Medium</a>
+  <a href="https://katyashalel.substack.com" rel="me noopener" target="_blank">Substack</a>
+  <a href="https://t.me/shalel_notes" rel="me noopener" target="_blank">Telegram</a>
+  <a href="https://instagram.com/katya_shalel" rel="me noopener" target="_blank">Instagram</a>
+  <a href="https://threads.net/@katya_shalel" rel="me noopener" target="_blank">Threads</a>
+</nav>
 
 <section class="contact" id="contact">
   <div>
     <div class="section-header">
-      <span class="section-num">05</span>
       <span class="section-label">Построим то, что имеет значение</span>
     </div>
-    <h2 class="serif">Идеи становятся результатом<br>с правильными партнёрами</h2>
-    <p>Я всегда открыта к разговорам о строительстве продуктов, инвестициях и будущем коммерции.</p>
-    <form class="contact-form" id="subscribe-form">
-      <input type="email" id="sub-email" placeholder="Ваш email" required>
-      <button type="submit">Оставаться на связи</button>
-    </form>
-    <p class="contact-direct">Или напишите напрямую: <a href="mailto:k.skinbot@gmail.com">k.skinbot@gmail.com</a></p>
+    <h2 class="serif">Расскажите,<br>с чем вы работаете</h2>
+    <p>Если хотите понять, как AI-системы описывают вас или ваш бренд сейчас и что нужно, чтобы это исправить, напишите мне здесь. Я читаю каждое обращение сама и отвечаю в течение одного рабочего дня.</p>
+    <div class="lead-form">
+      <input type="text" id="lf-name" placeholder="Имя">
+      <input type="email" id="lf-email" placeholder="Email" required>
+      <input type="text" id="lf-company" placeholder="Компания или бренд">
+      <input type="text" id="lf-site" placeholder="Сайт">
+      <textarea id="lf-message" rows="3" placeholder="Что хотите починить?"></textarea>
+      <input type="text" id="lf-hp" class="lf-hp" tabindex="-1" autocomplete="off" aria-hidden="true" placeholder="Оставьте пустым">
+      <button type="button" id="lf-send">Отправить</button>
+      <p class="lf-note" id="lf-note"></p>
+    </div>
+    <p class="contact-direct">Или письмом: <a href="mailto:k.skinbot@gmail.com">k.skinbot@gmail.com</a> · Заметки в <a href="https://t.me/shalel_notes" target="_blank" rel="noopener">Telegram</a></p>
   </div>
   <div class="contact-image"></div>
 </section>
@@ -952,12 +971,23 @@ header{background:var(--cream);padding:22px 16px 18px;text-align:center;border-b
 })();
 
 (function(){
-  var f = document.getElementById('subscribe-form');
-  if (!f) return;
-  f.addEventListener('submit', function(e){
-    e.preventDefault();
-    var em = document.getElementById('sub-email').value.trim();
-    window.open('https://katyashalel.substack.com/subscribe?email=' + encodeURIComponent(em), '_blank');
+  var b = document.getElementById('lf-send');
+  if (!b) return;
+  var note = document.getElementById('lf-note');
+  var v = function(id){ var e = document.getElementById(id); return e ? e.value.trim() : ''; };
+  b.addEventListener('click', function(){
+    var email = v('lf-email');
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(email)) { note.textContent = 'Укажите почту, чтобы я могла ответить.'; return; }
+    b.disabled = true; note.textContent = 'Отправляю';
+    fetch('/api/lead', { method: 'POST', headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ form: 'Главная RU', name: v('lf-name'), email: email,
+        company: v('lf-company'), site: v('lf-site'), message: v('lf-message'), website_url: v('lf-hp') }) })
+      .then(function(r){ return r.json(); })
+      .then(function(d){
+        if (d && d.ok) { note.textContent = 'Получено. Отвечу в течение рабочего дня.'; }
+        else { b.disabled = false; note.innerHTML = 'Что-то пошло не так. Напишите на <a href="mailto:k.skinbot@gmail.com">k.skinbot@gmail.com</a>.'; }
+      })
+      .catch(function(){ b.disabled = false; note.innerHTML = 'Что-то пошло не так. Напишите на <a href="mailto:k.skinbot@gmail.com">k.skinbot@gmail.com</a>.'; });
   });
 })();
 
