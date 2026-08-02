@@ -2,11 +2,12 @@
 <html lang="ru">
 <head>
 <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Читаемые AI решения · бесплатный гайд · Katya Shalel</title>
+<title>Читаемые AI решения · бесплатный гайд · Ekaterina Shalel</title>
 <meta name="description" content="Как проектировать AI-рекомендации, которым не нужно верить на слово: Indifference Test, проверяемая схема ответа, объяснение для пользователя. Готовые промпты внутри">
 <link rel="canonical" href="https://katyashalel.com/ru/guides/legibility/">
 <link rel="alternate" hreflang="en" href="https://katyashalel.com/guides/legibility/">
 <link rel="alternate" hreflang="ru" href="https://katyashalel.com/ru/guides/legibility/">
+<link rel="alternate" hreflang="x-default" href="https://katyashalel.com/guides/legibility/">
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
 <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Instrument+Sans:wght@400;600;700&display=swap" rel="stylesheet">
 <style>
@@ -46,6 +47,52 @@ section b{color:var(--ink)}
 footer{padding:30px 20px;text-align:center;font-size:11px;letter-spacing:.16em;text-transform:uppercase;font-weight:600;color:#8B8B8B}
 footer a{color:var(--ink);text-decoration:none}
 </style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "HowTo",
+  "name": "Читаемые AI решения",
+  "description": "Как проектировать AI-рекомендации, которым не нужно верить на слово: Indifference Test, проверяемая схема ответа, объяснение для пользователя. Готовые промпты внутри",
+  "url": "https://katyashalel.com/ru/guides/legibility/",
+  "inLanguage": "ru",
+  "isAccessibleForFree": true,
+  "author": {
+    "@type": "Person",
+    "name": "Ekaterina Shalel",
+    "alternateName": [
+      "Katya Shalel",
+      "Екатерина Шалель"
+    ],
+    "url": "https://katyashalel.com",
+    "jobTitle": "Founder and legibility strategist"
+  },
+  "publisher": {
+    "@type": "Person",
+    "name": "Ekaterina Shalel",
+    "url": "https://katyashalel.com"
+  },
+  "step": [
+    {
+      "@type": "HowToStep",
+      "position": 1,
+      "name": "Прогоните Indifference Test",
+      "text": "Нейтральность проверяется одним вопросом: выгодно ли системе, чтобы выиграл конкретный продукт. Если да, выдача искажена независимо от намерений. Indifference Test проходит по всей цепочке от монетизации до ранжирования и находит каждое место, где доход связан с исходом выбора."
+    },
+    {
+      "@type": "HowToStep",
+      "position": 2,
+      "name": "Схема ответа, которая показывает основания",
+      "text": "Заявление о нейтральности требует доверия, поле в API-ответе нет. Когда каждый ответ системы несёт основание ранжирования, признак спонсорства и вес бренда, нейтральность превращается из обещания в свойство архитектуры, проверяемое внешним аудитором по одному ответу."
+    },
+    {
+      "@type": "HowToStep",
+      "position": 3,
+      "name": "Объясните решение пользователю",
+      "text": "Схема для аудитора, объяснение для человека. Две-три строки: почему именно это, из чего выбирали, что изменило бы результат. Без превосходных степеней и маркетинга, только основания. Пользователь, который видит основания, возвращается, потому что систему можно проверить, а не потому что ей велено верить."
+    }
+  ]
+}
+</script>
 </head>
 <body>
 <div class="top"><a href="/ru/">&larr; на главную</a><span>Katya Shalel</span></div>
