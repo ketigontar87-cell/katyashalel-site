@@ -1,0 +1,10 @@
+{
+  "redirects": [
+    { "source": "/program", "destination": "/ongoing/", "permanent": true },
+    { "source": "/program/", "destination": "/ongoing/", "permanent": true },
+    { "source": "/ru/program", "destination": "/ru/", "permanent": true },
+    { "source": "/ru/program/", "destination": "/ru/", "permanent": true },
+    { "source": "/learn", "destination": "/guides/sprint/", "permanent": true },
+    { "source": "/learn/", "destination": "/guides/sprint/", "permanent": true }
+  ]
+}
