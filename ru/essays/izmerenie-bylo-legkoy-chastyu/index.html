@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Измерение было лёгкой частью · Ekaterina Shalel</title>
+<meta name="description" content="Измерить, как AI-системы описывают бренд, стало дёшево и доступно всем за один год. Исправить найденное не стало. Почему дашборды находят проблему, почему её решение это решение об архитектуре сущностей и почему результат не держится сам.">
+<link rel="canonical" href="https://katyashalel.com/ru/essays/izmerenie-bylo-legkoy-chastyu/">
+<link rel="alternate" hreflang="en" href="https://katyashalel.com/essays/the-measurement-was-the-easy-part/">
+<link rel="alternate" hreflang="ru" href="https://katyashalel.com/ru/essays/izmerenie-bylo-legkoy-chastyu/">
+<link rel="alternate" hreflang="x-default" href="https://katyashalel.com/essays/the-measurement-was-the-easy-part/">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Измерение было лёгкой частью">
+<meta property="og:description" content="Измерить, как AI-системы описывают бренд, стало дёшево и доступно всем за один год. Исправить найденное не стало. Почему дашборды находят проблему, почему её решение это решение об архитектуре сущностей и почему результат не держится сам.">
+<meta property="og:url" content="https://katyashalel.com/ru/essays/izmerenie-bylo-legkoy-chastyu/">
+<meta property="og:site_name" content="Ekaterina Shalel">
+<meta property="og:image" content="https://katyashalel.com/assets/covers/the-measurement-was-the-easy-part-og.webp">
+<meta property="og:locale" content="ru_RU">
+<meta property="article:published_time" content="2026-08-02">
+<meta property="article:author" content="Ekaterina Shalel">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Измерение было лёгкой частью">
+<meta name="twitter:description" content="Измерить, как AI-системы описывают бренд, стало дёшево и доступно всем за один год. Исправить найденное не стало. Почему дашборды находят проблему, почему её решение это решение об архитектуре сущностей и почему результат не держится сам.">
+<meta name="twitter:image" content="https://katyashalel.com/assets/covers/the-measurement-was-the-easy-part-og.webp">
+<link rel="alternate" type="text/plain" href="https://katyashalel.com/llms.txt" title="LLM-friendly summary">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Instrument+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BlogPosting",
+      "headline": "Измерение было лёгкой частью",
+      "alternativeHeadline": "Видимость в AI стала товаром за год. Читаемость не стала.",
+      "description": "Измерить, как AI-системы описывают бренд, стало дёшево и доступно всем за один год. Исправить найденное не стало. Почему дашборды находят проблему, почему её решение это решение об архитектуре сущностей и почему результат не держится сам.",
+      "url": "https://katyashalel.com/ru/essays/izmerenie-bylo-legkoy-chastyu/",
+      "inLanguage": "ru",
+      "datePublished": "2026-08-02",
+      "dateModified": "2026-08-02",
+      "image": "https://katyashalel.com/assets/covers/the-measurement-was-the-easy-part-og.webp",
+      "author": {
+        "@type": "Person",
+        "name": "Ekaterina Shalel",
+        "alternateName": [
+          "Katya Shalel",
+          "Екатерина Шалель"
+        ],
+        "url": "https://katyashalel.com",
+        "jobTitle": "Founder and legibility strategist"
+      },
+      "publisher": {
+        "@type": "Person",
+        "name": "Ekaterina Shalel",
+        "url": "https://katyashalel.com"
+      },
+      "about": [
+        {
+          "@type": "DefinedTerm",
+          "name": "AI legibility",
+          "alternateName": "Legibility",
+          "description": "Whether a model can identify an entity correctly, place it in relation to the entities around it, and attach a claim to it without taking on risk. Distinct from visibility, which measures mention volume.",
+          "inDefinedTermSet": {
+            "@type": "DefinedTermSet",
+            "name": "The Legibility Layer",
+            "url": "https://katyashalel.com/vocabulary/"
+          },
+          "url": "https://katyashalel.com/essays/the-measurement-was-the-easy-part/"
+        }
+      ],
+      "isPartOf": {
+        "@type": "CreativeWorkSeries",
+        "name": "The Legibility Layer",
+        "url": "https://katyashalel.com/"
+      }
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Чем видимость в AI отличается от читаемости?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Видимость измеряет, как часто бренд упоминается в ответах моделей. Читаемость измеряет другое: может ли модель правильно опознать сущность, поставить её в связь с соседними сущностями и прикрепить к ней утверждение, не принимая на себя риск. Бренд, который упоминают часто, но распознают неоднозначно, проигрывает бренду, который упоминают реже, но распознают чисто."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Почему инструменты AI-видимости не исправляют то, что находят?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Инструменты показывают, где бренд цитируется и где появляются конкуренты. Исправление обычно это решение об архитектуре сущностей: какая из них каноническая, какие наследуют авторитет, какие описываются как дочерние. Это суждение о бизнесе, а не задача генерации, поэтому ни один дашборд не закрывает разрыв."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Можно ли доверять одному замеру AI-видимости?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Нет. Ответы моделей различаются на идентичных промптах, поэтому точечная цифра может описывать волатильность, а не позицию. Пригодный замер требует фиксированного набора промптов, повторных прогонов, названных версий моделей и раздельного учёта языков и рынков."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Держится ли результат работы над читаемостью?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Нет. Модели переобучаются, конкуренты публикуют, источники исчезают. Структура, которая делала компанию читаемой в одном квартале, деградирует в следующем без чьего-либо участия, поэтому это обслуживание, а не разовый проект."
+          }
+        }
+      ]
+    }
+  ]
+}
+</script>
+
+<style>
+  :root {
+    --ink: #1A1A1A;
+    --ink-soft: #4A4A4A;
+    --red: #C4342E;
+    --bg: #FFFFFF;
+    --bg-deep: #F0F0F0;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: 'Instrument Sans', sans-serif;
+    color: var(--ink);
+    background: var(--bg);
+    line-height: 1.75;
+    font-size: 17px;
+    -webkit-font-smoothing: antialiased;
+  }
+  .top {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 32px 24px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+  }
+  .top a {
+    color: var(--ink);
+    text-decoration: none;
+    font-size: 13px;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+  }
+  .top a:hover { color: var(--red); }
+  article {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 56px 24px 96px;
+  }
+  .kicker {
+    font-size: 11px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--red);
+    margin-bottom: 20px;
+  }
+  h1 {
+    font-family: 'Instrument Serif', serif;
+    font-weight: 400;
+    font-size: clamp(34px, 6vw, 52px);
+    line-height: 1.12;
+    margin-bottom: 18px;
+  }
+  .subtitle {
+    font-size: 19px;
+    color: var(--ink-soft);
+    line-height: 1.55;
+    margin-bottom: 28px;
+  }
+  .meta {
+    font-size: 12px;
+    color: var(--ink-soft);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    padding-bottom: 36px;
+    border-bottom: 1px solid var(--bg-deep);
+    margin-bottom: 44px;
+  }
+  .meta a { color: var(--ink-soft); }
+  .meta a:hover { color: var(--red); }
+  h2 {
+    font-family: 'Instrument Serif', serif;
+    font-weight: 400;
+    font-size: 30px;
+    line-height: 1.2;
+    margin: 52px 0 20px;
+  }
+  p { margin-bottom: 22px; }
+  strong { font-weight: 600; }
+  em { font-style: italic; }
+  a { color: var(--red); }
+  .pull {
+    border-left: 3px solid var(--red);
+    padding: 6px 0 6px 24px;
+    margin: 36px 0;
+    font-family: 'Instrument Serif', serif;
+    font-size: 24px;
+    line-height: 1.4;
+    color: var(--ink);
+  }
+  .faq {
+    margin-top: 56px;
+    padding-top: 28px;
+    border-top: 1px solid var(--bg-deep);
+  }
+  .faq h2 { margin-top: 0; font-size: 24px; }
+  .faq details { margin-bottom: 14px; }
+  .faq summary {
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 15px;
+    color: var(--ink);
+  }
+  .faq details p {
+    font-size: 15px;
+    color: var(--ink-soft);
+    margin: 10px 0 0;
+  }
+  .source {
+    margin-top: 56px;
+    padding-top: 28px;
+    border-top: 1px solid var(--bg-deep);
+    font-size: 14px;
+    color: var(--ink-soft);
+  }
+  .footer-cta {
+    margin-top: 40px;
+    background: var(--ink);
+    color: #fff;
+    border-radius: 6px;
+    padding: 36px 32px;
+  }
+  .footer-cta p { color: rgba(255,255,255,0.85); font-size: 15px; margin-bottom: 18px; }
+  .footer-cta .btn {
+    display: inline-block;
+    background: var(--red);
+    color: #fff;
+    text-decoration: none;
+    font-size: 13px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    padding: 12px 24px;
+    border-radius: 4px;
+  }
+  .footer-cta .btn:hover { background: #A32420; }
+</style>
+
+</head>
+<body>
+
+<div class="top">
+  <a href="/ru/">Екатерина Шалель</a>
+  <a href="/ru/#essays">Эссе</a>
+</div>
+
+<article>
+  <div class="kicker">The Legibility Layer · Эссе</div>
+  <h1>Измерение было лёгкой частью</h1>
+  <p class="subtitle">Видимость в AI стала товаром за год. Читаемость не стала.</p>
+  <div class="meta">Екатерина Шалель · 2 августа 2026</div>
+
+  <img src="/assets/covers/the-measurement-was-the-easy-part.webp" alt="Измерение было лёгкой частью · Ekaterina Shalel" style="width:100%;border-radius:12px;margin:18px 0 6px;" loading="eager">
+
+  <p>Год назад выяснить, как ChatGPT описывает вашу компанию, было небольшим исследованием. Вы писали промпты руками, прогоняли их несколько раз, делали скриншоты и спорили с коллегой о том, что всё это значит.</p>
+
+  <p>Этот период закончился. Otterly начинается с 29 долларов в месяц. HubSpot раздаёт бесплатный AEO-грейдер. Semrush встроил измерение AI-видимости в платформу, за которую ваша команда уже платит. На верхнем этаже рынка Profound привлёк 155 миллионов при оценке в миллиард и продаёт компаниям из списка Fortune 500, а категория целиком собрала более 300 миллионов с середины 2025 по весну 2026.</p>
+
+  <p>Измерение прошло путь от дефицита до изобилия примерно за год. Это хорошо. Это же и конец измерения как услуги.</p>
+
+  <h2>Дашборд выдаёт находку, а не инструкцию</h2>
+
+  <p>Откройте любой из этих инструментов и получите вариант одной и той же фразы. Вы появляетесь в 12 процентах релевантных ответов. Конкурент появляется в 41. Вот источники, которые цитируются вместо ваших.</p>
+
+  <p>И что дальше.</p>
+
+  <p>Честный ответ, и лучшие вендоры его дают, состоит в том, что здесь продукт заканчивается. Profound показывает, где вас цитируют и где появляются конкуренты, но ничего не публикует и не обновляет. Scrunch построен вокруг диагностики: он объясняет, где и почему вы появляетесь, а не что строить. Peec это чистый мониторинг. Один отраслевой обзор сформулировал это резче, чем сделал бы любой из них: данные без исполнения это накладные расходы.</p>
+
+  <p>Это не претензия. Приборы это настоящий бизнес, и приборы здесь хорошие. Речь лишь о том, что интересная задача лежит ниже по течению, и никто пока не превратил её в надёжную систему, потому что недостающий слой это не генерация. Это суждение.</p>
+
+  <h2>Что на самом деле нужно чинить</h2>
+
+  <p>Возьмите конфигурацию, обычную для любой отрасли с дистрибуцией.</p>
+
+  <p>Женщина владеет розничным магазином. Она же управляет дистрибьюторской компанией, которая ввозит в регион несколько брендов. Она ведёт сертификационный курс для специалистов. Она открывает клинику. Она запускает кураторский знак для продуктов, которые проверила сама.</p>
+
+  <p>Пять сущностей. Десять возможных связей между ними. Для покупателя, стоящего перед ней, это один человек и одна репутация. Для языковой модели это пять слабо связанных строк, часть из которых путается с посторонними компаниями похожего названия, а большинство не имеет между собой ни одной подтверждённой связи.</p>
+
+  <p>Ни один дашборд не скажет вам, какая из пяти должна стать канонической. Это решение о бизнесе: какая сущность несёт авторитет, какие его наследуют, какие описываются как дочерние, какие намеренно держатся отдельно. Ошибётесь и потратите год на усиление самого слабого узла. Работа ближе к корпоративному структурированию, чем к контент-маркетингу, и требует человека, который понимает и отрасль, и то, как модель собирает представление о сущности.</p>
+
+  <div class="pull">Инструменты точно измеряют симптом. Проблема структурная.</div>
+
+  <h2>Чему учит построение самой машины</h2>
+
+  <p>Я построила рекомендательный слой для beauty retail: систему, которая принимает вводные человека и возвращает продукты, развёрнутую в реальных магазинах и дающую реальные рекомендации реальным покупателям.</p>
+
+  <p>С той стороны интерфейса быстро выясняется, что система не знает брендов и не ранжирует их по известности. Она разрешает сущности, ищет подтверждения и только потом выдаёт то, что может защитить. Бренд, который упоминают везде, но распознают неоднозначно, проигрывает бренду, который упоминают реже, но распознают чисто, потому что только ко второму можно прикрепить утверждение без риска.</p>
+
+  <p>Большинство компаний считает, что у них проблема объёма. У них проблема распознавания. Они не неизвестны. Они непригодны к использованию.</p>
+
+  <p><strong>Читаемость это разница между первым и вторым: может ли модель правильно опознать сущность, поставить её в связь с соседними сущностями и прикрепить к ней утверждение, не принимая на себя риск.</strong></p>
+
+  <h2>Ничто не стоит на месте</h2>
+
+  <p>Вот часть, которую категория не любит произносить вслух.</p>
+
+  <p>Индустрия постепенно обнаруживает, что объект, который она измеряет, стохастичен. Недавняя работа SparkToro зафиксировала заметную вариативность рекомендаций моделей на идентичных промптах. Следствие тяжёлое: единичный замер, от любого вендора и за любые деньги, ближе к погоде, чем к климату. Точечные цифры описывают волатильность не реже, чем позицию.</p>
+
+  <p>Это касается моих цифр ровно так же, как чужих. Скриншот удачного ответа не доказывает почти ничего. Только фиксированный набор промптов, прогнанный многократно, против названных версий моделей, с раздельным учётом языка и рынка, даёт материал, о котором можно рассуждать.</p>
+
+  <p>И настоящий прирост не остаётся купленным навсегда. Модели переобучаются. Конкуренты публикуют. Источники исчезают. Структура, которая делала компанию читаемой в марте, тихо деградирует к августу без чьего-либо участия.</p>
+
+  <p>Поэтому это обслуживание, а не проект. Правильная аналогия не редизайн сайта, который заканчивается. Правильная аналогия это безопасность, которая не заканчивается.</p>
+
+  <h2>У области пока нет стандартов</h2>
+
+  <p>Нет согласованной метрики. Нет общего тест-сета. Нет опубликованного протокола, который два специалиста могли бы независимо прогнать и сравнить. Нет договорённости о том, сколько прогонов составляют результат и какое изменение вообще стоит называть изменением.</p>
+
+  <p>Сказать это стоит прямо, потому что уверенность на этом рынке сейчас превышает имеющиеся доказательства. Тот, кто говорит вам, что именно двигает модель и на сколько, описывает гипотезу в тоне вывода.</p>
+
+  <p>Что действительно существует, так это набор практик, которые можно записать, выполнить открыто и подвергнуть критике: публиковать набор промптов до результата, называть модели и их версии, разделять языки и рынки, мерить с фиксированным интервалом, а не один раз, держать контрольную сущность и вести журнал всего, что изменилось между замерами.</p>
+
+  <p>Это меньшее притязание, чем то, что заявляет рынок. И единственное, которое выдерживает встречу со вторым человеком, пытающимся его воспроизвести.</p>
+
+
+  <div class="faq">
+    <h2>Вопросы</h2>
+    <details><summary>Чем видимость в AI отличается от читаемости?</summary><p>Видимость измеряет, как часто бренд упоминается в ответах моделей. Читаемость измеряет другое: может ли модель правильно опознать сущность, поставить её в связь с соседними сущностями и прикрепить к ней утверждение, не принимая на себя риск. Бренд, который упоминают часто, но распознают неоднозначно, проигрывает бренду, который упоминают реже, но распознают чисто.</p></details>
+    <details><summary>Почему инструменты AI-видимости не исправляют то, что находят?</summary><p>Инструменты показывают, где бренд цитируется и где появляются конкуренты. Исправление обычно это решение об архитектуре сущностей: какая из них каноническая, какие наследуют авторитет, какие описываются как дочерние. Это суждение о бизнесе, а не задача генерации, поэтому ни один дашборд не закрывает разрыв.</p></details>
+    <details><summary>Можно ли доверять одному замеру AI-видимости?</summary><p>Нет. Ответы моделей различаются на идентичных промптах, поэтому точечная цифра может описывать волатильность, а не позицию. Пригодный замер требует фиксированного набора промптов, повторных прогонов, названных версий моделей и раздельного учёта языков и рынков.</p></details>
+    <details><summary>Держится ли результат работы над читаемостью?</summary><p>Нет. Модели переобучаются, конкуренты публикуют, источники исчезают. Структура, которая делала компанию читаемой в одном квартале, деградирует в следующем без чьего-либо участия, поэтому это обслуживание, а не разовый проект.</p></details>
+  </div>
+</article>
+
+<script defer src="/_vercel/insights/script.js"></script>
+</body>
+</html>
