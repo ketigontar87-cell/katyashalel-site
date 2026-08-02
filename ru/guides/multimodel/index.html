@@ -2,11 +2,12 @@
 <html lang="ru">
 <head>
 <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Мультимодельный воркфлоу · бесплатный гайд · Katya Shalel</title>
+<title>Мультимодельный воркфлоу · бесплатный гайд · Ekaterina Shalel</title>
 <meta name="description" content="Какой AI для какой задачи: как распределить работу между пятью моделями, передавать контекст и сводить результаты. Готовые промпты внутри">
 <link rel="canonical" href="https://katyashalel.com/ru/guides/multimodel/">
 <link rel="alternate" hreflang="en" href="https://katyashalel.com/guides/multimodel/">
 <link rel="alternate" hreflang="ru" href="https://katyashalel.com/ru/guides/multimodel/">
+<link rel="alternate" hreflang="x-default" href="https://katyashalel.com/guides/multimodel/">
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
 <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Instrument+Sans:wght@400;600;700&display=swap" rel="stylesheet">
 <style>
@@ -47,6 +48,52 @@ section b{color:var(--ink)}
 footer{padding:30px 20px;text-align:center;font-size:11px;letter-spacing:.16em;text-transform:uppercase;font-weight:600;color:#8B8B8B}
 footer a{color:var(--ink);text-decoration:none}
 </style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "HowTo",
+  "name": "Мультимодельный воркфлоу",
+  "description": "Какой AI для какой задачи: как распределить работу между пятью моделями, передавать контекст и сводить результаты. Готовые промпты внутри",
+  "url": "https://katyashalel.com/ru/guides/multimodel/",
+  "inLanguage": "ru",
+  "isAccessibleForFree": true,
+  "author": {
+    "@type": "Person",
+    "name": "Ekaterina Shalel",
+    "alternateName": [
+      "Katya Shalel",
+      "Екатерина Шалель"
+    ],
+    "url": "https://katyashalel.com",
+    "jobTitle": "Founder and legibility strategist"
+  },
+  "publisher": {
+    "@type": "Person",
+    "name": "Ekaterina Shalel",
+    "url": "https://katyashalel.com"
+  },
+  "step": [
+    {
+      "@type": "HowToStep",
+      "position": 1,
+      "name": "Раздай модели роли",
+      "text": "Моё распределение, проверенное на живом продукте: Claude берёт архитектуру, тексты и всё с высокой ценой ошибки. GPT генерит стратегию и варианты. Perplexity отвечает за факты и источники. Gemini разбирает длинные документы. Grok следит за трендами и соцсетями."
+    },
+    {
+      "@type": "HowToStep",
+      "position": 2,
+      "name": "Передавай контекст, а не пересказывай",
+      "text": "Главная потеря времени в мультимодельной работе это пересказ проекта каждой модели заново. Вместо этого в конце сессии проси модель собрать контекст-файл и неси его дальше:"
+    },
+    {
+      "@type": "HowToStep",
+      "position": 3,
+      "name": "Своди результаты на сильной модели",
+      "text": "Ответы разных моделей несёшь самой сильной, и она работает судьёй: сводит, находит противоречия, отмечает что проверить."
+    }
+  ]
+}
+</script>
 </head>
 <body>
 <div class="top"><a href="/ru/">&larr; на главную</a><span>Katya Shalel</span></div>
