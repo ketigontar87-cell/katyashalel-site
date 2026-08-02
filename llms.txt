@@ -141,7 +141,7 @@ Every record carries source_url and last_verified, so a calling agent can check 
 - Substack: https://katyashalel.substack.com
 - LinkedIn: https://www.linkedin.com/in/ekaterina-shalel
 - vc.ru: https://vc.ru/shalel_notes
-- Medium: https://medium.com/@jedeesse
+- Medium: https://medium.com/@katyashalel
 - Instagram: https://instagram.com/katya_shalel
 - Threads: https://threads.net/@katya_shalel
 - Telegram: https://t.me/shalel_notes
