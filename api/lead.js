@@ -59,8 +59,8 @@ export default async function handler(req, res) {
     return res.status(400).json({ ok: false, error: "invalid_email" });
   }
 
-  const token = process.env.TG_BOT_TOKEN;
-  const chat = process.env.TG_LEAD_CHAT;
+  const token = (process.env.TG_BOT_TOKEN || "").trim();
+  const chat = (process.env.TG_LEAD_CHAT || "").trim();
   if (!token || !chat) {
     return res.status(500).json({ ok: false, error: "intake_not_configured" });
   }
