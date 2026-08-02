@@ -554,6 +554,21 @@ footer{padding: 20px;}
 .faq-list p{font-size: 15px; line-height: 1.7; color: #4A4A4A; margin: 10px 0 0; max-width: 720px;}
 .faq-list a{color: var(--red);}
 @media (max-width: 700px){.site-faq{padding: 40px 24px 24px;}}
+
+  .plain-words{margin-top:28px;border-top:1px solid rgba(0,0,0,0.08);padding-top:20px}
+  .plain-words p{font-size:15px;line-height:1.6;margin:0 0 12px}
+  .plain-words b{display:block;font-size:12px;letter-spacing:0.1em;text-transform:uppercase;margin-bottom:2px}
+  .plain-note{font-size:14px;opacity:0.72;margin-top:10px}
+  .machine-links{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;border:0}
+  .lead-form{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:22px;max-width:520px}
+  .lead-form input,.lead-form textarea{padding:12px 13px;border:1px solid rgba(0,0,0,0.18);border-radius:4px;font-family:inherit;font-size:15px;background:#fff;color:inherit;width:100%}
+  .lead-form textarea,.lead-form button,.lead-form .lf-note{grid-column:1/-1}
+  .lead-form input:focus,.lead-form textarea:focus{outline:none;border-color:#C4342E}
+  .lead-form .lf-hp{position:absolute;left:-9999px;width:1px;height:1px}
+  .lead-form button{padding:13px 26px;border:none;border-radius:4px;background:#C4342E;color:#fff;font-family:inherit;font-size:13px;letter-spacing:0.08em;text-transform:uppercase;cursor:pointer;justify-self:start}
+  .lead-form button:disabled{opacity:0.5;cursor:default}
+  .lf-note{font-size:14px;min-height:20px;margin:0}
+  @media (max-width:600px){.lead-form{grid-template-columns:1fr}}
 </style>
 <script type="text/javascript">
 (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
@@ -693,7 +708,7 @@ header{background:var(--cream);padding:22px 16px 18px;text-align:center;border-b
 <nav>
   <div class="logo">Ekaterina Shalel</div>
   <ul class="nav-links" id="nav-links">
-    <li><a href="#legibility">Legibility</a></li>
+    <li><a href="#what">What this is</a></li>
     <li><a href="#sprint">Sprint</a></li>
     <li><a href="#audit">Audit</a></li>
         <li><a href="#essays">Essays</a></li>
@@ -728,6 +743,22 @@ header{background:var(--cream);padding:22px 16px 18px;text-align:center;border-b
 
 
 
+<section class="stages" id="what">
+  <div class="wrap">
+    <span class="eyebrow">Start here</span>
+    <h2>What legibility <span class="script">actually means</span></h2>
+    <p>People used to find you through search. Now they ask ChatGPT, Claude or Perplexity, and the model answers from whatever it can piece together about you. If that picture is thin, out of date, or tangled up with someone else's, you don't come up. Not because you're unknown. Because you're unreadable.</p>
+    <p>That's the difference I work on. <strong>Visibility</strong> is how often you get mentioned. <strong>Legibility</strong> is whether a model can tell exactly who you are, see how your companies and projects connect, and repeat a claim about you without guessing. Plenty of well-known people are illegible, and it costs them the recommendation.</p>
+    <p>The work itself is unglamorous: one sentence that describes you the same way everywhere, page code a machine can parse, a public record that ties your name to what you built, and a fixed set of questions you re-run later to see whether anything moved. Most people never do it, which is exactly why it works.</p>
+    <div class="plain-words">
+      <p><b>llms.txt</b> A plain text file on your site that tells AI systems who you are, in their reading order rather than a human's.</p>
+      <p><b>Structured data (JSON-LD)</b> Invisible labels in your page code. A human sees a paragraph; a machine sees "this is a person, this is her role, this is her company."</p>
+      <p><b>Wikidata</b> The open database models check when they want a fact about a person or company confirmed by something other than your own website.</p>
+      <p><b>Test set</b> A fixed list of questions you ask the models before and after the work, so a change is something you measured, not something you felt.</p>
+    </div>
+  </div>
+</section>
+
 <section class="stages" id="legibility">
   <div class="wrap">
     <span class="eyebrow">My vocabulary</span>
@@ -745,7 +776,8 @@ header{background:var(--cream);padding:22px 16px 18px;text-align:center;border-b
   <div class="wrap">
     <span class="eyebrow">The product</span>
     <h2>The Legibility <span class="script">Sprint</span></h2>
-    <p>Seven days to build your source-of-truth layer and become readable to AI systems. A step-by-step protocol: your hub site, llms.txt, JSON-LD, Wikidata, a scorecard and a Day 21 check</p>
+    <p>Seven days to build the one place that tells the truth about you, and to make sure machines can read it. Day by day: your own site as the source, llms.txt, structured data, a Wikidata record, a scorecard, and a check on day 21 to see what changed</p>
+    <p class="plain-note">In plain terms: you stop hoping the models get you right and start giving them something correct to read.</p>
     <div class="sprint-actions"><a class="cta ghost" href="https://skinbot.gumroad.com/l/sprint" target="_blank" rel="noopener">Get the Sprint</a><a class="cta ghost" href="/guides/sprint/">See what's inside</a></div>
     <div class="sprint-price">$47 · PDF in English and Russian</div>
     <div class="sprint-divider"></div>
@@ -791,7 +823,6 @@ header{background:var(--cream);padding:22px 16px 18px;text-align:center;border-b
 
 <section class="skinbot" id="track-record">
   <div class="section-header">
-    <span class="section-num">01</span>
     <span class="section-label">Track record</span>
   </div>
   <div class="skinbot-grid">
@@ -803,7 +834,6 @@ header{background:var(--cream);padding:22px 16px 18px;text-align:center;border-b
 
 <section id="essays">
   <div class="section-header">
-    <span class="section-num">02</span>
     <span class="section-label">Essays</span>
     <a href="https://katyashalel.substack.com/archive" target="_blank" rel="noopener" class="view-all">View all essays</a>
   </div>
@@ -871,7 +901,6 @@ header{background:var(--cream);padding:22px 16px 18px;text-align:center;border-b
   <div class="about-image"><img src="/images/about-coat.webp" alt="Katya Shalel portrait" class="portrait-img" width="1100" height="1650"></div>
   <div class="about-content">
     <div class="section-header">
-      <span class="section-num">03</span>
       <span class="section-label">About</span>
     </div>
     <h2 class="serif">Founder ·<br>Legibility Strategist</h2>
@@ -881,46 +910,19 @@ header{background:var(--cream);padding:22px 16px 18px;text-align:center;border-b
   </div>
 </section>
 
-<section>
-  <div class="section-header">
-    <span class="section-num">04</span>
-    <span class="section-label">Digital presence</span>
-  </div>
-  <div class="digital-grid">
-    <a href="https://www.linkedin.com/in/ekaterina-shalel" target="_blank" class="digital-card">
-      <span class="digital-icon">in</span>
-      <span>LinkedIn</span>
-    </a>
-    <a href="https://vc.ru/shalel_notes" target="_blank" class="digital-card">
-      <span class="digital-icon">vc</span>
-      <span>VC.ru</span>
-    </a>
-    <a href="https://medium.com/@katyashalel" target="_blank" class="digital-card">
-      <span class="digital-icon">M</span>
-      <span>Medium</span>
-    </a>
-    <a href="https://katyashalel.substack.com" target="_blank" class="digital-card">
-      <span class="digital-icon">S</span>
-      <span>Substack</span>
-    </a>
-    <a href="https://t.me/shalel_notes" target="_blank" class="digital-card">
-      <span class="digital-icon">✈</span>
-      <span>Telegram</span>
-    </a>
-    <a href="https://instagram.com/katya_shalel" target="_blank" class="digital-card">
-      <span class="digital-icon">◯</span>
-      <span>Instagram</span>
-    </a>
-    <a href="https://threads.net/@katya_shalel" target="_blank" class="digital-card">
-      <span class="digital-icon">@</span>
-      <span>Threads</span>
-    </a>
-  </div>
-</section>
+<!-- Canonical profile links. Kept in the document for machines and assistive technology, hidden from the visual layout while the profiles are being consolidated. -->
+<nav class="machine-links" aria-label="Profiles">
+  <a href="https://www.linkedin.com/in/ekaterina-shalel" rel="me noopener" target="_blank">LinkedIn</a>
+  <a href="https://vc.ru/shalel_notes" rel="me noopener" target="_blank">VC.ru</a>
+  <a href="https://medium.com/@katyashalel" rel="me noopener" target="_blank">Medium</a>
+  <a href="https://katyashalel.substack.com" rel="me noopener" target="_blank">Substack</a>
+  <a href="https://t.me/shalel_notes" rel="me noopener" target="_blank">Telegram</a>
+  <a href="https://instagram.com/katya_shalel" rel="me noopener" target="_blank">Instagram</a>
+  <a href="https://threads.net/@katya_shalel" rel="me noopener" target="_blank">Threads</a>
+</nav>
 
 <section class="site-faq" id="faq">
   <div class="section-header">
-    <span class="section-num">05</span>
     <span class="section-label">Questions, answered</span>
   </div>
   <div class="faq-list">
@@ -938,16 +940,21 @@ header{background:var(--cream);padding:22px 16px 18px;text-align:center;border-b
 <section class="contact" id="contact">
   <div>
     <div class="section-header">
-      <span class="section-num">06</span>
       <span class="section-label">Let's build what matters</span>
     </div>
-    <h2 class="serif">Ideas become impact<br>with the right partners</h2>
-    <p>I'm always open to conversations about building, investing and shaping the future of commerce.</p>
-    <form class="contact-form" id="subscribe-form">
-      <input type="email" id="sub-email" placeholder="Your email address" required>
-      <button type="submit">Stay in touch</button>
-    </form>
-    <p class="contact-direct">Or just email me: <a href="mailto:k.skinbot@gmail.com">k.skinbot@gmail.com</a></p>
+    <h2 class="serif">Tell me what<br>you're working with</h2>
+    <p>If you want to know how AI systems currently describe you or your brand, and what it would take to fix it, write to me here. I read every enquiry myself and reply within one business day.</p>
+    <div class="lead-form">
+      <input type="text" id="lf-name" placeholder="Name">
+      <input type="email" id="lf-email" placeholder="Email" required>
+      <input type="text" id="lf-company" placeholder="Company or brand">
+      <input type="text" id="lf-site" placeholder="Website">
+      <textarea id="lf-message" rows="3" placeholder="What are you trying to fix?"></textarea>
+      <input type="text" id="lf-hp" class="lf-hp" tabindex="-1" autocomplete="off" aria-hidden="true" placeholder="Leave empty">
+      <button type="button" id="lf-send">Send</button>
+      <p class="lf-note" id="lf-note"></p>
+    </div>
+    <p class="contact-direct">Prefer email: <a href="mailto:k.skinbot@gmail.com">k.skinbot@gmail.com</a> · Essays land on <a href="https://katyashalel.substack.com" target="_blank" rel="noopener">Substack</a></p>
   </div>
   <div class="contact-image"></div>
 </section>
@@ -1014,12 +1021,23 @@ header{background:var(--cream);padding:22px 16px 18px;text-align:center;border-b
 })();
 
 (function(){
-  var f = document.getElementById('subscribe-form');
-  if (!f) return;
-  f.addEventListener('submit', function(e){
-    e.preventDefault();
-    var em = document.getElementById('sub-email').value.trim();
-    window.open('https://katyashalel.substack.com/subscribe?email=' + encodeURIComponent(em), '_blank');
+  var b = document.getElementById('lf-send');
+  if (!b) return;
+  var note = document.getElementById('lf-note');
+  var v = function(id){ var e = document.getElementById(id); return e ? e.value.trim() : ''; };
+  b.addEventListener('click', function(){
+    var email = v('lf-email');
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(email)) { note.textContent = 'Please add a valid email so I can reply.'; return; }
+    b.disabled = true; note.textContent = 'Sending';
+    fetch('/api/lead', { method: 'POST', headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ form: 'Homepage', name: v('lf-name'), email: email,
+        company: v('lf-company'), site: v('lf-site'), message: v('lf-message'), website_url: v('lf-hp') }) })
+      .then(function(r){ return r.json(); })
+      .then(function(d){
+        if (d && d.ok) { note.textContent = 'Received. I will reply within one business day.'; }
+        else { b.disabled = false; note.innerHTML = 'Something went wrong. Write to <a href="mailto:k.skinbot@gmail.com">k.skinbot@gmail.com</a>.'; }
+      })
+      .catch(function(){ b.disabled = false; note.innerHTML = 'Something went wrong. Write to <a href="mailto:k.skinbot@gmail.com">k.skinbot@gmail.com</a>.'; });
   });
 })();
 
