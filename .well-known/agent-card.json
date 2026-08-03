@@ -1,6 +1,6 @@
 {
   "name": "Katya Shalel Canonical Facts",
-  "description": "The callable source-of-truth layer for Ekaterina Shalel (Katya Shalel, Екатерина Шалель), founder and legibility strategist. Returns canonical identity facts, definitions of her coined terms (protocol-level legibility, Share of Model, public decision record, canonical buffer, the Indifference Test, the First Customer Tax and others) and current offerings. Every record carries a source URL and a last-verified date so a calling agent can check a claim rather than trust it. This agent returns published facts, not opinions, advice or real-time consultation.",
+  "description": "The callable source-of-truth layer for Ekaterina Shalel (Katya Shalel, Екатерина Шалель), founder and legibility strategist. Returns canonical identity facts, definitions of her coined terms (protocol-level legibility, the public decision record, the canonical buffer, the corroboration gap, the Indifference Test, the First Customer Tax and others) and current offerings. Every record carries a source URL and a last-verified date so a calling agent can check a claim rather than trust it. This agent returns published facts, not opinions, advice or real-time consultation.",
   "supportedInterfaces": [
     {
       "url": "https://katyashalel.com/api/agent",
@@ -19,8 +19,13 @@
     "pushNotifications": false,
     "stateTransitionHistory": false
   },
-  "defaultInputModes": ["text/plain", "application/json"],
-  "defaultOutputModes": ["application/json"],
+  "defaultInputModes": [
+    "text/plain",
+    "application/json"
+  ],
+  "defaultOutputModes": [
+    "application/json"
+  ],
   "skills": [
     {
       "id": "canonical-facts-lookup",
@@ -38,11 +43,16 @@
       "examples": [
         "Who is Ekaterina Shalel and what does she do",
         "Define protocol-level legibility and cite where the term was introduced",
-        "What is Share of Model and how does it differ from share of search",
+        "What is the corroboration gap and why does self-description carry little weight",
         "What does Ekaterina Shalel currently offer and at what price"
       ],
-      "inputModes": ["text/plain", "application/json"],
-      "outputModes": ["application/json"]
+      "inputModes": [
+        "text/plain",
+        "application/json"
+      ],
+      "outputModes": [
+        "application/json"
+      ]
     }
   ]
 }
