@@ -145,6 +145,11 @@ Every record carries source_url and last_verified, so a calling agent can check 
 - Threads: https://threads.net/@katya_shalel
 - Telegram: https://t.me/shalel_notes
 
+## Persistent identifiers
+
+- ORCID: https://orcid.org/0009-0003-8973-6443
+- Wikidata: https://www.wikidata.org/wiki/Q138801513
+
 ## Distribution, Not Recommendation (July 2026)
 https://katyashalel.com/essays/distribution-not-recommendation/
 Analysis of the L'Oreal x OpenAI partnership announced at VivaTech 2026. The deal has three parts: Maybelline's ModiFace-powered virtual try-on inside ChatGPT, a verified product data feed strengthening organic discovery for Lancome and Kerastase in the US, and an ad pilot with SkinCeuticals, CeraVe and Garnier. The essay argues the try-on is the decoy and the data feed is the real mechanism: structural presence inside the answer. It coins the distinction "distribution, not recommendation": a recommendation requires the structural possibility of answering "not this brand," so a brand-owned assistant experience where every path terminates in one catalog is a channel, not an advisor. Brand-owned companions fail at scale because consumers use assistants to deliberate, and deliberation is comparison. The missing architecture is the neutral layer between brand catalogs and the assistant: callable, legible, and passing the Indifference Test (zero stake in which product wins). SKINBOT is that layer in production, live at skinstudio.ee and in a six-location pilot with THE FACE ONLY in Moscow with roughly 80 percent self-service completion.

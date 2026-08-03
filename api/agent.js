@@ -19,6 +19,7 @@ const IDENTITY = {
   canonical_site: SITE,
   russian_site: `${SITE}/ru/`,
   wikidata: "https://www.wikidata.org/wiki/Q138801513",
+  orcid: "https://orcid.org/0009-0003-8973-6443",
   lines_of_work: [
     "Legibility systems: how people, products and companies become findable, readable and chosen in the AI-mediated world.",
     "Decision systems: how AI helps humans choose. SKINBOT, a neutral AI decision layer for beauty retail, is the product proof."
