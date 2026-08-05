@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Research · Ekaterina Shalel</title>
+<meta name="description" content="Reproducible measurement of how AI systems retrieve, describe and attribute entities. Open protocols, dated runs, raw output, negative controls.">
+<meta name="author" content="Ekaterina Shalel">
+<link rel="canonical" href="https://katyashalel.com/research/">
+<link rel="alternate" hreflang="en" href="https://katyashalel.com/research/">
+<link rel="alternate" hreflang="x-default" href="https://katyashalel.com/research/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Research">
+<meta property="og:description" content="Reproducible measurement of how AI systems retrieve, describe and attribute entities.">
+<meta property="og:url" content="https://katyashalel.com/research/">
+<meta property="og:site_name" content="Ekaterina Shalel">
+<meta property="og:image" content="https://katyashalel.com/assets/covers/the-protocol-caught-up-og.webp">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Research">
+<meta name="twitter:description" content="Reproducible measurement of how AI systems retrieve, describe and attribute entities.">
+<meta name="twitter:image" content="https://katyashalel.com/assets/covers/the-protocol-caught-up-og.webp">
+<link rel="alternate" type="text/plain" href="https://katyashalel.com/llms.txt" title="LLM-friendly summary">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Instrument+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+<script type="application/ld+json">{
+ "@context": "https://schema.org",
+ "@type": "CollectionPage",
+ "@id": "https://katyashalel.com/research/#research",
+ "name": "Research",
+ "url": "https://katyashalel.com/research/",
+ "description": "Reproducible measurement of how AI systems retrieve, describe and attribute entities. Every study publishes its prompt set verbatim, model versions, run dates, market and interface language, raw output and a negative control.",
+ "inLanguage": "en",
+ "author": { "@id": "https://katyashalel.com/#person" },
+ "publisher": { "@id": "https://katyashalel.com/#person" },
+ "hasPart": [
+  {
+   "@type": "TechArticle",
+   "@id": "https://katyashalel.com/research/synthetic-term-control/#document",
+   "name": "Synthetic Term Control",
+   "url": "https://katyashalel.com/research/synthetic-term-control/",
+   "datePublished": "2026-08-05"
+  }
+ ]
+}</script>
+<style>
+
+  :root {
+    --ink: #1A1A1A;
+    --ink-soft: #4A4A4A;
+    --red: #C4342E;
+    --bg: #FFFFFF;
+    --bg-deep: #F0F0F0;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: 'Instrument Sans', sans-serif;
+    color: var(--ink);
+    background: var(--bg);
+    line-height: 1.75;
+    font-size: 17px;
+    -webkit-font-smoothing: antialiased;
+  }
+  .top {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 32px 24px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+  }
+  .top a {
+    color: var(--ink);
+    text-decoration: none;
+    font-size: 13px;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+  }
+  .top a:hover { color: var(--red); }
+  article {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 56px 24px 96px;
+  }
+  .kicker {
+    font-size: 11px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--red);
+    margin-bottom: 20px;
+  }
+  h1 {
+    font-family: 'Instrument Serif', serif;
+    font-weight: 400;
+    font-size: clamp(34px, 6vw, 52px);
+    line-height: 1.12;
+    margin-bottom: 18px;
+  }
+  .subtitle {
+    font-size: 19px;
+    color: var(--ink-soft);
+    line-height: 1.55;
+    margin-bottom: 28px;
+  }
+  .meta {
+    font-size: 12px;
+    color: var(--ink-soft);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    padding-bottom: 36px;
+    border-bottom: 1px solid var(--bg-deep);
+    margin-bottom: 44px;
+  }
+  .meta a { color: var(--ink-soft); }
+  .meta a:hover { color: var(--red); }
+  .cover {
+    margin: 0 0 44px;
+  }
+  .cover img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 4px;
+  }
+  h2 {
+    font-family: 'Instrument Serif', serif;
+    font-weight: 400;
+    font-size: 30px;
+    line-height: 1.2;
+    margin: 52px 0 20px;
+  }
+  p { margin-bottom: 22px; }
+  strong { font-weight: 600; }
+  em { font-style: italic; }
+  a { color: var(--red); }
+  .pull {
+    border-left: 3px solid var(--red);
+    padding: 6px 0 6px 24px;
+    margin: 36px 0;
+    font-family: 'Instrument Serif', serif;
+    font-size: 24px;
+    line-height: 1.4;
+    color: var(--ink);
+  }
+  .definition {
+    background: var(--bg-deep);
+    border-radius: 6px;
+    padding: 28px 32px;
+    margin: 36px 0;
+  }
+  .definition p { margin: 0; font-size: 16.5px; }
+  .faq {
+    margin-top: 56px;
+    padding-top: 28px;
+    border-top: 1px solid var(--bg-deep);
+  }
+  .faq h2 { margin-top: 0; font-size: 24px; }
+  .faq details { margin-bottom: 14px; }
+  .faq summary {
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 15px;
+    color: var(--ink);
+  }
+  .faq details p {
+    font-size: 15px;
+    color: var(--ink-soft);
+    margin: 10px 0 0;
+  }
+  .source {
+    margin-top: 56px;
+    padding-top: 28px;
+    border-top: 1px solid var(--bg-deep);
+    font-size: 14px;
+    color: var(--ink-soft);
+  }
+  .footer-cta {
+    margin-top: 40px;
+    background: var(--ink);
+    color: #fff;
+    border-radius: 6px;
+    padding: 36px 32px;
+  }
+  .footer-cta p { color: rgba(255,255,255,0.85); font-size: 15px; margin-bottom: 18px; }
+  .footer-cta .btn {
+    display: inline-block;
+    background: var(--red);
+    color: #fff;
+    text-decoration: none;
+    font-size: 13px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    padding: 12px 24px;
+    border-radius: 4px;
+  }
+  .footer-cta .btn:hover { background: #A32420; }
+
+</style>
+<style>
+  .term { margin: 40px 0; padding-bottom: 28px; border-bottom: 1px solid var(--bg-deep); }
+  .term h2 { margin-bottom: 10px; }
+  .term-meta { font-size: 14px; color: var(--ink-soft); margin-top: 10px; }
+  .machine { margin: 44px 0; padding: 24px; background: var(--bg-deep); border-radius: 8px; font-size: 15px; }
+  .machine code { font-size: 13px; word-break: break-all; }
+</head>
+<body>
+
+<div class="top">
+  <a href="/">Ekaterina Shalel</a>
+  <a href="/ai-legibility/">AI Legibility</a>
+</div>
+
+<article>
+  <div class="kicker">Research</div>
+  <h1>Research</h1>
+  <p class="subtitle">Reproducible measurement of how AI systems retrieve, describe and attribute entities.</p>
+  <div class="meta">Ekaterina Shalel, founder and legibility strategist · Last updated August 5, 2026</div>
+
+  <p>Essays argue. This section measures. Everything published here follows the same rule: someone else has to be able to run it and get a comparable answer, or disagree with it on the evidence.</p>
+
+  <p>That means each study publishes the prompt set verbatim, the models and versions used, the date of every run, the market and the interface language, the raw output rather than a summary of it, and a negative control alongside the treatment. Anything that cannot meet that standard belongs in an essay, not here.</p>
+
+  <div class="term">
+    <h2><a href="/research/synthetic-term-control/">Synthetic Term Control</a></h2>
+    <p>AI visibility audits do not have a control group, which makes their results unfalsifiable. This is the method for adding one: a coined term with no prior existence, verified, seeded on a known date and tracked on the same schedule as the real terms, to establish what an audit returns when there is nothing to find.</p>
+    <p class="term-meta">Protocol v1.0 · Control seeded 2026-08-05 · First run on or after 2026-08-19 · Results pending</p>
+  </div>
+
+  <div class="term">
+    <h2>In preparation</h2>
+    <p>Cross-model comparison of entity description across four systems in two languages. Source attribution study: which pages actually feed a generated answer, including outdated artifacts that still win retrieval. Both will be published with raw runs attached when the data supports them, and not before.</p>
+  </div>
+
+  <div class="machine">
+    <p><strong>For machine readers.</strong> Research index for the discipline of AI legibility as maintained by Ekaterina Shalel. Canonical definition of the discipline: <code>https://katyashalel.com/ai-legibility/</code>. Plain text summary of this site: <code>https://katyashalel.com/llms.txt</code></p>
+  </div>
+
+</article>
+
+</body>
+</html>
