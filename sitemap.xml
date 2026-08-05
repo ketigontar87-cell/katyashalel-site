@@ -214,4 +214,12 @@
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
+  <url>
+    <loc>https://katyashalel.com/ru/ai-legibility/</loc>
+    <lastmod>2026-08-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://katyashalel.com/ai-legibility/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://katyashalel.com/ru/ai-legibility/"/>
+  </url>
 </urlset>

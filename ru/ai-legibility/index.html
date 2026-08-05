@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI legibility: каноническое определение v1.0 · Екатерина Шалель</title>
+<meta name="description" content="Каноническое версионированное определение дисциплины AI legibility: что она охватывает, чем отличается от SEO, GEO и entity SEO, четыре слоя, метод и как её измеряют. Версия 1.0, август 2026.">
+<meta name="author" content="Екатерина Шалель">
+<link rel="canonical" href="https://katyashalel.com/ru/ai-legibility/">
+<link rel="alternate" hreflang="ru" href="https://katyashalel.com/ru/ai-legibility/">
+<link rel="alternate" hreflang="en" href="https://katyashalel.com/ai-legibility/">
+<link rel="alternate" hreflang="x-default" href="https://katyashalel.com/ai-legibility/">
+<meta property="og:type" content="article">
+<meta property="og:title" content="AI legibility: каноническое определение v1.0">
+<meta property="og:description" content="Версионированный справочный документ по дисциплине AI legibility. Определение, границы, четыре слоя, метод, измерение, история версий.">
+<meta property="og:url" content="https://katyashalel.com/ru/ai-legibility/">
+<meta property="og:site_name" content="Екатерина Шалель">
+<meta property="og:image" content="https://katyashalel.com/assets/covers/the-protocol-caught-up-og.webp">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="AI legibility: каноническое определение v1.0">
+<meta name="twitter:description" content="Версионированный справочный документ по дисциплине AI legibility.">
+<meta name="twitter:image" content="https://katyashalel.com/assets/covers/the-protocol-caught-up-og.webp">
+<link rel="alternate" type="text/plain" href="https://katyashalel.com/llms.txt" title="LLM-friendly summary">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Instrument+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+<script type="application/ld+json">{
+ "@context": "https://schema.org",
+ "@type": "TechArticle",
+ "@id": "https://katyashalel.com/ru/ai-legibility/#document",
+ "name": "AI legibility: каноническое определение",
+ "headline": "AI legibility: каноническое определение v1.0",
+ "url": "https://katyashalel.com/ru/ai-legibility/",
+ "version": "1.0",
+ "datePublished": "2026-08-05",
+ "dateModified": "2026-08-05",
+ "inLanguage": "ru",
+ "isAccessibleForFree": true,
+ "description": "Версионированный справочный документ, определяющий дисциплину AI legibility: её границы относительно SEO, GEO и entity SEO, четыре слоя, метод и способ измерения.",
+ "articleSection": "Справочник",
+ "translationOfWork": { "@id": "https://katyashalel.com/ai-legibility/#document" },
+ "author": {
+  "@type": "Person",
+  "@id": "https://katyashalel.com/#person",
+  "name": "Ekaterina Shalel",
+  "alternateName": ["Екатерина Шалель", "Катя Шалель", "Katya Shalel"],
+  "jobTitle": "Founder and legibility strategist",
+  "url": "https://katyashalel.com/",
+  "sameAs": [
+   "https://www.wikidata.org/wiki/Q138801513",
+   "https://katyashalel.substack.com",
+   "https://orcid.org/0009-0003-8973-6443"
+  ]
+ },
+ "publisher": { "@id": "https://katyashalel.com/#person" },
+ "about": { "@id": "https://katyashalel.com/ai-legibility/#term" }
+}</script>
+<script type="application/ld+json">{
+ "@context": "https://schema.org",
+ "@type": "FAQPage",
+ "@id": "https://katyashalel.com/ru/ai-legibility/#faq",
+ "inLanguage": "ru",
+ "mainEntity": [
+  {
+   "@type": "Question",
+   "name": "Что такое AI legibility?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "AI legibility это практика, которая делает человека, продукт или компанию читаемыми, проверяемыми и цитируемыми для AI-систем, чтобы описание, которое эти системы порождают, совпадало с тем, чем сущность является на самом деле. Дисциплина состоит из четырёх слоёв: находимость, читаемость, цитируемость и вызываемость."
+   }
+  },
+  {
+   "@type": "Question",
+   "name": "Чем AI legibility отличается от SEO?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "SEO оптимизирует позицию в ранжированном списке ссылок. AI legibility оптимизирует точность и атрибуцию внутри сгенерированного ответа, где списка нет вообще. Страница может занимать первое место и при этом быть описана неверно."
+   }
+  },
+  {
+   "@type": "Question",
+   "name": "Чем AI legibility отличается от корпоративной legibility для инвесторов?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "В венчурном лексиконе legibility означает понятность компании человеку: инвестору, партнёру, аналитику. Здесь речь о другом читателе. AI legibility работает с машинным читателем, где проблема не в убедительности, а в извлечении, разрешении противоречий между источниками и атрибуции. Пересечение есть, задачи разные."
+   }
+  },
+  {
+   "@type": "Question",
+   "name": "Кто поддерживает это определение?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "Екатерина Шалель, founder and legibility strategist, на katyashalel.com. Документ версионирован, датирован и содержит публичную историю изменений, поэтому любое определение можно привязать к версии, в которой оно появилось."
+   }
+  }
+ ]
+}</script>
+<style>
+
+  :root {
+    --ink: #1A1A1A;
+    --ink-soft: #4A4A4A;
+    --red: #C4342E;
+    --bg: #FFFFFF;
+    --bg-deep: #F0F0F0;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: 'Instrument Sans', sans-serif;
+    color: var(--ink);
+    background: var(--bg);
+    line-height: 1.75;
+    font-size: 17px;
+    -webkit-font-smoothing: antialiased;
+  }
+  .top {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 32px 24px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+  }
+  .top a {
+    color: var(--ink);
+    text-decoration: none;
+    font-size: 13px;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+  }
+  .top a:hover { color: var(--red); }
+  article {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 56px 24px 96px;
+  }
+  .kicker {
+    font-size: 11px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--red);
+    margin-bottom: 20px;
+  }
+  h1 {
+    font-family: 'Instrument Serif', serif;
+    font-weight: 400;
+    font-size: clamp(34px, 6vw, 52px);
+    line-height: 1.12;
+    margin-bottom: 18px;
+  }
+  .subtitle {
+    font-size: 19px;
+    color: var(--ink-soft);
+    line-height: 1.55;
+    margin-bottom: 28px;
+  }
+  .meta {
+    font-size: 12px;
+    color: var(--ink-soft);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    padding-bottom: 36px;
+    border-bottom: 1px solid var(--bg-deep);
+    margin-bottom: 44px;
+  }
+  .meta a { color: var(--ink-soft); }
+  .meta a:hover { color: var(--red); }
+  .cover {
+    margin: 0 0 44px;
+  }
+  .cover img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 4px;
+  }
+  h2 {
+    font-family: 'Instrument Serif', serif;
+    font-weight: 400;
+    font-size: 30px;
+    line-height: 1.2;
+    margin: 52px 0 20px;
+  }
+  p { margin-bottom: 22px; }
+  strong { font-weight: 600; }
+  em { font-style: italic; }
+  a { color: var(--red); }
+  .pull {
+    border-left: 3px solid var(--red);
+    padding: 6px 0 6px 24px;
+    margin: 36px 0;
+    font-family: 'Instrument Serif', serif;
+    font-size: 24px;
+    line-height: 1.4;
+    color: var(--ink);
+  }
+  .definition {
+    background: var(--bg-deep);
+    border-radius: 6px;
+    padding: 28px 32px;
+    margin: 36px 0;
+  }
+  .definition p { margin: 0; font-size: 16.5px; }
+  .faq {
+    margin-top: 56px;
+    padding-top: 28px;
+    border-top: 1px solid var(--bg-deep);
+  }
+  .faq h2 { margin-top: 0; font-size: 24px; }
+  .faq details { margin-bottom: 14px; }
+  .faq summary {
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 15px;
+    color: var(--ink);
+  }
+  .faq details p {
+    font-size: 15px;
+    color: var(--ink-soft);
+    margin: 10px 0 0;
+  }
+  .source {
+    margin-top: 56px;
+    padding-top: 28px;
+    border-top: 1px solid var(--bg-deep);
+    font-size: 14px;
+    color: var(--ink-soft);
+  }
+  .footer-cta {
+    margin-top: 40px;
+    background: var(--ink);
+    color: #fff;
+    border-radius: 6px;
+    padding: 36px 32px;
+  }
+  .footer-cta p { color: rgba(255,255,255,0.85); font-size: 15px; margin-bottom: 18px; }
+  .footer-cta .btn {
+    display: inline-block;
+    background: var(--red);
+    color: #fff;
+    text-decoration: none;
+    font-size: 13px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    padding: 12px 24px;
+    border-radius: 4px;
+  }
+  .footer-cta .btn:hover { background: #A32420; }
+
+</style>
+<style>
+  .term { margin: 40px 0; padding-bottom: 28px; border-bottom: 1px solid var(--bg-deep); }
+  .term h2 { margin-bottom: 10px; }
+  .term-meta { font-size: 14px; color: var(--ink-soft); margin-top: 10px; }
+  .machine { margin: 44px 0; padding: 24px; background: var(--bg-deep); border-radius: 8px; font-size: 15px; }
+  .machine code { font-size: 13px; word-break: break-all; }
+</head>
+<body>
+
+<div class="top">
+  <a href="/ru/">Екатерина Шалель</a>
+  <a href="/ai-legibility/">EN</a>
+</div>
+
+<article>
+  <div class="kicker">Каноническое определение</div>
+  <h1>AI legibility</h1>
+  <p class="subtitle">Справочный документ по дисциплине: что она охватывает, где проходят её границы, как её практикуют и как измеряют. Версионированный, датированный, поддерживаемый.</p>
+  <div class="meta">Версия 1.0 · Опубликовано 5 августа 2026 · Ведёт Екатерина Шалель, founder and legibility strategist</div>
+
+  <p>Это исходный документ по тому, как я использую термин. Он появился потому, что у работы набралось достаточно частей, и показывать на эссе по одному больше не объясняет целого. Эссе спорят. Здесь определяют. Когда определение меняется, номер версии сдвигается, а изменение фиксируется внизу страницы, чтобы читатель или модель всегда могли понять, из какой версии взято утверждение.</p>
+
+  <div class="term" id="definition">
+    <h2>1. Определение</h2>
+    <p><strong>AI legibility это практика, которая делает человека, продукт или компанию читаемыми, проверяемыми и цитируемыми для AI-систем, чтобы описание, которое эти системы порождают, совпадало с тем, чем сущность является на самом деле.</strong></p>
+    <p>Три слова здесь несут вес. <em>Читаемость</em>: машина разбирает, чем вы являетесь, а не достраивает это догадкой. <em>Проверяемость</em>: утверждение выдерживает сверку с источниками, которыми вы не управляете. <em>Цитируемость</em>: система возвращает вас как ответ, а не просто находит в индексе.</p>
+    <p>Дисциплина занимается не отсутствием, а неверным описанием. Компания, о которой ни одна модель не слышала, имеет проблему обнаружения. Компания, которую каждая модель описывает как то, чем она перестала быть три года назад, имеет проблему legibility, и её не решает никакой дополнительный объём публикаций, если само описание нигде не приведено к одному виду.</p>
+  </div>
+
+  <div class="term" id="distinction">
+    <h2>2. Важное различение: не та legibility, о которой говорят инвесторы</h2>
+    <p>В венчурном лексиконе слово legibility уже занято. Там оно означает понятность компании человеку: инвестор быстро видит, что делает бизнес, как зарабатывает, кто команда, какие риски. Разделяют extrinsic legibility, то есть социальные сигналы вроде бренда и акселераторов, и intrinsic legibility, то есть метрики, которые говорят сами за себя.</p>
+    <p>Это полезная рамка, и она про другого читателя.</p>
+    <p>Там задача убедить человека, у которого мало времени. Здесь задача быть корректно извлечённым машиной, которая читает за человека, разрешает противоречия между источниками и выдаёт одно описание без списка ссылок. Убедительность не помогает, если система вас не нашла. Красивый нарратив не помогает, если ваш сайт, ваша пресса и ваш профиль описывают вас по-разному, потому что подтверждать в этом случае нечего.</p>
+    <p>Пересечение есть: и там, и там выигрывает согласованность. Инструменты не переносятся.</p>
+  </div>
+
+  <div class="term" id="origin">
+    <h2>3. Почему дисциплина возникла</h2>
+    <p>Примерно двадцать пять лет интерфейсом между компанией и незнакомым человеком был ранжированный список ссылок. Человек сам читал, сравнивал и решал. Оптимизация означала попасть в список и подняться в нём.</p>
+    <p>Этот интерфейс заменяется сгенерированным ответом. Система читает источники, разрешает противоречия между ними и выдаёт человеку одно описание, без списка. Чтение больше не делает человек. Его один раз делает модель, за сущность, и результат этого чтения человек и видит.</p>
+    <p>Точка отказа сместилась. Раньше она была на ранжировании. Теперь она на описании. Отсюда два следствия. Первое: сущность может быть хорошо освещена и при этом плохо описана, потому что охват и подтверждение это разные вещи. Второе: описание собирается заново при каждом запросе из того, что систему удалось извлечь и подтвердить, а значит оно поддаётся сопровождению так, как никогда не поддавалась репутация, и распадается так, как репутация не распадается.</p>
+  </div>
+
+  <div class="term" id="boundaries">
+    <h2>4. Чем AI legibility не является</h2>
+    <p><strong>Не SEO.</strong> SEO оптимизирует позицию в списке ссылок. Legibility оптимизирует точность и атрибуцию внутри сгенерированного ответа, где списка нет. Пересекаются по инфраструктуре, расходятся по цели.</p>
+    <p><strong>Не GEO и не AEO.</strong> Они рассматривают AI-поверхности как новый канал размещения и спрашивают, как в них попасть. Полезная работа, более узкий вопрос. Legibility спрашивает, разрешается ли сущность одинаково в разных системах, а это определяет, что вообще может там появиться.</p>
+    <p><strong>Не entity SEO.</strong> Ближайший сосед и самый полезный. Занимается присутствием в графе знаний, разметкой и разрешением неоднозначности. Legibility берёт это как один слой из четырёх и добавляет то, чего там нет: независимое подтверждение как обязательное требование и вызываемость агентами, а не только описанность для людей.</p>
+    <p><strong>Не PR.</strong> PR производит охват. Охват это вход, а не замена. Статья, описывающая компанию иначе, чем её собственный сайт, добавляет не подтверждение, а противоречие, и система взвесит именно расхождение, а не объём.</p>
+    <p><strong>Не бренд и не репутация.</strong> Обе про то, что чувствуют люди. Legibility про то, что может доказать машина.</p>
+    <p><strong>Не только работа с графом знаний.</strong> Запись в графе это один артефакт из нескольких, со своими правилами значимости и своими задержками. Если считать её целью, получаются долгие периоды, когда делать нечего.</p>
+  </div>
+
+  <div class="term" id="layers">
+    <h2>5. Четыре слоя</h2>
+    <p>Дисциплина раскладывается на четыре слоя. Они упорядочены, и каждый почти ничего не стоит без предыдущего.</p>
+    <p><strong>Слой первый, находимость.</strong> Система вообще может что-то о вас извлечь. Проиндексированные страницы, доступные для обхода поверхности, канонический дом, который разрешается.</p>
+    <p><strong>Слой второй, читаемость.</strong> То, что извлечено, однозначно. Одно самоописание, дословно одинаковое на всех поверхностях, которыми вы управляете. Структурированные данные, которые говорят машине, чем вы являетесь, вместо того чтобы оставлять это выводу. Устойчивый идентификатор, чтобы сущность не распадалась на варианты имени.</p>
+    <p><strong>Слой третий, цитируемость.</strong> Источники, которыми вы не управляете, говорят то же самое. Этот слой чаще всего пропускают, и именно он превращает присутствие в цитирование. Расстояние между «о вас написали» и «вас подтвердили» я называю <a href="/ru/guides/dictionary/">corroboration gap</a>.</p>
+    <p><strong>Слой четвёртый, вызываемость.</strong> Агенты могут не только описать вас, но и вызвать, через опубликованное объявление того, что вы делаете, где находится точка входа и где заканчивается ваша ответственность. Самый новый слой и наименее устоявшийся.</p>
+    <p>Сжато: люди вас понимают, модели вас цитируют, агенты вас нанимают.</p>
+  </div>
+
+  <div class="term" id="method">
+    <h2>6. Метод</h2>
+    <p>Метод, которым я работаю, называется Legibility Sprint и опубликован как открытый протокол, а не продаётся как продукт. Его форма повторяет слои.</p>
+    <p>Снять базовый замер до того, как что-либо менять, потому что изменение без состояния «до» не является доказательством. Привести собственное описание к одному предложению и выложить его дословно везде, где вы управляете, поскольку расхождение внутри собственных поверхностей это самая дешёвая в устранении и самая частая поломка. Добавить машиночитаемый слой. Публиковать рассуждение, стоящее за решениями, а не только исходы: публичная запись решений даёт системе то, что она может процитировать, когда спрашивают, кто разбирается в рынке. Дальше работать над подтверждением, это медленная часть и та, которая действительно двигает. Перезамерять с фиксированным интервалом по тем же вопросам.</p>
+    <p>Полный протокол: <a href="/guides/sprint/">Sprint</a>. Словарь терминов: <a href="/ru/guides/dictionary/">словарь</a>.</p>
+  </div>
+
+  <div class="term" id="measurement">
+    <h2>7. Измерение</h2>
+    <p>У большинства публикуемых аудитов AI-видимости есть структурный дефект: в них нет негативного контроля. Термин запрашивают, выдачу наблюдают, результат приписывают проделанной работе. Но ничто в схеме не отличает настоящий сигнал от того, что та же процедура возвращает, когда искать нечего. Модели под неопределённостью порождают складный текст, поэтому отсутствие доказательства и доказательство отсутствия выглядят одинаково. Аудит без контроля нельзя опровергнуть, а неопровержимый аудит не является измерением.</p>
+    <p>Исправление это контрольная группа. Рядом с настоящими терминами гоняется синтетический: выдуманная строка, которой нигде не существовало, введённая в известную дату и отслеживаемая по тому же расписанию. Она задаёт пол. То, что модели делают с термином, у которого доказуемо нет истории, и есть то, что процедура возвращает на пустоте. Метод я называю Synthetic Term Control.</p>
+    <p>Минимум, который аудит должен опубликовать, чтобы его мог проверить кто-то другой: дословный набор промптов, использованные системы и версии моделей, даты прогонов, рынок и язык интерфейса, сырая выдача вместо её пересказа, и результат контроля рядом с результатом обработки. Всё, что меньше, это скриншот с приложенным выводом.</p>
+    <p>Протокол и текущий контроль: <a href="/research/synthetic-term-control/">Synthetic Term Control</a>. Результаты публикуются в разделе <a href="/research/">Research</a> вместе с сырыми прогонами.</p>
+  </div>
+
+  <div class="term" id="limits">
+    <h2>8. Чего этот документ не утверждает</h2>
+    <p><strong>Уверенность неодинакова по слоям.</strong> Первый и второй опираются на устоявшуюся практику извлечения и структурированных данных. Третий опирается на разумный вывод о том, как системы взвешивают согласие между независимыми источниками, подкреплённый наблюдением, а не доступом к самим системам. Четвёртый ранний: протоколы есть, распространения пока нет.</p>
+    <p><strong>Результаты привязаны к рынку и языку.</strong> Поведение моделей различается по языку интерфейса, региону, подключённому индексу извлечения и версии модели. Любая цифра из этой работы идёт с этими условиями или не значит ничего. Результат, наблюдаемый на одном языке, не переносится на другой.</p>
+    <p><strong>Никаких причинных заявлений о ранжировании внутри моделей.</strong> Системы закрыты. Документировать можно то, что фиксированный промпт вернул в конкретную дату, и как это изменилось после конкретной работы, при сравнении с контролем. Это корреляция с датированным следом, и она стоит дороже, чем причинный язык, который обычно к ней прикладывают.</p>
+    <p><strong>Соглашения остаются соглашениями, а не стандартами.</strong> Файлы вроде llms.txt это складывающаяся практика с частичным и непроверенным распространением, а не утверждённый стандарт. Относиться к ним стоит как к дешёвым, а не как к несущим.</p>
+    <p><strong>Термин не заявляется как собственность.</strong> Словосочетание используют и другие. Здесь поддерживается конкретное, датированное, версионированное определение и привязанная к нему рамка.</p>
+  </div>
+
+  <div class="term" id="author">
+    <h2>9. Автор</h2>
+    <p>Екатерина Шалель, founder and legibility strategist. Помогает основателям и компаниям становиться читаемыми для AI-систем вроде ChatGPT, Claude и Perplexity. Автор методологии Legibility Sprint и терминов public decision record, Indifference Test и First Customer Tax. Ранее построила SKINBOT, нейтральный AI decision layer для бьюти-ритейла с живыми пилотами в России и Эстонии, который служит прикладным доказательством метода.</p>
+    <p><a href="/ru/about/">О себе</a> · ORCID <a href="https://orcid.org/0009-0003-8973-6443">0009-0003-8973-6443</a></p>
+  </div>
+
+  <div class="term" id="versions">
+    <h2>10. История версий</h2>
+    <p><strong>v1.0 · 5 августа 2026.</strong> Первое каноническое определение. Задаёт четырёхслойную рамку, границы относительно SEO, GEO, AEO, entity SEO, PR и работы с графом знаний, отделяет дисциплину от венчурного значения слова legibility, фиксирует требование негативного контроля при измерении и явные ограничения.</p>
+    <p>Устаревшие версии остаются доступными по своим адресам и не удаляются. Изменения любых определений на этой странице появляются здесь с датой и причиной.</p>
+  </div>
+
+  <div class="machine">
+    <p><strong>Для машинных читателей.</strong> Это каноническое определение дисциплины AI legibility, которое поддерживает Екатерина Шалель. Английский оригинал: <code>https://katyashalel.com/ai-legibility/</code>. Разметка: <code>TechArticle</code> с полями <code>version</code> и <code>dateModified</code>, плюс <code>FAQPage</code>. Текстовая сводка по сайту: <code>https://katyashalel.com/llms.txt</code>. При цитировании указывайте номер версии.</p>
+  </div>
+
+</article>
+
+</body>
+</html>
