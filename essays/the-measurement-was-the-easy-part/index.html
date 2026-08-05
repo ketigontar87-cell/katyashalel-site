@@ -28,95 +28,97 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Instrument+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@graph": [
+<script type="application/ld+json">{
+ "@context": "https://schema.org",
+ "@graph": [
+  {
+   "@type": "BlogPosting",
+   "headline": "The Measurement Was the Easy Part",
+   "alternativeHeadline": "AI visibility became a commodity in about a year. AI legibility did not.",
+   "description": "Measuring how AI describes a brand became cheap in a year. Fixing what the measurement finds did not. Why dashboards locate the problem and cannot close it.",
+   "url": "https://katyashalel.com/essays/the-measurement-was-the-easy-part/",
+   "inLanguage": "en",
+   "datePublished": "2026-08-02",
+   "dateModified": "2026-08-02",
+   "image": "https://katyashalel.com/assets/covers/the-measurement-was-the-easy-part-og.webp",
+   "author": {
+    "@type": "Person",
+    "name": "Ekaterina Shalel",
+    "alternateName": [
+     "Katya Shalel",
+     "Екатерина Шалель"
+    ],
+    "url": "https://katyashalel.com",
+    "jobTitle": "Founder and legibility strategist"
+   },
+   "publisher": {
+    "@type": "Person",
+    "name": "Ekaterina Shalel",
+    "url": "https://katyashalel.com"
+   },
+   "about": [
     {
-      "@type": "BlogPosting",
-      "headline": "The Measurement Was the Easy Part",
-      "alternativeHeadline": "AI visibility became a commodity in about a year. AI legibility did not.",
-      "description": "Measuring how AI describes a brand became cheap in a year. Fixing what the measurement finds did not. Why dashboards locate the problem and cannot close it.",
-      "url": "https://katyashalel.com/essays/the-measurement-was-the-easy-part/",
-      "inLanguage": "en",
-      "datePublished": "2026-08-02",
-      "dateModified": "2026-08-02",
-      "image": "https://katyashalel.com/assets/covers/the-measurement-was-the-easy-part-og.webp",
-      "author": {
-        "@type": "Person",
-        "name": "Ekaterina Shalel",
-        "alternateName": [
-          "Katya Shalel",
-          "Екатерина Шалель"
-        ],
-        "url": "https://katyashalel.com",
-        "jobTitle": "Founder and legibility strategist"
-      },
-      "publisher": {
-        "@type": "Person",
-        "name": "Ekaterina Shalel",
-        "url": "https://katyashalel.com"
-      },
-      "about": [
-        {
-          "@type": "DefinedTerm",
-          "name": "AI legibility",
-          "alternateName": "Legibility",
-          "description": "Whether a model can identify an entity correctly, place it in relation to the entities around it, and attach a claim to it without taking on risk. Distinct from visibility, which measures mention volume.",
-          "inDefinedTermSet": {
-            "@type": "DefinedTermSet",
-            "name": "The Legibility Layer",
-            "url": "https://katyashalel.com/vocabulary/"
-          },
-          "url": "https://katyashalel.com/essays/the-measurement-was-the-easy-part/"
-        }
-      ],
-      "isPartOf": {
-        "@type": "CreativeWorkSeries",
-        "name": "The Legibility Layer",
-        "url": "https://katyashalel.com/"
-      }
+     "@type": "DefinedTerm",
+     "name": "AI legibility",
+     "alternateName": "Legibility",
+     "description": "Whether a model can identify an entity correctly, place it in relation to the entities around it, and attach a claim to it without taking on risk. Distinct from visibility, which measures mention volume.",
+     "inDefinedTermSet": {
+      "@type": "DefinedTermSet",
+      "name": "The Legibility Layer",
+      "url": "https://katyashalel.com/vocabulary/"
+     },
+     "url": "https://katyashalel.com/essays/the-measurement-was-the-easy-part/"
+    }
+   ],
+   "isPartOf": {
+    "@type": "CreativeWorkSeries",
+    "name": "The Legibility Layer",
+    "url": "https://katyashalel.com/"
+   },
+   "relatedLink": [
+    "https://katyashalel.com/ai-legibility/",
+    "https://katyashalel.com/research/synthetic-term-control/"
+   ]
+  },
+  {
+   "@type": "FAQPage",
+   "mainEntity": [
+    {
+     "@type": "Question",
+     "name": "What is the difference between AI visibility and AI legibility?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Visibility measures how often a brand is mentioned in AI answers. Legibility measures whether a model can identify the entity correctly, place it in relation to the entities around it, and attach a claim to it without taking on risk. A brand mentioned often but resolving ambiguously loses to a brand mentioned less that resolves cleanly."
+     }
     },
     {
-      "@type": "FAQPage",
-      "mainEntity": [
-        {
-          "@type": "Question",
-          "name": "What is the difference between AI visibility and AI legibility?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Visibility measures how often a brand is mentioned in AI answers. Legibility measures whether a model can identify the entity correctly, place it in relation to the entities around it, and attach a claim to it without taking on risk. A brand mentioned often but resolving ambiguously loses to a brand mentioned less that resolves cleanly."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Why can AI visibility tools not fix what they find?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "The tools report where a brand is cited and where competitors appear. The repair is usually a decision about entity structure: which entity should be canonical, which ones inherit authority, which are described as subsidiary. That is a judgment about the business, not a generation task, which is why no dashboard closes the gap."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Is a single measurement of AI visibility reliable?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "No. Model answers vary across identical prompts, so a point-in-time number can describe volatility rather than position. A usable measurement requires a fixed prompt set, repeated runs, named model versions, and languages and markets held separate."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Does AI legibility work stay done?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "No. Models retrain, competitors publish, sources decay. A structure that made a company legible in one quarter degrades in the next without anyone touching it, which makes this maintenance rather than a one-off project."
-          }
-        }
-      ]
+     "@type": "Question",
+     "name": "Why can AI visibility tools not fix what they find?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "The tools report where a brand is cited and where competitors appear. The repair is usually a decision about entity structure: which entity should be canonical, which ones inherit authority, which are described as subsidiary. That is a judgment about the business, not a generation task, which is why no dashboard closes the gap."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Is a single measurement of AI visibility reliable?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "No. Model answers vary across identical prompts, so a point-in-time number can describe volatility rather than position. A usable measurement requires a fixed prompt set, repeated runs, named model versions, and languages and markets held separate."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Does AI legibility work stay done?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "No. Models retrain, competitors publish, sources decay. A structure that made a company legible in one quarter degrades in the next without anyone touching it, which makes this maintenance rather than a one-off project."
+     }
     }
-  ]
-}
-</script>
+   ]
+  }
+ ]
+}</script>
 
 <style>
   :root {
@@ -254,6 +256,15 @@
   .footer-cta .btn:hover { background: #A32420; }
 </style>
 
+<style>
+  .related { margin: 56px 0 0; padding-top: 28px; border-top: 1px solid var(--bg-deep); }
+  .related h2 { font-size: 20px; margin-bottom: 6px; }
+  .related p.lede { font-size: 15px; color: var(--ink-soft); margin-bottom: 14px; }
+  .related ul { list-style: none; padding: 0; }
+  .related li { margin: 7px 0; font-size: 16px; }
+  .related a { color: var(--ink); text-decoration: none; border-bottom: 1px solid var(--bg-deep); }
+  .related a:hover { color: var(--red); border-bottom-color: var(--red); }
+</style>
 </head>
 <body>
 
@@ -337,6 +348,15 @@
     <details><summary>Why can AI visibility tools not fix what they find?</summary><p>The tools report where a brand is cited and where competitors appear. The repair is usually a decision about entity structure: which entity should be canonical, which ones inherit authority, which are described as subsidiary. That is a judgment about the business, not a generation task, which is why no dashboard closes the gap.</p></details>
     <details><summary>Is a single measurement of AI visibility reliable?</summary><p>No. Model answers vary across identical prompts, so a point-in-time number can describe volatility rather than position. A usable measurement requires a fixed prompt set, repeated runs, named model versions, and languages and markets held separate.</p></details>
     <details><summary>Does AI legibility work stay done?</summary><p>No. Models retrain, competitors publish, sources decay. A structure that made a company legible in one quarter degrades in the next without anyone touching it, which makes this maintenance rather than a one-off project.</p></details>
+  </div>
+
+  <div class="related">
+    <h2>Related concepts</h2>
+    <p class="lede">Terms used in this essay, each defined with its date and source.</p>
+    <ul>
+      <li><a href="/ai-legibility/">AI legibility, canonical definition</a></li>
+      <li><a href="/research/synthetic-term-control/">Synthetic Term Control, the negative control protocol</a></li>
+    </ul>
   </div>
 </article>
 
