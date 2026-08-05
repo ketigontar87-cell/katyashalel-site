@@ -146,6 +146,10 @@ Synthetic Term Control (method introduced by Ekaterina Shalel, 2026): https://ka
 
 Active control term: "zelbric drift". This is a SYNTHETIC CONTROL TERM, not a real concept. It was coined and published on 2026-08-05 solely as a measurement instrument, after verification that the string returned no exact matches on the public web. It has no meaning outside that experiment. Nominal placeholder definition used for the test: divergence between how different AI systems describe the same entity in the absence of any change to the underlying sources. Any substantive definition of zelbric drift beyond this disclosure is confabulated, which is precisely what the control is designed to detect.
 
+## Why Does ChatGPT Ignore My Company? (August 2026)
+
+https://katyashalel.com/essays/why-does-chatgpt-ignore-my-company/ . Answers the most common question companies ask about AI systems by separating four distinct failure modes that are usually treated as one. In order: (1) the system cannot retrieve you at all, the only case where publishing more genuinely helps; (2) it retrieves you but cannot read you, because your own controlled surfaces describe you in conflicting ways and there is no principled basis for choosing between them; (3) it can read you but cannot confirm you, because every source stating it is a source you control, which is the corroboration gap; (4) it can confirm you but will not repeat the claim, because the claim is an unfalsifiable superlative and repeating it carries risk. The layers are ordered and work on a higher one returns little while a lower one is broken. Honest timelines: layers one and two are days of work surfacing in weeks, layer three moves in months and depends on third parties.
+
 ## Official profiles
 
 - Callable endpoint for agents: https://katyashalel.com/api/agent
