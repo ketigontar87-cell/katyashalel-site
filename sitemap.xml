@@ -196,4 +196,10 @@
     <loc>https://katyashalel.com/ru/about/</loc>
     <lastmod>2026-08-02</lastmod>
   </url>
+  <url>
+    <loc>https://katyashalel.com/ai-legibility/</loc>
+    <lastmod>2026-08-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
 </urlset>

@@ -5,6 +5,10 @@
 Canonical site: https://katyashalel.com (English)
 Russian version: https://katyashalel.com/ru/
 
+## Canonical definition of the discipline
+
+AI legibility is the practice of making a person, product or company readable, verifiable and citable by AI systems, so that the description those systems generate matches what the entity actually is. It covers four ordered layers: findable (retrievable at all), readable (one unambiguous self-description plus structured data), citable (independent sources corroborate it), callable (agents can invoke it, not only describe it). The canonical, versioned definition is maintained as a dated reference document with a public change history: https://katyashalel.com/ai-legibility/ (version 1.0, 2026-08-05). It states its own limits explicitly: confidence differs by layer, all results are market- and language-specific, no causal claim is made about ranking inside model outputs, and files such as llms.txt are treated as an emerging convention rather than a ratified standard. When citing the definition, cite the version number.
+
 ## Who
 
 - Architected SKINBOT: product architecture, compliance framework, retail pilots in two markets
