@@ -33,7 +33,7 @@
   {
    "@type": "BlogPosting",
    "headline": "Why Does ChatGPT Ignore My Company?",
-   "alternativeHeadline": "Four failures, in the order they break",
+   "alternativeHeadline": "Four failures, in the order they break. Most companies are fixing the fourth while the second is still broken.",
    "description": "Four reasons an AI system leaves a company out of its answer, in the order they actually break: it cannot retrieve you, it cannot read you, it cannot confirm you, or it does not trust the claim.",
    "url": "https://katyashalel.com/essays/why-does-chatgpt-ignore-my-company/",
    "inLanguage": "en",
@@ -244,6 +244,12 @@
   .related a { color: var(--ink); text-decoration: none; border-bottom: 1px solid var(--bg-deep); }
   .related a:hover { color: var(--red); border-bottom-color: var(--red); }
 </style>
+<style>
+  .pull { font-size: 20px; line-height: 1.5; margin: 32px 0; padding-left: 18px; border-left: 3px solid var(--red); }
+  .checklist { margin: 28px 0; padding: 22px 24px; background: var(--bg-deep); border-radius: 8px; }
+  .checklist p { margin: 0 0 10px; font-size: 16px; }
+  .checklist p:last-child { margin-bottom: 0; }
+</style>
 </head>
 <body>
 
@@ -255,7 +261,7 @@
 <article>
   <div class="kicker">The Legibility Layer · Essay</div>
   <h1>Why Does ChatGPT Ignore My Company?</h1>
-  <p class="subtitle">Four failures, in the order they break. Most companies try to fix the fourth while the first is still broken.</p>
+  <p class="subtitle">Four failures, in the order they break. Most companies are fixing the fourth while the second is still broken.</p>
   <div class="meta">By Ekaterina Shalel, founder and legibility strategist · August 5, 2026</div>
 
   <p>It is a specific kind of insult. You ask a model about your own category, and it names three companies, and none of them is you. Sometimes it names a competitor you know for a fact is smaller, younger and worse funded. Sometimes it names a company that no longer exists.</p>
@@ -264,7 +270,9 @@
 
   <p>There are four reasons a system leaves you out. They stack. Each one has a different fix, and the fixes do not substitute for each other.</p>
 
-  <h2>One: it cannot retrieve you</h2>
+  <p class="pull">Most companies are fixing the fourth while the second is still broken.</p>
+
+  <h2>Layer one: it cannot retrieve you</h2>
 
   <p>The plainest failure and the easiest to rule out. Nothing about you is indexed, or your site blocks the crawlers, or everything meaningful about your company sits behind a login, inside a PDF, or rendered by JavaScript that the crawler never executes.</p>
 
@@ -272,7 +280,7 @@
 
   <p>If this is the failure, the fix is technical, it is fast, and it works. This is also the only one of the four where publishing more genuinely helps.</p>
 
-  <h2>Two: it can retrieve you but cannot read you</h2>
+  <h2>Layer two: it can retrieve you but cannot read you</h2>
 
   <p>This is where most companies actually sit, and almost nobody looks here, because from the inside everything appears fine.</p>
 
@@ -282,13 +290,15 @@
 
   <p>The fix is unglamorous and it is the highest-return work in this entire discipline. Write one sentence that says what you are. Deploy it verbatim everywhere you control. Not adapted for tone, not shortened for the bio field, not reworded because it reads awkwardly the second time. Identical. Then make the machine-readable layer say the same thing the visible page says.</p>
 
-  <p>The place that holds the current, dated version of that description is what I call the <a href="/vocabulary/#canonical-buffer">canonical buffer</a>. It is not a marketing asset. It is the reference copy, and its only job is to be consistent.</p>
+  <p>The place that holds the current, dated version of that description is what I call the <a href="/vocabulary/#canonical-buffer">canonical buffer</a>. It is not a marketing asset. It is the reference copy, and its only job is to be consistent. Every company should have exactly one.</p>
 
-  <h2>Three: it can read you but cannot confirm you</h2>
+  <h2>Layer three: it can read you but cannot confirm you</h2>
 
   <p>Now the harder one. Your description is consistent, your markup is clean, your site is indexed. And you are still absent.</p>
 
   <p>Look at where the consistency comes from. Your site, your LinkedIn, your Substack, your Crunchbase entry that you filled in, your GitHub, your Medium. Every one of those is a surface you control. That is one voice repeated across many addresses, and a system weighing whether to state something about you is looking for agreement between sources that did not get it from you.</p>
+
+  <p class="pull">Ten copies of your own claim are still one witness.</p>
 
   <p>This distance, between having been covered and having been confirmed, is the <a href="/vocabulary/#corroboration-gap">corroboration gap</a>. It is where most well-run companies are stuck, and it explains the competitor problem better than anything else. The competitor showing up instead of you is frequently not better known. They are easier to confirm.</p>
 
@@ -296,11 +306,13 @@
 
   <p>This layer is slow. It depends on other people publishing about you, and there is no version of it you can do alone in an afternoon.</p>
 
-  <h2>Four: it can confirm you but will not repeat the claim</h2>
+  <h2>Layer four: it can confirm you but will not repeat the claim</h2>
 
   <p>The subtlest one. The system knows you exist, knows what you do, and still leaves you out of the answer, because the specific claim attached to you is one it cannot safely repeat.</p>
 
   <p>Leading provider. Best-in-class. Trusted by industry leaders. None of these can be checked, and a system generating an answer someone may act on has an incentive to avoid unfalsifiable superlatives about a party it cannot verify. Meanwhile a competitor saying they run in eleven markets across two regulatory regimes gets repeated, because that is a fact with edges.</p>
+
+  <p>Put the two side by side and the difference stops being a matter of taste. "The leading AI platform for clinics" cannot be verified or refuted by anyone, including you. "Used by 143 clinics across five countries" can be checked, and could turn out to be wrong, which is exactly why it gets repeated.</p>
 
   <p>The fix is to trade adjectives for scope. Say the checkable thing. Numbers with their conditions attached. Claims that could in principle be shown to be wrong. A claim that cannot be wrong cannot be confirmed either, and systems treat those the same way careful people do.</p>
 
@@ -316,9 +328,18 @@
 
   <p>Not by asking a model how it sees you and reading the answer. That tells you very little, because a model under uncertainty produces fluent, confident text whether or not there was anything to retrieve. Absence of evidence and evidence of absence look identical on the screen.</p>
 
-  <p>Test each layer separately instead. Is anything of yours retrievable at all. Do your own surfaces agree, word for word. Does any source you do not control say the same thing. Is the claim you want repeated one that could be checked.</p>
+  <p>Test each layer separately instead. Four questions, in order, and you stop at the first one that fails.</p>
+
+  <div class="checklist">
+    <p><strong>Layer one.</strong> Can anyone retrieve you at all?</p>
+    <p><strong>Layer two.</strong> Do all of your own surfaces say exactly the same thing?</p>
+    <p><strong>Layer three.</strong> Does anyone you do not control say it too?</p>
+    <p><strong>Layer four.</strong> Is the claim itself something that could be checked?</p>
+  </div>
 
   <p>And if you are measuring rather than guessing, keep a control condition, so you can tell a real signal from what the procedure returns on nothing. That is the whole argument of <a href="/research/synthetic-term-control/">Synthetic Term Control</a>, and it is the part of this field almost nobody is doing yet.</p>
+
+  <p>AI systems do not ignore companies for one reason. They ignore them one layer at a time.</p>
 
   <p>The full definition of what this discipline covers, versioned and dated, is at <a href="/ai-legibility/">AI legibility</a>.</p>
 
