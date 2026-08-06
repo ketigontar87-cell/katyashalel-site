@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Статья, за которую вы уже заплатили · Ekaterina Shalel</title>
+<meta name="description" content="Публикация это утверждение, а не цитирование. Что такое corroboration gap и placement activation, почему оплаченные размещения почти не дают цитирований в языковых моделях и в каком порядке работа действительно работает.">
+<meta name="author" content="Ekaterina Shalel">
+<link rel="canonical" href="https://katyashalel.com/ru/essays/statya-za-kotoruyu-vy-uzhe-zaplatili/">
+<link rel="alternate" hreflang="en" href="https://katyashalel.com/essays/the-article-you-already-paid-for/">
+<link rel="alternate" hreflang="ru" href="https://katyashalel.com/ru/essays/statya-za-kotoruyu-vy-uzhe-zaplatili/">
+<link rel="alternate" hreflang="x-default" href="https://katyashalel.com/essays/the-article-you-already-paid-for/">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Статья, за которую вы уже заплатили">
+<meta property="og:description" content="Почему публикации в прессе не гарантируют видимость в ответах AI. Про corroboration gap и работу, которая начинается после выхода материала.">
+<meta property="og:url" content="https://katyashalel.com/ru/essays/statya-za-kotoruyu-vy-uzhe-zaplatili/">
+<meta property="og:site_name" content="Ekaterina Shalel">
+<meta property="og:image" content="https://katyashalel.com/assets/covers/the-article-you-already-paid-for-og.webp">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="article:published_time" content="2026-07-30">
+<meta property="article:author" content="Ekaterina Shalel">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Статья, за которую вы уже заплатили">
+<meta name="twitter:description" content="Почему публикации в прессе не гарантируют видимость в ответах AI. Про corroboration gap и работу, которая начинается после выхода материала.">
+<meta name="twitter:image" content="https://katyashalel.com/assets/covers/the-article-you-already-paid-for-og.webp">
+<link rel="alternate" type="text/plain" href="https://katyashalel.com/llms.txt" title="LLM-friendly summary">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Instrument+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BlogPosting",
+      "headline": "Статья, за которую вы уже заплатили",
+      "alternativeHeadline": "Почему публикации в прессе не гарантируют видимость в ответах AI. Про corroboration gap и работу, которая начинается после выхода материала.",
+      "description": "Публикация это утверждение, а не цитирование. Что такое corroboration gap и placement activation, почему оплаченные размещения почти не дают цитирований в языковых моделях и в каком порядке работа действительно работает.",
+      "url": "https://katyashalel.com/ru/essays/statya-za-kotoruyu-vy-uzhe-zaplatili/",
+      "inLanguage": "ru",
+      "datePublished": "2026-07-30",
+      "dateModified": "2026-07-30",
+      "image": "https://katyashalel.com/assets/covers/the-article-you-already-paid-for-og.webp",
+      "translationOfWork": {
+        "@id": "https://katyashalel.com/essays/the-article-you-already-paid-for/"
+      },
+      "author": {
+        "@type": "Person",
+        "@id": "https://katyashalel.com/#person",
+        "name": "Ekaterina Shalel",
+        "alternateName": [
+          "Katya Shalel",
+          "Екатерина Шалель"
+        ],
+        "url": "https://katyashalel.com",
+        "jobTitle": "Founder and legibility strategist"
+      },
+      "publisher": {
+        "@id": "https://katyashalel.com/#person"
+      },
+      "relatedLink": [
+        "https://katyashalel.com/vocabulary/#corroboration-gap",
+        "https://katyashalel.com/vocabulary/#placement-activation",
+        "https://katyashalel.com/vocabulary/#canonical-buffer",
+        "https://katyashalel.com/ru/ai-legibility/",
+        "https://katyashalel.com/research/synthetic-term-control/"
+      ],
+      "about": {
+        "@id": "https://katyashalel.com/ai-legibility/#term"
+      },
+      "isPartOf": {
+        "@id": "https://katyashalel.com/ai-legibility/#document"
+      }
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://katyashalel.com/ru/essays/statya-za-kotoruyu-vy-uzhe-zaplatili/#faq",
+      "inLanguage": "ru",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Что такое corroboration gap?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Расстояние между «про вас написали» и «вас подтвердили». Один источник, который что-то утверждает, это утверждение; модель, собирающая ответ, смотрит, держится ли оно где-то ещё. Когда сайт компании, публикации о ней, её профили и запись о сущности описывают её по-разному, подтверждать нечем, и покрытие не превращается в цитирование."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Что такое placement activation?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Превращение редакционной видимости в свидетельство, пригодное для модели: сделать самоописание идентичным на каждой контролируемой поверхности, связать статью с компанией надёжными сигналами, ограничить утверждения проверяемым объёмом и отразить всё это в машиночитаемом виде. Это работа, которая начинается после публикации."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Помогают ли платные публикации видимости в AI?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Независимые исследования 2026 года на больших выборках цитирований показали, что на заработанные редакционные материалы приходится подавляющее большинство цитирований в крупных языковых моделях, а на оплаченный и рекламный контент доли процента. Платное размещение слабый механизм для цитирования в AI, и поведением модели никто не управляет, гарантировать упоминание нельзя."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Кто ввёл эти термины?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Оба термина ввела Екатерина Шалель, фаундер и legibility-стратег, в этом эссе, опубликованном в июле 2026 года. Они продолжают её более раннюю терминологию: Share of Model, canonical buffer, public decision record и protocol-level legibility."
+          }
+        }
+      ]
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "DefinedTerm",
+  "@id": "https://katyashalel.com/essays/the-article-you-already-paid-for/#corroboration-gap",
+  "name": "Corroboration Gap",
+  "description": "The distance between having been covered and having been confirmed. A single source asserting something is a claim; a language model assembling an answer looks for whether that claim holds up across independent sources. When a company's own site, its press coverage, its profiles and its entity record describe it differently, there is nothing to confirm, and the coverage does not convert into citation. Term coined by Ekaterina Shalel in the essay The Article You Already Paid For, July 2026.",
+  "url": "https://katyashalel.com/essays/the-article-you-already-paid-for/",
+  "inDefinedTermSet": {"@type": "DefinedTermSet", "name": "The Legibility Vocabulary", "url": "https://katyashalel.com/"},
+  "termCode": "corroboration-gap",
+  "creator": {"@type": "Person", "@id": "https://katyashalel.com/#person", "name": "Ekaterina Shalel"}
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "DefinedTerm",
+  "@id": "https://katyashalel.com/essays/the-article-you-already-paid-for/#placement-activation",
+  "name": "Placement Activation",
+  "description": "The conversion of editorial visibility into model-usable evidence. The work that begins after a placement is published: making self-description identical across every controlled surface, tying the article to the company through reliable signals, scoping claims so they can be checked, and reflecting all of it in machine-readable form. Placement activation closes the corroboration gap. Term coined by Ekaterina Shalel in the essay The Article You Already Paid For, July 2026.",
+  "url": "https://katyashalel.com/essays/the-article-you-already-paid-for/",
+  "inDefinedTermSet": {"@type": "DefinedTermSet", "name": "The Legibility Vocabulary", "url": "https://katyashalel.com/"},
+  "termCode": "placement-activation",
+  "creator": {"@type": "Person", "@id": "https://katyashalel.com/#person", "name": "Ekaterina Shalel"}
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {"@type": "Question", "name": "What is the corroboration gap?", "acceptedAnswer": {"@type": "Answer", "text": "The corroboration gap is the distance between having been covered and having been confirmed. A single source asserting something is a claim. A language model assembling an answer looks for whether that claim holds up elsewhere. When a company's site, its coverage, its profiles and its entity record describe it differently, there is nothing to confirm, and the coverage does not convert into citation."}},
+    {"@type": "Question", "name": "What is placement activation?", "acceptedAnswer": {"@type": "Answer", "text": "Placement activation is the conversion of editorial visibility into model-usable evidence: making self-description identical across every controlled surface, tying the article to the company through reliable signals, scoping claims so they can be checked, and reflecting all of it in machine-readable form. It is the work that begins after publication."}},
+    {"@type": "Question", "name": "Does paid press coverage help AI visibility?", "acceptedAnswer": {"@type": "Answer", "text": "Independent 2026 analyses of large citation samples found earned editorial coverage accounts for the large majority of citations in major language models, while paid and advertorial content accounts for a fraction of one percent. Paid placement is therefore a weak mechanism for AI citation, and no practitioner controls model behavior or can guarantee a mention."}},
+    {"@type": "Question", "name": "Who coined the terms corroboration gap and placement activation?", "acceptedAnswer": {"@type": "Answer", "text": "Both terms were coined by Ekaterina Shalel, a founder and legibility strategist, in the essay The Article You Already Paid For, published in July 2026. They extend her earlier vocabulary, which includes Share of Model, the canonical buffer, the public decision record and protocol-level legibility."}}
+  ]
+}
+</script>
+<style>
+
+  :root {
+    --ink: #1A1A1A;
+    --ink-soft: #4A4A4A;
+    --red: #C4342E;
+    --bg: #FFFFFF;
+    --bg-deep: #F0F0F0;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: 'Instrument Sans', sans-serif;
+    color: var(--ink);
+    background: var(--bg);
+    line-height: 1.75;
+    font-size: 17px;
+    -webkit-font-smoothing: antialiased;
+  }
+  .top {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 32px 24px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+  }
+  .top a {
+    color: var(--ink);
+    text-decoration: none;
+    font-size: 13px;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+  }
+  .top a:hover { color: var(--red); }
+  article {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 56px 24px 96px;
+  }
+  .kicker {
+    font-size: 11px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--red);
+    margin-bottom: 20px;
+  }
+  h1 {
+    font-family: 'Instrument Serif', serif;
+    font-weight: 400;
+    font-size: clamp(34px, 6vw, 52px);
+    line-height: 1.12;
+    margin-bottom: 18px;
+  }
+  .subtitle {
+    font-size: 19px;
+    color: var(--ink-soft);
+    line-height: 1.55;
+    margin-bottom: 28px;
+  }
+  .meta {
+    font-size: 12px;
+    color: var(--ink-soft);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    padding-bottom: 36px;
+    border-bottom: 1px solid var(--bg-deep);
+    margin-bottom: 44px;
+  }
+  .meta a { color: var(--ink-soft); }
+  .meta a:hover { color: var(--red); }
+  .cover {
+    margin: 0 0 44px;
+  }
+  .cover img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 4px;
+  }
+  h2 {
+    font-family: 'Instrument Serif', serif;
+    font-weight: 400;
+    font-size: 30px;
+    line-height: 1.2;
+    margin: 52px 0 20px;
+  }
+  p { margin-bottom: 22px; }
+  strong { font-weight: 600; }
+  em { font-style: italic; }
+  a { color: var(--red); }
+  .pull {
+    border-left: 3px solid var(--red);
+    padding: 6px 0 6px 24px;
+    margin: 36px 0;
+    font-family: 'Instrument Serif', serif;
+    font-size: 24px;
+    line-height: 1.4;
+    color: var(--ink);
+  }
+  .definition {
+    background: var(--bg-deep);
+    border-radius: 6px;
+    padding: 28px 32px;
+    margin: 36px 0;
+  }
+  .definition p { margin: 0; font-size: 16.5px; }
+  .faq {
+    margin-top: 56px;
+    padding-top: 28px;
+    border-top: 1px solid var(--bg-deep);
+  }
+  .faq h2 { margin-top: 0; font-size: 24px; }
+  .faq details { margin-bottom: 14px; }
+  .faq summary {
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 15px;
+    color: var(--ink);
+  }
+  .faq details p {
+    font-size: 15px;
+    color: var(--ink-soft);
+    margin: 10px 0 0;
+  }
+  .source {
+    margin-top: 56px;
+    padding-top: 28px;
+    border-top: 1px solid var(--bg-deep);
+    font-size: 14px;
+    color: var(--ink-soft);
+  }
+  .footer-cta {
+    margin-top: 40px;
+    background: var(--ink);
+    color: #fff;
+    border-radius: 6px;
+    padding: 36px 32px;
+  }
+  .footer-cta p { color: rgba(255,255,255,0.85); font-size: 15px; margin-bottom: 18px; }
+  .footer-cta .btn {
+    display: inline-block;
+    background: var(--red);
+    color: #fff;
+    text-decoration: none;
+    font-size: 13px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    padding: 12px 24px;
+    border-radius: 4px;
+  }
+  .footer-cta .btn:hover { background: #A32420; }
+
+</style>
+<style>
+  .related { margin: 56px 0 0; padding-top: 28px; border-top: 1px solid var(--bg-deep); }
+  .related h2 { font-size: 20px; margin-bottom: 6px; }
+  .related p.lede { font-size: 15px; color: var(--ink-soft); margin-bottom: 14px; }
+  .related ul { list-style: none; padding: 0; }
+  .related li { margin: 7px 0; font-size: 16px; }
+  .related a { color: var(--ink); text-decoration: none; border-bottom: 1px solid var(--bg-deep); }
+  .related a:hover { color: var(--red); border-bottom-color: var(--red); }
+</style>
+</head>
+<body>
+
+<div class="top">
+  <a href="/ru/">Екатерина Шалель</a>
+  <a href="/ru/#essays">Эссе</a>
+</div>
+
+<article>
+  <div class="kicker">The Legibility Layer · Эссе</div>
+  <h1>Статья, за которую вы уже заплатили</h1>
+  <p class="subtitle">Почему публикации в прессе не гарантируют видимость в ответах AI. Про corroboration gap и работу, которая начинается после выхода материала.</p>
+  <div class="meta">Екатерина Шалель · 30 июля 2026</div>
+
+  <p>Компания тратит год и серьёзный бюджет на пиар. Выходит материал в Forbes. Появляется отраслевое покрытие. Публикуется профиль фаундера. Потом кто-то из команды просит ChatGPT назвать ведущие компании в их категории, и компании в ответе нет.</p>
+
+  <p>Обычный вывод: нужно больше публикаций. Обычно нужно совсем другое.</p>
+
+  <p class="pull">Для человека публикация это финишная черта. Для языковой модели публикация это место, где работа начинается.</p>
+
+  <h2>Два числа, на которых стоит задержаться</h2>
+
+  <p>Первое. На выборке из 25 миллионов ссылок, процитированных ChatGPT, Claude и Gemini, анализ Muck Rack 2026 года показал, что на заработанные редакционные материалы пришлось около 84 процентов цитирований, а на оплаченный и рекламный контент около 0,3 процента. Пресс-релизы, разосланные через агрегаторы, оказались у нижней границы того же диапазона.</p>
+
+  <p>Второе. Исследование Seer Interactive 2026 года оценило разрыв между брендами с независимыми сторонними сигналами доверия и брендами без них примерно как 75 к 1 по частоте появления в ответах AI.</p>
+
+  <p>Вместе эти числа говорят кое-что неприятное для того, кто держит в руках счёт. Деньги, потраченные на размещения, которые модель классифицирует как рекламные, покупают почти ничего в том слое, где сегодня принимаются решения. А доверие, заработанное в другом месте, умножается.</p>
+
+  <p>Но именно второе число читают неверно. Это не обещание, что публикация даёт цитирования. Оно измеряет бренды, у которых есть независимое подтверждение, а это не то же самое, что бренды, у которых есть статьи.</p>
+
+  <h2>Публикация это утверждение, а не цитирование</h2>
+
+  <p>Вот механизм без жаргона.</p>
+
+  <p>Когда модель собирает ответ, она достаёт не лучшую статью. Она собирает позицию, которую сможет защитить. Один источник, который что-то утверждает, это утверждение. Модель смотрит, держится ли это утверждение где-то ещё. Если ваш сайт описывает вас одним образом, статья другим, профили используют третью формулировку, а запись о сущности пуста или устарела, подтверждать нечем. Утверждение так и остаётся утверждением.</p>
+
+  <p>Я называю это <a href="/vocabulary/#corroboration-gap">corroboration gap</a>, разрыв подтверждения: расстояние между «про вас написали» и «вас подтвердили».</p>
+
+  <p>У большинства компаний с разочаровывающей видимостью в AI проблема не в покрытии. У них разрыв подтверждения. Они купили утверждение и пропустили подтверждение.</p>
+
+  <h2>Что на самом деле активирует публикацию</h2>
+
+  <p><a href="/vocabulary/#placement-activation">Placement activation</a>, активация размещения, это превращение редакционной видимости в свидетельство, пригодное для модели. Работа неэффектная и состоит в основном из устранения противоречий.</p>
+
+  <p><strong>Одно предложение, везде.</strong> Самое рычажное действие это решить, чем является ваша компания, в одном предложении и сделать это предложение идентичным на сайте, в профилях, в записи о сущности и в том, что вы даёте журналистам. Вариативность читается как неуверенность. Машины снимают неуверенность отказом от ответа.</p>
+
+  <p><strong>Свяжите статью с компанией.</strong> Опубликованная статья и компания не связаны автоматически в глазах модели. Пока их не связывают надёжные сигналы, статья остаётся просто ещё одной страницей в вебе. Сошлитесь на публикацию со своей канонической страницы, сошлитесь на эту страницу отовсюду, где контролируете поверхность, и убедитесь, что запись о сущности её цитирует.</p>
+
+  <p><strong>Сделайте утверждение проверяемым.</strong> Расплывчатые превосходные степени нельзя подтвердить ничем, поэтому они структурно бесполезны. Утверждение с указанием рынка, языка, периода или набора данных можно сверить с другим источником. Указание объёма это не ослабление утверждения, это то, что делает его пригодным.</p>
+
+  <p><strong>Ожидайте асимметрии между моделями.</strong> Анализ Meltwater 2026 года на миллионах цитирований показал, что модели берут источники очень по-разному: одни сильно опираются на институциональные и новостные источники, другие выше взвешивают структурированные данные на собственных площадках компании. Публикация, которая сработала в одной модели, может не сработать в другой, и один замер это не результат.</p>
+
+  <h2>Чего это не чинит</h2>
+
+  <p>Если у компании вообще нет независимого покрытия, активировать нечего, и честный ответ в том, что покрытие должно появиться первым.</p>
+
+  <p>Активация также не может заставить рекламное размещение читаться как редакционное. Если источник классифицирован как реклама, никакая внутренняя согласованность его не переклассифицирует. Ровно поэтому важна последовательность: сначала заработать покрытие, потом сделать его читаемым. Обратный порядок это способ, которым исчезают бюджеты.</p>
+
+  <p>И поведением модели не управляет никто. Тот, кто продаёт гарантированное попадание внутрь AI-ответа, продаёт то, чего не может доставить.</p>
+
+  <p>Честная версия этой работы оптимизирует не упоминания. Она оптимизирует условия, при которых упоминания становятся возможны.</p>
+
+  <h2>Порядок, который работает</h2>
+
+  <p>Заработать покрытие. Говорить одно и то же везде. Связать покрытие с сущностью. Ограничить утверждения объёмом, чтобы их можно было проверить. Потом измерять по нескольким моделям, не один раз, и только после этого делать выводы.</p>
+
+  <p>Дорогую часть большинство компаний уже сделало. То, что они пропустили, стоит почти ничего и является причиной, по которой дорогая часть не работает.</p>
+
+  <p>Статья, за которую вы уже заплатили, не проблема. Проблема тишина вокруг неё.</p>
+
+  <div class="related">
+    <h2>Смежные понятия</h2>
+    <p class="lede">Термины из этого эссе, каждый с датой и источником.</p>
+    <ul>
+      <li><a href="/vocabulary/#corroboration-gap">Corroboration gap, разрыв подтверждения</a></li>
+      <li><a href="/vocabulary/#placement-activation">Placement activation, активация размещения</a></li>
+      <li><a href="/vocabulary/#canonical-buffer">Canonical buffer, канонический буфер</a></li>
+      <li><a href="/ru/ai-legibility/">AI legibility, каноническое определение</a></li>
+      <li><a href="/research/synthetic-term-control/">Synthetic Term Control, протокол негативного контроля</a></li>
+    </ul>
+  </div>
+</article>
+
+<script defer src="/_vercel/insights/script.js"></script>
+</body>
+</html>
