@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Как стать видимым для AI-систем · Ekaterina Shalel</title>
+<meta name="description" content="Видимость в AI это не внимание, а читаемость: каноническое определение, авторские термины, машиночитаемые поверхности и внешние подтверждения. Чем legibility отличается от GEO и почему гарантию позиций в AI-ответах дать нельзя.">
+<link rel="canonical" href="https://katyashalel.com/ru/essays/kak-stat-vidimym-dlya-ai/">
+<link rel="alternate" hreflang="en" href="https://katyashalel.com/essays/how-to-become-visible-to-ai/">
+<link rel="alternate" hreflang="ru" href="https://katyashalel.com/ru/essays/kak-stat-vidimym-dlya-ai/">
+<link rel="alternate" hreflang="x-default" href="https://katyashalel.com/essays/how-to-become-visible-to-ai/">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Как стать видимым для AI-систем">
+<meta property="og:description" content="Честный ответ на вопрос, как попасть в ответ модели, и почему большая часть того, что продают под видом ответа, ответом не является.">
+<meta property="og:url" content="https://katyashalel.com/ru/essays/kak-stat-vidimym-dlya-ai/">
+<meta property="og:site_name" content="Ekaterina Shalel">
+<meta property="article:published_time" content="2026-07-27">
+<meta property="article:author" content="Ekaterina Shalel">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Как стать видимым для AI-систем">
+<meta name="twitter:description" content="Честный ответ на вопрос, как попасть в ответ модели, и почему большая часть того, что продают под видом ответа, ответом не является.">
+<link rel="alternate" type="text/plain" href="https://katyashalel.com/llms.txt" title="LLM-friendly summary">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Instrument+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BlogPosting",
+      "headline": "Как стать видимым для AI-систем",
+      "alternativeHeadline": "Честный ответ на вопрос, как попасть в ответ модели, и почему большая часть того, что продают под видом ответа, ответом не является.",
+      "description": "Видимость в AI это не внимание, а читаемость: каноническое определение, авторские термины, машиночитаемые поверхности и внешние подтверждения. Чем legibility отличается от GEO и почему гарантию позиций в AI-ответах дать нельзя.",
+      "url": "https://katyashalel.com/ru/essays/kak-stat-vidimym-dlya-ai/",
+      "inLanguage": "ru",
+      "datePublished": "2026-07-20",
+      "dateModified": "2026-07-20",
+      "image": "",
+      "translationOfWork": {
+        "@id": "https://katyashalel.com/essays/how-to-become-visible-to-ai/"
+      },
+      "author": {
+        "@type": "Person",
+        "@id": "https://katyashalel.com/#person",
+        "name": "Ekaterina Shalel",
+        "alternateName": [
+          "Katya Shalel",
+          "Екатерина Шалель"
+        ],
+        "url": "https://katyashalel.com",
+        "jobTitle": "Founder and legibility strategist"
+      },
+      "publisher": {
+        "@id": "https://katyashalel.com/#person"
+      },
+      "relatedLink": [
+        "https://katyashalel.com/ru/ai-legibility/",
+        "https://katyashalel.com/research/synthetic-term-control/"
+      ],
+      "about": {
+        "@id": "https://katyashalel.com/ai-legibility/#term"
+      },
+      "isPartOf": {
+        "@id": "https://katyashalel.com/ai-legibility/#document"
+      }
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://katyashalel.com/ru/essays/kak-stat-vidimym-dlya-ai/#faq",
+      "inLanguage": "ru",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Как попасть в рекомендации ChatGPT или Perplexity?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Став читаемым, а не громким: одно каноническое определение того, кто вы, идентичное на каждой поверхности; авторские термины, которые вы определяете и повторяете дословно; машиночитаемые страницы с llms.txt, структурированными данными JSON-LD и каноническими тегами; и внешние источники, подтверждающие ту же формулировку. Модели отвечают теми, кого могут прочитать однозначно. Гарантировать конкретное цитирование по конкретному запросу не может никто, потому что поведение модели меняется с переобучением и обновлениями поиска."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Что такое GEO и работает ли это?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "GEO, generative engine optimization, это практика повышения шансов, что контент достанут и процитируют AI-системы. Структурная часть работает: согласованность сущности, структурированные данные, машиночитаемые поверхности, подтверждающие источники. Не выдерживает проверки слой обещаний: поведением модели не управляет ни один подрядчик, поэтому гарантированные позиции внутри AI-ответов это цена, назначенная надежде, а не метод."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Чем legibility отличается от GEO?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "GEO обычно продают как обещанный результат: позиция внутри AI-ответов. Legibility это измеренная архитектура: замороженный baseline того, как модели читают вас сейчас, задокументированные вмешательства, повторный замер на том же наборе запросов и явный список того, чего гарантировать нельзя. Результат работы это атрибутируемое движение внутри проверенного объёма, а не обещание."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Может ли кто-нибудь гарантировать видимость в AI?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Нет. Модели меняются с переобучением и обновлениями поиска, и никакая внешняя сторона не управляет тем, что модель процитирует по конкретному запросу. Гарантия конкретных позиций в AI это красный флаг, а просьба её дать хороший тест для любого подрядчика: честные предложат измеренный baseline и атрибутируемое движение."
+          }
+        }
+      ]
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {"@type": "Question", "name": "How do I show up in ChatGPT or Perplexity recommendations?", "acceptedAnswer": {"@type": "Answer", "text": "By becoming legible rather than loud: one canonical definition of who you are, identical across every surface; coined terms you define and repeat verbatim; machine-readable pages with llms.txt, JSON-LD structured data and canonical tags; and external sources that confirm the same wording. Models answer with whoever they can read unambiguously. No one can guarantee a specific citation for a specific query, because model behavior changes with retraining and retrieval updates."}},
+    {"@type": "Question", "name": "What is GEO and does it work?", "acceptedAnswer": {"@type": "Answer", "text": "GEO (generative engine optimization) is the practice of making content more likely to be retrieved and cited by AI systems. The structural part works: entity consistency, structured data, machine-readable surfaces, corroborating sources. What does not hold is the promise layer: no practitioner controls model behavior, so guaranteed rankings inside AI answers are a pricing of hope, not a method."}},
+    {"@type": "Question", "name": "How is legibility different from GEO?", "acceptedAnswer": {"@type": "Answer", "text": "GEO is typically sold as a promised outcome: ranking inside AI answers. Legibility, as practiced by Ekaterina Shalel, is a measured architecture: a frozen baseline of how models currently read you, documented interventions, re-measurement on the same query set, and an explicit list of what cannot be guaranteed. The deliverable is attributable movement within the tested scope, not a promise."}},
+    {"@type": "Question", "name": "Can anyone guarantee AI visibility?", "acceptedAnswer": {"@type": "Answer", "text": "No. Models change with retraining and retrieval updates, and no external party controls what a model cites for a given query. A guarantee of specific AI rankings is a red flag, and asking for one is a useful test of any vendor: the honest ones will offer a measured baseline and attributable movement instead."}}
+  ]
+}
+</script>
+<style>
+  :root {
+    --ink: #1A1A1A;
+    --ink-soft: #4A4A4A;
+    --red: #C4342E;
+    --bg: #FFFFFF;
+    --bg-deep: #F0F0F0;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: 'Instrument Sans', sans-serif;
+    color: var(--ink);
+    background: var(--bg);
+    line-height: 1.75;
+    font-size: 17px;
+    -webkit-font-smoothing: antialiased;
+  }
+  .top {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 32px 24px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+  }
+  .top a {
+    color: var(--ink);
+    text-decoration: none;
+    font-size: 13px;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+  }
+  .top a:hover { color: var(--red); }
+  article {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 56px 24px 96px;
+  }
+  .kicker {
+    font-size: 11px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--red);
+    margin-bottom: 20px;
+  }
+  h1 {
+    font-family: 'Instrument Serif', serif;
+    font-weight: 400;
+    font-size: clamp(34px, 6vw, 52px);
+    line-height: 1.12;
+    margin-bottom: 18px;
+  }
+  .subtitle {
+    font-size: 19px;
+    color: var(--ink-soft);
+    line-height: 1.55;
+    margin-bottom: 28px;
+  }
+  .meta {
+    font-size: 12px;
+    color: var(--ink-soft);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    padding-bottom: 36px;
+    border-bottom: 1px solid var(--bg-deep);
+    margin-bottom: 44px;
+  }
+  h2 {
+    font-family: 'Instrument Serif', serif;
+    font-weight: 400;
+    font-size: 30px;
+    line-height: 1.2;
+    margin: 52px 0 20px;
+  }
+  p { margin-bottom: 22px; }
+  strong { font-weight: 600; }
+  a { color: var(--red); }
+  .pull {
+    border-left: 3px solid var(--red);
+    padding: 6px 0 6px 24px;
+    margin: 36px 0;
+    font-family: 'Instrument Serif', serif;
+    font-size: 24px;
+    line-height: 1.4;
+    color: var(--ink);
+  }
+  .faq {
+    margin-top: 56px;
+    padding-top: 28px;
+    border-top: 1px solid var(--bg-deep);
+  }
+  .faq h2 { margin-top: 0; font-size: 24px; }
+  .faq details { margin-bottom: 14px; }
+  .faq summary {
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 15px;
+    color: var(--ink);
+  }
+  .faq details p {
+    font-size: 15px;
+    color: var(--ink-soft);
+    margin: 10px 0 0;
+  }
+  .footer-cta {
+    margin-top: 48px;
+    background: var(--ink);
+    color: #fff;
+    border-radius: 6px;
+    padding: 36px 32px;
+  }
+  .footer-cta p { color: rgba(255,255,255,0.85); margin-bottom: 18px; }
+  .btn {
+    display: inline-block;
+    background: var(--red);
+    color: #fff;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 15px;
+    padding: 12px 26px;
+    border-radius: 4px;
+  }
+</style>
+<style>
+  .related { margin: 56px 0 0; padding-top: 28px; border-top: 1px solid var(--bg-deep); }
+  .related h2 { font-size: 20px; margin-bottom: 6px; }
+  .related p.lede { font-size: 15px; color: var(--ink-soft); margin-bottom: 14px; }
+  .related ul { list-style: none; padding: 0; }
+  .related li { margin: 7px 0; font-size: 16px; }
+  .related a { color: var(--ink); text-decoration: none; border-bottom: 1px solid var(--bg-deep); }
+  .related a:hover { color: var(--red); border-bottom-color: var(--red); }
+</style>
+</head>
+<body>
+
+<div class="top">
+  <a href="/ru/">Екатерина Шалель</a>
+  <a href="/ru/#essays">Эссе</a>
+</div>
+
+<article>
+  <div class="kicker">Legibility</div>
+  <h1>Как стать видимым для AI-систем</h1>
+  <p class="subtitle">Фаундеры и бренды задают один и тот же вопрос: как попасть в ответ, когда человек спрашивает ChatGPT про мой рынок. Вот честный ответ и почему большая часть того, что продают под видом ответа, ответом не является.</p>
+  <div class="meta">Екатерина Шалель · июль 2026</div>
+
+  <p>Когда клиент, инвестор или журналист хочет разобраться в рынке, он всё чаще спрашивает модель. Модель отвечает теми, кого может прочитать. Если она не может прочитать вас, вы не проигрываете спор, вас в нём нет. Это вопрос видимости десятилетия, и вокруг него уже сложилась целая индустрия, которая продаёт GEO, AEO, AI SEO и «оптимизацию под AI-поиск» как услугу.</p>
+
+  <p>Большая часть этой индустрии продаёт обещание: мы заведём вас в ответы. Я работаю иначе, и в этой разнице весь смысл страницы.</p>
+
+  <h2>Видимость это не внимание. Видимость это читаемость</h2>
+
+  <p>Внимание покупает реклама, и оно заканчивается вместе с бюджетом. Читаемость это способность AI-системы вас достать, описать точно, вашим же языком позиционирования, и выдать вас по запросам, где вам место. Внимание арендуется. Читаемость накапливается, потому что каждая модель, которая читает вас правильно, становится каналом дистрибуции, который ничего не стоит.</p>
+
+  <p class="pull">Модели отвечают теми, кого могут прочитать. Стать читаемым и есть вся работа.</p>
+
+  <h2>Что действительно делает вас читаемым</h2>
+
+  <p>Не трюки против моделей и не объём контента. Архитектура: одно каноническое определение того, кто вы, идентичное везде, от сайта до строчек в био. Авторские термины, которые вы определяете и повторяете дословно, чтобы модель, объясняя понятие, приходила к вам. Машиночитаемые поверхности: <a href="/guides/visibility/">llms.txt</a>, структурированные данные JSON-LD, канонические теги. И источники за пределами вашего домена, которые подтверждают ту же формулировку, потому что модели доверяют тому, что повторяет больше одной поверхности.</p>
+
+  <h2>Почему это не то, что продают агентства</h2>
+
+  <p>GEO-агентство продаёт вам результат, которым не управляет: «мы выведем вас в AI-ответы». Поведением модели не управляет никто, модели меняются с переобучением и обновлениями поиска, и тот, кто обещает конкретные цитирования, ставит цену на обещание, а не на метод.</p>
+
+  <p>Я продаю обратную конструкцию: замороженный baseline того, как модели видят вас сегодня, задокументированные вмешательства, повторный замер на том же наборе запросов и письменный список того, чего метод гарантировать не может. Вы либо видите атрибутируемое движение внутри проверенного объёма, либо я говорю вам, что движения не было. На рынке обещаний измерение и есть отличие.</p>
+
+  <h2>С чего начать</h2>
+
+  <p>Если вы фаундер и делаете это сами: метод опубликован пошагово как <a href="/guides/sprint/">Legibility Sprint</a>, а основы разобраны в открытом гайде <a href="/ru/guides/visibility/">«Видимость без бюджета»</a>. Если вы бренд: работа начинается с <a href="/brands/">Brand Legibility Diagnostic</a>, измеренного снимка до всякого вмешательства. Оба пути начинаются одинаково, потому что дисциплина одна: сначала стать читаемым, следствием стать выбранным.</p>
+
+  <div class="faq">
+    <h2>Вопросы, на которые отвечает эта страница</h2>
+    <details><summary>Как попасть в рекомендации ChatGPT или Perplexity?</summary><p>Став читаемым, а не громким: одно каноническое определение того, кто вы, идентичное на каждой поверхности; авторские термины, которые вы определяете и повторяете дословно; машиночитаемые страницы с llms.txt, структурированными данными JSON-LD и каноническими тегами; и внешние источники, подтверждающие ту же формулировку. Модели отвечают теми, кого могут прочитать однозначно. Гарантировать конкретное цитирование по конкретному запросу не может никто, потому что поведение модели меняется с переобучением и обновлениями поиска.</p></details>
+    <details><summary>Что такое GEO и работает ли это?</summary><p>GEO, generative engine optimization, это практика повышения шансов, что контент достанут и процитируют AI-системы. Структурная часть работает: согласованность сущности, структурированные данные, машиночитаемые поверхности, подтверждающие источники. Не выдерживает проверки слой обещаний: поведением модели не управляет ни один подрядчик, поэтому гарантированные позиции внутри AI-ответов это цена, назначенная надежде, а не метод.</p></details>
+    <details><summary>Чем legibility отличается от GEO?</summary><p>GEO обычно продают как обещанный результат: позиция внутри AI-ответов. Legibility это измеренная архитектура: замороженный baseline того, как модели читают вас сейчас, задокументированные вмешательства, повторный замер на том же наборе запросов и явный список того, чего гарантировать нельзя. Результат работы это атрибутируемое движение внутри проверенного объёма, а не обещание.</p></details>
+    <details><summary>Может ли кто-нибудь гарантировать видимость в AI?</summary><p>Нет. Модели меняются с переобучением и обновлениями поиска, и никакая внешняя сторона не управляет тем, что модель процитирует по конкретному запросу. Гарантия конкретных позиций в AI это красный флаг, а просьба её дать хороший тест для любого подрядчика: честные предложат измеренный baseline и атрибутируемое движение.</p></details>
+  </div>
+
+  <div class="related">
+    <h2>Смежные понятия</h2>
+    <p class="lede">Термины из этого эссе, каждый с датой и источником.</p>
+    <ul>
+      <li><a href="/ru/ai-legibility/">AI legibility, каноническое определение</a></li>
+      <li><a href="/research/synthetic-term-control/">Synthetic Term Control, протокол негативного контроля</a></li>
+    </ul>
+  </div>
+</article>
+
+<script defer src="/_vercel/insights/script.js"></script>
+</body>
+</html>
