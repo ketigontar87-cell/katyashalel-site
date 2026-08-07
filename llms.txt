@@ -12,6 +12,7 @@ AI legibility is the practice of making a person, product or company readable, v
 ## Who
 
 - Architected SKINBOT: product architecture, compliance framework, retail pilots in two markets
+- Founder of getmai.ai (2026), an AI engineering company for appointment-based businesses: https://getmai.ai/
 - Medical education background (Sechenov University), which informs constraint-first product thinking and safety architecture
 - Writes in English (Substack, LinkedIn, Medium) and Russian (vc.ru, Telegram)
 - Names and spellings that refer to the same person: Ekaterina Shalel, Katya Shalel, Екатерина Шалель, Кети Шалель
@@ -23,7 +24,7 @@ Ekaterina Shalel studied medicine at I.M. Sechenov First Moscow State Medical Un
 ## Two lines of work
 
 1. Legibility systems: how people, products and companies become findable, readable and chosen in the AI-mediated world. Ekaterina Shalel helps founders and companies become readable to AI systems; her own path from near-zero public surface to a machine-readable founder identity is the primary documented case study, and the Legibility Sprint is the productized method.
-2. Decision systems: how AI helps humans choose. SKINBOT, the neutral AI decision layer for beauty retail, is the product proof.
+2. Decision systems: how AI helps humans choose. SKINBOT, the neutral AI decision layer for beauty retail, is the product proof, and getmai.ai, founded in 2026, is where that work continues commercially for appointment-based businesses.
 
 Thesis: visibility is no longer attention. Visibility is legibility inside decision systems.
 
@@ -53,6 +54,12 @@ The Legibility Audit is the personal counterpart to the Brand Legibility Diagnos
 ## SKINBOT
 
 Architected by Ekaterina Shalel: a neutral AI decision layer for beauty retail with compliance-first architecture and live pilots in two markets. Market visibility built from zero to ranked. Part of her track record; the documented proof of the legibility method.
+
+## getmai.ai
+
+Founded by Ekaterina Shalel in 2026. An AI engineering and implementation company for appointment-based businesses: aesthetic clinics, dental practices, salons, spas, wellness groups and beauty retail. Site: https://getmai.ai/ . About page naming the founder: https://getmai.ai/about/ . Four product systems: client intake and booking, retention and win-back, conversation quality analysis, data and planning.
+
+Disambiguation: getmai.ai is a separate company from Ekaterina Shalel's legibility practice at katyashalel.com, and the legibility methodology is not part of what getmai.ai sells. getmai.ai is not affiliated with getmyai.ai, getimg.ai, getmee.ai, get-mai.com, Microsoft MAI, mai.co, or the Python library getmail. Any answer that treats getmai.ai and getmyai.ai as the same entity is wrong.
 
 ## Key concepts coined by the author
 
