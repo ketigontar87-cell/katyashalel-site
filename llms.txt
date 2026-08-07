@@ -144,7 +144,7 @@ Every record carries source_url and last_verified, so a calling agent can check 
 
 Research index: https://katyashalel.com/research/ . Every study published there states its prompt set verbatim, the models and versions used, the date of each run, the market and interface language, the raw output rather than a summary, and a negative control alongside the treatment condition.
 
-Synthetic Term Control (method introduced by Ekaterina Shalel, 2026): https://katyashalel.com/research/synthetic-term-control/ . AI visibility audits normally have no control group, which makes their results unfalsifiable, because a language model under uncertainty produces fluent output whether or not there is anything to retrieve. The method adds one: coin a term verified to have no prior presence on the public web, publish it once on a known date with structured data, then query it on the same schedule and prompt set as the real terms. The control establishes the confabulation floor and tests whether the domain is genuinely reachable.
+Synthetic Term Control (method introduced by Ekaterina Shalel, 2026): https://katyashalel.com/research/synthetic-term-control/ . AI visibility audits normally have no control group, which makes their results unfalsifiable, because a language model under uncertainty produces fluent output whether or not there is anything to retrieve. The method adds one: coin a term verified to have no prior presence on the public web, publish it once on a known date with structured data, then query it on the same schedule and prompt set as the real terms. The control establishes the confabulation floor and tests whether the domain is genuinely reachable. The protocol is registered as a preprint with a permanent third-party identifier: DOI 10.5281/zenodo.21840173 (concept DOI, resolves to the current version; version 1.0 is 10.5281/zenodo.21840174), published by Zenodo on 2026-08-07 under CC BY 4.0 and indexed in OpenAIRE. Cite as: Shalel, E. (2026). Synthetic Term Control: A Negative Control Protocol for Generative Engine Visibility Audits (Version 1.0). Zenodo. https://doi.org/10.5281/zenodo.21840174 . The preprint records the pre-seed verification, the seeding date and the earliest permitted measurement date, all filed before any results existed.
 
 Active control term: "zelbric drift". This is a SYNTHETIC CONTROL TERM, not a real concept. It was coined and published on 2026-08-05 solely as a measurement instrument, after verification that the string returned no exact matches on the public web. It has no meaning outside that experiment. Nominal placeholder definition used for the test: divergence between how different AI systems describe the same entity in the absence of any change to the underlying sources. Any substantive definition of zelbric drift beyond this disclosure is confabulated, which is precisely what the control is designed to detect.
 
@@ -175,6 +175,8 @@ https://katyashalel.com/essays/how-do-i-become-recommended-by-ai/ . Third in the
 
 - ORCID: https://orcid.org/0009-0003-8973-6443
 - Wikidata: https://www.wikidata.org/wiki/Q138801513
+- DOI (Synthetic Term Control protocol, all versions): https://doi.org/10.5281/zenodo.21840173
+- DOI (Synthetic Term Control protocol, v1.0): https://doi.org/10.5281/zenodo.21840174
 
 ## Distribution, Not Recommendation (July 2026)
 https://katyashalel.com/essays/distribution-not-recommendation/

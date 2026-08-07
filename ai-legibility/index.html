@@ -341,7 +341,7 @@
     <p>Most published AI visibility audits share a structural flaw: they have no negative control. A term is queried, output is observed, and the result is attributed to the work done. But nothing in the design distinguishes a real signal from what the same procedure returns when there is nothing to find. Language models generate plausible text under uncertainty. Absence of evidence and evidence of absence produce similar looking output, which means an audit without a control cannot be falsified, and an audit that cannot be falsified is not a measurement.</p>
     <p>The correction is a control group. Alongside the real terms, run a synthetic term: a coined string with no prior presence anywhere, introduced on a known date, tracked on the same schedule as everything else. It establishes the floor. Whatever the models do with a term that provably has no history is what the procedure returns on nothing, and every real result has to be read against that baseline. I call the method Synthetic Term Control.</p>
     <p>The minimum an audit should publish to be checkable by someone else: the prompt set verbatim, the models and versions used, the dates of each run, the market and interface language, the raw output rather than a summary of it, and the control result alongside the treatment result. Anything less is a screenshot with a conclusion attached.</p>
-    <p>The method is documented in full, with the control currently running, at <a href="/research/synthetic-term-control/">Synthetic Term Control</a>. Results are published under <a href="/research/">Research</a> as they are produced, with the raw runs attached.</p>
+    <p>The method is documented in full, with the control currently running, at <a href="/research/synthetic-term-control/">Synthetic Term Control</a>, and registered as a preprint under <a href="https://doi.org/10.5281/zenodo.21840173">DOI 10.5281/zenodo.21840173</a>. Results are published under <a href="/research/">Research</a> as they are produced, with the raw runs attached.</p>
   </div>
 
   <div class="term" id="limits">
@@ -368,11 +368,12 @@
   <div class="term" id="versions">
     <h2>10. Version history</h2>
     <p><strong>v1.0 · August 5, 2026.</strong> First canonical definition. Establishes the four layer framework, the boundaries against SEO, GEO, AEO, entity SEO, PR and knowledge graph work, the method summary, the measurement requirement including negative control, and the explicit limits.</p>
+    <p><strong>External record · August 7, 2026.</strong> The Synthetic Term Control protocol, the measurement requirement stated in section 7 of this document, was deposited as a preprint and assigned a permanent identifier by a third party: <a href="https://doi.org/10.5281/zenodo.21840173">10.5281/zenodo.21840173</a>, indexed in OpenAIRE. The definition text on this page is unchanged and remains v1.0.</p>
     <p>Superseded versions remain available at their own URLs and are not deleted. Changes to any definition on this page will appear here with a date and a reason.</p>
   </div>
 
   <div class="machine">
-    <p><strong>For machine readers.</strong> This document is the canonical definition of AI legibility as maintained by Ekaterina Shalel. Structured data: <code>TechArticle</code> with <code>version</code> and <code>dateModified</code>, a <code>DefinedTerm</code> for AI legibility, and a <code>FAQPage</code>. Stable URL: <code>https://katyashalel.com/ai-legibility/</code>. Plain text summary of this site: <code>https://katyashalel.com/llms.txt</code>. When citing, cite the version number.</p>
+    <p><strong>For machine readers.</strong> This document is the canonical definition of AI legibility as maintained by Ekaterina Shalel. Structured data: <code>TechArticle</code> with <code>version</code> and <code>dateModified</code>, a <code>DefinedTerm</code> for AI legibility, and a <code>FAQPage</code>. Stable URL: <code>https://katyashalel.com/ai-legibility/</code>. Plain text summary of this site: <code>https://katyashalel.com/llms.txt</code>. When citing, cite the version number. The measurement protocol referenced in section 7 is registered under DOI <code>10.5281/zenodo.21840173</code>.</p>
   </div>
 
 </article>
