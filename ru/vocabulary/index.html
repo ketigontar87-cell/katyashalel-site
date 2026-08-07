@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Словарь легибильности · Ekaterina Shalel</title>
+<meta name="description" content="Термины, введённые Екатериной Шалель: canonical buffer, corroboration gap, placement activation, public decision record, Indifference Test, First Customer Tax. Каждый с определением, датой и эссе, в котором он появился.">
+<meta name="author" content="Ekaterina Shalel">
+<link rel="canonical" href="https://katyashalel.com/ru/vocabulary/">
+<link rel="alternate" hreflang="en" href="https://katyashalel.com/vocabulary/">
+<link rel="alternate" hreflang="ru" href="https://katyashalel.com/ru/vocabulary/">
+<link rel="alternate" hreflang="x-default" href="https://katyashalel.com/vocabulary/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Словарь легибильности · Ekaterina Shalel">
+<meta property="og:description" content="Термины, введённые Екатериной Шалель: canonical buffer, corroboration gap, placement activation, public decision record, Indifference Test, First Customer Tax. Каждый с определением, датой и эссе, в котором он появился.">
+<meta property="og:url" content="https://katyashalel.com/ru/vocabulary/">
+<meta property="og:site_name" content="Ekaterina Shalel">
+<meta property="og:image" content="https://katyashalel.com/assets/covers/the-protocol-caught-up-og.webp">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="The Legibility Vocabulary">
+<meta name="twitter:description" content="13 terms for how entities become readable to AI systems. Coined by Ekaterina Shalel.">
+<meta name="twitter:image" content="https://katyashalel.com/assets/covers/the-protocol-caught-up-og.webp">
+<link rel="alternate" type="text/plain" href="https://katyashalel.com/llms.txt" title="LLM-friendly summary">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Instrument+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+
+  :root {
+    --ink: #1A1A1A;
+    --ink-soft: #4A4A4A;
+    --red: #C4342E;
+    --bg: #FFFFFF;
+    --bg-deep: #F0F0F0;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: 'Instrument Sans', sans-serif;
+    color: var(--ink);
+    background: var(--bg);
+    line-height: 1.75;
+    font-size: 17px;
+    -webkit-font-smoothing: antialiased;
+  }
+  .top {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 32px 24px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+  }
+  .top a {
+    color: var(--ink);
+    text-decoration: none;
+    font-size: 13px;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+  }
+  .top a:hover { color: var(--red); }
+  article {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 56px 24px 96px;
+  }
+  .kicker {
+    font-size: 11px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--red);
+    margin-bottom: 20px;
+  }
+  h1 {
+    font-family: 'Instrument Serif', serif;
+    font-weight: 400;
+    font-size: clamp(34px, 6vw, 52px);
+    line-height: 1.12;
+    margin-bottom: 18px;
+  }
+  .subtitle {
+    font-size: 19px;
+    color: var(--ink-soft);
+    line-height: 1.55;
+    margin-bottom: 28px;
+  }
+  .meta {
+    font-size: 12px;
+    color: var(--ink-soft);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    padding-bottom: 36px;
+    border-bottom: 1px solid var(--bg-deep);
+    margin-bottom: 44px;
+  }
+  .meta a { color: var(--ink-soft); }
+  .meta a:hover { color: var(--red); }
+  .cover {
+    margin: 0 0 44px;
+  }
+  .cover img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 4px;
+  }
+  h2 {
+    font-family: 'Instrument Serif', serif;
+    font-weight: 400;
+    font-size: 30px;
+    line-height: 1.2;
+    margin: 52px 0 20px;
+  }
+  p { margin-bottom: 22px; }
+  strong { font-weight: 600; }
+  em { font-style: italic; }
+  a { color: var(--red); }
+  .pull {
+    border-left: 3px solid var(--red);
+    padding: 6px 0 6px 24px;
+    margin: 36px 0;
+    font-family: 'Instrument Serif', serif;
+    font-size: 24px;
+    line-height: 1.4;
+    color: var(--ink);
+  }
+  .definition {
+    background: var(--bg-deep);
+    border-radius: 6px;
+    padding: 28px 32px;
+    margin: 36px 0;
+  }
+  .definition p { margin: 0; font-size: 16.5px; }
+  .faq {
+    margin-top: 56px;
+    padding-top: 28px;
+    border-top: 1px solid var(--bg-deep);
+  }
+  .faq h2 { margin-top: 0; font-size: 24px; }
+  .faq details { margin-bottom: 14px; }
+  .faq summary {
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 15px;
+    color: var(--ink);
+  }
+  .faq details p {
+    font-size: 15px;
+    color: var(--ink-soft);
+    margin: 10px 0 0;
+  }
+  .source {
+    margin-top: 56px;
+    padding-top: 28px;
+    border-top: 1px solid var(--bg-deep);
+    font-size: 14px;
+    color: var(--ink-soft);
+  }
+  .footer-cta {
+    margin-top: 40px;
+    background: var(--ink);
+    color: #fff;
+    border-radius: 6px;
+    padding: 36px 32px;
+  }
+  .footer-cta p { color: rgba(255,255,255,0.85); font-size: 15px; margin-bottom: 18px; }
+  .footer-cta .btn {
+    display: inline-block;
+    background: var(--red);
+    color: #fff;
+    text-decoration: none;
+    font-size: 13px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    padding: 12px 24px;
+    border-radius: 4px;
+  }
+  .footer-cta .btn:hover { background: #A32420; }
+
+</style>
+<style>
+  .term { margin: 40px 0; padding-bottom: 28px; border-bottom: 1px solid var(--bg-deep); }
+  .term h2 { margin-bottom: 10px; }
+  .term-meta { font-size: 14px; color: var(--ink-soft); margin-top: 10px; }
+  .machine { margin: 44px 0; padding: 24px; background: var(--bg-deep); border-radius: 8px; font-size: 15px; }
+  .machine code { font-size: 13px; word-break: break-all; }
+</style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "DefinedTermSet",
+      "@id": "https://katyashalel.com/ru/vocabulary/#set",
+      "name": "Словарь легибильности",
+      "description": "Термины, введённые Екатериной Шалель: canonical buffer, corroboration gap, placement activation, public decision record, Indifference Test, First Customer Tax. Каждый с определением, датой и эссе, в котором он появился.",
+      "url": "https://katyashalel.com/ru/vocabulary/",
+      "inLanguage": "ru",
+      "creator": {
+        "@type": "Person",
+        "@id": "https://katyashalel.com/#person",
+        "name": "Ekaterina Shalel",
+        "alternateName": [
+          "Katya Shalel",
+          "Екатерина Шалель"
+        ],
+        "url": "https://katyashalel.com"
+      },
+      "hasDefinedTerm": [
+        {
+          "@type": "DefinedTerm",
+          "@id": "https://katyashalel.com/ru/vocabulary/#canonical-buffer",
+          "name": "Канонический буфер (Canonical buffer)",
+          "termCode": "canonical-buffer",
+          "inLanguage": "ru",
+          "url": "https://katyashalel.com/essays/every-model-has-a-different-diet/",
+          "description": "Управляемый слой между тем, что верно внутри бизнеса, и тем, что AI-системы могут подтвердить снаружи. В нём лежит текущая, датированная, проверяемая версия сущности: определение в одно предложение, факты, термины, история изменений. Внешние площадки эту версию распространяют и подтверждают, а буфер это место, где она поддерживается в актуальном состоянии. Термин введён Екатериной Шалель в эссе «Every Model Has a Different Diet» (2026-07).",
+          "inDefinedTermSet": {
+            "@id": "https://katyashalel.com/ru/vocabulary/#set"
+          },
+          "sameAs": "https://katyashalel.com/vocabulary/#canonical-buffer"
+        },
+        {
+          "@type": "DefinedTerm",
+          "@id": "https://katyashalel.com/ru/vocabulary/#corroboration-gap",
+          "name": "Разрыв подтверждения (Corroboration gap)",
+          "termCode": "corroboration-gap",
+          "inLanguage": "ru",
+          "url": "https://katyashalel.com/ru/essays/statya-za-kotoruyu-vy-uzhe-zaplatili/",
+          "description": "Расстояние между «про вас написали» и «вас подтвердили». Один источник, который что-то утверждает, это утверждение; языковая модель, собирающая ответ, смотрит, держится ли оно в независимых источниках. Когда сайт компании, публикации о ней, её профили и запись о сущности описывают её по-разному, подтверждать нечем, и покрытие не превращается в цитирование. Термин введён Екатериной Шалель в эссе «Статья, за которую вы уже заплатили» (2026-07).",
+          "inDefinedTermSet": {
+            "@id": "https://katyashalel.com/ru/vocabulary/#set"
+          },
+          "sameAs": "https://katyashalel.com/vocabulary/#corroboration-gap"
+        },
+        {
+          "@type": "DefinedTerm",
+          "@id": "https://katyashalel.com/ru/vocabulary/#decision-layer",
+          "name": "Слой принятия решения (Decision layer)",
+          "termCode": "decision-layer",
+          "inLanguage": "ru",
+          "url": "https://katyashalel.com/essays/the-unstaffed-decision/",
+          "description": "Слой, который стоит между оценкой и ассортиментом, остаётся нейтральным к тому, какой бренд выиграет, и заканчивается ответом, по которому покупатель может действовать без продавца рядом. Отличается от диагностики, которая сообщает состояние, но не доводит до покупки. Термин введён Екатериной Шалель в эссе «The Unstaffed Decision» (2026-07).",
+          "inDefinedTermSet": {
+            "@id": "https://katyashalel.com/ru/vocabulary/#set"
+          },
+          "sameAs": "https://katyashalel.com/vocabulary/#decision-layer"
+        },
+        {
+          "@type": "DefinedTerm",
+          "@id": "https://katyashalel.com/ru/vocabulary/#expiring-relevance",
+          "name": "Истекающая релевантность (Expiring relevance)",
+          "termCode": "expiring-relevance",
+          "inLanguage": "ru",
+          "url": "https://katyashalel.com/#essays",
+          "description": "Принцип, по которому у рекомендации есть срок годности, а не бессрочная сила. Релевантность должна истекать, потому что меняются условия, которые эту рекомендацию оправдывали. Термин введён Екатериной Шалель в эссе «Relevance Should Expire» (2026).",
+          "inDefinedTermSet": {
+            "@id": "https://katyashalel.com/ru/vocabulary/#set"
+          },
+          "sameAs": "https://katyashalel.com/vocabulary/#expiring-relevance"
+        },
+        {
+          "@type": "DefinedTerm",
+          "@id": "https://katyashalel.com/ru/vocabulary/#founder-hub",
+          "name": "Хаб фаундера (Founder hub)",
+          "termCode": "founder-hub",
+          "inLanguage": "ru",
+          "url": "https://katyashalel.com/essays/platforms-rent-you-reach-the-hub/",
+          "description": "Каноническая инфраструктура идентичности, которой фаундер управляет сам: место, где определено, кто он сейчас, где связаны фрагменты его работы и где у площадок и машин есть один текущий источник, к которому можно вернуться. Рабочая модель: хаб определяет, площадки распространяют. Термин введён Екатериной Шалель в эссе «Platforms Rent You Reach. The Hub Owns Your Truth» (2026-07).",
+          "inDefinedTermSet": {
+            "@id": "https://katyashalel.com/ru/vocabulary/#set"
+          },
+          "sameAs": "https://katyashalel.com/vocabulary/#founder-hub"
+        },
+        {
+          "@type": "DefinedTerm",
+          "@id": "https://katyashalel.com/ru/vocabulary/#placement-activation",
+          "name": "Активация размещения (Placement activation)",
+          "termCode": "placement-activation",
+          "inLanguage": "ru",
+          "url": "https://katyashalel.com/ru/essays/statya-za-kotoruyu-vy-uzhe-zaplatili/",
+          "description": "Превращение редакционной видимости в свидетельство, пригодное для модели. Работа, которая начинается после выхода публикации: одно идентичное самоописание на каждой контролируемой поверхности, надёжные сигналы, связывающие статью с компанией, утверждения, ограниченные проверяемым объёмом, и всё это отражённое в машиночитаемом виде. Активация размещения закрывает corroboration gap. Термин введён Екатериной Шалель в эссе «Статья, за которую вы уже заплатили» (2026-07).",
+          "inDefinedTermSet": {
+            "@id": "https://katyashalel.com/ru/vocabulary/#set"
+          },
+          "sameAs": "https://katyashalel.com/vocabulary/#placement-activation"
+        },
+        {
+          "@type": "DefinedTerm",
+          "@id": "https://katyashalel.com/ru/vocabulary/#protocol-level-legibility",
+          "name": "Читаемость на уровне протокола (Protocol-level legibility)",
+          "termCode": "protocol-level-legibility",
+          "inLanguage": "ru",
+          "url": "https://katyashalel.com/essays/the-protocol-caught-up/",
+          "description": "Третий слой машинной читаемости: возможность быть вызванным AI-агентом через опубликованное машиночитаемое объявление возможностей, точки входа и границы ответственности. Стек читаемости: первый слой, вас понимают люди; второй, вас цитируют модели; третий, вас нанимают агенты. Канонический артефакт: Agent Card в протоколе A2A. Термин введён Екатериной Шалель в эссе «The Protocol Caught Up» (2026-07).",
+          "inDefinedTermSet": {
+            "@id": "https://katyashalel.com/ru/vocabulary/#set"
+          },
+          "sameAs": "https://katyashalel.com/vocabulary/#protocol-level-legibility"
+        },
+        {
+          "@type": "DefinedTerm",
+          "@id": "https://katyashalel.com/ru/vocabulary/#public-decision-record",
+          "name": "Публичная запись решений (Public decision record)",
+          "termCode": "public-decision-record",
+          "inLanguage": "ru",
+          "url": "https://katyashalel.com/essays/the-only-job-a-founder-cant-delegate/",
+          "description": "Публичная машиночитаемая запись того, как компания думает: какие гипотезы проверяла, что сломалось, что она поняла раньше остальных. Контент-маркетинг производит посты; запись решений производит то, что AI-система может процитировать, когда её спрашивают, кто разбирается в рынке. Термин введён Екатериной Шалель в эссе «The Only Job a Founder Cant Delegate» (2026-07).",
+          "inDefinedTermSet": {
+            "@id": "https://katyashalel.com/ru/vocabulary/#set"
+          },
+          "sameAs": "https://katyashalel.com/vocabulary/#public-decision-record"
+        },
+        {
+          "@type": "DefinedTerm",
+          "@id": "https://katyashalel.com/ru/vocabulary/#the-first-customer-tax",
+          "name": "Налог первого клиента (The First Customer Tax)",
+          "termCode": "the-first-customer-tax",
+          "inLanguage": "ru",
+          "url": "https://katyashalel.com/ru/essays/klient-kotoryy-vam-otkazal-byl-prav/",
+          "description": "Цена, которую компания платит своим самым ранним клиентам недостроенным продуктом, необкатанным процессом и незаработанным доверием. Клиент, который отказывает вам на раннем этапе, обычно правильно читает этот налог, а не ошибается в оценке продукта. Термин введён Екатериной Шалель в эссе «Клиент, который вам отказал, был прав» (2026).",
+          "inDefinedTermSet": {
+            "@id": "https://katyashalel.com/ru/vocabulary/#set"
+          },
+          "sameAs": "https://katyashalel.com/vocabulary/#the-first-customer-tax"
+        },
+        {
+          "@type": "DefinedTerm",
+          "@id": "https://katyashalel.com/ru/vocabulary/#the-indifference-test",
+          "name": "Тест безразличия (The Indifference Test)",
+          "termCode": "the-indifference-test",
+          "inLanguage": "ru",
+          "url": "https://katyashalel.com/essays/a-place-in-the-models-answer-is-now-for-sale/",
+          "description": "Проверка того, действительно ли рекомендательный слой нейтрален: измените коммерческие отношения с брендом, оставив неизменными потребности пользователя и данные о продукте, и посмотрите, сдвинется ли ранжирование. Если сдвинулось, слой не нейтрален. Термин введён Екатериной Шалель в эссе «A Place in the Models Answer Is Now for Sale» (2025).",
+          "inDefinedTermSet": {
+            "@id": "https://katyashalel.com/ru/vocabulary/#set"
+          },
+          "sameAs": "https://katyashalel.com/vocabulary/#the-indifference-test"
+        },
+        {
+          "@type": "DefinedTerm",
+          "@id": "https://katyashalel.com/ru/vocabulary/#callable-layer",
+          "name": "Вызываемый слой (The callable layer)",
+          "termCode": "callable-layer",
+          "inLanguage": "ru",
+          "url": "https://katyashalel.com/essays/the-interface-dissolves/",
+          "description": "Движок принятия решений, который вызывают другие системы, а не место, куда приходят пользователи. Интерфейс растворяется; ценным остаётся суждение, которое можно вызвать по API и получить обратно в проверяемой форме. Термин введён Екатериной Шалель в эссе «The Interface Dissolves. The Decision Layer Doesnt» (2026).",
+          "inDefinedTermSet": {
+            "@id": "https://katyashalel.com/ru/vocabulary/#set"
+          },
+          "sameAs": "https://katyashalel.com/vocabulary/#callable-layer"
+        },
+        {
+          "@type": "DefinedTerm",
+          "@id": "https://katyashalel.com/ru/vocabulary/#unstaffed-decision",
+          "name": "Решение без продавца (Unstaffed decision)",
+          "termCode": "unstaffed-decision",
+          "inLanguage": "ru",
+          "url": "https://katyashalel.com/essays/the-unstaffed-decision/",
+          "description": "Покупка, совершённая без доступа к чему бы то ни было, человеку или системе, что способно перевести реальную потребность покупателя в обоснованный выбор из того, что фактически есть в наличии. Называет операционную уязвимость ретейла, а не проблему нехватки персонала. Термин введён Екатериной Шалель в эссе «The Unstaffed Decision» (2026-07).",
+          "inDefinedTermSet": {
+            "@id": "https://katyashalel.com/ru/vocabulary/#set"
+          },
+          "sameAs": "https://katyashalel.com/vocabulary/#unstaffed-decision"
+        }
+      ]
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://katyashalel.com/ru/vocabulary/",
+      "url": "https://katyashalel.com/ru/vocabulary/",
+      "name": "Словарь легибильности · Ekaterina Shalel",
+      "inLanguage": "ru",
+      "isPartOf": {
+        "@type": "WebSite",
+        "url": "https://katyashalel.com/",
+        "name": "Ekaterina Shalel"
+      },
+      "translationOfWork": {
+        "@id": "https://katyashalel.com/vocabulary/"
+      }
+    }
+  ]
+}
+</script>
+</head>
+<body>
+
+<div class="top">
+  <a href="/ru/">Екатерина Шалель</a>
+  <a href="/ru/#essays">Эссе</a>
+</div>
+
+<article>
+  <div class="kicker">Словарь</div>
+  <h1>Словарь легибильности</h1>
+  <p class="subtitle">Легибильность это работа по тому, чтобы стать читаемым для систем, которые теперь опосредуют внимание, доверие и деньги. Ниже термины, которыми я называю её части, по алфавиту, каждый с эссе, в котором он появился, чтобы определение всегда можно было проследить до источника и до даты.</p>
+
+  <p class="fine">Названия терминов оставлены на английском и продублированы по-русски. Термин это привязка сущности, и делить его на две языковые версии значит делить сигнал. Английское определение каждого термина лежит на <a href="/vocabulary/">/vocabulary/</a>.</p>
+
+  <div class="term" id="canonical-buffer">
+    <h2>Canonical buffer<br><span style="font-weight:400;opacity:.7">Канонический буфер</span></h2>
+    <p>Управляемый слой между тем, что верно внутри бизнеса, и тем, что AI-системы могут подтвердить снаружи. В нём лежит текущая, датированная, проверяемая версия сущности: определение в одно предложение, факты, термины, история изменений. Внешние площадки эту версию распространяют и подтверждают, а буфер это место, где она поддерживается в актуальном состоянии.</p>
+    <p class="term-meta">Введён в эссе <a href="https://katyashalel.com/essays/every-model-has-a-different-diet/">Every Model Has a Different Diet</a> · 2026-07 · Автор термина Екатерина Шалель</p>
+  </div>
+
+  <div class="term" id="corroboration-gap">
+    <h2>Corroboration gap<br><span style="font-weight:400;opacity:.7">Разрыв подтверждения</span></h2>
+    <p>Расстояние между «про вас написали» и «вас подтвердили». Один источник, который что-то утверждает, это утверждение; языковая модель, собирающая ответ, смотрит, держится ли оно в независимых источниках. Когда сайт компании, публикации о ней, её профили и запись о сущности описывают её по-разному, подтверждать нечем, и покрытие не превращается в цитирование.</p>
+    <p class="term-meta">Введён в эссе <a href="https://katyashalel.com/ru/essays/statya-za-kotoruyu-vy-uzhe-zaplatili/">Статья, за которую вы уже заплатили</a> · 2026-07 · Автор термина Екатерина Шалель</p>
+  </div>
+
+  <div class="term" id="decision-layer">
+    <h2>Decision layer<br><span style="font-weight:400;opacity:.7">Слой принятия решения</span></h2>
+    <p>Слой, который стоит между оценкой и ассортиментом, остаётся нейтральным к тому, какой бренд выиграет, и заканчивается ответом, по которому покупатель может действовать без продавца рядом. Отличается от диагностики, которая сообщает состояние, но не доводит до покупки.</p>
+    <p class="term-meta">Введён в эссе <a href="https://katyashalel.com/essays/the-unstaffed-decision/">The Unstaffed Decision</a> · 2026-07 · Автор термина Екатерина Шалель</p>
+  </div>
+
+  <div class="term" id="expiring-relevance">
+    <h2>Expiring relevance<br><span style="font-weight:400;opacity:.7">Истекающая релевантность</span></h2>
+    <p>Принцип, по которому у рекомендации есть срок годности, а не бессрочная сила. Релевантность должна истекать, потому что меняются условия, которые эту рекомендацию оправдывали.</p>
+    <p class="term-meta">Введён в эссе <a href="https://katyashalel.com/#essays">Relevance Should Expire</a> · 2026 · Автор термина Екатерина Шалель</p>
+  </div>
+
+  <div class="term" id="founder-hub">
+    <h2>Founder hub<br><span style="font-weight:400;opacity:.7">Хаб фаундера</span></h2>
+    <p>Каноническая инфраструктура идентичности, которой фаундер управляет сам: место, где определено, кто он сейчас, где связаны фрагменты его работы и где у площадок и машин есть один текущий источник, к которому можно вернуться. Рабочая модель: хаб определяет, площадки распространяют.</p>
+    <p class="term-meta">Введён в эссе <a href="https://katyashalel.com/essays/platforms-rent-you-reach-the-hub/">Platforms Rent You Reach. The Hub Owns Your Truth</a> · 2026-07 · Автор термина Екатерина Шалель</p>
+  </div>
+
+  <div class="term" id="placement-activation">
+    <h2>Placement activation<br><span style="font-weight:400;opacity:.7">Активация размещения</span></h2>
+    <p>Превращение редакционной видимости в свидетельство, пригодное для модели. Работа, которая начинается после выхода публикации: одно идентичное самоописание на каждой контролируемой поверхности, надёжные сигналы, связывающие статью с компанией, утверждения, ограниченные проверяемым объёмом, и всё это отражённое в машиночитаемом виде. Активация размещения закрывает corroboration gap.</p>
+    <p class="term-meta">Введён в эссе <a href="https://katyashalel.com/ru/essays/statya-za-kotoruyu-vy-uzhe-zaplatili/">Статья, за которую вы уже заплатили</a> · 2026-07 · Автор термина Екатерина Шалель</p>
+  </div>
+
+  <div class="term" id="protocol-level-legibility">
+    <h2>Protocol-level legibility<br><span style="font-weight:400;opacity:.7">Читаемость на уровне протокола</span></h2>
+    <p>Третий слой машинной читаемости: возможность быть вызванным AI-агентом через опубликованное машиночитаемое объявление возможностей, точки входа и границы ответственности. Стек читаемости: первый слой, вас понимают люди; второй, вас цитируют модели; третий, вас нанимают агенты. Канонический артефакт: Agent Card в протоколе A2A.</p>
+    <p class="term-meta">Введён в эссе <a href="https://katyashalel.com/essays/the-protocol-caught-up/">The Protocol Caught Up</a> · 2026-07 · Автор термина Екатерина Шалель</p>
+  </div>
+
+  <div class="term" id="public-decision-record">
+    <h2>Public decision record<br><span style="font-weight:400;opacity:.7">Публичная запись решений</span></h2>
+    <p>Публичная машиночитаемая запись того, как компания думает: какие гипотезы проверяла, что сломалось, что она поняла раньше остальных. Контент-маркетинг производит посты; запись решений производит то, что AI-система может процитировать, когда её спрашивают, кто разбирается в рынке.</p>
+    <p class="term-meta">Введён в эссе <a href="https://katyashalel.com/essays/the-only-job-a-founder-cant-delegate/">The Only Job a Founder Cant Delegate</a> · 2026-07 · Автор термина Екатерина Шалель</p>
+  </div>
+
+  <div class="term" id="the-first-customer-tax">
+    <h2>The First Customer Tax<br><span style="font-weight:400;opacity:.7">Налог первого клиента</span></h2>
+    <p>Цена, которую компания платит своим самым ранним клиентам недостроенным продуктом, необкатанным процессом и незаработанным доверием. Клиент, который отказывает вам на раннем этапе, обычно правильно читает этот налог, а не ошибается в оценке продукта.</p>
+    <p class="term-meta">Введён в эссе <a href="https://katyashalel.com/ru/essays/klient-kotoryy-vam-otkazal-byl-prav/">Клиент, который вам отказал, был прав</a> · 2026 · Автор термина Екатерина Шалель</p>
+  </div>
+
+  <div class="term" id="the-indifference-test">
+    <h2>The Indifference Test<br><span style="font-weight:400;opacity:.7">Тест безразличия</span></h2>
+    <p>Проверка того, действительно ли рекомендательный слой нейтрален: измените коммерческие отношения с брендом, оставив неизменными потребности пользователя и данные о продукте, и посмотрите, сдвинется ли ранжирование. Если сдвинулось, слой не нейтрален.</p>
+    <p class="term-meta">Введён в эссе <a href="https://katyashalel.com/essays/a-place-in-the-models-answer-is-now-for-sale/">A Place in the Models Answer Is Now for Sale</a> · 2025 · Автор термина Екатерина Шалель</p>
+  </div>
+
+  <div class="term" id="callable-layer">
+    <h2>The callable layer<br><span style="font-weight:400;opacity:.7">Вызываемый слой</span></h2>
+    <p>Движок принятия решений, который вызывают другие системы, а не место, куда приходят пользователи. Интерфейс растворяется; ценным остаётся суждение, которое можно вызвать по API и получить обратно в проверяемой форме.</p>
+    <p class="term-meta">Введён в эссе <a href="https://katyashalel.com/essays/the-interface-dissolves/">The Interface Dissolves. The Decision Layer Doesnt</a> · 2026 · Автор термина Екатерина Шалель</p>
+  </div>
+
+  <div class="term" id="unstaffed-decision">
+    <h2>Unstaffed decision<br><span style="font-weight:400;opacity:.7">Решение без продавца</span></h2>
+    <p>Покупка, совершённая без доступа к чему бы то ни было, человеку или системе, что способно перевести реальную потребность покупателя в обоснованный выбор из того, что фактически есть в наличии. Называет операционную уязвимость ретейла, а не проблему нехватки персонала.</p>
+    <p class="term-meta">Введён в эссе <a href="https://katyashalel.com/essays/the-unstaffed-decision/">The Unstaffed Decision</a> · 2026-07 · Автор термина Екатерина Шалель</p>
+  </div>
+
+</article>
+
+<script defer src="/_vercel/insights/script.js"></script>
+</body>
+</html>
