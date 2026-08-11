@@ -1,0 +1,52 @@
+name: Rebuild feeds
+
+# Regenerates the Atom and RSS feeds from the JSON-LD on each essay page, so a
+# feed can never drift from the structured data it is derived from.
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'essays/**'
+      - 'ru/essays/**'
+      - '.github/scripts/build_feeds.py'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - run: pip install beautifulsoup4 lxml
+
+      - name: Build feeds
+        run: python .github/scripts/build_feeds.py
+
+      - name: Validate XML
+        run: |
+          python - <<'PY'
+          import xml.dom.minidom as m
+          for f in ['feed.xml','rss.xml','ru/feed.xml','ru/rss.xml']:
+              m.parse(f)
+              print('valid:', f)
+          PY
+
+      - name: Commit if changed
+        run: |
+          git config user.name  "feed bot"
+          git config user.email "shalelekaterina@gmail.com"
+          if [ -n "$(git status --porcelain feed.xml rss.xml ru/feed.xml ru/rss.xml)" ]; then
+            git add feed.xml rss.xml ru/feed.xml ru/rss.xml
+            git commit -m "Rebuild feeds [skip ci]"
+            git push
+          else
+            echo "Feeds already current."
+          fi
