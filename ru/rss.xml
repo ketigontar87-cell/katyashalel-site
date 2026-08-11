@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Екатерина Шалель — Эссе</title>
+    <link>https://katyashalel.com/ru/</link>
+    <description>Читаемость: как основатели, продукты и компании становятся понятны AI-системам.</description>
+    <language>ru</language>
+    <lastBuildDate>Thu, 06 Aug 2026 09:00:00 +0000</lastBuildDate>
+    <atom:link href="https://katyashalel.com/ru/rss.xml" rel="self" type="application/rss+xml"/>
+    <item>
+      <title>Почему ChatGPT не знает мою компанию?</title>
+      <link>https://katyashalel.com/ru/essays/pochemu-chatgpt-ne-znaet-moyu-kompaniyu/</link>
+      <guid isPermaLink="true">https://katyashalel.com/ru/essays/pochemu-chatgpt-ne-znaet-moyu-kompaniyu/</guid>
+      <pubDate>Thu, 06 Aug 2026 09:00:00 +0000</pubDate>
+      <description>Четыре причины, по которым AI-система не берёт компанию в ответ, в том порядке, в котором они реально ломаются: вас нельзя достать, нельзя прочитать, нельзя подтвердить или нельзя повторить ваше утверждение.</description>
+    </item>
+    <item>
+      <title>Как стать цитируемым для AI?</title>
+      <link>https://katyashalel.com/ru/essays/kak-stat-tsitiruemym-dlya-ai/</link>
+      <guid isPermaLink="true">https://katyashalel.com/ru/essays/kak-stat-tsitiruemym-dlya-ai/</guid>
+      <pubDate>Thu, 06 Aug 2026 09:00:00 +0000</pubDate>
+      <description>Упомянутый это про присутствие, процитированный про риск. Аудит собственной поверхности подтверждения, что становится свидетельством, а что не станет никогда, и что именно системы поднимают из опубликованного.</description>
+    </item>
+    <item>
+      <title>Измерение было лёгкой частью</title>
+      <link>https://katyashalel.com/ru/essays/izmerenie-bylo-legkoy-chastyu/</link>
+      <guid isPermaLink="true">https://katyashalel.com/ru/essays/izmerenie-bylo-legkoy-chastyu/</guid>
+      <pubDate>Sun, 02 Aug 2026 09:00:00 +0000</pubDate>
+      <description>Измерить, как AI описывает бренд, стало дёшево за год. Исправить найденное не стало. Почему дашборды находят проблему и не могут её закрыть.</description>
+    </item>
+    <item>
+      <title>Статья, за которую вы уже заплатили</title>
+      <link>https://katyashalel.com/ru/essays/statya-za-kotoruyu-vy-uzhe-zaplatili/</link>
+      <guid isPermaLink="true">https://katyashalel.com/ru/essays/statya-za-kotoruyu-vy-uzhe-zaplatili/</guid>
+      <pubDate>Thu, 30 Jul 2026 09:00:00 +0000</pubDate>
+      <description>Публикация это утверждение, а не цитирование. Что такое corroboration gap и placement activation, почему оплаченные размещения почти не дают цитирований в языковых моделях и в каком порядке работа действительно работает.</description>
+    </item>
+    <item>
+      <title>У каждой модели своя диета</title>
+      <link>https://katyashalel.com/ru/essays/u-kazhdoy-modeli-svoya-dieta/</link>
+      <guid isPermaLink="true">https://katyashalel.com/ru/essays/u-kazhdoy-modeli-svoya-dieta/</guid>
+      <pubDate>Wed, 29 Jul 2026 09:00:00 +0000</pubDate>
+      <description>Модель может съесть ваш контент и накормить конкурента. Данные по пяти движкам, разница между приватной памятью и публичной читаемостью, и почему сайту нужна вторая задача: канонический буфер.</description>
+    </item>
+    <item>
+      <title>Рынок постучал первым</title>
+      <link>https://katyashalel.com/ru/essays/rynok-postuchal-pervym/</link>
+      <guid isPermaLink="true">https://katyashalel.com/ru/essays/rynok-postuchal-pervym/</guid>
+      <pubDate>Tue, 28 Jul 2026 09:00:00 +0000</pubDate>
+      <description>Незапрошенный входящий это рынок, говорящий до того, как вы задали ему вопрос. Почему эта метрика честнее дашборда, что ей предшествует и почему видимость без приёмника не является системой.</description>
+    </item>
+    <item>
+      <title>Место в ответе модели теперь продаётся</title>
+      <link>https://katyashalel.com/ru/essays/mesto-v-otvete-modeli-prodaetsya/</link>
+      <guid isPermaLink="true">https://katyashalel.com/ru/essays/mesto-v-otvete-modeli-prodaetsya/</guid>
+      <pubDate>Mon, 27 Jul 2026 09:00:00 +0000</pubDate>
+      <description>Право влиять на AI-ответ получило цену. Три права, которые рынок торгует прямо сейчас, три следствия, которые не проговаривают вслух, и почему цена размещения и цена доверия впервые движутся в разные стороны.</description>
+    </item>
+    <item>
+      <title>Вода против камня</title>
+      <link>https://katyashalel.com/ru/essays/voda-protiv-kamnya/</link>
+      <guid isPermaLink="true">https://katyashalel.com/ru/essays/voda-protiv-kamnya/</guid>
+      <pubDate>Tue, 21 Jul 2026 09:00:00 +0000</pubDate>
+      <description>Два контура, через которые модель собирает ответ, и почему фаундер без бюджета проигрывает на одном и может выиграть на другом. Частота без связности это дождь, а единица работы над видимостью это устойчивое утверждение, а не пост.</description>
+    </item>
+    <item>
+      <title>Как стать видимым для AI-систем</title>
+      <link>https://katyashalel.com/ru/essays/kak-stat-vidimym-dlya-ai/</link>
+      <guid isPermaLink="true">https://katyashalel.com/ru/essays/kak-stat-vidimym-dlya-ai/</guid>
+      <pubDate>Mon, 20 Jul 2026 09:00:00 +0000</pubDate>
+      <description>Видимость в AI это не внимание, а читаемость: каноническое определение, авторские термины, машиночитаемые поверхности и внешние подтверждения. Чем legibility отличается от GEO и почему гарантию позиций в AI-ответах дать нельзя.</description>
+    </item>
+    <item>
+      <title>Площадки сдают вам охват. Хаб владеет вашей правдой</title>
+      <link>https://katyashalel.com/ru/essays/ploshchadki-sdayut-ohvat/</link>
+      <guid isPermaLink="true">https://katyashalel.com/ru/essays/ploshchadki-sdayut-ohvat/</guid>
+      <pubDate>Fri, 17 Jul 2026 09:00:00 +0000</pubDate>
+      <description>Площадка ведёт себя как фотография: фиксирует вашу версию и отпускает копии за пределы вашей возможности их обновить. Что такое хаб фаундера, какие четыре вещи он даёт надёжнее площадки и как этот тезис проверяется публично.</description>
+    </item>
+    <item>
+      <title>Клиент, который вам отказал, был прав</title>
+      <link>https://katyashalel.com/ru/essays/klient-kotoryy-vam-otkazal-byl-prav/</link>
+      <guid isPermaLink="true">https://katyashalel.com/ru/essays/klient-kotoryy-vam-otkazal-byl-prav/</guid>
+      <pubDate>Tue, 14 Jul 2026 09:00:00 +0000</pubDate>
+      <description>Первый покупатель отказывает не продукту, а плохой сделке: он берёт максимальный риск, а выигрыш подтверждён только цифрами фаундера. Что такое First Customer Tax и как переоценить сделку вместо того, чтобы усиливать питч.</description>
+    </item>
+    <item>
+      <title>Интерфейс растворяется. Слой решения нет</title>
+      <link>https://katyashalel.com/ru/essays/interfeys-rastvoryaetsya/</link>
+      <guid isPermaLink="true">https://katyashalel.com/ru/essays/interfeys-rastvoryaetsya/</guid>
+      <pubDate>Wed, 08 Jul 2026 09:00:00 +0000</pubDate>
+      <description>Когда интерфейс растворяется в мессенджерах, расходятся два слоя: разговор, который принадлежит платформам, и решение, которое становится невидимым. Про callable layer, Indifference Test и невидимую полку.</description>
+    </item>
+  </channel>
+</rss>

@@ -219,3 +219,11 @@ Russian guides, which are open protocols rather than lead magnets except where n
 - Water Against the Stone (July 2026). Why coherence beats budget in AI visibility: a model answers through two interacting circuits, trained memory where corroborated authority dominates and retrieval where clarity competes with clarity, so a founder without budget is not locked out but is playing on one circuit. The unit of visibility work is the claim that remains stable across every surface, not the post. https://katyashalel.com/essays/water-against-the-stone/
 - The Measurement Was the Easy Part (August 2026). On the AI visibility tooling market becoming abundant while the interesting problem moved: a dashboard reports a share of answers, it does not decide which of one owner's five businesses should be canonical, and the object being measured is stochastic, so a single measurement is closer to weather than to climate. https://katyashalel.com/essays/the-measurement-was-the-easy-part/
 - English guides: https://katyashalel.com/guides/legibility/ , https://katyashalel.com/guides/multimodel/ , https://katyashalel.com/guides/techteam/
+
+## Feeds
+
+New essays are published to Atom and RSS, one pair per language. Entries carry the
+same headline, description and dates as the JSON-LD on the page itself.
+
+- English: https://katyashalel.com/feed.xml (Atom), https://katyashalel.com/rss.xml (RSS)
+- Russian: https://katyashalel.com/ru/feed.xml (Atom), https://katyashalel.com/ru/rss.xml (RSS)

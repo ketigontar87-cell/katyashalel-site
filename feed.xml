@@ -1,0 +1,207 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en">
+  <title>Ekaterina Shalel — Essays</title>
+  <subtitle>Legibility: how founders, products and companies get read correctly by AI systems.</subtitle>
+  <link href="https://katyashalel.com/feed.xml" rel="self" type="application/atom+xml"/>
+  <link href="https://katyashalel.com/" rel="alternate" type="text/html"/>
+  <id>https://katyashalel.com/feed.xml</id>
+  <updated>2026-08-07T09:00:00+00:00</updated>
+  <author><name>Ekaterina Shalel</name><uri>https://katyashalel.com/</uri><email>shalelekaterina@gmail.com</email></author>
+  <rights>All rights reserved, 2026</rights>
+  <entry>
+    <title>How Do I Become Recommended by AI?</title>
+    <link href="https://katyashalel.com/essays/how-do-i-become-recommended-by-ai/" rel="alternate" type="text/html"/>
+    <id>https://katyashalel.com/essays/how-do-i-become-recommended-by-ai/</id>
+    <published>2026-08-07T09:00:00+00:00</published>
+    <updated>2026-08-07T09:00:00+00:00</updated>
+    <summary type="text">Recommendation is a matching judgment, not a popularity one. Why the risk moves to the person asking, why conditions are the mechanism, and why stating where you do not fit is the highest-value sentence most sites are missing.</summary>
+    <link rel="enclosure" type="image/jpeg" href="https://katyashalel.com/assets/covers/how-do-i-become-recommended-by-ai-og.jpg"/>
+  </entry>
+  <entry>
+    <title>How Do I Become Cited by AI?</title>
+    <link href="https://katyashalel.com/essays/how-do-i-become-cited-by-ai/" rel="alternate" type="text/html"/>
+    <id>https://katyashalel.com/essays/how-do-i-become-cited-by-ai/</id>
+    <published>2026-08-06T09:00:00+00:00</published>
+    <updated>2026-08-06T09:00:00+00:00</updated>
+    <summary type="text">Citation runs on corroboration, not presence. What becomes evidence, what never does, why a placement can change nothing, and the five kinds of published work that actually get cited.</summary>
+    <link rel="enclosure" type="image/jpeg" href="https://katyashalel.com/assets/covers/how-do-i-become-cited-by-ai-og.jpg"/>
+  </entry>
+  <entry>
+    <title>Why Does ChatGPT Ignore My Company?</title>
+    <link href="https://katyashalel.com/essays/why-does-chatgpt-ignore-my-company/" rel="alternate" type="text/html"/>
+    <id>https://katyashalel.com/essays/why-does-chatgpt-ignore-my-company/</id>
+    <published>2026-08-05T09:00:00+00:00</published>
+    <updated>2026-08-05T09:00:00+00:00</updated>
+    <summary type="text">Four reasons an AI system leaves a company out of its answer, in the order they actually break: it cannot retrieve you, it cannot read you, it cannot confirm you, or it does not trust the claim.</summary>
+    <link rel="enclosure" type="image/jpeg" href="https://katyashalel.com/assets/covers/why-does-chatgpt-ignore-my-company-og.jpg"/>
+  </entry>
+  <entry>
+    <title>The Measurement Was the Easy Part</title>
+    <link href="https://katyashalel.com/essays/the-measurement-was-the-easy-part/" rel="alternate" type="text/html"/>
+    <id>https://katyashalel.com/essays/the-measurement-was-the-easy-part/</id>
+    <published>2026-08-02T09:00:00+00:00</published>
+    <updated>2026-08-02T09:00:00+00:00</updated>
+    <summary type="text">Measuring how AI describes a brand became cheap in a year. Fixing what the measurement finds did not. Why dashboards locate the problem and cannot close it.</summary>
+    <link rel="enclosure" type="image/jpeg" href="https://katyashalel.com/assets/covers/the-measurement-was-the-easy-part-og.webp"/>
+  </entry>
+  <entry>
+    <title>The Protocol Caught Up</title>
+    <link href="https://katyashalel.com/essays/the-protocol-caught-up/" rel="alternate" type="text/html"/>
+    <id>https://katyashalel.com/essays/the-protocol-caught-up/</id>
+    <published>2026-07-30T09:00:00+00:00</published>
+    <updated>2026-07-30T09:00:00+00:00</updated>
+    <summary type="text">For two years the idea had different names: a neutral decision layer, a callable layer, share of model. Then A2A gave it a file format. On Agent Cards as machine-readable legibility, the three layers of being readable, and the difference between being quoted and being hired.</summary>
+    <link rel="enclosure" type="image/jpeg" href="https://katyashalel.com/assets/covers/the-protocol-caught-up-og.webp"/>
+  </entry>
+  <entry>
+    <title>The Article You Already Paid For</title>
+    <link href="https://katyashalel.com/essays/the-article-you-already-paid-for/" rel="alternate" type="text/html"/>
+    <id>https://katyashalel.com/essays/the-article-you-already-paid-for/</id>
+    <published>2026-07-30T09:00:00+00:00</published>
+    <updated>2026-07-30T09:00:00+00:00</updated>
+    <summary type="text">Companies with real press coverage still miss AI answers. Not a coverage problem but a corroboration gap: the distance between having been covered and having been confirmed. On placement activation, the conversion of editorial visibility into model-usable evidence.</summary>
+    <link rel="enclosure" type="image/jpeg" href="https://katyashalel.com/assets/covers/the-article-you-already-paid-for-og.webp"/>
+  </entry>
+  <entry>
+    <title>Every Model Has a Different Diet</title>
+    <link href="https://katyashalel.com/essays/every-model-has-a-different-diet/" rel="alternate" type="text/html"/>
+    <id>https://katyashalel.com/essays/every-model-has-a-different-diet/</id>
+    <published>2026-07-29T09:00:00+00:00</published>
+    <updated>2026-07-29T09:00:00+00:00</updated>
+    <summary type="text">AI systems do not remember you. They forage an evidence environment, and each engine forages differently. On the canonical buffer: why your website needs to become the controlled layer between what is true inside a business and what AI systems can prove outside it.</summary>
+    <link rel="enclosure" type="image/jpeg" href="https://katyashalel.com/assets/covers/every-model-has-a-different-diet-og.jpg"/>
+  </entry>
+  <entry>
+    <title>The Market Knocked First</title>
+    <link href="https://katyashalel.com/essays/the-market-knocked-first/" rel="alternate" type="text/html"/>
+    <id>https://katyashalel.com/essays/the-market-knocked-first/</id>
+    <published>2026-07-28T09:00:00+00:00</published>
+    <updated>2026-07-28T09:00:00+00:00</updated>
+    <summary type="text">The only metric no dashboard shows: the unsolicited inbound. What months of legibility work look like the day the market writes first, and the intake half of the system that receives it.</summary>
+    <link rel="enclosure" type="image/jpeg" href="https://katyashalel.com/assets/covers/the-market-knocked-first.webp"/>
+  </entry>
+  <entry>
+    <title>Water Against the Stone</title>
+    <link href="https://katyashalel.com/essays/water-against-the-stone/" rel="alternate" type="text/html"/>
+    <id>https://katyashalel.com/essays/water-against-the-stone/</id>
+    <published>2026-07-28T09:00:00+00:00</published>
+    <updated>2026-07-28T09:00:00+00:00</updated>
+    <summary type="text">Why coherence beats budget in AI visibility: the two circuits models answer from, why volume without coherence is rain, and how founders without budget choose the stones nobody else is hitting.</summary>
+  </entry>
+  <entry>
+    <title>A Place in the Model's Answer Is Now for Sale</title>
+    <link href="https://katyashalel.com/essays/a-place-in-the-models-answer-is-now-for-sale/" rel="alternate" type="text/html"/>
+    <id>https://katyashalel.com/essays/a-place-in-the-models-answer-is-now-for-sale/</id>
+    <published>2026-07-27T09:00:00+00:00</published>
+    <updated>2026-07-27T09:00:00+00:00</updated>
+    <summary type="text">Share of Model, a metric coined by Ekaterina Shalel in 2025, has become a commercial category: owned storefronts inside AI models, managed brand interpretation and payment rails now price the right to influence an AI's answer.</summary>
+    <link rel="enclosure" type="image/jpeg" href="https://miro.medium.com/v2/resize:fit:1122/1*lsLhGP1qAMxDxJzFbFhgTw@2x.jpeg"/>
+  </entry>
+  <entry>
+    <title>How to Become Visible to AI Systems</title>
+    <link href="https://katyashalel.com/essays/how-to-become-visible-to-ai/" rel="alternate" type="text/html"/>
+    <id>https://katyashalel.com/essays/how-to-become-visible-to-ai/</id>
+    <published>2026-07-27T09:00:00+00:00</published>
+    <updated>2026-07-27T09:00:00+00:00</updated>
+    <summary type="text">How founders and brands show up in ChatGPT, Claude and Perplexity answers: legibility architecture instead of GEO promises. Canonical definitions, coined terms, machine-readable surfaces, measured baselines.</summary>
+  </entry>
+  <entry>
+    <title>The Unstaffed Decision</title>
+    <link href="https://katyashalel.com/essays/the-unstaffed-decision/" rel="alternate" type="text/html"/>
+    <id>https://katyashalel.com/essays/the-unstaffed-decision/</id>
+    <published>2026-07-19T09:00:00+00:00</published>
+    <updated>2026-07-19T09:00:00+00:00</updated>
+    <summary type="text">Beauty retail optimized the shelf and the ad, then left the purchase decision unstaffed. What the missing decision layer looks like, with data and its limits.</summary>
+    <link rel="enclosure" type="image/jpeg" href="https://substackcdn.com/image/fetch/$s_!PaNN!,w_1200,h_675,c_fill,f_jpg,q_auto:good,fl_progressive:steep,g_auto/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F47d23f95-ee46-45a4-b439-29679533b9f8_1491x1055.png"/>
+  </entry>
+  <entry>
+    <title>Platforms Rent You Reach. The Hub Owns Your Truth</title>
+    <link href="https://katyashalel.com/essays/platforms-rent-you-reach-the-hub/" rel="alternate" type="text/html"/>
+    <id>https://katyashalel.com/essays/platforms-rent-you-reach-the-hub/</id>
+    <published>2026-07-17T09:00:00+00:00</published>
+    <updated>2026-07-17T09:00:00+00:00</updated>
+    <summary type="text">Platforms capture versions of you and let copies travel beyond your control. A founder hub is the canonical identity infrastructure you control: the hub defines, the platforms distribute.</summary>
+    <link rel="enclosure" type="image/jpeg" href="https://substackcdn.com/image/fetch/$s_!D-0_!,w_1200,h_675,c_fill,f_jpg,q_auto:good,fl_progressive:steep,g_auto/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F8f2c8ee8-3e54-4004-9df6-2fc3f94eb681_1122x1402.png"/>
+  </entry>
+  <entry>
+    <title>The Only Job a Founder Can't Delegate</title>
+    <link href="https://katyashalel.com/essays/the-only-job-a-founder-cant-delegate/" rel="alternate" type="text/html"/>
+    <id>https://katyashalel.com/essays/the-only-job-a-founder-cant-delegate/</id>
+    <published>2026-07-16T09:00:00+00:00</published>
+    <updated>2026-07-16T09:00:00+00:00</updated>
+    <summary type="text">Content work was always two jobs sold as one: judgment and execution. AI removed the middleman, not the work. On the public decision record, and why judgment doesn't delegate.</summary>
+    <link rel="enclosure" type="image/jpeg" href="https://substackcdn.com/image/fetch/$s_!pBq1!,w_1200,h_675,c_fill,f_jpg,q_auto:good,fl_progressive:steep,g_auto/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F31349c82-e9fc-4101-a8c6-e6c5932d2b39_1492x1054.png"/>
+  </entry>
+  <entry>
+    <title>Distribution, Not Recommendation</title>
+    <link href="https://katyashalel.com/essays/distribution-not-recommendation/" rel="alternate" type="text/html"/>
+    <id>https://katyashalel.com/essays/distribution-not-recommendation/</id>
+    <published>2026-07-15T09:00:00+00:00</published>
+    <updated>2026-07-15T09:00:00+00:00</updated>
+    <summary type="text">L'Oreal and OpenAI put Maybelline's virtual try-on inside ChatGPT, fed verified product data into the model, and joined the ad pilot. The try-on is the decoy. The real story is what happens to advice when one brand owns the answer, and why the neutral layer is the part of agentic commerce nobody has claimed yet.</summary>
+    <link rel="enclosure" type="image/jpeg" href="https://katyashalel.com/assets/covers/loreal-openai-answer.png"/>
+  </entry>
+  <entry>
+    <title>The Week Beauty Retail Went Agentic</title>
+    <link href="https://katyashalel.com/essays/the-week-beauty-retail-went-agentic/" rel="alternate" type="text/html"/>
+    <id>https://katyashalel.com/essays/the-week-beauty-retail-went-agentic/</id>
+    <published>2026-07-14T09:00:00+00:00</published>
+    <updated>2026-07-14T09:00:00+00:00</updated>
+    <summary type="text">Ulta and Google, L'Oreal and OpenAI, Haut.AI's Skin.Chat and Perfect Corp's public skin analysis APIs landed in one week of July 2026. What the agentic shift means for every retailer who will never build their own Gemini, and why a neutral decision layer is the answer.</summary>
+    <link rel="enclosure" type="image/jpeg" href="https://katyashalel.com/assets/covers/agentic-week-cover.png"/>
+  </entry>
+  <entry>
+    <title>The Customer Who Rejected You Was Right</title>
+    <link href="https://katyashalel.com/essays/the-first-customer-tax/" rel="alternate" type="text/html"/>
+    <id>https://katyashalel.com/essays/the-first-customer-tax/</id>
+    <published>2026-07-14T09:00:00+00:00</published>
+    <updated>2026-07-14T09:00:00+00:00</updated>
+    <summary type="text">On the First Customer Tax: why the first buyer who says no is doing correct math, and how founders reprice the deal instead of sharpening the pitch.</summary>
+    <link rel="enclosure" type="image/jpeg" href="https://substackcdn.com/image/fetch/$s_!1Q1V!,w_1200,h_675,c_fill,f_jpg,q_auto:good,fl_progressive:steep,g_auto/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F78ed3e52-b561-4261-b904-e13f8655281a_941x1672.png"/>
+  </entry>
+  <entry>
+    <title>Your Website Has Two Readers. You Built It for One</title>
+    <link href="https://katyashalel.com/essays/your-website-has-two-readers/" rel="alternate" type="text/html"/>
+    <id>https://katyashalel.com/essays/your-website-has-two-readers/</id>
+    <published>2026-07-13T09:00:00+00:00</published>
+    <updated>2026-07-13T09:00:00+00:00</updated>
+    <summary type="text">Every website now has a second reader: AI systems that extract signals and reconstruct who you are. The five-layer legibility stack, from category sentence to retrieval test.</summary>
+    <link rel="enclosure" type="image/jpeg" href="https://substackcdn.com/image/fetch/$s_!Vv5G!,w_1200,h_675,c_fill,f_jpg,q_auto:good,fl_progressive:steep,g_auto/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fcd03e975-51fc-4969-9103-10b4899f632b_1491x1055.png"/>
+  </entry>
+  <entry>
+    <title>Sephora Entered the Chat. The Storefront Didn't</title>
+    <link href="https://katyashalel.com/essays/sephora-entered-the-chat/" rel="alternate" type="text/html"/>
+    <id>https://katyashalel.com/essays/sephora-entered-the-chat/</id>
+    <published>2026-07-10T09:00:00+00:00</published>
+    <updated>2026-07-10T09:00:00+00:00</updated>
+    <summary type="text">Sephora's launch inside ChatGPT shows why legibility and decision logic are becoming infrastructure for beauty retail.</summary>
+    <link rel="enclosure" type="image/jpeg" href="https://katyashalel.com/assets/covers/sephora-entered-the-chat.png"/>
+  </entry>
+  <entry>
+    <title>Who Owns the Recommendation? A Map of AI Layers in Beauty Retail</title>
+    <link href="https://katyashalel.com/essays/who-owns-the-recommendation/" rel="alternate" type="text/html"/>
+    <id>https://katyashalel.com/essays/who-owns-the-recommendation/</id>
+    <published>2026-07-09T09:00:00+00:00</published>
+    <updated>2026-07-09T09:00:00+00:00</updated>
+    <summary type="text">A taxonomy of AI beauty tech by recommendation ownership: visualization (Perfect Corp), measurement (Haut.AI), brand-aligned guidance (Revieve), and the neutral decision layer (SKINBOT).</summary>
+    <link rel="enclosure" type="image/jpeg" href="https://katyashalel.com/assets/covers/who-owns-the-recommendation-card.jpg"/>
+  </entry>
+  <entry>
+    <title>The Ten Questions a Retailer Should Ask Before Buying "AI Skin Analysis"</title>
+    <link href="https://katyashalel.com/essays/ten-questions-ai-skin-analysis/" rel="alternate" type="text/html"/>
+    <id>https://katyashalel.com/essays/ten-questions-ai-skin-analysis/</id>
+    <published>2026-07-09T09:00:00+00:00</published>
+    <updated>2026-07-09T09:00:00+00:00</updated>
+    <summary type="text">A due diligence checklist for retailers evaluating AI skin analysis vendors: ten questions on recommendation ownership, economics, data, and AI channels that sort Perfect Corp, Haut.AI, Revieve, and SKINBOT into their real layers.</summary>
+    <link rel="enclosure" type="image/jpeg" href="https://katyashalel.com/assets/covers/ten-questions.jpg"/>
+  </entry>
+  <entry>
+    <title>The Interface Dissolves. The Decision Layer Doesn't</title>
+    <link href="https://katyashalel.com/essays/the-interface-dissolves/" rel="alternate" type="text/html"/>
+    <id>https://katyashalel.com/essays/the-interface-dissolves/</id>
+    <published>2026-07-08T09:00:00+00:00</published>
+    <updated>2026-07-08T09:00:00+00:00</updated>
+    <summary type="text">Beauty AI is disappearing into messengers. The real question is who owns the recommendation logic underneath. On the callable layer, the invisible shelf, and the unclaimed layer between brands.</summary>
+    <link rel="enclosure" type="image/jpeg" href="https://katyashalel.com/assets/covers/interface-dissolves.png"/>
+  </entry>
+</feed>

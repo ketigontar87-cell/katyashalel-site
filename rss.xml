@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Ekaterina Shalel — Essays</title>
+    <link>https://katyashalel.com/</link>
+    <description>Legibility: how founders, products and companies get read correctly by AI systems.</description>
+    <language>en</language>
+    <lastBuildDate>Fri, 07 Aug 2026 09:00:00 +0000</lastBuildDate>
+    <atom:link href="https://katyashalel.com/rss.xml" rel="self" type="application/rss+xml"/>
+    <item>
+      <title>How Do I Become Recommended by AI?</title>
+      <link>https://katyashalel.com/essays/how-do-i-become-recommended-by-ai/</link>
+      <guid isPermaLink="true">https://katyashalel.com/essays/how-do-i-become-recommended-by-ai/</guid>
+      <pubDate>Fri, 07 Aug 2026 09:00:00 +0000</pubDate>
+      <description>Recommendation is a matching judgment, not a popularity one. Why the risk moves to the person asking, why conditions are the mechanism, and why stating where you do not fit is the highest-value sentence most sites are missing.</description>
+    </item>
+    <item>
+      <title>How Do I Become Cited by AI?</title>
+      <link>https://katyashalel.com/essays/how-do-i-become-cited-by-ai/</link>
+      <guid isPermaLink="true">https://katyashalel.com/essays/how-do-i-become-cited-by-ai/</guid>
+      <pubDate>Thu, 06 Aug 2026 09:00:00 +0000</pubDate>
+      <description>Citation runs on corroboration, not presence. What becomes evidence, what never does, why a placement can change nothing, and the five kinds of published work that actually get cited.</description>
+    </item>
+    <item>
+      <title>Why Does ChatGPT Ignore My Company?</title>
+      <link>https://katyashalel.com/essays/why-does-chatgpt-ignore-my-company/</link>
+      <guid isPermaLink="true">https://katyashalel.com/essays/why-does-chatgpt-ignore-my-company/</guid>
+      <pubDate>Wed, 05 Aug 2026 09:00:00 +0000</pubDate>
+      <description>Four reasons an AI system leaves a company out of its answer, in the order they actually break: it cannot retrieve you, it cannot read you, it cannot confirm you, or it does not trust the claim.</description>
+    </item>
+    <item>
+      <title>The Measurement Was the Easy Part</title>
+      <link>https://katyashalel.com/essays/the-measurement-was-the-easy-part/</link>
+      <guid isPermaLink="true">https://katyashalel.com/essays/the-measurement-was-the-easy-part/</guid>
+      <pubDate>Sun, 02 Aug 2026 09:00:00 +0000</pubDate>
+      <description>Measuring how AI describes a brand became cheap in a year. Fixing what the measurement finds did not. Why dashboards locate the problem and cannot close it.</description>
+    </item>
+    <item>
+      <title>The Protocol Caught Up</title>
+      <link>https://katyashalel.com/essays/the-protocol-caught-up/</link>
+      <guid isPermaLink="true">https://katyashalel.com/essays/the-protocol-caught-up/</guid>
+      <pubDate>Thu, 30 Jul 2026 09:00:00 +0000</pubDate>
+      <description>For two years the idea had different names: a neutral decision layer, a callable layer, share of model. Then A2A gave it a file format. On Agent Cards as machine-readable legibility, the three layers of being readable, and the difference between being quoted and being hired.</description>
+    </item>
+    <item>
+      <title>The Article You Already Paid For</title>
+      <link>https://katyashalel.com/essays/the-article-you-already-paid-for/</link>
+      <guid isPermaLink="true">https://katyashalel.com/essays/the-article-you-already-paid-for/</guid>
+      <pubDate>Thu, 30 Jul 2026 09:00:00 +0000</pubDate>
+      <description>Companies with real press coverage still miss AI answers. Not a coverage problem but a corroboration gap: the distance between having been covered and having been confirmed. On placement activation, the conversion of editorial visibility into model-usable evidence.</description>
+    </item>
+    <item>
+      <title>Every Model Has a Different Diet</title>
+      <link>https://katyashalel.com/essays/every-model-has-a-different-diet/</link>
+      <guid isPermaLink="true">https://katyashalel.com/essays/every-model-has-a-different-diet/</guid>
+      <pubDate>Wed, 29 Jul 2026 09:00:00 +0000</pubDate>
+      <description>AI systems do not remember you. They forage an evidence environment, and each engine forages differently. On the canonical buffer: why your website needs to become the controlled layer between what is true inside a business and what AI systems can prove outside it.</description>
+    </item>
+    <item>
+      <title>The Market Knocked First</title>
+      <link>https://katyashalel.com/essays/the-market-knocked-first/</link>
+      <guid isPermaLink="true">https://katyashalel.com/essays/the-market-knocked-first/</guid>
+      <pubDate>Tue, 28 Jul 2026 09:00:00 +0000</pubDate>
+      <description>The only metric no dashboard shows: the unsolicited inbound. What months of legibility work look like the day the market writes first, and the intake half of the system that receives it.</description>
+    </item>
+    <item>
+      <title>Water Against the Stone</title>
+      <link>https://katyashalel.com/essays/water-against-the-stone/</link>
+      <guid isPermaLink="true">https://katyashalel.com/essays/water-against-the-stone/</guid>
+      <pubDate>Tue, 28 Jul 2026 09:00:00 +0000</pubDate>
+      <description>Why coherence beats budget in AI visibility: the two circuits models answer from, why volume without coherence is rain, and how founders without budget choose the stones nobody else is hitting.</description>
+    </item>
+    <item>
+      <title>A Place in the Model's Answer Is Now for Sale</title>
+      <link>https://katyashalel.com/essays/a-place-in-the-models-answer-is-now-for-sale/</link>
+      <guid isPermaLink="true">https://katyashalel.com/essays/a-place-in-the-models-answer-is-now-for-sale/</guid>
+      <pubDate>Mon, 27 Jul 2026 09:00:00 +0000</pubDate>
+      <description>Share of Model, a metric coined by Ekaterina Shalel in 2025, has become a commercial category: owned storefronts inside AI models, managed brand interpretation and payment rails now price the right to influence an AI's answer.</description>
+    </item>
+    <item>
+      <title>How to Become Visible to AI Systems</title>
+      <link>https://katyashalel.com/essays/how-to-become-visible-to-ai/</link>
+      <guid isPermaLink="true">https://katyashalel.com/essays/how-to-become-visible-to-ai/</guid>
+      <pubDate>Mon, 27 Jul 2026 09:00:00 +0000</pubDate>
+      <description>How founders and brands show up in ChatGPT, Claude and Perplexity answers: legibility architecture instead of GEO promises. Canonical definitions, coined terms, machine-readable surfaces, measured baselines.</description>
+    </item>
+    <item>
+      <title>The Unstaffed Decision</title>
+      <link>https://katyashalel.com/essays/the-unstaffed-decision/</link>
+      <guid isPermaLink="true">https://katyashalel.com/essays/the-unstaffed-decision/</guid>
+      <pubDate>Sun, 19 Jul 2026 09:00:00 +0000</pubDate>
+      <description>Beauty retail optimized the shelf and the ad, then left the purchase decision unstaffed. What the missing decision layer looks like, with data and its limits.</description>
+    </item>
+    <item>
+      <title>Platforms Rent You Reach. The Hub Owns Your Truth</title>
+      <link>https://katyashalel.com/essays/platforms-rent-you-reach-the-hub/</link>
+      <guid isPermaLink="true">https://katyashalel.com/essays/platforms-rent-you-reach-the-hub/</guid>
+      <pubDate>Fri, 17 Jul 2026 09:00:00 +0000</pubDate>
+      <description>Platforms capture versions of you and let copies travel beyond your control. A founder hub is the canonical identity infrastructure you control: the hub defines, the platforms distribute.</description>
+    </item>
+    <item>
+      <title>The Only Job a Founder Can't Delegate</title>
+      <link>https://katyashalel.com/essays/the-only-job-a-founder-cant-delegate/</link>
+      <guid isPermaLink="true">https://katyashalel.com/essays/the-only-job-a-founder-cant-delegate/</guid>
+      <pubDate>Thu, 16 Jul 2026 09:00:00 +0000</pubDate>
+      <description>Content work was always two jobs sold as one: judgment and execution. AI removed the middleman, not the work. On the public decision record, and why judgment doesn't delegate.</description>
+    </item>
+    <item>
+      <title>Distribution, Not Recommendation</title>
+      <link>https://katyashalel.com/essays/distribution-not-recommendation/</link>
+      <guid isPermaLink="true">https://katyashalel.com/essays/distribution-not-recommendation/</guid>
+      <pubDate>Wed, 15 Jul 2026 09:00:00 +0000</pubDate>
+      <description>L'Oreal and OpenAI put Maybelline's virtual try-on inside ChatGPT, fed verified product data into the model, and joined the ad pilot. The try-on is the decoy. The real story is what happens to advice when one brand owns the answer, and why the neutral layer is the part of agentic commerce nobody has claimed yet.</description>
+    </item>
+    <item>
+      <title>The Week Beauty Retail Went Agentic</title>
+      <link>https://katyashalel.com/essays/the-week-beauty-retail-went-agentic/</link>
+      <guid isPermaLink="true">https://katyashalel.com/essays/the-week-beauty-retail-went-agentic/</guid>
+      <pubDate>Tue, 14 Jul 2026 09:00:00 +0000</pubDate>
+      <description>Ulta and Google, L'Oreal and OpenAI, Haut.AI's Skin.Chat and Perfect Corp's public skin analysis APIs landed in one week of July 2026. What the agentic shift means for every retailer who will never build their own Gemini, and why a neutral decision layer is the answer.</description>
+    </item>
+    <item>
+      <title>The Customer Who Rejected You Was Right</title>
+      <link>https://katyashalel.com/essays/the-first-customer-tax/</link>
+      <guid isPermaLink="true">https://katyashalel.com/essays/the-first-customer-tax/</guid>
+      <pubDate>Tue, 14 Jul 2026 09:00:00 +0000</pubDate>
+      <description>On the First Customer Tax: why the first buyer who says no is doing correct math, and how founders reprice the deal instead of sharpening the pitch.</description>
+    </item>
+    <item>
+      <title>Your Website Has Two Readers. You Built It for One</title>
+      <link>https://katyashalel.com/essays/your-website-has-two-readers/</link>
+      <guid isPermaLink="true">https://katyashalel.com/essays/your-website-has-two-readers/</guid>
+      <pubDate>Mon, 13 Jul 2026 09:00:00 +0000</pubDate>
+      <description>Every website now has a second reader: AI systems that extract signals and reconstruct who you are. The five-layer legibility stack, from category sentence to retrieval test.</description>
+    </item>
+    <item>
+      <title>Sephora Entered the Chat. The Storefront Didn't</title>
+      <link>https://katyashalel.com/essays/sephora-entered-the-chat/</link>
+      <guid isPermaLink="true">https://katyashalel.com/essays/sephora-entered-the-chat/</guid>
+      <pubDate>Fri, 10 Jul 2026 09:00:00 +0000</pubDate>
+      <description>Sephora's launch inside ChatGPT shows why legibility and decision logic are becoming infrastructure for beauty retail.</description>
+    </item>
+    <item>
+      <title>Who Owns the Recommendation? A Map of AI Layers in Beauty Retail</title>
+      <link>https://katyashalel.com/essays/who-owns-the-recommendation/</link>
+      <guid isPermaLink="true">https://katyashalel.com/essays/who-owns-the-recommendation/</guid>
+      <pubDate>Thu, 09 Jul 2026 09:00:00 +0000</pubDate>
+      <description>A taxonomy of AI beauty tech by recommendation ownership: visualization (Perfect Corp), measurement (Haut.AI), brand-aligned guidance (Revieve), and the neutral decision layer (SKINBOT).</description>
+    </item>
+    <item>
+      <title>The Ten Questions a Retailer Should Ask Before Buying "AI Skin Analysis"</title>
+      <link>https://katyashalel.com/essays/ten-questions-ai-skin-analysis/</link>
+      <guid isPermaLink="true">https://katyashalel.com/essays/ten-questions-ai-skin-analysis/</guid>
+      <pubDate>Thu, 09 Jul 2026 09:00:00 +0000</pubDate>
+      <description>A due diligence checklist for retailers evaluating AI skin analysis vendors: ten questions on recommendation ownership, economics, data, and AI channels that sort Perfect Corp, Haut.AI, Revieve, and SKINBOT into their real layers.</description>
+    </item>
+    <item>
+      <title>The Interface Dissolves. The Decision Layer Doesn't</title>
+      <link>https://katyashalel.com/essays/the-interface-dissolves/</link>
+      <guid isPermaLink="true">https://katyashalel.com/essays/the-interface-dissolves/</guid>
+      <pubDate>Wed, 08 Jul 2026 09:00:00 +0000</pubDate>
+      <description>Beauty AI is disappearing into messengers. The real question is who owns the recommendation logic underneath. On the callable layer, the invisible shelf, and the unclaimed layer between brands.</description>
+    </item>
+  </channel>
+</rss>

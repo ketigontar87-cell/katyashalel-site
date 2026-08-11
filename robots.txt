@@ -30,6 +30,10 @@ Allow: /
 
 Sitemap: https://katyashalel.com/sitemap.xml
 
+# Feeds
+# EN: https://katyashalel.com/feed.xml (Atom), https://katyashalel.com/rss.xml (RSS)
+# RU: https://katyashalel.com/ru/feed.xml (Atom), https://katyashalel.com/ru/rss.xml (RSS)
+
 # Machine-readable summary: https://katyashalel.com/llms.txt
 # A2A Agent Card: https://katyashalel.com/.well-known/agent-card.json
 # Callable canonical-facts endpoint: https://katyashalel.com/api/agent

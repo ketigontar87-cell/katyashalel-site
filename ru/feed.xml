@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom" xml:lang="ru">
+  <title>Екатерина Шалель — Эссе</title>
+  <subtitle>Читаемость: как основатели, продукты и компании становятся понятны AI-системам.</subtitle>
+  <link href="https://katyashalel.com/ru/feed.xml" rel="self" type="application/atom+xml"/>
+  <link href="https://katyashalel.com/ru/" rel="alternate" type="text/html"/>
+  <id>https://katyashalel.com/ru/feed.xml</id>
+  <updated>2026-08-06T09:00:00+00:00</updated>
+  <author><name>Ekaterina Shalel</name><uri>https://katyashalel.com/</uri><email>shalelekaterina@gmail.com</email></author>
+  <rights>All rights reserved, 2026</rights>
+  <entry>
+    <title>Почему ChatGPT не знает мою компанию?</title>
+    <link href="https://katyashalel.com/ru/essays/pochemu-chatgpt-ne-znaet-moyu-kompaniyu/" rel="alternate" type="text/html"/>
+    <id>https://katyashalel.com/ru/essays/pochemu-chatgpt-ne-znaet-moyu-kompaniyu/</id>
+    <published>2026-08-06T09:00:00+00:00</published>
+    <updated>2026-08-06T09:00:00+00:00</updated>
+    <summary type="text">Четыре причины, по которым AI-система не берёт компанию в ответ, в том порядке, в котором они реально ломаются: вас нельзя достать, нельзя прочитать, нельзя подтвердить или нельзя повторить ваше утверждение.</summary>
+    <link rel="enclosure" type="image/jpeg" href="https://katyashalel.com/assets/covers/why-does-chatgpt-ignore-my-company-og.jpg"/>
+  </entry>
+  <entry>
+    <title>Как стать цитируемым для AI?</title>
+    <link href="https://katyashalel.com/ru/essays/kak-stat-tsitiruemym-dlya-ai/" rel="alternate" type="text/html"/>
+    <id>https://katyashalel.com/ru/essays/kak-stat-tsitiruemym-dlya-ai/</id>
+    <published>2026-08-06T09:00:00+00:00</published>
+    <updated>2026-08-06T09:00:00+00:00</updated>
+    <summary type="text">Упомянутый это про присутствие, процитированный про риск. Аудит собственной поверхности подтверждения, что становится свидетельством, а что не станет никогда, и что именно системы поднимают из опубликованного.</summary>
+    <link rel="enclosure" type="image/jpeg" href="https://katyashalel.com/assets/covers/how-do-i-become-cited-by-ai-og.jpg"/>
+  </entry>
+  <entry>
+    <title>Измерение было лёгкой частью</title>
+    <link href="https://katyashalel.com/ru/essays/izmerenie-bylo-legkoy-chastyu/" rel="alternate" type="text/html"/>
+    <id>https://katyashalel.com/ru/essays/izmerenie-bylo-legkoy-chastyu/</id>
+    <published>2026-08-02T09:00:00+00:00</published>
+    <updated>2026-08-02T09:00:00+00:00</updated>
+    <summary type="text">Измерить, как AI описывает бренд, стало дёшево за год. Исправить найденное не стало. Почему дашборды находят проблему и не могут её закрыть.</summary>
+    <link rel="enclosure" type="image/jpeg" href="https://katyashalel.com/assets/covers/the-measurement-was-the-easy-part-og.webp"/>
+  </entry>
+  <entry>
+    <title>Статья, за которую вы уже заплатили</title>
+    <link href="https://katyashalel.com/ru/essays/statya-za-kotoruyu-vy-uzhe-zaplatili/" rel="alternate" type="text/html"/>
+    <id>https://katyashalel.com/ru/essays/statya-za-kotoruyu-vy-uzhe-zaplatili/</id>
+    <published>2026-07-30T09:00:00+00:00</published>
+    <updated>2026-07-30T09:00:00+00:00</updated>
+    <summary type="text">Публикация это утверждение, а не цитирование. Что такое corroboration gap и placement activation, почему оплаченные размещения почти не дают цитирований в языковых моделях и в каком порядке работа действительно работает.</summary>
+    <link rel="enclosure" type="image/jpeg" href="https://katyashalel.com/assets/covers/the-article-you-already-paid-for-og.webp"/>
+  </entry>
+  <entry>
+    <title>У каждой модели своя диета</title>
+    <link href="https://katyashalel.com/ru/essays/u-kazhdoy-modeli-svoya-dieta/" rel="alternate" type="text/html"/>
+    <id>https://katyashalel.com/ru/essays/u-kazhdoy-modeli-svoya-dieta/</id>
+    <published>2026-07-29T09:00:00+00:00</published>
+    <updated>2026-07-29T09:00:00+00:00</updated>
+    <summary type="text">Модель может съесть ваш контент и накормить конкурента. Данные по пяти движкам, разница между приватной памятью и публичной читаемостью, и почему сайту нужна вторая задача: канонический буфер.</summary>
+    <link rel="enclosure" type="image/jpeg" href="https://katyashalel.com/assets/covers/every-model-has-a-different-diet-og.jpg"/>
+  </entry>
+  <entry>
+    <title>Рынок постучал первым</title>
+    <link href="https://katyashalel.com/ru/essays/rynok-postuchal-pervym/" rel="alternate" type="text/html"/>
+    <id>https://katyashalel.com/ru/essays/rynok-postuchal-pervym/</id>
+    <published>2026-07-28T09:00:00+00:00</published>
+    <updated>2026-07-28T09:00:00+00:00</updated>
+    <summary type="text">Незапрошенный входящий это рынок, говорящий до того, как вы задали ему вопрос. Почему эта метрика честнее дашборда, что ей предшествует и почему видимость без приёмника не является системой.</summary>
+    <link rel="enclosure" type="image/jpeg" href="https://katyashalel.com/assets/covers/the-market-knocked-first.webp"/>
+  </entry>
+  <entry>
+    <title>Место в ответе модели теперь продаётся</title>
+    <link href="https://katyashalel.com/ru/essays/mesto-v-otvete-modeli-prodaetsya/" rel="alternate" type="text/html"/>
+    <id>https://katyashalel.com/ru/essays/mesto-v-otvete-modeli-prodaetsya/</id>
+    <published>2026-07-27T09:00:00+00:00</published>
+    <updated>2026-07-27T09:00:00+00:00</updated>
+    <summary type="text">Право влиять на AI-ответ получило цену. Три права, которые рынок торгует прямо сейчас, три следствия, которые не проговаривают вслух, и почему цена размещения и цена доверия впервые движутся в разные стороны.</summary>
+    <link rel="enclosure" type="image/jpeg" href="https://miro.medium.com/v2/resize:fit:1122/1*lsLhGP1qAMxDxJzFbFhgTw@2x.jpeg"/>
+  </entry>
+  <entry>
+    <title>Вода против камня</title>
+    <link href="https://katyashalel.com/ru/essays/voda-protiv-kamnya/" rel="alternate" type="text/html"/>
+    <id>https://katyashalel.com/ru/essays/voda-protiv-kamnya/</id>
+    <published>2026-07-21T09:00:00+00:00</published>
+    <updated>2026-07-21T09:00:00+00:00</updated>
+    <summary type="text">Два контура, через которые модель собирает ответ, и почему фаундер без бюджета проигрывает на одном и может выиграть на другом. Частота без связности это дождь, а единица работы над видимостью это устойчивое утверждение, а не пост.</summary>
+  </entry>
+  <entry>
+    <title>Как стать видимым для AI-систем</title>
+    <link href="https://katyashalel.com/ru/essays/kak-stat-vidimym-dlya-ai/" rel="alternate" type="text/html"/>
+    <id>https://katyashalel.com/ru/essays/kak-stat-vidimym-dlya-ai/</id>
+    <published>2026-07-20T09:00:00+00:00</published>
+    <updated>2026-07-20T09:00:00+00:00</updated>
+    <summary type="text">Видимость в AI это не внимание, а читаемость: каноническое определение, авторские термины, машиночитаемые поверхности и внешние подтверждения. Чем legibility отличается от GEO и почему гарантию позиций в AI-ответах дать нельзя.</summary>
+  </entry>
+  <entry>
+    <title>Площадки сдают вам охват. Хаб владеет вашей правдой</title>
+    <link href="https://katyashalel.com/ru/essays/ploshchadki-sdayut-ohvat/" rel="alternate" type="text/html"/>
+    <id>https://katyashalel.com/ru/essays/ploshchadki-sdayut-ohvat/</id>
+    <published>2026-07-17T09:00:00+00:00</published>
+    <updated>2026-07-17T09:00:00+00:00</updated>
+    <summary type="text">Площадка ведёт себя как фотография: фиксирует вашу версию и отпускает копии за пределы вашей возможности их обновить. Что такое хаб фаундера, какие четыре вещи он даёт надёжнее площадки и как этот тезис проверяется публично.</summary>
+    <link rel="enclosure" type="image/jpeg" href="https://substackcdn.com/image/fetch/$s_!D-0_!,w_1200,h_675,c_fill,f_jpg,q_auto:good,fl_progressive:steep,g_auto/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F8f2c8ee8-3e54-4004-9df6-2fc3f94eb681_1122x1402.png"/>
+  </entry>
+  <entry>
+    <title>Клиент, который вам отказал, был прав</title>
+    <link href="https://katyashalel.com/ru/essays/klient-kotoryy-vam-otkazal-byl-prav/" rel="alternate" type="text/html"/>
+    <id>https://katyashalel.com/ru/essays/klient-kotoryy-vam-otkazal-byl-prav/</id>
+    <published>2026-07-14T09:00:00+00:00</published>
+    <updated>2026-07-14T09:00:00+00:00</updated>
+    <summary type="text">Первый покупатель отказывает не продукту, а плохой сделке: он берёт максимальный риск, а выигрыш подтверждён только цифрами фаундера. Что такое First Customer Tax и как переоценить сделку вместо того, чтобы усиливать питч.</summary>
+    <link rel="enclosure" type="image/jpeg" href="https://substackcdn.com/image/fetch/$s_!1Q1V!,w_1200,h_675,c_fill,f_jpg,q_auto:good,fl_progressive:steep,g_auto/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F78ed3e52-b561-4261-b904-e13f8655281a_941x1672.png"/>
+  </entry>
+  <entry>
+    <title>Интерфейс растворяется. Слой решения нет</title>
+    <link href="https://katyashalel.com/ru/essays/interfeys-rastvoryaetsya/" rel="alternate" type="text/html"/>
+    <id>https://katyashalel.com/ru/essays/interfeys-rastvoryaetsya/</id>
+    <published>2026-07-08T09:00:00+00:00</published>
+    <updated>2026-07-08T09:00:00+00:00</updated>
+    <summary type="text">Когда интерфейс растворяется в мессенджерах, расходятся два слоя: разговор, который принадлежит платформам, и решение, которое становится невидимым. Про callable layer, Indifference Test и невидимую полку.</summary>
+    <link rel="enclosure" type="image/jpeg" href="https://katyashalel.com/assets/covers/interface-dissolves.png"/>
+  </entry>
+</feed>
