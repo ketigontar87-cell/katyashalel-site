@@ -168,7 +168,7 @@ const OFFERINGS = {
     availability: "First cohort by waitlist",
     url: `${SITE}/program/`
   },
-  contact: "ekaterina.sh@skinbot.ru",
+  contact: "shalelekaterina@gmail.com",
   source_url: `${SITE}/llms.txt`,
   last_verified: LAST_VERIFIED
 };
