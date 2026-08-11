@@ -16,7 +16,7 @@ EMAIL = "shalelekaterina@gmail.com"
 
 FEEDS = {
     "en": {
-        "globs": ["essays/**/index.html"],
+        "globs": ["essays/**/index.html", "research/*/index.html"],
         "atom": "feed.xml",
         "rss": "rss.xml",
         "title": "Ekaterina Shalel — Essays",
@@ -56,12 +56,12 @@ def read(path):
     soup = BeautifulSoup(io.open(path, encoding="utf-8").read(), "lxml")
     art = None
     for n in jsonld_nodes(soup):
-        if n.get("@type") in ("BlogPosting", "Article", "ScholarlyArticle"):
+        if n.get("@type") in ("BlogPosting", "Article", "ScholarlyArticle", "TechArticle"):
             art = n
             break
     url = SITE + "/" + os.path.dirname(path).replace(os.sep, "/") + "/"
 
-    title = (art or {}).get("headline")
+    title = (art or {}).get("headline") or (art or {}).get("name")
     if not title:
         t = soup.find("title")
         title = t.get_text().strip().split(" · ")[0] if t else url
