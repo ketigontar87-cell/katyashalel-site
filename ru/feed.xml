@@ -9,15 +9,6 @@
   <author><name>Ekaterina Shalel</name><uri>https://katyashalel.com/</uri><email>shalelekaterina@gmail.com</email></author>
   <rights>All rights reserved, 2026</rights>
   <entry>
-    <title>Почему ChatGPT не знает мою компанию?</title>
-    <link href="https://katyashalel.com/ru/essays/pochemu-chatgpt-ne-znaet-moyu-kompaniyu/" rel="alternate" type="text/html"/>
-    <id>https://katyashalel.com/ru/essays/pochemu-chatgpt-ne-znaet-moyu-kompaniyu/</id>
-    <published>2026-08-06T09:00:00+00:00</published>
-    <updated>2026-08-06T09:00:00+00:00</updated>
-    <summary type="text">Четыре причины, по которым AI-система не берёт компанию в ответ, в том порядке, в котором они реально ломаются: вас нельзя достать, нельзя прочитать, нельзя подтвердить или нельзя повторить ваше утверждение.</summary>
-    <link rel="enclosure" type="image/jpeg" href="https://katyashalel.com/assets/covers/why-does-chatgpt-ignore-my-company-og.jpg"/>
-  </entry>
-  <entry>
     <title>Как стать цитируемым для AI?</title>
     <link href="https://katyashalel.com/ru/essays/kak-stat-tsitiruemym-dlya-ai/" rel="alternate" type="text/html"/>
     <id>https://katyashalel.com/ru/essays/kak-stat-tsitiruemym-dlya-ai/</id>
@@ -25,6 +16,15 @@
     <updated>2026-08-06T09:00:00+00:00</updated>
     <summary type="text">Упомянутый это про присутствие, процитированный про риск. Аудит собственной поверхности подтверждения, что становится свидетельством, а что не станет никогда, и что именно системы поднимают из опубликованного.</summary>
     <link rel="enclosure" type="image/jpeg" href="https://katyashalel.com/assets/covers/how-do-i-become-cited-by-ai-og.jpg"/>
+  </entry>
+  <entry>
+    <title>Почему ChatGPT не знает мою компанию?</title>
+    <link href="https://katyashalel.com/ru/essays/pochemu-chatgpt-ne-znaet-moyu-kompaniyu/" rel="alternate" type="text/html"/>
+    <id>https://katyashalel.com/ru/essays/pochemu-chatgpt-ne-znaet-moyu-kompaniyu/</id>
+    <published>2026-08-06T09:00:00+00:00</published>
+    <updated>2026-08-06T09:00:00+00:00</updated>
+    <summary type="text">Четыре причины, по которым AI-система не берёт компанию в ответ, в том порядке, в котором они реально ломаются: вас нельзя достать, нельзя прочитать, нельзя подтвердить или нельзя повторить ваше утверждение.</summary>
+    <link rel="enclosure" type="image/jpeg" href="https://katyashalel.com/assets/covers/why-does-chatgpt-ignore-my-company-og.jpg"/>
   </entry>
   <entry>
     <title>Измерение было лёгкой частью</title>

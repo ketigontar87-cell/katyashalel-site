@@ -5,8 +5,15 @@
     <link>https://katyashalel.com/</link>
     <description>Legibility: how founders, products and companies get read correctly by AI systems.</description>
     <language>en</language>
-    <lastBuildDate>Fri, 07 Aug 2026 09:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 17 Aug 2026 09:00:00 +0000</lastBuildDate>
     <atom:link href="https://katyashalel.com/rss.xml" rel="self" type="application/rss+xml"/>
+    <item>
+      <title>Can You Actually Change What AI Says About You?</title>
+      <link>https://katyashalel.com/essays/can-you-change-what-ai-says-about-you/</link>
+      <guid isPermaLink="true">https://katyashalel.com/essays/can-you-change-what-ai-says-about-you/</guid>
+      <pubDate>Mon, 17 Aug 2026 09:00:00 +0000</pubDate>
+      <description>Selection and recommendation are different results with different stakes. A dated, single-subject log of one entity moving from unresolved to recommended, including the runs that failed and the point where a system flagged its own thin evidence.</description>
+    </item>
     <item>
       <title>How Do I Become Recommended by AI?</title>
       <link>https://katyashalel.com/essays/how-do-i-become-recommended-by-ai/</link>
@@ -120,18 +127,18 @@
       <description>L'Oreal and OpenAI put Maybelline's virtual try-on inside ChatGPT, fed verified product data into the model, and joined the ad pilot. The try-on is the decoy. The real story is what happens to advice when one brand owns the answer, and why the neutral layer is the part of agentic commerce nobody has claimed yet.</description>
     </item>
     <item>
-      <title>The Customer Who Rejected You Was Right</title>
-      <link>https://katyashalel.com/essays/the-first-customer-tax/</link>
-      <guid isPermaLink="true">https://katyashalel.com/essays/the-first-customer-tax/</guid>
-      <pubDate>Tue, 14 Jul 2026 09:00:00 +0000</pubDate>
-      <description>On the First Customer Tax: why the first buyer who says no is doing correct math, and how founders reprice the deal instead of sharpening the pitch.</description>
-    </item>
-    <item>
       <title>The Week Beauty Retail Went Agentic</title>
       <link>https://katyashalel.com/essays/the-week-beauty-retail-went-agentic/</link>
       <guid isPermaLink="true">https://katyashalel.com/essays/the-week-beauty-retail-went-agentic/</guid>
       <pubDate>Tue, 14 Jul 2026 09:00:00 +0000</pubDate>
       <description>Ulta and Google, L'Oreal and OpenAI, Haut.AI's Skin.Chat and Perfect Corp's public skin analysis APIs landed in one week of July 2026. What the agentic shift means for every retailer who will never build their own Gemini, and why a neutral decision layer is the answer.</description>
+    </item>
+    <item>
+      <title>The Customer Who Rejected You Was Right</title>
+      <link>https://katyashalel.com/essays/the-first-customer-tax/</link>
+      <guid isPermaLink="true">https://katyashalel.com/essays/the-first-customer-tax/</guid>
+      <pubDate>Tue, 14 Jul 2026 09:00:00 +0000</pubDate>
+      <description>On the First Customer Tax: why the first buyer who says no is doing correct math, and how founders reprice the deal instead of sharpening the pitch.</description>
     </item>
     <item>
       <title>Your Website Has Two Readers. You Built It for One</title>

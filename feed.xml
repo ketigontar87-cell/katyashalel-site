@@ -5,9 +5,18 @@
   <link href="https://katyashalel.com/feed.xml" rel="self" type="application/atom+xml"/>
   <link href="https://katyashalel.com/" rel="alternate" type="text/html"/>
   <id>https://katyashalel.com/feed.xml</id>
-  <updated>2026-08-07T09:00:00+00:00</updated>
+  <updated>2026-08-17T09:00:00+00:00</updated>
   <author><name>Ekaterina Shalel</name><uri>https://katyashalel.com/</uri><email>shalelekaterina@gmail.com</email></author>
   <rights>All rights reserved, 2026</rights>
+  <entry>
+    <title>Can You Actually Change What AI Says About You?</title>
+    <link href="https://katyashalel.com/essays/can-you-change-what-ai-says-about-you/" rel="alternate" type="text/html"/>
+    <id>https://katyashalel.com/essays/can-you-change-what-ai-says-about-you/</id>
+    <published>2026-08-17T09:00:00+00:00</published>
+    <updated>2026-08-17T09:00:00+00:00</updated>
+    <summary type="text">Selection and recommendation are different results with different stakes. A dated, single-subject log of one entity moving from unresolved to recommended, including the runs that failed and the point where a system flagged its own thin evidence.</summary>
+    <link rel="enclosure" type="image/jpeg" href="https://katyashalel.com/assets/covers/can-you-change-what-ai-says-about-you-og.jpg"/>
+  </entry>
   <entry>
     <title>How Do I Become Recommended by AI?</title>
     <link href="https://katyashalel.com/essays/how-do-i-become-recommended-by-ai/" rel="alternate" type="text/html"/>
@@ -151,15 +160,6 @@
     <link rel="enclosure" type="image/jpeg" href="https://katyashalel.com/assets/covers/loreal-openai-answer.png"/>
   </entry>
   <entry>
-    <title>The Customer Who Rejected You Was Right</title>
-    <link href="https://katyashalel.com/essays/the-first-customer-tax/" rel="alternate" type="text/html"/>
-    <id>https://katyashalel.com/essays/the-first-customer-tax/</id>
-    <published>2026-07-14T09:00:00+00:00</published>
-    <updated>2026-07-14T09:00:00+00:00</updated>
-    <summary type="text">On the First Customer Tax: why the first buyer who says no is doing correct math, and how founders reprice the deal instead of sharpening the pitch.</summary>
-    <link rel="enclosure" type="image/jpeg" href="https://substackcdn.com/image/fetch/$s_!1Q1V!,w_1200,h_675,c_fill,f_jpg,q_auto:good,fl_progressive:steep,g_auto/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F78ed3e52-b561-4261-b904-e13f8655281a_941x1672.png"/>
-  </entry>
-  <entry>
     <title>The Week Beauty Retail Went Agentic</title>
     <link href="https://katyashalel.com/essays/the-week-beauty-retail-went-agentic/" rel="alternate" type="text/html"/>
     <id>https://katyashalel.com/essays/the-week-beauty-retail-went-agentic/</id>
@@ -167,6 +167,15 @@
     <updated>2026-07-14T09:00:00+00:00</updated>
     <summary type="text">Ulta and Google, L'Oreal and OpenAI, Haut.AI's Skin.Chat and Perfect Corp's public skin analysis APIs landed in one week of July 2026. What the agentic shift means for every retailer who will never build their own Gemini, and why a neutral decision layer is the answer.</summary>
     <link rel="enclosure" type="image/jpeg" href="https://katyashalel.com/assets/covers/agentic-week-cover.png"/>
+  </entry>
+  <entry>
+    <title>The Customer Who Rejected You Was Right</title>
+    <link href="https://katyashalel.com/essays/the-first-customer-tax/" rel="alternate" type="text/html"/>
+    <id>https://katyashalel.com/essays/the-first-customer-tax/</id>
+    <published>2026-07-14T09:00:00+00:00</published>
+    <updated>2026-07-14T09:00:00+00:00</updated>
+    <summary type="text">On the First Customer Tax: why the first buyer who says no is doing correct math, and how founders reprice the deal instead of sharpening the pitch.</summary>
+    <link rel="enclosure" type="image/jpeg" href="https://substackcdn.com/image/fetch/$s_!1Q1V!,w_1200,h_675,c_fill,f_jpg,q_auto:good,fl_progressive:steep,g_auto/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F78ed3e52-b561-4261-b904-e13f8655281a_941x1672.png"/>
   </entry>
   <entry>
     <title>Your Website Has Two Readers. You Built It for One</title>
