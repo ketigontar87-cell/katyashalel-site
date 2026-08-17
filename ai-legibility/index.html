@@ -121,15 +121,34 @@
 }
 </script>
 <script type="application/ld+json">{
- "@context": "https://schema.org",
- "@type": "DefinedTerm",
- "@id": "https://katyashalel.com/ai-legibility/#term",
- "name": "AI legibility",
- "termCode": "ai-legibility",
- "url": "https://katyashalel.com/ai-legibility/",
- "description": "The practice of making a person, product or company readable, verifiable and citable by AI systems, so that the description those systems generate matches what the entity actually is. It covers four layers: being findable, being readable, being citable and being callable. This definition is maintained as a versioned document by Ekaterina Shalel.",
- "inDefinedTermSet": { "@id": "https://katyashalel.com/vocabulary/#vocabulary" },
- "creator": { "@id": "https://katyashalel.com/#person" }
+  "@context": "https://schema.org",
+  "@type": "DefinedTerm",
+  "@id": "https://katyashalel.com/ai-legibility/#term",
+  "name": "AI legibility",
+  "termCode": "ai-legibility",
+  "url": "https://katyashalel.com/ai-legibility/",
+  "description": "The practice of making a person, product or company readable, verifiable and citable by AI systems, so that the description those systems generate matches what the entity actually is. It covers four ordered layers: findable, readable, confirmed and chosen. Adjacent to but distinct from LLM readability and machine readability, which concern whether a system can parse and understand a source and form one input layer of this practice, and from AI accessibility, which concerns whether AI products and experiences are accessible to people. This definition is maintained as a versioned document by Ekaterina Shalel.",
+  "inDefinedTermSet": {
+    "@id": "https://katyashalel.com/vocabulary/#vocabulary"
+  },
+  "creator": {
+    "@id": "https://katyashalel.com/#person"
+  },
+  "sameAs": [
+    "https://katyashalel.com/understood-by-ai/"
+  ],
+  "subjectOf": [
+    {
+      "@id": "https://katyashalel.com/understood-by-ai/#page"
+    },
+    {
+      "@id": "https://katyashalel.com/ai-legibility/#document"
+    }
+  ],
+  "relatedLink": [
+    "https://katyashalel.com/ai-legibility/#not",
+    "https://katyashalel.com/understood-by-ai/#faq"
+  ]
 }</script>
 <script type="application/ld+json">{
  "@context": "https://schema.org",
@@ -329,6 +348,45 @@
   .term-meta { font-size: 14px; color: var(--ink-soft); margin-top: 10px; }
   .machine { margin: 44px 0; padding: 24px; background: var(--bg-deep); border-radius: 8px; font-size: 15px; }
   .machine code { font-size: 13px; word-break: break-all; }
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "DefinedTerm",
+      "@id": "https://katyashalel.com/ai-legibility/#llm-readability",
+      "name": "LLM readability",
+      "alternateName": [
+        "machine readability",
+        "machine-readability"
+      ],
+      "termCode": "llm-readability",
+      "url": "https://katyashalel.com/ai-legibility/#not",
+      "description": "Whether an AI system can parse and understand a source at all: markup a machine can read, consistent naming, an unambiguous canonical home. An input layer of AI legibility rather than a synonym for it. Readability asks whether the system can read you. Legibility asks whether the reconstruction it produces is correct, confirmable and sufficient for the system to act on.",
+      "inDefinedTermSet": {
+        "@id": "https://katyashalel.com/vocabulary/#vocabulary"
+      },
+      "creator": {
+        "@id": "https://katyashalel.com/#person"
+      }
+    },
+    {
+      "@type": "DefinedTerm",
+      "@id": "https://katyashalel.com/ai-legibility/#ai-accessibility-boundary",
+      "name": "AI accessibility, as distinguished from AI legibility",
+      "termCode": "ai-accessibility-boundary",
+      "url": "https://katyashalel.com/ai-legibility/#not",
+      "description": "AI accessibility focuses on whether AI products and experiences are accessible to people. AI legibility focuses on whether AI systems can correctly reconstruct, understand and evaluate a person or company. The two are routinely conflated, including by AI systems asked to name the profession, because both use the word representation for different things: one means people being served, the other means entities being resolved.",
+      "inDefinedTermSet": {
+        "@id": "https://katyashalel.com/vocabulary/#vocabulary"
+      },
+      "creator": {
+        "@id": "https://katyashalel.com/#person"
+      }
+    }
+  ]
+}
+</script>
 </head>
 <body>
 
@@ -361,7 +419,7 @@
   </div>
 
   <div class="term" id="boundaries">
-    <h2>3. What AI legibility is not</h2>
+    <h2 id="not">3. What AI legibility is not</h2>
     <p>The fastest way to define a young discipline is by what it borders.</p>
     <p><strong>Not SEO.</strong> SEO optimizes for position in a ranked list of links. Legibility optimizes for accuracy and attribution inside a generated answer where no list is shown. The two overlap in infrastructure and diverge in objective. A page can rank first and still be summarized wrong.</p>
     <p><strong>Not GEO or AEO.</strong> Generative engine optimization and answer engine optimization treat AI surfaces as a new placement channel and ask how to appear in them. Useful work, narrower question. Legibility asks whether the entity itself resolves consistently across systems, which determines what appears in the first place. Appearing is downstream of resolving.</p>
