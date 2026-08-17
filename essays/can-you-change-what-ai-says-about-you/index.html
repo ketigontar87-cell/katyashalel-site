@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Can You Actually Change What AI Says About You? &middot; Ekaterina Shalel</title>
+<meta name="description" content="Selection and recommendation are different results with different stakes. A dated, single-subject log of one entity moving from unresolved to recommended, including the runs that failed and the point where a system flagged its own thin evidence.">
+<link rel="canonical" href="https://katyashalel.com/essays/can-you-change-what-ai-says-about-you/">
+<link rel="alternate" type="application/atom+xml" title="Ekaterina Shalel — Essays" href="https://katyashalel.com/feed.xml">
+<link rel="alternate" type="application/rss+xml" title="Ekaterina Shalel — Essays" href="https://katyashalel.com/rss.xml">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Can You Actually Change What AI Says About You?">
+<meta property="og:description" content="A mention is retrieval. A recommendation is selection. One month of measurements on a single subject: me.">
+<meta property="og:url" content="https://katyashalel.com/essays/can-you-change-what-ai-says-about-you/">
+<meta property="og:site_name" content="Ekaterina Shalel">
+<meta property="og:image" content="https://katyashalel.com/assets/covers/can-you-change-what-ai-says-about-you-og.jpg">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2026-08-17">
+<meta property="article:author" content="Ekaterina Shalel">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Can You Actually Change What AI Says About You?">
+<meta name="twitter:description" content="A mention is retrieval. A recommendation is selection. One month of measurements on a single subject: me.">
+<meta name="twitter:image" content="https://katyashalel.com/assets/covers/can-you-change-what-ai-says-about-you-og.jpg">
+<link rel="alternate" type="text/plain" href="https://katyashalel.com/llms.txt" title="LLM-friendly summary">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Instrument+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BlogPosting",
+      "headline": "Can You Actually Change What AI Says About You?",
+      "alternativeHeadline": "A mention is retrieval. A recommendation is selection. Between them sits corroboration.",
+      "description": "Selection and recommendation are different results with different stakes. A dated, single-subject log of one entity moving from unresolved to recommended, including the runs that failed and the point where a system flagged its own thin evidence.",
+      "url": "https://katyashalel.com/essays/can-you-change-what-ai-says-about-you/",
+      "inLanguage": "en",
+      "datePublished": "2026-08-17",
+      "dateModified": "2026-08-17",
+      "image": "https://katyashalel.com/assets/covers/can-you-change-what-ai-says-about-you-og.jpg",
+      "author": {
+        "@type": "Person",
+        "@id": "https://katyashalel.com/#person",
+        "name": "Ekaterina Shalel",
+        "alternateName": [
+          "Katya Shalel",
+          "Екатерина Шалель"
+        ],
+        "url": "https://katyashalel.com",
+        "jobTitle": "Founder and legibility strategist"
+      },
+      "publisher": {
+        "@id": "https://katyashalel.com/#person"
+      },
+      "about": {
+        "@id": "https://katyashalel.com/ai-legibility/#term"
+      },
+      "isPartOf": {
+        "@id": "https://katyashalel.com/ai-legibility/#document"
+      },
+      "relatedLink": [
+        "https://katyashalel.com/ai-legibility/",
+        "https://katyashalel.com/essays/why-does-chatgpt-ignore-my-company/",
+        "https://katyashalel.com/essays/how-do-i-become-cited-by-ai/",
+        "https://katyashalel.com/essays/how-do-i-become-recommended-by-ai/",
+        "https://katyashalel.com/vocabulary/#corroboration-gap",
+        "https://katyashalel.com/vocabulary/#indifference-test",
+        "https://katyashalel.com/vocabulary/#share-of-model",
+        "https://katyashalel.com/research/synthetic-term-control/"
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://katyashalel.com/essays/can-you-change-what-ai-says-about-you/#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Can you actually change what AI says about you?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes, and the change is observable when it is dated and repeated. Over one month a single entity moved from not resolving at all, to resolving into an outdated description, to being reconstructed correctly and selected without being named in the prompt. What makes that credible is the log rather than the final screenshot: fixed prompts, recorded dates, and the runs that returned nothing kept alongside the ones that worked. What a log like this cannot establish is that the same sequence reproduces on another entity."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What is the difference between being selected and being recommended by an AI system?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Selection asks which name belongs at the top of a set. Recommendation asks whether a specific person should spend money or time on this, and it carries a cost of being wrong. They are different results, and most visibility measurement reports the first while the field is chasing the second."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Does one good AI answer prove anything?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Not on its own. Retrieval is not deterministic, so the same prompt in the same hour can return you and then not return you, and a single screenshot gives no view of the distribution it came from. The measurable quantity is the share of runs. From the user side the arithmetic is different: they ask once and act on the answer they get, so a single run that lands is a full event rather than a fraction of one."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can a single-subject experiment say anything about AI visibility?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "It can produce evidence but not proof of generalization. One subject, no control group and a retrieval layer that shifts on its own mean the change cannot be attributed cleanly to the intervention, and nothing guarantees it reproduces on another entity. What a dated log does provide is an intervention, a documented change in machine representation, and the failed runs recorded alongside the rest."
+          }
+        }
+      ]
+    }
+  ]
+}
+</script>
+<style>
+  :root {
+    --ink: #1A1A1A;
+    --ink-soft: #4A4A4A;
+    --red: #C4342E;
+    --bg: #FFFFFF;
+    --bg-deep: #F0F0F0;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: 'Instrument Sans', sans-serif;
+    color: var(--ink);
+    background: var(--bg);
+    line-height: 1.75;
+    font-size: 17px;
+    -webkit-font-smoothing: antialiased;
+  }
+  .top {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 32px 24px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+  }
+  .top a {
+    color: var(--ink);
+    text-decoration: none;
+    font-size: 13px;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+  }
+  .top a:hover { color: var(--red); }
+  article {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 56px 24px 96px;
+  }
+  .kicker {
+    font-size: 11px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--red);
+    margin-bottom: 20px;
+  }
+  h1 {
+    font-family: 'Instrument Serif', serif;
+    font-weight: 400;
+    font-size: clamp(34px, 6vw, 52px);
+    line-height: 1.12;
+    margin-bottom: 18px;
+  }
+  .subtitle {
+    font-size: 19px;
+    color: var(--ink-soft);
+    line-height: 1.55;
+    margin-bottom: 28px;
+  }
+  .meta {
+    font-size: 12px;
+    color: var(--ink-soft);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    padding-bottom: 36px;
+    border-bottom: 1px solid var(--bg-deep);
+    margin-bottom: 44px;
+  }
+  .meta a { color: var(--ink-soft); }
+  .meta a:hover { color: var(--red); }
+  h2 {
+    font-family: 'Instrument Serif', serif;
+    font-weight: 400;
+    font-size: 30px;
+    line-height: 1.2;
+    margin: 52px 0 20px;
+  }
+  p { margin-bottom: 22px; }
+  strong { font-weight: 600; }
+  em { font-style: italic; }
+  a { color: var(--red); }
+  .pull {
+    border-left: 3px solid var(--red);
+    padding: 6px 0 6px 24px;
+    margin: 36px 0;
+    font-family: 'Instrument Serif', serif;
+    font-size: 24px;
+    line-height: 1.4;
+    color: var(--ink);
+  }
+  .faq {
+    margin-top: 56px;
+    padding-top: 28px;
+    border-top: 1px solid var(--bg-deep);
+  }
+  .faq h2 { margin-top: 0; font-size: 24px; }
+  .faq details { margin-bottom: 14px; }
+  .faq summary {
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 15px;
+    color: var(--ink);
+  }
+  .faq details p {
+    font-size: 15px;
+    color: var(--ink-soft);
+    margin: 10px 0 0;
+  }
+  .source {
+    margin-top: 56px;
+    padding-top: 28px;
+    border-top: 1px solid var(--bg-deep);
+    font-size: 14px;
+    color: var(--ink-soft);
+  }
+  .footer-cta {
+    margin-top: 40px;
+    background: var(--ink);
+    color: #fff;
+    border-radius: 6px;
+    padding: 36px 32px;
+  }
+  .footer-cta p { color: rgba(255,255,255,0.85); font-size: 15px; margin-bottom: 18px; }
+  .footer-cta .btn {
+    display: inline-block;
+    background: var(--red);
+    color: #fff;
+    text-decoration: none;
+    font-size: 13px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    padding: 12px 24px;
+    border-radius: 4px;
+  }
+  .footer-cta .btn:hover { background: #A32420; }
+</style>
+</head>
+<body>
+
+<div class="top">
+  <a href="/">Ekaterina Shalel</a>
+  <a href="/#essays">Essays</a>
+</div>
+
+<article>
+  <div class="kicker">The Legibility Layer &middot; Essay</div>
+  <h1>Can You Actually Change What AI Says About You?</h1>
+  <p class="subtitle">A mention is retrieval. A recommendation is selection. One month of measurements on a single subject, and the subject is me.</p>
+  <div class="meta">By Ekaterina Shalel, founder and legibility strategist &middot; August 17, 2026</div>
+
+  <p>Most people asking this question are actually asking about mentions. They want to show up. They want their name to appear when someone types a question into a model.</p>
+
+  <p>That's a different thing, and the gap between them is where almost all the work is.</p>
+
+  <p>A mention is retrieval. A recommendation is selection. Between them sits <a href="/vocabulary/#corroboration-gap">corroboration</a>, and that's where almost everyone stalls.</p>
+
+  <h2>Recommendation is a different class of event</h2>
+
+  <p>When a model mentions you, it risks nothing. Your name sits in a list. If you don't belong there, nobody notices and nothing breaks.</p>
+
+  <p>When a model recommends you, it's making a call with a cost attached. Someone is going to spend time, money, or reputation based on the answer. And a system under that kind of pressure has a strong pull toward the safe option: the name it has seen many times, from many places, confirmed by sources that don't all trace back to the same person.</p>
+
+  <p>That pull is the whole problem. Being known isn't enough. You have to be the option a system is willing to be wrong about.</p>
+
+  <p>I've been calling the underlying question the <a href="/vocabulary/#indifference-test">Indifference Test</a>: is the system structurally indifferent to which option wins, or is something in its inputs quietly tilting the outcome? Recommendation is where that test stops being theoretical. The tilt either includes you or it doesn't.</p>
+
+  <h2>Four layers, and the one nobody works on</h2>
+
+  <p>Retrieved. Read. Corroborated. Chosen.</p>
+
+  <p>The first three I've written about elsewhere. Retrieved means a system can find something. Read means what it finds resolves into you rather than a person with a similar name. Corroborated means the claim survives coming from somewhere other than your own site.</p>
+
+  <p>Chosen is separate from all three, and it's the one that gets skipped. Most people work hard on the first layer, get stuck on the third without knowing it, and never learn the fourth exists as its own thing. You can be retrievable, readable, and reasonably corroborated, and still not be the answer when a system has to pick.</p>
+
+  <h2>The subject is me, and that's a design choice</h2>
+
+  <p>I've been running this on myself since July. Single subject, tight control over what changes, dense measurement over time.</p>
+
+  <p>It's a real class of study. Single-subject designs go back a long way, and they come with real limits, which I'll state now rather than bury: one subject, no control group, and a retrieval layer that shifts on its own while you're measuring. Model versions change. Indexes update. Some of what I observe isn't caused by anything I did.</p>
+
+  <p>The reason the subject is me isn't vanity, it's access. No client is going to let me touch their public entity graph every week and log every change, including the ones that don't work. I will.</p>
+
+  <p>I also had a useful problem to start with. I was building a methodology around machine legibility while being almost entirely illegible to machines myself. That made me the cheapest available test case with the worst possible starting position, which is the best combination you can get.</p>
+
+  <h2>The log</h2>
+
+  <p><strong>July 16.</strong> A clean query on my name returns other people who share it. My site doesn't surface. My LinkedIn doesn't surface. When I add enough context to force the right person, the description is stale: a founder in beauty retail, an identity I'd already moved past.</p>
+
+  <p><strong>August 7.</strong> Three systems resolve the name correctly. One still doesn't. It's rebuilding me out of old signals from platforms I stopped treating as primary months ago.</p>
+
+  <p><strong>August 16, first run.</strong> Cold session, no login. The prompt contains neither my name nor any company I've built. Correct reconstruction, and selection out of the category.</p>
+
+  <p><strong>August 16, second run.</strong> Different system, different question, same day. Someone deciding who to hire for this kind of work. Named as the example, with reasons attached.</p>
+
+  <p>Four points, one month. The last two aren't the same result, and the difference between them is most of what follows.</p>
+
+  <h2>What one run is worth, and what it isn't</h2>
+
+  <p>Here's the part I want to be careful about, because it cuts both ways.</p>
+
+  <p>Retrieval isn't deterministic. The same prompt, in the same hour, on the same model, can return you and then not return you. Nothing about you changed in between. The system just resampled.</p>
+
+  <p>So the honest unit of measurement isn't presence. It's the share of runs. Three in ten. Seven in ten. A single screenshot tells you almost nothing, because you can't see the distribution it was pulled from. This is why the protocol I use is thirty-two prompts across systems and languages, run the same day, rather than one good answer saved as an image. The quantity is probabilistic. Without repetition it doesn't exist as a number at all.</p>
+
+  <p>And now the other half, which I think matters more.</p>
+
+  <p>One run in ten isn't "basically nothing." That one run is somebody's actual question. They don't do ten trials and average the results. They ask once, get a confident answer with no error bar attached to it, and go make a decision with it.</p>
+
+  <p class="pull">From where I'm measuring, a single run is noise. From where the client stands, that single run was the entire answer.</p>
+
+  <p>There's an asymmetry underneath this. While you appear in zero runs, you don't exist. The moment you appear in some, every run you land is a full event, not a fractional one. Presence doesn't get averaged down on the user's side of the screen. It either happened to them or it didn't.</p>
+
+  <p>That's the argument for measuring properly and the argument for not dismissing a single result, at the same time.</p>
+
+  <h2>The runs where something had to be decided</h2>
+
+  <p>The most useful session wasn't the flattering one.</p>
+
+  <p>Someone was weighing whether to pursue a professional conversation with a specific person, with a real cost to getting it wrong. The model didn't just retrieve me. It built a working picture of what kind of professional I am, made the case for engaging, then turned around and flagged the downside of that profile and proposed how to stress-test it.</p>
+
+  <p>That last move is why the run is worth reporting. It didn't flatter. It weighed. A model that agrees with everything tells you nothing, for the same reason a visibility audit with no negative control tells you nothing.</p>
+
+  <p>This is what I mean by a decision-level result rather than a visibility result. Not "the system knows about me." The system was put in a position where it had to act, and it acted.</p>
+
+  <p>The second system, the same day, raised the bar in a specific way.</p>
+
+  <p>The first run was selection out of a category. The second was a recommendation to a buyer. Those sound like the same thing and they aren't. Selection asks which name belongs at the top of a set. Recommendation asks whether a specific person should spend their money on this, and it carries the cost of being wrong. The second is the harder bar, and it's the one the whole field is chasing while measuring the first.</p>
+
+  <p>Here's how it went. Asked how to hire for this kind of work, the system listed the labels a buyer should search for, and one of the search strings it returned was the phrase I've been using for my own category, sitting alongside established ones. Then, asked to define that phrase, it defined it from my site. Then, asked flatly whether I'm any good, it said yes and explained why: a narrow, specific niche rather than a vague consultant label, with concrete deliverables described publicly.</p>
+
+  <p>A term I put into circulation came back as a way for a stranger to search, and I was the source of its definition. That's a different kind of result from being found.</p>
+
+  <p>But it also did the thing I care about most.</p>
+
+  <p>It hedged the attribution. Describes herself as. Says she helps. Seems credible. Every source it cited traced back to me. And then it produced a section called things to verify, with a checklist for the buyer: has she worked with companies like yours, can she show before and after outcomes, does she offer a baseline, a plan, and a follow-up measurement.</p>
+
+  <p>That's a system telling a buyer, in its own words, that the claim is well-formed and thinly corroborated. I've been calling that the <a href="/vocabulary/#corroboration-gap">corroboration gap</a> for a year. I've never seen a machine name it back to me about myself.</p>
+
+  <p>It's also the strongest argument I have for why the fourth layer is separate from the first three. Both systems retrieved me, read me correctly, and chose me. Both then flagged where the evidence runs out. Selection happened anyway, and the flag came attached to it. Those are two different results in one answer, and no visibility metric I know of would report the second one.</p>
+
+  <h2>The finding I didn't expect</h2>
+
+  <p>The same answer that resolved me correctly still described a company I built as what I'm currently doing. It isn't. It's the proof the method works, and I've said so publicly for months, in the canonical places, in the schema, in every profile.</p>
+
+  <p>So the system updated who I am faster than it updated what I'm doing now.</p>
+
+  <p class="pull">Identity resolved. State lagged.</p>
+
+  <p>I don't know what's causing that. It could be source weighting, retrieval freshness, caching, how the query gets formed, or something else entirely. What I can say is narrower and more useful: those two kinds of information are updating at different speeds, and everything in this field measures only the faster one. Every audit, every tracker, every visibility score I've seen asks whether the entity is recognized. None of them ask whether the recognized entity is current.</p>
+
+  <p>I don't have a number for that gap yet. It's the next thing I'm instrumenting.</p>
+
+  <h2>What this doesn't prove</h2>
+
+  <p>It doesn't prove the method generalizes.</p>
+
+  <p>One subject, one month, no control group, and a moving substrate underneath. It can't tell me how much of the change was caused by what I did, and it can't tell me whether the same sequence would reproduce on someone else. Those are real gaps and I'm not going to paper over them.</p>
+
+  <p>They're also not the same as having no evidence. There's an intervention, a dated log, and a documented change in how machines represent one entity, with the runs that went nowhere included. What's missing is causal identification and external validity, which is a different sentence from "this doesn't show anything."</p>
+
+  <p>What it does establish is a sequence rather than a screenshot: a starting state where the entity didn't resolve at all, a middle state where it resolved into something out of date, and a point where it was reconstructed correctly and selected without being named in the prompt. Each stage dated, logged, and repeatable by anyone willing to run the same prompts on themselves.</p>
+
+  <p>A ranking can be noise. A generous answer can be noise. A documented change in machine representation, with the failed runs included, is harder to wave away.</p>
+
+  <p>If you want to argue with it, the useful question isn't whether one screenshot counts. It's what the control condition was. I'd rather be asked that than told I'm visible.</p>
+
+  <p>The <a href="/research/synthetic-term-control/">protocol</a> is published and it isn't mine to keep: thirty-two prompts, four systems, two languages, run the same day, failed runs recorded alongside the rest. Run it on yourself. I'd rather read someone else's numbers than publish my own twice. The repeat run on this entity is scheduled for late September, and I'll post whatever it returns, including the version where the gains don't hold.</p>
+
+  <div class="faq">
+    <h2>Questions</h2>
+    <details><summary>Can you actually change what AI says about you?</summary><p>Yes, and the change is observable when it is dated and repeated. Over one month a single entity moved from not resolving at all, to resolving into an outdated description, to being reconstructed correctly and selected without being named in the prompt. What makes that credible is the log rather than the final screenshot: fixed prompts, recorded dates, and the runs that returned nothing kept alongside the ones that worked. What a log like this cannot establish is that the same sequence reproduces on another entity.</p></details>
+    <details><summary>What is the difference between being selected and being recommended by an AI system?</summary><p>Selection asks which name belongs at the top of a set. Recommendation asks whether a specific person should spend money or time on this, and it carries a cost of being wrong. They are different results, and most visibility measurement reports the first while the field is chasing the second.</p></details>
+    <details><summary>Does one good AI answer prove anything?</summary><p>Not on its own. Retrieval is not deterministic, so the same prompt in the same hour can return you and then not return you, and a single screenshot gives no view of the distribution it came from. The measurable quantity is the share of runs. From the user side the arithmetic is different: they ask once and act on the answer they get, so a single run that lands is a full event rather than a fraction of one.</p></details>
+    <details><summary>Can a single-subject experiment say anything about AI visibility?</summary><p>It can produce evidence but not proof of generalization. One subject, no control group and a retrieval layer that shifts on its own mean the change cannot be attributed cleanly to the intervention, and nothing guarantees it reproduces on another entity. What a dated log does provide is an intervention, a documented change in machine representation, and the failed runs recorded alongside the rest.</p></details>
+  </div>
+
+  <div class="related">
+    <h2>Related concepts</h2>
+    <p class="lede">Terms used in this essay, each defined with its date and source.</p>
+    <ul>
+      <li><a href="/vocabulary/#corroboration-gap">Corroboration gap</a></li>
+      <li><a href="/vocabulary/#indifference-test">Indifference Test</a></li>
+      <li><a href="/vocabulary/#share-of-model">Share of Model</a></li>
+      <li><a href="/essays/why-does-chatgpt-ignore-my-company/">Why Does ChatGPT Ignore My Company?</a></li>
+      <li><a href="/essays/how-do-i-become-cited-by-ai/">How Do I Become Cited by AI?</a></li>
+      <li><a href="/essays/how-do-i-become-recommended-by-ai/">How Do I Become Recommended by AI?</a></li>
+      <li><a href="/ai-legibility/">AI legibility, canonical definition</a></li>
+      <li><a href="/research/synthetic-term-control/">Synthetic Term Control, the negative control protocol</a></li>
+    </ul>
+  </div>
+</article>
+
+<script defer src="/_vercel/insights/script.js"></script>
+
+</body>
+</html>
