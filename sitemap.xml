@@ -306,4 +306,10 @@
   </url>
   <url><loc>https://katyashalel.com/feed.xml</loc><changefreq>weekly</changefreq><priority>0.6</priority></url>
   <url><loc>https://katyashalel.com/ru/feed.xml</loc><changefreq>weekly</changefreq><priority>0.6</priority></url>
+  <url>
+    <loc>https://katyashalel.com/essays/can-you-change-what-ai-says-about-you/</loc>
+    <lastmod>2026-08-17</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
 </urlset>
