@@ -1,52 +1,65 @@
-name: Apply approved bilingual hero
+name: IndexNow ping
+
+# Submits every URL in the live sitemap to IndexNow after each deploy.
+# Fails loudly: a rejected submission must not report as a green run.
 
 on:
   push:
     branches: [main]
-
-permissions:
-  contents: write
+  workflow_dispatch:
 
 jobs:
-  apply:
+  ping:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
-        with:
-          fetch-depth: 3
+      - name: Wait for the deploy to go live
+        run: sleep 90
 
-      - name: Apply approved EN and RU hero copy
+      - name: Submit sitemap URLs to IndexNow
+        env:
+          HOST: katyashalel.com
+          KEY: 9656a8346f4b4450826617d677d759d8
         run: |
-          python - <<'PY'
-          from pathlib import Path
+          set -euo pipefail
 
-          def replace_line(path, old, new):
-              p = Path(path)
-              s = p.read_text()
-              if s.count(old) != 1:
-                  raise SystemExit(f'{path}: expected one match for {old!r}, found {s.count(old)}')
-              p.write_text(s.replace(old, new, 1))
+          # Read the deployed sitemap, not the one in the repo: if the deploy
+          # failed, the submission should reflect what is actually live.
+          curl -sS --fail --retry 3 --retry-delay 10 \
+            "https://${HOST}/sitemap.xml" -o sitemap.xml
 
-          replace_line('index.html', '    <h1>I make founders readable<span class="script">to AI systems</span></h1>', '    <h1>AI knows your company.<span class="script">But would it choose you?</span></h1>')
-          replace_line('index.html', "    <p>I help founders and companies be correctly understood, described, cited and recommended by AI systems. I'm Ekaterina Shalel, a founder and AI legibility strategist, working across ChatGPT, Claude, Gemini and Perplexity through the Legibility Sprint, the public decision record, the Indifference Test and the First Customer Tax</p>", '    <p>I work on how AI systems understand, evaluate and select companies and the people behind them. I measure what ChatGPT, Claude, Gemini and Perplexity see, trace the evidence behind their answers, fix the gaps, and measure again.</p>')
-          replace_line('index.html', '    <a class="cta" href="/understood-by-ai/">ChatGPT describes your company wrong? Start here</a>', '    <a class="cta" href="/understood-by-ai/">See how AI sees you</a>')
-          replace_line('index.html', '    <p class="hero-alt"><a href="/essays/how-to-become-visible-to-ai/">Or read the primer: how to become visible to AI</a></p>', '    <p class="hero-alt"><a href="/ai-legibility/">What is AI Legibility?</a></p>')
+          grep -oP '(?<=<loc>)[^<]+' sitemap.xml > urls.txt
+          count=$(wc -l < urls.txt)
+          echo "Found ${count} URLs."
+          if [ "$count" -eq 0 ]; then
+            echo "Sitemap parsed to zero URLs."; exit 1
+          fi
 
-          replace_line('ru/index.html', '    <span class="eyebrow">Основатель · Legibility-стратег</span>', '    <span class="eyebrow">Основатель · AI Legibility Strategist</span>')
-          replace_line('ru/index.html', '    <h1>Делаю фаундеров читаемыми<span class="script">для AI-систем</span></h1>', '    <h1>AI знает вашу компанию.<span class="script">Но выбрал бы он вас?</span></h1>')
-          replace_line('ru/index.html', '    <p>Я Екатерина Шалель, основатель и legibility-стратег. Помогаю фаундерам и компаниям быть читаемыми для ChatGPT, Claude и Perplexity: метод Legibility Sprint, public decision record, Indifference Test и First Customer Tax</p>', '    <p>Я работаю с тем, как AI-системы понимают, оценивают и выбирают компании и людей, которые за ними стоят. Я измеряю, что видят ChatGPT, Claude, Gemini и Perplexity, прослеживаю доказательства и источники за их ответами, исправляю пробелы и измеряю снова.</p>')
-          replace_line('ru/index.html', '    <a class="cta" href="#sprint">Смотреть Sprint</a>', '    <a class="cta" href="/understood-by-ai/">Посмотреть, как AI видит вас</a>\n    <p class="hero-alt"><a href="/ru/ai-legibility/">Что такое AI Legibility?</a></p>')
+          # Without a reachable key file the engines reject the whole batch.
+          served=$(curl -sS --fail "https://${HOST}/${KEY}.txt" | tr -d '[:space:]')
+          if [ "$served" != "$KEY" ]; then
+            echo "Key file mismatch. Served: '${served}'"; exit 1
+          fi
+          echo "Key file verified."
 
-          assert Path('index.html').read_text().count('AI knows your company.') == 1
-          assert Path('ru/index.html').read_text().count('AI знает вашу компанию.') == 1
-          PY
+          jq -n \
+            --arg host "$HOST" \
+            --arg key "$KEY" \
+            --arg loc "https://${HOST}/${KEY}.txt" \
+            --rawfile urls urls.txt \
+            '{host:$host, key:$key, keyLocation:$loc,
+              urlList: ($urls | split("\n") | map(select(length>0)))}' \
+            > payload.json
 
-      - name: Restore IndexNow workflow and commit hero
-        run: |
-          git show HEAD^^:.github/workflows/indexnow.yml > .github/workflows/indexnow.yml
-          git config user.name "Ekaterina Shalel"
-          git config user.email "shalelekaterina@gmail.com"
-          git add index.html ru/index.html .github/workflows/indexnow.yml
-          git diff --cached --check
-          git commit -m "homepage: sharpen bilingual hero around AI selection"
-          git push origin HEAD:main
+          code=$(curl -sS -o response.txt -w '%{http_code}' \
+            -X POST 'https://api.indexnow.org/IndexNow' \
+            -H 'Content-Type: application/json; charset=utf-8' \
+            --data @payload.json)
+
+          echo "IndexNow responded ${code}"
+          cat response.txt || true
+
+          # 200 accepted, 202 accepted pending key validation.
+          case "$code" in
+            200|202) echo "Submitted ${count} URLs." ;;
+            *) echo "IndexNow rejected the submission."; exit 1 ;;
+          esac
