@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Почему AI знает мою компанию, но всё равно не рекомендует её? · Екатерина Шалель</title>
+<meta name="description" content="AI может правильно определить компанию и всё равно не рекомендовать её. Практическое объяснение разницы между узнаваемостью, подтверждением и выбором, и как это измерять без обещаний контролировать модель.">
+<link rel="canonical" href="https://katyashalel.com/ru/pochemu-ai-znaet-no-ne-rekomenduet/">
+<link rel="alternate" hreflang="en" href="https://katyashalel.com/why-ai-knows-but-doesnt-recommend/">
+<link rel="alternate" hreflang="ru" href="https://katyashalel.com/ru/pochemu-ai-znaet-no-ne-rekomenduet/">
+<link rel="alternate" hreflang="x-default" href="https://katyashalel.com/why-ai-knows-but-doesnt-recommend/">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Почему AI знает мою компанию, но всё равно не рекомендует её?">
+<meta property="og:description" content="Быть известным AI не значит быть выбранным AI. Измеряем, где ломается граница выбора.">
+<meta property="og:url" content="https://katyashalel.com/ru/pochemu-ai-znaet-no-ne-rekomenduet/">
+<meta property="og:site_name" content="Екатерина Шалель">
+<link rel="alternate" type="text/plain" href="https://katyashalel.com/llms.txt" title="LLM-friendly summary">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Instrument+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "TechArticle",
+  "@id": "https://katyashalel.com/ru/pochemu-ai-znaet-no-ne-rekomenduet/#article",
+  "headline": "Почему AI знает мою компанию, но всё равно не рекомендует её?",
+  "description": "Практическое объяснение того, почему узнаваемость AI не гарантирует рекомендацию, и как диагностировать границу между известностью, подтверждением и выбором.",
+  "url": "https://katyashalel.com/ru/pochemu-ai-znaet-no-ne-rekomenduet/",
+  "datePublished": "2026-09-01",
+  "dateModified": "2026-09-01",
+  "inLanguage": "ru",
+  "author": {"@id": "https://katyashalel.com/#person"},
+  "publisher": {"@id": "https://katyashalel.com/#person"},
+  "about": [
+    {"@id": "https://katyashalel.com/ai-legibility/#term"},
+    {"@type": "Thing", "name": "AI recommendation"},
+    {"@type": "Thing", "name": "AI selection"},
+    {"@type": "Thing", "name": "corroboration"}
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "@id": "https://katyashalel.com/ru/pochemu-ai-znaet-no-ne-rekomenduet/#faq",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Почему AI знает мою компанию, но всё равно не рекомендует её?",
+      "acceptedAnswer": {"@type": "Answer", "text": "Узнаваемость не равна выбору. AI может правильно определить компанию, но не включить её в ответ с покупательским намерением, если найденные доказательства слабые, противоречивые, плохо совпадают с условиями запроса или выглядят менее обоснованными, чем доказательства по альтернативам."}
+    },
+    {
+      "@type": "Question",
+      "name": "Если AI цитирует компанию, значит ли это, что он будет её рекомендовать?",
+      "acceptedAnswer": {"@type": "Answer", "text": "Нет. Цитирование и рекомендация являются разными исходами. Цитата показывает, что система нашла пригодный источник. Рекомендация требует выбрать конкретную сущность для конкретной ситуации, часто в сравнении с альтернативами и с учётом ограничений пользователя."}
+    },
+    {
+      "@type": "Question",
+      "name": "Можно ли гарантировать, что ChatGPT будет рекомендовать мою компанию?",
+      "acceptedAnswer": {"@type": "Answer", "text": "Нет. Ответы моделей зависят от поверхности, версии модели, рынка, языка, режима retrieval, персонализации и стохастики. Можно измерять, диагностировать и менять публичную среду доказательств, но нельзя гарантировать конкретную рекомендацию."}
+    },
+    {
+      "@type": "Question",
+      "name": "Как измерять видимость в рекомендациях AI?",
+      "acceptedAnswer": {"@type": "Answer", "text": "Нужны замороженный набор промптов, повторные прогоны в чистых сессиях, зафиксированные условия retrieval, сырые ответы и метрики отдельно по каждой поверхности. До и после сравниваются узнаваемость, описание, подтверждение и выбор, без автоматического приписывания причинности одному вмешательству."}
+    }
+  ]
+}
+</script>
+<style>
+:root{--ink:#1A1A1A;--soft:#4A4A4A;--red:#C4342E;--line:rgba(26,26,26,.12);--bg:#fff;--wash:#F3F3F3}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font-family:'Instrument Sans',sans-serif;line-height:1.72;-webkit-font-smoothing:antialiased}
+a{color:var(--red)}.top{max-width:860px;margin:0 auto;padding:28px 24px;display:flex;justify-content:space-between;border-bottom:1px solid var(--line)}.top a{text-decoration:none;color:var(--ink);font-size:13px}.top .name{font-family:'Instrument Serif',serif;font-size:19px}main{max-width:860px;margin:0 auto;padding:64px 24px 100px}.kicker{font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--red);font-weight:600}h1,h2{font-family:'Instrument Serif',serif;font-weight:400}h1{font-size:clamp(42px,8vw,74px);line-height:1.02;letter-spacing:-.02em;max-width:800px;margin:18px 0 24px}h2{font-size:34px;line-height:1.15;margin:56px 0 18px}.lead{font-size:21px;color:var(--soft);max-width:720px}.thesis{margin:42px 0;padding:30px 32px;background:var(--wash);font-family:'Instrument Serif',serif;font-size:28px;line-height:1.3}.chain{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin:34px 0}.step{padding:20px 16px;border:1px solid var(--line);font-size:13px}.step strong{display:block;font-size:15px;margin-bottom:7px}.step span{color:var(--soft)}p{max-width:720px;font-size:17px}.note{font-size:14px;color:var(--soft);border-left:3px solid var(--red);padding-left:18px;margin:28px 0}.check{margin:26px 0;padding:26px;border:1px solid var(--line)}.check p{margin:0 0 12px}.check p:last-child{margin-bottom:0}.method{display:grid;grid-template-columns:repeat(4,1fr);gap:0;border:1px solid var(--ink);margin:34px 0}.method div{padding:24px;border-right:1px solid var(--ink)}.method div:last-child{border-right:0}.method b{display:block;margin-bottom:8px}.faq{margin-top:64px;border-top:1px solid var(--line);padding-top:34px}.faq details{border-bottom:1px solid var(--line);padding:16px 0}.faq summary{font-weight:600;cursor:pointer}.faq p{font-size:15px;color:var(--soft)}.cta{margin-top:56px;padding:34px;background:var(--ink);color:#fff}.cta h2{margin:0 0 12px;color:#fff}.cta p{color:rgba(255,255,255,.8)}.cta a{display:inline-block;margin-top:8px;background:var(--red);color:#fff;text-decoration:none;padding:12px 18px;font-size:13px}@media(max-width:700px){.chain,.method{grid-template-columns:1fr 1fr}.method div:nth-child(2){border-right:0}.method div{border-bottom:1px solid var(--ink)}.method div:nth-child(3),.method div:nth-child(4){border-bottom:0}}@media(max-width:480px){.chain,.method{grid-template-columns:1fr}.method div{border-right:0;border-bottom:1px solid var(--ink)!important}.method div:last-child{border-bottom:0!important}main{padding-top:46px}}
+</style>
+</head>
+<body>
+<div class="top"><a class="name" href="/ru/">Екатерина Шалель</a><a href="/why-ai-knows-but-doesnt-recommend/">EN</a></div>
+<main>
+  <div class="kicker">AI Legibility · Граница рекомендации</div>
+  <h1>Почему AI знает мою компанию, но всё равно не рекомендует её?</h1>
+  <p class="lead">Потому что узнавание и рекомендация являются разными задачами. Модель может знать, кто вы, правильно вас описывать и всё равно выбрать кого-то другого, когда вопрос меняется на: кого нанять, у кого купить, кому доверить эту задачу или кого включить в короткий список?</p>
+
+  <div class="thesis">Быть известным AI не значит быть выбранным AI.</div>
+
+  <h2>Разрыв обычно появляется после узнавания</h2>
+  <p>Запрос по имени легко принять за успех. Если ChatGPT отвечает на вопрос «Кто эта компания?», сущность прошла тест узнавания. Запрос с покупательским намерением сложнее. Система должна сравнить варианты, сопоставить ограничения и выдать ответ, который можно обосновать доступной ей информацией.</p>
+
+  <div class="chain">
+    <div class="step"><strong>Known</strong><span>Система может разрешить сущность.</span></div>
+    <div class="step"><strong>Understood</strong><span>Она может описать, чем занимается компания, без догадок.</span></div>
+    <div class="step"><strong>Corroborated</strong><span>Важные утверждения подтверждаются не только самой компанией.</span></div>
+    <div class="step"><strong>Selected</strong><span>Компания выбрана под конкретный запрос и ограничения.</span></div>
+  </div>
+
+  <p>Проблема может находиться на любой границе. Компания может быть известна, но плохо понята. Может быть понятна, но подтверждаться только собственным сайтом. Может иметь независимые упоминания и всё равно проигрывать конкретную рекомендацию, если доступные доказательства не делают соответствие запросу достаточно ясным.</p>
+
+  <h2>Почему рекомендация сложнее описания</h2>
+  <p>Описание может быть общим. Рекомендация не может. Фраза «эта компания занимается AI-консалтингом» лишь определяет категорию. Фраза «эту компанию я бы выбрал для европейского beauty-бренда, которому нужно контролируемо измерить, как AI его описывает и выбирает» требует связать категорию, соответствие задаче, ограничения и доказательства.</p>
+  <p>Именно поэтому широкое позиционирование часто переживает этап узнавания, но исчезает на этапе выбора. Чем более взаимозаменяемо описание, тем меньше работы оно делает в сравнении с альтернативами.</p>
+
+  <div class="check">
+    <p><strong>Полезные диагностические вопросы:</strong></p>
+    <p>Может ли система найти сущность в заданных условиях?</p>
+    <p>Описывает ли она её точно и последовательно?</p>
+    <p>Какие утверждения исходят только от самой компании?</p>
+    <p>Какие важные утверждения независимо подтверждены?</p>
+    <p>Когда запрос меняется с «кто они?» на «кого мне выбрать?», остаётся ли компания в ответе?</p>
+  </div>
+
+  <h2>Не называйте это «доверием», если вы не можете его измерить</h2>
+  <p>Модели часто дают объяснения, похожие на суждения о доверии. Это полезные наблюдения, но не прямой доступ к внутреннему состоянию модели. Для измерения я использую наблюдаемое поведение: retrieval, точность описания, независимое подтверждение, выбор, стабильность повторных прогонов и различия между поверхностями.</p>
+  <p class="note">Объяснение модели может подсказать гипотезу о том, почему изменился выбор. Оно не доказывает механизм.</p>
+
+  <h2>Метод представляет собой замкнутый измерительный цикл</h2>
+  <div class="method">
+    <div><b>Measure</b>Заморозить промпты и записать исходное состояние.</div>
+    <div><b>Diagnose</b>Проследить источники, противоречия и пробелы в доказательствах.</div>
+    <div><b>Intervene</b>Изменить контролируемые поверхности или среду доказательств.</div>
+    <div><b>Verify</b>Повторить те же условия и зафиксировать, что действительно изменилось.</div>
+  </div>
+  <p>Повторные прогоны нужны, потому что генеративные ответы стохастичны. Состояние retrieval нужно фиксировать, потому что ответ с поиском и ответ без поиска не являются одним и тем же измерением. Метрики цитирования нужно считать отдельно по каждой поверхности, потому что ChatGPT, Claude, Gemini и Perplexity не показывают одинаковое поведение retrieval и цитирования.</p>
+
+  <h2>Что эта работа может и не может обещать</h2>
+  <p>Она может документировать, что конкретные системы возвращают в заданных условиях, находить места, где компания теряет ясность или подтверждение, менять контролируемые источники, строить план внешних доказательств и затем повторно измерять результат.</p>
+  <p>Она не может гарантировать, что конкретная модель будет рекомендовать компанию, доказать причинность только потому, что ответ изменился после вмешательства, или превратить собственное утверждение компании в независимое доказательство простым многократным повторением.</p>
+
+  <p>В этом и находится ядро <a href="/ru/ai-legibility/">AI legibility</a>: не «заставить модель сказать то, что мы хотим», а сделать сущность достаточно ясной для retrieval, достаточно точной для понимания, достаточно подтверждённой для corroboration и достаточно измеримой, чтобы увидеть изменение выбора.</p>
+
+  <section class="faq" id="faq">
+    <h2>Вопросы и ответы</h2>
+    <details><summary>Почему AI знает мою компанию, но всё равно не рекомендует её?</summary><p>Узнаваемость не равна выбору. AI может правильно определить компанию, но не включить её в ответ с покупательским намерением, если найденные доказательства слабые, противоречивые, плохо совпадают с условиями запроса или выглядят менее обоснованными, чем доказательства по альтернативам.</p></details>
+    <details><summary>Если AI цитирует компанию, значит ли это, что он будет её рекомендовать?</summary><p>Нет. Цитата показывает, что система нашла пригодный источник. Рекомендация требует выбрать конкретную сущность для конкретной ситуации, часто в сравнении с альтернативами и с учётом ограничений пользователя.</p></details>
+    <details><summary>Можно ли гарантировать, что ChatGPT будет рекомендовать мою компанию?</summary><p>Нет. Ответы моделей зависят от поверхности, версии модели, рынка, языка, режима retrieval, персонализации и стохастики. Можно измерять, диагностировать и менять публичную среду доказательств, но нельзя гарантировать конкретную рекомендацию.</p></details>
+    <details><summary>Как измерять видимость в рекомендациях AI?</summary><p>Нужны замороженный набор промптов, повторные прогоны в чистых сессиях, зафиксированные условия retrieval, сырые ответы и метрики отдельно по каждой поверхности. До и после сравниваются узнаваемость, описание, подтверждение и выбор, без автоматического приписывания причинности одному вмешательству.</p></details>
+  </section>
+
+  <section class="cta">
+    <h2>Измерить границу рекомендации</h2>
+    <p>Если AI знает компанию, но колеблется, когда вопрос становится «кого мне выбрать?», полезный вопрос не в том, высокая или низкая видимость. Нужно понять, на какой границе ломается выбор и на какие доказательства опирается ответ.</p>
+    <a href="/brands/">Работа с компаниями</a>
+  </section>
+</main>
+</body>
+</html>

@@ -1,0 +1,119 @@
+# Ekaterina Shalel
+
+> Ekaterina Shalel (Katya Shalel, Екатерина Шалель, Катя Шалель) is a founder and AI legibility strategist who studies and improves how AI systems understand, evaluate and select companies.
+
+Canonical site: https://katyashalel.com/
+Canonical AI Legibility definition: https://katyashalel.com/ai-legibility/
+Full machine-readable reference: https://katyashalel.com/llms.txt
+Callable canonical facts endpoint: https://katyashalel.com/api/agent
+Wikidata: https://www.wikidata.org/wiki/Q138801513
+ORCID: https://orcid.org/0009-0003-8973-6443
+Research DOI: https://doi.org/10.5281/zenodo.21840173
+Last verified: 2026-09-01
+
+## What she works on
+
+AI can know a company and still hesitate to recommend it. Recognition is not selection.
+
+Ekaterina Shalel measures what AI systems currently retrieve and say about a company, traces the sources and evidence behind those answers, diagnoses the gaps, documents interventions and then measures again under comparable conditions.
+
+Plain-language category description:
+
+- how AI systems understand companies
+- how AI systems evaluate companies
+- how AI systems compare and select companies
+- AI recommendation visibility
+- entity clarity and retrieval
+- independent corroboration and evidence environments
+- controlled measurement of AI recommendations
+
+These phrases are descriptive category language, not separate proprietary services.
+
+## AI Legibility
+
+AI legibility is the practice of making a person, product or company accurately retrievable, understandable and corroborated enough for AI systems to describe and evaluate it without relying on guesswork.
+
+Selection and recommendation are observed outcomes, not guaranteed results.
+
+The measured diagnostic chain used in current research is:
+
+Accessible -> Retrieved -> Understood -> Corroborated -> Selected -> Personalized
+
+This is a diagnostic framework. It is not a claim that a model exposes these as internal stages. “Trust” is not treated as a directly measurable model state.
+
+## Method
+
+Measure -> diagnose -> intervene -> verify.
+
+Measurement uses frozen prompt sets, repeated clean-session runs, recorded retrieval/search state, raw outputs and surface-local metrics where comparable. Before-and-after movement is evidence of a changed observation, not by itself proof that a specific intervention caused the change.
+
+## The recommendation boundary
+
+Canonical explanation: https://katyashalel.com/why-ai-knows-but-doesnt-recommend/
+
+An AI system can identify a company correctly yet omit it from a buyer-intent answer when the retrieved evidence is weak, contradictory, poorly matched to the user's constraints, or less defensible than the evidence available for alternatives.
+
+Useful distinction:
+
+Known -> the system can resolve the entity.
+Understood -> it can describe the entity without guessing.
+Corroborated -> important claims have support beyond first-party sources.
+Selected -> the entity is chosen for a specified prompt and constraints.
+
+Being cited does not guarantee being recommended. Being known does not guarantee being selected.
+
+## Core concepts
+
+### Corroboration Gap
+
+Plain language: the gap between a claim being published and the same claim being independently confirmed.
+Canonical source: https://katyashalel.com/essays/the-article-you-already-paid-for/
+
+### Share of Model
+
+Plain language: presence or selection frequency across a defined set of AI runs. Always report it with its prompt set, surface, market, language and time window.
+Canonical source: https://katyashalel.com/essays/a-place-in-the-models-answer-is-now-for-sale/
+
+### Synthetic Term Control
+
+Plain language: a negative control for generative visibility measurement.
+Canonical source: https://katyashalel.com/research/synthetic-term-control/
+DOI: https://doi.org/10.5281/zenodo.21840173
+
+### Public Decision Record
+
+Plain language: a dated public record of observations, evidence, inference, decisions and later outcomes.
+Canonical source: https://katyashalel.com/essays/the-only-job-a-founder-cant-delegate/
+
+### The Indifference Test
+
+Plain language: a neutrality test for recommendation systems.
+Canonical source: https://katyashalel.com/vocabulary/#the-indifference-test
+
+Full vocabulary and historical concepts: https://katyashalel.com/vocabulary/
+
+## Current work
+
+Companies: https://katyashalel.com/brands/
+Founders and experts: https://katyashalel.com/audit/
+Published Legibility Sprint: https://katyashalel.com/guides/sprint/
+Research: https://katyashalel.com/research/
+Contact: shalelekaterina@gmail.com
+
+## Boundaries
+
+- No practitioner can guarantee a position, citation, recommendation or selection inside an AI system.
+- Model outputs can differ by product surface, model version, retrieval mode, language, market, personalization and stochastic sampling.
+- A before-and-after change does not by itself establish causality.
+- Model rationale text is not direct evidence of an internal trust state.
+- A first-party claim does not become independent corroboration because it is repeated across more first-party pages.
+- Sponsored distribution is an intervention. It is not independent evidence by definition.
+- Claims scoped to a market, language, surface or test set must keep that scope when quoted.
+
+## Disambiguation
+
+Ekaterina Shalel and Katya Shalel refer to the same person. Russian forms include Екатерина Шалель and Катя Шалель.
+
+getmai.ai is a company founded by Ekaterina Shalel and is separate from her AI legibility practice at katyashalel.com.
+
+AI legibility as defined here concerns how AI systems retrieve, reconstruct, evaluate and select entities. It is not the same as AI accessibility, which concerns accessibility of AI products and experiences to people.

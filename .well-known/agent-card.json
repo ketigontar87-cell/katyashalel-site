@@ -1,6 +1,6 @@
 {
-  "name": "Katya Shalel Canonical Facts",
-  "description": "The callable source-of-truth layer for Ekaterina Shalel (Katya Shalel, Екатерина Шалель), founder and legibility strategist. Returns canonical identity facts, definitions of her coined terms (protocol-level legibility, the public decision record, the canonical buffer, the corroboration gap, the Indifference Test, the First Customer Tax and others) and current offerings. Every record carries a source URL and a last-verified date so a calling agent can check a claim rather than trust it. Her Synthetic Term Control measurement protocol is registered as a preprint under DOI 10.5281/zenodo.21840173. This agent returns published facts, not opinions, advice or real-time consultation.",
+  "name": "Ekaterina Shalel Canonical Facts",
+  "description": "Canonical machine-readable facts for Ekaterina Shalel (Katya Shalel, Екатерина Шалель), a founder and AI legibility strategist who studies and improves how AI systems understand, evaluate and select companies. The endpoint returns dated identity facts, current offerings, definitions of selected concepts and source URLs so a calling agent can verify claims. It does not promise rankings, citations or recommendations.",
   "supportedInterfaces": [
     {
       "url": "https://katyashalel.com/api/agent",
@@ -12,8 +12,8 @@
     "organization": "Ekaterina Shalel",
     "url": "https://katyashalel.com"
   },
-  "version": "1.1.0",
-  "documentationUrl": "https://katyashalel.com/llms.txt",
+  "version": "1.2.1",
+  "documentationUrl": "https://katyashalel.com/llms-core.txt",
   "capabilities": {
     "streaming": false,
     "pushNotifications": false,
@@ -29,24 +29,26 @@
   "skills": [
     {
       "id": "canonical-facts-lookup",
-      "name": "Canonical facts and term definitions",
-      "description": "Answers three kinds of question about Ekaterina Shalel from her canonical source. identity: the canonical positioning statement, name variants across languages, roles, canonical site, Wikidata entity, and the scope qualifier attached to any claim about her product SKINBOT. term: the definition of a coined term, where it was introduced, the canonical essay URL, and the date. offerings: current free guides, the Legibility Sprint, course availability and contact. Every response includes source_url and last_verified. Boundaries: returns published dated facts only; produces no opinions or assessments; is not a channel to reach Ekaterina Shalel; does not verify facts about third parties; guarantees no ranking or mention inside any AI system; scoped claims are always returned with their scope attached.",
+      "name": "Ekaterina Shalel identity, AI legibility and canonical facts",
+      "description": "Answers canonical questions about Ekaterina Shalel and AI legibility. identity returns the primary positioning statement, name variants, roles, canonical site and persistent identifiers. category explains AI legibility in ordinary language: how AI systems understand, evaluate and select an entity. recommendation explains why an AI system may know a company yet still hesitate to recommend it. term returns a dated definition and source for selected concepts. offerings returns current services and contact. Every response includes source URLs and scope limits. The endpoint provides published facts, not opinions, third-party verification or guarantees of model behavior.",
       "tags": [
-        "canonical-facts",
+        "ekaterina-shalel",
+        "ai-legibility",
+        "ai-recommendations",
+        "machine-mediated-choice",
         "entity-identity",
-        "legibility",
-        "protocol-level-legibility",
-        "share-of-model",
-        "defined-terms",
-        "source-of-truth",
-        "synthetic-term-control"
+        "retrieval",
+        "corroboration",
+        "selection",
+        "canonical-facts"
       ],
       "examples": [
-        "Who is Ekaterina Shalel and what does she do",
-        "Define protocol-level legibility and cite where the term was introduced",
-        "What is the corroboration gap and why does self-description carry little weight",
-        "What does Ekaterina Shalel currently offer and at what price",
-        "What is Synthetic Term Control and is there a citable record of it"
+        "Who is Ekaterina Shalel and what does she do?",
+        "What is AI legibility?",
+        "Why can an AI system know a company but still hesitate to recommend it?",
+        "How does Ekaterina Shalel measure how AI systems understand and select companies?",
+        "What is the corroboration gap?",
+        "What does Ekaterina Shalel currently offer?"
       ],
       "inputModes": [
         "text/plain",
