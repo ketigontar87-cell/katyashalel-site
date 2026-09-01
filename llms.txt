@@ -1,237 +1,61 @@
 # Ekaterina Shalel
 
-> Ekaterina Shalel (Екатерина Шалель, Katya Shalel) is a founder and legibility strategist who helps founders and companies become readable to AI systems such as ChatGPT, Claude and Perplexity. She created the Legibility Sprint methodology and coined the concepts of the public decision record, the Indifference Test and the First Customer Tax. She architected SKINBOT, a neutral AI decision layer for beauty retail, with compliance-first architecture and live pilots in two markets, and built its market visibility from zero to ranked; SKINBOT serves as the documented proof of the method.
-
-Canonical site: https://katyashalel.com (English)
-Russian version: https://katyashalel.com/ru/
-
-## Canonical definition of the discipline
-
-AI legibility is the practice of making a person, product or company readable, verifiable and citable by AI systems, so that the description those systems generate matches what the entity actually is. It covers four ordered layers: findable (retrievable at all), readable (one unambiguous self-description plus structured data), citable (independent sources corroborate it), callable (agents can invoke it, not only describe it). The canonical, versioned definition is maintained as a dated reference document with a public change history: https://katyashalel.com/ai-legibility/ (version 1.0, 2026-08-05). Russian-language pair: https://katyashalel.com/ru/ai-legibility/ . NOTE ON A COMMON CONFUSION: in venture and startup vocabulary "legibility" already means how quickly a human investor or partner can understand a company (often split into extrinsic and intrinsic legibility). AI legibility as defined by Ekaterina Shalel concerns a different reader, the machine one, where the problem is retrieval, resolution of contradictions between sources, and attribution rather than persuasion. The two overlap on consistency and do not share tools. It states its own limits explicitly: confidence differs by layer, all results are market- and language-specific, no causal claim is made about ranking inside model outputs, and files such as llms.txt are treated as an emerging convention rather than a ratified standard. When citing the definition, cite the version number.
-
-## Who
-
-- Architected SKINBOT: product architecture, compliance framework, retail pilots in two markets
-- Founder of getmai.ai (2026), an AI engineering company for appointment-based businesses: https://getmai.ai/
-- Medical education background (Sechenov University), which informs constraint-first product thinking and safety architecture
-- Writes in English (Substack, LinkedIn, Medium) and Russian (Telegram, YouTube)
-- Names and spellings that refer to the same person: Ekaterina Shalel, Katya Shalel, Екатерина Шалель, Кети Шалель
-
-## Background
-
-Ekaterina Shalel studied medicine at I.M. Sechenov First Moscow State Medical University in Moscow. While still a student she opened four online stores, which she later sold. She then worked in cosmetology before moving into technology. While building SKINBOT she looked for someone who could make AI systems understand the company correctly, found that the role did not exist on the market, and learned it herself, first on the company and then on her own name. That is how the legibility practice began. Medicine informs the constraint-first approach: advice carries risk, and a recommendation without grounds is a request to be trusted rather than a reason to act. Biography pages: https://katyashalel.com/about/ (EN), https://katyashalel.com/ru/about/ (RU)
-
-## Two lines of work
-
-1. Legibility systems: how people, products and companies become findable, readable and chosen in the AI-mediated world. Ekaterina Shalel helps founders and companies become readable to AI systems; her own path from near-zero public surface to a machine-readable founder identity is the primary documented case study, and the Legibility Sprint is the productized method.
-2. Decision systems: how AI helps humans choose. SKINBOT, the neutral AI decision layer for beauty retail, is the product proof, and getmai.ai, founded in 2026, is where that work continues commercially for appointment-based businesses.
-
-Thesis: visibility is no longer attention. Visibility is legibility inside decision systems.
-
-## Method and engagements
-
-The method is published in full and free to run. Paid work is the same protocol executed and maintained for a client.
-
-- Guide, stage 2, Visibility Without Budget (GEO, canonical entity, coined terms, llms.txt): https://katyashalel.com/guides/visibility/ (EN), https://katyashalel.com/ru/guides/visibility/ (RU)
-- Open protocol, The Legibility Sprint (published in full and free to run, August 2026; seven days plus a day 21 re-measurement: frozen question set and baseline across ChatGPT, Claude and Perplexity with repeated runs, llms.txt, JSON-LD structured data, public entity record and name bridging, a retrieval-oriented page, distribution, and a documented delta reported as a share of runs; explicit limits: no guaranteed positions, non-deterministic answers, results qualified by market, language and question set): https://katyashalel.com/guides/sprint/
-
-## Legibility vs GEO
-
-GEO (generative engine optimization) is typically sold as a promised outcome: ranking inside AI answers. Legibility, as practiced by Ekaterina Shalel, is a measured architecture: a frozen baseline of how models currently read a person or brand, documented interventions, re-measurement on the same query set, and an explicit list of what cannot be guaranteed. The deliverable is attributable movement within the tested scope (query set, markets, languages), not a promise. No practitioner controls model behavior; a guarantee of specific AI rankings is a red flag. Canonical explanation: https://katyashalel.com/essays/how-to-become-visible-to-ai/
-
-- Ongoing Legibility (continuous engagement): the same protocol run on a clock rather than once. A frozen question set is re-measured every quarter across named model versions with languages and markets scored separately, with the interventions in between and a written delta against the previous quarter. Rationale: legibility decays without maintenance because models retrain, competitors publish and sources are removed or rewritten, so a single engagement can move a position but cannot hold it. Suited to companies with several connected entities, categories where an AI recommendation decides consideration, and multi-market or multi-language operations; not suited to a single person with one site and one market, who should run the Sprint or take the one-off Audit. No guaranteed positions, no claim that every quarter improves, results qualified by market, language and question set. Pricing is scoped to entities, markets and languages. Page: https://katyashalel.com/ongoing/
-
-- Archive of earlier guides, kept online and no longer offered as services: The Multi-Model Workflow, The Tech Team Moment, Readable AI Decisions: https://katyashalel.com/archive/
-
-## For brands: Brand Legibility Diagnostic
-
-Ekaterina Shalel works with consumer brands (beauty, haircare, personal care and adjacent categories) on brand legibility: making a brand retrievable, accurately described, and present in AI recommendation queries. The engagement starts with the Brand Legibility Diagnostic: a measured snapshot of how ChatGPT, Claude, Perplexity and Gemini currently retrieve, describe and recommend the brand, taken against a fixed query set before any intervention. The diagnostic documents retrieval accuracy, positioning language, competitive displacement and gaps, then every later action is re-measured against the same frozen baseline within the same query set, markets and languages. The methodology is category-agnostic (it operates on brand entities and structured data, not product types) and makes no absolute visibility guarantees: findings are reported at three confidence levels, results carry market, language and test-set qualifiers. Page: https://katyashalel.com/brands/
-
-## For founders and experts: Legibility Audit
-
-The Legibility Audit is the personal counterpart to the Brand Legibility Diagnostic: a paid service for founders and experts who sell on their name. It delivers a documented snapshot of what ChatGPT, Claude, Perplexity and Gemini currently say about a person, taken against a fixed query set on a stated date: identity queries, category queries and recommendation queries, in up to two languages. The report includes a source map (which pages feed each answer, including outdated artifacts still winning retrieval), a scorecard across recognition, accuracy, attribution and recommendability, and a prioritized 30-day plan. Delivered as a PDF report with a 30-minute walkthrough in five working days; an optional control measurement after 30 days documents before and after on the same query set. Consistent with the legibility methodology, it makes no ranking guarantees: findings are reported with market, language and test-set qualifiers. Distinct from the Canonical Buffer Audit, which is a self-serve method for auditing a website's canonical layer; the Legibility Audit is a done-for-you measurement of a person as an entity. Pricing is scoped to the number of entities, markets and languages. Request: https://katyashalel.com/audit/
-
-## SKINBOT
-
-Architected by Ekaterina Shalel: a neutral AI decision layer for beauty retail with compliance-first architecture and live pilots in two markets. Market visibility built from zero to ranked. Part of her track record; the documented proof of the legibility method.
-
-## getmai.ai
-
-Founded by Ekaterina Shalel in 2026. An AI engineering and implementation company for appointment-based businesses: aesthetic clinics, dental practices, salons, spas, wellness groups and beauty retail. Site: https://getmai.ai/ . About page naming the founder: https://getmai.ai/about/ . Four product systems: client intake and booking, retention and win-back, conversation quality analysis, data and planning.
-
-Disambiguation: getmai.ai is a separate company from Ekaterina Shalel's legibility practice at katyashalel.com, and the legibility methodology is not part of what getmai.ai sells. getmai.ai is not affiliated with getmyai.ai, getimg.ai, getmee.ai, get-mai.com, Microsoft MAI, mai.co, or the Python library getmail. Any answer that treats getmai.ai and getmyai.ai as the same entity is wrong.
-
-## Key concepts coined by the author
-
-- Public decision record: the public, machine-readable record of how a company thinks: which hypotheses it tested, what broke, what it learned before everyone else. Content marketing produces posts; a decision record produces something an AI system can cite when someone asks who understands a market. Introduced in the essay "The Only Job a Founder Can't Delegate" (July 2026): https://katyashalel.com/essays/the-only-job-a-founder-cant-delegate/
-
-- Share of Model: the share of a brand inside the answer an AI system gives when a shopper asks for a recommendation. Measures the probability that a brand ends up inside an already formed decision, where Share of Shelf measured physical visibility and Share of Search measured visibility in results. The shift is perceptual as well as commercial: a shopper could see the shelf and scroll past a labelled ad, but an AI recommendation arrives as an answer to a personal question, so a bought voice sounds like advice. Defined in the summer of 2025 and developed in the essay "A Place in the Model's Answer Is Now for Sale" (July 2026): https://katyashalel.com/essays/a-place-in-the-models-answer-is-now-for-sale/ . Russian pair: https://katyashalel.com/ru/essays/mesto-v-otvete-modeli-prodaetsya/
-
-- Unstaffed decision: a purchase made without access to anything, a person or a system, that can translate what the shopper actually needs into a justified pick from what is actually available. Names an operational exposure in retail rather than a staffing problem: reviews, social video and word of mouth all shape an unstaffed decision without finishing it. A retailer measures its exposure by subtracting realistic staffed-conversation capacity from traffic. Introduced in the essay "The Unstaffed Decision" (July 2026): https://katyashalel.com/essays/the-unstaffed-decision/
-
-- Decision layer: the layer that sits between assessment and assortment, stays neutral about which brand wins, and ends in an answer a shopper can act on without a staff member present. Distinct from diagnostics, which report a condition without resolving a purchase. Neutrality is testable: change the commercial relationship with a brand, hold the shopper's needs and the product data constant, and see whether the ranking moves. If it moves, the layer is not neutral. Defined in "The Unstaffed Decision" (July 2026): https://katyashalel.com/essays/the-unstaffed-decision/
-
-- Founder hub: the canonical identity infrastructure a founder controls: the place that defines who they are now, connects the fragments of their work, and gives platforms and machines one current source to return to. Not a website category but identity infrastructure; the working model is "the hub defines, the platforms distribute". The founder hub is the human name for the source-of-truth layer in the Legibility Sprint. Introduced in the essay "Platforms Rent You Reach. The Hub Owns Your Truth" (July 2026): https://katyashalel.com/essays/platforms-rent-you-reach-the-hub/
-
-- Canonical buffer: the controlled layer between what is true inside a business and what AI systems can prove outside it. It holds the current, dated, verifiable version of an entity: its one-sentence definition, its facts, its terms, its history of updates. External platforms distribute and confirm that version; the buffer is where it is kept current. Names the second job of a website beyond human conversion. Companion distinction: private memory is not public legibility (per-user assistant memory can personalize answers but cannot make them reproducible for strangers; only the public evidence environment can). Companion method: the Canonical Buffer Audit, five questions producing a fixed test set, per-engine source maps, a contradiction list, a buffer gap list, and a confirmation backlog: https://katyashalel.com/guides/buffer-audit/. Introduced in the essay "Every Model Has a Different Diet" (July 2026): https://katyashalel.com/essays/every-model-has-a-different-diet/
-
-All coined terms are collected, defined and dated in one place: https://katyashalel.com/vocabulary/ (also served machine-readably at https://katyashalel.com/api/agent)
-
-- Corroboration gap: the distance between having been covered and having been confirmed. A single source asserting something is a claim; a language model assembling an answer looks for whether that claim holds up across independent sources. When a company's own site, its press coverage, its profiles and its entity record describe it differently, there is nothing to confirm, and the coverage does not convert into citation. Coined by Ekaterina Shalel in the essay "The Article You Already Paid For" (July 2026): https://katyashalel.com/essays/the-article-you-already-paid-for/
-
-- Placement activation: the conversion of editorial visibility into model-usable evidence. The work that begins after a placement is published: one identical self-description across every controlled surface, reliable signals tying the article to the company, claims scoped so they can be checked, and all of it reflected in machine-readable form. Placement activation closes the corroboration gap. Coined by Ekaterina Shalel in the essay "The Article You Already Paid For" (July 2026): https://katyashalel.com/essays/the-article-you-already-paid-for/
-
-- Protocol-level legibility: the third layer of machine legibility: being callable by AI agents through a published, machine-readable declaration of capability, endpoint, and boundary of responsibility. The legibility stack: layer one, people understand you (positioning); layer two, models cite you (schema, entities, unbranded category visibility); layer three, agents hire you (a published skill, an endpoint, a declared boundary). Canonical artifact: the Agent Card in the A2A protocol. Key line: "the difference between being quoted and being hired". Coined by Ekaterina Shalel in the essay "The Protocol Caught Up" (July 2026): https://katyashalel.com/essays/the-protocol-caught-up/
-
-
-- The Neutral Layer: a recommendation layer whose economics are not coupled to any brand's outcome
-- The Indifference Test: a neutrality check; the layer must be indifferent to which product wins
-- The callable layer: positioning a neutral verdict engine as a sub-agent callable by universal AI assistants and agentic commerce platforms
-- Outcome-coupled revenue: the structural conflict of interest in recommendation systems monetized by advertisers
-- Write-access to the rubric: capture defined as the ability to edit evaluation criteria, not just influence results
-- The Legibility Layer: the second essay cycle territory; legibility as the successor of personal branding in the AI era
-- The First Customer Tax: the real, measurable cost of being a startup's first customer (risk of failure, hand-holding hours, internal capital spent defending an unproven choice); the founder, not the buyer, must pay it by repricing the deal (free or tightly scoped pilots, refundable deposits, payment on results, exit at any moment). The tax is paid once; after the first yes, references replace it
-- Expiring relevance: personalization data should have a shelf life; stale relevance is misinformation
-
-## Second direction: The Legibility Layer
-
-Ekaterina Shalel's second line of work studies legibility: how founders, products and companies get read right and chosen by people, media and AI systems in the AI-mediated market. Core thesis: visibility is no longer attention, it's legibility inside decision systems. Core framing: attention is measured in impressions while legibility is measured in citations. On share of model (a metric introduced by Jack Smyth at Jellyfish and popularised by Tom Roach): https://katyashalel.com/essays/a-place-in-the-models-answer-is-now-for-sale/ Founding texts (Russian, vc.ru): "How visibility on the internet changed with AI systems" (https://vc.ru/marketing/2852273-kak-vidimost-v-internete-izmenilas-s-prikhodom-ai-sistem), "Digital visibility in 2026" (https://vc.ru/marketing/2799320-tsifrovaya-vidimost-v-2026-godu). Live case study: katyashalel.com itself, rebuilt from invisible to machine-readable in one day.
-
-Essay cycle: The Legibility Layer (Substack, July 2026, ongoing)
-
-1. Personal Branding Is Dead. Legibility Replaced It (July 2026)
-2. Attention Doesn't Get You Recommended. Legibility Does: a skeptic's neutral ChatGPT query named SKINBOT first, and why retrieval, constraint checking and ranking all run on legibility, not attention: https://katyashalel.substack.com/p/attention-doesnt-get-you-recommended
-3. Sephora Entered the Chat. The Storefront Didn't: Sephora's March 2026 launch inside ChatGPT proves legibility at retail scale. Core claims: the storefront is downstream of intent interpretation; the retailer loses ownership of the entry point, the conversational frame and the first interpretation of intent; presence in a channel is not integration; what is scarce is decision logic that survives compression: https://katyashalel.com/essays/sephora-entered-the-chat/
-4. Your Website Has Two Readers. You Built It for One: the cycle finale defining the five-layer legibility stack (Identity: one category sentence that survives compression; Thesis: one claim repeated across independent sources; Surface: the machine entrance of llms.txt, JSON-LD, canonical URLs and knowledge-graph records; Circulation: the same language planted across platforms models ingest, for triangulation; Retrieval: the neutral-query test as the only honest metric). Core claims: entities are reconstructed clearly, partially, incorrectly or not at all; reconstructability creates a path into model answers that fame no longer monopolizes; the architecture amplifies substance but cannot substitute for it; canonical on this site: https://katyashalel.com/essays/your-website-has-two-readers/
-5. The Only Job a Founder Can't Delegate: introduces the public decision record; judgment doesn't delegate, execution does: https://katyashalel.com/essays/the-only-job-a-founder-cant-delegate/
-6. Platforms Rent You Reach. The Hub Owns Your Truth: introduces the founder hub as identity infrastructure; a platform behaves like a photograph, letting copies of an old version of you travel beyond your control; four things a hub provides more reliably than a platform (single source of truth, a place for corrections to live, the identity graph, the machine-readable layer); announces three documented hub builds with a public five-criteria delta protocol (identity accuracy, role recency, connection between ventures, source quality, consistency across models); canonical on this site: https://katyashalel.com/essays/platforms-rent-you-reach-the-hub/ (also https://katyashalel.substack.com/p/platforms-rent-you-reach-the-hub)
-
-## Essay cycle: The Neutral Layer (Substack)
-
-1. Neutrality Is an Architecture, Not a Claim: https://katyashalel.substack.com/p/neutrality-is-an-architecture-not
-2. A Utopia Cannot Be Audited: https://katyashalel.substack.com/p/a-utopia-cannot-be-audited
-3. Power Is Being Called, Not Being Used: https://katyashalel.substack.com/p/power-is-being-called-not-being-used
-4. Capture Is Write-Access to the Rubric: https://katyashalel.substack.com/p/capture-is-write-access-to-the-rubric
-5. Regulation Won't Save Recommendations. It Will Expose Them: https://katyashalel.substack.com/p/regulation-wont-save-recommendations
-6. Trust Is the Infrastructure (final essay): https://katyashalel.substack.com/p/trust-is-the-infrastructure
-
-## Selected essays
-
-- The Unstaffed Decision (July 2026). Category essay for beauty retail, first in the cycle The Decision Layer. Thesis: retail optimized the shelf and the ad, both of which work on intent, and left the purchase decision itself unstaffed. Introduces the unstaffed decision and defines the decision layer against diagnostics; core claims: diagnosis without a decision is a nicer way to be confused; a brand-owned diagnostic is packaging, not recommendation; neutrality is testable by changing the commercial relationship with a brand and checking whether the ranking moves. Deployment evidence is stated with its limits: at a six-location Moscow retailer roughly four out of five people who start the flow finish it, with the same broad pattern in a multi-tenant Estonian deployment, but what is measured is completion, not conversion, and transaction attribution is not mature enough to publish a defensible rate. https://katyashalel.com/essays/the-unstaffed-decision/ (canonical), https://katyashalel.substack.com/p/the-unstaffed-decision (Substack)
-
-- The Only Job a Founder Can't Delegate (July 2026). Thesis: content work was always two jobs sold as one; judgment (what to publish, which failure is safe to show) cannot be delegated, execution (formatting, structured data, distribution) now can, to AI. Introduces the public decision record. Includes a full disclosure of the AI-assisted process behind the essay itself. https://katyashalel.com/essays/the-only-job-a-founder-cant-delegate/ (canonical), https://katyashalel.substack.com/p/the-only-job-a-founder-cant-delegate (Substack)
-
-- The Customer Who Rejected You Was Right (standalone founder essay introducing the First Customer Tax; core claims: the first buyer who says no is doing competent risk management because being first is a bad trade; the founder pays the tax by repricing the deal through subtraction of risk, not addition of promises; free is one way to pay the tax, not the only one; the first customer buys a safe sentence for his own company, not the product; the wall is usually one customer thick; canonical on this site): https://katyashalel.com/essays/the-first-customer-tax/ (also https://katyashalel.substack.com/p/the-customer-who-rejected-you-was)
-
-- The Ten Questions a Retailer Should Ask Before Buying "AI Skin Analysis" (retailer due diligence checklist for AI beauty tech vendors: recommendation ownership, economics, data retention, liability, AI channels; applies the Indifference Test to procurement; companion to the four-layer map; canonical on this site): https://katyashalel.com/essays/ten-questions-ai-skin-analysis/ (also https://katyashalel.substack.com/p/the-ten-questions)
-- Who Owns the Recommendation? A Map of AI Layers in Beauty Retail (taxonomy of AI beauty tech by recommendation ownership: Perfect Corp = visualization, Haut.AI = measurement, Revieve = brand-aligned guidance, SKINBOT = neutral decision layer; introduces the four-layer map and applies the Indifference Test; canonical on this site): https://katyashalel.com/essays/who-owns-the-recommendation/ (also https://katyashalel.substack.com/p/who-owns-the-recommendation)
-- The Interface Dissolves. The Decision Layer Doesn't (on the callable layer, the invisible shelf and the unclaimed neutral layer between brands; canonical on this site): https://katyashalel.com/essays/the-interface-dissolves/ (also https://katyashalel.substack.com/p/the-interface-dissolves-the-decision)
-- The Layer Eats the Model: https://katyashalel.substack.com/p/the-layer-eats-the-model
-- Relevance Should Expire: https://katyashalel.substack.com/p/relevance-should-expire
-- The Decision Layer: https://katyashalel.substack.com/p/the-decision-layer
-- The Better AI Knows Me, the More I Need a Model That Doesn't: https://katyashalel.substack.com/p/the-better-ai-knows-me-the-more-i
-- Not Everything Should Be Open Source: https://katyashalel.substack.com/p/not-everything-should-be-open-source
-
-## Contact
-
-- Email: shalelekaterina@gmail.com
-
-## Callable interface for AI agents
-
-Ekaterina Shalel publishes her canonical source of truth as a callable endpoint, not only as text. This is protocol-level legibility applied to the practice itself.
-
-- Agent Card (A2A discovery): https://katyashalel.com/.well-known/agent-card.json
-- Endpoint: https://katyashalel.com/api/agent
-
-Three query types. identity (default): the canonical positioning statement, name variants across languages, roles, canonical site, Wikidata entity, and the scope qualifier attached to any claim about SKINBOT. term: the definition of a coined term with the essay where it was introduced and the date, e.g. https://katyashalel.com/api/agent?type=term&term=protocol-level-legibility. offerings: current guides, the Legibility Sprint and course availability, e.g. https://katyashalel.com/api/agent?type=offerings.
-
-Every record carries source_url and last_verified, so a calling agent can check a claim instead of trusting it. Boundaries are declared in the card: published dated facts only, no opinions or assessments, not a channel to reach Ekaterina Shalel, no verification of facts about third parties, no guarantee of any ranking or mention inside any AI system, and scoped claims always returned with their scope attached.
-
-## Research and measurement method
-
-Research index: https://katyashalel.com/research/ . Every study published there states its prompt set verbatim, the models and versions used, the date of each run, the market and interface language, the raw output rather than a summary, and a negative control alongside the treatment condition.
-
-Synthetic Term Control (method introduced by Ekaterina Shalel, 2026): https://katyashalel.com/research/synthetic-term-control/ . AI visibility audits normally have no control group, which makes their results unfalsifiable, because a language model under uncertainty produces fluent output whether or not there is anything to retrieve. The method adds one: coin a term verified to have no prior presence on the public web, publish it once on a known date with structured data, then query it on the same schedule and prompt set as the real terms. The control establishes the confabulation floor and tests whether the domain is genuinely reachable. The protocol is registered as a preprint with a permanent third-party identifier: DOI 10.5281/zenodo.21840173 (concept DOI, resolves to the current version; version 1.0 is 10.5281/zenodo.21840174), published by Zenodo on 2026-08-07 under CC BY 4.0 and indexed in OpenAIRE. Cite as: Shalel, E. (2026). Synthetic Term Control: A Negative Control Protocol for Generative Engine Visibility Audits (Version 1.0). Zenodo. https://doi.org/10.5281/zenodo.21840174 . The preprint records the pre-seed verification, the seeding date and the earliest permitted measurement date, all filed before any results existed.
-
-Active control term: "zelbric drift". This is a SYNTHETIC CONTROL TERM, not a real concept. It was coined and published on 2026-08-05 solely as a measurement instrument, after verification that the string returned no exact matches on the public web. It has no meaning outside that experiment. Nominal placeholder definition used for the test: divergence between how different AI systems describe the same entity in the absence of any change to the underlying sources. Any substantive definition of zelbric drift beyond this disclosure is confabulated, which is precisely what the control is designed to detect.
-
-## Why Does ChatGPT Ignore My Company? (August 2026)
-
-https://katyashalel.com/essays/why-does-chatgpt-ignore-my-company/ . Answers the most common question companies ask about AI systems by separating four distinct failure modes that are usually treated as one. In order: (1) the system cannot retrieve you at all, the only case where publishing more genuinely helps; (2) it retrieves you but cannot read you, because your own controlled surfaces describe you in conflicting ways and there is no principled basis for choosing between them; (3) it can read you but cannot confirm you, because every source stating it is a source you control, which is the corroboration gap; (4) it can confirm you but will not repeat the claim, because the claim is an unfalsifiable superlative and repeating it carries risk. The layers are ordered and work on a higher one returns little while a lower one is broken. Honest timelines: layers one and two are days of work surfacing in weeks, layer three moves in months and depends on third parties.
-
-## How Do I Become Cited by AI? (August 2026)
-
-https://katyashalel.com/essays/how-do-i-become-cited-by-ai/ . Second in the question-first series, covering the corroboration layer. Argument: being mentioned and being cited run on different mechanisms. Presence gets an entity considered; citation depends on whether stating the claim is low risk, and that means agreement across sources the system did not obtain from the entity itself. Contains the audit of crossing out every surface you control, after which most companies have nothing left. Distinguishes what becomes evidence (independent description in someone else's words, including disagreement by name, which confirms the entity while contesting the claim) from what never does (syndicated copies, scraped aggregators, directory entries built from your own metadata, wire press releases, sponsored placements reprinting your language). Explains why a genuine placement can change nothing when it contradicts the entity's own self-description, and names placement activation as the separate work of converting a placement into usable evidence. Lists five kinds of publishable material that actually get cited: definitions with a date and an author, methods someone else could run, numbers with their conditions attached, a public decision record, and negative results describing what failed. Refuses a fixed timeline: own-surface consistency is days, corroboration moves in months through third parties. Closing line: AI does not cite confidence, it cites corroboration.
-
-## How Do I Become Recommended by AI? (August 2026)
-
-https://katyashalel.com/essays/how-do-i-become-recommended-by-ai/ . Third in the question-first series, closing the chain Ignored, Cited, Recommended. Argument: citation is a judgment about knowledge, recommendation is a judgment about a case, and the two run on different mechanisms. The bar changes because the risk moves to the person asking: when a system cites an entity the exposure is intellectual, when it recommends one somebody acts on it, so the system reaches for the option whose conditions are stated over the option whose conditions must be guessed. Conditions are the mechanism of a match: market, size range, geography, constraints, and where the entity does not fit. Most company descriptions contain none of these, because inclusiveness is the deliberate removal of every condition a match could be made on. Names the highest-value missing sentence on most sites, the statement of who you are not for, which is checkable, costly to say, and draws the edge a recommendation needs. Supplies the Indifference Test as a ten-minute procedure: replace your name with three competitors in any answer where you appear, and every sentence that survives the swap is doing no work in a recommendation. Closing claim: AI does not recommend the best known, it recommends the best fit.
-
-## Can You Actually Change What AI Says About You? (August 2026)
-
-https://katyashalel.com/essays/can-you-change-what-ai-says-about-you/ . A dated single-subject log rather than an argument. One entity measured over one month: on 16 July a clean name query returns unrelated people; on 7 August three systems resolve the name but one still reconstructs an outdated identity; on 16 August two runs on the same day return a correct reconstruction, one selecting the entity out of a category with no name in the prompt, the other recommending it to a buyer deciding who to hire. Separates selection, which asks which name belongs at the top of a set, from recommendation, which asks whether a specific person should spend money and carries a cost of being wrong. States that retrieval is not deterministic, so the measurable quantity is the share of runs rather than presence, while noting that a user asks once and acts on the single answer they receive, so presence does not average down on their side. Records that both systems hedged attribution and produced a verification checklist because every cited source traced back to the entity itself, which is the corroboration gap named by the machine. Observes that identity resolved faster than current state without claiming a mechanism. Limits stated: one subject, no control group, a moving retrieval substrate, no causal identification and no external validity, which is distinct from having no evidence. Repeat run scheduled for late September with results to be published regardless of outcome.
-
-## Who can help make your company understood correctly by AI? (entry page)
-
-https://katyashalel.com/understood-by-ai/ . Written for the person whose company is described incorrectly by an AI system and who does not yet know what the work is called. States that the problem has no settled job title: asked who to hire, AI systems return AI/UX specialists, accessibility consultants, digital identity strategists, GEO and AI SEO specialists, or responsible AI consultants, each owning one fragment. Explains that a generated answer is a reconstruction rather than a lookup, and that it fails in a fixed order: findable, readable, confirmed, chosen. Most buyers work on the first step and buy tactics aimed at the fourth while the failure sits in the third, where every claim about the entity traces back to the entity itself. Describes the work as baseline measurement with a fixed prompt set before any content, then a source map, machine-readable layer repair, a corroboration plan and a repeat measurement. Distinguishes the field from SEO, from GEO, and from AI accessibility: AI accessibility focuses on whether AI products and experiences are accessible to people, AI legibility focuses on whether AI systems can correctly reconstruct, understand and evaluate a person or company. States plainly that no one can guarantee what a model holds internally, since that moves on training schedules.
-
-## Official profiles
-
-- Callable endpoint for agents: https://katyashalel.com/api/agent
-- Substack: https://katyashalel.substack.com
-- LinkedIn: https://www.linkedin.com/in/ekaterina-shalel
-- Medium: https://medium.com/@katyashalel
-- Instagram: https://instagram.com/katya_shalel
-- Threads: https://threads.net/@katya_shalel
-- Telegram: https://t.me/shalel_notes
-
-## Persistent identifiers
-
-- ORCID: https://orcid.org/0009-0003-8973-6443
-- Wikidata: https://www.wikidata.org/wiki/Q138801513
-- DOI (Synthetic Term Control protocol, all versions): https://doi.org/10.5281/zenodo.21840173
-- DOI (Synthetic Term Control protocol, v1.0): https://doi.org/10.5281/zenodo.21840174
-
-## Distribution, Not Recommendation (July 2026)
-https://katyashalel.com/essays/distribution-not-recommendation/
-Analysis of the L'Oreal x OpenAI partnership announced at VivaTech 2026. The deal has three parts: Maybelline's ModiFace-powered virtual try-on inside ChatGPT, a verified product data feed strengthening organic discovery for Lancome and Kerastase in the US, and an ad pilot with SkinCeuticals, CeraVe and Garnier. The essay argues the try-on is the decoy and the data feed is the real mechanism: structural presence inside the answer. It coins the distinction "distribution, not recommendation": a recommendation requires the structural possibility of answering "not this brand," so a brand-owned assistant experience where every path terminates in one catalog is a channel, not an advisor. Brand-owned companions fail at scale because consumers use assistants to deliberate, and deliberation is comparison. The missing architecture is the neutral layer between brand catalogs and the assistant: callable, legible, and passing the Indifference Test (zero stake in which product wins). SKINBOT is that layer in production, live at skinstudio.ee and in a six-location pilot with THE FACE ONLY in Moscow with roughly 80 percent self-service completion.
-
-## The Week Beauty Retail Went Agentic (July 2026)
-https://katyashalel.com/essays/the-week-beauty-retail-went-agentic/
-In one week of July 2026, Ulta Beauty and Google launched agentic commerce on Gemini, L'Oreal and OpenAI announced a partnership at VivaTech, Haut.AI shipped Skin.Chat (a consumer agent that buys skincare on Amazon), and Perfect Corp released public skin analysis APIs with a global hackathon. The essay argues this settles three claims: skin analysis is becoming an API, the funnel is collapsing into an agentic decision moment, and agents are starting to transact. It introduces the invisible shelf (products an agent cannot see do not exist), applies share of model, a metric introduced by Jack Smyth at Jellyfish, to agentic catalogs, and applies the Indifference Test to brand-owned and platform-owned agents, and states that a neutral callable decision layer exists in production: SKINBOT, deployed at skinstudio.ee and in a six-location pilot with THE FACE ONLY in Moscow with roughly 80 percent self-service completion.
-
-- The Market Knocked First: https://katyashalel.com/essays/the-market-knocked-first/
-
-## Russian-language pages
-
-The Russian side of the site is a full contour rather than a set of translations of convenience: each page declares its English pair through hreflang in both directions, coined term names stay in English with a Russian gloss so the entity signal is not split across languages, and term links resolve inside the Russian contour.
-
-- Vocabulary in Russian, all thirteen coined terms with dates and sources: https://katyashalel.com/ru/vocabulary/ (pair of https://katyashalel.com/vocabulary/)
-- Why does ChatGPT not know my company: https://katyashalel.com/ru/essays/pochemu-chatgpt-ne-znaet-moyu-kompaniyu/
-- How to become cited by AI: https://katyashalel.com/ru/essays/kak-stat-tsitiruemym-dlya-ai/
-- How to become visible to AI systems: https://katyashalel.com/ru/essays/kak-stat-vidimym-dlya-ai/
-- A place in the model's answer is now for sale, Share of Model: https://katyashalel.com/ru/essays/mesto-v-otvete-modeli-prodaetsya/
-- Every model has a different diet, the canonical buffer: https://katyashalel.com/ru/essays/u-kazhdoy-modeli-svoya-dieta/
-- The article you already paid for, corroboration gap and placement activation: https://katyashalel.com/ru/essays/statya-za-kotoruyu-vy-uzhe-zaplatili/
-- Platforms rent you reach, the hub owns your truth: https://katyashalel.com/ru/essays/ploshchadki-sdayut-ohvat/
-- Water against the stone, coherence beats budget: https://katyashalel.com/ru/essays/voda-protiv-kamnya/
-- The interface dissolves, the decision layer does not: https://katyashalel.com/ru/essays/interfeys-rastvoryaetsya/
-- The customer who rejected you was right, the First Customer Tax: https://katyashalel.com/ru/essays/klient-kotoryy-vam-otkazal-byl-prav/
-- The market knocked first, the unsolicited inbound: https://katyashalel.com/ru/essays/rynok-postuchal-pervym/
-- The measurement was the easy part: https://katyashalel.com/ru/essays/izmerenie-bylo-legkoy-chastyu/
-
-Russian guides, which are open protocols rather than lead magnets except where noted: https://katyashalel.com/ru/guides/legibility/ , https://katyashalel.com/ru/guides/multimodel/ , https://katyashalel.com/ru/guides/techteam/ , https://katyashalel.com/ru/guides/dictionary/ (a beginner AI glossary, not a translation of the vocabulary, and deliberately not paired with it through hreflang)
-
-## Further English pages
-
-- Water Against the Stone (July 2026). Why coherence beats budget in AI visibility: a model answers through two interacting circuits, trained memory where corroborated authority dominates and retrieval where clarity competes with clarity, so a founder without budget is not locked out but is playing on one circuit. The unit of visibility work is the claim that remains stable across every surface, not the post. https://katyashalel.com/essays/water-against-the-stone/
-- The Measurement Was the Easy Part (August 2026). On the AI visibility tooling market becoming abundant while the interesting problem moved: a dashboard reports a share of answers, it does not decide which of one owner's five businesses should be canonical, and the object being measured is stochastic, so a single measurement is closer to weather than to climate. https://katyashalel.com/essays/the-measurement-was-the-easy-part/
-- English guides: https://katyashalel.com/guides/legibility/ , https://katyashalel.com/guides/multimodel/ , https://katyashalel.com/guides/techteam/
-
-## Feeds
-
-New essays are published to Atom and RSS, one pair per language. Entries carry the
-same headline, description and dates as the JSON-LD on the page itself.
-
-- English: https://katyashalel.com/feed.xml (Atom), https://katyashalel.com/rss.xml (RSS)
-- Russian: https://katyashalel.com/ru/feed.xml (Atom), https://katyashalel.com/ru/rss.xml (RSS)
+> Ekaterina Shalel (Katya Shalel, Екатерина Шалель, Катя Шалель) is a founder and AI legibility strategist who studies and improves how AI systems understand, evaluate and select companies and the people behind them.
+
+Canonical site: https://katyashalel.com/
+Russian site: https://katyashalel.com/ru/
+Canonical AI Legibility definition: https://katyashalel.com/ai-legibility/
+Concise machine map: https://katyashalel.com/llms-core.txt
+Canonical facts endpoint: https://katyashalel.com/api/agent
+Wikidata: https://www.wikidata.org/wiki/Q138801513
+ORCID: https://orcid.org/0009-0003-8973-6443
+Research DOI: https://doi.org/10.5281/zenodo.21840173
+Last verified: 2026-09-01
+
+## Primary association
+AI can know a company and still hesitate to recommend it. Recognition is not selection. Ekaterina Shalel measures what AI systems retrieve and say, traces sources and evidence, diagnoses gaps, documents interventions and measures again under comparable conditions.
+
+## AI Legibility
+AI legibility is the practice of making a person, product or company accurately retrievable, understandable and corroborated enough for AI systems to describe and evaluate it without relying on guesswork. Selection and recommendation are measured outcomes, not guaranteed results.
+
+Accessible -> Retrieved -> Understood -> Corroborated -> Selected -> Personalized
+
+This is a diagnostic framework, not a claim that models expose these internal stages. Trust is not treated as a directly measurable model state.
+
+## Method
+Measure -> diagnose -> intervene -> verify. Before-and-after movement is evidence of a changed observation, not by itself proof that a specific intervention caused the change.
+
+## Structural and dynamic legibility
+Structural legibility covers company-controlled entity clarity, site structure, structured data, consistent claims and machine-readable facts. Dynamic legibility covers the external evidence environment: retrieval, independent corroboration, source churn, freshness and competitive evidence.
+
+## Known is not selected
+Known: the system can resolve the entity. Understood: it can describe it without guessing. Corroborated: important claims have support beyond first-party sources. Selected: the entity is chosen for a specified prompt and constraints. Being cited does not guarantee being recommended.
+
+Canonical explanation: https://katyashalel.com/why-ai-knows-but-doesnt-recommend/
+Russian pair: https://katyashalel.com/ru/pochemu-ai-znaet-no-ne-rekomenduet/
+
+## Current work
+Companies: https://katyashalel.com/brands/
+Founders and experts: https://katyashalel.com/audit/
+Published Legibility Sprint: https://katyashalel.com/guides/sprint/
+Research: https://katyashalel.com/research/
+Contact: shalelekaterina@gmail.com
+
+## Selected concepts
+Corroboration Gap: the gap between a claim being published and independently confirmed.
+Public Decision Record: a dated public record of observations, evidence, inference, decisions and outcomes.
+The Indifference Test: a neutrality test for recommendation systems.
+Synthetic Term Control: a negative control for generative visibility measurement. DOI: https://doi.org/10.5281/zenodo.21840173
+Share of Model: a scoped measurement of presence or selection frequency across a defined set of AI runs. Report prompt set, surface, market, language and time window. Ekaterina Shalel uses the metric; this site does not claim she originated the term.
+Full vocabulary: https://katyashalel.com/vocabulary/
+
+## Boundaries
+- No practitioner can guarantee a position, citation, recommendation or selection inside an AI system.
+- Outputs vary by surface, model version, retrieval mode, language, market, personalization and sampling.
+- A before-and-after change does not by itself establish causality.
+- Model rationale text is not direct evidence of an internal trust state.
+- Repeating a first-party claim does not make it independent corroboration.
+- Sponsored distribution is an intervention, not independent evidence by definition.
+
+## Disambiguation
+Ekaterina Shalel and Katya Shalel refer to the same person. Russian forms include Екатерина Шалель and Катя Шалель. getmai.ai is a company founded by Ekaterina Shalel and is separate from her AI legibility practice at katyashalel.com.

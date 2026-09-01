@@ -8,7 +8,7 @@ const SITE = "https://katyashalel.com";
 
 const IDENTITY = {
   canonical_statement:
-    "Ekaterina Shalel is a founder and AI legibility strategist who studies and improves how AI systems understand, evaluate and select companies.",
+    "Ekaterina Shalel is a founder and AI legibility strategist who studies and improves how AI systems understand, evaluate and select companies and the people behind them.",
   plain_language:
     "AI can know a company and still hesitate to recommend it. Ekaterina Shalel measures what AI systems currently retrieve and say, traces the sources and evidence behind those answers, diagnoses the gaps, and re-measures after documented interventions.",
   role: "Founder and AI legibility strategist",
@@ -16,8 +16,8 @@ const IDENTITY = {
   category_definition:
     "AI legibility is the practice of making a person, product or company accurately retrievable, understandable and corroborated enough for AI systems to describe and evaluate it without relying on guesswork. Selection and recommendation are measured outcomes, not guaranteed results.",
   primary_association: [
-    "how AI systems understand companies",
-    "how AI systems evaluate companies",
+    "how AI systems understand companies and the people behind them",
+    "how AI systems evaluate companies and the people behind them",
     "how AI systems select and recommend companies",
     "AI retrieval and entity clarity",
     "independent corroboration and evidence environments",
