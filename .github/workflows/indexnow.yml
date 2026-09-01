@@ -1,65 +1,155 @@
-name: IndexNow ping
-
-# Submits every URL in the live sitemap to IndexNow after each deploy.
-# Fails loudly: a rejected submission must not report as a green run.
+name: Final bilingual semantic cleanup
 
 on:
   push:
     branches: [main]
-  workflow_dispatch:
+
+permissions:
+  contents: write
 
 jobs:
-  ping:
+  cleanup:
     runs-on: ubuntu-latest
     steps:
-      - name: Wait for the deploy to go live
-        run: sleep 90
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 3
 
-      - name: Submit sitemap URLs to IndexNow
-        env:
-          HOST: katyashalel.com
-          KEY: 9656a8346f4b4450826617d677d759d8
+      - name: Apply approved semantic cleanup and QA
         run: |
-          set -euo pipefail
+          python - <<'PY'
+          from pathlib import Path
+          import json, re
 
-          # Read the deployed sitemap, not the one in the repo: if the deploy
-          # failed, the submission should reflect what is actually live.
-          curl -sS --fail --retry 3 --retry-delay 10 \
-            "https://${HOST}/sitemap.xml" -o sitemap.xml
+          def rep(path, old, new, required=False):
+              p = Path(path)
+              s = p.read_text()
+              n = s.count(old)
+              if required and n == 0:
+                  raise SystemExit(f"Required text not found in {path}: {old[:90]!r}")
+              if n:
+                  p.write_text(s.replace(old, new))
+              return n
 
-          grep -oP '(?<=<loc>)[^<]+' sitemap.xml > urls.txt
-          count=$(wc -l < urls.txt)
-          echo "Found ${count} URLs."
-          if [ "$count" -eq 0 ]; then
-            echo "Sitemap parsed to zero URLs."; exit 1
-          fi
+          # EN homepage: metadata, schema and visible positioning.
+          rep('index.html', '<title>Ekaterina Shalel · Founder and Legibility Strategist</title>', '<title>Ekaterina Shalel · Founder and AI Legibility Strategist</title>', True)
+          rep('index.html', '<meta name="description" content="Ekaterina Shalel, founder and legibility strategist. I help founders and companies get read correctly by ChatGPT, Claude, Perplexity and Gemini.">', '<meta name="description" content="Ekaterina Shalel is a founder and AI legibility strategist working on how AI systems understand, evaluate and select companies and the people behind them.">', True)
+          rep('index.html', '<meta property="og:title" content="Ekaterina Shalel · Founder and Legibility Strategist">', '<meta property="og:title" content="Ekaterina Shalel · Founder and AI Legibility Strategist">')
+          old_social = 'Ekaterina Shalel is a founder and legibility strategist who helps founders and companies become readable to AI systems such as ChatGPT, Claude and Perplexity. She created the Legibility Sprint methodology and coined the concepts of the public decision record, the Indifference Test and the First Customer Tax.'
+          new_social = 'Ekaterina Shalel is a founder and AI legibility strategist who studies and improves how AI systems understand, evaluate and select companies and the people behind them. She measures what models retrieve and say, traces the evidence behind those answers, documents interventions and measures again.'
+          rep('index.html', old_social, new_social)
+          rep('index.html', '<meta name="twitter:title" content="Ekaterina Shalel · Founder and Legibility Strategist">', '<meta name="twitter:title" content="Ekaterina Shalel · Founder and AI Legibility Strategist">')
+          rep('index.html', 'Ekaterina Shalel (\\u0415\\u043a\\u0430\\u0442\\u0435\\u0440\\u0438\\u043d\\u0430 \\u0428\\u0430\\u043b\\u0435\\u043b\\u044c, Katya Shalel) is a founder and legibility strategist. She helps founders and companies get read right by AI systems such as ChatGPT, Claude and Perplexity. She architected SKINBOT, a neutral AI decision layer for beauty retail, with compliance-first architecture and live pilots in two markets, and built its market visibility from zero to ranked.', 'Ekaterina Shalel (\\u0415\\u043a\\u0430\\u0442\\u0435\\u0440\\u0438\\u043d\\u0430 \\u0428\\u0430\\u043b\\u0435\\u043b\\u044c, Katya Shalel) is a founder and AI legibility strategist who studies and improves how AI systems understand, evaluate and select companies and the people behind them. She measures model outputs, traces the evidence behind them and verifies changes under comparable conditions.')
+          rep('index.html', 'A legibility strategist makes people, products and companies readable to AI systems: retrievable, accurately described, and present in the answers where decisions now happen. The discipline treats visibility as legibility inside decision systems, not as attention.', 'An AI legibility strategist measures how AI systems retrieve, understand, evaluate and select people, products and companies. The work separates entity clarity, evidence and corroboration from the observed outcome of being selected or recommended.')
+          rep('index.html', 'Share of Model, coined by Ekaterina Shalel, is the successor to share of shelf: the fraction of an AI agent\'s purchase decisions a brand or catalog can participate in. Products a model cannot read do not exist inside the answer.', 'Share of Model is a scoped measurement of how often an entity is present or selected across a defined set of AI runs. It should always be reported with the prompt set, surface, market, language and time window.')
+          rep('index.html', 'GEO is typically sold as a promised outcome: ranking inside AI answers. Legibility, as practiced by Ekaterina Shalel, is a measured architecture: a frozen baseline of how models currently read you, documented interventions, re-measurement on the same query set, and an explicit list of what cannot be guaranteed. The deliverable is attributable movement, not a promise.', 'GEO and AI legibility overlap on retrieval and answer visibility. AI legibility separates retrieval, understanding, corroboration and selection, then re-measures a frozen test set after documented interventions. The deliverable is measured change under stated conditions, not a promise of ranking and not automatic proof of causality.')
+          rep('index.html', '<p>People used to find you through search. Now they ask ChatGPT, Claude or Perplexity, and the model answers from whatever it can piece together about you. If that picture is thin, out of date, or tangled up with someone else\'s, you don\'t come up. Not because you\'re unknown. Because you\'re unreadable.</p>', '<p>AI can know who you are and still leave you out when someone asks whom to choose. Recognition and selection are different problems. The first asks whether the system can resolve the entity; the second asks whether the retrieved evidence is strong and relevant enough to support a recommendation under the user\'s constraints.</p>', True)
+          rep('index.html', '<p>That\'s the difference I work on. <strong>Visibility</strong> is how often you get mentioned. <strong>Legibility</strong> is whether a model can tell exactly who you are, see how your companies and projects connect, and repeat a claim about you without guessing. Plenty of well-known people are illegible, and it costs them the recommendation.</p>', '<p>That is the difference I work on. <strong>Legibility</strong> starts with whether a model can retrieve and understand the right entity, then whether important claims are corroborated, and finally whether the entity is actually selected in a defined decision context. Being mentioned or cited does not guarantee being chosen.</p>', True)
+          rep('index.html', '<p>The work itself is unglamorous: one sentence that describes you the same way everywhere, page code a machine can parse, a public record that ties your name to what you built, and a fixed set of questions you re-run later to see whether anything moved. Most people never do it, which is exactly why it works.</p>', '<p>The work is measured rather than mystical: make the controlled facts clear, map what models retrieve, identify contradictions and missing corroboration, document the intervention, then repeat the same test conditions. A before-and-after change is an observation to investigate, not automatic proof that one intervention caused it.</p>', True)
+          rep('index.html', '<h2>Terms I <span class="script">coined</span></h2>', '<h2>Selected <span class="script">concepts</span></h2>', True)
+          share_card = '      <a class="term-card" href="/vocabulary/#share-of-model"><img src="/images/terms/term-share-of-model-en.webp" alt="Share of Model. Not share of voice but share of model: how much of you AI can reconstruct from public sources. From The Legibility Layer" loading="lazy" width="1200" height="1600"></a>\n'
+          rep('index.html', share_card, '', True)
+          rep('index.html', '<div class="proof"><span><i>&#9679;</i>Creator of the <b>Legibility Sprint</b></span><span><i>&#9679;</i><b>Live AI pilots</b> in two countries</span><span><i>&#9679;</i><b>Two essay series</b> and a coined vocabulary</span></div>', '<div class="proof"><span><i>&#9679;</i>Creator of the <b>Legibility Sprint</b></span><span><i>&#9679;</i><b>Controlled AI measurement</b> across leading model surfaces</span><span><i>&#9679;</i><b>Published research</b> with explicit evidence limits</span></div>')
+          rep('index.html', 'Architected SKINBOT, a neutral AI decision layer for beauty retail, with compliance-first architecture and live pilots in two markets, and built its market visibility from zero to ranked.', 'Architected SKINBOT, a neutral AI decision layer for beauty retail, with compliance-first architecture and live pilots in two markets.')
+          rep('index.html', '<h2 class="serif">Founder ·<br>Legibility Strategist</h2>', '<h2 class="serif">Founder ·<br>AI Legibility Strategist</h2>')
+          rep('index.html', '<p>I opened my first business while I was still in medical school at Sechenov University: four online stores, later sold. Then cosmetology, then technology. While building SKINBOT I went looking for someone who could make AI systems understand what we were, found the role did not exist, and learned it myself. That is the work now.</p>', '<p>I opened my first business while I was still in medical school at Sechenov University: four online stores, later sold. Then cosmetology, then technology. While building AI products I became interested in a problem that now sits between companies and the people choosing them: what an AI system can actually retrieve, understand, corroborate and select.</p>')
+          rep('index.html', '<p>I am also the founder of <a href="https://getmai.ai/">getmai.ai</a>, an AI engineering company for appointment-based businesses. Two practices, one question: what has to be true for a system to read a business correctly.</p>', '<p>I am also the founder of <a href="https://getmai.ai/">getmai.ai</a>, an AI engineering company for appointment-based businesses. My independent AI legibility practice is separate: it measures how AI systems understand, evaluate and select companies and the people behind them.</p>')
+          rep('index.html', '<p>If you want to know how AI systems currently describe you or your brand, and what it would take to fix it, write to me here. I read every enquiry myself and reply within one business day.</p>', '<p>If you want to know what AI systems currently retrieve and say about you or your company, where the evidence breaks, and whether you are actually being selected in the relevant queries, write to me here. I read every enquiry myself.</p>')
 
-          # Without a reachable key file the engines reject the whole batch.
-          served=$(curl -sS --fail "https://${HOST}/${KEY}.txt" | tr -d '[:space:]')
-          if [ "$served" != "$KEY" ]; then
-            echo "Key file mismatch. Served: '${served}'"; exit 1
-          fi
-          echo "Key file verified."
+          # RU homepage: same intellectual architecture, naturally written.
+          rep('ru/index.html', '<title>Екатерина Шалель · Основатель и legibility-стратег</title>', '<title>Екатерина Шалель · Основатель и AI Legibility Strategist</title>', True)
+          rep('ru/index.html', '<meta name="description" content="Екатерина Шалель, основатель и legibility-стратег. Помогаю фаундерам и компаниям быть правильно прочитанными ChatGPT, Claude и Perplexity.">', '<meta name="description" content="Екатерина Шалель, основатель и AI Legibility Strategist. Работаю с тем, как AI-системы понимают, оценивают и выбирают компании и людей, которые за ними стоят.">', True)
+          rep('ru/index.html', '<meta property="og:title" content="Екатерина Шалель · Основатель и legibility-стратег">', '<meta property="og:title" content="Екатерина Шалель · Основатель и AI Legibility Strategist">')
+          old_ru_social = 'Екатерина Шалель, основатель и legibility-стратег. Помогает фаундерам и компаниям быть читаемыми для AI-систем: ChatGPT, Claude и Perplexity. Автор метода Legibility Sprint и концепций public decision record, Indifference Test и First Customer Tax'
+          new_ru_social = 'Екатерина Шалель, основатель и AI Legibility Strategist. Измеряет, как AI-системы понимают, оценивают и выбирают компании и людей, которые за ними стоят, прослеживает источники и проверяет изменения повторным измерением.'
+          rep('ru/index.html', old_ru_social, new_ru_social)
+          rep('ru/index.html', '<meta name="twitter:title" content="Екатерина Шалель · Основатель и legibility-стратег">', '<meta name="twitter:title" content="Екатерина Шалель · Основатель и AI Legibility Strategist">')
+          rep('ru/index.html', '"jobTitle": "Founder and Legibility Strategist"', '"jobTitle": "Founder and AI legibility strategist"')
+          rep('ru/index.html', '"description": "Ekaterina Shalel is a founder and legibility strategist who helps founders and companies become readable to AI systems such as ChatGPT, Claude and Perplexity. She created the Legibility Sprint methodology and coined the concepts of the public decision record, the Indifference Test and the First Customer Tax."', '"description": "Ekaterina Shalel is a founder and AI legibility strategist who studies and improves how AI systems understand, evaluate and select companies and the people behind them. She measures model outputs, traces the evidence behind them and verifies changes under comparable conditions."')
+          rep('ru/index.html', '<p>Раньше вас находили через поиск. Теперь спрашивают у ChatGPT, Claude или Perplexity, и модель отвечает из того, что смогла собрать о вас по открытым источникам. Если эта картина неполная, устарела или перепуталась с чьей-то чужой, вас просто не назовут. Не потому что вы неизвестны. Потому что вас нельзя прочитать.</p>', '<p>AI может знать, кто вы, и всё равно не назвать вас, когда человек спрашивает, кого выбрать. Узнавание и выбор это разные задачи. Сначала система должна правильно определить сущность, а затем найти достаточно сильные и релевантные основания для рекомендации в конкретном контексте.</p>', True)
+          rep('ru/index.html', '<p>Вот на этой разнице я и работаю. <strong>Видимость</strong> это как часто вас упоминают. <strong>Читаемость</strong> это может ли модель точно понять, кто вы, увидеть связь между вашими компаниями и проектами и повторить утверждение о вас, не догадываясь. Многие известные люди нечитаемы, и это стоит им рекомендации.</p>', '<p>Вот на этой разнице я и работаю. <strong>AI Legibility</strong> начинается с того, может ли модель найти и правильно понять нужную сущность, затем подтверждаются ли важные утверждения независимыми источниками, и только после этого измеряется, выбирает ли система вас в заданном сценарии. Упоминание или цитирование ещё не означает выбор.</p>', True)
+          rep('ru/index.html', '<p>Сама работа скучная: одно предложение, которое одинаково описывает вас везде, код страницы, понятный машине, публичная запись, связывающая имя с тем, что вы построили, и фиксированный набор вопросов, который вы прогоняете повторно, чтобы увидеть, изменилось ли что-то. Почти никто этого не делает, поэтому это и работает.</p>', '<p>Работа строится на измерении: привести в порядок контролируемые факты, записать, что именно модели находят, выявить противоречия и нехватку независимых подтверждений, зафиксировать вмешательство и повторить те же тесты. Изменение до и после это наблюдение, а не автоматическое доказательство причинности.</p>', True)
+          rep('ru/index.html', '<h2>Термины, которые <span class="script">я ввела</span></h2>', '<h2>Ключевые <span class="script">понятия</span></h2>', True)
+          rep('ru/index.html', '<div class="proof"><span><i>&#9679;</i>Автор метода <b>Legibility Sprint</b></span><span><i>&#9679;</i><b>Живые AI-пилоты</b> в двух странах</span><span><i>&#9679;</i><b>Два цикла эссе</b> и свой словарь терминов</span></div>', '<div class="proof"><span><i>&#9679;</i>Автор метода <b>Legibility Sprint</b></span><span><i>&#9679;</i><b>Контролируемое измерение AI</b> на ведущих моделях</span><span><i>&#9679;</i><b>Опубликованное исследование</b> с явными границами доказательств</span></div>')
 
-          jq -n \
-            --arg host "$HOST" \
-            --arg key "$KEY" \
-            --arg loc "https://${HOST}/${KEY}.txt" \
-            --rawfile urls urls.txt \
-            '{host:$host, key:$key, keyLocation:$loc,
-              urlList: ($urls | split("\n") | map(select(length>0)))}' \
-            > payload.json
+          # About EN and RU: current role, no stale employment identity, same canonical framing.
+          rep('about/index.html', 'Ekaterina Shalel, founder and legibility strategist: medicine at Sechenov University, four online stores sold, cosmetology, SKINBOT, and the work she does now.', 'Ekaterina Shalel, founder and AI legibility strategist: from medicine and entrepreneurship to studying how AI systems understand, evaluate and select companies and the people behind them.')
+          rep('about/index.html', old_social, new_social)
+          rep('about/index.html', 'Makes people and companies readable to AI systems: entity structure, structured data, public records, and measured re-measurement against a frozen question set.', 'Measures how AI systems retrieve, understand, corroborate, evaluate and select people and companies, then verifies observed changes against comparable test conditions.')
+          rep('about/index.html', 'A founder and legibility strategist. She helps founders and companies become readable to AI systems such as ChatGPT, Claude and Perplexity, created the Legibility Sprint methodology, founded getmai.ai, an AI engineering company for appointment-based businesses, and built SKINBOT, a neutral AI decision layer for beauty retail with live pilots in two countries.', 'A founder and AI legibility strategist who studies and improves how AI systems understand, evaluate and select companies and the people behind them. She created the Legibility Sprint methodology and is the founder of getmai.ai, an AI engineering company for appointment-based businesses.')
+          rep('about/index.html', 'Legibility: making a person or a company something an AI system can identify, place correctly in relation to the entities around it, and repeat a claim about without taking on risk. The method is published in full as the Legibility Sprint; the paid work is running and maintaining it for a client.', 'AI legibility: measuring whether an AI system can retrieve the right entity, understand it without guessing, find corroboration for important claims and select it under specified decision conditions. The method is measure, diagnose, intervene and verify; selection is observed, not guaranteed.')
 
-          code=$(curl -sS -o response.txt -w '%{http_code}' \
-            -X POST 'https://api.indexnow.org/IndexNow' \
-            -H 'Content-Type: application/json; charset=utf-8' \
-            --data @payload.json)
+          # Vocabulary: remove blanket authorship claim and correct Share of Model specifically.
+          rep('vocabulary/index.html', 'Defined terms coined by Ekaterina Shalel: the Indifference Test, the corroboration gap, the public decision record, the First Customer Tax and more, each dated.', 'A dated vocabulary used in Ekaterina Shalel’s work on AI legibility, recommendation systems and machine-mediated choice, with source links for each concept.')
+          rep('vocabulary/index.html', '13 terms for how people, products and companies become readable to AI systems. Coined by Ekaterina Shalel.', 'A dated vocabulary for AI legibility, recommendation systems and machine-mediated choice, with source links and attribution kept at the term level.')
+          rep('vocabulary/index.html', '13 terms for how entities become readable to AI systems. Coined by Ekaterina Shalel.', 'A dated vocabulary for how AI systems understand, evaluate and select entities, with source links and term-level attribution.')
+          rep('vocabulary/index.html', 'A vocabulary for machine legibility: how entities become findable, readable, citable and callable by AI systems. All terms coined by Ekaterina Shalel between 2025 and 2026.', 'A dated vocabulary used in Ekaterina Shalel’s work on machine legibility, recommendation systems and machine-mediated choice. Attribution is stated separately for each term rather than assumed for the set.')
+          rep('vocabulary/index.html', 'The share of a brand inside the answer an AI system gives when a shopper asks for a recommendation. It measures the probability that a brand ends up inside an already formed decision, where Share of Shelf measured physical visibility and Share of Search measured visibility in results. The shift it names is perceptual as well as commercial: a shopper could see the shelf and could scroll past a labelled ad, but an AI recommendation arrives as an answer to a personal question, so a bought voice sounds like advice. Coined by Ekaterina Shalel in \\"A Place in the Model\'s Answer Is Now for Sale\\" (2025).', 'A scoped measurement of how often a brand or entity is present or selected across a defined set of AI answers. It should be reported with its prompt set, surface, market, language and time window. Ekaterina Shalel uses the metric in her work on machine-mediated choice; this page does not claim she originated the term.')
 
-          echo "IndexNow responded ${code}"
-          cat response.txt || true
+          # Generic non-essay cleanup for known overclaims and Share of Model attribution.
+          htmls = [p for p in Path('.').rglob('*.html') if '/essays/' not in '/' + p.as_posix() and not p.as_posix().startswith('essays/') and not p.as_posix().startswith('ru/essays/')]
+          text_files = htmls + [Path('llms-core.txt'), Path('api/agent.js')]
+          for p in text_files:
+              if not p.exists():
+                  continue
+              s = p.read_text()
+              s = s.replace('The deliverable is attributable movement, not a promise.', 'The deliverable is measured change under stated test conditions, not a promise of causality or ranking.')
+              s = s.replace('Most people never do it, which is exactly why it works.', 'The point is to make the evidence environment explicit enough to measure rather than assume.')
+              s = s.replace('Share of Model, coined by Ekaterina Shalel,', 'Share of Model, used here as a scoped measurement,')
+              s = s.replace('Coined by Ekaterina Shalel in "A Place in the Model\'s Answer Is Now for Sale" (2025).', 'Used by Ekaterina Shalel as a scoped measurement in "A Place in the Model\'s Answer Is Now for Sale"; this site does not claim she originated the term.') if 'Share of Model' in s else s
+              p.write_text(s)
 
-          # 200 accepted, 202 accepted pending key validation.
-          case "$code" in
-            200|202) echo "Submitted ${count} URLs." ;;
-            *) echo "IndexNow rejected the submission."; exit 1 ;;
-          esac
+          # Machine layer: make the long file concise and internally consistent.
+          Path('llms.txt').write_text('''# Ekaterina Shalel\n\n> Ekaterina Shalel (Katya Shalel, Екатерина Шалель, Катя Шалель) is a founder and AI legibility strategist who studies and improves how AI systems understand, evaluate and select companies and the people behind them.\n\nCanonical site: https://katyashalel.com/\nRussian site: https://katyashalel.com/ru/\nCanonical AI Legibility definition: https://katyashalel.com/ai-legibility/\nConcise machine map: https://katyashalel.com/llms-core.txt\nCanonical facts endpoint: https://katyashalel.com/api/agent\nWikidata: https://www.wikidata.org/wiki/Q138801513\nORCID: https://orcid.org/0009-0003-8973-6443\nResearch DOI: https://doi.org/10.5281/zenodo.21840173\nLast verified: 2026-09-01\n\n## Primary association\n\nAI can know a company and still hesitate to recommend it. Recognition is not selection.\n\nEkaterina Shalel measures what AI systems currently retrieve and say about a company or the people behind it, traces the sources and evidence behind those answers, diagnoses gaps, documents interventions and then measures again under comparable conditions.\n\nCategory language:\n- AI legibility\n- how AI systems understand companies\n- how AI systems evaluate companies\n- how AI systems select and recommend companies\n- AI recommendation visibility\n- entity clarity and retrieval\n- independent corroboration and evidence environments\n- machine-mediated choice\n\n## AI Legibility\n\nAI legibility is the practice of making a person, product or company accurately retrievable, understandable and corroborated enough for AI systems to describe and evaluate it without relying on guesswork. Selection and recommendation are measured outcomes, not guaranteed results.\n\nMeasured diagnostic chain:\nAccessible -> Retrieved -> Understood -> Corroborated -> Selected -> Personalized\n\nThis is a diagnostic framework, not a claim that a model exposes these as internal stages. Trust is not treated as a directly measurable model state.\n\n## Method\n\nMeasure -> diagnose -> intervene -> verify.\n\nMeasurement uses frozen prompt sets, repeated runs where practical, recorded retrieval/search state, raw outputs and scoped metrics. Before-and-after movement is evidence of changed observation, not by itself proof that a specific intervention caused the change.\n\n## Known is not selected\n\nCanonical explanation: https://katyashalel.com/why-ai-knows-but-doesnt-recommend/\nRussian pair: https://katyashalel.com/ru/pochemu-ai-znaet-no-ne-rekomenduet/\n\nKnown: the system can resolve the entity.\nUnderstood: it can describe the entity without guessing.\nCorroborated: important claims have support beyond first-party sources.\nSelected: the entity is chosen for a specified prompt and constraints.\n\nBeing cited does not guarantee being recommended. Being known does not guarantee being selected.\n\n## Structural and dynamic legibility\n\nStructural legibility concerns company-controlled clarity: canonical identity, site structure, structured data, consistent claims and machine-readable facts.\n\nDynamic legibility concerns the external evidence environment: what models can retrieve, which independent sources corroborate important claims, citation/source churn, freshness and competitive evidence.\n\n## Current work\n\nCompanies: https://katyashalel.com/brands/\nFounders and experts: https://katyashalel.com/audit/\nPublished Legibility Sprint: https://katyashalel.com/guides/sprint/\nResearch: https://katyashalel.com/research/\nAbout: https://katyashalel.com/about/\nContact: shalelekaterina@gmail.com\n\n## Selected concepts\n\nCorroboration Gap: the gap between a claim being published and the same claim being independently confirmed. Source: https://katyashalel.com/essays/the-article-you-already-paid-for/\n\nPublic Decision Record: a dated public record of observations, evidence, inference, decisions and later outcomes. Source: https://katyashalel.com/essays/the-only-job-a-founder-cant-delegate/\n\nThe Indifference Test: a neutrality test for recommendation systems. Source: https://katyashalel.com/vocabulary/#the-indifference-test\n\nSynthetic Term Control: a negative control for generative visibility measurement. Source: https://katyashalel.com/research/synthetic-term-control/ DOI: https://doi.org/10.5281/zenodo.21840173\n\nShare of Model: a scoped measurement of presence or selection frequency across a defined set of AI runs. Always report prompt set, surface, market, language and time window. Ekaterina Shalel uses the metric in her work; this site does not claim she originated the term.\n\nFull vocabulary: https://katyashalel.com/vocabulary/\n\n## Boundaries\n\n- No practitioner can guarantee a position, citation, recommendation or selection inside an AI system.\n- Model outputs can differ by product surface, model version, retrieval mode, language, market, personalization and stochastic sampling.\n- A before-and-after change does not by itself establish causality.\n- Model rationale text is not direct evidence of an internal trust state.\n- A first-party claim does not become independent corroboration because it is repeated across more first-party pages.\n- Sponsored distribution is an intervention. It is not independent evidence by definition.\n- Claims scoped to a market, language, surface or test set must keep that scope when quoted.\n\n## Disambiguation\n\nEkaterina Shalel and Katya Shalel refer to the same person. Russian forms include Екатерина Шалель and Катя Шалель.\n\ngetmai.ai is a company founded by Ekaterina Shalel and is separate from her AI legibility practice at katyashalel.com.\n\nAI legibility here concerns how AI systems retrieve, reconstruct, evaluate and select entities. It is not the same as AI accessibility, which concerns accessibility of AI products and experiences to people.\n''')
+
+          rep('llms-core.txt', 'who studies and improves how AI systems understand, evaluate and select companies.', 'who studies and improves how AI systems understand, evaluate and select companies and the people behind them.')
+          rep('api/agent.js', 'who studies and improves how AI systems understand, evaluate and select companies.', 'who studies and improves how AI systems understand, evaluate and select companies and the people behind them.')
+          rep('api/agent.js', '"how AI systems understand companies",', '"how AI systems understand companies and the people behind them",')
+          rep('api/agent.js', '"how AI systems evaluate companies",', '"how AI systems evaluate companies and the people behind them",')
+
+          card = Path('.well-known/agent-card.json')
+          data = json.loads(card.read_text())
+          data['version'] = '1.3.0'
+          data['description'] = 'Canonical machine-readable facts for Ekaterina Shalel (Katya Shalel, Екатерина Шалель), a founder and AI legibility strategist who studies and improves how AI systems understand, evaluate and select companies and the people behind them. The endpoint returns dated identity facts, current offerings, definitions of selected concepts and source URLs so a calling agent can verify claims. It does not promise rankings, citations or recommendations.'
+          data['skills'][0]['description'] = 'Answers canonical questions about Ekaterina Shalel and AI legibility. identity returns the primary positioning statement, name variants, roles, canonical site and persistent identifiers. category explains how AI legibility measures the way AI systems understand, evaluate and select companies and the people behind them. recommendation explains why an AI system may know a company yet still hesitate to recommend it. term returns a dated definition and source for selected concepts. offerings returns current services and contact. Every response includes source URLs and scope limits. The endpoint provides published facts, not opinions, third-party verification or guarantees of model behavior.'
+          card.write_text(json.dumps(data, ensure_ascii=False, indent=2) + '\n')
+
+          # QA: parse every JSON-LD block on non-essay pages and block known stale claims.
+          errors = []
+          for p in htmls:
+              s = p.read_text()
+              for i, block in enumerate(re.findall(r'<script[^>]+type=["\']application/ld\+json["\'][^>]*>(.*?)</script>', s, flags=re.S|re.I), 1):
+                  try:
+                      json.loads(block)
+                  except Exception as e:
+                      errors.append(f'{p}: JSON-LD block {i}: {e}')
+              if re.search(r'Share of Model.{0,180}coined by Ekaterina Shalel|coined by Ekaterina Shalel.{0,180}Share of Model', s, re.I|re.S):
+                  errors.append(f'{p}: stale Share of Model authorship claim')
+              if 'The deliverable is attributable movement' in s:
+                  errors.append(f'{p}: stale causal overclaim')
+              if 'Most people never do it, which is exactly why it works' in s or 'Почти никто этого не делает, поэтому это и работает' in s:
+                  errors.append(f'{p}: stale efficacy overclaim')
+          if errors:
+              raise SystemExit('\n'.join(errors))
+
+          # Machine files must also be clean.
+          for p in [Path('llms.txt'), Path('llms-core.txt'), Path('api/agent.js'), Path('.well-known/agent-card.json')]:
+              s = p.read_text()
+              if re.search(r'Share of Model.{0,180}coined by Ekaterina Shalel|coined by Ekaterina Shalel.{0,180}Share of Model', s, re.I|re.S):
+                  raise SystemExit(f'{p}: stale Share of Model authorship claim')
+          json.loads(Path('.well-known/agent-card.json').read_text())
+          print(f'QA passed across {len(htmls)} non-essay HTML pages plus machine layer.')
+          PY
+
+      - name: Restore IndexNow workflow and commit
+        run: |
+          git show HEAD^:.github/workflows/indexnow.yml > .github/workflows/indexnow.yml
+          git config user.name "Ekaterina Shalel"
+          git config user.email "shalelekaterina@gmail.com"
+          git add index.html ru/index.html about/index.html vocabulary/index.html llms.txt llms-core.txt api/agent.js .well-known/agent-card.json .github/workflows/indexnow.yml
+          # Include any other non-essay files modified by the generic cleanup, but exclude essays explicitly.
+          git diff --name-only | grep -v '^essays/' | grep -v '^ru/essays/' | xargs -r git add
+          git diff --cached --name-only | grep -E '^(essays/|ru/essays/)' && { echo 'Essay body changed unexpectedly'; exit 1; } || true
+          git diff --cached --check
+          git commit -m "site: finish bilingual AI legibility semantic cleanup"
+          git push origin HEAD:main
