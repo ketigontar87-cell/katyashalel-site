@@ -1,0 +1,24 @@
+name: Execute final EN RU parity
+on:
+  push:
+    branches: [main]
+permissions:
+  contents: write
+jobs:
+  parity:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 3
+      - name: Run parity cleanup
+        run: python .github/scripts/final_parity.py
+      - name: Commit parity and remove temporary runner
+        run: |
+          git config user.name "Ekaterina Shalel"
+          git config user.email "shalelekaterina@gmail.com"
+          git rm .github/scripts/final_parity.py .github/workflows/final-parity.yml
+          git add brands/index.html audit/index.html ongoing/index.html understood-by-ai/index.html ru/index.html sitemap.xml
+          git diff --cached --check
+          git commit -m "site: complete EN RU commercial parity"
+          git push origin HEAD:main
