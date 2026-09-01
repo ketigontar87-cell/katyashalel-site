@@ -13,51 +13,37 @@ jobs:
     steps:
       - uses: actions/checkout@v4
         with:
-          fetch-depth: 2
+          fetch-depth: 3
 
       - name: Apply approved EN and RU hero copy
         run: |
           python - <<'PY'
           from pathlib import Path
 
-          en = Path('index.html')
-          s = en.read_text()
-          old = '''    <span class="eyebrow">Founder · AI Legibility Strategist</span>
-    <h1>I make founders readable<span class="script">to AI systems</span></h1>
-    <p>I help founders and companies be correctly understood, described, cited and recommended by AI systems. I'm Ekaterina Shalel, a founder and AI legibility strategist, working across ChatGPT, Claude, Gemini and Perplexity through the Legibility Sprint, the public decision record, the Indifference Test and the First Customer Tax</p>
-    <a class="cta" href="/understood-by-ai/">ChatGPT describes your company wrong? Start here</a>
-    <p class="hero-alt"><a href="/essays/how-to-become-visible-to-ai/">Or read the primer: how to become visible to AI</a></p>'''
-          new = '''    <span class="eyebrow">Founder · AI Legibility Strategist</span>
-    <h1>AI knows your company.<span class="script">But would it choose you?</span></h1>
-    <p>I work on how AI systems understand, evaluate and select companies and the people behind them. I measure what ChatGPT, Claude, Gemini and Perplexity see, trace the evidence behind their answers, fix the gaps, and measure again.</p>
-    <a class="cta" href="/understood-by-ai/">See how AI sees you</a>
-    <p class="hero-alt"><a href="/ai-legibility/">What is AI Legibility?</a></p>'''
-          if s.count(old) != 1:
-              raise SystemExit(f'EN hero invariant failed: found {s.count(old)} old blocks')
-          en.write_text(s.replace(old, new, 1))
+          def replace_line(path, old, new):
+              p = Path(path)
+              s = p.read_text()
+              if s.count(old) != 1:
+                  raise SystemExit(f'{path}: expected one match for {old!r}, found {s.count(old)}')
+              p.write_text(s.replace(old, new, 1))
 
-          ru = Path('ru/index.html')
-          s = ru.read_text()
-          old = '''    <span class="eyebrow">Основатель · Legibility-стратег</span>
-    <h1>Делаю фаундеров читаемыми<span class="script">для AI-систем</span></h1>
-    <p>Я Екатерина Шалель, основатель и legibility-стратег. Помогаю фаундерам и компаниям быть читаемыми для ChatGPT, Claude и Perplexity: метод Legibility Sprint, public decision record, Indifference Test и First Customer Tax</p>
-    <a class="cta" href="#sprint">Смотреть Sprint</a>'''
-          new = '''    <span class="eyebrow">Основатель · AI Legibility Strategist</span>
-    <h1>AI знает вашу компанию.<span class="script">Но выбрал бы он вас?</span></h1>
-    <p>Я работаю с тем, как AI-системы понимают, оценивают и выбирают компании и людей, которые за ними стоят. Я измеряю, что видят ChatGPT, Claude, Gemini и Perplexity, прослеживаю доказательства и источники за их ответами, исправляю пробелы и измеряю снова.</p>
-    <a class="cta" href="/understood-by-ai/">Посмотреть, как AI видит вас</a>
-    <p class="hero-alt"><a href="/ru/ai-legibility/">Что такое AI Legibility?</a></p>'''
-          if s.count(old) != 1:
-              raise SystemExit(f'RU hero invariant failed: found {s.count(old)} old blocks')
-          ru.write_text(s.replace(old, new, 1))
+          replace_line('index.html', '    <h1>I make founders readable<span class="script">to AI systems</span></h1>', '    <h1>AI knows your company.<span class="script">But would it choose you?</span></h1>')
+          replace_line('index.html', "    <p>I help founders and companies be correctly understood, described, cited and recommended by AI systems. I'm Ekaterina Shalel, a founder and AI legibility strategist, working across ChatGPT, Claude, Gemini and Perplexity through the Legibility Sprint, the public decision record, the Indifference Test and the First Customer Tax</p>", '    <p>I work on how AI systems understand, evaluate and select companies and the people behind them. I measure what ChatGPT, Claude, Gemini and Perplexity see, trace the evidence behind their answers, fix the gaps, and measure again.</p>')
+          replace_line('index.html', '    <a class="cta" href="/understood-by-ai/">ChatGPT describes your company wrong? Start here</a>', '    <a class="cta" href="/understood-by-ai/">See how AI sees you</a>')
+          replace_line('index.html', '    <p class="hero-alt"><a href="/essays/how-to-become-visible-to-ai/">Or read the primer: how to become visible to AI</a></p>', '    <p class="hero-alt"><a href="/ai-legibility/">What is AI Legibility?</a></p>')
 
-          assert en.read_text().count('AI knows your company.') == 1
-          assert ru.read_text().count('AI знает вашу компанию.') == 1
+          replace_line('ru/index.html', '    <span class="eyebrow">Основатель · Legibility-стратег</span>', '    <span class="eyebrow">Основатель · AI Legibility Strategist</span>')
+          replace_line('ru/index.html', '    <h1>Делаю фаундеров читаемыми<span class="script">для AI-систем</span></h1>', '    <h1>AI знает вашу компанию.<span class="script">Но выбрал бы он вас?</span></h1>')
+          replace_line('ru/index.html', '    <p>Я Екатерина Шалель, основатель и legibility-стратег. Помогаю фаундерам и компаниям быть читаемыми для ChatGPT, Claude и Perplexity: метод Legibility Sprint, public decision record, Indifference Test и First Customer Tax</p>', '    <p>Я работаю с тем, как AI-системы понимают, оценивают и выбирают компании и людей, которые за ними стоят. Я измеряю, что видят ChatGPT, Claude, Gemini и Perplexity, прослеживаю доказательства и источники за их ответами, исправляю пробелы и измеряю снова.</p>')
+          replace_line('ru/index.html', '    <a class="cta" href="#sprint">Смотреть Sprint</a>', '    <a class="cta" href="/understood-by-ai/">Посмотреть, как AI видит вас</a>\n    <p class="hero-alt"><a href="/ru/ai-legibility/">Что такое AI Legibility?</a></p>')
+
+          assert Path('index.html').read_text().count('AI knows your company.') == 1
+          assert Path('ru/index.html').read_text().count('AI знает вашу компанию.') == 1
           PY
 
       - name: Restore IndexNow workflow and commit hero
         run: |
-          git show HEAD^:.github/workflows/indexnow.yml > .github/workflows/indexnow.yml
+          git show HEAD^^:.github/workflows/indexnow.yml > .github/workflows/indexnow.yml
           git config user.name "Ekaterina Shalel"
           git config user.email "shalelekaterina@gmail.com"
           git add index.html ru/index.html .github/workflows/indexnow.yml
