@@ -12,310 +12,82 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://katyashalel.com/"/>
     <xhtml:link rel="alternate" hreflang="ru" href="https://katyashalel.com/ru/"/>
   </url>
-  <url>
-    <loc>https://katyashalel.com/ru/guides/</loc>
-    <lastmod>2026-07-08</lastmod>
-  </url>
-  <url>
-    <loc>https://katyashalel.com/ru/guides/dictionary/</loc>
-    <lastmod>2026-07-08</lastmod>
-  </url>
-  <url>
-    <loc>https://katyashalel.com/guides/multimodel/</loc>
-    <lastmod>2026-07-08</lastmod>
-    <xhtml:link rel="alternate" hreflang="ru" href="https://katyashalel.com/ru/guides/multimodel/"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://katyashalel.com/guides/multimodel/"/>
-  </url>
-  <url>
-    <loc>https://katyashalel.com/ru/guides/multimodel/</loc>
-    <lastmod>2026-07-08</lastmod>
-    <xhtml:link rel="alternate" hreflang="en" href="https://katyashalel.com/guides/multimodel/"/>
-    <xhtml:link rel="alternate" hreflang="ru" href="https://katyashalel.com/ru/guides/multimodel/"/>
-  </url>
-  <url>
-    <loc>https://katyashalel.com/guides/visibility/</loc>
-    <lastmod>2026-07-08</lastmod>
-    <xhtml:link rel="alternate" hreflang="ru" href="https://katyashalel.com/ru/guides/visibility/"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://katyashalel.com/guides/visibility/"/>
-  </url>
-  <url>
-    <loc>https://katyashalel.com/ru/guides/visibility/</loc>
-    <lastmod>2026-07-08</lastmod>
-    <xhtml:link rel="alternate" hreflang="en" href="https://katyashalel.com/guides/visibility/"/>
-    <xhtml:link rel="alternate" hreflang="ru" href="https://katyashalel.com/ru/guides/visibility/"/>
-  </url>
-  <url>
-    <loc>https://katyashalel.com/guides/techteam/</loc>
-    <lastmod>2026-07-08</lastmod>
-    <xhtml:link rel="alternate" hreflang="ru" href="https://katyashalel.com/ru/guides/techteam/"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://katyashalel.com/guides/techteam/"/>
-  </url>
-  <url>
-    <loc>https://katyashalel.com/ru/guides/techteam/</loc>
-    <lastmod>2026-07-08</lastmod>
-    <xhtml:link rel="alternate" hreflang="en" href="https://katyashalel.com/guides/techteam/"/>
-    <xhtml:link rel="alternate" hreflang="ru" href="https://katyashalel.com/ru/guides/techteam/"/>
-  </url>
-  <url>
-    <loc>https://katyashalel.com/guides/legibility/</loc>
-    <lastmod>2026-07-08</lastmod>
-    <xhtml:link rel="alternate" hreflang="ru" href="https://katyashalel.com/ru/guides/legibility/"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://katyashalel.com/guides/legibility/"/>
-  </url>
-  <url>
-    <loc>https://katyashalel.com/ru/guides/legibility/</loc>
-    <lastmod>2026-07-08</lastmod>
-    <xhtml:link rel="alternate" hreflang="en" href="https://katyashalel.com/guides/legibility/"/>
-    <xhtml:link rel="alternate" hreflang="ru" href="https://katyashalel.com/ru/guides/legibility/"/>
-  </url>
-  <url>
-    <loc>https://katyashalel.com/guides/sprint/</loc>
-    <lastmod>2026-07-08</lastmod>
-  </url>
-  <url>
-    <loc>https://katyashalel.com/essays/the-interface-dissolves/</loc>
-    <lastmod>2026-07-08</lastmod>
-  </url>
-  <url>
-    <loc>https://katyashalel.com/essays/who-owns-the-recommendation/</loc>
-    <lastmod>2026-07-09</lastmod>
-  </url>
-  <url>
-    <loc>https://katyashalel.com/essays/ten-questions-ai-skin-analysis/</loc>
-    <lastmod>2026-07-09</lastmod>
-  </url>
-  <url>
-    <loc>https://katyashalel.com/essays/sephora-entered-the-chat/</loc>
-    <lastmod>2026-07-10</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://katyashalel.com/essays/your-website-has-two-readers/</loc>
-    <lastmod>2026-07-13</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://katyashalel.com/essays/the-first-customer-tax/</loc>
-    <lastmod>2026-07-14</lastmod>
-  </url>
-  <url>
-    <loc>https://katyashalel.com/essays/distribution-not-recommendation/</loc>
-    <lastmod>2026-07-15</lastmod>
-  </url>
-  <url>
-    <loc>https://katyashalel.com/essays/the-week-beauty-retail-went-agentic/</loc>
-    <lastmod>2026-07-14</lastmod>
-  </url>
-  <url>
-    <loc>https://katyashalel.com/essays/the-only-job-a-founder-cant-delegate/</loc>
-    <lastmod>2026-07-16</lastmod>
-  </url>
-  <url>
-    <loc>https://katyashalel.com/essays/platforms-rent-you-reach-the-hub/</loc>
-    <lastmod>2026-07-17</lastmod>
-  </url>
-  <url>
-    <loc>https://katyashalel.com/essays/the-unstaffed-decision/</loc>
-    <lastmod>2026-07-19</lastmod>
-  </url>
-  <url>
-    <loc>https://katyashalel.com/essays/a-place-in-the-models-answer-is-now-for-sale/</loc>
-    <lastmod>2026-07-27</lastmod>
-  </url>
-  <url>
-    <loc>https://katyashalel.com/essays/water-against-the-stone/</loc>
-    <lastmod>2026-07-28</lastmod>
-  </url>
-  <url>
-    <loc>https://katyashalel.com/essays/how-to-become-visible-to-ai/</loc>
-    <lastmod>2026-07-27</lastmod>
-  </url>
-  <url>
-    <loc>https://katyashalel.com/brands/</loc>
-    <lastmod>2026-07-27</lastmod>
-  </url>
-  <url>
-    <loc>https://katyashalel.com/essays/the-market-knocked-first/</loc>
-    <lastmod>2026-07-28</lastmod>
-  </url>
-  <url>
-    <loc>https://katyashalel.com/vocabulary/</loc>
-    <lastmod>2026-07-30</lastmod>
-  </url>
-  <url>
-    <loc>https://katyashalel.com/essays/the-article-you-already-paid-for/</loc>
-    <lastmod>2026-07-30</lastmod>
-  </url>
-  <url>
-    <loc>https://katyashalel.com/essays/the-protocol-caught-up/</loc>
-    <lastmod>2026-07-30</lastmod>
-  </url>
-  <url>
-    <loc>https://katyashalel.com/essays/every-model-has-a-different-diet/</loc>
-    <lastmod>2026-07-29</lastmod>
-  </url>
-  <url>
-    <loc>https://katyashalel.com/guides/buffer-audit/</loc>
-    <lastmod>2026-07-29</lastmod>
-  </url>
-  <url>
-    <loc>https://katyashalel.com/audit/</loc>
-    <lastmod>2026-07-31</lastmod>
-  </url>
-  <url>
-    <loc>https://katyashalel.com/essays/the-measurement-was-the-easy-part/</loc>
-    <lastmod>2026-08-02</lastmod>
-  </url>
-  <url>
-    <loc>https://katyashalel.com/ru/essays/izmerenie-bylo-legkoy-chastyu/</loc>
-    <lastmod>2026-08-02</lastmod>
-  </url>
-  <url>
-    <loc>https://katyashalel.com/ongoing/</loc>
-    <lastmod>2026-08-02</lastmod>
-  </url>
-  <url>
-    <loc>https://katyashalel.com/archive/</loc>
-    <lastmod>2026-08-02</lastmod>
-  </url>
-  <url>
-    <loc>https://katyashalel.com/about/</loc>
-    <lastmod>2026-08-02</lastmod>
-  </url>
-  <url>
-    <loc>https://katyashalel.com/ru/about/</loc>
-    <lastmod>2026-08-02</lastmod>
-  </url>
-  <url>
-    <loc>https://katyashalel.com/ai-legibility/</loc>
-    <lastmod>2026-08-05</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://katyashalel.com/research/</loc>
-    <lastmod>2026-08-05</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://katyashalel.com/research/synthetic-term-control/</loc>
-    <lastmod>2026-08-05</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://katyashalel.com/ru/ai-legibility/</loc>
-    <lastmod>2026-08-05</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
-    <xhtml:link rel="alternate" hreflang="en" href="https://katyashalel.com/ai-legibility/"/>
-    <xhtml:link rel="alternate" hreflang="ru" href="https://katyashalel.com/ru/ai-legibility/"/>
-  </url>
-  <url>
-    <loc>https://katyashalel.com/essays/why-does-chatgpt-ignore-my-company/</loc>
-    <lastmod>2026-08-05</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://katyashalel.com/essays/how-do-i-become-cited-by-ai/</loc>
-    <lastmod>2026-08-06</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://katyashalel.com/ru/essays/pochemu-chatgpt-ne-znaet-moyu-kompaniyu/</loc>
-    <lastmod>2026-08-06</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://katyashalel.com/ru/essays/klient-kotoryy-vam-otkazal-byl-prav/</loc>
-    <lastmod>2026-08-06</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://katyashalel.com/ru/essays/kak-stat-vidimym-dlya-ai/</loc>
-    <lastmod>2026-08-06</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://katyashalel.com/ru/essays/voda-protiv-kamnya/</loc>
-    <lastmod>2026-08-06</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://katyashalel.com/ru/essays/statya-za-kotoruyu-vy-uzhe-zaplatili/</loc>
-    <lastmod>2026-08-06</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://katyashalel.com/ru/vocabulary/</loc>
-    <lastmod>2026-08-07</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://katyashalel.com/ru/essays/rynok-postuchal-pervym/</loc>
-    <lastmod>2026-08-06</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://katyashalel.com/ru/essays/interfeys-rastvoryaetsya/</loc>
-    <lastmod>2026-08-06</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://katyashalel.com/ru/essays/kak-stat-tsitiruemym-dlya-ai/</loc>
-    <lastmod>2026-08-06</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://katyashalel.com/ru/essays/ploshchadki-sdayut-ohvat/</loc>
-    <lastmod>2026-08-06</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://katyashalel.com/ru/essays/mesto-v-otvete-modeli-prodaetsya/</loc>
-    <lastmod>2026-08-06</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://katyashalel.com/ru/essays/u-kazhdoy-modeli-svoya-dieta/</loc>
-    <lastmod>2026-08-06</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://katyashalel.com/essays/how-do-i-become-recommended-by-ai/</loc>
-    <lastmod>2026-08-07</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
-  </url>
+  <url><loc>https://katyashalel.com/ru/guides/</loc><lastmod>2026-07-08</lastmod></url>
+  <url><loc>https://katyashalel.com/ru/guides/dictionary/</loc><lastmod>2026-07-08</lastmod></url>
+  <url><loc>https://katyashalel.com/guides/multimodel/</loc><lastmod>2026-07-08</lastmod><xhtml:link rel="alternate" hreflang="ru" href="https://katyashalel.com/ru/guides/multimodel/"/><xhtml:link rel="alternate" hreflang="en" href="https://katyashalel.com/guides/multimodel/"/></url>
+  <url><loc>https://katyashalel.com/ru/guides/multimodel/</loc><lastmod>2026-07-08</lastmod><xhtml:link rel="alternate" hreflang="en" href="https://katyashalel.com/guides/multimodel/"/><xhtml:link rel="alternate" hreflang="ru" href="https://katyashalel.com/ru/guides/multimodel/"/></url>
+  <url><loc>https://katyashalel.com/guides/visibility/</loc><lastmod>2026-07-08</lastmod><xhtml:link rel="alternate" hreflang="ru" href="https://katyashalel.com/ru/guides/visibility/"/><xhtml:link rel="alternate" hreflang="en" href="https://katyashalel.com/guides/visibility/"/></url>
+  <url><loc>https://katyashalel.com/ru/guides/visibility/</loc><lastmod>2026-07-08</lastmod><xhtml:link rel="alternate" hreflang="en" href="https://katyashalel.com/guides/visibility/"/><xhtml:link rel="alternate" hreflang="ru" href="https://katyashalel.com/ru/guides/visibility/"/></url>
+  <url><loc>https://katyashalel.com/guides/techteam/</loc><lastmod>2026-07-08</lastmod><xhtml:link rel="alternate" hreflang="ru" href="https://katyashalel.com/ru/guides/techteam/"/><xhtml:link rel="alternate" hreflang="en" href="https://katyashalel.com/guides/techteam/"/></url>
+  <url><loc>https://katyashalel.com/ru/guides/techteam/</loc><lastmod>2026-07-08</lastmod><xhtml:link rel="alternate" hreflang="en" href="https://katyashalel.com/guides/techteam/"/><xhtml:link rel="alternate" hreflang="ru" href="https://katyashalel.com/ru/guides/techteam/"/></url>
+  <url><loc>https://katyashalel.com/guides/legibility/</loc><lastmod>2026-07-08</lastmod><xhtml:link rel="alternate" hreflang="ru" href="https://katyashalel.com/ru/guides/legibility/"/><xhtml:link rel="alternate" hreflang="en" href="https://katyashalel.com/guides/legibility/"/></url>
+  <url><loc>https://katyashalel.com/ru/guides/legibility/</loc><lastmod>2026-07-08</lastmod><xhtml:link rel="alternate" hreflang="en" href="https://katyashalel.com/guides/legibility/"/><xhtml:link rel="alternate" hreflang="ru" href="https://katyashalel.com/ru/guides/legibility/"/></url>
+  <url><loc>https://katyashalel.com/guides/sprint/</loc><lastmod>2026-07-08</lastmod></url>
+  <url><loc>https://katyashalel.com/essays/the-interface-dissolves/</loc><lastmod>2026-07-08</lastmod></url>
+  <url><loc>https://katyashalel.com/essays/who-owns-the-recommendation/</loc><lastmod>2026-07-09</lastmod></url>
+  <url><loc>https://katyashalel.com/essays/ten-questions-ai-skin-analysis/</loc><lastmod>2026-07-09</lastmod></url>
+  <url><loc>https://katyashalel.com/essays/sephora-entered-the-chat/</loc><lastmod>2026-07-10</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://katyashalel.com/essays/your-website-has-two-readers/</loc><lastmod>2026-07-13</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://katyashalel.com/essays/the-first-customer-tax/</loc><lastmod>2026-07-14</lastmod></url>
+  <url><loc>https://katyashalel.com/essays/distribution-not-recommendation/</loc><lastmod>2026-07-15</lastmod></url>
+  <url><loc>https://katyashalel.com/essays/the-week-beauty-retail-went-agentic/</loc><lastmod>2026-07-14</lastmod></url>
+  <url><loc>https://katyashalel.com/essays/the-only-job-a-founder-cant-delegate/</loc><lastmod>2026-07-16</lastmod></url>
+  <url><loc>https://katyashalel.com/essays/platforms-rent-you-reach-the-hub/</loc><lastmod>2026-07-17</lastmod></url>
+  <url><loc>https://katyashalel.com/essays/the-unstaffed-decision/</loc><lastmod>2026-07-19</lastmod></url>
+  <url><loc>https://katyashalel.com/essays/a-place-in-the-models-answer-is-now-for-sale/</loc><lastmod>2026-07-27</lastmod></url>
+  <url><loc>https://katyashalel.com/essays/water-against-the-stone/</loc><lastmod>2026-07-28</lastmod></url>
+  <url><loc>https://katyashalel.com/essays/how-to-become-visible-to-ai/</loc><lastmod>2026-07-27</lastmod></url>
+  <url><loc>https://katyashalel.com/brands/</loc><lastmod>2026-07-27</lastmod></url>
+  <url><loc>https://katyashalel.com/essays/the-market-knocked-first/</loc><lastmod>2026-07-28</lastmod></url>
+  <url><loc>https://katyashalel.com/vocabulary/</loc><lastmod>2026-07-30</lastmod></url>
+  <url><loc>https://katyashalel.com/essays/the-article-you-already-paid-for/</loc><lastmod>2026-07-30</lastmod></url>
+  <url><loc>https://katyashalel.com/essays/the-protocol-caught-up/</loc><lastmod>2026-07-30</lastmod></url>
+  <url><loc>https://katyashalel.com/essays/every-model-has-a-different-diet/</loc><lastmod>2026-07-29</lastmod></url>
+  <url><loc>https://katyashalel.com/guides/buffer-audit/</loc><lastmod>2026-07-29</lastmod></url>
+  <url><loc>https://katyashalel.com/audit/</loc><lastmod>2026-07-31</lastmod></url>
+  <url><loc>https://katyashalel.com/essays/the-measurement-was-the-easy-part/</loc><lastmod>2026-08-02</lastmod></url>
+  <url><loc>https://katyashalel.com/ru/essays/izmerenie-bylo-legkoy-chastyu/</loc><lastmod>2026-08-02</lastmod></url>
+  <url><loc>https://katyashalel.com/ongoing/</loc><lastmod>2026-08-02</lastmod></url>
+  <url><loc>https://katyashalel.com/archive/</loc><lastmod>2026-08-02</lastmod></url>
+  <url><loc>https://katyashalel.com/about/</loc><lastmod>2026-08-02</lastmod></url>
+  <url><loc>https://katyashalel.com/ru/about/</loc><lastmod>2026-08-02</lastmod></url>
+  <url><loc>https://katyashalel.com/ai-legibility/</loc><lastmod>2026-08-05</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://katyashalel.com/research/</loc><lastmod>2026-08-05</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://katyashalel.com/research/synthetic-term-control/</loc><lastmod>2026-08-05</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://katyashalel.com/ru/ai-legibility/</loc><lastmod>2026-08-05</lastmod><changefreq>monthly</changefreq><priority>0.9</priority><xhtml:link rel="alternate" hreflang="en" href="https://katyashalel.com/ai-legibility/"/><xhtml:link rel="alternate" hreflang="ru" href="https://katyashalel.com/ru/ai-legibility/"/></url>
+  <url><loc>https://katyashalel.com/essays/why-does-chatgpt-ignore-my-company/</loc><lastmod>2026-08-05</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://katyashalel.com/essays/how-do-i-become-cited-by-ai/</loc><lastmod>2026-08-06</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://katyashalel.com/ru/essays/pochemu-chatgpt-ne-znaet-moyu-kompaniyu/</loc><lastmod>2026-08-06</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://katyashalel.com/ru/essays/klient-kotoryy-vam-otkazal-byl-prav/</loc><lastmod>2026-08-06</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://katyashalel.com/ru/essays/kak-stat-vidimym-dlya-ai/</loc><lastmod>2026-08-06</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://katyashalel.com/ru/essays/voda-protiv-kamnya/</loc><lastmod>2026-08-06</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://katyashalel.com/ru/essays/statya-za-kotoruyu-vy-uzhe-zaplatili/</loc><lastmod>2026-08-06</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://katyashalel.com/ru/vocabulary/</loc><lastmod>2026-08-07</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://katyashalel.com/ru/essays/rynok-postuchal-pervym/</loc><lastmod>2026-08-06</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://katyashalel.com/ru/essays/interfeys-rastvoryaetsya/</loc><lastmod>2026-08-06</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://katyashalel.com/ru/essays/kak-stat-tsitiruemym-dlya-ai/</loc><lastmod>2026-08-06</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://katyashalel.com/ru/essays/ploshchadki-sdayut-ohvat/</loc><lastmod>2026-08-06</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://katyashalel.com/ru/essays/mesto-v-otvete-modeli-prodaetsya/</loc><lastmod>2026-08-06</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://katyashalel.com/ru/essays/u-kazhdoy-modeli-svoya-dieta/</loc><lastmod>2026-08-06</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://katyashalel.com/essays/how-do-i-become-recommended-by-ai/</loc><lastmod>2026-08-07</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
   <url><loc>https://katyashalel.com/feed.xml</loc><changefreq>weekly</changefreq><priority>0.6</priority></url>
   <url><loc>https://katyashalel.com/ru/feed.xml</loc><changefreq>weekly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://katyashalel.com/essays/can-you-change-what-ai-says-about-you/</loc><lastmod>2026-08-17</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://katyashalel.com/understood-by-ai/</loc><lastmod>2026-08-17</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
   <url>
-    <loc>https://katyashalel.com/essays/can-you-change-what-ai-says-about-you/</loc>
-    <lastmod>2026-08-17</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://katyashalel.com/understood-by-ai/</loc>
-    <lastmod>2026-08-17</lastmod>
+    <loc>https://katyashalel.com/why-ai-knows-but-doesnt-recommend/</loc>
+    <lastmod>2026-09-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://katyashalel.com/why-ai-knows-but-doesnt-recommend/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://katyashalel.com/ru/pochemu-ai-znaet-no-ne-rekomenduet/"/>
+  </url>
+  <url>
+    <loc>https://katyashalel.com/ru/pochemu-ai-znaet-no-ne-rekomenduet/</loc>
+    <lastmod>2026-09-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://katyashalel.com/why-ai-knows-but-doesnt-recommend/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://katyashalel.com/ru/pochemu-ai-znaet-no-ne-rekomenduet/"/>
   </url>
 </urlset>
