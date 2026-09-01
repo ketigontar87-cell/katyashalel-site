@@ -13,29 +13,21 @@
     var hero = document.querySelector('.imm-hero');
     if (hero) {
       var stage = hero.querySelector('.h3-stage');
-      var Z = [
-        ['.h3-bg', -90, 1.082], ['.h3-eyebrow', -40, 1.036], ['.imm-line', -55, 1.05],
-        ['.h3-fig', 55, 0.95], ['.h3-note', 80, 0.927], ['.imm-script', 120, 0.891]
-      ];
-      // entrance: the room assembles out of depth
       var tl = gsap.timeline({ defaults: { ease: 'expo.out' } });
-      tl.from('.h3-bg', { z: -320, opacity: 0, duration: 1.5 }, 0)
-        .from('.imm-line', { z: -260, opacity: 0, duration: 1.3, stagger: 0.12 }, 0.15)
-        .from('.h3-fig', { z: 300, opacity: 0, duration: 1.5 }, 0.3)
-        .from('.imm-script', { z: 420, opacity: 0, rotate: -11, duration: 1.2 }, 0.75)
-        .from(['.h3-eyebrow', '.h3-note'], { opacity: 0, y: 18, duration: 0.8 }, 0.95);
-      // scroll: camera dollies in, planes spread apart
+      tl.from('.imm-line', { z: -240, opacity: 0, duration: 1.2, stagger: 0.12 }, 0)
+        .from('.h3-frame', { z: -300, opacity: 0, duration: 1.4 }, 0.2)
+        .from('.h3-fig', { z: 280, opacity: 0, duration: 1.4 }, 0.35)
+        .from('.imm-script', { z: 430, opacity: 0, rotate: -11, duration: 1.1 }, 0.8)
+        .from(['.h3-eyebrow', '.h3-note'], { opacity: 0, y: 16, duration: 0.7 }, 0.95);
       var spread = { trigger: hero, start: 'top top', end: 'bottom top', scrub: 0.4 };
-      gsap.to('.h3-bg',     { z: -160, ease: 'none', scrollTrigger: spread });
-      gsap.to('.imm-line',  { z: -110, yPercent: -14, ease: 'none', scrollTrigger: spread });
-      gsap.to('.h3-fig',    { z: 140, ease: 'none', scrollTrigger: spread });
-      gsap.to('.imm-script',{ z: 260, xPercent: 4, ease: 'none', scrollTrigger: spread });
-      gsap.to('.h3-note',   { z: 170, opacity: 0, ease: 'none', scrollTrigger: spread });
-      // tilt: the space answers the hand
+      gsap.to('.h3-frame',  { z: -80, ease: 'none', scrollTrigger: spread });
+      gsap.to('.h3-fig',    { z: 160, yPercent: -4, ease: 'none', scrollTrigger: spread });
+      gsap.to('.imm-line',  { z: -100, yPercent: -12, ease: 'none', scrollTrigger: spread });
+      gsap.to('.imm-script',{ z: 230, xPercent: 3, ease: 'none', scrollTrigger: spread });
+      gsap.to('.h3-note',   { opacity: 0, ease: 'none', scrollTrigger: spread });
       var rx = gsap.quickTo(stage, 'rotationY', { duration: 0.9, ease: 'power3.out' });
       var ry = gsap.quickTo(stage, 'rotationX', { duration: 0.9, ease: 'power3.out' });
-      var fine = window.matchMedia('(pointer: fine)').matches;
-      if (fine) {
+      if (window.matchMedia('(pointer: fine)').matches) {
         hero.addEventListener('pointermove', function (e) {
           var r = hero.getBoundingClientRect();
           rx(((e.clientX - r.left) / r.width - 0.5) * 7);
