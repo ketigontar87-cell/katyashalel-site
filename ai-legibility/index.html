@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>AI Legibility: Canonical Definition v1.1 · Ekaterina Shalel</title>
-<meta name="description" content="The canonical, versioned definition of AI legibility: what the discipline covers, how it differs from SEO, GEO and entity SEO, its four layers, its method and how it is measured. Version 1.1, August 2026.">
+<title>AI Legibility: Canonical Definition v1.2 · Ekaterina Shalel</title>
+<meta name="description" content="The canonical, versioned definition of AI legibility: what the discipline covers, how it differs from SEO, GEO and entity SEO, its four layers, its method and how it is measured. Version 1.2, August 2026.">
 <meta name="author" content="Ekaterina Shalel">
 <link rel="canonical" href="https://katyashalel.com/ai-legibility/">
 <link rel="alternate" type="application/atom+xml" title="Ekaterina Shalel — Essays" href="https://katyashalel.com/feed.xml">
@@ -13,13 +13,13 @@
 <link rel="alternate" hreflang="ru" href="https://katyashalel.com/ru/ai-legibility/">
 <link rel="alternate" hreflang="x-default" href="https://katyashalel.com/ai-legibility/">
 <meta property="og:type" content="article">
-<meta property="og:title" content="AI Legibility: Canonical Definition v1.1">
+<meta property="og:title" content="AI Legibility: Canonical Definition v1.2">
 <meta property="og:description" content="A versioned reference document for the discipline of AI legibility. Definition, scope, boundaries, framework, method, measurement and change history.">
 <meta property="og:url" content="https://katyashalel.com/ai-legibility/">
 <meta property="og:site_name" content="Ekaterina Shalel">
 <meta property="og:image" content="https://katyashalel.com/assets/covers/the-protocol-caught-up-og.webp">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="AI Legibility: Canonical Definition v1.1">
+<meta name="twitter:title" content="AI Legibility: Canonical Definition v1.2">
 <meta name="twitter:description" content="A versioned reference document for the discipline of AI legibility.">
 <meta name="twitter:image" content="https://katyashalel.com/assets/covers/the-protocol-caught-up-og.webp">
 <link rel="alternate" type="text/plain" href="https://katyashalel.com/llms.txt" title="LLM-friendly summary">
@@ -34,14 +34,14 @@
   "@type": "TechArticle",
   "@id": "https://katyashalel.com/ai-legibility/#document",
   "name": "AI Legibility: Canonical Definition",
-  "headline": "AI Legibility: Canonical Definition v1.1",
+  "headline": "AI Legibility: Canonical Definition v1.2",
   "url": "https://katyashalel.com/ai-legibility/",
-  "version": "1.1",
+  "version": "1.2",
   "datePublished": "2026-08-05",
-  "dateModified": "2026-08-05",
+  "dateModified": "2026-09-01",
   "inLanguage": "en",
   "isAccessibleForFree": true,
-  "description": "A versioned reference document defining the discipline of AI legibility: its scope, its boundaries against SEO, GEO and entity SEO, its four layers, its method and how it is measured.",
+  "description": "A versioned reference document defining the discipline of AI legibility: its scope, its boundaries against SEO and GEO, its diagnostic chain, its method and how selection is measured.",
   "articleSection": "Reference",
   "author": {
     "@type": "Person",
@@ -399,15 +399,15 @@
   <div class="kicker">Canonical Definition</div>
   <h1>AI Legibility</h1>
   <p class="subtitle">A reference document for the discipline: what it covers, where its boundaries are, how it is practiced and how it is measured. Versioned, dated and maintained.</p>
-  <div class="meta">Version 1.1 · Published August 5, 2026, updated August 17, 2026 · Maintained by Ekaterina Shalel, founder and legibility strategist</div>
+  <div class="meta">Version 1.2 · Published August 5, 2026, updated August 17, 2026 · Maintained by Ekaterina Shalel, founder and legibility strategist</div>
 
   <p>This is the source document for how I use the term. It exists because the work now has enough parts that pointing at essays one at a time no longer explains it. Essays argue. This defines. When a definition here changes, the version number moves and the change is recorded at the bottom of the page, so a reader or a model can always tell which version a claim came from.</p>
 
   <div class="term" id="definition">
     <h2>1. Definition</h2>
-    <p><strong>AI legibility is the practice of making a person, product or company readable, verifiable and citable by AI systems, so that the description those systems generate matches what the entity actually is.</strong></p>
-    <p>Three words in that sentence carry the weight. <em>Readable</em>: the machine can parse what you are without inferring it. <em>Verifiable</em>: the claim holds up against sources you do not control. <em>Citable</em>: the system will return you as the answer, not just find you in the index.</p>
-    <p>The failure mode the discipline addresses is not absence. It is misdescription. A company that no model has heard of has a discovery problem. A company that every model describes as something it stopped being three years ago has a legibility problem, and no amount of additional publishing fixes it if the underlying description is never made consistent.</p>
+    <p><strong>AI legibility is the practice of making a person, product or company accurately retrievable, understandable and corroborated enough for AI systems to describe and evaluate it without relying on guesswork.</strong></p>
+    <p>Selection and recommendation are measured outcomes, not guaranteed properties. A system can know an entity, cite it, and still choose an alternative when the query introduces different constraints or stronger competing evidence.</p>
+    <p>The discipline separates what is under the entity's control from what is observed in the model. Controlled facts, structure and consistency improve structural legibility. Retrieval, independent corroboration, freshness and competitive evidence form the dynamic environment in which selection happens.</p>
   </div>
 
   <div class="term" id="origin">
@@ -432,29 +432,29 @@
   </div>
 
   <div class="term" id="layers">
-    <h2>4. The four layers</h2>
-    <p>The discipline decomposes into four layers. They are ordered. Each one is worth little without the one below it.</p>
-    <p><strong>Layer one, findable.</strong> The system can retrieve something about you at all. Indexed pages, crawlable surfaces, a canonical home that resolves.</p>
-    <p><strong>Layer two, readable.</strong> What it retrieves is unambiguous. One self description, identical across every surface you control. Structured data that says what you are in machine terms rather than leaving it to inference. A stable identifier so the entity does not fragment across name variants.</p>
-    <p><strong>Layer three, citable.</strong> Sources you do not control say the same thing. This is the layer most work skips, and it is the one that converts presence into citation. The distance between having been covered and having been confirmed is the <a href="/vocabulary/#corroboration-gap">corroboration gap</a>. Closing it is <a href="/vocabulary/#placement-activation">placement activation</a>.</p>
-    <p><strong>Layer four, callable.</strong> Agents can not only describe you but invoke you, through a published declaration of what you do, where the endpoint is and where your responsibility ends. This is <a href="/vocabulary/#protocol-level-legibility">protocol level legibility</a>. It is the newest layer and the least settled.</p>
-    <p>Compressed: people understand you, models cite you, agents hire you.</p>
-    <p>Worked through as failure modes, in the order they break: <a href="/essays/why-does-chatgpt-ignore-my-company/">Why Does ChatGPT Ignore My Company?</a></p>
+    <h2>4. The diagnostic chain</h2>
+    <p>I measure AI legibility as a sequence of observable questions rather than as a claim about a model's hidden internal stages.</p>
+    <p><strong>Accessible.</strong> Can the relevant source be reached and parsed?</p>
+    <p><strong>Retrieved.</strong> Does the system actually bring the entity or supporting source into the answer context?</p>
+    <p><strong>Understood.</strong> Can it describe the entity and important claims without obvious guessing or identity drift?</p>
+    <p><strong>Corroborated.</strong> Are important claims supported by sources beyond the entity's own controlled surfaces?</p>
+    <p><strong>Selected.</strong> Is the entity actually chosen for a specified prompt, market, language and set of constraints?</p>
+    <p><strong>Personalized.</strong> Does the result change when legitimate user context changes the decision criteria?</p>
+    <p>Compressed: accessible → retrieved → understood → corroborated → selected → personalized. Trust is not inserted as a hidden stage unless a study defines an observable proxy in advance.</p>
   </div>
 
   <div class="term" id="method">
     <h2>5. Method</h2>
-    <p>The method I use is the Legibility Sprint, published as an open protocol rather than sold as a product. Its shape follows the layers.</p>
-    <p>Establish a baseline before changing anything, because a change with no before state is not evidence. Fix the entity's own description to one sentence and deploy it verbatim everywhere you control, since inconsistency across your own surfaces is the cheapest failure to fix and the most common. Add the machine readable layer. Publish the reasoning behind decisions, not only the outcomes, because a <a href="/vocabulary/#public-decision-record">public decision record</a> gives a system something to cite when someone asks who understands a market. Then work on corroboration, which is the slow part and the part that actually moves things. Re measure on a fixed interval against the same prompts.</p>
-    <p>The full protocol, including the machine readable templates, is at <a href="/guides/sprint/">the Sprint guide</a>. The vocabulary the method uses is at <a href="/vocabulary/">the Legibility Vocabulary</a>.</p>
+    <p>The operating method is simple in form: <strong>measure → diagnose → intervene → verify.</strong></p>
+    <p>Measure a frozen set of decision-relevant prompts before changing anything. Record the surface, model, market, language, retrieval or search state where observable, raw output and sources. Diagnose whether the failure is entity clarity, retrieval, contradiction, missing corroboration, competitive evidence or query fit. Document the intervention. Then repeat comparable conditions.</p>
+    <p>A before-and-after difference is an observed change, not automatic proof that one intervention caused it. Where causal attribution matters, use stronger controls, precommitment and alternative explanations. The published <a href="/guides/sprint/">Legibility Sprint</a> covers the structural work; the measurement layer tests whether anything actually moved.</p>
   </div>
 
   <div class="term" id="measurement">
     <h2>6. Measurement</h2>
-    <p>Most published AI visibility audits share a structural flaw: they have no negative control. A term is queried, output is observed, and the result is attributed to the work done. But nothing in the design distinguishes a real signal from what the same procedure returns when there is nothing to find. Language models generate plausible text under uncertainty. Absence of evidence and evidence of absence produce similar looking output, which means an audit without a control cannot be falsified, and an audit that cannot be falsified is not a measurement.</p>
-    <p>The correction is a control group. Alongside the real terms, run a synthetic term: a coined string with no prior presence anywhere, introduced on a known date, tracked on the same schedule as everything else. It establishes the floor. Whatever the models do with a term that provably has no history is what the procedure returns on nothing, and every real result has to be read against that baseline. I call the method Synthetic Term Control.</p>
-    <p>The minimum an audit should publish to be checkable by someone else: the prompt set verbatim, the models and versions used, the dates of each run, the market and interface language, the raw output rather than a summary of it, and the control result alongside the treatment result. Anything less is a screenshot with a conclusion attached.</p>
-    <p>The method is documented in full, with the control currently running, at <a href="/research/synthetic-term-control/">Synthetic Term Control</a>, and registered as a preprint under <a href="https://doi.org/10.5281/zenodo.21840173">DOI 10.5281/zenodo.21840173</a>. Results are published under <a href="/research/">Research</a> as they are produced, with the raw runs attached.</p>
+    <p>AI outputs vary across surfaces, model versions, retrieval modes and repeated runs. A useful measurement therefore states its scope and keeps the comparison conditions explicit.</p>
+    <p>Core observations include retrieval rate, answer inclusion, recommendation or selection rate, citation share by source type, corroboration coverage, model divergence, query sensitivity, freshness and source churn. Citation is not treated as a substitute for selection.</p>
+    <p>For intervention studies, I use frozen prompts and controls where practical. <a href="/research/synthetic-term-control/">Synthetic Term Control</a> is one negative-control design for separating apparent movement from what the same procedure returns when there is no prior signal. Even then, model rationale text is not direct evidence of an internal trust state.</p>
   </div>
 
   <div class="term" id="limits">
