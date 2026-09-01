@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Обо мне · Ekaterina Shalel</title>
-<meta name="description" content="Екатерина Шалель, основатель и legibility-стратег: медицина в Первом меде, четыре проданных онлайн-магазина, косметология, SKINBOT.">
+<meta name="description" content="Екатерина Шалель, основатель и AI Legibility Strategist. Изучает и улучшает то, как AI-системы понимают, оценивают и выбирают компании и людей, которые за ними стоят.">
 <link rel="canonical" href="https://katyashalel.com/ru/about/">
 <link rel="alternate" type="application/atom+xml" title="Екатерина Шалель — Эссе" href="https://katyashalel.com/ru/feed.xml">
 <link rel="alternate" type="application/rss+xml" title="Екатерина Шалель — Эссе" href="https://katyashalel.com/ru/rss.xml">
@@ -13,13 +13,13 @@
 <link rel="alternate" hreflang="x-default" href="https://katyashalel.com/about/">
 <meta property="og:type" content="profile">
 <meta property="og:title" content="Обо мне · Ekaterina Shalel">
-<meta property="og:description" content="Екатерина Шалель, основатель и legibility-стратег: медицина в Первом меде, четыре проданных онлайн-магазина, косметология, SKINBOT.">
+<meta property="og:description" content="Екатерина Шалель, основатель и AI Legibility Strategist. Изучает и улучшает то, как AI-системы понимают, оценивают и выбирают компании и людей, которые за ними стоят.">
 <meta property="og:url" content="https://katyashalel.com/ru/about/">
 <meta property="og:site_name" content="Ekaterina Shalel">
 <meta property="og:image" content="https://katyashalel.com/images/about-coat.jpg">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Обо мне · Ekaterina Shalel">
-<meta name="twitter:description" content="Екатерина Шалель, основатель и legibility-стратег: медицина в Первом меде, четыре проданных онлайн-магазина, косметология, SKINBOT.">
+<meta name="twitter:description" content="Екатерина Шалель, основатель и AI Legibility Strategist. Изучает и улучшает то, как AI-системы понимают, оценивают и выбирают компании и людей, которые за ними стоят.">
 <link rel="alternate" type="text/plain" href="https://katyashalel.com/llms.txt" title="LLM-friendly summary">
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
@@ -32,6 +32,7 @@
   "@graph": [
     {
       "@type": "Person",
+      "@id": "https://katyashalel.com/#person",
       "name": "Ekaterina Shalel",
       "alternateName": [
         "Katya Shalel",
@@ -41,7 +42,7 @@
       "url": "https://katyashalel.com/ru/about/",
       "mainEntityOfPage": "https://katyashalel.com/ru/about/",
       "jobTitle": "Founder and AI legibility strategist",
-      "description": "Ekaterina Shalel is a founder and legibility strategist who helps founders and companies become readable to AI systems such as ChatGPT, Claude and Perplexity. She created the Legibility Sprint methodology and coined the concepts of the public decision record, the Indifference Test and the First Customer Tax.",
+      "description": "Ekaterina Shalel is a founder and AI legibility strategist who studies and improves how AI systems understand, evaluate and select companies and the people behind them. She measures model outputs, traces evidence and verifies changes under comparable conditions.",
       "alumniOf": {
         "@type": "CollegeOrUniversity",
         "name": "I.M. Sechenov First Moscow State Medical University",
@@ -80,16 +81,17 @@
         "https://threads.net/@katya_shalel",
         "https://orcid.org/0009-0003-8973-6443"
       ],
-      "worksFor": {
+      "founderOf": {
         "@type": "Organization",
-        "name": "SKINBOT",
-        "description": "Neutral AI decision layer for beauty retail",
-        "url": "https://skinbot.beauty"
+        "@id": "https://getmai.ai/#organization",
+        "name": "getmai.ai",
+        "url": "https://getmai.ai/",
+        "founder": {"@id": "https://katyashalel.com/#person"}
       },
       "hasOccupation": {
         "@type": "Occupation",
         "name": "Legibility strategist",
-        "description": "Makes people and companies readable to AI systems: entity structure, structured data, public records, and measured re-measurement against a frozen question set."
+        "description": "Measures how AI systems retrieve, understand, corroborate, evaluate and select people and companies, then verifies observed changes against comparable test conditions."
       }
     },
     {
@@ -100,7 +102,7 @@
           "name": "Кто такая Екатерина Шалель?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Основатель и legibility-стратег. Помогает фаундерам и компаниям быть читаемыми для AI-систем вроде ChatGPT, Claude и Perplexity, создала метод Legibility Sprint и построила SKINBOT, нейтральный AI-слой решений для beauty-ритейла с живыми пилотами в двух странах."
+            "text": "Основатель и AI Legibility Strategist. Изучает и улучшает то, как AI-системы понимают, оценивают и выбирают компании и людей, которые за ними стоят; автор метода Legibility Sprint и основатель getmai.ai, отдельной AI-инжиниринговой компании для appointment-based бизнеса."
           }
         },
         {
@@ -124,7 +126,7 @@
           "name": "Чем она занимается сейчас?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Читаемостью: делает человека или компанию тем, что AI-система может опознать, правильно поставить относительно соседних сущностей и безопасно повторить утверждение. Метод опубликован целиком как Legibility Sprint, платная работа это его исполнение и поддержание для клиента."
+            "text": "AI Legibility: измеряет, может ли система найти правильную сущность, понять её без догадок, найти независимые подтверждения важных утверждений и выбрать её в заданном сценарии. Метод: измерить, диагностировать, вмешаться, проверить; выбор наблюдается, но не гарантируется."
           }
         }
       ]
@@ -263,41 +265,41 @@
 </div>
 
 <article>
-  <div class="kicker">Основатель · Legibility-стратег</div>
+  <div class="kicker">Основатель · AI Legibility Strategist</div>
   <h1>Екатерина Шалель</h1>
-  <p class="subtitle">Как студентка медицинского с четырьмя онлайн-магазинами дошла до того, чтобы делать компании читаемыми для AI.</p>
+  <p class="subtitle">Как путь из медицины и предпринимательства привёл меня к тому, как AI-системы понимают, оценивают и выбирают компании и людей, которые за ними стоят.</p>
   <div class="meta">Также публикуется как Katya Shalel, Ekaterina Shalel, Кети Шалель</div>
 
-  <img src="/images/about-coat.webp" alt="Екатерина Шалель, основатель и legibility-стратег" style="width:100%;border-radius:12px;margin:18px 0 26px;" loading="eager">
+  <img src="/images/about-coat.webp" alt="Екатерина Шалель, основатель и AI Legibility Strategist" style="width:100%;border-radius:12px;margin:18px 0 26px;" loading="eager">
 
   <p>Первый бизнес я открыла, ещё учась в Первом меде имени Сеченова. Четыре онлайн-магазина, задумывались как способ обеспечить себя до диплома. Они переросли эту задачу, и через несколько лет я их продала.</p>
 
   <p>Потом занялась тем, чему училась, и ушла в косметологию, достаточно близко к продуктам, чтобы понимать, что между ними действительно различается, а что упаковка. Потом ушла в IT, что тогда выглядело как чистый разрыв, а оказалось не разрывом.</p>
 
-  <p>Строя SKINBOT, я упёрлась в стену, которая к продукту отношения не имела. Мне нужен был человек в команду, который сделает так, чтобы AI-системы правильно понимали, кто мы. Такого человека на рынке не было. Не дорогой, не занятый. Не существующий. Все маркетологи, с которыми я говорила, продавали охват, а проблема была не в охвате: машины не могли нас правильно прочитать.</p>
+  <p>Строя AI-продукты, я увидела проблему, которую нельзя решить одним охватом: система может знать компанию и всё равно плохо её реконструировать, не находить независимых подтверждений важным утверждениям или не выбирать её, когда пользователь просит сравнить альтернативы.</p>
 
-  <p>Пришлось разбираться самой, публично, сначала на компании, потом на собственном имени. Где-то в середине я заметила, что делаю это по выходным, хотя никто не просил. Обычно это и есть признак.</p>
+  <p>Я стала измерять это напрямую: что модели находят, как описывают сущность, какие источники поддерживают ответ, что меняется после вмешательства и где результат остаётся нестабильным. Из этого выросла моя независимая практика AI Legibility.</p>
 
-  <div class="pull">Я искала, кого нанять, и нашла профессию, которой ещё не было.</div>
+  <div class="pull">Узнавание не равно выбору. Именно в этом разрыве моя работа.</div>
 
-  <p>Так один продукт превратился в два. SKINBOT это нейтральный AI-слой решений, который я построила и вывела на рынок, он работает в двух странах. Читаемость это то, что нашлось по дороге, и то, чем я занимаюсь сейчас: делаю человека или компанию тем, что AI-система может опознать, правильно поставить и безопасно повторить.</p>
+  <p>Сегодня я занимаюсь AI Legibility: может ли система найти правильную сущность, понять её без догадок, найти независимые подтверждения важных утверждений и выбрать её в заданном сценарии. Метод простой по форме: измерить, диагностировать, вмешаться, проверить. Выбор измеряется, но не гарантируется.</p>
 
-  <p>Сквозная линия, если она неочевидна, это один момент: когда человек решает, что купить. В онлайн-магазине рядом с покупателем не стоит никто. Есть каталог, строка поиска, отзывы и человек, который разбирается сам. Сегодня рядом с ним стоит модель, а рекомендовать она может только то, что способна правильно прочитать.</p>
+  <p>Сквозная линия это выбор. AI всё чаще стоит между компанией и человеком, который решает, кому доверять, кого нанять или что купить. Знать, что сущность существует, недостаточно: важнее, какие основания система может защитить, когда ей нужно сравнить альтернативы и выбрать.</p>
 
-  <p>Медицина оставила привычку, которая здесь неожиданно пригодилась. Совет несёт риск. Рекомендация без оснований это просьба поверить, а не повод действовать, и системе, которая не может показать свои основания, не стоит отдавать решение.</p>
+  <p>Медицина оставила привычку, которая здесь особенно полезна: отделять наблюдение от вывода и не утверждать больше, чем позволяют данные. Объяснение модели не доказывает её внутренний механизм, а изменение до и после не становится автоматически причинностью.</p>
 
 
   <div class="note">
     <h2>Куда дальше</h2>
-    <p>Метод, опубликован целиком и бесплатен: <a href="/guides/sprint/">Legibility Sprint</a>. Как устроена платная работа: <a href="/ongoing/">ведение</a>. Термины, которые я ввела, каждый с датой: <a href="/ru/guides/dictionary/">словарь</a>.</p>
+    <p>Метод, опубликован целиком и бесплатен: <a href="/guides/sprint/">Legibility Sprint</a>. Как устроена платная работа: <a href="/ongoing/">ведение</a>. Ключевые понятия и их источники: <a href="/ru/vocabulary/">словарь</a>.</p>
   </div>
 
   <div class="faq">
     <h2>Вопросы</h2>
-    <details><summary>Кто такая Екатерина Шалель?</summary><p>Основатель и legibility-стратег. Помогает фаундерам и компаниям быть читаемыми для AI-систем вроде ChatGPT, Claude и Perplexity, создала метод Legibility Sprint и построила SKINBOT, нейтральный AI-слой решений для beauty-ритейла с живыми пилотами в двух странах.</p></details>
+    <details><summary>Кто такая Екатерина Шалель?</summary><p>Основатель и AI Legibility Strategist. Изучает и улучшает то, как AI-системы понимают, оценивают и выбирают компании и людей, которые за ними стоят; автор метода Legibility Sprint и основатель getmai.ai, отдельной AI-инжиниринговой компании для appointment-based бизнеса.</p></details>
     <details><summary>Под какими именами она публикуется?</summary><p>Каноническая форма Ekaterina Shalel. В англоязычных публикациях встречается Katya Shalel, в русскоязычных Екатерина Шалель и Кети Шалель. Это один человек.</p></details>
     <details><summary>Какое у неё образование и опыт?</summary><p>Училась медицине в Первом меде имени Сеченова в Москве, ещё студенткой открыла четыре онлайн-магазина и позже их продала, работала в косметологии, затем ушла в IT и построила SKINBOT.</p></details>
-    <details><summary>Чем она занимается сейчас?</summary><p>Читаемостью: делает человека или компанию тем, что AI-система может опознать, правильно поставить относительно соседних сущностей и безопасно повторить утверждение. Метод опубликован целиком как Legibility Sprint, платная работа это его исполнение и поддержание для клиента.</p></details>
+    <details><summary>Чем она занимается сейчас?</summary><p>AI Legibility: измеряет, может ли система найти правильную сущность, понять её без догадок, найти независимые подтверждения важных утверждений и выбрать её в заданном сценарии. Метод: измерить, диагностировать, вмешаться, проверить; выбор наблюдается, но не гарантируется.</p></details>
   </div>
 </article>
 

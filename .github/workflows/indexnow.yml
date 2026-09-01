@@ -1,97 +1,65 @@
-name: Final identity parity
+name: IndexNow ping
+
+# Submits every URL in the live sitemap to IndexNow after each deploy.
+# Fails loudly: a rejected submission must not report as a green run.
 
 on:
   push:
     branches: [main]
-
-permissions:
-  contents: write
+  workflow_dispatch:
 
 jobs:
-  cleanup:
+  ping:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
-        with:
-          fetch-depth: 4
-      - name: Apply final identity parity
+      - name: Wait for the deploy to go live
+        run: sleep 90
+
+      - name: Submit sitemap URLs to IndexNow
+        env:
+          HOST: katyashalel.com
+          KEY: 9656a8346f4b4450826617d677d759d8
         run: |
-          python - <<'PY'
-          from pathlib import Path
-          import json, re
+          set -euo pipefail
 
-          def rep(path, old, new):
-              p=Path(path); s=p.read_text(); p.write_text(s.replace(old,new))
+          # Read the deployed sitemap, not the one in the repo: if the deploy
+          # failed, the submission should reflect what is actually live.
+          curl -sS --fail --retry 3 --retry-delay 10 \
+            "https://${HOST}/sitemap.xml" -o sitemap.xml
 
-          # Homepage: remove the last stale identity narrative in both visible FAQ and escaped JSON-LD.
-          p=Path('index.html'); s=p.read_text()
-          s=s.replace(', and built its market visibility from zero to ranked','')
-          s=s.replace('is a founder and legibility strategist. She helps founders and companies get read right by AI systems such as ChatGPT, Claude and Perplexity. She architected SKINBOT, a neutral AI decision layer for beauty retail, with compliance-first architecture and live pilots in two markets.', 'is a founder and AI legibility strategist who studies and improves how AI systems understand, evaluate and select companies and the people behind them. She measures model outputs, traces the evidence behind them and verifies changes under comparable conditions.')
-          s=s.replace('<p>I opened my first business while I was still in medical school at Sechenov University: four online stores, later sold. Then cosmetology, then technology. While building SKINBOT I went looking for someone who could make AI systems understand what we were, found the role did not exist, and learned it myself. That is the work now.</p>','<p>I opened my first business while I was still in medical school at Sechenov University: four online stores, later sold. Then cosmetology, then technology. While building AI products I became interested in the layer now sitting between companies and the people choosing them: what an AI system can actually retrieve, understand, corroborate and select.</p>')
-          s=s.replace('<p>I am also the founder of <a href="https://getmai.ai/">getmai.ai</a>, an AI engineering company for appointment-based businesses. Two practices, one question: what has to be true for a system to read a business correctly.</p>','<p>I am also the founder of <a href="https://getmai.ai/">getmai.ai</a>, an AI engineering company for appointment-based businesses. It is separate from my independent AI legibility practice, which measures how AI systems understand, evaluate and select companies and the people behind them.</p>')
-          p.write_text(s)
+          grep -oP '(?<=<loc>)[^<]+' sitemap.xml > urls.txt
+          count=$(wc -l < urls.txt)
+          echo "Found ${count} URLs."
+          if [ "$count" -eq 0 ]; then
+            echo "Sitemap parsed to zero URLs."; exit 1
+          fi
 
-          # English About.
-          p=Path('about/index.html'); s=p.read_text()
-          pairs={
-          '<div class="kicker">Founder · Legibility strategist</div>':'<div class="kicker">Founder · AI Legibility Strategist</div>',
-          '<p class="subtitle">How a medical student with four online stores ended up making companies readable to AI systems.</p>':'<p class="subtitle">How a medical student and founder ended up studying how AI systems understand, evaluate and select companies and the people behind them.</p>',
-          'alt="Ekaterina Shalel, founder and legibility strategist"':'alt="Ekaterina Shalel, founder and AI legibility strategist"',
-          '<p>While building SKINBOT, I hit a wall that had nothing to do with the product. I needed someone on the team who could make AI systems understand what we were, and there was no such person on the market. Not expensive, not busy. Not existing. Every marketer I spoke to sold reach, and reach was not the problem: the problem was that machines could not read us correctly.</p>':'<p>While building AI products, I became interested in a problem that reach alone could not solve: an AI system can recognize a company and still reconstruct it poorly, lack independent evidence for important claims, or leave it out when a user asks whom to choose.</p>',
-          '<p>So I learned it myself, in public, first on the company and then on my own name. Somewhere in the middle of that I noticed I was doing it on weekends without being asked, which is usually the sign.</p>':'<p>I started measuring that problem directly: what models retrieve, how they describe an entity, which sources support the answer, what changes after an intervention, and where the result remains unstable. That became my independent AI legibility practice.</p>',
-          '<div class="pull">I went looking for someone to hire and found a job that did not exist yet.</div>':'<div class="pull">Recognition is not selection. That gap is the work.</div>',
-          '<p>That is how one product turned into two. SKINBOT is the neutral AI decision layer I built and took to market, live in two countries. Legibility is what I found on the way, and it is what I do now: making a person or a company something an AI system can identify, place correctly, and safely repeat.</p>':'<p>Today I work on AI legibility: whether a system can retrieve the right entity, understand it without guessing, find independent corroboration for important claims, and select it under specified decision conditions. The method is measure, diagnose, intervene and verify. Selection is observed, not guaranteed.</p>',
-          '<p>The through line, in case it is not obvious, is one moment: when a person decides what to buy. In an online store nobody is standing next to the customer. There is a catalogue, a search box, some reviews, and a person working it out alone. Today the thing standing next to them is a model, and a model can only recommend what it can read correctly.</p>':'<p>The through line is choice. AI increasingly sits between a company and the person deciding whom to trust, hire or buy from. Knowing that an entity exists is only the first step; the harder question is what evidence the system can defend when it has to compare alternatives and choose.</p>',
-          '<p>Medicine left me with a habit that turns out to matter here. Advice carries risk. A recommendation without grounds is a request to be trusted rather than a reason to act, and a system that cannot show its grounds should not be given the decision.</p>':'<p>Medicine left me with a habit that matters here: separate observation from inference and do not claim more than the evidence supports. A model rationale is not proof of its internal mechanism, and a before-and-after change is not automatically causal.</p>',
-          'The terms I coined, each dated: <a href="/vocabulary/">vocabulary</a>.':'Selected concepts and their sources: <a href="/vocabulary/">vocabulary</a>.',
-          'A founder and legibility strategist. She helps founders and companies become readable to AI systems such as ChatGPT, Claude and Perplexity, created the Legibility Sprint methodology, founded getmai.ai, an AI engineering company for appointment-based businesses, and built SKINBOT, a neutral AI decision layer for beauty retail with live pilots in two countries.':'A founder and AI legibility strategist who studies and improves how AI systems understand, evaluate and select companies and the people behind them. She created the Legibility Sprint methodology and is also the founder of getmai.ai, a separate AI engineering company for appointment-based businesses.'}
-          for a,b in pairs.items(): s=s.replace(a,b)
-          if '"@type": "Person",\n      "name": "Ekaterina Shalel"' in s:
-              s=s.replace('"@type": "Person",\n      "name": "Ekaterina Shalel"','"@type": "Person",\n      "@id": "https://katyashalel.com/#person",\n      "name": "Ekaterina Shalel"',1)
-          s=re.sub(r'\n      "worksFor": \{.*?\n      \},\n      "hasOccupation":', '\n      "founderOf": {\n        "@type": "Organization",\n        "@id": "https://getmai.ai/#organization",\n        "name": "getmai.ai",\n        "url": "https://getmai.ai/",\n        "founder": {"@id": "https://katyashalel.com/#person"}\n      },\n      "hasOccupation":',s,count=1,flags=re.S)
-          p.write_text(s)
+          # Without a reachable key file the engines reject the whole batch.
+          served=$(curl -sS --fail "https://${HOST}/${KEY}.txt" | tr -d '[:space:]')
+          if [ "$served" != "$KEY" ]; then
+            echo "Key file mismatch. Served: '${served}'"; exit 1
+          fi
+          echo "Key file verified."
 
-          # Russian About.
-          p=Path('ru/about/index.html'); s=p.read_text()
-          s=s.replace('Екатерина Шалель, основатель и legibility-стратег: медицина в Первом меде, четыре проданных онлайн-магазина, косметология, SKINBOT.','Екатерина Шалель, основатель и AI Legibility Strategist. Изучает и улучшает то, как AI-системы понимают, оценивают и выбирают компании и людей, которые за ними стоят.')
-          s=s.replace('Ekaterina Shalel is a founder and legibility strategist who helps founders and companies become readable to AI systems such as ChatGPT, Claude and Perplexity. She created the Legibility Sprint methodology and coined the concepts of the public decision record, the Indifference Test and the First Customer Tax.','Ekaterina Shalel is a founder and AI legibility strategist who studies and improves how AI systems understand, evaluate and select companies and the people behind them. She measures model outputs, traces evidence and verifies changes under comparable conditions.')
-          s=s.replace('Makes people and companies readable to AI systems: entity structure, structured data, public records, and measured re-measurement against a frozen question set.','Measures how AI systems retrieve, understand, corroborate, evaluate and select people and companies, then verifies observed changes against comparable test conditions.')
-          rpairs={
-          '<div class="kicker">Основатель · Legibility-стратег</div>':'<div class="kicker">Основатель · AI Legibility Strategist</div>',
-          '<p class="subtitle">Как студентка медицинского с четырьмя онлайн-магазинами дошла до того, чтобы делать компании читаемыми для AI.</p>':'<p class="subtitle">Как путь из медицины и предпринимательства привёл меня к тому, как AI-системы понимают, оценивают и выбирают компании и людей, которые за ними стоят.</p>',
-          'alt="Екатерина Шалель, основатель и legibility-стратег"':'alt="Екатерина Шалель, основатель и AI Legibility Strategist"',
-          '<p>Строя SKINBOT, я упёрлась в стену, которая к продукту отношения не имела. Мне нужен был человек в команду, который сделает так, чтобы AI-системы правильно понимали, кто мы. Такого человека на рынке не было. Не дорогой, не занятый. Не существующий. Все маркетологи, с которыми я говорила, продавали охват, а проблема была не в охвате: машины не могли нас правильно прочитать.</p>':'<p>Строя AI-продукты, я увидела проблему, которую нельзя решить одним охватом: система может знать компанию и всё равно плохо её реконструировать, не находить независимых подтверждений важным утверждениям или не выбирать её, когда пользователь просит сравнить альтернативы.</p>',
-          '<p>Пришлось разбираться самой, публично, сначала на компании, потом на собственном имени. Где-то в середине я заметила, что делаю это по выходным, хотя никто не просил. Обычно это и есть признак.</p>':'<p>Я стала измерять это напрямую: что модели находят, как описывают сущность, какие источники поддерживают ответ, что меняется после вмешательства и где результат остаётся нестабильным. Из этого выросла моя независимая практика AI Legibility.</p>',
-          '<div class="pull">Я искала, кого нанять, и нашла профессию, которой ещё не было.</div>':'<div class="pull">Узнавание не равно выбору. Именно в этом разрыве моя работа.</div>',
-          '<p>Так один продукт превратился в два. SKINBOT это нейтральный AI-слой решений, который я построила и вывела на рынок, он работает в двух странах. Читаемость это то, что нашлось по дороге, и то, чем я занимаюсь сейчас: делаю человека или компанию тем, что AI-система может опознать, правильно поставить и безопасно повторить.</p>':'<p>Сегодня я занимаюсь AI Legibility: может ли система найти правильную сущность, понять её без догадок, найти независимые подтверждения важных утверждений и выбрать её в заданном сценарии. Метод простой по форме: измерить, диагностировать, вмешаться, проверить. Выбор измеряется, но не гарантируется.</p>',
-          '<p>Сквозная линия, если она неочевидна, это один момент: когда человек решает, что купить. В онлайн-магазине рядом с покупателем не стоит никто. Есть каталог, строка поиска, отзывы и человек, который разбирается сам. Сегодня рядом с ним стоит модель, а рекомендовать она может только то, что способна правильно прочитать.</p>':'<p>Сквозная линия это выбор. AI всё чаще стоит между компанией и человеком, который решает, кому доверять, кого нанять или что купить. Знать, что сущность существует, недостаточно: важнее, какие основания система может защитить, когда ей нужно сравнить альтернативы и выбрать.</p>',
-          '<p>Медицина оставила привычку, которая здесь неожиданно пригодилась. Совет несёт риск. Рекомендация без оснований это просьба поверить, а не повод действовать, и системе, которая не может показать свои основания, не стоит отдавать решение.</p>':'<p>Медицина оставила привычку, которая здесь особенно полезна: отделять наблюдение от вывода и не утверждать больше, чем позволяют данные. Объяснение модели не доказывает её внутренний механизм, а изменение до и после не становится автоматически причинностью.</p>',
-          'Термины, которые я ввела, каждый с датой: <a href="/ru/guides/dictionary/">словарь</a>.':'Ключевые понятия и их источники: <a href="/ru/vocabulary/">словарь</a>.',
-          'Основатель и legibility-стратег. Помогает фаундерам и компаниям быть читаемыми для AI-систем вроде ChatGPT, Claude и Perplexity, создала метод Legibility Sprint и построила SKINBOT, нейтральный AI-слой решений для beauty-ритейла с живыми пилотами в двух странах.':'Основатель и AI Legibility Strategist. Изучает и улучшает то, как AI-системы понимают, оценивают и выбирают компании и людей, которые за ними стоят; автор метода Legibility Sprint и основатель getmai.ai, отдельной AI-инжиниринговой компании для appointment-based бизнеса.',
-          'Читаемостью: делает человека или компанию тем, что AI-система может опознать, правильно поставить относительно соседних сущностей и безопасно повторить утверждение. Метод опубликован целиком как Legibility Sprint, платная работа это его исполнение и поддержание для клиента.':'AI Legibility: измеряет, может ли система найти правильную сущность, понять её без догадок, найти независимые подтверждения важных утверждений и выбрать её в заданном сценарии. Метод: измерить, диагностировать, вмешаться, проверить; выбор наблюдается, но не гарантируется.'}
-          for a,b in rpairs.items(): s=s.replace(a,b)
-          if '"@type": "Person",\n      "name": "Ekaterina Shalel"' in s:
-              s=s.replace('"@type": "Person",\n      "name": "Ekaterina Shalel"','"@type": "Person",\n      "@id": "https://katyashalel.com/#person",\n      "name": "Ekaterina Shalel"',1)
-          s=re.sub(r'\n      "worksFor": \{.*?\n      \},\n      "hasOccupation":', '\n      "founderOf": {\n        "@type": "Organization",\n        "@id": "https://getmai.ai/#organization",\n        "name": "getmai.ai",\n        "url": "https://getmai.ai/",\n        "founder": {"@id": "https://katyashalel.com/#person"}\n      },\n      "hasOccupation":',s,count=1,flags=re.S)
-          p.write_text(s)
+          jq -n \
+            --arg host "$HOST" \
+            --arg key "$KEY" \
+            --arg loc "https://${HOST}/${KEY}.txt" \
+            --rawfile urls urls.txt \
+            '{host:$host, key:$key, keyLocation:$loc,
+              urlList: ($urls | split("\n") | map(select(length>0)))}' \
+            > payload.json
 
-          # Validate all three JSON-LD documents and stale phrases.
-          for path in ['index.html','about/index.html','ru/about/index.html']:
-              s=Path(path).read_text()
-              for block in re.findall(r'<script[^>]+type=["\']application/ld\+json["\'][^>]*>(.*?)</script>',s,re.S|re.I): json.loads(block)
-          en=Path('index.html').read_text()
-          if 'built its market visibility from zero to ranked' in en: raise SystemExit('ranked claim remains')
-          for path in ['about/index.html','ru/about/index.html']:
-              s=Path(path).read_text()
-              if re.search(r'"worksFor"\s*:\s*\{[^}]*"name"\s*:\s*"SKINBOT"',s,re.S): raise SystemExit(f'stale worksFor: {path}')
-          print('Final identity parity QA passed')
-          PY
-      - name: Restore IndexNow and commit
-        run: |
-          git show HEAD^^:.github/workflows/indexnow.yml > .github/workflows/indexnow.yml
-          git config user.name "Ekaterina Shalel"
-          git config user.email "shalelekaterina@gmail.com"
-          git add index.html about/index.html ru/about/index.html .github/workflows/indexnow.yml
-          git diff --cached --check
-          git commit -m "site: complete EN RU identity parity"
-          git push origin HEAD:main
+          code=$(curl -sS -o response.txt -w '%{http_code}' \
+            -X POST 'https://api.indexnow.org/IndexNow' \
+            -H 'Content-Type: application/json; charset=utf-8' \
+            --data @payload.json)
+
+          echo "IndexNow responded ${code}"
+          cat response.txt || true
+
+          # 200 accepted, 202 accepted pending key validation.
+          case "$code" in
+            200|202) echo "Submitted ${count} URLs." ;;
+            *) echo "IndexNow rejected the submission."; exit 1 ;;
+          esac
