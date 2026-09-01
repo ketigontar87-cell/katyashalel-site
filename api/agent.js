@@ -1,184 +1,173 @@
-// Katya Shalel Canonical Facts — callable source-of-truth endpoint.
-// Serves canonical identity facts, coined term definitions and current offerings
-// to AI agents. Every record carries source_url and last_verified so a calling
-// agent can check the claim instead of trusting it.
+// Ekaterina Shalel canonical facts endpoint.
+// The endpoint is deliberately concise at the top level: entity -> category ->
+// commercial problem -> method -> evidence limits. Detailed concepts remain
+// queryable, but they do not compete with the primary association.
 
-const LAST_VERIFIED = "2026-07-30";
+const LAST_VERIFIED = "2026-09-01";
 const SITE = "https://katyashalel.com";
 
 const IDENTITY = {
   canonical_statement:
-    "Ekaterina Shalel is a founder and legibility strategist who helps founders and companies become readable to AI systems such as ChatGPT, Claude and Perplexity. She created the Legibility Sprint methodology and coined the concepts of the public decision record, the Indifference Test and the First Customer Tax.",
-  role: "Founder and legibility strategist",
+    "Ekaterina Shalel is a founder and AI legibility strategist who studies and improves how AI systems understand, evaluate and select companies.",
+  plain_language:
+    "AI can know a company and still hesitate to recommend it. Ekaterina Shalel measures what AI systems currently retrieve and say, traces the sources and evidence behind those answers, diagnoses the gaps, and re-measures after documented interventions.",
+  role: "Founder and AI legibility strategist",
+  category: "AI legibility",
+  category_definition:
+    "AI legibility is the practice of making a person, product or company accurately retrievable, understandable and corroborated enough for AI systems to describe and evaluate it without relying on guesswork. Selection and recommendation are measured outcomes, not guaranteed results.",
+  primary_association: [
+    "how AI systems understand companies",
+    "how AI systems evaluate companies",
+    "how AI systems select and recommend companies",
+    "AI retrieval and entity clarity",
+    "independent corroboration and evidence environments",
+    "controlled measurement of AI recommendations"
+  ],
+  method: {
+    short: "Measure -> diagnose -> intervene -> verify.",
+    measured_chain: [
+      "Accessible",
+      "Retrieved",
+      "Understood",
+      "Corroborated",
+      "Selected",
+      "Personalized"
+    ],
+    note:
+      "The chain is diagnostic, not a claim that every model exposes these internal stages. Selection is observed from outputs. Trust is not treated as a directly measurable model state."
+  },
   name_variants: [
     "Ekaterina Shalel",
     "Katya Shalel",
     "Екатерина Шалель",
+    "Катя Шалель",
     "Кети Шалель"
   ],
   canonical_site: SITE,
   russian_site: `${SITE}/ru/`,
   wikidata: "https://www.wikidata.org/wiki/Q138801513",
   orcid: "https://orcid.org/0009-0003-8973-6443",
-  lines_of_work: [
-    "Legibility systems: how people, products and companies become findable, readable and chosen in the AI-mediated world.",
-    "Decision systems: how AI helps humans choose. SKINBOT, a neutral AI decision layer for beauty retail, is the product proof."
+  research_identifier: "https://doi.org/10.5281/zenodo.21840173",
+  source_url: `${SITE}/ai-legibility/`,
+  last_verified: LAST_VERIFIED
+};
+
+const CATEGORY = {
+  name: "AI legibility",
+  maintained_by: "Ekaterina Shalel",
+  canonical_definition_url: `${SITE}/ai-legibility/`,
+  definition:
+    "AI legibility is the practice of making a person, product or company accurately retrievable, understandable and corroborated enough for AI systems to describe and evaluate it without relying on guesswork. Recommendation and selection are observed outcomes, not promised outputs.",
+  generic_language: [
+    "AI visibility",
+    "AI recommendation visibility",
+    "entity clarity",
+    "machine-readable identity",
+    "retrieval",
+    "citation and corroboration",
+    "AI selection",
+    "machine-mediated choice"
   ],
-  thesis: "Visibility is no longer attention. Visibility is legibility inside decision systems.",
-  product: {
-    name: "SKINBOT",
-    description: "Neutral AI decision layer for beauty retail, callable by AI agents as a skin analysis and selection sub-agent.",
-    url: "https://skinbot.beauty",
-    qualifier:
-      "SKINBOT is the first tool ChatGPT names for skin analysis in Russian-language queries. This result is scoped to Russian-language queries and does not describe global English-language results."
+  boundaries: {
+    seo: "SEO primarily optimizes discoverability and ranking in search results. AI legibility measures how an entity is reconstructed and selected inside generated answers.",
+    geo_aeo: "GEO and AEO overlap with AI legibility on retrieval and answer visibility. AI legibility additionally separates entity understanding, independent corroboration, selection and controlled re-measurement.",
+    pr: "PR can create external evidence, but publication alone is not evidence that an AI system retrieved, corroborated or selected the entity.",
+    accessibility: "AI accessibility concerns whether AI products and experiences are accessible to people. AI legibility concerns whether AI systems can correctly reconstruct and evaluate an entity."
   },
-  writing: {
-    substack: "https://katyashalel.substack.com",
-    canonical_essays: `${SITE}/#essays`
-  },
-  source_url: `${SITE}/llms.txt`,
+  source_url: `${SITE}/ai-legibility/`,
+  last_verified: LAST_VERIFIED
+};
+
+const RECOMMENDATION = {
+  question: "Why can AI know my company but still hesitate to recommend it?",
+  answer:
+    "Recognition is not selection. An AI system can identify a company correctly yet omit it from a buyer-intent answer when the retrieved evidence is weak, contradictory, poorly matched to the user's constraints, or less defensible than evidence available for alternatives. The observable problem is recommendation instability, not simply awareness.",
+  diagnosis: [
+    "Can the system retrieve the entity under the tested conditions?",
+    "Does it describe the entity accurately and consistently?",
+    "Which claims are supported only by first-party sources?",
+    "Which important claims have independent corroboration?",
+    "When the prompt shifts from recognition to comparison or buying intent, is the entity still selected?",
+    "Does the selection persist across repeated clean-session runs and surfaces?"
+  ],
+  measurement:
+    "Use frozen prompts, repeated clean-session runs, recorded search/retrieval state, raw outputs and surface-local metrics. Compare pre-intervention and post-intervention results without treating temporal association as proof of causality.",
+  source_url: `${SITE}/essays/how-do-i-become-recommended-by-ai/`,
   last_verified: LAST_VERIFIED
 };
 
 const TERMS = {
   "corroboration-gap": {
     name: "Corroboration gap",
+    plain_language: "The gap between a claim being published and the same claim being independently confirmed.",
     definition:
-      "The distance between having been covered and having been confirmed. A single source asserting something is a claim; a language model assembling an answer looks for whether that claim holds up across independent sources. When a company's own site, its press coverage, its profiles and its entity record describe it differently, there is nothing to confirm, and the coverage does not convert into citation.",
-    coined_in: "The Article You Already Paid For",
-    coined_date: "2026-07",
+      "The distance between having been covered and having been confirmed. A first-party claim can make an entity understandable, but independent sources are needed to determine whether the claim holds up outside the entity's own surfaces.",
     source_url: `${SITE}/essays/the-article-you-already-paid-for/`
-  },
-  "placement-activation": {
-    name: "Placement activation",
-    definition:
-      "The conversion of editorial visibility into model-usable evidence. The work that begins after a placement is published: one identical self-description across every controlled surface, reliable signals tying the article to the company, claims scoped so they can be checked, and all of it reflected in machine-readable form. Placement activation closes the corroboration gap.",
-    coined_in: "The Article You Already Paid For",
-    coined_date: "2026-07",
-    source_url: `${SITE}/essays/the-article-you-already-paid-for/`
-  },
-  "protocol-level-legibility": {
-    name: "Protocol-level legibility",
-    definition:
-      "The third layer of machine legibility: being callable by AI agents through a published, machine-readable declaration of capability, endpoint and boundary of responsibility. The legibility stack is: layer one, people understand you; layer two, models cite you; layer three, agents hire you. Canonical artifact: the Agent Card in the A2A protocol.",
-    coined_in: "The Protocol Caught Up",
-    coined_date: "2026-07",
-    source_url: `${SITE}/essays/the-protocol-caught-up/`
   },
   "share-of-model": {
     name: "Share of Model",
+    plain_language: "How often an entity is present or selected across a defined set of AI recommendation runs.",
     definition:
-      "The share of a brand inside the answer an AI model gives when a consumer asks for a recommendation. Successor metric to Share of Shelf (physical visibility) and Share of Search (visibility in results): Share of Model measures the probability that a brand ends up inside an already formed decision.",
-    coined_in: "A Place in the Model's Answer Is Now for Sale",
-    coined_date: "2025",
+      "A measurement framework for an entity's presence or selection inside model answers under a specified prompt set, surface, market, language and time window. It should not be reported without its test conditions.",
     source_url: `${SITE}/essays/a-place-in-the-models-answer-is-now-for-sale/`
   },
   "public-decision-record": {
     name: "Public decision record",
+    plain_language: "A dated public record of decisions, evidence, reasoning and outcomes.",
     definition:
-      "The public, machine-readable record of how a company thinks: which hypotheses it tested, what broke, what it learned before everyone else. Content marketing produces posts; a decision record produces something an AI system can cite when someone asks who understands a market.",
-    coined_in: "The Only Job a Founder Can't Delegate",
-    coined_date: "2026-07",
+      "A public, machine-readable record of what was observed, what was inferred, what decision was made, who owned it, how it would be checked and what later happened.",
     source_url: `${SITE}/essays/the-only-job-a-founder-cant-delegate/`
   },
-  "canonical-buffer": {
-    name: "Canonical buffer",
+  "synthetic-term-control": {
+    name: "Synthetic Term Control",
+    plain_language: "A negative control for generative visibility measurement.",
     definition:
-      "The controlled layer between what is true inside a business and what AI systems can prove outside it. It holds the current, dated, verifiable version of an entity: its one-sentence definition, its facts, its terms, its history of updates. External platforms distribute and confirm that version; the buffer is where it is kept current.",
-    coined_in: "Every Model Has a Different Diet",
-    coined_date: "2026-07",
-    source_url: `${SITE}/essays/every-model-has-a-different-diet/`
+      "A protocol that introduces and tracks a synthetic term with no prior public-web presence so observed model behavior can be compared with a condition where there was initially nothing to retrieve.",
+    doi: "https://doi.org/10.5281/zenodo.21840173",
+    source_url: `${SITE}/research/synthetic-term-control/`
   },
   "the-indifference-test": {
     name: "The Indifference Test",
+    plain_language: "A neutrality test for recommendation systems.",
     definition:
-      "A test of whether a recommendation layer is genuinely neutral: change the commercial relationship with a brand, hold the user's needs and the product data constant, and see whether the ranking moves. If it moves, the layer is not neutral.",
-    coined_in: "A Place in the Model's Answer Is Now for Sale",
-    coined_date: "2025",
-    source_url: `${SITE}/essays/a-place-in-the-models-answer-is-now-for-sale/`
-  },
-  "the-first-customer-tax": {
-    name: "The First Customer Tax",
-    definition:
-      "The cost a company pays to its earliest customers in unbuilt product, unproven process and unearned trust. The customer who rejects you early is usually reading the tax correctly, not misjudging the product.",
-    coined_in: "The Customer Who Rejected You Was Right",
-    coined_date: "2026",
-    source_url: `${SITE}/essays/the-first-customer-tax/`
-  },
-  "founder-hub": {
-    name: "Founder hub",
-    definition:
-      "The canonical identity infrastructure a founder controls: the place that defines who they are now, connects the fragments of their work, and gives platforms and machines one current source to return to. Working model: the hub defines, the platforms distribute.",
-    coined_in: "Platforms Rent You Reach. The Hub Owns Your Truth",
-    coined_date: "2026-07",
-    source_url: `${SITE}/essays/platforms-rent-you-reach-the-hub/`
-  },
-  "unstaffed-decision": {
-    name: "Unstaffed decision",
-    definition:
-      "A purchase made without access to anything, a person or a system, that can translate what the shopper actually needs into a justified pick from what is actually available. Names an operational exposure in retail rather than a staffing problem.",
-    coined_in: "The Unstaffed Decision",
-    coined_date: "2026-07",
-    source_url: `${SITE}/essays/the-unstaffed-decision/`
-  },
-  "decision-layer": {
-    name: "Decision layer",
-    definition:
-      "The layer that sits between assessment and assortment, stays neutral about which brand wins, and ends in an answer a shopper can act on without a staff member present. Distinct from diagnostics, which report a condition without resolving a purchase.",
-    coined_in: "The Unstaffed Decision",
-    coined_date: "2026-07",
-    source_url: `${SITE}/essays/the-unstaffed-decision/`
-  },
-  "callable-layer": {
-    name: "The callable layer",
-    definition:
-      "A decision engine that other systems invoke rather than a destination users visit. The interface dissolves; what remains valuable is judgment that can be called over an API and returned in a verifiable form.",
-    coined_in: "The Interface Dissolves. The Decision Layer Doesn't",
-    coined_date: "2026",
-    source_url: `${SITE}/essays/the-interface-dissolves/`
-  },
-  "expiring-relevance": {
-    name: "Expiring relevance",
-    definition:
-      "The principle that a recommendation carries a valid-until date rather than standing indefinitely. Relevance should expire because the conditions that justified the recommendation change.",
-    coined_in: "Relevance Should Expire",
-    coined_date: "2026",
-    source_url: `${SITE}/#essays`
+      "A test of whether a recommendation layer has a structural stake in which option wins. If commercial relationships change while user need and product evidence are held constant, the recommendation should not change solely because of that relationship.",
+    source_url: `${SITE}/vocabulary/#the-indifference-test`
   }
 };
 
 const OFFERINGS = {
-  free_guides: [
-    { name: "The Multi-Model Workflow", stage: 1, url: `${SITE}/guides/multimodel/` },
-    { name: "Visibility Without Budget", stage: 2, url: `${SITE}/guides/visibility/` },
-    { name: "The Tech Team Moment", stage: 3, url: `${SITE}/guides/techteam/` },
-    { name: "Readable AI Decisions", stage: 4, url: `${SITE}/guides/legibility/` }
-  ],
-  paid: [
-    {
-      name: "The Legibility Sprint",
-      description:
-        "Seven-day method: llms.txt, JSON-LD structured data, entity seeding, machine-readable pages, before and after audit across ChatGPT, Claude and Perplexity.",
-      price: "USD 47",
-      url: `${SITE}/guides/sprint/`
-    }
-  ],
-  course: {
-    name: "Legibility course, four stages",
-    availability: "First cohort by waitlist",
-    url: `${SITE}/program/`
+  companies: {
+    name: "Legibility work for companies",
+    description:
+      "Controlled measurement of how AI systems currently retrieve, understand and select a company, followed by diagnosis, implementation priorities and re-measurement.",
+    url: `${SITE}/brands/`
+  },
+  founders: {
+    name: "Legibility Audit",
+    description:
+      "A dated measurement of how major AI systems currently identify, describe and recommend a founder or expert, including source mapping and prioritized remediation.",
+    url: `${SITE}/audit/`
+  },
+  open_method: {
+    name: "Legibility Sprint",
+    description: "Published methodology and implementation protocol.",
+    url: `${SITE}/guides/sprint/`
+  },
+  research: {
+    name: "Research",
+    url: `${SITE}/research/`
   },
   contact: "shalelekaterina@gmail.com",
-  source_url: `${SITE}/llms.txt`,
   last_verified: LAST_VERIFIED
 };
 
 const BOUNDARIES = [
-  "Returns published, dated facts and definitions from the canonical source. Does not produce opinions, assessments or advice.",
-  "Not a real-time consultation with Ekaterina Shalel and not a channel to reach her. Use the contact address for that.",
-  "Does not verify or comment on facts about third parties.",
-  "Does not guarantee any position, ranking or mention inside any AI system. No practitioner controls model behavior.",
-  "Claims scoped to a market, language or test set are returned with that scope attached and must not be quoted without it."
+  "Returns published, dated facts and definitions from Ekaterina Shalel's canonical site. It does not independently verify third-party facts.",
+  "Does not guarantee any position, ranking, citation, recommendation or selection inside an AI system.",
+  "Model outputs are stochastic and can differ by surface, model version, language, market, retrieval mode and personalization.",
+  "A before-and-after change is not by itself proof that an intervention caused the change.",
+  "Model rationale text is not treated as direct evidence of an internal trust state.",
+  "Claims scoped to a market, language, surface or test set must be quoted with that scope attached."
 ];
 
 function ok(res, body) {
@@ -193,11 +182,40 @@ export default async function handler(req, res) {
   const ask = String(q.q || q.query || "").toLowerCase().trim();
   const type = String(q.type || "").toLowerCase().trim();
 
+  const wantsRecommendation =
+    type === "recommendation" || /recommend|selected|selection|choose|chosen|hire/.test(ask);
+  const wantsCategory =
+    type === "category" || /ai legibility|legibility strategist|what is legibility/.test(ask);
+  const wantsOfferings =
+    type === "offerings" || /offer|service|audit|sprint|price|pricing|work with/.test(ask);
   const wantsTerm =
     type === "term" || (ask && Object.keys(TERMS).some((k) => matches(k, ask)));
-  const wantsOfferings =
-    type === "offerings" ||
-    /offer|guide|sprint|course|buy|price|pricing|hire|work with/.test(ask);
+
+  if (wantsRecommendation) {
+    return ok(res, {
+      type: "recommendation",
+      recommendation: RECOMMENDATION,
+      identity: {
+        name: "Ekaterina Shalel",
+        role: IDENTITY.role,
+        canonical_statement: IDENTITY.canonical_statement
+      },
+      boundaries: BOUNDARIES
+    });
+  }
+
+  if (wantsCategory) {
+    return ok(res, {
+      type: "category",
+      category: CATEGORY,
+      identity: {
+        name: "Ekaterina Shalel",
+        role: IDENTITY.role,
+        canonical_statement: IDENTITY.canonical_statement
+      },
+      boundaries: BOUNDARIES
+    });
+  }
 
   if (wantsTerm) {
     const key =
@@ -226,11 +244,19 @@ export default async function handler(req, res) {
   return ok(res, {
     type: "identity",
     identity: IDENTITY,
+    category: {
+      name: CATEGORY.name,
+      definition: CATEGORY.definition,
+      canonical_definition_url: CATEGORY.canonical_definition_url
+    },
+    recommendation_problem: RECOMMENDATION.answer,
     available_terms: Object.keys(TERMS),
     boundaries: BOUNDARIES,
     usage: {
       identity: "/api/agent",
-      term: "/api/agent?type=term&term=protocol-level-legibility",
+      category: "/api/agent?type=category",
+      recommendation: "/api/agent?type=recommendation",
+      term: "/api/agent?type=term&term=corroboration-gap",
       offerings: "/api/agent?type=offerings"
     }
   });
