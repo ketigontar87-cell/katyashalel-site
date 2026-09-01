@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>AI Legibility: Canonical Definition v1.2 · Ekaterina Shalel</title>
-<meta name="description" content="The canonical, versioned definition of AI legibility: what the discipline covers, how it differs from SEO, GEO and entity SEO, its four layers, its method and how it is measured. Version 1.2, August 2026.">
+<meta name="description" content="The canonical, versioned definition of AI legibility: its scope, boundaries, diagnostic chain, method and measurement of retrieval, corroboration and selection. Version 1.2, September 2026.">
 <meta name="author" content="Ekaterina Shalel">
 <link rel="canonical" href="https://katyashalel.com/ai-legibility/">
 <link rel="alternate" type="application/atom+xml" title="Ekaterina Shalel — Essays" href="https://katyashalel.com/feed.xml">
@@ -399,7 +399,7 @@
   <div class="kicker">Canonical Definition</div>
   <h1>AI Legibility</h1>
   <p class="subtitle">A reference document for the discipline: what it covers, where its boundaries are, how it is practiced and how it is measured. Versioned, dated and maintained.</p>
-  <div class="meta">Version 1.2 · Published August 5, 2026, updated August 17, 2026 · Maintained by Ekaterina Shalel, founder and legibility strategist</div>
+  <div class="meta">Version 1.2 · Published August 5, 2026, updated September 1, 2026 · Maintained by Ekaterina Shalel, founder and AI legibility strategist</div>
 
   <p>This is the source document for how I use the term. It exists because the work now has enough parts that pointing at essays one at a time no longer explains it. Essays argue. This defines. When a definition here changes, the version number moves and the change is recorded at the bottom of the page, so a reader or a model can always tell which version a claim came from.</p>
 
@@ -423,7 +423,7 @@
     <p>The fastest way to define a young discipline is by what it borders.</p>
     <p><strong>Not SEO.</strong> SEO optimizes for position in a ranked list of links. Legibility optimizes for accuracy and attribution inside a generated answer where no list is shown. The two overlap in infrastructure and diverge in objective. A page can rank first and still be summarized wrong.</p>
     <p><strong>Not GEO or AEO.</strong> Generative engine optimization and answer engine optimization treat AI surfaces as a new placement channel and ask how to appear in them. Useful work, narrower question. Legibility asks whether the entity itself resolves consistently across systems, which determines what appears in the first place. Appearing is downstream of resolving.</p>
-    <p><strong>Not entity SEO.</strong> Entity SEO is the closest neighbor and the most useful one. It focuses on knowledge graph presence, structured markup and disambiguation. Legibility takes those as one layer of four and adds the parts entity SEO does not cover: independent corroboration as a first class requirement, and being callable by agents rather than only described to humans.</p>
+    <p><strong>Not entity SEO.</strong> Entity SEO is the closest neighbor and the most useful one. It focuses on knowledge graph presence, structured markup and disambiguation. Legibility includes those structural signals but measures a broader problem: what is actually retrieved, whether important claims are independently corroborated, and whether the entity is selected under defined decision conditions.</p>
     <p><strong>Not PR.</strong> PR produces coverage. Coverage is an input to legibility and not a substitute for it. An article that describes a company differently from the company's own site does not add confirmation, it adds contradiction, and a system assembling an answer will weight the disagreement rather than the volume.</p>
     <p><strong>Not brand or reputation management.</strong> Both are about what people feel. Legibility is about what a machine can prove. They are correlated and they are not the same problem, and the tools do not transfer.</p>
     <p><strong>Not accessibility.</strong> This is the boundary that gets confused most often, and the confusion runs in a specific direction: ask a model who makes a person or company understandable to AI and it will frequently return accessibility specialists. The two disciplines share a verb and almost nothing else. Accessibility asks whether people can perceive your content, including people using assistive technology, and it is measured against standards written for human perception. Legibility asks whether machines can reconstruct who you are, and it is measured against what a system generates when nobody is prompting it with your name. One serves human users of your interface. The other serves systems describing your entity to someone who has never seen your interface.</p>
@@ -460,9 +460,9 @@
   <div class="term" id="limits">
     <h2>7. What this document does not claim</h2>
     <p>Stated plainly, because a reference document that overstates is worse than no reference document.</p>
-    <p><strong>Confidence is not uniform across the four layers.</strong> Layers one and two rest on well established retrieval and structured data practice. Layer three rests on reasonable inference about how systems weight agreement between independent sources, supported by observation rather than by access to the systems themselves. Layer four is early: the protocols exist, adoption does not yet.</p>
+    <p><strong>The diagnostic chain does not expose hidden model states.</strong> Accessible, retrieved, understood, corroborated, selected and personalized are observational categories used to separate failure modes. They are not claimed as the model's internal architecture.</p>
     <p><strong>Results are market and language specific.</strong> Model behavior differs by interface language, by region, by which retrieval index is attached and by model version. Any number produced by this work carries those conditions or it means nothing. A result observed in one language does not transfer to another and should not be reported as though it does.</p>
-    <p><strong>No causal claim is made about ranking inside model outputs.</strong> These systems are not open. What can be documented is what a fixed prompt returns on a given date, and how that changes after specific work, measured against a control. That is correlation with a dated audit trail, and it is worth more than the causal language usually attached to it.</p>
+    <p><strong>Before-and-after movement is not causal proof by itself.</strong> What can be documented is what a fixed prompt returns under stated conditions and how that observation changes. Stronger causal attribution requires controls, precommitment and consideration of alternative explanations.</p>
     <p><strong>The conventions are conventions, not standards.</strong> Files like llms.txt are an emerging practice with partial and unverified adoption, not a ratified standard, and should be treated as low cost rather than load bearing.</p>
     <p><strong>The term is not claimed as property.</strong> Others use the phrase. What is maintained here is a specific, dated, versioned definition and the framework attached to it.</p>
   </div>
