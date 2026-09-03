@@ -570,6 +570,23 @@ footer{padding: 20px;}
   .lead-form button:disabled{opacity:0.5;cursor:default}
   .lf-note{font-size:14px;min-height:20px;margin:0}
   @media (max-width:600px){.lead-form{grid-template-columns:1fr}}
+
+/* hero composition v2: editorial spread. Full figure at scale, grounded on the proof band; caption becomes a photo credit. */
+.lz .hero{padding-bottom:0}
+.lz .ph{background-position:center bottom}
+.lz .ph-note{top:auto;left:auto;right:8px;bottom:14px;text-align:right;color:#8A8A8A;max-width:170px}
+@media (min-width:900px){
+  .lz .hero{display:grid;grid-template-columns:minmax(0,1.02fr) minmax(0,.98fr);align-items:end;gap:clamp(28px,4vw,72px);max-width:1280px;margin:0 auto;padding:48px 4vw 0}
+  .lz .hero-photos{order:2;height:min(80vh,760px);min-height:540px;margin:0}
+  .lz .hero-text{order:1;text-align:left;padding:0 0 84px;margin:0;max-width:580px;justify-self:start}
+  .lz .hero-text p{margin-left:0;margin-right:0;max-width:540px}
+}
+@media (max-width:899px){
+  .lz .hero{padding:30px 20px 0}
+  .lz .hero-photos{height:58svh;min-height:430px}
+  .lz .hero-text{text-align:left;padding:26px 2px 54px}
+  .lz .hero-text p{max-width:none}
+}
 </style>
 <script type="text/javascript">
 (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
