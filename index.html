@@ -679,6 +679,26 @@ footer{padding: 20px;}
 @keyframes vLine{from{transform:scaleY(0)}}
 @keyframes vInk{from{opacity:0;transform:translateY(12px) rotate(-1.5deg)}}
 @keyframes vBreathe{to{transform:scale(1.012)}}
+
+/* hero v3: per the approved mockup. Left caption rail with a hairline, photo as a rounded card, red bracketed eyebrow, spread air restored. */
+.lz .hero{padding-bottom:56px}
+.lz .ph{border-radius:24px;background-color:#F3F1EE;background-size:cover;background-position:center 12%;box-shadow:inset 0 0 0 1px rgba(26,26,26,.05)}
+.lz .hero-text .eyebrow{color:var(--red)}
+.lz .hero-text .eyebrow::before{content:'[ '}
+.lz .hero-text .eyebrow::after{content:' ]'}
+@media (min-width:900px){
+  .lz .hero{display:grid;grid-template-columns:170px minmax(0,1fr) minmax(0,1.08fr);align-items:center;gap:clamp(24px,3.4vw,60px);max-width:1440px;margin:0 auto;padding:56px 4vw 72px}
+  .lz .hero-photos{grid-column:2;order:0;height:min(80vh,760px);min-height:540px;margin:0}
+  .lz .hero-text{grid-column:3;order:0;text-align:left;padding:0;margin:0;max-width:620px;justify-self:start}
+  .lz .ph-note{top:120px;left:-170px;right:auto;bottom:auto;width:140px;text-align:left;color:#8A8A8A}
+  .lz .ph-note::after{content:'';position:absolute;left:1px;top:calc(100% + 22px);height:min(300px,32vh);border-left:1px solid rgba(26,26,26,.16)}
+}
+@media (max-width:899px){
+  .lz .hero{padding:26px 20px 48px}
+  .lz .hero-photos{height:auto;aspect-ratio:2/3;min-height:0;max-height:76svh;margin:0 0 52px}
+  .lz .ph-note{top:calc(100% + 12px);left:2px;right:auto;bottom:auto;text-align:left;color:#8A8A8A}
+  .lz .hero-text{text-align:left;padding:0}
+}
 </style>
 <script type="text/javascript">
 (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
