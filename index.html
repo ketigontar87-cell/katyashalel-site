@@ -654,8 +654,6 @@ header{background:var(--cream);padding:22px 16px 18px;text-align:center;border-b
 .lz .ph-note.right{left:auto;right:18px;top:auto;bottom:18px;text-align:right}
 .lz .hero-text{padding:110px 24px 70px;text-align:center;position:relative}
 .lz .eyebrow{font-size:11px;font-weight:600;letter-spacing:.24em;text-transform:uppercase;color:var(--red)}
-.lz .eyebrow::before{content:'[ '}
-.lz .eyebrow::after{content:' ]'}
 .lz h1{font-family:'Instrument Serif',serif;font-weight:400;font-size:clamp(44px,10vw,88px);line-height:1.02;margin-top:18px;letter-spacing:-.01em}
 .lz h1 .script{font-size:1.15em;color:var(--red);display:block;margin-top:-.12em}
 .lz .hero-text p{margin:26px auto 0;font-size:16.5px;max-width:480px;color:#4A4A4A}
@@ -702,7 +700,6 @@ header{background:var(--cream);padding:22px 16px 18px;text-align:center;border-b
 @media (min-width:760px){.lz .term-cards{grid-template-columns:repeat(3,1fr);gap:16px}}
 @media (max-width:759px){.lz .term-cards > a:last-child:nth-child(odd){grid-column:1/-1;justify-self:center;width:calc(50% - 9px)}}
 @media (max-width:760px){.lz .hero-photos{height:38vh;min-height:260px}}
-:root{--rail-label:"Founder \00B7 AI Legibility Strategist"}
 
 </style>
 <script type="application/ld+json">
@@ -1184,28 +1181,5 @@ n.querySelectorAll('.nav-links a').forEach(function(a){a.addEventListener('click
 
 
 
-<script>
-(function(){
-  if(!window.matchMedia('(prefers-reduced-motion: no-preference)').matches) return;
-  var ph=document.querySelector('.lz .ph'), h1=document.querySelector('.lz .hero-text h1'), tick=false, tx=0, ty=0;
-  function frame(){
-    tick=false;
-    var y=window.scrollY||0;
-    if(ph) ph.style.transform='translateY('+(y*-0.05)+'px) rotateY('+tx+'deg) rotateX('+ty+'deg)';
-    if(h1) h1.style.transform='translateY('+(y*-0.028)+'px)';
-  }
-  function ask(){ if(!tick){ tick=true; requestAnimationFrame(frame); } }
-  addEventListener('scroll', ask, {passive:true});
-  if(window.matchMedia('(pointer: fine)').matches && ph){
-    var hero=document.querySelector('.lz .hero');
-    hero.addEventListener('pointermove', function(e){
-      var r=hero.getBoundingClientRect();
-      tx=((e.clientX-r.left)/r.width-.5)*3.2; ty=-((e.clientY-r.top)/r.height-.5)*2.2; ask();
-    });
-    hero.addEventListener('pointerleave', function(){ tx=0; ty=0; ask(); });
-  }
-  setTimeout(ask, 1200);
-})();
-</script>
 </body>
 </html>
