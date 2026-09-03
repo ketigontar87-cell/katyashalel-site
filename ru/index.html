@@ -633,7 +633,7 @@ header{background:var(--cream);padding:22px 16px 18px;text-align:center;border-b
 .lz .master p{margin:22px auto 0;font-size:16.5px;max-width:500px;color:rgba(244,237,225,.92)}
 .lz footer{background:var(--cream);text-align:center;padding:36px 20px;font-size:11px;letter-spacing:.2em;text-transform:uppercase;font-weight:600;color:#8B8B8B;border-top:1px solid rgba(26,26,26,.12)}
 .lz footer a{color:var(--ink);text-decoration:none}
-@media (min-width:760px){.lz .proof{flex-direction:row;justify-content:center;gap:10px 26px}}
+@media (min-width:760px){.lz .proof{flex-direction:row;flex-wrap:wrap;justify-content:center;gap:10px 26px}}
 .lz .proof{display:flex;flex-direction:column;align-items:center;gap:9px;padding:18px 14px;background:var(--ink);color:#EDEDED;font-size:12px;letter-spacing:.05em;text-transform:uppercase;font-weight:600}
 .lz .proof span{white-space:nowrap}
 .lz .proof span b{color:#FFFFFF}
@@ -671,6 +671,8 @@ header{background:var(--cream);padding:22px 16px 18px;text-align:center;border-b
 .sbm-status{font-size:13px;margin-top:12px;display:none}
 .sbm-status.ok{display:block;color:#2c6e49}
 .sbm-status.err{display:block;color:#C4342E}
+:root{--rail-label:"\041E\0441\043D\043E\0432\0430\0442\0435\043B\044C \00B7 AI Legibility Strategist"}
+
 </style>
 <script type="application/ld+json">
 {
@@ -708,6 +710,39 @@ header{background:var(--cream);padding:22px 16px 18px;text-align:center;border-b
   "inLanguage": "ru"
 }
 </script>
+
+<style id="hero-mockup">
+/* Hero, exactly per the approved mockup. #top id wins every earlier rule; nothing else can drag it. */
+#top.hero{position:relative;overflow:visible;background:#fff}
+#top .ph-note{position:static;color:#8A8A8A;font-size:11px;letter-spacing:.2em;text-transform:uppercase;font-weight:600;line-height:1.8;max-width:170px;text-align:left}
+#top .rail-eyebrow{color:#8A8A8A;font-size:11px;letter-spacing:.2em;text-transform:uppercase;font-weight:600;line-height:1.8;max-width:170px;text-align:left}
+#top .rail-line{width:1px;flex:1;background:rgba(26,26,26,.16);margin:24px 0 24px 1px}
+#top .ph{border-radius:26px;background:#F4F2EF url('/images/katya-main.webp') center 10%/cover no-repeat;box-shadow:0 30px 70px rgba(26,26,26,.10)}
+#top .hero-text{position:static;text-align:left;padding:0;margin:0}
+#top .hero-text .eyebrow{color:var(--red);letter-spacing:.18em}
+#top .hero-text .eyebrow::before{content:'[ '}
+#top .hero-text .eyebrow::after{content:' ]'}
+#top .hero-text h1{font-size:clamp(48px,6.9vw,104px);line-height:1.03;margin-top:20px;letter-spacing:-.01em}
+#top .hero-text h1 .script{font-size:clamp(30px,3.5vw,54px);white-space:nowrap;color:var(--red);display:block;margin-top:14px;line-height:1.1}
+#top .hero-text p{font-size:17px;line-height:1.75;max-width:540px;margin:28px 0 0}
+#top .hero-text .cta{margin-top:34px}
+#top .hero-text .hero-alt{margin-top:20px;text-align:left}
+@media (min-width:980px){
+  #top.hero{display:grid;grid-template-columns:150px minmax(0,.92fr) minmax(0,1.08fr);align-items:center;column-gap:clamp(30px,4vw,78px);max-width:1400px;margin:0 auto;padding:56px 4vw 88px}
+  #top .hero-rail{display:flex;flex-direction:column;align-items:flex-start;height:min(70vh,620px)}
+  #top .hero-photos{order:0;height:min(78vh,720px);min-height:520px;margin:0;grid-column:auto}
+  #top .hero-text{max-width:640px;justify-self:start}
+}
+@media (max-width:979px){
+  #top.hero{display:block;padding:26px 20px 56px}
+  #top .hero-rail{display:flex;flex-direction:row;align-items:baseline;gap:0;margin:0 0 16px}
+  #top .rail-line,#top .rail-eyebrow{display:none}
+  #top .ph-note{max-width:none}
+  #top .hero-photos{height:auto;aspect-ratio:2/3;min-height:0;margin:0 0 30px}
+  #top .hero-text h1{font-size:clamp(44px,11.5vw,64px)}
+  #top .hero-text h1 .script{font-size:clamp(26px,6.9vw,40px)}
+}
+</style>
 </head>
 <body>
 <div id="progress" aria-hidden="true"></div>
@@ -732,8 +767,13 @@ header{background:var(--cream);padding:22px 16px 18px;text-align:center;border-b
 
 
 <div class="hero" id="top">
+  <div class="hero-rail" aria-hidden="false">
+    <div class="ph-note">Читаемость это архитектура, не удача</div>
+    <div class="rail-line" aria-hidden="true"></div>
+    <span class="rail-eyebrow" aria-hidden="true">Основатель · AI Legibility Strategist</span>
+  </div>
   <div class="hero-photos">
-    <div class="ph" style="height:100%"><div class="ph-note">Читаемость это архитектура, не удача</div></div>
+    <div class="ph" style="height:100%"></div>
     </div>
   <div class="hero-text">
     <span class="eyebrow">Основатель · AI Legibility Strategist</span>
@@ -1136,5 +1176,29 @@ async function sbmSend(){
 }
 </script>
 
+
+<script>
+(function(){
+  if(!window.matchMedia('(prefers-reduced-motion: no-preference)').matches) return;
+  var ph=document.querySelector('.lz .ph'), h1=document.querySelector('.lz .hero-text h1'), tick=false, tx=0, ty=0;
+  function frame(){
+    tick=false;
+    var y=window.scrollY||0;
+    if(ph) ph.style.transform='translateY('+(y*-0.05)+'px) rotateY('+tx+'deg) rotateX('+ty+'deg)';
+    if(h1) h1.style.transform='translateY('+(y*-0.028)+'px)';
+  }
+  function ask(){ if(!tick){ tick=true; requestAnimationFrame(frame); } }
+  addEventListener('scroll', ask, {passive:true});
+  if(window.matchMedia('(pointer: fine)').matches && ph){
+    var hero=document.querySelector('.lz .hero');
+    hero.addEventListener('pointermove', function(e){
+      var r=hero.getBoundingClientRect();
+      tx=((e.clientX-r.left)/r.width-.5)*3.2; ty=-((e.clientY-r.top)/r.height-.5)*2.2; ask();
+    });
+    hero.addEventListener('pointerleave', function(){ tx=0; ty=0; ask(); });
+  }
+  setTimeout(ask, 1200);
+})();
+</script>
 </body>
 </html>
