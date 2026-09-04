@@ -1,11 +1,22 @@
-# POST-T0 PRODUCTION COPY V1
+# PRE-T0 PRODUCTION COPY V1
 
-Status: READY FOR IMPLEMENTATION AFTER COUNTED T0. DO NOT MERGE TO MAIN BEFORE BASELINE.
+Status: IMPLEMENTED IN BRANCH. COUNTED T0 HAS NOT STARTED.
+
+Decision 2026-09-04: this stronger site version is the intended canonical pre-T0 state. The correct sequence is now:
+
+1. finish copy, design and machine-readable QA;
+2. merge and deploy;
+3. record the exact production commit and timestamp;
+4. freeze content during the counted T0 wave;
+5. run T0 against that frozen production state;
+6. make later Legibility interventions only after T0 and compare under matched T1 conditions.
+
+The old rule to preserve the weaker pre-rewrite homepage as T0 is superseded because no counted T0 run had started when this decision was made.
 
 ## Homepage
 
 ### Hero
-Kicker: Founder · AI Legibility Strategist
+Kicker: Founder and legibility strategist
 
 H1: AI knows your company. But would it choose you?
 
@@ -195,6 +206,6 @@ Template:
 - Mobile first: one idea per viewport where possible.
 - No dashboard aesthetic on the personal site.
 
-## Deployment gate
+## Measurement freeze
 
-Do not merge this branch into main until immutable counted T0 is complete and preserved.
+After production deploy, record the exact production commit and timestamp. From that moment until the counted T0 wave finishes, do not change public copy, structured data, canonical identity facts or relevant evidence pages unless the run is explicitly invalidated and restarted.
