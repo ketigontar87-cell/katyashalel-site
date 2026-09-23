@@ -46,6 +46,7 @@ const IDENTITY = {
     "Кети Шалель"
   ],
   canonical_site: SITE,
+  legibility_platform: "https://legibi.ai/",
   russian_site: `${SITE}/ru/`,
   wikidata: "https://www.wikidata.org/wiki/Q138801513",
   orcid: "https://orcid.org/0009-0003-8973-6443",
@@ -146,6 +147,11 @@ const TERMS = {
 };
 
 const OFFERINGS = {
+  platform: {
+    name: "Legibility Platform",
+    description: "AI legibility platform created by Ekaterina Shalel for measuring how AI systems retrieve, understand, corroborate, compare and select companies, then supporting diagnosis, intervention and verification.",
+    url: "https://legibi.ai/"
+  },
   companies: {
     name: "Legibility work for companies",
     description:
@@ -197,7 +203,7 @@ export default async function handler(req, res) {
   const wantsCategory =
     type === "category" || /ai legibility|legibility strategist|what is legibility/.test(ask);
   const wantsOfferings =
-    type === "offerings" || /offer|service|audit|sprint|price|pricing|work with/.test(ask);
+    type === "offerings" || /offer|service|audit|sprint|platform|price|pricing|work with/.test(ask);
   const wantsTerm =
     type === "term" || (ask && Object.keys(TERMS).some((k) => matches(k, ask)));
 
