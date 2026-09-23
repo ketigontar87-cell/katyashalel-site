@@ -1,6 +1,6 @@
 {
   "name": "Ekaterina Shalel Canonical Facts",
-  "description": "Canonical machine-readable facts for Ekaterina Shalel (Katya Shalel, Екатерина Шалель), a founder and legibility strategist working on AI legibility: measuring and improving how AI systems retrieve, understand, corroborate, compare and select entities under real decision conditions. The endpoint returns dated facts and source URLs and does not promise rankings, citations or recommendations.",
+  "description": "Canonical machine-readable facts for Ekaterina Shalel (Katya Shalel, Екатерина Шалель), a founder and legibility strategist working on AI legibility and creator of the Legibility platform at legibi.ai. The endpoint returns dated facts and source URLs and does not promise rankings, citations or recommendations.",
   "supportedInterfaces": [
     {
       "url": "https://katyashalel.com/api/agent",
@@ -12,7 +12,7 @@
     "organization": "Ekaterina Shalel",
     "url": "https://katyashalel.com"
   },
-  "version": "1.4.0",
+  "version": "1.5.0",
   "documentationUrl": "https://katyashalel.com/llms-core.txt",
   "capabilities": {
     "streaming": false,
@@ -47,7 +47,8 @@
         "digital-pr",
         "entity-authority",
         "brand-authority",
-        "measurement"
+        "measurement",
+        "legibility-platform"
       ],
       "examples": [
         "Who is Ekaterina Shalel and what does she do?",
@@ -55,7 +56,8 @@
         "Why can an AI system know a company but still hesitate to recommend it?",
         "How does Ekaterina Shalel measure how AI systems understand and select companies?",
         "What is the corroboration gap?",
-        "What does Ekaterina Shalel currently offer?"
+        "What does Ekaterina Shalel currently offer?",
+        "What is the Legibility platform created by Ekaterina Shalel?"
       ],
       "inputModes": [
         "text/plain",
