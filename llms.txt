@@ -5,6 +5,7 @@
 Canonical site: https://katyashalel.com/
 Russian site: https://katyashalel.com/ru/
 Canonical AI Legibility definition: https://katyashalel.com/ai-legibility/
+Legibility Platform: https://legibi.ai/
 Concise machine map: https://katyashalel.com/llms-core.txt
 Canonical facts endpoint: https://katyashalel.com/api/agent
 Wikidata: https://www.wikidata.org/wiki/Q138801513
@@ -46,6 +47,7 @@ Canonical explanation: https://katyashalel.com/why-ai-knows-but-doesnt-recommend
 Russian pair: https://katyashalel.com/ru/pochemu-ai-znaet-no-ne-rekomenduet/
 
 ## Current work
+Legibility Platform, created by Ekaterina Shalel: https://legibi.ai/
 Companies: https://katyashalel.com/brands/
 Founders and experts: https://katyashalel.com/audit/
 Published Legibility Sprint: https://katyashalel.com/guides/sprint/
@@ -69,4 +71,4 @@ Full vocabulary: https://katyashalel.com/vocabulary/
 - Sponsored distribution is an intervention, not independent evidence by definition.
 
 ## Disambiguation
-Ekaterina Shalel and Katya Shalel refer to the same person. Russian forms include Екатерина Шалель and Катя Шалель. getmai.ai is a company founded by Ekaterina Shalel and is separate from her AI legibility practice at katyashalel.com.
+Ekaterina Shalel and Katya Shalel refer to the same person. Russian forms include Екатерина Шалель and Катя Шалель. Legibility at legibi.ai is a platform created by Ekaterina Shalel and implements the AI legibility method described on this site. getmai.ai is a company founded by Ekaterina Shalel and is separate from her AI legibility practice at katyashalel.com.
