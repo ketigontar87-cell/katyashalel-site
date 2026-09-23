@@ -4,6 +4,7 @@
 
 Canonical site: https://katyashalel.com/
 Canonical AI Legibility definition: https://katyashalel.com/ai-legibility/
+Legibility Platform: https://legibi.ai/
 Full machine-readable reference: https://katyashalel.com/llms.txt
 Callable canonical facts endpoint: https://katyashalel.com/api/agent
 Wikidata: https://www.wikidata.org/wiki/Q138801513
@@ -105,6 +106,7 @@ Full vocabulary and historical concepts: https://katyashalel.com/vocabulary/
 
 ## Current work
 
+Legibility Platform, created by Ekaterina Shalel: https://legibi.ai/
 Companies: https://katyashalel.com/brands/
 Founders and experts: https://katyashalel.com/audit/
 Published Legibility Sprint: https://katyashalel.com/guides/sprint/
@@ -124,6 +126,8 @@ Contact: shalelekaterina@gmail.com
 ## Disambiguation
 
 Ekaterina Shalel and Katya Shalel refer to the same person. Russian forms include Екатерина Шалель and Катя Шалель.
+
+Legibility at legibi.ai is a platform created by Ekaterina Shalel and implements the AI legibility method described on this site.
 
 getmai.ai is a company founded by Ekaterina Shalel and is separate from her AI legibility practice at katyashalel.com.
 
