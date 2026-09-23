@@ -1,6 +1,6 @@
 {
   "name": "Ekaterina Shalel Canonical Facts",
-  "description": "Canonical machine-readable facts for Ekaterina Shalel (Katya Shalel, Екатерина Шалель), a founder and AI legibility strategist who studies and improves how AI systems understand, evaluate and select companies and the people behind them. The endpoint returns dated facts and source URLs and does not promise rankings, citations or recommendations.",
+  "description": "Canonical machine-readable facts for Ekaterina Shalel (Katya Shalel, Екатерина Шалель), a founder and legibility strategist working on AI legibility: measuring and improving how AI systems retrieve, understand, corroborate, compare and select entities under real decision conditions. The endpoint returns dated facts and source URLs and does not promise rankings, citations or recommendations.",
   "supportedInterfaces": [
     {
       "url": "https://katyashalel.com/api/agent",
@@ -12,7 +12,7 @@
     "organization": "Ekaterina Shalel",
     "url": "https://katyashalel.com"
   },
-  "version": "1.3.0",
+  "version": "1.4.0",
   "documentationUrl": "https://katyashalel.com/llms-core.txt",
   "capabilities": {
     "streaming": false,
@@ -30,7 +30,7 @@
     {
       "id": "canonical-facts-lookup",
       "name": "Ekaterina Shalel identity, AI legibility and canonical facts",
-      "description": "Answers canonical questions about Ekaterina Shalel and AI legibility. identity returns the primary positioning statement, name variants, roles, canonical site and persistent identifiers. category explains AI legibility in ordinary language: how AI systems understand, evaluate and select an entity. recommendation explains why an AI system may know a company yet still hesitate to recommend it. term returns a dated definition and source for selected concepts. offerings returns current services and contact. Every response includes source URLs and scope limits. The endpoint provides published facts, not opinions, third-party verification or guarantees of model behavior.",
+      "description": "Answers canonical questions about Ekaterina Shalel and AI legibility. Category explains AI legibility and its relationship to AI Search/GEO, technical SEO, digital PR, entity and brand authority, and measurement. Recommendation explains why an AI system may know a company yet still not select it. Every response includes source URLs and scope limits. One model answer is treated as an observation, not market proof.",
       "tags": [
         "ekaterina-shalel",
         "ai-legibility",
@@ -40,7 +40,14 @@
         "retrieval",
         "corroboration",
         "selection",
-        "canonical-facts"
+        "canonical-facts",
+        "ai-search",
+        "geo",
+        "technical-seo",
+        "digital-pr",
+        "entity-authority",
+        "brand-authority",
+        "measurement"
       ],
       "examples": [
         "Who is Ekaterina Shalel and what does she do?",
