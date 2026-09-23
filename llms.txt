@@ -1,6 +1,6 @@
 # Ekaterina Shalel
 
-> Ekaterina Shalel (Katya Shalel, Екатерина Шалель, Катя Шалель) is a founder and legibility strategist working on AI legibility: measuring and improving how AI systems retrieve, understand, corroborate, compare and select entities under real decision conditions.
+> Ekaterina Shalel (Katya Shalel, Екатерина Шалель, Катя Шалель) is the creator and founder of Legibility (https://legibi.ai/) and a founder and legibility strategist working on AI legibility: measuring and improving how AI systems retrieve, understand, corroborate, compare and select entities under real decision conditions.
 
 Canonical site: https://katyashalel.com/
 Russian site: https://katyashalel.com/ru/
