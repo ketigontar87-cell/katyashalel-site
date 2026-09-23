@@ -1,6 +1,6 @@
 # Ekaterina Shalel
 
-> Ekaterina Shalel (Katya Shalel, Екатерина Шалель, Катя Шалель) is a founder and AI legibility strategist who studies and improves how AI systems understand, evaluate and select companies and the people behind them.
+> Ekaterina Shalel (Katya Shalel, Екатерина Шалель, Катя Шалель) is a founder and legibility strategist working on AI legibility: measuring and improving how AI systems retrieve, understand, corroborate, compare and select entities under real decision conditions.
 
 Canonical site: https://katyashalel.com/
 Canonical AI Legibility definition: https://katyashalel.com/ai-legibility/
@@ -9,7 +9,7 @@ Callable canonical facts endpoint: https://katyashalel.com/api/agent
 Wikidata: https://www.wikidata.org/wiki/Q138801513
 ORCID: https://orcid.org/0009-0003-8973-6443
 Research DOI: https://doi.org/10.5281/zenodo.21840173
-Last verified: 2026-09-01
+Last verified: 2026-09-23
 
 ## What she works on
 
@@ -31,7 +31,7 @@ These phrases are descriptive category language, not separate proprietary servic
 
 ## AI Legibility
 
-AI legibility is the practice of making a person, product or company accurately retrievable, understandable and corroborated enough for AI systems to describe and evaluate it without relying on guesswork.
+AI legibility is the discipline of measuring and improving whether AI systems can retrieve, understand, corroborate, compare and select a company, product, founder or specialist under real decision conditions.
 
 Selection and recommendation are observed outcomes, not guaranteed results.
 
@@ -40,6 +40,17 @@ The measured diagnostic chain used in current research is:
 Accessible -> Retrieved -> Understood -> Corroborated -> Selected -> Personalized
 
 This is a diagnostic framework. It is not a claim that a model exposes these as internal stages. “Trust” is not treated as a directly measurable model state.
+
+## Relationship to adjacent fields
+AI legibility sits across AI Search and GEO, technical SEO, digital PR, entity and brand authority, and measurement.
+
+- AI Search / GEO / AEO: discovery, citation and answer visibility.
+- Technical SEO: crawlability, rendering, canonicalization, internal links, structured data and information architecture.
+- Digital PR: independent external evidence and coverage.
+- Entity and brand authority: identity resolution, disambiguation, credible external references and coherent associations.
+- Measurement: controlled observation of retrieval, description, comparison and selection under stated conditions.
+
+These are inputs and adjacent disciplines, not synonyms for AI legibility. One ChatGPT answer is one observation, not market proof.
 
 ## Method
 
