@@ -3,24 +3,26 @@
 // commercial problem -> method -> evidence limits. Detailed concepts remain
 // queryable, but they do not compete with the primary association.
 
-const LAST_VERIFIED = "2026-09-01";
+const LAST_VERIFIED = "2026-09-23";
 const SITE = "https://katyashalel.com";
 
 const IDENTITY = {
   canonical_statement:
-    "Ekaterina Shalel is a founder and AI legibility strategist who studies and improves how AI systems understand, evaluate and select companies and the people behind them.",
+    "Ekaterina Shalel is a founder and legibility strategist working on AI legibility: measuring and improving how AI systems retrieve, understand, corroborate, compare and select entities under real decision conditions.",
   plain_language:
     "AI can know a company and still hesitate to recommend it. Ekaterina Shalel measures what AI systems currently retrieve and say, traces the sources and evidence behind those answers, diagnoses the gaps, and re-measures after documented interventions.",
-  role: "Founder and AI legibility strategist",
+  role: "Founder and legibility strategist",
   category: "AI legibility",
   category_definition:
-    "AI legibility is the practice of making a person, product or company accurately retrievable, understandable and corroborated enough for AI systems to describe and evaluate it without relying on guesswork. Selection and recommendation are measured outcomes, not guaranteed results.",
+    "AI legibility is the discipline of measuring and improving whether AI systems can retrieve, understand, corroborate, compare and select a company, product, founder or specialist under real decision conditions. Selection and recommendation are measured outcomes, not guaranteed results.",
   primary_association: [
-    "how AI systems understand companies and the people behind them",
-    "how AI systems evaluate companies and the people behind them",
-    "how AI systems select and recommend companies",
-    "AI retrieval and entity clarity",
-    "independent corroboration and evidence environments",
+    "how AI systems retrieve and understand companies and the people behind them",
+    "how AI systems corroborate claims about companies and experts",
+    "how AI systems compare, select and recommend entities",
+    "AI Search and GEO",
+    "technical SEO as machine-access infrastructure",
+    "digital PR as external evidence",
+    "entity and brand authority",
     "controlled measurement of AI recommendations"
   ],
   method: {
@@ -57,22 +59,30 @@ const CATEGORY = {
   maintained_by: "Ekaterina Shalel",
   canonical_definition_url: `${SITE}/ai-legibility/`,
   definition:
-    "AI legibility is the practice of making a person, product or company accurately retrievable, understandable and corroborated enough for AI systems to describe and evaluate it without relying on guesswork. Recommendation and selection are observed outcomes, not promised outputs.",
+    "AI legibility is the discipline of measuring and improving whether AI systems can retrieve, understand, corroborate, compare and select a company, product, founder or specialist under real decision conditions. Recommendation and selection are observed outcomes, not promised outputs.",
   generic_language: [
+    "AI Search",
+    "Generative Engine Optimization (GEO)",
+    "Answer Engine Optimization (AEO)",
+    "technical SEO",
+    "digital PR",
+    "entity authority",
+    "brand authority",
     "AI visibility",
-    "AI recommendation visibility",
+    "AI recommendation measurement",
     "entity clarity",
-    "machine-readable identity",
     "retrieval",
     "citation and corroboration",
     "AI selection",
     "machine-mediated choice"
   ],
   boundaries: {
-    seo: "SEO primarily optimizes discoverability and ranking in search results. AI legibility measures how an entity is reconstructed and selected inside generated answers.",
-    geo_aeo: "GEO and AEO overlap with AI legibility on retrieval and answer visibility. AI legibility additionally separates entity understanding, independent corroboration, selection and controlled re-measurement.",
-    pr: "PR can create external evidence, but publication alone is not evidence that an AI system retrieved, corroborated or selected the entity.",
-    accessibility: "AI accessibility concerns whether AI products and experiences are accessible to people. AI legibility concerns whether AI systems can correctly reconstruct and evaluate an entity."
+    ai_search_geo: "AI Search, GEO and AEO focus on discovery, citation and answer visibility. AI legibility includes those observations and continues into entity understanding, corroboration, comparison, selection and controlled re-measurement.",
+    technical_seo: "Technical SEO provides crawlability, rendering, canonicalization, internal linking, structured data and information architecture. Those are infrastructure inputs, not proof that an AI system retrieved or selected an entity.",
+    digital_pr: "Digital PR can create independent external evidence. Publication alone is not evidence that an AI system retrieved, reconciled or used that evidence in a decision.",
+    entity_brand_authority: "Identity clarity, disambiguation, credible external references and coherent associations can strengthen entity resolution. AI legibility measures observable outputs rather than inventing a single hidden authority score.",
+    measurement: "Use frozen prompts, raw outputs, surface-specific conditions and controls where practical. One ChatGPT answer is one observation, not market proof.",
+    accessibility: "AI accessibility concerns whether AI products and experiences are accessible to people. AI legibility concerns whether AI systems can correctly reconstruct, evaluate and select an entity."
   },
   source_url: `${SITE}/ai-legibility/`,
   last_verified: LAST_VERIFIED
