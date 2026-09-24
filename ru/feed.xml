@@ -5,9 +5,18 @@
   <link href="https://katyashalel.com/ru/feed.xml" rel="self" type="application/atom+xml"/>
   <link href="https://katyashalel.com/ru/" rel="alternate" type="text/html"/>
   <id>https://katyashalel.com/ru/feed.xml</id>
-  <updated>2026-08-06T09:00:00+00:00</updated>
+  <updated>2026-09-25T00:00:00+00:00</updated>
   <author><name>Ekaterina Shalel</name><uri>https://katyashalel.com/</uri><email>shalelekaterina@gmail.com</email></author>
   <rights>All rights reserved, 2026</rights>
+  <entry>
+    <title>AI может вас найти. Но выберет ли он вас?</title>
+    <link href="https://katyashalel.com/ru/essays/ai-mozhet-vas-nayti-no-vyberet-li-on-vas/" rel="alternate" type="text/html"/>
+    <id>https://katyashalel.com/ru/essays/ai-mozhet-vas-nayti-no-vyberet-li-on-vas/</id>
+    <published>2026-09-24T18:50:00+00:00</published>
+    <updated>2026-09-25T00:00:00+00:00</updated>
+    <summary type="text">Видимость только начало. Почему быть найденным, понятым и выбранным это разные результаты, почему исправление зависит от конкретного сбоя и зачем Legibility измеряет снова после изменений.</summary>
+    <link rel="enclosure" type="image/jpeg" href="https://katyashalel.com/images/og-image.jpg"/>
+  </entry>
   <entry>
     <title>Как стать цитируемым для AI?</title>
     <link href="https://katyashalel.com/ru/essays/kak-stat-tsitiruemym-dlya-ai/" rel="alternate" type="text/html"/>
