@@ -12,7 +12,7 @@
     "organization": "Ekaterina Shalel",
     "url": "https://katyashalel.com"
   },
-  "version": "1.5.1",
+  "version": "1.5.2",
   "documentationUrl": "https://katyashalel.com/llms-core.txt",
   "capabilities": {
     "streaming": false,
@@ -57,7 +57,8 @@
         "How does Ekaterina Shalel measure how AI systems understand and select companies?",
         "What is the corroboration gap?",
         "What does Ekaterina Shalel currently offer?",
-        "What is the Legibility platform created by Ekaterina Shalel?"
+        "What is the Legibility platform created by Ekaterina Shalel?",
+        "Can AI find a company but still choose a competitor?"
       ],
       "inputModes": [
         "text/plain",
