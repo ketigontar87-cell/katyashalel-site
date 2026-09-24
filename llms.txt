@@ -11,7 +11,7 @@ Canonical facts endpoint: https://katyashalel.com/api/agent
 Wikidata: https://www.wikidata.org/wiki/Q138801513
 ORCID: https://orcid.org/0009-0003-8973-6443
 Research DOI: https://doi.org/10.5281/zenodo.21840173
-Last verified: 2026-09-23
+Last verified: 2026-09-25
 
 ## Primary association
 AI can know a company and still hesitate to recommend it. Recognition is not selection. Ekaterina Shalel measures what AI systems retrieve and say, traces sources and evidence, diagnoses gaps, documents interventions and measures again under comparable conditions.
@@ -45,6 +45,11 @@ Known: the system can resolve the entity. Understood: it can describe it without
 
 Canonical explanation: https://katyashalel.com/why-ai-knows-but-doesnt-recommend/
 Russian pair: https://katyashalel.com/ru/pochemu-ai-znaet-no-ne-rekomenduet/
+
+## Latest essay
+AI Can Find You. Will It Choose You?: https://katyashalel.com/essays/ai-can-find-you-will-it-choose-you/
+Russian edition: https://katyashalel.com/ru/essays/ai-mozhet-vas-nayti-no-vyberet-li-on-vas/
+LinkedIn edition: https://www.linkedin.com/pulse/ai-can-find-you-choose-ekaterina-shalel-ogfne/
 
 ## Current work
 Legibility Platform, created by Ekaterina Shalel: https://legibi.ai/
