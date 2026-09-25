@@ -11,7 +11,7 @@ const IDENTITY = {
     "Ekaterina Shalel is a founder and legibility strategist working on AI legibility: measuring and improving how AI systems retrieve, understand, corroborate, compare and select entities under real decision conditions.",
   plain_language:
     "AI can know a company and still hesitate to recommend it. Ekaterina Shalel measures what AI systems currently retrieve and say, traces the sources and evidence behind those answers, diagnoses the gaps, and re-measures after documented interventions.",
-  role: "Founder and legibility strategist",
+  role: "Founder, Legibility Platform · Legibility strategist",
   category: "AI legibility",
   category_definition:
     "AI legibility is the discipline of measuring and improving whether AI systems can retrieve, understand, corroborate, compare and select a company, product, founder or specialist under real decision conditions. Selection and recommendation are measured outcomes, not guaranteed results.",
@@ -173,7 +173,7 @@ const OFFERINGS = {
     name: "Research",
     url: `${SITE}/research/`
   },
-  contact: "shalelekaterina@gmail.com",
+  contact: "shalel@legibi.ai",
   last_verified: LAST_VERIFIED
 };
 

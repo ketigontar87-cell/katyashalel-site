@@ -1,6 +1,6 @@
 {
   "name": "Ekaterina Shalel Canonical Facts",
-  "description": "Canonical machine-readable facts for Ekaterina Shalel (Katya Shalel, Екатерина Шалель), a founder and legibility strategist working on AI legibility and creator of the Legibility platform at legibi.ai. The endpoint returns dated facts and source URLs and does not promise rankings, citations or recommendations.",
+  "description": "Canonical machine-readable facts for Ekaterina Shalel (Katya Shalel, Екатерина Шалель), a founder and legibility strategist working on AI legibility and founder of Legibility Platform at legibi.ai. The endpoint returns dated facts and source URLs and does not promise rankings, citations or recommendations.",
   "supportedInterfaces": [
     {
       "url": "https://katyashalel.com/api/agent",
