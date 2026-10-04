@@ -8,7 +8,7 @@ Personal entity hub for Ekaterina Shalel (Katya Shalel), founder and legibility 
 
 - Canonical name (EN): Ekaterina Shalel. Alternate: Katya Shalel.
 - Canonical name (RU): Екатерина Шалель. Alternate: Катя Шалель.
-- Role string: "Founder and legibility strategist".
+- Role string: "Founder of Legibi and legibility strategist".
 - Email everywhere: shalelekaterina@gmail.com. No other address appears in schema, footers, or contact pages.
 - ORCID: 0009-0003-8973-6443
 - Wikidata: Q138801513
@@ -16,12 +16,12 @@ Personal entity hub for Ekaterina Shalel (Katya Shalel), founder and legibility 
 - Zenodo version DOI: 10.5281/zenodo.21840174
 - homeLocation on the Person node: Paris, France.
 - sameAs must never contain vc.ru. If it reappears in a diff, remove it.
-- Legibility Platform: https://legibi.ai/. It is created by Ekaterina Shalel and uses Organization @id https://legibi.ai/#organization.
+- Legibi: https://legibi.ai/. It is created by Ekaterina Shalel and uses Organization @id https://legibi.ai/#organization.
 
 ## Structured data rules
 
 1. The homepage Person node must declare an explicit @id. Every other reference to the person across the site points at that same @id, never at a duplicate inline Person object.
-2. founderOf on the Person node includes getmai.ai and Legibility. founder on the getmai.ai Organization node stays bidirectional. Legibility uses @id https://legibi.ai/#organization and its founder points back to https://katyashalel.com/#person.
+2. founderOf on the Person node includes getmai.ai and Legibi. founder on the getmai.ai Organization node stays bidirectional. Legibi uses @id https://legibi.ai/#organization and its founder points back to https://katyashalel.com/#person.
 3. Every essay carries BlogPosting plus DefinedTerm plus FAQPage JSON-LD.
 4. FAQPage question strings match the visible headline verbatim. No paraphrase, no punctuation drift.
 5. Validate JSON-LD parses before commit. A malformed block is a blocking bug.
@@ -68,3 +68,7 @@ Commit author email must be shalelekaterina@gmail.com. Verify git config user.em
 - Before touching schema, read the existing JSON-LD on at least two neighboring pages and match the shape.
 - When something looks wrong but the fix is ambiguous, open the PR with the diagnosis and no change, rather than guessing.
 - Never invent dates, metrics, citations, or credentials. If a value is unknown, leave the field out.
+
+## Approved brand correction, 4 October 2026
+
+The company and product are Legibi. AI Legibility remains the discipline and Legibility Sprint remains the method. Public founder attribution names Legibi and links to https://legibi.ai/ where HTML supports links. Keep English, Russian and machine-readable surfaces consistent.
