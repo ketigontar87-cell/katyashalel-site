@@ -307,7 +307,7 @@
 
   <div class="step">
     <h2><span class="day">Structure</span> Decide what is canonical</h2>
-    <p>For a single person this is straightforward. For a company with several brands, a distribution arm and a founder who sells on her own name, it is the whole job: which entity carries the authority, which ones inherit it, which are deliberately kept apart. Get the ordering wrong and a quarter goes into reinforcing the weakest node.</p>
+    <p>For a single person this is straightforward. For a company with several brands, a distribution arm and a founder doing business under her own name, it is the whole job: which entity carries the authority, which ones inherit it, which are deliberately kept apart. Get the ordering wrong and a quarter goes into reinforcing the weakest node.</p>
   </div>
 
   <div class="step">
@@ -328,7 +328,7 @@
   <div class="note">
     <h2>Who this actually suits</h2>
     <ul>
-      <li>Companies with more than one entity: a retail brand plus a distribution arm plus a founder who sells on her own name. The ordering question is what makes the work worth paying for.</li>
+      <li>Companies with more than one entity: a retail brand plus a distribution arm plus a founder doing business under her own name. The ordering question is what makes the work worth paying for.</li>
       <li>Businesses in categories where a recommendation is the purchase: what a model says decides who gets considered at all.</li>
       <li>Anyone operating in more than one language or market, where a gain on one side says nothing about the other.</li>
       <li>Not a good fit for a single person with a single site and a single market. Run the <a href="/guides/sprint/">Sprint</a> yourself, or take the one-off <a href="/audit/">Audit</a>. Both are the honest answer at that size.</li>
@@ -358,29 +358,29 @@
 <!-- Request form. Drop into any page. Posts to /api/lead, delivered to Telegram. -->
 <section class="request" id="request">
   <h2>Start with a measurement</h2>
-  <p class="request-lead">Every engagement starts with the baseline, and the baseline is worth having even if nothing follows it. Tell me what you are working with: how many connected entities, which markets, which languages. I read every enquiry myself and reply within one business day.</p>
+  <p class="request-lead">Every engagement starts with the baseline, and the baseline is worth having even if nothing follows it. Tell me what you are working with: how many connected entities, which markets, which languages. I read every inquiry myself and reply within one business day.</p>
 
   <div class="form-grid">
     <label>Name<input type="text" id="f-name" autocomplete="name"></label>
     <label>Email<input type="email" id="f-email" autocomplete="email" required></label>
     <label>Company or brand<input type="text" id="f-company" autocomplete="organization"></label>
     <label>Website<input type="text" id="f-site" placeholder="example.com"></label>
-    <label>Related entities
+    <label>How many people, companies, or brands should I review?
       <select id="f-entities">
-        <option value="">Select</option>
+        <option value="">Select an option</option>
         <option>One</option>
         <option>Two or three</option>
         <option>Four or more</option>
         <option>Not sure</option>
       </select>
     </label>
-    <label>Markets and languages<input type="text" id="f-markets" placeholder="EU, EN and RU"></label>
+    <label>Markets and languages<input type="text" id="f-markets" placeholder="Europe; English and Russian"></label>
     <label class="wide">How did you find this page?<input type="text" id="f-source" placeholder="LinkedIn, ChatGPT, a referral"></label>
     <label class="wide">What are you trying to fix?<textarea id="f-message" rows="4"></textarea></label>
     <label class="hp" aria-hidden="true">Leave this empty<input type="text" id="f-website-url" tabindex="-1" autocomplete="off"></label>
   </div>
 
-  <button class="btn" id="f-send" type="button">Send</button>
+  <button class="btn" id="f-send" type="button">Send message</button>
   <p class="form-note" id="f-note"></p>
 </section>
 
@@ -416,7 +416,7 @@
     var val = function (id) { var el = document.getElementById(id); return el ? el.value : ''; };
     var email = val('f-email').trim();
     if (!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(email)) {
-      note.textContent = 'Please add a valid email so I can reply.';
+      note.textContent = 'Please enter a valid email address so I can reply.';
       return;
     }
     btn.disabled = true;
@@ -433,7 +433,7 @@
       })
     }).then(function (r) { return r.json(); }).then(function (d) {
       if (d && d.ok) {
-        note.textContent = 'Received. I will reply within one business day.';
+        note.textContent = 'Thanks, I got your message. I’ll reply within one business day.';
       } else {
         btn.disabled = false;
         note.innerHTML = 'Something went wrong. Write to <a href="mailto:shalelekaterina@gmail.com">shalelekaterina@gmail.com</a>.';
