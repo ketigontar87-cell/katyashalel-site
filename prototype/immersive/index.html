@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ekaterina Shalel · Immersive Editorial Prototype</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@300;400;500&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#fff;--ink:#171717;--soft:#5a5a5a;--red:#C4342E;--line:rgba(23,23,23,.10);--ease:cubic-bezier(.2,.75,.2,1)}
+*{box-sizing:border-box;margin:0;padding:0}html{scroll-behavior:smooth}body{font-family:'Instrument Sans',sans-serif;background:var(--bg);color:var(--ink);overflow-x:hidden}.serif{font-family:'Instrument Serif',serif}.red{color:var(--red)}
+nav{position:fixed;left:0;right:0;top:0;z-index:50;display:flex;justify-content:space-between;align-items:center;padding:24px 38px;mix-blend-mode:difference;color:white;pointer-events:none}nav *{pointer-events:auto}.logo{font-family:'Instrument Serif',serif;font-size:20px}.navlinks{display:flex;gap:28px}.navlinks a{color:inherit;text-decoration:none;font-size:12px;letter-spacing:.08em;text-transform:uppercase}
+.progress{position:fixed;top:0;left:0;height:2px;background:var(--red);z-index:60;transform-origin:left;width:100%;transform:scaleX(0)}
+.scene{position:relative;height:500vh;background:#f7f7f7}.stage{position:sticky;top:0;height:100vh;overflow:hidden;perspective:1800px;background:linear-gradient(180deg,#fff 0%,#f6f6f5 100%)}
+.photo{position:absolute;overflow:hidden;will-change:transform,clip-path,opacity;transform-style:preserve-3d;background:#eee}.photo img{width:100%;height:100%;object-fit:cover;display:block;transform:scale(1.01)}
+.photo-a{left:53%;top:9%;width:37vw;height:78vh;clip-path:inset(0 0 0 0 round 2px);box-shadow:0 30px 80px rgba(0,0,0,.12)}.photo-b{left:7%;top:64%;width:24vw;height:34vh;opacity:0}.photo-c{right:7%;top:66%;width:21vw;height:29vh;opacity:0}
+.hero-copy{position:absolute;left:7vw;top:18vh;width:min(700px,44vw);z-index:5}.kicker{font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:#666;margin-bottom:18px}.hero-copy h1{font-family:'Instrument Serif',serif;font-size:clamp(58px,7vw,108px);line-height:.91;font-weight:400;letter-spacing:-.025em}.hero-copy h1 i{font-weight:400;color:var(--red)}.hero-copy p{margin-top:26px;width:min(560px,90%);font-size:16px;line-height:1.7;color:#555}
+.orbit{position:absolute;border:1px solid rgba(196,52,46,.2);border-radius:50%;transform-style:preserve-3d;pointer-events:none}.orbit.one{width:42vw;height:42vw;right:-6vw;top:10vh}.orbit.two{width:28vw;height:28vw;left:41vw;top:43vh;border-color:rgba(23,23,23,.08)}
+.node{position:absolute;width:9px;height:9px;border-radius:50%;background:var(--red);box-shadow:0 0 0 8px rgba(196,52,46,.08)}.n1{right:17%;top:29%}.n2{right:40%;top:18%;background:#222;box-shadow:0 0 0 8px rgba(0,0,0,.05)}.n3{right:31%;top:68%}.n4{left:49%;top:58%;background:#777;box-shadow:none}
+.bigword{position:absolute;left:50%;bottom:-5vh;transform:translateX(-50%);font-family:'Instrument Serif',serif;font-size:18vw;line-height:.8;white-space:nowrap;color:rgba(20,20,20,.04);pointer-events:none;user-select:none}
+.caption{position:absolute;right:5vw;bottom:4vh;font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:#777;writing-mode:vertical-rl}
+
+.black{height:360vh;background:#0f1012;color:white;position:relative}.black-stage{position:sticky;top:0;height:100vh;overflow:hidden;display:grid;place-items:center;perspective:1600px}.black-bg{position:absolute;inset:-20%;background:radial-gradient(circle at 50% 50%,rgba(196,52,46,.22),transparent 22%),radial-gradient(circle at 70% 20%,rgba(87,111,255,.14),transparent 19%)}
+.chain{position:relative;width:min(1100px,88vw);height:62vh;transform-style:preserve-3d}.step{position:absolute;font-family:'Instrument Serif',serif;font-size:clamp(42px,6vw,92px);font-weight:400;opacity:.16;white-space:nowrap;transform-origin:center;will-change:transform,opacity}.s1{left:2%;top:7%}.s2{left:20%;top:26%}.s3{left:38%;top:46%}.s4{left:54%;top:62%}.s5{left:72%;top:78%;color:#ff675f}.thread{position:absolute;left:5%;top:17%;width:86%;height:55%;border:1px solid rgba(255,255,255,.08);border-radius:50%;transform:rotate(14deg)}.pulse{position:absolute;width:18px;height:18px;border-radius:50%;background:var(--red);box-shadow:0 0 80px 24px rgba(196,52,46,.3)}
+.black-copy{position:absolute;left:7vw;bottom:7vh;width:min(520px,60vw);z-index:4}.black-copy .kicker{color:rgba(255,255,255,.45)}.black-copy p{font-family:'Instrument Serif',serif;font-size:clamp(28px,3.4vw,48px);line-height:1.05;color:white}
+
+.gallery{background:#fff;min-height:280vh;position:relative}.gstage{position:sticky;top:0;height:100vh;overflow:hidden;background:#fff;perspective:1600px}.panel{position:absolute;inset:0;display:grid;grid-template-columns:1.05fr .95fr;align-items:center;padding:8vh 6vw;gap:6vw;will-change:transform,opacity}.panel+.panel{opacity:0}.panel-copy .num{font-family:'Instrument Serif',serif;font-style:italic;color:var(--red);font-size:18px}.panel-copy h2{font-family:'Instrument Serif',serif;font-size:clamp(48px,5.8vw,88px);font-weight:400;line-height:.95;margin:14px 0 26px}.panel-copy p{font-size:15px;line-height:1.75;color:#585858;max-width:560px}.panel-visual{height:70vh;position:relative;transform-style:preserve-3d}.glass{position:absolute;inset:8% 5%;border:1px solid rgba(0,0,0,.08);background:rgba(255,255,255,.55);backdrop-filter:blur(18px);box-shadow:0 30px 80px rgba(0,0,0,.09);transform:rotateY(-12deg) rotateX(4deg);overflow:hidden}.glass::before{content:"";position:absolute;inset:0;background:linear-gradient(135deg,rgba(255,255,255,.8),rgba(255,255,255,.08));pointer-events:none}.evidence{position:absolute;padding:11px 14px;border:1px solid rgba(0,0,0,.10);background:#fff;font-size:11px;letter-spacing:.06em;text-transform:uppercase;box-shadow:0 8px 24px rgba(0,0,0,.06)}.e1{left:8%;top:12%}.e2{right:7%;top:24%}.e3{left:20%;bottom:20%}.e4{right:18%;bottom:12%}.core{position:absolute;left:50%;top:50%;width:110px;height:110px;border-radius:50%;transform:translate(-50%,-50%);background:var(--red);box-shadow:0 0 0 28px rgba(196,52,46,.07),0 0 80px rgba(196,52,46,.25)}.line{position:absolute;height:1px;background:rgba(196,52,46,.25);transform-origin:left center}.l1{left:20%;top:27%;width:34%;transform:rotate(18deg)}.l2{left:50%;top:50%;width:35%;transform:rotate(-30deg)}.l3{left:24%;top:70%;width:31%;transform:rotate(-24deg)}
+.portrait-panel .panel-visual{overflow:hidden}.portrait-panel .panel-visual img{width:100%;height:100%;object-fit:cover;display:block}.portrait-panel .panel-visual::after{content:"";position:absolute;inset:0;border:1px solid rgba(0,0,0,.08);pointer-events:none}
+
+.control{height:260vh;background:#0f1012;color:white;position:relative}.control-stage{position:sticky;top:0;height:100vh;overflow:hidden;padding:12vh 7vw}.control-stage h2{font-family:'Instrument Serif',serif;font-size:clamp(50px,6vw,90px);font-weight:400;line-height:.95;max-width:860px}.chart3d{position:absolute;right:5vw;bottom:8vh;width:54vw;height:54vh;border:1px solid rgba(255,255,255,.08);background:rgba(255,255,255,.025);transform:perspective(1200px) rotateX(58deg) rotateZ(-8deg);transform-origin:center;box-shadow:0 40px 120px rgba(0,0,0,.45)}.axis{position:absolute;background:rgba(255,255,255,.08)}.axis.x{height:1px;left:6%;right:6%;bottom:10%}.axis.y{width:1px;top:6%;bottom:10%;left:6%}.curve{position:absolute;left:7%;right:7%;height:2px;bottom:22%;transform-origin:left;background:linear-gradient(90deg,var(--red),#ff8a84);clip-path:polygon(0 44%,12% 48%,24% 45%,36% 49%,48% 44%,60% 32%,72% 23%,84% 14%,100% 5%,100% 65%,84% 53%,72% 48%,60% 50%,48% 55%,36% 57%,24% 56%,12% 57%,0 55%)}.control-line{position:absolute;left:7%;right:7%;height:1px;bottom:37%;background:#aaa}.intervention{position:absolute;left:48%;top:8%;bottom:10%;width:1px;border-left:1px dashed rgba(255,255,255,.2)}.intervention span{position:absolute;top:0;left:10px;font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.45)}
+
+.outro{min-height:120vh;display:grid;place-items:center;background:#fff;position:relative;overflow:hidden}.outro .photo-final{position:absolute;width:33vw;height:68vh;right:5vw;top:18vh;overflow:hidden}.outro .photo-final img{width:100%;height:100%;object-fit:cover}.outro-copy{position:relative;z-index:2;width:min(720px,78vw);margin-right:24vw}.outro h2{font-family:'Instrument Serif',serif;font-size:clamp(58px,7vw,108px);font-weight:400;line-height:.92}.outro p{margin-top:24px;max-width:520px;color:#555;line-height:1.7}.cta{display:inline-block;margin-top:30px;padding:13px 24px;background:#111;color:#fff;text-decoration:none;border-radius:99px;font-size:11px;letter-spacing:.14em;text-transform:uppercase}.halo{position:absolute;width:46vw;height:46vw;border-radius:50%;border:1px solid rgba(196,52,46,.18);right:-7vw;top:7vh;box-shadow:0 0 0 36px rgba(196,52,46,.025),0 0 0 72px rgba(196,52,46,.018)}
+.note{position:fixed;z-index:100;bottom:18px;left:18px;background:rgba(17,17,17,.9);color:white;padding:10px 14px;border-radius:999px;font-size:10px;letter-spacing:.08em;text-transform:uppercase;backdrop-filter:blur(8px)}
+@media(max-width:900px){nav{padding:20px}.navlinks{display:none}.scene{height:420vh}.hero-copy{left:24px;top:16vh;width:80vw}.hero-copy h1{font-size:15vw}.hero-copy p{font-size:14px;width:70vw}.photo-a{left:28%;top:45%;width:68vw;height:48vh}.photo-b,.photo-c{display:none}.orbit.one{width:80vw;height:80vw;right:-35vw;top:25vh}.bigword{font-size:32vw;bottom:2vh}.black-copy{left:24px;width:82vw}.chain{width:92vw}.step{font-size:13vw}.panel{grid-template-columns:1fr;padding:10vh 24px;align-content:start}.panel-copy h2{font-size:13vw}.panel-visual{height:46vh;margin-top:24px}.control-stage{padding:10vh 24px}.chart3d{width:84vw;right:-8vw;height:44vh}.outro{display:block;padding:14vh 24px}.outro .photo-final{width:66vw;height:48vh;right:0;top:auto;bottom:0}.outro-copy{width:88vw;margin:0}.outro h2{font-size:15vw}.note{font-size:8px}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.progress{display:none}}
+</style>
+</head>
+<body>
+<div class="progress" id="progress"></div>
+<nav><div class="logo">Ekaterina Shalel</div><div class="navlinks"><a href="#machine">Legibility</a><a href="#control">Method</a><a href="#contact">Contact</a></div></nav>
+<div class="note">Immersive prototype · original photos & fonts</div>
+
+<section class="scene" id="machine">
+  <div class="stage">
+    <div class="orbit one"></div><div class="orbit two"></div>
+    <div class="node n1"></div><div class="node n2"></div><div class="node n3"></div><div class="node n4"></div>
+    <div class="hero-copy">
+      <div class="kicker">Founder · Legibility Strategist</div>
+      <h1>AI now sits <i>between</i> you and the choice.</h1>
+      <p>The visual identity stays exactly yours. The experience changes: depth, motion, camera, evidence and selection become one continuous space.</p>
+    </div>
+    <div class="photo photo-a"><img src="https://katyashalel.com/images/hero-portrait.jpg" alt="Ekaterina Shalel"></div>
+    <div class="photo photo-b"><img src="https://katyashalel.com/images/about-coat.webp" alt="Ekaterina Shalel"></div>
+    <div class="photo photo-c"><img src="https://katyashalel.com/images/contact-portrait.webp" alt="Ekaterina Shalel"></div>
+    <div class="bigword">LEGIBILITY</div><div class="caption">scroll to move through the system</div>
+  </div>
+</section>
+
+<section class="black">
+  <div class="black-stage">
+    <div class="black-bg"></div>
+    <div class="chain">
+      <div class="thread"></div><div class="pulse" id="pulse"></div>
+      <div class="step s1">Retrieved</div><div class="step s2">Understood</div><div class="step s3">Corroborated</div><div class="step s4">Selected</div><div class="step s5">Personalized</div>
+    </div>
+    <div class="black-copy"><div class="kicker">The machine view</div><p>You do not need another dashboard. You need to know where the path breaks.</p></div>
+  </div>
+</section>
+
+<section class="gallery">
+  <div class="gstage">
+    <div class="panel p1">
+      <div class="panel-copy"><div class="num">01</div><h2>Evidence becomes a structure.</h2><p>Sources do not just sit on a page. They form a machine-readable environment around the company. Scroll changes the depth, order and salience of that environment.</p></div>
+      <div class="panel-visual"><div class="glass"><div class="evidence e1">First-party claim</div><div class="evidence e2">Earned editorial</div><div class="evidence e3">Directory</div><div class="evidence e4">Independent proof</div><div class="core"></div><div class="line l1"></div><div class="line l2"></div><div class="line l3"></div></div></div>
+    </div>
+    <div class="panel p2 portrait-panel">
+      <div class="panel-copy"><div class="num">02</div><h2>The person stays human.</h2><p>Your actual photography stays untouched. We animate space around it: perspective, masking, depth, sequencing and transitions, without changing your face or visual identity.</p></div>
+      <div class="panel-visual"><img src="https://katyashalel.com/images/katya-hero-coat.jpg" alt="Ekaterina Shalel"></div>
+    </div>
+    <div class="panel p3">
+      <div class="panel-copy"><div class="num">03</div><h2>Selection becomes a scene.</h2><p>Instead of explaining the entire methodology with static blocks, the site lets the visitor feel retrieval, corroboration and selection as the scroll progresses.</p></div>
+      <div class="panel-visual"><div class="glass"><div class="core" style="width:88px;height:88px"></div><div class="orbit one" style="width:50%;height:50%;left:25%;top:25%;right:auto"></div><div class="node n1" style="right:19%;top:17%"></div><div class="node n3" style="right:18%;top:72%"></div><div class="node n2" style="right:72%;top:30%"></div></div></div>
+    </div>
+  </div>
+</section>
+
+<section class="control" id="control">
+  <div class="control-stage">
+    <div class="kicker" style="color:rgba(255,255,255,.45)">Synthetic Term Control</div>
+    <h2>Movement is not evidence until you know what moved with it.</h2>
+    <div class="chart3d" id="chart3d"><div class="axis x"></div><div class="axis y"></div><div class="curve"></div><div class="control-line"></div><div class="intervention"><span>intervention</span></div></div>
+  </div>
+</section>
+
+<section class="outro" id="contact"><div class="halo"></div><div class="outro-copy"><div class="kicker">Ekaterina Shalel</div><h2>Keep the identity. <span class="red">Rebuild the experience.</span></h2><p>This prototype deliberately uses your existing typography and your existing photographs. The change is spatial: the site behaves like an authored digital environment instead of a sequence of static content blocks.</p><a class="cta" href="mailto:shalelekaterina@gmail.com">Start an inquiry</a></div><div class="photo-final"><img src="https://katyashalel.com/images/contact-portrait.jpg" alt="Ekaterina Shalel"></div></section>
+
+<script>
+const clamp=(n,a=0,b=1)=>Math.min(b,Math.max(a,n));
+const lerp=(a,b,t)=>a+(b-a)*t;
+const progress=document.getElementById('progress');
+const stage=document.querySelector('.stage');
+const photoA=document.querySelector('.photo-a');
+const hero=document.querySelector('.hero-copy');
+const photoB=document.querySelector('.photo-b');
+const photoC=document.querySelector('.photo-c');
+const orbit1=document.querySelector('.orbit.one');
+const orbit2=document.querySelector('.orbit.two');
+const black=document.querySelector('.black');
+const pulse=document.getElementById('pulse');
+const steps=[...document.querySelectorAll('.step')];
+const gallery=document.querySelector('.gallery');
+const panels=[...document.querySelectorAll('.panel')];
+const control=document.querySelector('.control');
+const chart=document.getElementById('chart3d');
+let mx=0,my=0;
+window.addEventListener('pointermove',e=>{mx=(e.clientX/innerWidth-.5);my=(e.clientY/innerHeight-.5)});
+function sectionProgress(el){const r=el.getBoundingClientRect();const total=el.offsetHeight-innerHeight;return clamp((-r.top)/Math.max(1,total));}
+function frame(){
+  const doc=Math.max(1,document.documentElement.scrollHeight-innerHeight);progress.style.transform=`scaleX(${scrollY/doc})`;
+  const p=sectionProgress(document.querySelector('.scene'));
+  const zoom=lerp(1,1.42,p);const rx=lerp(0,8,p)+my*2;const ry=lerp(0,-15,p)+mx*4;photoA.style.transform=`translate3d(${lerp(0,-18,p)}vw,${lerp(0,-20,p)}vh,${lerp(0,260,p)}px) rotateX(${rx}deg) rotateY(${ry}deg) scale(${zoom})`;photoA.style.clipPath=`inset(${lerp(0,11,p)}% ${lerp(0,14,p)}% ${lerp(0,11,p)}% ${lerp(0,14,p)}% round ${lerp(2,34,p)}px)`;
+  hero.style.transform=`translate3d(0,${lerp(0,-42,p)}vh,${lerp(0,90,p)}px)`;hero.style.opacity=String(clamp(1-p*1.45));
+  orbit1.style.transform=`rotate(${p*120+mx*12}deg) translateZ(${p*120}px)`;orbit2.style.transform=`rotate(${-p*90+my*10}deg)`;
+  const reveal=clamp((p-.42)/.38);photoB.style.opacity=String(reveal);photoC.style.opacity=String(reveal);photoB.style.transform=`translate3d(${lerp(-6,0,reveal)}vw,${lerp(16,0,reveal)}vh,${lerp(-160,20,reveal)}px) rotateY(${lerp(24,0,reveal)}deg)`;photoC.style.transform=`translate3d(${lerp(7,0,reveal)}vw,${lerp(14,0,reveal)}vh,${lerp(-200,40,reveal)}px) rotateY(${lerp(-25,0,reveal)}deg)`;
+  const bp=sectionProgress(black);const a=bp*Math.PI*1.5;pulse.style.left=`${14+62*bp}%`;pulse.style.top=`${18+52*bp}%`;pulse.style.transform=`translate(-50%,-50%) translateZ(${Math.sin(a)*140}px)`;steps.forEach((s,i)=>{const c=i/(steps.length-1);const d=Math.abs(bp-c);s.style.opacity=String(.12+clamp(1-d*4)*.88);s.style.transform=`translateZ(${clamp(1-d*3)*180}px) scale(${1+clamp(1-d*3)*.08})`});
+  const gp=sectionProgress(gallery);const seg=1/(panels.length);panels.forEach((panel,i)=>{const start=i*seg,end=(i+1)*seg;const local=clamp((gp-start)/seg);const visible=gp>=start-.03&&gp<=end+.03;panel.style.opacity=visible?String(Math.sin(local*Math.PI)*.7+.3):'0';panel.style.transform=`translate3d(${lerp(7,-7,local)}vw,0,${Math.sin(local*Math.PI)*120}px) rotateY(${lerp(5,-5,local)}deg)`});
+  const cp=sectionProgress(control);chart.style.transform=`perspective(1200px) rotateX(${lerp(68,28,cp)}deg) rotateZ(${lerp(-12,2,cp)}deg) translate3d(${lerp(8,-2,cp)}vw,${lerp(10,-3,cp)}vh,${lerp(-140,80,cp)}px) scale(${lerp(.86,1.06,cp)})`;
+  requestAnimationFrame(frame)
+}
+requestAnimationFrame(frame);
+</script>
+</body>
+</html>
