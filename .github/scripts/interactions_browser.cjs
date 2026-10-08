@@ -8,7 +8,7 @@ const manifest=require('./site_motion_manifest.json').filter(r=>!r.excluded);
 const origin='http://127.0.0.1:4196';
 const out=process.env.INTERACTION_ARTIFACTS||'/tmp/katya-interactions/results';
 const server=spawn('python3',['-m','http.server','4196','--bind','127.0.0.1'],{stdio:'ignore'});
-const results={pages:[],forms:[],menus:[],limitations:[],mockedPosts:0};
+const results={pages:[],forms:[],menus:[],languageSwitches:[],limitations:[],mockedPosts:0};
 async function activate(locator,width){if(width===390)await locator.tap();else{await locator.focus();await locator.press('Enter');}}
 (async()=>{
  await fs.mkdir(out,{recursive:true});
@@ -115,6 +115,20 @@ async function activate(locator,width){if(width===390)await locator.tap();else{a
   assert.equal(await clipboardPage.locator('.copy').first().textContent(),'Copy','Repeated copying restores original label');
  }
  await clipboardContext.close();
+ // Sprint's visible language switch must navigate in both directions, also without JS.
+ for(const width of [390,1440])for(const javaScriptEnabled of [true,false]){
+  const c=await browser.newContext({viewport:{width,height:900},hasTouch:width===390,javaScriptEnabled});
+  await c.route('**/*',r=>[origin,'https://fonts.googleapis.com','https://fonts.gstatic.com'].includes(new URL(r.request().url()).origin)?r.continue():r.abort());
+  const p=await c.newPage();await p.goto(origin+'/guides/sprint/');
+  for(const [label,destination,lang] of [['RU','/ru/guides/sprint/','ru'],['EN','/guides/sprint/','en']]){
+   const link=p.locator('.top a').filter({hasText:new RegExp('^'+label+'$')});
+   assert.equal(await link.getAttribute('href'),destination);assert.ok(await link.isVisible());
+   await activate(link,width);await p.waitForURL(origin+destination);
+   assert.equal(await p.locator('html').getAttribute('lang'),lang);assert.ok(await p.locator('h1').isVisible());
+   results.languageSwitches.push({width,javaScriptEnabled,from:label==='RU'?'en':'ru',to:lang});
+  }
+  await p.screenshot({path:path.join(out,`sprint-${width}-${javaScriptEnabled?'js':'no-js'}-language-switch.png`)});await c.close();
+ }
  // Reproduce the independently reported 500px issue, plus narrow/mobile/tablet and desktop.
  for(const width of [390,500,768,1440])for(const route of ['/','/ru/'])for(const mode of ['motion','reduced','no-js']){
   const c=await browser.newContext({viewport:{width,height:900},hasTouch:width<900,javaScriptEnabled:mode!=='no-js',reducedMotion:mode==='reduced'?'reduce':'no-preference'});
@@ -142,6 +156,6 @@ async function activate(locator,width){if(width===390)await locator.tap();else{a
   results.menus.push({route,width,mode});await c.close();
  }
  await fs.writeFile(path.join(out,'report.json'),JSON.stringify(results,null,2));
- console.log(JSON.stringify({pages:results.pages.length,controls:results.pages.reduce((n,r)=>n+r.controls,0),forms:results.forms.length,menus:results.menus.length,mockedPosts:results.mockedPosts,limitations:results.limitations}));
+ console.log(JSON.stringify({pages:results.pages.length,controls:results.pages.reduce((n,r)=>n+r.controls,0),forms:results.forms.length,menus:results.menus.length,languageSwitches:results.languageSwitches.length,mockedPosts:results.mockedPosts,limitations:results.limitations}));
  }finally{await browser.close();server.kill();}
 })().catch(e=>{server.kill();console.error(e);process.exitCode=1});

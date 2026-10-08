@@ -23,6 +23,11 @@ async function approvedContactRemoval(page){await page.evaluate(()=>{
   }
  }
  for(const a of document.querySelectorAll('a[href="/vocabulary/#indifference-test"]'))a.setAttribute('href','/vocabulary/#the-indifference-test');
+ // Explicitly authorized reciprocal visible Sprint navigation; metadata stays frozen.
+ if(location.pathname==='/guides/sprint/'){
+  const a=document.createElement('a');a.href='/ru/guides/sprint/';a.textContent='RU';document.querySelector('.top').append(a);
+ }
+
 });}
 async function signature(page){return page.evaluate(()=>{
  const text=s=>s.replace(/\s+/g,' ').trim();

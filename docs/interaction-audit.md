@@ -4,6 +4,8 @@ Scope: all 71 public EN/RU HTML pages in `site_motion_manifest.json`, based on p
 
 ## Confirmed defects and repairs
 
+- The English Sprint navigation lacked a reciprocal RU link. Add the native RU link using the existing navigation typography. Verify actual EN → RU → EN transitions with touch/keyboard and JavaScript disabled; leave hreflang metadata unchanged.
+
 - The EN/RU homepage strategy paragraph named Legibi without linking it. Add a native, underlined contextual link to `https://legibi.ai/`, preserving paragraph typography. The nearby proof link already worked. All service-page Legibi mentions were already links.
 - EN/RU mobile menu remained expanded after selecting About or Contact and obscured the destination. Close it before native anchor navigation, transfer focus to the destination, retain normal hash/history behavior, add sticky-header clearance and 44px menu touch targets. With JavaScript disabled an expanded menu scrolls with the page instead of covering the destination, and native anchor scrolling is immediate to avoid a smooth-scroll/font-loading race.
 - External inbound `/#person` had no DOM target. Give the existing About heading `id="person"` on both homepages. Existing `#about`, all copy and canonical Person JSON-LD remain unchanged.
@@ -18,7 +20,7 @@ Scope: all 71 public EN/RU HTML pages in `site_motion_manifest.json`, based on p
 
 Homepage navigation receives additional EN/RU checks at 390, 500, 768 and 1440px with motion, reduced motion and JavaScript disabled: menu touch-target size, keyboard/touch activation, collapsed-menu focus, destination clearance, contextual Legibi link and inbound `#person`. Screenshots and machine-readable results are uploaded in the exact-head website-browser CI artifact.
 
-The existing 24-page-case browser suite, 18-case homepage motion suite and 426-case full-site motion suite remain. Historical baseline exceptions are limited to the two newly authorized contextual links and two corrected visible vocabulary hrefs. Layout, visible copy, metadata, schemas, images and existing motion are still compared with their original baselines. All 126 JSON-LD blocks parse and match published main.
+The existing 24-page-case browser suite, 18-case homepage motion suite and 426-case full-site motion suite remain. Historical baseline exceptions are limited to the two newly authorized contextual links two corrected visible vocabulary hrefs, and the explicitly authorized reciprocal Sprint navigation link. Layout, visible copy, metadata, schemas, images and existing motion are still compared with their original baselines. All 126 JSON-LD blocks parse and match published main.
 
 ## Existing limitations, deliberately not reauthored
 
