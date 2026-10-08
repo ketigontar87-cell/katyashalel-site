@@ -31,6 +31,8 @@
 /* Contextual product links retain the approved paragraph typography. */
 .contextual-legibi{color:inherit;font:inherit;text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:.18em}
 [data-motion-family="home"] section[id],[data-motion-family="home"] #person{scroll-margin-top:88px}
+/* Incoming identity links must settle before font swapping can shift a smooth scroll. */
+html:has(#person:target){scroll-behavior:auto}
 @media(max-width:900px){
  .top .wrap{padding-top:14px;padding-bottom:14px}
  .mobile-nav summary{min-height:44px;line-height:44px;cursor:pointer}
