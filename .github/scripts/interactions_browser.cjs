@@ -9,6 +9,7 @@ const origin='http://127.0.0.1:4196';
 const out=process.env.INTERACTION_ARTIFACTS||'/tmp/katya-interactions/results';
 const server=spawn('python3',['-m','http.server','4196','--bind','127.0.0.1'],{stdio:'ignore'});
 const results={pages:[],forms:[],menus:[],limitations:[],mockedPosts:0};
+async function activate(locator,width){if(width===390)await locator.tap();else{await locator.focus();await locator.press('Enter');}}
 (async()=>{
  await fs.mkdir(out,{recursive:true});
  for(let i=0;i<50;i++){try{if((await fetch(origin)).ok)break;}catch{}await new Promise(r=>setTimeout(r,100));}
@@ -58,14 +59,14 @@ const results={pages:[],forms:[],menus:[],limitations:[],mockedPosts:0};
    assert.deepEqual(hit.apparent,[],`${row.route}: unexplained button-like elements`);
    const copy=page.locator('.copy');
    for(const button of await copy.all()){
-    await button.click();assert.match(await button.textContent(),/Copied|Скопировано/);
+    await activate(button,width);assert.match(await button.textContent(),/Copied|Скопировано/);
     assert.equal(await page.evaluate(()=>window.copied.at(-1)),await button.evaluate(e=>e.parentElement.querySelector('.p-body').innerText));
    }
    if(await copy.count()){
     // Denial and API absence must fall back to selecting the actual prompt, without errors.
     for(const denied of [true,false]){
      await page.evaluate(denied=>Object.defineProperty(navigator,'clipboard',{configurable:true,value:denied?{writeText:()=>Promise.reject(Error('Clipboard denied'))}:undefined}),denied);
-     await copy.first().click();assert.match(await copy.first().textContent(),/Selected|Выделено/);
+     await activate(copy.first(),width);assert.match(await copy.first().textContent(),/Selected|Выделено/);
      assert.equal(await page.evaluate(()=>getSelection().toString()),await copy.first().evaluate(e=>e.parentElement.querySelector('.p-body').textContent));
     }
    }
@@ -74,7 +75,7 @@ const results={pages:[],forms:[],menus:[],limitations:[],mockedPosts:0};
     const email=kind==='lead'?'#f-email':'#wl-email';
     for(const scenario of ['invalid','success','http','negative','empty','malformed','network']){
      await page.goto(origin+row.route);response=scenario;const posts=results.mockedPosts;
-     await page.locator(email).fill(scenario==='invalid'?'invalid':'qa@example.invalid');await button.click();
+     await page.locator(email).fill(scenario==='invalid'?'invalid':'qa@example.invalid');await activate(button,width);
      if(scenario==='invalid'){await page.waitForTimeout(30);assert.equal(results.mockedPosts,posts,'Invalid email must not submit');}
      else{
       const note=page.locator(kind==='lead'?'#f-note':'.wl-form button');
