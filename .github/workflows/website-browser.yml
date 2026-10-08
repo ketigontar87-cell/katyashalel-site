@@ -4,6 +4,8 @@ on:
     paths:
       - '**/*.html'
       - '.github/scripts/website_browser.cjs'
+      - '.github/scripts/motion_browser.cjs'
+      - 'assets/motion/**'
       - '.github/workflows/website-browser.yml'
 permissions:
   contents: read
@@ -13,6 +15,9 @@ jobs:
     timeout-minutes: 10
     steps:
       - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.sha }}
+          fetch-depth: 0
       - uses: actions/setup-node@v4
         with:
           node-version: 22
@@ -24,6 +29,11 @@ jobs:
         env:
           NODE_PATH: ${{ runner.temp }}/site-browser/node_modules
         run: node .github/scripts/website_browser.cjs
+      - name: Check motion, reduced motion and JavaScript disabled
+        env:
+          NODE_PATH: ${{ runner.temp }}/site-browser/node_modules
+          MOTION_ARTIFACTS: artifacts/website-browser/motion
+        run: node .github/scripts/motion_browser.cjs
       - uses: actions/upload-artifact@v4
         if: always()
         with:
