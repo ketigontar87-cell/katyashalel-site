@@ -1,0 +1,32 @@
+name: Website content and browser
+on:
+  pull_request:
+    paths:
+      - '**/*.html'
+      - '.github/scripts/website_browser.cjs'
+      - '.github/workflows/website-browser.yml'
+permissions:
+  contents: read
+jobs:
+  public-pages:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Install isolated browser
+        run: |
+          npm install --prefix "$RUNNER_TEMP/site-browser" --no-audit --no-fund playwright@1.62.1
+          "$RUNNER_TEMP/site-browser/node_modules/.bin/playwright" install --with-deps chromium
+      - name: Check both languages and form errors
+        env:
+          NODE_PATH: ${{ runner.temp }}/site-browser/node_modules
+        run: node .github/scripts/website_browser.cjs
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: website-browser-${{ github.event.pull_request.head.sha }}
+          path: artifacts/website-browser/
+          retention-days: 7
