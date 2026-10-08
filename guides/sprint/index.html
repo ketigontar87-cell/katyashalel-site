@@ -299,6 +299,7 @@
 <div class="top">
   <a href="/">Ekaterina Shalel</a>
   <a href="/#essays">Essays</a>
+  <a href="/ru/guides/sprint/">RU</a>
 </div>
 
 <article>
@@ -449,7 +450,7 @@
   </div>
 
   <button class="btn" id="f-send" type="button">Send message</button>
-  <p class="form-note" id="f-note"></p>
+  <p class="form-note" id="f-note" role="status" aria-live="polite"></p>
 </section>
 
 <style>
@@ -499,7 +500,7 @@
         source: val('f-source'), message: val('f-message'),
         website_url: val('f-website-url')
       })
-    }).then(function (r) { return r.json(); }).then(function (d) {
+    }).then(function (r) { if (!r.ok) throw new Error('Request failed'); return r.json(); }).then(function (d) {
       if (d && d.ok) {
         note.textContent = 'Thanks, I got your message. I’ll reply within one business day.';
       } else {
