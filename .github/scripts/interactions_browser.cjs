@@ -136,7 +136,9 @@ async function activate(locator,width){if(width===390)await locator.tap();else{a
   // Incoming links start in another document, not a same-document test-driver navigation.
   await p.goto('about:blank');await p.goto(origin+route+'#person');await p.evaluate(()=>document.fonts.ready);await p.waitForTimeout(mode==='reduced'?100:1200);
   assert.ok(await p.locator('#about h2#person').isVisible());
-  assert.ok(await p.locator('#person').evaluate(e=>e.getBoundingClientRect().top>=document.querySelector('.top').getBoundingClientRect().bottom),`${route} ${width} ${mode}: inbound founder anchor clears sticky header`);
+  const anchorBox=await p.locator('#person').evaluate(e=>({top:e.getBoundingClientRect().top,header:document.querySelector('.top').getBoundingClientRect().bottom,scroll:scrollY}));
+  await p.screenshot({path:path.join(out,`${route==='/ru/'?'ru':'en'}-${width}-${mode}-person.png`)});
+  assert.ok(anchorBox.top>=anchorBox.header,`${route} ${width} ${mode}: inbound founder anchor clears sticky header ${JSON.stringify(anchorBox)}`);
   results.menus.push({route,width,mode});await c.close();
  }
  await fs.writeFile(path.join(out,'report.json'),JSON.stringify(results,null,2));
