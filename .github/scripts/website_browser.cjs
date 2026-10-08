@@ -12,7 +12,7 @@ async function run() {
     try { if ((await fetch(origin)).ok) break; } catch {}
     await new Promise(r => setTimeout(r, 100));
   }
-  const browser = await chromium.launch();
+  const browser = await chromium.launch(process.env.CHROMIUM_EXECUTABLE ? { executablePath: process.env.CHROMIUM_EXECUTABLE } : {});
   const results = [];
   try {
     for (const width of [390, 768, 1440]) {

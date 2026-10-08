@@ -27,3 +27,15 @@
  [data-motion-family="guide"] .motion-boundary::after,[data-motion-family="archive"] .motion-boundary::after{transform:scaleY(1)}
 }
 @media print{.motion-heading::before,.motion-boundary::after{display:none}}
+
+/* Contextual product links retain the approved paragraph typography. */
+.contextual-legibi{color:inherit;font:inherit;text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:.18em}
+[data-motion-family="home"] section[id],[data-motion-family="home"] #person{scroll-margin-top:88px}
+@media(max-width:900px){
+ .top .wrap{padding-top:14px;padding-bottom:14px}
+ .mobile-nav summary{min-height:44px;line-height:44px;cursor:pointer}
+ .mobile-nav nav{gap:8px}
+ .mobile-nav nav a{display:flex;align-items:center;min-height:44px}
+ /* An expanded native menu must not cover content, including without JS. */
+ .top:has(.mobile-nav[open]){position:relative}
+}

@@ -3,6 +3,22 @@
   'use strict';
   const family = document.body.dataset.motionFamily;
   if (!family) return;
+  document.querySelectorAll('.mobile-nav').forEach(menu => {
+    menu.addEventListener('click', event => {
+      const link = event.target.closest('a[href]');
+      if (!link || event.defaultPrevented || event.button > 0 || event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
+      const url = new URL(link.href, location.href);
+      if (url.origin !== location.origin || url.pathname !== location.pathname || !url.hash) return;
+      const target = document.getElementById(decodeURIComponent(url.hash.slice(1)));
+      if (!target) return;
+      menu.open = false;
+      // Keep native hash/history/scroll behavior; move focus out of the closed menu.
+      const temporary = !target.hasAttribute('tabindex');
+      if (temporary) target.setAttribute('tabindex', '-1');
+      target.focus({ preventScroll: true });
+      if (temporary) target.addEventListener('blur', () => target.removeAttribute('tabindex'), { once: true });
+    });
+  });
   const reduced = matchMedia('(prefers-reduced-motion: reduce)');
   const headings = [...document.querySelectorAll('h1,h2')].filter(e => !e.closest('.motion-strategy,.tg') && !(family === 'home' && e.closest('.hero')));
   const selectors = {

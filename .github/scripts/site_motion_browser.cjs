@@ -17,6 +17,12 @@ async function approvedContactRemoval(page){await page.evaluate(()=>{
   else {const prev=a.previousSibling;if(prev?.nodeType===3)prev.textContent=prev.textContent.replace(/\s*·\s*$/,'');a.remove();}
  }
  for(const e of document.querySelectorAll('footer span'))for(const n of e.childNodes)if(n.nodeType===3)n.textContent=n.textContent.replace(' · Paris','');
+ for(const p of document.querySelectorAll('.content-copy p')) {
+  for(const n of [...p.childNodes]) if(n.nodeType===3 && n.textContent.includes('Legibi')) {
+   const [before,after]=n.textContent.split('Legibi'); const a=document.createElement('a');a.href='https://legibi.ai/';a.className='contextual-legibi';a.textContent='Legibi';n.replaceWith(before,a,after);
+  }
+ }
+ for(const a of document.querySelectorAll('a[href="/vocabulary/#indifference-test"]'))a.setAttribute('href','/vocabulary/#the-indifference-test');
 });}
 async function signature(page){return page.evaluate(()=>{
  const text=s=>s.replace(/\s+/g,' ').trim();

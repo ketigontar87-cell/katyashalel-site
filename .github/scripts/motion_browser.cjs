@@ -11,7 +11,7 @@ const server = spawn('python3', ['-m', 'http.server', '4175', '--bind', '127.0.0
 async function signature(page) {
   return page.evaluate(() => ({
     text: document.body.innerText.replace(/ · Paris/g, '').replace(/ · Telegram/g, ''),
-    links: [...document.querySelectorAll('a')].filter(a => a.getAttribute('href') !== 'https://t.me/shalel_notes').map(a => [a.textContent, a.getAttribute('href')]),
+    links: [...document.querySelectorAll('a')].filter(a => a.getAttribute('href') !== 'https://t.me/shalel_notes' && !a.matches('.contextual-legibi')).map(a => [a.textContent, a.getAttribute('href')]),
     metadata: [...document.querySelectorAll('meta,link[rel="canonical"],link[hreflang],script[type="application/ld+json"]')].map(e => e.outerHTML.replace(/,\s*"https:\/\/t\.me\/shalel_notes"/g, '')),
     boxes: ['.portrait','h1','.proof','.proof + section','#questions'].map(s => {
       const b=document.querySelector(s).getBoundingClientRect();return [b.x,b.y+scrollY,b.width,b.height];

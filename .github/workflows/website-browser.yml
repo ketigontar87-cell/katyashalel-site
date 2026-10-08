@@ -6,6 +6,7 @@ on:
       - '.github/scripts/website_browser.cjs'
       - '.github/scripts/motion_browser.cjs'
       - '.github/scripts/site_motion_browser.cjs'
+      - '.github/scripts/interactions_browser.cjs'
       - '.github/scripts/site_motion_manifest.json'
       - 'assets/motion/**'
       - '.github/workflows/website-browser.yml'
@@ -41,6 +42,11 @@ jobs:
           NODE_PATH: ${{ runner.temp }}/site-browser/node_modules
           SITE_MOTION_ARTIFACTS: artifacts/website-browser/site-motion
         run: node .github/scripts/site_motion_browser.cjs
+      - name: Audit every public interaction with mocked submissions
+        env:
+          NODE_PATH: ${{ runner.temp }}/site-browser/node_modules
+          INTERACTION_ARTIFACTS: artifacts/website-browser/interactions
+        run: node .github/scripts/interactions_browser.cjs
       - uses: actions/upload-artifact@v4
         if: always()
         with:
