@@ -132,7 +132,7 @@ async function activate(locator,width){if(width===390)await locator.tap();else{a
    assert.equal(covered,false,`${route} ${width} ${mode}: anchor heading obscured`);
    if(target==='#contact'&&width===500)await p.screenshot({path:path.join(out,`${route==='/ru/'?'ru':'en'}-500-${mode}-contact.png`)});
   }
-  if(width===1440&&mode==='motion')await p.locator('.content-copy').screenshot({path:path.join(out,`${route==='/ru/'?'ru':'en'}-strategy.png`)});
+  if(width===1440&&mode==='motion')await p.locator('.content-copy').first().screenshot({path:path.join(out,`${route==='/ru/'?'ru':'en'}-strategy.png`)});
   // Incoming links start in another document, not a same-document test-driver navigation.
   await p.goto('about:blank');await p.goto(origin+route+'#person');await p.evaluate(()=>document.fonts.ready);await p.waitForTimeout(mode==='reduced'?100:1200);
   assert.ok(await p.locator('#about h2#person').isVisible());
