@@ -1,0 +1,506 @@
+[
+  {
+    "file": "about/index.html",
+    "route": "/about/",
+    "family": "profile",
+    "lang": "en",
+    "excluded": null
+  },
+  {
+    "file": "ai-legibility/index.html",
+    "route": "/ai-legibility/",
+    "family": "reference",
+    "lang": "en",
+    "excluded": null
+  },
+  {
+    "file": "archive/index.html",
+    "route": "/archive/",
+    "family": "archive",
+    "lang": "en",
+    "excluded": null
+  },
+  {
+    "file": "audit/index.html",
+    "route": "/audit/",
+    "family": "service",
+    "lang": "en",
+    "excluded": null
+  },
+  {
+    "file": "brands/index.html",
+    "route": "/brands/",
+    "family": "service",
+    "lang": "en",
+    "excluded": null
+  },
+  {
+    "file": "carousel-studio.html",
+    "route": "/carousel-studio.html",
+    "family": "export-tool",
+    "lang": "ru",
+    "excluded": "Noindex fixed-size PNG export tool; motion would affect exported artwork."
+  },
+  {
+    "file": "essays/a-place-in-the-models-answer-is-now-for-sale/index.html",
+    "route": "/essays/a-place-in-the-models-answer-is-now-for-sale/",
+    "family": "essay",
+    "lang": "en",
+    "excluded": null
+  },
+  {
+    "file": "essays/ai-can-find-you-will-it-choose-you/index.html",
+    "route": "/essays/ai-can-find-you-will-it-choose-you/",
+    "family": "essay",
+    "lang": "en",
+    "excluded": null
+  },
+  {
+    "file": "essays/can-you-change-what-ai-says-about-you/index.html",
+    "route": "/essays/can-you-change-what-ai-says-about-you/",
+    "family": "essay",
+    "lang": "en",
+    "excluded": null
+  },
+  {
+    "file": "essays/distribution-not-recommendation/index.html",
+    "route": "/essays/distribution-not-recommendation/",
+    "family": "essay",
+    "lang": "en",
+    "excluded": null
+  },
+  {
+    "file": "essays/every-model-has-a-different-diet/index.html",
+    "route": "/essays/every-model-has-a-different-diet/",
+    "family": "essay",
+    "lang": "en",
+    "excluded": null
+  },
+  {
+    "file": "essays/how-do-i-become-cited-by-ai/index.html",
+    "route": "/essays/how-do-i-become-cited-by-ai/",
+    "family": "essay",
+    "lang": "en",
+    "excluded": null
+  },
+  {
+    "file": "essays/how-do-i-become-recommended-by-ai/index.html",
+    "route": "/essays/how-do-i-become-recommended-by-ai/",
+    "family": "essay",
+    "lang": "en",
+    "excluded": null
+  },
+  {
+    "file": "essays/how-to-become-visible-to-ai/index.html",
+    "route": "/essays/how-to-become-visible-to-ai/",
+    "family": "essay",
+    "lang": "en",
+    "excluded": null
+  },
+  {
+    "file": "essays/platforms-rent-you-reach-the-hub/index.html",
+    "route": "/essays/platforms-rent-you-reach-the-hub/",
+    "family": "essay",
+    "lang": "en",
+    "excluded": null
+  },
+  {
+    "file": "essays/sephora-entered-the-chat/index.html",
+    "route": "/essays/sephora-entered-the-chat/",
+    "family": "essay",
+    "lang": "en",
+    "excluded": null
+  },
+  {
+    "file": "essays/ten-questions-ai-skin-analysis/index.html",
+    "route": "/essays/ten-questions-ai-skin-analysis/",
+    "family": "essay",
+    "lang": "en",
+    "excluded": null
+  },
+  {
+    "file": "essays/the-article-you-already-paid-for/index.html",
+    "route": "/essays/the-article-you-already-paid-for/",
+    "family": "essay",
+    "lang": "en",
+    "excluded": null
+  },
+  {
+    "file": "essays/the-first-customer-tax/index.html",
+    "route": "/essays/the-first-customer-tax/",
+    "family": "essay",
+    "lang": "en",
+    "excluded": null
+  },
+  {
+    "file": "essays/the-interface-dissolves/index.html",
+    "route": "/essays/the-interface-dissolves/",
+    "family": "essay",
+    "lang": "en",
+    "excluded": null
+  },
+  {
+    "file": "essays/the-market-knocked-first/index.html",
+    "route": "/essays/the-market-knocked-first/",
+    "family": "essay",
+    "lang": "en",
+    "excluded": null
+  },
+  {
+    "file": "essays/the-measurement-was-the-easy-part/index.html",
+    "route": "/essays/the-measurement-was-the-easy-part/",
+    "family": "essay",
+    "lang": "en",
+    "excluded": null
+  },
+  {
+    "file": "essays/the-only-job-a-founder-cant-delegate/index.html",
+    "route": "/essays/the-only-job-a-founder-cant-delegate/",
+    "family": "essay",
+    "lang": "en",
+    "excluded": null
+  },
+  {
+    "file": "essays/the-protocol-caught-up/index.html",
+    "route": "/essays/the-protocol-caught-up/",
+    "family": "essay",
+    "lang": "en",
+    "excluded": null
+  },
+  {
+    "file": "essays/the-unstaffed-decision/index.html",
+    "route": "/essays/the-unstaffed-decision/",
+    "family": "essay",
+    "lang": "en",
+    "excluded": null
+  },
+  {
+    "file": "essays/the-week-beauty-retail-went-agentic/index.html",
+    "route": "/essays/the-week-beauty-retail-went-agentic/",
+    "family": "essay",
+    "lang": "en",
+    "excluded": null
+  },
+  {
+    "file": "essays/water-against-the-stone/index.html",
+    "route": "/essays/water-against-the-stone/",
+    "family": "essay",
+    "lang": "en",
+    "excluded": null
+  },
+  {
+    "file": "essays/who-owns-the-recommendation/index.html",
+    "route": "/essays/who-owns-the-recommendation/",
+    "family": "essay",
+    "lang": "en",
+    "excluded": null
+  },
+  {
+    "file": "essays/why-does-chatgpt-ignore-my-company/index.html",
+    "route": "/essays/why-does-chatgpt-ignore-my-company/",
+    "family": "essay",
+    "lang": "en",
+    "excluded": null
+  },
+  {
+    "file": "essays/your-website-has-two-readers/index.html",
+    "route": "/essays/your-website-has-two-readers/",
+    "family": "essay",
+    "lang": "en",
+    "excluded": null
+  },
+  {
+    "file": "guides/buffer-audit/index.html",
+    "route": "/guides/buffer-audit/",
+    "family": "guide",
+    "lang": "en",
+    "excluded": null
+  },
+  {
+    "file": "guides/legibility/index.html",
+    "route": "/guides/legibility/",
+    "family": "guide",
+    "lang": "en",
+    "excluded": null
+  },
+  {
+    "file": "guides/multimodel/index.html",
+    "route": "/guides/multimodel/",
+    "family": "guide",
+    "lang": "en",
+    "excluded": null
+  },
+  {
+    "file": "guides/sprint/index.html",
+    "route": "/guides/sprint/",
+    "family": "guide",
+    "lang": "en",
+    "excluded": null
+  },
+  {
+    "file": "guides/techteam/index.html",
+    "route": "/guides/techteam/",
+    "family": "guide",
+    "lang": "en",
+    "excluded": null
+  },
+  {
+    "file": "guides/visibility/index.html",
+    "route": "/guides/visibility/",
+    "family": "guide",
+    "lang": "en",
+    "excluded": null
+  },
+  {
+    "file": "index.html",
+    "route": "/",
+    "family": "home",
+    "lang": "en",
+    "excluded": null
+  },
+  {
+    "file": "ongoing/index.html",
+    "route": "/ongoing/",
+    "family": "service",
+    "lang": "en",
+    "excluded": null
+  },
+  {
+    "file": "research/index.html",
+    "route": "/research/",
+    "family": "research",
+    "lang": "en",
+    "excluded": null
+  },
+  {
+    "file": "research/synthetic-term-control/index.html",
+    "route": "/research/synthetic-term-control/",
+    "family": "research",
+    "lang": "en",
+    "excluded": null
+  },
+  {
+    "file": "ru/about/index.html",
+    "route": "/ru/about/",
+    "family": "profile",
+    "lang": "ru",
+    "excluded": null
+  },
+  {
+    "file": "ru/ai-legibility/index.html",
+    "route": "/ru/ai-legibility/",
+    "family": "reference",
+    "lang": "ru",
+    "excluded": null
+  },
+  {
+    "file": "ru/audit/index.html",
+    "route": "/ru/audit/",
+    "family": "service",
+    "lang": "ru",
+    "excluded": null
+  },
+  {
+    "file": "ru/brands/index.html",
+    "route": "/ru/brands/",
+    "family": "service",
+    "lang": "ru",
+    "excluded": null
+  },
+  {
+    "file": "ru/essays/ai-mozhet-vas-nayti-no-vyberet-li-on-vas/index.html",
+    "route": "/ru/essays/ai-mozhet-vas-nayti-no-vyberet-li-on-vas/",
+    "family": "essay",
+    "lang": "ru",
+    "excluded": null
+  },
+  {
+    "file": "ru/essays/interfeys-rastvoryaetsya/index.html",
+    "route": "/ru/essays/interfeys-rastvoryaetsya/",
+    "family": "essay",
+    "lang": "ru",
+    "excluded": null
+  },
+  {
+    "file": "ru/essays/izmerenie-bylo-legkoy-chastyu/index.html",
+    "route": "/ru/essays/izmerenie-bylo-legkoy-chastyu/",
+    "family": "essay",
+    "lang": "ru",
+    "excluded": null
+  },
+  {
+    "file": "ru/essays/kak-stat-tsitiruemym-dlya-ai/index.html",
+    "route": "/ru/essays/kak-stat-tsitiruemym-dlya-ai/",
+    "family": "essay",
+    "lang": "ru",
+    "excluded": null
+  },
+  {
+    "file": "ru/essays/kak-stat-vidimym-dlya-ai/index.html",
+    "route": "/ru/essays/kak-stat-vidimym-dlya-ai/",
+    "family": "essay",
+    "lang": "ru",
+    "excluded": null
+  },
+  {
+    "file": "ru/essays/klient-kotoryy-vam-otkazal-byl-prav/index.html",
+    "route": "/ru/essays/klient-kotoryy-vam-otkazal-byl-prav/",
+    "family": "essay",
+    "lang": "ru",
+    "excluded": null
+  },
+  {
+    "file": "ru/essays/mesto-v-otvete-modeli-prodaetsya/index.html",
+    "route": "/ru/essays/mesto-v-otvete-modeli-prodaetsya/",
+    "family": "essay",
+    "lang": "ru",
+    "excluded": null
+  },
+  {
+    "file": "ru/essays/ploshchadki-sdayut-ohvat/index.html",
+    "route": "/ru/essays/ploshchadki-sdayut-ohvat/",
+    "family": "essay",
+    "lang": "ru",
+    "excluded": null
+  },
+  {
+    "file": "ru/essays/pochemu-chatgpt-ne-znaet-moyu-kompaniyu/index.html",
+    "route": "/ru/essays/pochemu-chatgpt-ne-znaet-moyu-kompaniyu/",
+    "family": "essay",
+    "lang": "ru",
+    "excluded": null
+  },
+  {
+    "file": "ru/essays/rynok-postuchal-pervym/index.html",
+    "route": "/ru/essays/rynok-postuchal-pervym/",
+    "family": "essay",
+    "lang": "ru",
+    "excluded": null
+  },
+  {
+    "file": "ru/essays/statya-za-kotoruyu-vy-uzhe-zaplatili/index.html",
+    "route": "/ru/essays/statya-za-kotoruyu-vy-uzhe-zaplatili/",
+    "family": "essay",
+    "lang": "ru",
+    "excluded": null
+  },
+  {
+    "file": "ru/essays/u-kazhdoy-modeli-svoya-dieta/index.html",
+    "route": "/ru/essays/u-kazhdoy-modeli-svoya-dieta/",
+    "family": "essay",
+    "lang": "ru",
+    "excluded": null
+  },
+  {
+    "file": "ru/essays/voda-protiv-kamnya/index.html",
+    "route": "/ru/essays/voda-protiv-kamnya/",
+    "family": "essay",
+    "lang": "ru",
+    "excluded": null
+  },
+  {
+    "file": "ru/guides/dictionary/index.html",
+    "route": "/ru/guides/dictionary/",
+    "family": "guide",
+    "lang": "ru",
+    "excluded": null
+  },
+  {
+    "file": "ru/guides/index.html",
+    "route": "/ru/guides/",
+    "family": "guide",
+    "lang": "ru",
+    "excluded": null
+  },
+  {
+    "file": "ru/guides/legibility/index.html",
+    "route": "/ru/guides/legibility/",
+    "family": "guide",
+    "lang": "ru",
+    "excluded": null
+  },
+  {
+    "file": "ru/guides/multimodel/index.html",
+    "route": "/ru/guides/multimodel/",
+    "family": "guide",
+    "lang": "ru",
+    "excluded": null
+  },
+  {
+    "file": "ru/guides/sprint/index.html",
+    "route": "/ru/guides/sprint/",
+    "family": "guide",
+    "lang": "ru",
+    "excluded": null
+  },
+  {
+    "file": "ru/guides/techteam/index.html",
+    "route": "/ru/guides/techteam/",
+    "family": "guide",
+    "lang": "ru",
+    "excluded": null
+  },
+  {
+    "file": "ru/guides/visibility/index.html",
+    "route": "/ru/guides/visibility/",
+    "family": "guide",
+    "lang": "ru",
+    "excluded": null
+  },
+  {
+    "file": "ru/index.html",
+    "route": "/ru/",
+    "family": "home",
+    "lang": "ru",
+    "excluded": null
+  },
+  {
+    "file": "ru/ongoing/index.html",
+    "route": "/ru/ongoing/",
+    "family": "service",
+    "lang": "ru",
+    "excluded": null
+  },
+  {
+    "file": "ru/pochemu-ai-znaet-no-ne-rekomenduet/index.html",
+    "route": "/ru/pochemu-ai-znaet-no-ne-rekomenduet/",
+    "family": "reference",
+    "lang": "ru",
+    "excluded": null
+  },
+  {
+    "file": "ru/understood-by-ai/index.html",
+    "route": "/ru/understood-by-ai/",
+    "family": "reference",
+    "lang": "ru",
+    "excluded": null
+  },
+  {
+    "file": "ru/vocabulary/index.html",
+    "route": "/ru/vocabulary/",
+    "family": "reference",
+    "lang": "ru",
+    "excluded": null
+  },
+  {
+    "file": "understood-by-ai/index.html",
+    "route": "/understood-by-ai/",
+    "family": "reference",
+    "lang": "en",
+    "excluded": null
+  },
+  {
+    "file": "vocabulary/index.html",
+    "route": "/vocabulary/",
+    "family": "reference",
+    "lang": "en",
+    "excluded": null
+  },
+  {
+    "file": "why-ai-knows-but-doesnt-recommend/index.html",
+    "route": "/why-ai-knows-but-doesnt-recommend/",
+    "family": "reference",
+    "lang": "en",
+    "excluded": null
+  }
+]

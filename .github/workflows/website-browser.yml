@@ -5,6 +5,8 @@ on:
       - '**/*.html'
       - '.github/scripts/website_browser.cjs'
       - '.github/scripts/motion_browser.cjs'
+      - '.github/scripts/site_motion_browser.cjs'
+      - '.github/scripts/site_motion_manifest.json'
       - 'assets/motion/**'
       - '.github/workflows/website-browser.yml'
 permissions:
@@ -12,7 +14,7 @@ permissions:
 jobs:
   public-pages:
     runs-on: ubuntu-latest
-    timeout-minutes: 10
+    timeout-minutes: 20
     steps:
       - uses: actions/checkout@v4
         with:
@@ -34,6 +36,11 @@ jobs:
           NODE_PATH: ${{ runner.temp }}/site-browser/node_modules
           MOTION_ARTIFACTS: artifacts/website-browser/motion
         run: node .github/scripts/motion_browser.cjs
+      - name: Check every public page and motion family
+        env:
+          NODE_PATH: ${{ runner.temp }}/site-browser/node_modules
+          SITE_MOTION_ARTIFACTS: artifacts/website-browser/site-motion
+        run: node .github/scripts/site_motion_browser.cjs
       - uses: actions/upload-artifact@v4
         if: always()
         with:

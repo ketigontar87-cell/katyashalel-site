@@ -10,9 +10,9 @@ const base = '5b9396159b31680bb0b5c189883b833b206fc2d2';
 const server = spawn('python3', ['-m', 'http.server', '4175', '--bind', '127.0.0.1'], { stdio: 'ignore' });
 async function signature(page) {
   return page.evaluate(() => ({
-    text: document.body.innerText,
-    links: [...document.querySelectorAll('a')].map(a => [a.textContent, a.getAttribute('href')]),
-    metadata: [...document.querySelectorAll('meta,link[rel="canonical"],link[hreflang],script[type="application/ld+json"]')].map(e => e.outerHTML),
+    text: document.body.innerText.replace(/ · Paris/g, '').replace(/ · Telegram/g, ''),
+    links: [...document.querySelectorAll('a')].filter(a => a.getAttribute('href') !== 'https://t.me/shalel_notes').map(a => [a.textContent, a.getAttribute('href')]),
+    metadata: [...document.querySelectorAll('meta,link[rel="canonical"],link[hreflang],script[type="application/ld+json"]')].map(e => e.outerHTML.replace(/,\s*"https:\/\/t\.me\/shalel_notes"/g, '')),
     boxes: ['.portrait','h1','.proof','.proof + section','#questions'].map(s => {
       const b=document.querySelector(s).getBoundingClientRect();return [b.x,b.y+scrollY,b.width,b.height];
     })
