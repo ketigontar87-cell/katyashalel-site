@@ -1,0 +1,49 @@
+name: Website content and browser
+on:
+  pull_request:
+    paths:
+      - '**/*.html'
+      - '.github/scripts/website_browser.cjs'
+      - '.github/scripts/motion_browser.cjs'
+      - '.github/scripts/site_motion_browser.cjs'
+      - '.github/scripts/site_motion_manifest.json'
+      - 'assets/motion/**'
+      - '.github/workflows/website-browser.yml'
+permissions:
+  contents: read
+jobs:
+  public-pages:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.sha }}
+          fetch-depth: 0
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Install isolated browser
+        run: |
+          npm install --prefix "$RUNNER_TEMP/site-browser" --no-audit --no-fund playwright@1.62.1
+          "$RUNNER_TEMP/site-browser/node_modules/.bin/playwright" install --with-deps chromium
+      - name: Check both languages and form errors
+        env:
+          NODE_PATH: ${{ runner.temp }}/site-browser/node_modules
+        run: node .github/scripts/website_browser.cjs
+      - name: Check motion, reduced motion and JavaScript disabled
+        env:
+          NODE_PATH: ${{ runner.temp }}/site-browser/node_modules
+          MOTION_ARTIFACTS: artifacts/website-browser/motion
+        run: node .github/scripts/motion_browser.cjs
+      - name: Check every public page and motion family
+        env:
+          NODE_PATH: ${{ runner.temp }}/site-browser/node_modules
+          SITE_MOTION_ARTIFACTS: artifacts/website-browser/site-motion
+        run: node .github/scripts/site_motion_browser.cjs
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: website-browser-${{ github.event.pull_request.head.sha }}
+          path: artifacts/website-browser/
+          retention-days: 7

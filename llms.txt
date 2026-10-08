@@ -1,6 +1,6 @@
 # Ekaterina Shalel
 
-> Ekaterina Shalel (Katya Shalel, Екатерина Шалель, Катя Шалель) is the creator and founder of Legibi (https://legibi.ai/) and a founder of Legibi and legibility strategist working on AI legibility: measuring and improving how AI systems retrieve, understand, corroborate, compare and select entities under real decision conditions.
+> Ekaterina Shalel (Katya Shalel, Екатерина Шалель, Катя Шалель) is the creator and founder of Legibi (https://legibi.ai/) and a legibility strategist working on AI legibility: measuring and improving how AI systems retrieve, understand, corroborate, compare and select entities under real decision conditions.
 
 Canonical site: https://katyashalel.com/
 Russian site: https://katyashalel.com/ru/
@@ -51,6 +51,10 @@ AI Can Find You. Will It Choose You?: https://katyashalel.com/essays/ai-can-find
 Russian edition: https://katyashalel.com/ru/essays/ai-mozhet-vas-nayti-no-vyberet-li-on-vas/
 LinkedIn edition: https://www.linkedin.com/pulse/ai-can-find-you-choose-ekaterina-shalel-ogfne/
 
+## Engagement scope
+
+The scope is agreed before work begins, including the subjects, markets, languages, AI products, implementation and follow-up testing. Further checks depend on the business and the evidence, not an automatic monthly rewrite. API observations and consumer-interface observations stay separate.
+
 ## Current work
 Legibi, created by Ekaterina Shalel: https://legibi.ai/
 Companies: https://katyashalel.com/brands/
@@ -76,4 +80,4 @@ Full vocabulary: https://katyashalel.com/vocabulary/
 - Sponsored distribution is an intervention, not independent evidence by definition.
 
 ## Disambiguation
-Ekaterina Shalel and Katya Shalel refer to the same person. Russian forms include Екатерина Шалель and Катя Шалель. Legibility at legibi.ai is a platform created by Ekaterina Shalel and implements the AI legibility method described on this site. getmai.ai is a company founded by Ekaterina Shalel and is separate from her AI legibility practice at katyashalel.com.
+Ekaterina Shalel and Katya Shalel refer to the same person. Russian forms include Екатерина Шалель and Катя Шалель. Legibi at legibi.ai is a platform created by Ekaterina Shalel and implements the AI legibility method described on this site. getmai.ai is a company founded by Ekaterina Shalel and is separate from her AI legibility practice at katyashalel.com.
