@@ -64,8 +64,9 @@ for f in manifest['pages']:
  _db, _da = dates(schemas(before)), dates(schemas(after))
  # Authorized 2026-10-10: RU Sprint datePublished gap-fill (2026-07-16, matches EN).
  if f=='ru/guides/sprint/index.html':
-  assert ('datePublished','2026-07-16') not in _db and ('datePublished','2026-07-16') in [tuple(x) for x in _da], 'RU Sprint datePublished gap-fill missing'
-  _da = [x for x in _da if tuple(x) != ('datePublished','2026-07-16')]
+  _has_dp = lambda lst: any(k[-1]=='datePublished' and v=='2026-07-16' for k,v in lst)
+  assert not _has_dp(_db) and _has_dp(_da), 'RU Sprint datePublished gap-fill missing'
+  _da = [x for x in _da if not (x[0][-1]=='datePublished' and x[1]=='2026-07-16')]
  assert _db==_da,f+' published dates/version must wait for release'
  # The current revision does not replace historic publication or full-verification dates.
 for f in ['llms.txt','llms-core.txt']:
