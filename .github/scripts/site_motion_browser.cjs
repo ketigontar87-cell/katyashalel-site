@@ -62,7 +62,8 @@ async function ready(page){await page.evaluate(async()=>{await document.fonts.re
     if(copyReview.pages.includes(row.file)){
      // Authorized editorial changes can reflow text; styles/structure are locked by copy_review.py.
      assert.deepEqual(actual.images,expected.images,`${row.route}: images preserved`);
-     const fixedMeta=items=>items.filter(s=>!/(?:name|property)="(?:description|og:description|twitter:description)"/.test(s));
+     const authorizedSprintHreflang=['<link rel="alternate" hreflang="en" href="https://katyashalel.com/guides/sprint/">','<link rel="alternate" hreflang="ru" href="https://katyashalel.com/ru/guides/sprint/">','<link rel="alternate" hreflang="x-default" href="https://katyashalel.com/guides/sprint/">'];
+     const fixedMeta=items=>items.filter(s=>!/(?:name|property)="(?:description|og:description|twitter:description)"/.test(s)&&!authorizedSprintHreflang.includes(s));
      assert.deepEqual(fixedMeta(actual.meta),fixedMeta(expected.meta),`${row.route}: non-copy metadata preserved`);
      const retainedLinks=await p.evaluate(()=>[...document.querySelectorAll('a:not(.course-availability)')].map(a=>[a.getAttribute('href'),a.textContent.replace(/\s+/g,' ').trim()]));
      assert.deepEqual(retainedLinks,expected.links,`${row.route}: original links preserved`);

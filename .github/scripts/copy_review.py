@@ -40,9 +40,16 @@ for p in all_html:
  assert not re.search(r'диагностир(?:овать|уй(?:те)?|овка|ование)\s*(?:→|->|,)\s*вмеш',s,re.I),p
  assert not re.search(r'вмешаться\s*(?:→|->|,)\s*(?:проверить|переизмерить)',s,re.I),p
  assert 'the waitlist closes August 6' not in s and 'лист закрывается 6 августа' not in s,p
+# Authorized 2026-10-10: reciprocal hreflang on EN Sprint (3 specific link tags). Nothing else structural is allowed.
+ALLOWED_SPRINT_HREFLANG=[('open','link',[('href','https://katyashalel.com/guides/sprint/'),('hreflang','en'),('rel','alternate')]),('open','link',[('href','https://katyashalel.com/ru/guides/sprint/'),('hreflang','ru'),('rel','alternate')]),('open','link',[('href','https://katyashalel.com/guides/sprint/'),('hreflang','x-default'),('rel','alternate')])]
 for f in manifest['pages']:
  before=old(f);after=(root/f).read_text();a=Structure();a.feed(before);b=Structure();b.feed(after)
- assert a.tags==b.tags,f+' DOM structure / non-copy attributes changed'
+ b_tags=list(b.tags)
+ if f=='guides/sprint/index.html':
+  for t in ALLOWED_SPRINT_HREFLANG:
+   assert t in b_tags,'authorized hreflang tag missing on EN Sprint'
+   b_tags.remove(t)
+ assert a.tags==b_tags,f+' DOM structure / non-copy attributes changed'
  for pattern in [r'<style[^>]*>.*?</style>',r'<script(?![^>]*application/ld\+json)[^>]*>.*?</script>']:
   assert re.findall(pattern,before,re.S)==re.findall(pattern,after,re.S),f+' styles or behavior changed'
  assert dates(schemas(before))==dates(schemas(after)),f+' published dates/version must wait for release'
