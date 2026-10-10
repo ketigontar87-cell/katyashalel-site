@@ -49,10 +49,21 @@ for f in manifest['pages']:
   for t in ALLOWED_SPRINT_HREFLANG:
    assert t in b_tags,'authorized hreflang tag missing on EN Sprint'
    b_tags.remove(t)
+ # Authorized 2026-10-10: RU definition history gap-fill (v1.1, v1.2 paragraphs).
+ if f=='ru/ai-legibility/index.html':
+  assert '<strong>v1.1 · 17 августа 2026.</strong>' in after,'v1.1 paragraph missing'
+  assert '<strong>v1.2 · 1 сентября 2026.</strong>' in after,'v1.2 paragraph missing'
+  for _ in range(2):
+   b_tags.remove(('open','p',[]));b_tags.remove(('close','p'))
  assert a.tags==b_tags,f+' DOM structure / non-copy attributes changed'
  for pattern in [r'<style[^>]*>.*?</style>',r'<script(?![^>]*application/ld\+json)[^>]*>.*?</script>']:
   assert re.findall(pattern,before,re.S)==re.findall(pattern,after,re.S),f+' styles or behavior changed'
- assert dates(schemas(before))==dates(schemas(after)),f+' published dates/version must wait for release'
+ _db, _da = dates(schemas(before)), dates(schemas(after))
+ # Authorized 2026-10-10: RU Sprint datePublished gap-fill (2026-07-16, matches EN).
+ if f=='ru/guides/sprint/index.html':
+  assert ('datePublished','2026-07-16') not in _db and ('datePublished','2026-07-16') in [tuple(x) for x in _da], 'RU Sprint datePublished gap-fill missing'
+  _da = [x for x in _da if tuple(x) != ('datePublished','2026-07-16')]
+ assert _db==_da,f+' published dates/version must wait for release'
  # The current revision does not replace historic publication or full-verification dates.
 for f in ['llms.txt','llms-core.txt']:
  assert manifest['method'] in (root/f).read_text()
