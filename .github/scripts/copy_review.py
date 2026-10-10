@@ -53,9 +53,12 @@ for f in manifest['pages']:
  if f=='ru/ai-legibility/index.html':
   assert '<strong>v1.1 · 17 августа 2026.</strong>' in after,'v1.1 paragraph missing'
   assert '<strong>v1.2 · 1 сентября 2026.</strong>' in after,'v1.2 paragraph missing'
-  for _ in range(2):
-   b_tags.remove(('open','p',[]));b_tags.remove(('close','p'))
- assert a.tags==b_tags,f+' DOM structure / non-copy attributes changed'
+  from collections import Counter
+  ca, cb = Counter(a.tags), Counter(b.tags)
+  diff = cb - ca
+  assert diff == Counter({('open','p',[]): 2, ('close','p'): 2}), f'ru/ai-legibility unexpected tag diff: {diff}'
+ else:
+  assert a.tags==b_tags,f+' DOM structure / non-copy attributes changed'
  for pattern in [r'<style[^>]*>.*?</style>',r'<script(?![^>]*application/ld\+json)[^>]*>.*?</script>']:
   assert re.findall(pattern,before,re.S)==re.findall(pattern,after,re.S),f+' styles or behavior changed'
  _db, _da = dates(schemas(before)), dates(schemas(after))
