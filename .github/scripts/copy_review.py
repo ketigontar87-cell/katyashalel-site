@@ -65,10 +65,12 @@ for f in manifest['pages']:
    return c
   ca, cb = _h(a.tags), _h(b.tags)
   diff = cb - ca
-  # Expect exactly 2 new <p> pairs
+  # Expect exactly 2 new <p> paragraphs, each with a <strong> lead
   assert diff[('open','p',())] == 2, f'expected 2 new <p>: {dict(diff)}'
   assert diff[('close','p')] == 2, f'expected 2 new </p>: {dict(diff)}'
-  assert sum(diff.values()) == 4, f'unexpected extra tags: {dict(diff)}'
+  assert diff[('open','strong',())] == 2, f'expected 2 new <strong>: {dict(diff)}'
+  assert diff[('close','strong')] == 2, f'expected 2 new </strong>: {dict(diff)}'
+  assert sum(diff.values()) == 8, f'unexpected extra tags: {dict(diff)}'
  else:
   assert a.tags==b_tags,f+' DOM structure / non-copy attributes changed'
  for pattern in [r'<style[^>]*>.*?</style>',r'<script(?![^>]*application/ld\+json)[^>]*>.*?</script>']:
