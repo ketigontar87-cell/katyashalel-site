@@ -42,8 +42,19 @@ for p in all_html:
  assert 'the waitlist closes August 6' not in s and 'лист закрывается 6 августа' not in s,p
 # Authorized 2026-10-10: reciprocal hreflang on EN Sprint (3 specific link tags). Nothing else structural is allowed.
 ALLOWED_SPRINT_HREFLANG=[('open','link',[('href','https://katyashalel.com/guides/sprint/'),('hreflang','en'),('rel','alternate')]),('open','link',[('href','https://katyashalel.com/ru/guides/sprint/'),('hreflang','ru'),('rel','alternate')]),('open','link',[('href','https://katyashalel.com/guides/sprint/'),('hreflang','x-default'),('rel','alternate')])]
+# Restore the canonical EN version history in RU without asserting RU publication dates.
+ALLOWED_RU_HISTORY_ADDITIONS='''    <p><strong>v1.1 · 17 августа 2026.</strong> В английском каноническом определении добавлена граница относительно AI accessibility в разделе 3. Причина: запуски в холодной сессии 17 августа показали, что AI-системы классифицируют работу как accessibility, инклюзивный UX и ответственный AI, когда их просят назвать профессию, и рекомендуют консультантов по доступности в ответ на вопросы о legibility. Определение в разделе 1 и четыре слоя в разделе 4 не изменились.</p>
+    <p><strong>v1.2 · 1 сентября 2026.</strong> В английском каноническом определении уточнены извлекаемость, понимание и подтверждение, обновлены диагностическая цепочка и ограничения доказательности. Даты v1.1 и v1.2 относятся к истории английского оригинала, а не к отдельной публикации русского перевода.</p>
+'''
+def without_approved_ru_history(s):
+ assert s.count(ALLOWED_RU_HISTORY_ADDITIONS)==1,'approved RU history entries missing or duplicated'
+ history=re.search(r'<div class="term" id="versions">(.*?)</div>',s,re.S)
+ assert history and ALLOWED_RU_HISTORY_ADDITIONS+'    <p><strong>v1.3 · 23 сентября 2026.</strong>' in history[1],'RU history entries must immediately precede v1.3'
+ return s.replace(ALLOWED_RU_HISTORY_ADDITIONS,'',1)
+
 for f in manifest['pages']:
- before=old(f);after=(root/f).read_text();a=Structure();a.feed(before);b=Structure();b.feed(after)
+ before=old(f);after=(root/f).read_text();a=Structure();a.feed(before);b=Structure()
+ b.feed(without_approved_ru_history(after) if f=='ru/ai-legibility/index.html' else after)
  b_tags=list(b.tags)
  if f=='guides/sprint/index.html':
   for t in ALLOWED_SPRINT_HREFLANG:
