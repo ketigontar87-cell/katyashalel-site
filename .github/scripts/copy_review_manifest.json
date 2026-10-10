@@ -1,5 +1,5 @@
 {
-  "base": "4440e54e2d9bb59d8804fca6c0a825f5ce736b5c",
+  "base": "a3dc0b7574fe7864e7af995d03f578cc438a912e",
   "pages": [
     "about/index.html",
     "ai-legibility/index.html",
@@ -18,6 +18,6 @@
     "ru/guides/visibility/index.html",
     "ru/understood-by-ai/index.html"
   ],
-  "method": "Measure → Diagnose → Fix → Measure again.",
-  "method_ru": "Измерить → Диагностировать → Исправить → Измерить снова."
+  "method": "Measure \u2192 Diagnose \u2192 Fix \u2192 Measure again.",
+  "method_ru": "\u0418\u0437\u043c\u0435\u0440\u0438\u0442\u044c \u2192 \u0414\u0438\u0430\u0433\u043d\u043e\u0441\u0442\u0438\u0440\u043e\u0432\u0430\u0442\u044c \u2192 \u0418\u0441\u043f\u0440\u0430\u0432\u0438\u0442\u044c \u2192 \u0418\u0437\u043c\u0435\u0440\u0438\u0442\u044c \u0441\u043d\u043e\u0432\u0430."
 }
