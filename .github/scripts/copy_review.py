@@ -47,8 +47,8 @@ for f in manifest['pages']:
  b_tags=list(b.tags)
  if f=='guides/sprint/index.html':
   for t in ALLOWED_SPRINT_HREFLANG:
-   assert t in b_tags,'authorized hreflang tag missing on EN Sprint'
-   b_tags.remove(t)
+   assert b_tags.count(t)==1,'required EN Sprint hreflang tag missing or duplicated'
+   if t not in a.tags:b_tags.remove(t)
  assert a.tags==b_tags,f+' DOM structure / non-copy attributes changed'
  for pattern in [r'<style[^>]*>.*?</style>',r'<script(?![^>]*application/ld\+json)[^>]*>.*?</script>']:
   assert re.findall(pattern,before,re.S)==re.findall(pattern,after,re.S),f+' styles or behavior changed'
