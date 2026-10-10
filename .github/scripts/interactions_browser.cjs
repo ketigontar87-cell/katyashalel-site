@@ -101,7 +101,7 @@ async function activate(locator,width){if(width===390)await locator.tap();else{a
    await fs.access(f).catch(()=>assert.fail(`${route}: missing internal path ${link.href}`));
    if(u.hash&&inventory.has(u.pathname))assert.ok(inventory.get(u.pathname).ids.includes(decodeURIComponent(u.hash.slice(1))),`${route}: missing target ${link.href}`);
   }
-  for(const alternate of data.alternates){const target=new URL(alternate.href).pathname;assert.ok(inventory.has(target),`Missing alternate ${target}`);if(!inventory.get(target).alternates.some(a=>new URL(a.href).pathname===route))results.limitations.push({route,issue:'Pre-existing nonreciprocal hreflang; metadata change deferred',target});}
+  for(const alternate of data.alternates){const target=new URL(alternate.href).pathname;assert.ok(inventory.has(target),`Missing alternate ${target}`);assert.ok(inventory.get(target).alternates.some(a=>new URL(a.href).pathname===route),`Nonreciprocal hreflang: ${route} -> ${target} has no return link`);}
  }
  // A real native clipboard round trip, separate from deterministic denial/success mocks.
  const clipboardContext=await browser.newContext({permissions:['clipboard-read','clipboard-write']});
