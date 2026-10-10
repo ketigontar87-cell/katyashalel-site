@@ -1,0 +1,499 @@
+[
+  {
+    "route": "/",
+    "file": "index.html",
+    "previousLastmod": "2026-09-25",
+    "lastmod": "2026-10-08",
+    "publishedCommit": "28881f03e22335075fafc125afea51c2f2a35c2d"
+  },
+  {
+    "route": "/ru/",
+    "file": "ru/index.html",
+    "previousLastmod": "2026-09-25",
+    "lastmod": "2026-10-08",
+    "publishedCommit": "28881f03e22335075fafc125afea51c2f2a35c2d"
+  },
+  {
+    "route": "/essays/ai-can-find-you-will-it-choose-you/",
+    "file": "essays/ai-can-find-you-will-it-choose-you/index.html",
+    "previousLastmod": "2026-09-25",
+    "lastmod": "2026-10-04",
+    "publishedCommit": "e115d4868fdee4933c25c4f9026fc35eacbe75ee"
+  },
+  {
+    "route": "/ru/essays/ai-mozhet-vas-nayti-no-vyberet-li-on-vas/",
+    "file": "ru/essays/ai-mozhet-vas-nayti-no-vyberet-li-on-vas/index.html",
+    "previousLastmod": "2026-09-25",
+    "lastmod": "2026-10-04",
+    "publishedCommit": "e115d4868fdee4933c25c4f9026fc35eacbe75ee"
+  },
+  {
+    "route": "/ru/guides/",
+    "file": "ru/guides/index.html",
+    "previousLastmod": "2026-07-08",
+    "lastmod": "2026-10-05",
+    "publishedCommit": "bb8eb23be91dadede9df787268c755549bbeb668"
+  },
+  {
+    "route": "/ru/guides/dictionary/",
+    "file": "ru/guides/dictionary/index.html",
+    "previousLastmod": "2026-07-08",
+    "lastmod": "2026-10-08",
+    "publishedCommit": "fde5b22add9adb7ea0fb3c86f84b0f2edd3b4d49"
+  },
+  {
+    "route": "/guides/multimodel/",
+    "file": "guides/multimodel/index.html",
+    "previousLastmod": "2026-07-08",
+    "lastmod": "2026-10-05",
+    "publishedCommit": "1c1c4fb85442847a2918645407d1ee797dbd677b"
+  },
+  {
+    "route": "/ru/guides/multimodel/",
+    "file": "ru/guides/multimodel/index.html",
+    "previousLastmod": "2026-07-08",
+    "lastmod": "2026-10-08",
+    "publishedCommit": "fde5b22add9adb7ea0fb3c86f84b0f2edd3b4d49"
+  },
+  {
+    "route": "/guides/visibility/",
+    "file": "guides/visibility/index.html",
+    "previousLastmod": "2026-07-08",
+    "lastmod": "2026-10-05",
+    "publishedCommit": "1c1c4fb85442847a2918645407d1ee797dbd677b"
+  },
+  {
+    "route": "/ru/guides/visibility/",
+    "file": "ru/guides/visibility/index.html",
+    "previousLastmod": "2026-07-08",
+    "lastmod": "2026-10-08",
+    "publishedCommit": "fde5b22add9adb7ea0fb3c86f84b0f2edd3b4d49"
+  },
+  {
+    "route": "/guides/techteam/",
+    "file": "guides/techteam/index.html",
+    "previousLastmod": "2026-07-08",
+    "lastmod": "2026-10-05",
+    "publishedCommit": "1c1c4fb85442847a2918645407d1ee797dbd677b"
+  },
+  {
+    "route": "/ru/guides/techteam/",
+    "file": "ru/guides/techteam/index.html",
+    "previousLastmod": "2026-07-08",
+    "lastmod": "2026-10-08",
+    "publishedCommit": "fde5b22add9adb7ea0fb3c86f84b0f2edd3b4d49"
+  },
+  {
+    "route": "/guides/legibility/",
+    "file": "guides/legibility/index.html",
+    "previousLastmod": "2026-09-23",
+    "lastmod": "2026-10-05",
+    "publishedCommit": "1c1c4fb85442847a2918645407d1ee797dbd677b"
+  },
+  {
+    "route": "/ru/guides/legibility/",
+    "file": "ru/guides/legibility/index.html",
+    "previousLastmod": "2026-09-23",
+    "lastmod": "2026-10-08",
+    "publishedCommit": "fde5b22add9adb7ea0fb3c86f84b0f2edd3b4d49"
+  },
+  {
+    "route": "/guides/sprint/",
+    "file": "guides/sprint/index.html",
+    "previousLastmod": "2026-09-23",
+    "lastmod": "2026-10-08",
+    "publishedCommit": "7389d958bec708c59b23b7c9a868315065824113"
+  },
+  {
+    "route": "/ru/guides/sprint/",
+    "file": "ru/guides/sprint/index.html",
+    "previousLastmod": "2026-09-23",
+    "lastmod": "2026-09-23",
+    "publishedCommit": "48b37d94f94d60ee05a06fe04d3054c28cc76fde"
+  },
+  {
+    "route": "/essays/the-interface-dissolves/",
+    "file": "essays/the-interface-dissolves/index.html",
+    "previousLastmod": "2026-07-08",
+    "lastmod": "2026-08-11",
+    "publishedCommit": "70dabc714785ea4dcf5e1560c28366f54d3670b7"
+  },
+  {
+    "route": "/essays/who-owns-the-recommendation/",
+    "file": "essays/who-owns-the-recommendation/index.html",
+    "previousLastmod": "2026-07-09",
+    "lastmod": "2026-08-05",
+    "publishedCommit": "9d1459bafc151171c166ff5b4b8d4a9582462147"
+  },
+  {
+    "route": "/essays/ten-questions-ai-skin-analysis/",
+    "file": "essays/ten-questions-ai-skin-analysis/index.html",
+    "previousLastmod": "2026-07-09",
+    "lastmod": "2026-08-05",
+    "publishedCommit": "9d1459bafc151171c166ff5b4b8d4a9582462147"
+  },
+  {
+    "route": "/essays/sephora-entered-the-chat/",
+    "file": "essays/sephora-entered-the-chat/index.html",
+    "previousLastmod": "2026-07-10",
+    "lastmod": "2026-08-05",
+    "publishedCommit": "9d1459bafc151171c166ff5b4b8d4a9582462147"
+  },
+  {
+    "route": "/essays/your-website-has-two-readers/",
+    "file": "essays/your-website-has-two-readers/index.html",
+    "previousLastmod": "2026-07-13",
+    "lastmod": "2026-08-05",
+    "publishedCommit": "9d1459bafc151171c166ff5b4b8d4a9582462147"
+  },
+  {
+    "route": "/essays/the-first-customer-tax/",
+    "file": "essays/the-first-customer-tax/index.html",
+    "previousLastmod": "2026-07-14",
+    "lastmod": "2026-08-11",
+    "publishedCommit": "70dabc714785ea4dcf5e1560c28366f54d3670b7"
+  },
+  {
+    "route": "/essays/distribution-not-recommendation/",
+    "file": "essays/distribution-not-recommendation/index.html",
+    "previousLastmod": "2026-07-15",
+    "lastmod": "2026-08-05",
+    "publishedCommit": "9d1459bafc151171c166ff5b4b8d4a9582462147"
+  },
+  {
+    "route": "/essays/the-week-beauty-retail-went-agentic/",
+    "file": "essays/the-week-beauty-retail-went-agentic/index.html",
+    "previousLastmod": "2026-07-14",
+    "lastmod": "2026-08-05",
+    "publishedCommit": "9d1459bafc151171c166ff5b4b8d4a9582462147"
+  },
+  {
+    "route": "/essays/the-only-job-a-founder-cant-delegate/",
+    "file": "essays/the-only-job-a-founder-cant-delegate/index.html",
+    "previousLastmod": "2026-07-16",
+    "lastmod": "2026-08-05",
+    "publishedCommit": "9d1459bafc151171c166ff5b4b8d4a9582462147"
+  },
+  {
+    "route": "/essays/platforms-rent-you-reach-the-hub/",
+    "file": "essays/platforms-rent-you-reach-the-hub/index.html",
+    "previousLastmod": "2026-07-17",
+    "lastmod": "2026-10-04",
+    "publishedCommit": "e115d4868fdee4933c25c4f9026fc35eacbe75ee"
+  },
+  {
+    "route": "/essays/the-unstaffed-decision/",
+    "file": "essays/the-unstaffed-decision/index.html",
+    "previousLastmod": "2026-07-19",
+    "lastmod": "2026-08-05",
+    "publishedCommit": "9d1459bafc151171c166ff5b4b8d4a9582462147"
+  },
+  {
+    "route": "/essays/a-place-in-the-models-answer-is-now-for-sale/",
+    "file": "essays/a-place-in-the-models-answer-is-now-for-sale/index.html",
+    "previousLastmod": "2026-07-27",
+    "lastmod": "2026-10-05",
+    "publishedCommit": "1c1c4fb85442847a2918645407d1ee797dbd677b"
+  },
+  {
+    "route": "/essays/water-against-the-stone/",
+    "file": "essays/water-against-the-stone/index.html",
+    "previousLastmod": "2026-07-28",
+    "lastmod": "2026-10-04",
+    "publishedCommit": "e115d4868fdee4933c25c4f9026fc35eacbe75ee"
+  },
+  {
+    "route": "/essays/how-to-become-visible-to-ai/",
+    "file": "essays/how-to-become-visible-to-ai/index.html",
+    "previousLastmod": "2026-07-27",
+    "lastmod": "2026-10-05",
+    "publishedCommit": "1c1c4fb85442847a2918645407d1ee797dbd677b"
+  },
+  {
+    "route": "/brands/",
+    "file": "brands/index.html",
+    "previousLastmod": "2026-09-23",
+    "lastmod": "2026-10-08",
+    "publishedCommit": "270a922a32b44f9e049a6a9372020e3a18504916"
+  },
+  {
+    "route": "/essays/the-market-knocked-first/",
+    "file": "essays/the-market-knocked-first/index.html",
+    "previousLastmod": "2026-07-28",
+    "lastmod": "2026-10-05",
+    "publishedCommit": "bb8eb23be91dadede9df787268c755549bbeb668"
+  },
+  {
+    "route": "/vocabulary/",
+    "file": "vocabulary/index.html",
+    "previousLastmod": "2026-09-23",
+    "lastmod": "2026-10-08",
+    "publishedCommit": "fde5b22add9adb7ea0fb3c86f84b0f2edd3b4d49"
+  },
+  {
+    "route": "/essays/the-article-you-already-paid-for/",
+    "file": "essays/the-article-you-already-paid-for/index.html",
+    "previousLastmod": "2026-07-30",
+    "lastmod": "2026-10-08",
+    "publishedCommit": "fde5b22add9adb7ea0fb3c86f84b0f2edd3b4d49"
+  },
+  {
+    "route": "/essays/the-protocol-caught-up/",
+    "file": "essays/the-protocol-caught-up/index.html",
+    "previousLastmod": "2026-07-30",
+    "lastmod": "2026-08-05",
+    "publishedCommit": "9d1459bafc151171c166ff5b4b8d4a9582462147"
+  },
+  {
+    "route": "/essays/every-model-has-a-different-diet/",
+    "file": "essays/every-model-has-a-different-diet/index.html",
+    "previousLastmod": "2026-07-29",
+    "lastmod": "2026-08-11",
+    "publishedCommit": "70dabc714785ea4dcf5e1560c28366f54d3670b7"
+  },
+  {
+    "route": "/guides/buffer-audit/",
+    "file": "guides/buffer-audit/index.html",
+    "previousLastmod": "2026-07-29",
+    "lastmod": "2026-08-02",
+    "publishedCommit": "f0e1aab761aefcd1af658e428072018d7d5d08ab"
+  },
+  {
+    "route": "/audit/",
+    "file": "audit/index.html",
+    "previousLastmod": "2026-09-23",
+    "lastmod": "2026-10-08",
+    "publishedCommit": "270a922a32b44f9e049a6a9372020e3a18504916"
+  },
+  {
+    "route": "/essays/the-measurement-was-the-easy-part/",
+    "file": "essays/the-measurement-was-the-easy-part/index.html",
+    "previousLastmod": "2026-08-02",
+    "lastmod": "2026-10-05",
+    "publishedCommit": "bb8eb23be91dadede9df787268c755549bbeb668"
+  },
+  {
+    "route": "/ru/essays/izmerenie-bylo-legkoy-chastyu/",
+    "file": "ru/essays/izmerenie-bylo-legkoy-chastyu/index.html",
+    "previousLastmod": "2026-08-02",
+    "lastmod": "2026-10-05",
+    "publishedCommit": "bb8eb23be91dadede9df787268c755549bbeb668"
+  },
+  {
+    "route": "/ongoing/",
+    "file": "ongoing/index.html",
+    "previousLastmod": "2026-09-23",
+    "lastmod": "2026-10-08",
+    "publishedCommit": "270a922a32b44f9e049a6a9372020e3a18504916"
+  },
+  {
+    "route": "/archive/",
+    "file": "archive/index.html",
+    "previousLastmod": "2026-08-02",
+    "lastmod": "2026-10-05",
+    "publishedCommit": "1c1c4fb85442847a2918645407d1ee797dbd677b"
+  },
+  {
+    "route": "/about/",
+    "file": "about/index.html",
+    "previousLastmod": "2026-09-23",
+    "lastmod": "2026-10-08",
+    "publishedCommit": "fde5b22add9adb7ea0fb3c86f84b0f2edd3b4d49"
+  },
+  {
+    "route": "/ru/about/",
+    "file": "ru/about/index.html",
+    "previousLastmod": "2026-09-23",
+    "lastmod": "2026-10-08",
+    "publishedCommit": "fde5b22add9adb7ea0fb3c86f84b0f2edd3b4d49"
+  },
+  {
+    "route": "/ai-legibility/",
+    "file": "ai-legibility/index.html",
+    "previousLastmod": "2026-09-23",
+    "lastmod": "2026-10-08",
+    "publishedCommit": "fde5b22add9adb7ea0fb3c86f84b0f2edd3b4d49"
+  },
+  {
+    "route": "/research/",
+    "file": "research/index.html",
+    "previousLastmod": "2026-08-05",
+    "lastmod": "2026-10-08",
+    "publishedCommit": "270a922a32b44f9e049a6a9372020e3a18504916"
+  },
+  {
+    "route": "/research/synthetic-term-control/",
+    "file": "research/synthetic-term-control/index.html",
+    "previousLastmod": "2026-08-05",
+    "lastmod": "2026-10-08",
+    "publishedCommit": "fde5b22add9adb7ea0fb3c86f84b0f2edd3b4d49"
+  },
+  {
+    "route": "/ru/ai-legibility/",
+    "file": "ru/ai-legibility/index.html",
+    "previousLastmod": "2026-09-23",
+    "lastmod": "2026-10-08",
+    "publishedCommit": "fde5b22add9adb7ea0fb3c86f84b0f2edd3b4d49"
+  },
+  {
+    "route": "/essays/why-does-chatgpt-ignore-my-company/",
+    "file": "essays/why-does-chatgpt-ignore-my-company/index.html",
+    "previousLastmod": "2026-08-05",
+    "lastmod": "2026-10-05",
+    "publishedCommit": "1c1c4fb85442847a2918645407d1ee797dbd677b"
+  },
+  {
+    "route": "/essays/how-do-i-become-cited-by-ai/",
+    "file": "essays/how-do-i-become-cited-by-ai/index.html",
+    "previousLastmod": "2026-08-06",
+    "lastmod": "2026-10-05",
+    "publishedCommit": "1c1c4fb85442847a2918645407d1ee797dbd677b"
+  },
+  {
+    "route": "/ru/essays/pochemu-chatgpt-ne-znaet-moyu-kompaniyu/",
+    "file": "ru/essays/pochemu-chatgpt-ne-znaet-moyu-kompaniyu/index.html",
+    "previousLastmod": "2026-08-06",
+    "lastmod": "2026-10-05",
+    "publishedCommit": "bb8eb23be91dadede9df787268c755549bbeb668"
+  },
+  {
+    "route": "/ru/essays/klient-kotoryy-vam-otkazal-byl-prav/",
+    "file": "ru/essays/klient-kotoryy-vam-otkazal-byl-prav/index.html",
+    "previousLastmod": "2026-08-06",
+    "lastmod": "2026-10-05",
+    "publishedCommit": "bb8eb23be91dadede9df787268c755549bbeb668"
+  },
+  {
+    "route": "/ru/essays/kak-stat-vidimym-dlya-ai/",
+    "file": "ru/essays/kak-stat-vidimym-dlya-ai/index.html",
+    "previousLastmod": "2026-08-06",
+    "lastmod": "2026-10-05",
+    "publishedCommit": "bb8eb23be91dadede9df787268c755549bbeb668"
+  },
+  {
+    "route": "/ru/essays/voda-protiv-kamnya/",
+    "file": "ru/essays/voda-protiv-kamnya/index.html",
+    "previousLastmod": "2026-08-06",
+    "lastmod": "2026-10-05",
+    "publishedCommit": "bb8eb23be91dadede9df787268c755549bbeb668"
+  },
+  {
+    "route": "/ru/essays/statya-za-kotoruyu-vy-uzhe-zaplatili/",
+    "file": "ru/essays/statya-za-kotoruyu-vy-uzhe-zaplatili/index.html",
+    "previousLastmod": "2026-08-06",
+    "lastmod": "2026-10-05",
+    "publishedCommit": "bb8eb23be91dadede9df787268c755549bbeb668"
+  },
+  {
+    "route": "/ru/vocabulary/",
+    "file": "ru/vocabulary/index.html",
+    "previousLastmod": "2026-09-23",
+    "lastmod": "2026-09-23",
+    "publishedCommit": "48b37d94f94d60ee05a06fe04d3054c28cc76fde"
+  },
+  {
+    "route": "/ru/essays/rynok-postuchal-pervym/",
+    "file": "ru/essays/rynok-postuchal-pervym/index.html",
+    "previousLastmod": "2026-08-06",
+    "lastmod": "2026-10-05",
+    "publishedCommit": "bb8eb23be91dadede9df787268c755549bbeb668"
+  },
+  {
+    "route": "/ru/essays/interfeys-rastvoryaetsya/",
+    "file": "ru/essays/interfeys-rastvoryaetsya/index.html",
+    "previousLastmod": "2026-08-06",
+    "lastmod": "2026-10-05",
+    "publishedCommit": "bb8eb23be91dadede9df787268c755549bbeb668"
+  },
+  {
+    "route": "/ru/essays/kak-stat-tsitiruemym-dlya-ai/",
+    "file": "ru/essays/kak-stat-tsitiruemym-dlya-ai/index.html",
+    "previousLastmod": "2026-08-06",
+    "lastmod": "2026-10-05",
+    "publishedCommit": "bb8eb23be91dadede9df787268c755549bbeb668"
+  },
+  {
+    "route": "/ru/essays/ploshchadki-sdayut-ohvat/",
+    "file": "ru/essays/ploshchadki-sdayut-ohvat/index.html",
+    "previousLastmod": "2026-08-06",
+    "lastmod": "2026-10-05",
+    "publishedCommit": "bb8eb23be91dadede9df787268c755549bbeb668"
+  },
+  {
+    "route": "/ru/essays/mesto-v-otvete-modeli-prodaetsya/",
+    "file": "ru/essays/mesto-v-otvete-modeli-prodaetsya/index.html",
+    "previousLastmod": "2026-08-06",
+    "lastmod": "2026-10-05",
+    "publishedCommit": "bb8eb23be91dadede9df787268c755549bbeb668"
+  },
+  {
+    "route": "/ru/essays/u-kazhdoy-modeli-svoya-dieta/",
+    "file": "ru/essays/u-kazhdoy-modeli-svoya-dieta/index.html",
+    "previousLastmod": "2026-08-06",
+    "lastmod": "2026-10-05",
+    "publishedCommit": "bb8eb23be91dadede9df787268c755549bbeb668"
+  },
+  {
+    "route": "/essays/how-do-i-become-recommended-by-ai/",
+    "file": "essays/how-do-i-become-recommended-by-ai/index.html",
+    "previousLastmod": "2026-08-07",
+    "lastmod": "2026-10-05",
+    "publishedCommit": "1c1c4fb85442847a2918645407d1ee797dbd677b"
+  },
+  {
+    "route": "/essays/can-you-change-what-ai-says-about-you/",
+    "file": "essays/can-you-change-what-ai-says-about-you/index.html",
+    "previousLastmod": "2026-08-17",
+    "lastmod": "2026-10-08",
+    "publishedCommit": "28881f03e22335075fafc125afea51c2f2a35c2d"
+  },
+  {
+    "route": "/understood-by-ai/",
+    "file": "understood-by-ai/index.html",
+    "previousLastmod": "2026-09-23",
+    "lastmod": "2026-10-05",
+    "publishedCommit": "1c1c4fb85442847a2918645407d1ee797dbd677b"
+  },
+  {
+    "route": "/why-ai-knows-but-doesnt-recommend/",
+    "file": "why-ai-knows-but-doesnt-recommend/index.html",
+    "previousLastmod": "2026-09-01",
+    "lastmod": "2026-09-01",
+    "publishedCommit": "77df89a33f53b30a195adb5fe59868dc60203293"
+  },
+  {
+    "route": "/ru/pochemu-ai-znaet-no-ne-rekomenduet/",
+    "file": "ru/pochemu-ai-znaet-no-ne-rekomenduet/index.html",
+    "previousLastmod": "2026-09-01",
+    "lastmod": "2026-09-01",
+    "publishedCommit": "77df89a33f53b30a195adb5fe59868dc60203293"
+  },
+  {
+    "route": "/ru/brands/",
+    "file": "ru/brands/index.html",
+    "previousLastmod": "2026-09-23",
+    "lastmod": "2026-10-08",
+    "publishedCommit": "270a922a32b44f9e049a6a9372020e3a18504916"
+  },
+  {
+    "route": "/ru/audit/",
+    "file": "ru/audit/index.html",
+    "previousLastmod": "2026-09-23",
+    "lastmod": "2026-10-08",
+    "publishedCommit": "270a922a32b44f9e049a6a9372020e3a18504916"
+  },
+  {
+    "route": "/ru/ongoing/",
+    "file": "ru/ongoing/index.html",
+    "previousLastmod": "2026-09-23",
+    "lastmod": "2026-10-08",
+    "publishedCommit": "270a922a32b44f9e049a6a9372020e3a18504916"
+  },
+  {
+    "route": "/ru/understood-by-ai/",
+    "file": "ru/understood-by-ai/index.html",
+    "previousLastmod": "2026-09-23",
+    "lastmod": "2026-09-23",
+    "publishedCommit": "48b37d94f94d60ee05a06fe04d3054c28cc76fde"
+  }
+]

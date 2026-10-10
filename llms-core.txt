@@ -55,7 +55,7 @@ These are inputs and adjacent disciplines, not synonyms for AI legibility. One C
 
 ## Method
 
-Measure -> diagnose -> intervene -> verify.
+Measure → Diagnose → Fix → Measure again.
 
 Measurement uses frozen prompt sets, repeated clean-session runs, recorded retrieval/search state, raw outputs and surface-local metrics where comparable. Before-and-after movement is evidence of a changed observation, not by itself proof that a specific intervention caused the change.
 

@@ -1,0 +1,21 @@
+{
+  "base": "4440e54e2d9bb59d8804fca6c0a825f5ce736b5c",
+  "pages": [
+    "about/index.html",
+    "ai-legibility/index.html",
+    "guides/legibility/index.html",
+    "guides/multimodel/index.html",
+    "guides/sprint/index.html",
+    "guides/techteam/index.html",
+    "guides/visibility/index.html",
+    "ru/about/index.html",
+    "ru/guides/dictionary/index.html",
+    "ru/guides/legibility/index.html",
+    "ru/guides/multimodel/index.html",
+    "ru/guides/sprint/index.html",
+    "ru/guides/techteam/index.html",
+    "ru/guides/visibility/index.html",
+    "ru/understood-by-ai/index.html"
+  ],
+  "method": "Measure → Diagnose → Fix → Measure again."
+}

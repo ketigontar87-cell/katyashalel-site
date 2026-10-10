@@ -4,6 +4,7 @@ const fs=require('node:fs/promises');
 const {execFileSync,spawn}=require('node:child_process');
 const {chromium}=require('playwright');
 const manifest=require('./site_motion_manifest.json');
+const copyReview=require('./copy_review_manifest.json');
 const base='1062f45669884a5c0aa700c22a06eac360135151';
 const origin='http://127.0.0.1:4185';
 const out=process.env.SITE_MOTION_ARTIFACTS||'/tmp/katya-site-motion/results';
@@ -52,12 +53,23 @@ async function ready(page){await page.evaluate(async()=>{await document.fonts.re
    pages[mode]=await c.newPage();
   }
   for(const row of manifest.filter(r=>!r.excluded)){
-   const before=pages.baseline;await before.goto(origin+row.route,{waitUntil:'load'});await ready(before);await approvedContactRemoval(before);const expected=await signature(before);
+   const before=pages.baseline;await before.goto(origin+row.route,{waitUntil:'load'});await ready(before);await approvedContactRemoval(before);const expected=await signature(before);let copyExpected;
    for(const mode of ['motion','reduced','no-js']){
     const p=pages[mode];const errors=[];const capture=e=>errors.push(e.message);p.on('pageerror',capture);
     await p.goto(origin+row.route,{waitUntil:'load'});await ready(p);
     assert.equal(await p.locator('body').getAttribute('data-motion-family'),row.family);
-    const actual=await signature(p);assert.deepEqual(actual,expected,`${row.route} ${width} ${mode}: copy/links/metadata/images/geometry`);
+    const actual=await signature(p);
+    if(copyReview.pages.includes(row.file)){
+     // Authorized editorial changes can reflow text; styles/structure are locked by copy_review.py.
+     assert.deepEqual(actual.images,expected.images,`${row.route}: images preserved`);
+     const fixedMeta=items=>items.filter(s=>!/(?:name|property)="(?:description|og:description|twitter:description)"/.test(s));
+     assert.deepEqual(fixedMeta(actual.meta),fixedMeta(expected.meta),`${row.route}: non-copy metadata preserved`);
+     const retainedLinks=await p.evaluate(()=>[...document.querySelectorAll('a:not(.course-availability)')].map(a=>[a.getAttribute('href'),a.textContent.replace(/\s+/g,' ').trim()]));
+     assert.deepEqual(retainedLinks,expected.links,`${row.route}: original links preserved`);
+     assert.ok(actual.width<=Math.max(width,expected.width),`${row.route}: no new horizontal overflow`);
+     if(!copyExpected)copyExpected=actual;
+     else assert.deepEqual(actual,copyExpected,`${row.route}: approved copy is identical with reduced motion and JS disabled`);
+    }else assert.deepEqual(actual,expected,`${row.route} ${width} ${mode}: copy/links/metadata/images/geometry`);
     if(actual.width>width+1)observed.push({route:row.route,width,issue:'Pre-existing horizontal overflow, unchanged from baseline',scrollWidth:actual.width});
     assert.equal(await p.locator('a[href="https://t.me/shalel_notes"]').count(),0);
     assert.ok(await p.locator('h1').isVisible());
