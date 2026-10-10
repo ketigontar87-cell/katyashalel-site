@@ -24,6 +24,11 @@ async function approvedContactRemoval(page){await page.evaluate(()=>{
   }
  }
  for(const a of document.querySelectorAll('a[href="/vocabulary/#indifference-test"]'))a.setAttribute('href','/vocabulary/#the-indifference-test');
+ // Approved mobile table repair: wrap long cell words only on this essay.
+ // Mirror that exact rule in the historical reference; keep strict geometry equality.
+ if(location.pathname==='/essays/who-owns-the-recommendation/' && matchMedia('(max-width: 560px)').matches){
+  for(const cell of document.querySelectorAll('.layer-map th,.layer-map td'))cell.style.overflowWrap='anywhere';
+ }
  // Explicitly authorized reciprocal visible Sprint navigation; metadata stays frozen.
  if(location.pathname==='/guides/sprint/'){
   const a=document.createElement('a');a.href='/ru/guides/sprint/';a.textContent='RU';document.querySelector('.top').append(a);
@@ -71,6 +76,11 @@ async function ready(page){await page.evaluate(async()=>{await document.fonts.re
      if(!copyExpected)copyExpected=actual;
      else assert.deepEqual(actual,copyExpected,`${row.route}: approved copy is identical with reduced motion and JS disabled`);
     }else assert.deepEqual(actual,expected,`${row.route} ${width} ${mode}: copy/links/metadata/images/geometry`);
+    if(row.file==='essays/who-owns-the-recommendation/index.html'){
+     assert.ok(actual.width<=width,`${row.route} ${width} ${mode}: no document overflow after table wrap`);
+     assert.equal(await p.locator('.layer-map').evaluate(e=>getComputedStyle(e).display),'table','Native table semantics/layout retained');
+     assert.equal(await p.locator('.layer-map').evaluate(e=>getComputedStyle(e).overflowX),'visible','Table overflow is wrapped, not hidden');
+    }
     if(actual.width>width+1)observed.push({route:row.route,width,issue:'Pre-existing horizontal overflow, unchanged from baseline',scrollWidth:actual.width});
     assert.equal(await p.locator('a[href="https://t.me/shalel_notes"]').count(),0);
     assert.ok(await p.locator('h1').isVisible());
@@ -95,6 +105,21 @@ async function ready(page){await page.evaluate(async()=>{await document.fonts.re
   }
   for(const c of Object.values(contexts))await c.close();
  }
+ // Boundary-width regression checks for the one approved table repair.
+ const tableWrapCases=[];
+ for(const width of [320,360,560,561])for(const mode of ['motion','reduced','no-js']){
+  const c=await browser.newContext({viewport:{width,height:900},javaScriptEnabled:mode!=='no-js',reducedMotion:mode==='reduced'?'reduce':'no-preference'});
+  await c.route('**/*',r=>{const u=new URL(r.request().url());return [origin,'https://fonts.googleapis.com','https://fonts.gstatic.com'].includes(u.origin)&&!u.pathname.startsWith('/api/')?r.continue():r.abort();});
+  const p=await c.newPage();await p.goto(origin+'/essays/who-owns-the-recommendation/',{waitUntil:'load'});await ready(p);
+  const geometry=await p.locator('.layer-map').evaluate(e=>({documentWidth:document.documentElement.scrollWidth,viewport:innerWidth,right:e.getBoundingClientRect().right,display:getComputedStyle(e).display,overflow:getComputedStyle(e).overflowX,cells:[...e.querySelectorAll('th,td')].map(c=>({width:c.clientWidth,scroll:c.scrollWidth}))}));
+  assert.ok(geometry.documentWidth<=width,`${width} ${mode}: document overflow ${JSON.stringify(geometry)}`);
+  assert.ok(geometry.right<=width,`${width} ${mode}: table outside viewport`);
+  assert.equal(geometry.display,'table');assert.equal(geometry.overflow,'visible');
+  for(const cell of geometry.cells)assert.ok(cell.scroll<=cell.width+1,`${width} ${mode}: cell content overflows`);
+  tableWrapCases.push({width,mode,...geometry});await c.close();
+ }
+ await fs.writeFile(`${out}/table-wrap-results.json`,JSON.stringify(tableWrapCases,null,2));
+ console.log('PASS table wrapping at 320, 360, 560 and 561px in all modes');
  await fs.writeFile(`${out}/results.json`,JSON.stringify({base,cases:results,preExisting:[...new Map(observed.map(r=>[r.route+r.width,r])).values()],excluded:manifest.filter(r=>r.excluded)},null,2));
  console.log(JSON.stringify({passed:results.length,preExisting:[...new Map(observed.map(r=>[r.route+r.width,r])).values()],excluded:manifest.filter(r=>r.excluded)}));
  }finally{await browser.close();}
