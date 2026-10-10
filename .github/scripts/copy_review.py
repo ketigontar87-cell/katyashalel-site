@@ -54,9 +54,21 @@ for f in manifest['pages']:
   assert '<strong>v1.1 · 17 августа 2026.</strong>' in after,'v1.1 paragraph missing'
   assert '<strong>v1.2 · 1 сентября 2026.</strong>' in after,'v1.2 paragraph missing'
   from collections import Counter
-  ca, cb = Counter(a.tags), Counter(b.tags)
+  def _h(tags):
+   c = Counter()
+   for tag in tags:
+    if len(tag)==3:
+     k,t,v = tag
+     c[(k,t,tuple(v))] += 1
+    else:
+     c[tag] += 1
+   return c
+  ca, cb = _h(a.tags), _h(b.tags)
   diff = cb - ca
-  assert diff == Counter({('open','p',[]): 2, ('close','p'): 2}), f'ru/ai-legibility unexpected tag diff: {diff}'
+  # Expect exactly 2 new <p> pairs
+  assert diff[('open','p',())] == 2, f'expected 2 new <p>: {dict(diff)}'
+  assert diff[('close','p')] == 2, f'expected 2 new </p>: {dict(diff)}'
+  assert sum(diff.values()) == 4, f'unexpected extra tags: {dict(diff)}'
  else:
   assert a.tags==b_tags,f+' DOM structure / non-copy attributes changed'
  for pattern in [r'<style[^>]*>.*?</style>',r'<script(?![^>]*application/ld\+json)[^>]*>.*?</script>']:
