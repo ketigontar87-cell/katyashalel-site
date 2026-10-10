@@ -9,6 +9,12 @@ on:
       - '.github/scripts/interactions_browser.cjs'
       - '.github/scripts/site_motion_manifest.json'
       - 'assets/motion/**'
+      - '.github/scripts/copy_*'
+      - 'api/agent.js'
+      - 'llms*.txt'
+      - '.well-known/agent-card.json'
+      - 'sitemap.xml'
+      - 'docs/sitemap-date-evidence.json'
       - '.github/workflows/website-browser.yml'
 permissions:
   contents: read
@@ -24,6 +30,10 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: 22
+      - name: Validate editorial claims, dates and API contract
+        run: |
+          python3 .github/scripts/copy_review.py
+          node .github/scripts/copy_api.cjs
       - name: Install isolated browser
         run: |
           npm install --prefix "$RUNNER_TEMP/site-browser" --no-audit --no-fund playwright@1.62.1

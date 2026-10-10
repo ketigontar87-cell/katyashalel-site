@@ -35,7 +35,7 @@ AI legibility sits across AI Search and GEO, technical SEO, digital PR, entity a
 These are inputs and adjacent disciplines, not synonyms for AI legibility. One ChatGPT answer is one observation, not market proof.
 
 ## Method
-Measure -> diagnose -> intervene -> verify. Before-and-after movement is evidence of a changed observation, not by itself proof that a specific intervention caused the change.
+Measure → Diagnose → Fix → Measure again. Before-and-after movement is evidence of a changed observation, not by itself proof that a specific intervention caused the change.
 
 ## Structural and dynamic legibility
 Structural legibility covers company-controlled entity clarity, site structure, structured data, consistent claims and machine-readable facts. Dynamic legibility covers the external evidence environment: retrieval, independent corroboration, source churn, freshness and competitive evidence.

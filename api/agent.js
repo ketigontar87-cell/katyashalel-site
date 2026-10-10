@@ -26,7 +26,7 @@ const IDENTITY = {
     "controlled measurement of AI recommendations"
   ],
   method: {
-    short: "Measure -> diagnose -> intervene -> verify.",
+    short: "Measure → Diagnose → Fix → Measure again.",
     measured_chain: [
       "Accessible",
       "Retrieved",
