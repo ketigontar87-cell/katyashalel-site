@@ -49,30 +49,7 @@ for f in manifest['pages']:
   for t in ALLOWED_SPRINT_HREFLANG:
    assert t in b_tags,'authorized hreflang tag missing on EN Sprint'
    b_tags.remove(t)
- # Authorized 2026-10-10: RU definition history gap-fill (v1.1, v1.2 paragraphs).
- if f=='ru/ai-legibility/index.html':
-  assert '<strong>v1.1 · 17 августа 2026.</strong>' in after,'v1.1 paragraph missing'
-  assert '<strong>v1.2 · 1 сентября 2026.</strong>' in after,'v1.2 paragraph missing'
-  from collections import Counter
-  def _h(tags):
-   c = Counter()
-   for tag in tags:
-    if len(tag)==3:
-     k,t,v = tag
-     c[(k,t,tuple(v))] += 1
-    else:
-     c[tag] += 1
-   return c
-  ca, cb = _h(a.tags), _h(b.tags)
-  diff = cb - ca
-  # Expect exactly 2 new <p> paragraphs, each with a <strong> lead
-  assert diff[('open','p',())] == 2, f'expected 2 new <p>: {dict(diff)}'
-  assert diff[('close','p')] == 2, f'expected 2 new </p>: {dict(diff)}'
-  assert diff[('open','strong',())] == 2, f'expected 2 new <strong>: {dict(diff)}'
-  assert diff[('close','strong')] == 2, f'expected 2 new </strong>: {dict(diff)}'
-  assert sum(diff.values()) == 8, f'unexpected extra tags: {dict(diff)}'
- else:
-  assert a.tags==b_tags,f+' DOM structure / non-copy attributes changed'
+ assert a.tags==b_tags,f+' DOM structure / non-copy attributes changed'
  for pattern in [r'<style[^>]*>.*?</style>',r'<script(?![^>]*application/ld\+json)[^>]*>.*?</script>']:
   assert re.findall(pattern,before,re.S)==re.findall(pattern,after,re.S),f+' styles or behavior changed'
  _db, _da = dates(schemas(before)), dates(schemas(after))
