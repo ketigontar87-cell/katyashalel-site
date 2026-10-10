@@ -9,6 +9,7 @@
     "guides/techteam/index.html",
     "guides/visibility/index.html",
     "ru/about/index.html",
+    "ru/ai-legibility/index.html",
     "ru/guides/dictionary/index.html",
     "ru/guides/legibility/index.html",
     "ru/guides/multimodel/index.html",
@@ -17,5 +18,6 @@
     "ru/guides/visibility/index.html",
     "ru/understood-by-ai/index.html"
   ],
-  "method": "Measure → Diagnose → Fix → Measure again."
+  "method": "Measure → Diagnose → Fix → Measure again.",
+  "method_ru": "Измерить → Диагностировать → Исправить → Измерить снова."
 }

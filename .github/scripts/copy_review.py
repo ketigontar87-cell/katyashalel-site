@@ -37,6 +37,8 @@ count=0
 for p in all_html:
  s=p.read_text();ds=schemas(s);count+=len(ds)
  assert not re.search(r'measure\s*(?:→|->|,)\s*diagnose\s*(?:→|->|,)\s*intervene',s,re.I),p
+ assert not re.search(r'диагностир(?:овать|уй(?:те)?|овка|ование)\s*(?:→|->|,)\s*вмеш',s,re.I),p
+ assert not re.search(r'вмешаться\s*(?:→|->|,)\s*(?:проверить|переизмерить)',s,re.I),p
  assert 'the waitlist closes August 6' not in s and 'лист закрывается 6 августа' not in s,p
 for f in manifest['pages']:
  before=old(f);after=(root/f).read_text();a=Structure();a.feed(before);b=Structure();b.feed(after)
@@ -83,6 +85,19 @@ answer='Use dated, repeated observations with a documented prompt set, product s
 assert s.count(answer)==2
 assert 'An answer alone does not establish which sources were used' in s
 assert 'Without a control, a visibility audit cannot be falsified' not in s
+s=(root/'ru/ai-legibility/index.html').read_text()
+assert manifest['method_ru'] in s
+for banned in ['одно описание без списка ссылок','одно описание, без списка','описание собирается заново при каждом запросе']:
+ assert banned not in s,banned
+assert 'могут содержать ссылки' in s
+assert 'Без подходящего сравнения результаты до и после остаются описательными.' in s
+assert 'В исследованиях вмешательств' in s
+visible={clean(q):clean(a) for q,a in re.findall(r'<h3>(.*?)</h3>\s*<p>(.*?)</p>',s,re.S)}
+faq=next(x for x in schemas(s) if x.get('@type')=='FAQPage')
+for q in faq['mainEntity']:assert q['acceptedAnswer']['text']==visible[q['name']]
+s=(root/'ru/guides/sprint/index.html').read_text()
+assert s.count(manifest['method_ru'])==3
+assert 'Сначала измерить, потом диагностировать, менять и проверять.' not in s
 # Page-specific published history, not the build date. Candidate release dates remain a separate review step.
 ns={'s':'http://www.sitemaps.org/schemas/sitemap/0.9'}
 xml=ET.fromstring((root/'sitemap.xml').read_text());entries={u.find('s:loc',ns).text:u.find('s:lastmod',ns).text for u in xml.findall('s:url',ns) if u.find('s:lastmod',ns) is not None}
