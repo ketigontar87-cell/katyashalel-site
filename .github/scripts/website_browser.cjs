@@ -41,8 +41,9 @@ async function run() {
           }
           await page.locator('#method').screenshot({ path: `${out}/${lang}-${width}-method.png` });
           await page.locator('.hero .actions a').click();
-          assert.ok(page.url().endsWith('#contact'));
-          assert.ok(await page.locator('#contact a[href="mailto:shalelekaterina@gmail.com"]').isVisible());
+          assert.ok(page.url().endsWith('/audit/#request'));
+          assert.ok(await page.locator('#request #f-email').isVisible());
+          await page.goto(origin+path);
         }
         const disclosure = page.locator('.faq summary').first();
         await disclosure.focus();

@@ -159,9 +159,9 @@ const OFFERINGS = {
     url: `${SITE}/brands/`
   },
   founders: {
-    name: "Legibility Audit",
+    name: "AI Legibility Audit",
     description:
-      "A dated measurement of how major AI systems currently identify, describe and recommend a founder or expert, including source mapping and prioritized remediation.",
+      "$350 one-time personal audit: one person, one service, one target market and language, up to five public website pages. Two agreed AI tools; six buyer scenarios tested twice per tool, 24 attempts including failed or unusable responses. Written report, five prioritized fixes, three ready-to-use copy blocks and one round of written revisions. Tools and delivery date agreed before work begins. Implementation, publishing, monitoring and retesting are excluded. Recommendations and sales are not guaranteed.",
     url: `${SITE}/audit/`
   },
   open_method: {

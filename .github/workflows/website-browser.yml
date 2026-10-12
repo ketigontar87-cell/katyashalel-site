@@ -10,6 +10,7 @@ on:
       - '.github/scripts/site_motion_manifest.json'
       - 'assets/motion/**'
       - '.github/scripts/copy_*'
+      - '.github/scripts/audit_*'
       - 'api/agent.js'
       - 'llms*.txt'
       - '.well-known/agent-card.json'
@@ -33,6 +34,7 @@ jobs:
       - name: Validate editorial claims, dates and API contract
         run: |
           python3 .github/scripts/copy_review.py
+          python3 .github/scripts/audit_offer.py
           node .github/scripts/copy_api.cjs
       - name: Install isolated browser
         run: |

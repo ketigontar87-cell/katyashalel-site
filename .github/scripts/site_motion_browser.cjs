@@ -34,6 +34,7 @@ async function approvedContactRemoval(page){await page.evaluate(()=>{
   const a=document.createElement('a');a.href='/ru/guides/sprint/';a.textContent='RU';document.querySelector('.top').append(a);
  }
 
+ if(location.pathname==='/'||location.pathname==='/ru/')document.querySelector('.hero .actions a.btn.primary').setAttribute('href','/audit/#request');
 });}
 async function signature(page){return page.evaluate(()=>{
  const text=s=>s.replace(/\s+/g,' ').trim();
@@ -64,7 +65,12 @@ async function ready(page){await page.evaluate(async()=>{await document.fonts.re
     await p.goto(origin+row.route,{waitUntil:'load'});await ready(p);
     assert.equal(await p.locator('body').getAttribute('data-motion-family'),row.family);
     const actual=await signature(p);
-    if(copyReview.pages.includes(row.file)){
+    if(['audit/index.html','ru/audit/index.html'].includes(row.file)){
+     assert.deepEqual(actual.images,expected.images,`${row.route}: images preserved`);
+     assert.deepEqual(actual.meta.filter(s=>!s.includes('name="description"')),expected.meta.filter(s=>!s.includes('name="description"')),`${row.route}: SEO routes and non-copy metadata preserved`);
+     assert.ok(actual.width<=width,`${row.route}: audit does not overflow`);
+     if(!copyExpected)copyExpected=actual;else assert.deepEqual(actual,copyExpected,`${row.route}: approved offer visible in every JS/motion mode`);
+    }else if(copyReview.pages.includes(row.file)){
      // Authorized editorial changes can reflow text; styles/structure are locked by copy_review.py.
      assert.deepEqual(actual.images,expected.images,`${row.route}: images preserved`);
      const authorizedSprintHreflang=['<link rel="alternate" hreflang="en" href="https://katyashalel.com/guides/sprint/">','<link rel="alternate" hreflang="ru" href="https://katyashalel.com/ru/guides/sprint/">','<link rel="alternate" hreflang="x-default" href="https://katyashalel.com/guides/sprint/">'];

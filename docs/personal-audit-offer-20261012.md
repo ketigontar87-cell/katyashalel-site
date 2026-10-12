@@ -1,0 +1,15 @@
+# Approved personal audit offer, October 12
+
+Base: 467ed524c6c844ed92c69f6aaa5cda7ad493f26c. This change implements the owner's approved $350 one-time AI Legibility Audit and primary homepage CTA. It does not repeat the October 10 repairs.
+
+The EN copy is preserved in the acceptance manifest verbatim. RU conveys the same price, scope, 24 attempted responses including failures, six deliverables, written workflow, agreed tools/date and exclusions. No currency conversion or fixed delivery deadline is introduced. The Service/Offer and FAQ markup agree with visible content. The machine-readable summaries and existing API founders offering reflect the same package, without changing full-verification dates or API shape.
+
+Both homepage primary buttons lead to the explicitly requested existing `/audit/#request` inquiry. Secondary navigation, contact and ongoing-work links remain. RU uses that same existing English intake; its existing direct email link remains available. No second form or payment checkout is added.
+
+The intake preserves all field IDs, payload keys, email validation, honeypot, error handling and lead backend. Professional title uses the existing company field. Additional page links, service/audience, optional buyer questions and competitors fit the existing message field. Public information only; no confidential documents or credentials. A visible email alternative works without JavaScript. Real submissions are not performed.
+
+Existing fonts, colors, motion files and runtime scripts remain. The only CSS addition provides spacing for the six approved list items. Canonical/hreflang routes remain. Sitemap lastmod changes only for the two homepages and two audit pages. Agent-card version 2026-10-12.1 records implementation, not full verification. No feeds change because no post was added.
+
+Acceptance: `audit_offer.py` locks both homepages to the exact primary-link change; checks approved bilingual content, six list items, price/schema/FAQ agreement, stylesheet/runtime preservation, unchanged intake backend/field IDs, unchanged SEO routing and exactly four sitemap dates. Existing API tests allow only the explicit approved founders offering. Hero baseline differs only by the approved href. The two audit pages have explicit editorial comparison handling, requiring identical content, links, schema and geometry in normal, reduced-motion and no-JS modes, plus preserved non-copy metadata and no overflow. Other page comparisons remain intact.
+
+All form browser tests intercept requests. Release requires passing exact-head repository CI, then production commit/alias and live copy/CTA verification. The direct HTTP client in this executor currently receives a proxy 403 for the public domain; the manual Verify published audit offer workflow reads the four public routes from GitHub’s runner, validates the approved copy/schema/CTA, and never submits forms or changes deployment protection. Invoke it only with the confirmed production commit after the Vercel release is READY.

@@ -1,0 +1,29 @@
+name: Verify published audit offer
+on:
+  workflow_dispatch:
+    inputs:
+      commit:
+        description: Exact published main commit to verify
+        required: true
+        type: string
+permissions:
+  contents: read
+jobs:
+  public-read-only:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ inputs.commit }}
+      - name: Verify live approved copy and primary CTA
+        env:
+          EXPECTED_COMMIT: ${{ inputs.commit }}
+        run: |
+          test "$(git rev-parse HEAD)" = "$EXPECTED_COMMIT"
+          python3 .github/scripts/verify_audit_live.py --commit "$EXPECTED_COMMIT"
+      - uses: actions/upload-artifact@v4
+        with:
+          name: live-audit-${{ inputs.commit }}
+          path: artifacts/live-audit/
+          retention-days: 7

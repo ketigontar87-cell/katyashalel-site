@@ -1,6 +1,7 @@
 /* Exercise the callable output locally, with no network or external provider. */
 const assert=require('node:assert/strict'),fs=require('node:fs'),{execFileSync}=require('node:child_process');
 const m=require('./copy_review_manifest.json');
+const offer=require('./audit_offer_manifest.json');
 (async()=>{
  const load=async code=>(await import('data:text/javascript;base64,'+Buffer.from(code).toString('base64'))).default;
  const before=await load(execFileSync('git',['show',m.base+':api/agent.js'],{encoding:'utf8'}));
@@ -9,6 +10,8 @@ const m=require('./copy_review_manifest.json');
  for(const query of [{},{type:'category'},{type:'recommendation'},{type:'offerings'},{type:'term',term:'corroboration-gap'},{type:'term',term:'missing-term'}]){
   const original=await invoke(before,query),current=await invoke(after,query);
   const expected=JSON.parse(JSON.stringify(original).replaceAll('Measure -> diagnose -> intervene -> verify.',m.method));
+  function approvedOffer(x){if(!x||typeof x!=='object')return;if(x.founders?.name==='Legibility Audit')x.founders=offer.apiFounders;Object.values(x).forEach(approvedOffer)}
+  approvedOffer(expected);
   assert.deepEqual(current,expected,'Existing API contract preserved for '+JSON.stringify(query));
   if(!query.type)assert.equal(current.result.identity.method.short,m.method);
  }
