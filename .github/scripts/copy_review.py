@@ -5,6 +5,7 @@ from collections import Counter
 import subprocess,json,re,html,xml.etree.ElementTree as ET
 root=Path(__file__).resolve().parents[2]
 manifest=json.loads((root/'.github/scripts/copy_review_manifest.json').read_text());base=manifest['base']
+offer=json.loads((root/'.github/scripts/audit_offer_manifest.json').read_text())
 def old(f):return subprocess.check_output(['git','show',base+':'+f],cwd=root,text=True)
 def schemas(s):return [json.loads(m) for m in re.findall(r'<script type="application/ld\+json">(.*?)</script>',s,re.S)]
 def clean(s):return re.sub(r'\s+',' ',html.unescape(re.sub('<[^>]*>','',s))).strip()
@@ -122,10 +123,10 @@ xml=ET.fromstring((root/'sitemap.xml').read_text());entries={u.find('s:loc',ns).
 evidence=json.loads((root/'docs/sitemap-date-evidence.json').read_text())
 assert len(entries)==len(evidence)==71
 for e in evidence:
- assert entries['https://katyashalel.com'+e['route']]==e['lastmod']
+ assert entries['https://katyashalel.com'+e['route']]==(offer['publicationDate'] if e['file'] in offer['htmlPages'] else e['lastmod'])
  assert e['lastmod']==subprocess.check_output(['git','show','-s','--format=%cs',e['publishedCommit']],cwd=root,text=True).strip()
  subprocess.run(['git','merge-base','--is-ancestor',e['publishedCommit'],base],cwd=root,check=True)
-assert entries['https://katyashalel.com/']=='2026-10-08'
+assert entries['https://katyashalel.com/']==offer['publicationDate']
 assert len(set(entries.values()))>1
-assert json.loads((root/'.well-known/agent-card.json').read_text())['version']=='2026-10-10.1'
+assert json.loads((root/'.well-known/agent-card.json').read_text())['version']==offer['agentVersion']
 print(json.dumps({'html_documents':len(all_html),'json_ld_blocks':count,'copy_pages':len(manifest['pages']),'sitemap_dates_with_published_evidence':len(evidence),'styles_structure_and_behavior':'unchanged','status':'passed'}))

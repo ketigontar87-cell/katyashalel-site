@@ -39,6 +39,7 @@ async function signature(page) {
         await page.addInitScript(()=>{window.rafCount=0;const raf=requestAnimationFrame;window.requestAnimationFrame=cb=>{window.rafCount++;return raf(cb);};});
         await page.goto(origin+path,{waitUntil:'networkidle'});await page.evaluate(()=>document.fonts.ready);
         if(mode==='motion')await page.waitForTimeout(1800);
+        if(mode==='baseline')await page.locator('.hero .actions a.btn.primary').evaluate(e=>e.setAttribute('href','/audit/#request'));
         const current=await signature(page);
         if(mode==='baseline')baseline=current;
         else {
@@ -66,7 +67,7 @@ async function signature(page) {
           if(mode==='no-js')assert.equal(await page.locator('.motion-replay').count(),0);
           const menu=page.locator('.mobile-nav');
           if(await menu.isVisible()){await menu.locator('summary').focus();await page.keyboard.press('Enter');assert.equal(await menu.getAttribute('open'),'');await page.keyboard.press('Enter');}
-          await page.locator('.hero .actions a').click();await page.waitForTimeout(700);assert.ok(page.url().endsWith('#contact'));assert.ok(await page.locator('#contact a[href="mailto:shalelekaterina@gmail.com"]').isVisible());
+          await page.locator('.hero .actions a').click();await page.waitForTimeout(700);assert.ok(page.url().endsWith('/audit/#request'));assert.ok(await page.locator('#request #f-email').isVisible());
           assert.deepEqual(errors,[]);
           results.push({lang,width,mode,status:'passed'});
         }
