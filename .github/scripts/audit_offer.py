@@ -15,6 +15,8 @@ for lang in ['en','ru']:
   assert c[key] in clean(s),key
  assert [clean(x) for x in re.findall(r'<li>(.*?)</li>',s,re.S)]==c['items']
  schemas=[json.loads(x) for x in re.findall(r'<script type="application/ld\+json">(.*?)</script>',s,re.S)]
+ assert sum(x.get('@type')=='FAQPage' for x in schemas)==1,f+' exactly one FAQPage'
+ assert sum(x.get('@type')=='Service' for x in schemas)==1,f+' exactly one Service'
  service=next(x for x in schemas if x['@type']=='Service');faq=next(x for x in schemas if x['@type']=='FAQPage')
  assert service['name']==c['title'] and service['offers']=={'@type':'Offer','price':'350','priceCurrency':'USD','url':'https://katyashalel.com/audit/#request','description':c['price']}
  assert service['description']==c['intro']+' '+c['scope']+' '+c['limits']
