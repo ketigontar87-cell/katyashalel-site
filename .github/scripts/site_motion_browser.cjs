@@ -5,11 +5,14 @@ const {execFileSync,spawn}=require('node:child_process');
 const {chromium}=require('playwright');
 const manifest=require('./site_motion_manifest.json');
 const copyReview=require('./copy_review_manifest.json');
+const publicRevision=require('../../docs/public-fit-revision.json');
+const revisedPages=new Set([...publicRevision.updatedPages,...publicRevision.newPages]);
+const newPages=new Set(publicRevision.newPages);
 const base='1062f45669884a5c0aa700c22a06eac360135151';
 const origin='http://127.0.0.1:4185';
 const out=process.env.SITE_MOTION_ARTIFACTS||'/tmp/katya-site-motion/results';
 const server=spawn('python3',['-m','http.server','4185','--bind','127.0.0.1'],{stdio:'ignore'});
-const sources=new Map(manifest.map(r=>[r.route,execFileSync('git',['show',`${base}:${r.file}`],{encoding:'utf8'})]));
+const sources=new Map(manifest.filter(r=>!newPages.has(r.file)).map(r=>[r.route,execFileSync('git',['show',`${base}:${r.file}`],{encoding:'utf8'})]));
 // Independent DOM interpretation of the owner's exact contact removal scope.
 async function approvedContactRemoval(page){await page.evaluate(()=>{
  for(const a of document.querySelectorAll('a[href="https://t.me/shalel_notes"]')){
@@ -59,13 +62,21 @@ async function ready(page){await page.evaluate(async()=>{await document.fonts.re
    pages[mode]=await c.newPage();
   }
   for(const row of manifest.filter(r=>!r.excluded)){
-   const before=pages.baseline;await before.goto(origin+row.route,{waitUntil:'load'});await ready(before);await approvedContactRemoval(before);const expected=await signature(before);let copyExpected;
+   let expected,copyExpected;
+   if(!revisedPages.has(row.file)){const before=pages.baseline;await before.goto(origin+row.route,{waitUntil:'load'});await ready(before);await approvedContactRemoval(before);expected=await signature(before);}
    for(const mode of ['motion','reduced','no-js']){
     const p=pages[mode];const errors=[];const capture=e=>errors.push(e.message);p.on('pageerror',capture);
     await p.goto(origin+row.route,{waitUntil:'load'});await ready(p);
     assert.equal(await p.locator('body').getAttribute('data-motion-family'),row.family);
     const actual=await signature(p);
-    if(['audit/index.html','ru/audit/index.html'].includes(row.file)){
+    if(revisedPages.has(row.file)){
+     // Revised content has its own schema/evidence contract in public_fit_review.py.
+     // Keep all rendering, interaction and no-JS equivalence checks for these routes.
+     assert.ok(actual.width<=width,`${row.route}: revised page does not overflow`);
+     assert.equal(await p.locator('h1').count(),1);
+     assert.equal(await p.locator('link[rel=canonical]').getAttribute('href'),'https://katyashalel.com'+row.route);
+     if(!copyExpected)copyExpected=actual;else assert.deepEqual(actual,copyExpected,`${row.route}: revised content, links, schema and geometry match in every JS/motion mode`);
+    }else if(['audit/index.html','ru/audit/index.html'].includes(row.file)){
      assert.deepEqual(actual.images,expected.images,`${row.route}: images preserved`);
      assert.deepEqual(actual.meta.filter(s=>!s.includes('name="description"')),expected.meta.filter(s=>!s.includes('name="description"')),`${row.route}: SEO routes and non-copy metadata preserved`);
      assert.ok(actual.width<=width,`${row.route}: audit does not overflow`);
