@@ -179,6 +179,8 @@ a:focus-visible,button:focus-visible,summary:focus-visible{outline:3px solid #c4
   <h2>Request an audit</h2>
   <p class="request-lead">Share your name, professional title, website, service and audience, and target market and language. In your message, include up to five public page links, buyer questions if available, and competitors if known. Public information only: no passwords, API keys or confidential client documents.</p>
 
+  <p class="request-lead">Requests are currently handled by email. Fill in the details below to prepare a draft, then send it from your email app.</p>
+
   <div class="form-grid">
     <label>Name<input type="text" id="f-name" autocomplete="name"></label>
     <label>Email<input type="email" id="f-email" autocomplete="email" required></label>
@@ -197,8 +199,13 @@ a:focus-visible,button:focus-visible,summary:focus-visible{outline:3px solid #c4
   </div>
 
   <p class="request-lead">Or email <a href="mailto:shalelekaterina@gmail.com">shalelekaterina@gmail.com</a> with the public information above.</p>
-  <button class="btn" id="f-send" type="button">Send message</button>
+  <button class="btn" id="f-send" type="button">Prepare email</button>
   <p class="form-note" id="f-note" role="status" aria-live="polite"></p>
+  <div id="email-recovery" hidden>
+    <p><a id="email-open" href="mailto:shalelekaterina@gmail.com">Open email draft</a></p>
+    <label for="email-draft">If your email app does not open, copy this draft into a new email:</label>
+    <textarea id="email-draft" readonly rows="10" style="display:block;width:100%;margin-top:12px;padding:12px;font:inherit;box-sizing:border-box"></textarea>
+  </div>
 </section>
 
 <style>
@@ -228,37 +235,33 @@ a:focus-visible,button:focus-visible,summary:focus-visible{outline:3px solid #c4
 (function () {
   var btn = document.getElementById('f-send');
   var note = document.getElementById('f-note');
+  var recovery = document.getElementById('email-recovery');
   if (!btn) return;
   btn.addEventListener('click', function () {
     var val = function (id) { var el = document.getElementById(id); return el ? el.value : ''; };
     var email = val('f-email').trim();
     if (!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(email)) {
       note.textContent = 'Please enter a valid email address so I can reply.';
+      recovery.hidden = true;
       return;
     }
-    btn.disabled = true;
-    note.textContent = 'Sending';
-    fetch('/api/lead', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({
-        form: document.title,
-        name: val('f-name'), email: email, company: val('f-company'),
-        site: val('f-site'), entities: val('f-entities'), markets: val('f-markets'),
-        source: val('f-source'), message: val('f-message'),
-        website_url: val('f-website-url')
-      })
-    }).then(function (r) { if (!r.ok) throw new Error('Request failed'); return r.json(); }).then(function (d) {
-      if (d && d.ok) {
-        note.textContent = 'Thanks, your message has been sent.';
-      } else {
-        btn.disabled = false;
-        note.innerHTML = 'Something went wrong. Write to <a href="mailto:shalelekaterina@gmail.com">shalelekaterina@gmail.com</a>.';
-      }
-    }).catch(function () {
-      btn.disabled = false;
-      note.innerHTML = 'Something went wrong. Write to <a href="mailto:shalelekaterina@gmail.com">shalelekaterina@gmail.com</a>.';
-    });
+    var recipient = 'shalelekaterina@gmail.com';
+    var subject = 'AI Legibility Audit request';
+    var body = [
+      'Name: ' + val('f-name'), 'Reply email: ' + email,
+      'Professional title: ' + val('f-company'), 'Website: ' + val('f-site'),
+      'Audit scope: ' + val('f-entities'), 'Target market and language: ' + val('f-markets'),
+      'How I found this page: ' + val('f-source'),
+      '', 'Service, audience and public pages:', val('f-message')
+    ].join('\n');
+    document.getElementById('email-open').href = 'mailto:' + recipient + '?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(body);
+    document.getElementById('email-draft').value = 'To: ' + recipient + '\nSubject: ' + subject + '\n\n' + body;
+    recovery.hidden = false;
+    note.textContent = 'Your draft is ready. It has not been sent. Open the email draft below and send it from your email app.';
+  });
+  document.querySelector('.form-grid').addEventListener('input', function () {
+    recovery.hidden = true;
+    note.textContent = 'Your details changed. Select Prepare email to update the draft.';
   });
 })();
 </script>
