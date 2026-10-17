@@ -162,7 +162,7 @@
   </url>
   <url>
     <loc>https://katyashalel.com/brands/</loc>
-    <lastmod>2026-10-08</lastmod>
+    <lastmod>2026-10-17</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://katyashalel.com/brands/"/>
     <xhtml:link rel="alternate" hreflang="ru" href="https://katyashalel.com/ru/brands/"/>
   </url>
@@ -230,9 +230,12 @@
   </url>
   <url>
     <loc>https://katyashalel.com/research/</loc>
-    <lastmod>2026-10-08</lastmod>
+    <lastmod>2026-10-17</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://katyashalel.com/research/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://katyashalel.com/ru/research/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://katyashalel.com/research/"/>
   </url>
   <url>
     <loc>https://katyashalel.com/research/synthetic-term-control/</loc>
@@ -342,9 +345,12 @@
   <url><loc>https://katyashalel.com/ru/feed.xml</loc><changefreq>weekly</changefreq><priority>0.6</priority></url>
   <url>
     <loc>https://katyashalel.com/essays/can-you-change-what-ai-says-about-you/</loc>
-    <lastmod>2026-10-08</lastmod>
+    <lastmod>2026-10-17</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://katyashalel.com/essays/can-you-change-what-ai-says-about-you/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://katyashalel.com/ru/essays/mozhno-li-izmenit-chto-ai-govorit-o-vas/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://katyashalel.com/essays/can-you-change-what-ai-says-about-you/"/>
   </url>
   <url>
     <loc>https://katyashalel.com/understood-by-ai/</loc>
@@ -371,7 +377,7 @@
 
   <url>
     <loc>https://katyashalel.com/ru/brands/</loc>
-    <lastmod>2026-10-08</lastmod>
+    <lastmod>2026-10-17</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://katyashalel.com/brands/"/>
     <xhtml:link rel="alternate" hreflang="ru" href="https://katyashalel.com/ru/brands/"/>
   </url>
@@ -392,5 +398,33 @@
     <lastmod>2026-09-23</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://katyashalel.com/understood-by-ai/"/>
     <xhtml:link rel="alternate" hreflang="ru" href="https://katyashalel.com/ru/understood-by-ai/"/>
+  </url>
+  <url>
+    <loc>https://katyashalel.com/ru/research/</loc>
+    <lastmod>2026-10-17</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://katyashalel.com/research/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://katyashalel.com/ru/research/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://katyashalel.com/research/"/>
+  </url>
+  <url>
+    <loc>https://katyashalel.com/ru/essays/mozhno-li-izmenit-chto-ai-govorit-o-vas/</loc>
+    <lastmod>2026-10-17</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://katyashalel.com/essays/can-you-change-what-ai-says-about-you/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://katyashalel.com/ru/essays/mozhno-li-izmenit-chto-ai-govorit-o-vas/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://katyashalel.com/essays/can-you-change-what-ai-says-about-you/"/>
+  </url>
+  <url>
+    <loc>https://katyashalel.com/observations/2026-10-17-consultant-selection/</loc>
+    <lastmod>2026-10-17</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://katyashalel.com/observations/2026-10-17-consultant-selection/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://katyashalel.com/ru/observations/2026-10-17-consultant-selection/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://katyashalel.com/observations/2026-10-17-consultant-selection/"/>
+  </url>
+  <url>
+    <loc>https://katyashalel.com/ru/observations/2026-10-17-consultant-selection/</loc>
+    <lastmod>2026-10-17</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://katyashalel.com/observations/2026-10-17-consultant-selection/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://katyashalel.com/ru/observations/2026-10-17-consultant-selection/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://katyashalel.com/observations/2026-10-17-consultant-selection/"/>
   </url>
 </urlset>

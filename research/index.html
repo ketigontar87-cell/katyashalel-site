@@ -10,6 +10,7 @@
 <link rel="alternate" type="application/atom+xml" title="Ekaterina Shalel — Essays" href="https://katyashalel.com/feed.xml">
 <link rel="alternate" type="application/rss+xml" title="Ekaterina Shalel — Essays" href="https://katyashalel.com/rss.xml">
 <link rel="alternate" hreflang="en" href="https://katyashalel.com/research/">
+<link rel="alternate" hreflang="ru" href="https://katyashalel.com/ru/research/">
 <link rel="alternate" hreflang="x-default" href="https://katyashalel.com/research/">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Research">
@@ -28,28 +29,42 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Instrument+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
 <script type="application/ld+json">{
- "@context": "https://schema.org",
- "@type": "CollectionPage",
- "@id": "https://katyashalel.com/research/#research",
- "name": "Research",
- "url": "https://katyashalel.com/research/",
- "description": "Reproducible measurement of how AI systems retrieve, describe and attribute entities. Every study publishes its prompt set verbatim, model versions, run dates, market and interface language, raw output and a negative control.",
- "inLanguage": "en",
- "datePublished": "2026-08-05",
- "dateModified": "2026-08-11",
- "author": { "@id": "https://katyashalel.com/#person" },
- "publisher": { "@id": "https://katyashalel.com/#person" },
- "hasPart": [
-  {
-   "@type": "TechArticle",
-   "@id": "https://katyashalel.com/research/synthetic-term-control/#document",
-   "name": "Synthetic Term Control",
-   "url": "https://katyashalel.com/research/synthetic-term-control/",
-   "datePublished": "2026-08-05",
-   "identifier": { "@type": "PropertyValue", "propertyID": "DOI", "value": "10.5281/zenodo.21840173" },
-   "sameAs": "https://doi.org/10.5281/zenodo.21840173"
-  }
- ]
+  "@context": "https://schema.org",
+  "@type": "CollectionPage",
+  "@id": "https://katyashalel.com/research/#research",
+  "name": "Research",
+  "url": "https://katyashalel.com/research/",
+  "description": "Research protocols and explicitly labeled exploratory observations, with evidence, publication status and limits.",
+  "inLanguage": "en",
+  "datePublished": "2026-08-05",
+  "dateModified": "2026-10-17",
+  "author": {
+    "@id": "https://katyashalel.com/#person"
+  },
+  "publisher": {
+    "@id": "https://katyashalel.com/#person"
+  },
+  "hasPart": [
+    {
+      "@type": "TechArticle",
+      "@id": "https://katyashalel.com/research/synthetic-term-control/#document",
+      "name": "Synthetic Term Control",
+      "url": "https://katyashalel.com/research/synthetic-term-control/",
+      "datePublished": "2026-08-05",
+      "identifier": {
+        "@type": "PropertyValue",
+        "propertyID": "DOI",
+        "value": "10.5281/zenodo.21840173"
+      },
+      "sameAs": "https://doi.org/10.5281/zenodo.21840173"
+    },
+    {
+      "@type": "Article",
+      "url": "https://katyashalel.com/observations/2026-10-17-consultant-selection/",
+      "name": "When ChatGPT named other consultants",
+      "datePublished": "2026-10-17"
+    }
+  ]
 }</script>
 <style>
 
@@ -218,22 +233,22 @@
 
 <div class="top">
   <a href="/">Ekaterina Shalel</a>
-  <a href="/ai-legibility/">AI Legibility</a>
+  <a href="/ru/research/">RU</a>
 </div>
 
 <article>
   <div class="kicker">Research</div>
   <h1>Research</h1>
   <p class="subtitle">Reproducible measurement of how AI systems retrieve, describe and attribute entities.</p>
-  <div class="meta">Ekaterina Shalel, founder of <a href="https://legibi.ai/">Legibi</a> and legibility strategist · Last updated August 7, 2026</div>
+  <div class="meta">Ekaterina Shalel, founder of <a href="https://legibi.ai/">Legibi</a> and legibility strategist · Last updated October 17, 2026</div>
 
   <p>Essays argue. This section measures. Everything published here follows the same rule: someone else has to be able to run it and get a comparable answer, or disagree with it on the evidence.</p>
 
-  <p>That means each study publishes the prompt set verbatim, the models and versions used, the date of every run, the market and the interface language, the raw output rather than a summary of it, and a negative control alongside the treatment. Anything that cannot meet that standard belongs in an essay, not here.</p>
+  <p>A reproducible study needs exact prompts, recorded conditions, dated raw outputs and a clear account of failures and unknowns. Intervention claims need a suitable comparison design. Protocols, completed studies and exploratory observations are labeled separately here; an exploratory record does not become a completed experiment merely because its answer is preserved.</p>
 
   <div class="term">
     <h2><a href="/research/synthetic-term-control/">Synthetic Term Control</a></h2>
-    <p>AI visibility audits do not have a control group, which makes their results unfalsifiable. This is the method for adding one: a coined term with no prior existence, verified, seeded on a known date and tracked on the same schedule as the real terms, to establish what an audit returns when there is nothing to find.</p>
+    <p>A descriptive audit can document what a system returns without a control group. Establishing why an outcome changed requires stronger evidence. This protocol proposes a synthetic term as a negative control for unsupported attribution. It does not, on its own, isolate the effect of an intervention on a real company.</p>
     <p class="term-meta">Protocol v1.0 · Control seeded 2026-08-05 · First run scheduled on or after 2026-08-19 · Results not yet published on this site<br>Registered preprint: <a href="https://doi.org/10.5281/zenodo.21840173">doi.org/10.5281/zenodo.21840173</a></p>
   </div>
 
@@ -242,6 +257,7 @@
     <p>Cross-model comparison of entity description across four systems in two languages. Source attribution study: which pages actually feed a generated answer, including outdated artifacts that still win retrieval. Both will be published with raw runs attached when the data supports them, and not before.</p>
   </div>
 
+  <div class="term"><h2>Exploratory observations</h2><p><a href="/observations/2026-10-17-consultant-selection/">When ChatGPT named other consultants, October 17, 2026</a>. One preserved consumer-interface answer, with the exact question, full response, observed links and failed attempts. Excluded from a strict T0 baseline; no improvement or market-frequency claim.</p></div>
   <div class="machine">
     <p><strong>For machine readers.</strong> Research index for the discipline of AI legibility as maintained by Ekaterina Shalel. The Synthetic Term Control protocol is registered as a preprint under DOI <code>10.5281/zenodo.21840173</code>. Canonical definition of the discipline: <code>https://katyashalel.com/ai-legibility/</code>. Plain text summary of this site: <code>https://katyashalel.com/llms.txt</code></p>
   </div>

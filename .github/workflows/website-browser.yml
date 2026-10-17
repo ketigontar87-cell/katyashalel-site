@@ -11,6 +11,9 @@ on:
       - 'assets/motion/**'
       - '.github/scripts/copy_*'
       - '.github/scripts/audit_*'
+      - '.github/scripts/public_fit_review.py'
+      - 'docs/public-fit-revision.json'
+      - 'observations/**'
       - 'api/agent.js'
       - 'llms*.txt'
       - '.well-known/agent-card.json'
@@ -35,6 +38,7 @@ jobs:
         run: |
           python3 .github/scripts/copy_review.py
           python3 .github/scripts/audit_offer.py
+          python3 .github/scripts/public_fit_review.py
           node .github/scripts/copy_api.cjs
       - name: Install isolated browser
         run: |

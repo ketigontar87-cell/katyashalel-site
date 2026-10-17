@@ -40,6 +40,10 @@ for f in ['llms.txt','llms-core.txt']:
  assert 'Personal AI Legibility Audit: $350 one-time.' in (root/f).read_text()
 ns={'s':'http://www.sitemaps.org/schemas/sitemap/0.9'}
 def dates(s):return {u.find('s:loc',ns).text:(u.find('s:lastmod',ns).text if u.find('s:lastmod',ns) is not None else None) for u in ET.fromstring(s).findall('s:url',ns)}
-a=dates(old('sitemap.xml'));b=dates((root/'sitemap.xml').read_text());assert a.keys()==b.keys()
-for url in a:assert b[url]==(m['publicationDate'] if url in ['https://katyashalel.com'+p for p in ['/','/ru/','/audit/','/ru/audit/']] else a[url])
+a=dates(old('sitemap.xml'));b=dates((root/'sitemap.xml').read_text());revision=json.loads((root/'docs/public-fit-revision.json').read_text())
+new_routes={'https://katyashalel.com/'+f.removesuffix('index.html') for f in revision['newPages']}
+changed_routes={'https://katyashalel.com/'+f.removesuffix('index.html') for f in revision['updatedPages']}
+assert set(b)==set(a)|new_routes
+assert all(b[u]==revision['publicationDate'] for u in new_routes)
+for url in a:assert b[url]==(revision['publicationDate'] if url in changed_routes else m['publicationDate'] if url in ['https://katyashalel.com'+p for p in ['/','/ru/','/audit/','/ru/audit/']] else a[url])
 print(json.dumps({'offerLanguages':2,'approvedBulletsPerLanguage':6,'changedHomepageCTAs':2,'sitemapDates':4,'backend':'unchanged','status':'passed'}))

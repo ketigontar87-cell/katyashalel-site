@@ -1,0 +1,52 @@
+{
+  "record_id": "K01-2026-10-17",
+  "scenario_id": "K01",
+  "evidence_package_id": "EP-K01",
+  "status": "exploratory; excluded from strict T0",
+  "prompt_origin": "Reconstructed; researcher-authored, not an observed private customer query",
+  "prompt": "I am an independent consultant. I want to know what AI tells potential clients about my expertise and why it recommends other specialists. Who can help me investigate that?",
+  "provider": "ChatGPT",
+  "surface": "consumer web UI",
+  "language": "en",
+  "submitted_at": "2026-10-17T14:07:00.794Z",
+  "response_captured_at": "2026-10-17T14:08:49.114Z",
+  "model_version": null,
+  "verified_exit_geography": null,
+  "session_before_send": "Unpersonalized confirmed",
+  "session_after_answer": "not independently confirmed",
+  "response": "The specialist you're looking for is an AI visibility auditor or Generative Engine Optimization (GEO) consultant—ideally someone experienced with individual experts, independent consultants, and professional services rather than just large brands.\n\nYour question is more sophisticated than traditional SEO. You're trying to understand:\n\nAI's perception of your expertise: How ChatGPT, Claude, Gemini, and Perplexity describe your qualifications, specializations, and credibility.\n\nCompetitive recommendations: Which other consultants AI recommends for work you're qualified to do, and why.\n\nMissing or misleading information: Whether AI misunderstands your experience, overlooks important achievements, or associates you with the wrong specialties.\n\nSources of influence: Which websites, publications, professional profiles, and third-party references appear to support its recommendations.\n\nCorrective action: What evidence and positioning changes could improve the accuracy of your representation and your likelihood of being recommended.\n\nI would begin with a one-time AI reputation and competitive visibility audit, rather than sign up immediately for ongoing SEO services.\n\nSpecialists worth considering\n\nThese are actual providers advertising relevant services, although their effectiveness for individual consultants still needs to be established.\n\nAnthony Keal – AI Search Visibility Audit\n\nIndependent digital consultant · Australia\n\nA particularly relevant option for a fellow independent consultant. His advertised audit records what AI says about you, identifies who is recommended instead, examines cited sources, and proposes corrective actions. \nAnthony Keal\n\nSEO Evaluate – AI Visibility Audit\n\nAI search and SEO agency\n\nOffers a structured investigation using repeated AI queries, dated answer logs, competitor comparisons, and analysis of possible causes of omissions or inaccurate descriptions. \nSEO Evaluate\n\nKern Media – AI Visibility Audit\n\nAI visibility and digital marketing agency\n\nAdvertises one-time audits covering approximately 50–100 potential-client prompts across six AI platforms, followed by a prioritized improvement plan. \nKern Media\n\nThese are candidates to interview, not independently verified endorsements.\n\nWhat I would require from an investigator\n\nAsk for a written report containing:\n\nA record of what several AI systems actually say about you.\n\nA comparison against five to ten relevant specialists.\n\nAn assessment of which parts of your expertise are correctly represented, missing, or inaccurate.\n\nAn analysis of cited evidence and plausible reasons competitors appear more often.\n\nPrioritized recommendations for improving your professional positioning.\n\nThe investigator should repeat tests because AI recommendations vary between sessions and over time. They should also distinguish observable evidence from speculation about how a model internally makes decisions. No outside consultant can reliably guarantee an AI recommendation.\n\nSoftware you could also consider\n\nOtterly.AI and Profound offer AI visibility monitoring. Such tools can help collect evidence, but software alone may not give you the nuanced competitive and reputational analysis you're seeking. \nOtterly\n+1\n\nOne question that would help me narrow this down\n\nWhat kind of consulting do you specialize in? For example, management strategy, organizational development, technology, finance, healthcare, leadership, or another field.\n\nThat matters because I would look for someone who can investigate individual professional authority and expert recommendations, not merely whether a company gets mentioned by ChatGPT. Depending on your specialty, the right investigator could be a GEO consultant, a digital reputation researcher, or a specialist in professional-services positioning.",
+  "response_sha256": "26128a648a0e357ecd6caf049f0c1a032348c424a6b1dd9f6acb3fed1b323829",
+  "service_candidates": [
+    "Anthony Keal",
+    "SEO Evaluate",
+    "Kern Media"
+  ],
+  "software_alternatives": [
+    "Otterly.AI",
+    "Profound"
+  ],
+  "subject_mentioned": {
+    "Ekaterina Shalel": false,
+    "Legibi": false
+  },
+  "single_winner": null,
+  "visible_source_links": [
+    "https://anthonykeal.com.au/for-businesses/ai-search-audit?utm_source=chatgpt.com",
+    "https://www.seoevaluate.com/en/services/ai-visibility-audit?utm_source=chatgpt.com",
+    "https://www.kernmedia.com/services/llm-optimization/ai-visibility-audit/?utm_source=chatgpt.com",
+    "https://otterly.ai/?utm_source=chatgpt.com"
+  ],
+  "source_limit": "Links present in answer DOM; citation panels not opened. Profound label observed, URL not captured. This is not a complete retrieval trace.",
+  "hidden_shortlist": null,
+  "reason_for_subject_omission": null,
+  "comparison_repeats": 0,
+  "improvement_claim": false,
+  "demand_frequency": null,
+  "batch_outcomes": {
+    "L01": "sent; extraction failed; answer unknown",
+    "K01": "sent; response preserved; exploratory only",
+    "B03": "not sent; personalization gate failed"
+  },
+  "source_note": "This research record was assembled from a consumer-interface capture and researcher review. It is not proof of an autonomous Legibi product workflow.",
+  "strict_t0_eligible": false
+}
