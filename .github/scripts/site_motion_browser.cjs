@@ -6,7 +6,8 @@ const {chromium}=require('playwright');
 const manifest=require('./site_motion_manifest.json');
 const copyReview=require('./copy_review_manifest.json');
 const publicRevision=require('../../docs/public-fit-revision.json');
-const revisedPages=new Set([...publicRevision.updatedPages,...publicRevision.newPages]);
+// Homepage content is locked by the owner-approved human_first_manifest and audit_offer.py.
+const revisedPages=new Set([...publicRevision.updatedPages,...publicRevision.newPages,'index.html','ru/index.html']);
 const newPages=new Set(publicRevision.newPages);
 const base='1062f45669884a5c0aa700c22a06eac360135151';
 const origin='http://127.0.0.1:4185';
