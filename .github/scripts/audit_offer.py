@@ -4,8 +4,16 @@ import json,re,subprocess,html,hashlib,xml.etree.ElementTree as ET
 root=Path(__file__).resolve().parents[2];m=json.loads((root/'.github/scripts/audit_offer_manifest.json').read_text())
 def old(f):return subprocess.check_output(['git','show',m['base']+':'+f],cwd=root,text=True)
 def clean(s):return re.sub(r'\s+',' ',html.unescape(re.sub('<[^>]*>','',s))).strip()
-for f,label in [('index.html','Work with me'),('ru/index.html','Работать со мной')]:
- assert (root/f).read_text()==old(f).replace('<a class="btn primary" href="#contact">'+label+'</a>','<a class="btn primary" href="/audit/#request">'+label+'</a>'),f+' only primary CTA may change'
+human=json.loads((root/'.github/scripts/human_first_manifest.json').read_text())
+for f in ['index.html','ru/index.html']:
+ s=(root/f).read_text()
+ before=subprocess.check_output(['git','show',human['base']+':'+f],cwd=root,text=True)
+ assert hashlib.sha256(s.encode()).hexdigest()==human['homepageSha256'][f],f+' approved human-first copy'
+ for pattern in [r'<style>.*?</style>',r'<script[^>]*>.*?</script>',r'<link[^>]*(?:rel="canonical"|hreflang=)[^>]*>']:
+  assert re.findall(pattern,s,re.S)==re.findall(pattern,before,re.S),f+' preserve runtime, identity and language metadata'
+ prefix='ru/' if f.startswith('ru/') else ''
+ hero=re.search(r'<div class="actions">(.*?)</div>',s,re.S).group(1)
+ assert re.findall(r'href="([^"]+)"',hero)==['/'+prefix+'audit/','/'+prefix+'brands/'],f+' two audience routes'
 for lang in ['en','ru']:
  f=('ru/' if lang=='ru' else '')+'audit/index.html';s=(root/f).read_text();before=old(f);c=m['copy'][lang]
  assert re.findall(r'<style>.*?</style>',before,re.S)==[x.replace(m['addedStyle'],'') for x in re.findall(r'<style>.*?</style>',s,re.S)],f+' preserve styles except list spacing'
