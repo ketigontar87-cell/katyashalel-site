@@ -5,8 +5,15 @@
     <link>https://katyashalel.com/ru/</link>
     <description>Читаемость: как основатели, продукты и компании становятся понятны AI-системам.</description>
     <language>ru</language>
-    <lastBuildDate>Fri, 25 Sep 2026 09:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 17 Oct 2026 09:00:00 +0000</lastBuildDate>
     <atom:link href="https://katyashalel.com/ru/rss.xml" rel="self" type="application/rss+xml"/>
+    <item>
+      <title>Можно ли изменить то, что AI говорит о вас?</title>
+      <link>https://katyashalel.com/ru/essays/mozhno-li-izmenit-chto-ai-govorit-o-vas/</link>
+      <guid isPermaLink="true">https://katyashalel.com/ru/essays/mozhno-li-izmenit-chto-ai-govorit-o-vas/</guid>
+      <pubDate>Sat, 17 Oct 2026 09:00:00 +0000</pubDate>
+      <description>Наблюдения основателя об упоминаниях, рекомендациях и проверке изменений. Исторические заметки отделены от сохранённых исходных ответов.</description>
+    </item>
     <item>
       <title>AI может вас найти. Но выберет ли он вас?</title>
       <link>https://katyashalel.com/ru/essays/ai-mozhet-vas-nayti-no-vyberet-li-on-vas/</link>
