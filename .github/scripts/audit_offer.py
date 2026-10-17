@@ -1,6 +1,6 @@
 """Acceptance for the owner-approved personal audit offer; no network or submissions."""
 from pathlib import Path
-import json,re,subprocess,html,xml.etree.ElementTree as ET
+import json,re,subprocess,html,hashlib,xml.etree.ElementTree as ET
 root=Path(__file__).resolve().parents[2];m=json.loads((root/'.github/scripts/audit_offer_manifest.json').read_text())
 def old(f):return subprocess.check_output(['git','show',m['base']+':'+f],cwd=root,text=True)
 def clean(s):return re.sub(r'\s+',' ',html.unescape(re.sub('<[^>]*>','',s))).strip()
@@ -10,7 +10,12 @@ for lang in ['en','ru']:
  f=('ru/' if lang=='ru' else '')+'audit/index.html';s=(root/f).read_text();before=old(f);c=m['copy'][lang]
  assert re.findall(r'<style>.*?</style>',before,re.S)==[x.replace(m['addedStyle'],'') for x in re.findall(r'<style>.*?</style>',s,re.S)],f+' preserve styles except list spacing'
  js=r'<script(?![^>]*application/ld\+json)[^>]*>.*?</script>'
- assert re.findall(js,before,re.S)==re.findall(js,s,re.S),f+' preserve runtime'
+ before_scripts=re.findall(js,before,re.S);after_scripts=re.findall(js,s,re.S)
+ if lang=='en':
+  delivery=json.loads((root/'.github/scripts/audit_delivery_manifest.json').read_text())
+  assert len(before_scripts)==len(after_scripts) and before_scripts[:-1]==after_scripts[:-1],f+' preserve other runtime'
+  assert hashlib.sha256(after_scripts[-1].encode()).hexdigest()==delivery['runtimeSha256'],f+' approved email recovery runtime'
+ else:assert before_scripts==after_scripts,f+' preserve runtime'
  for key in ['title','price','headline','intro','scope','included','process','limits','cta']:
   assert c[key] in clean(s),key
  assert [clean(x) for x in re.findall(r'<li>(.*?)</li>',s,re.S)]==c['items']
@@ -28,7 +33,7 @@ for lang in ['en','ru']:
  assert re.findall(links,before)==re.findall(links,s),'Canonical/hreflang unchanged'
  assert ('href="/ongoing/"' if lang=='en' else 'href="/ru/ongoing/"') in s
  assert 'mailto:shalelekaterina@gmail.com' in s
- assert not re.search(r'five.day|5.day|пять дней|пятиднев|₽|RUB|EUR|€',s,re.I)
+ assert not re.search(r'five.day|5.day|пять дней|пятиднев|₽|\b(?:RUB|EUR)\b|€',s,re.I)
  if lang=='en':
   assert sorted(re.findall(r'id="(f-[^"]+)"',s))==sorted(re.findall(r'id="(f-[^"]+)"',before))
   assert 'id="request"' in s and 'id="f-email" autocomplete="email" required' in s

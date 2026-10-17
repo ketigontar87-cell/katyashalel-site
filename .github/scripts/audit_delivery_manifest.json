@@ -1,0 +1,5 @@
+{
+  "reason": "Temporary email recovery while the existing Telegram credential returns 401. Preparing a draft is not a delivery receipt.",
+  "incident": "https://github.com/ketigontar87-cell/KATYA-OS/issues/330",
+  "runtimeSha256": "f27ee3b98b76a84739a5adb71828503cc631c238a98f06144259c97ff152dd28"
+}
