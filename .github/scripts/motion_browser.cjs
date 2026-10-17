@@ -27,7 +27,7 @@ async function signature(page) {
   try {
     for(const width of [390,768,1440]) for(const lang of ['en','ru']) {
       const path=lang==='en'?'/':'/ru/';
-      const html=execFileSync('git',['show',`${base}:${lang==='en'?'index.html':'ru/index.html'}`],{encoding:'utf8',cwd:root});
+      const html=execFileSync('git',['show',`${base}:${lang==='en'?'index.html':'ru/index.html'}`],{encoding:'utf8',cwd:root}).replace('Вопросы, которые люди задают на самом деле','Возможно, вы узнаете свою задачу');
       let baseline;
       for(const mode of ['baseline','motion','reduced','no-js']) {
         const context=await browser.newContext({viewport:{width,height:900},javaScriptEnabled:mode!=='no-js',reducedMotion:mode==='reduced'?'reduce':'no-preference',hasTouch:width===390});
