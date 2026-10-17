@@ -1,5 +1,6 @@
 {
-  "reason": "Temporary email recovery while the existing Telegram credential returns 401. Preparing a draft is not a delivery receipt.",
+  "reason": "Automatic delivery through the existing verified email domain, with provider receipts, deterministic idempotency and an explicit draft fallback on failure.",
   "incident": "https://github.com/ketigontar87-cell/KATYA-OS/issues/330",
-  "runtimeSha256": "f27ee3b98b76a84739a5adb71828503cc631c238a98f06144259c97ff152dd28"
+  "runtimeSha256": "a6b152730996eda4b641c4f5e12647a058669971f2431a71f577f6128e8b485f",
+  "backendSha256": "c8b76499566025a44a5a2287f0ae4ffce43796f032adf83e3a837e610062d1cf"
 }

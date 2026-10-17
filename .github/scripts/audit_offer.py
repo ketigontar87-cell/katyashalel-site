@@ -39,7 +39,8 @@ for lang in ['en','ru']:
   assert 'id="request"' in s and 'id="f-email" autocomplete="email" required' in s
   assert 'no passwords, API keys or confidential client documents' in s
   assert 'One person, one service' in s and '<option>Two or three</option>' not in s
-assert (root/'api/lead.js').read_text()==old('api/lead.js'),'Lead backend frozen'
+delivery=json.loads((root/'.github/scripts/audit_delivery_manifest.json').read_text())
+assert hashlib.sha256((root/'api/lead.js').read_bytes()).hexdigest()==delivery['backendSha256'],'Approved email delivery backend'
 for f in ['llms.txt','llms-core.txt']:
  assert re.findall(r'Last verified:.*',(root/f).read_text())==re.findall(r'Last verified:.*',old(f))
  assert 'Personal AI Legibility Audit: $350 one-time.' in (root/f).read_text()
@@ -51,4 +52,4 @@ changed_routes={'https://katyashalel.com/'+f.removesuffix('index.html') for f in
 assert set(b)==set(a)|new_routes
 assert all(b[u]==revision['publicationDate'] for u in new_routes)
 for url in a:assert b[url]==(revision['publicationDate'] if url in changed_routes else m['publicationDate'] if url in ['https://katyashalel.com'+p for p in ['/','/ru/','/audit/','/ru/audit/']] else a[url])
-print(json.dumps({'offerLanguages':2,'approvedBulletsPerLanguage':6,'changedHomepageCTAs':2,'sitemapDates':4,'backend':'unchanged','status':'passed'}))
+print(json.dumps({'offerLanguages':2,'approvedBulletsPerLanguage':6,'changedHomepageCTAs':2,'sitemapDates':4,'backend':'approved email delivery; contract tests required','status':'passed'}))

@@ -53,20 +53,10 @@ async function run() {
           await page.locator('#f-send').click();
           assert.match(await page.locator('#f-note').innerText(), /valid email/);
           await page.locator('#f-email').fill('test@example.com');
-          let submissions = 0;
-          await page.route('**/api/lead', route => { submissions++; return route.fulfill({ status: 500, contentType: 'application/json', body: JSON.stringify({ ok: true }) }); });
+          await page.route('**/api/lead', route => route.fulfill({ status: 500, contentType: 'application/json', body: JSON.stringify({ ok: true }) }));
           await page.locator('#f-send').click();
-          if (path === '/audit/') {
-            assert.match(await page.locator('#f-note').innerText(), /has not been sent/);
-            assert.equal(submissions, 0, 'Email recovery must not submit to the broken handler');
-            const draft = new URL(await page.locator('#email-open').getAttribute('href'));
-            assert.equal(draft.pathname, 'shalelekaterina@gmail.com');
-            assert.match(draft.searchParams.get('body'), /Reply email: test@example.com/);
-            assert.ok(await page.locator('#email-draft').isVisible());
-          } else {
-            await page.getByText('Something went wrong.', { exact: false }).waitFor();
-            assert.doesNotMatch(await page.locator('#f-note').innerText(), /Thanks/);
-          }
+          await page.getByText('Something went wrong.', { exact: false }).waitFor();
+          assert.doesNotMatch(await page.locator('#f-note').innerText(), /Thanks/);
           await page.unroute('**/api/lead');
         }
         await page.screenshot({ path: `${out}/${lang}-${width}-${path.replace(/\//g, '_') || 'home'}-full.png`, fullPage: true });

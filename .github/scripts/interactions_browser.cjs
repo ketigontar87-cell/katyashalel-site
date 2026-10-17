@@ -73,41 +73,31 @@ async function activate(locator,width){if(width===390)await locator.tap();else{a
    for(const kind of ['lead','waitlist']){
     const button=page.locator(kind==='lead'?'#f-send':'.wl-form button');if(!await button.count())continue;
     const email=kind==='lead'?'#f-email':'#wl-email';
-    if(row.route==='/audit/'&&kind==='lead'){
-     const posts=results.mockedPosts;
-     await page.locator(email).fill('invalid');await activate(button,width);
-     assert.match(await page.locator('#f-note').innerText(),/valid email/);
-     assert.equal(await page.locator('#email-recovery').isVisible(),false);
-     const message='Public request & <example> + ? #\nРусский 😀\n'+('Detailed public context. '.repeat(220));
-     await page.locator(email).fill('qa@example.invalid');
-     await page.locator('#f-name').fill('QA & Катя');await page.locator('#f-message').fill(message);
-     await activate(button,width);
-     const draft=new URL(await page.locator('#email-open').getAttribute('href'));
-     assert.equal(draft.protocol,'mailto:');assert.equal(draft.pathname,'shalelekaterina@gmail.com');
-     assert.equal(draft.searchParams.get('subject'),'AI Legibility Audit request');
-     assert.ok(draft.searchParams.get('body').endsWith(message),'Complete Unicode and long message retained');
-     assert.ok((await page.locator('#email-draft').inputValue()).endsWith(message),'Copyable draft is complete');
-     assert.match(await page.locator('#f-note').innerText(),/has not been sent/);
-     assert.equal(await page.locator('#f-message').inputValue(),message);
-     await page.locator('#f-name').fill('Updated name');
-     assert.equal(await page.locator('#email-recovery').isVisible(),false,'Hide stale draft after editing');
-     await activate(button,width);
-     assert.match(await page.locator('#email-draft').inputValue(),/Name: Updated name/);
-     assert.equal(results.mockedPosts,posts,'Draft preparation must make no submission');
-     assert.equal(await button.isDisabled(),false);
-     await page.screenshot({path:path.join(out,`audit-email-recovery-${width}.png`),fullPage:true});
-     results.forms.push({route:row.route,width,kind:'email-draft',scenario:'complete-draft-no-send'});
-     continue;
-    }
     for(const scenario of ['invalid','success','http','negative','empty','malformed','network']){
      await page.goto(origin+row.route);response=scenario;const posts=results.mockedPosts;
-     await page.locator(email).fill(scenario==='invalid'?'invalid':'qa@example.invalid');await activate(button,width);
+     await page.locator(email).fill(scenario==='invalid'?'invalid':'qa@example.invalid');
+     const publicMessage='Русский & <example> + ? #\n'+('Public evidence. '.repeat(320));
+     if(row.route==='/audit/'&&kind==='lead')await page.locator('#f-message').fill(publicMessage);
+     await activate(button,width);
      if(scenario==='invalid'){await page.waitForTimeout(30);assert.equal(results.mockedPosts,posts,'Invalid email must not submit');}
      else{
       const note=page.locator(kind==='lead'?'#f-note':'.wl-form button');
       await note.filter({hasText:scenario==='success'?/Thanks|You are in|Вы в листе/:/Something went wrong|Error, try again|Ошибка/}).waitFor();
       assert.equal(results.mockedPosts,posts+1);assert.equal(await button.isDisabled(),scenario==='success');
       if(scenario!=='success')assert.equal(await page.locator(email).inputValue(),'qa@example.invalid','Retain email for retry');
+      if(row.route==='/audit/'&&kind==='lead'){
+       assert.equal(await page.locator('#email-recovery').isVisible(),scenario!=='success');
+       assert.equal(await page.locator('#f-message').inputValue(),publicMessage,'Retain complete message');
+       if(scenario!=='success'){
+        const draft=new URL(await page.locator('#email-open').getAttribute('href'));
+        assert.equal(draft.pathname,'shalelekaterina@gmail.com');
+        assert.ok(draft.searchParams.get('body').endsWith(publicMessage));
+        assert.ok((await page.locator('#email-draft').inputValue()).endsWith(publicMessage));
+        assert.doesNotMatch(await page.locator('#f-note').innerText(),/Thanks/);
+        await page.locator('#f-name').fill('Updated name');
+        assert.equal(await page.locator('#email-recovery').isVisible(),false,'Hide stale fallback');
+       }
+      }
       if(scenario==='negative'&&width===390)await page.screenshot({path:path.join(out,`${row.route.replaceAll('/','_')}-error.png`),fullPage:false});
      }
      results.forms.push({route:row.route,width,kind,scenario});
