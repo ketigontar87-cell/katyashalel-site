@@ -29,7 +29,7 @@ async function run() {
         if (path === '/' || path === '/ru/') {
           const expected = lang === 'en' ? 'Does AI recommend you when your customers ask?' : 'Рекомендует ли вас AI вашим потенциальным клиентам?';
           assert.equal(await page.getByRole('heading', { level: 1 }).innerText().then(s => s.replace(/\s+/g, ' ')), expected);
-          assert.equal(await page.locator('.hero .actions a').count(), 1);
+          assert.equal(await page.locator('.hero .actions a').count(), 2);
           await page.screenshot({ path: `${out}/${lang}-${width}-hero.png` });
           const menu = page.locator('.mobile-nav');
           if (await menu.isVisible()) {
@@ -40,10 +40,13 @@ async function run() {
             await page.keyboard.press('Enter');
           }
           await page.locator('#method').screenshot({ path: `${out}/${lang}-${width}-method.png` });
-          await page.locator('.hero .actions a').click();
-          assert.ok(page.url().endsWith('/audit/#request'));
-          assert.ok(await page.locator('#request #f-email').isVisible());
-          await page.goto(origin+path);
+          const routes = lang === 'en' ? ['/audit/', '/brands/'] : ['/ru/audit/', '/ru/brands/'];
+          for (let i = 0; i < routes.length; i++) {
+            await page.locator('.hero .actions a').nth(i).click();
+            assert.equal(new URL(page.url()).pathname, routes[i]);
+            assert.equal(await page.getByRole('heading', { level: 1 }).count(), 1);
+            await page.goto(origin + path, { waitUntil: 'networkidle' });
+          }
         }
         const disclosure = page.locator('.faq summary').first();
         await disclosure.focus();

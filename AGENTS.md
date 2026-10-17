@@ -2,7 +2,7 @@
 
 ## What this site is
 
-Personal entity hub for Ekaterina Shalel (Katya Shalel), founder and legibility strategist. The primary job of this codebase is to stay machine-readable and internally consistent for AI crawlers and retrieval systems. Visual polish is secondary to structured-data correctness.
+Personal entity hub for Ekaterina Shalel (Katya Shalel), founder and legibility strategist. The primary customer pages help specialists and companies understand their problem, the service and the next step. Keep the site machine-readable and internally consistent without making visitors read research protocols to choose a service.
 
 ## Identity constants, never change without an explicit instruction
 
@@ -72,3 +72,7 @@ Commit author email must be shalelekaterina@gmail.com. Verify git config user.em
 ## Approved brand correction, 4 October 2026
 
 The company and product are Legibi. AI Legibility remains the discipline and Legibility Sprint remains the method. Public founder attribution names Legibi and links to https://legibi.ai/ where HTML supports links. Keep English, Russian and machine-readable surfaces consistent.
+
+## Human-first public pages (owner directive, 2026-10-17)
+
+Main pages must explain the customer's problem, who the offer fits, the useful result, scope and next action in plain language. Keep navigation explicit for independent specialists and companies. Put detailed protocols, raw model answers, competitor observations and research qualifications on linked public reference pages or clearly labeled disclosures. Preserve complete evidence and its limitations there. Structured data and machine-readable summaries must agree with those accessible public facts. Never create hidden crawler-only claims or let technical vocabulary dominate the customer journey. Keep development status, price and material offer limits clear before commitment.

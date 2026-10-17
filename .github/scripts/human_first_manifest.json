@@ -1,0 +1,8 @@
+{
+  "base": "3a5f60f0f95f9b872c2821c4bd89e9e401f507d9",
+  "reason": "Owner-approved human-first copy and separate audience routes; audit offer and delivery unchanged",
+  "homepageSha256": {
+    "index.html": "9ec2f4ffaee49b07aabec7e5602a3ab3c45e97cfc34e77c5adb632f40a40bfe7",
+    "ru/index.html": "83ad1dbd9c574869f0d216621b2a42fdfa7368a90cae0595051edb2a5b24d5a5"
+  }
+}
