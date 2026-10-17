@@ -143,3 +143,16 @@ Legibi at legibi.ai is a platform created by Ekaterina Shalel and implements the
 getmai.ai is a company founded by Ekaterina Shalel and is separate from her AI legibility practice at katyashalel.com.
 
 AI legibility as defined here concerns how AI systems retrieve, reconstruct, evaluate and select entities. It is not the same as AI accessibility, which concerns accessibility of AI products and experiences to people.
+
+
+## Public evidence update, October 17, 2026
+
+Company diagnostic: https://katyashalel.com/brands/
+Russian company diagnostic: https://katyashalel.com/ru/brands/
+A scoped advisory engagement for founders and marketing teams. Subjects, AI tools and interfaces, scenarios, markets, languages, deliverables, price and timing are agreed before commitment. Implementation, monitoring and follow-up tests are separate options. This advisory service is distinct from Legibi’s invite-only platform in development.
+
+Public observation: https://katyashalel.com/observations/2026-10-17-consultant-selection/
+Russian record: https://katyashalel.com/ru/observations/2026-10-17-consultant-selection/
+One preserved ChatGPT consumer-interface answer with analyst review; Ekaterina Shalel and Legibi were not named. Exact model version and exit geography were unverified, and the post-answer personalization check was incomplete. Excluded from strict T0. Other failed or unsent attempts are not absences. No improvement, causal or market-frequency claim.
+
+Research status: protocols and exploratory observations are labeled separately. The July and August field notes in the revised essay are self-reported historical observations without attached raw runs; they are not a reproducible baseline.

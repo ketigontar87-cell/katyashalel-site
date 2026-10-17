@@ -259,6 +259,13 @@
     "excluded": null
   },
   {
+    "file": "observations/2026-10-17-consultant-selection/index.html",
+    "route": "/observations/2026-10-17-consultant-selection/",
+    "family": "research",
+    "lang": "en",
+    "excluded": null
+  },
+  {
     "file": "ongoing/index.html",
     "route": "/ongoing/",
     "family": "service",
@@ -352,6 +359,13 @@
   {
     "file": "ru/essays/mesto-v-otvete-modeli-prodaetsya/index.html",
     "route": "/ru/essays/mesto-v-otvete-modeli-prodaetsya/",
+    "family": "essay",
+    "lang": "ru",
+    "excluded": null
+  },
+  {
+    "file": "ru/essays/mozhno-li-izmenit-chto-ai-govorit-o-vas/index.html",
+    "route": "/ru/essays/mozhno-li-izmenit-chto-ai-govorit-o-vas/",
     "family": "essay",
     "lang": "ru",
     "excluded": null
@@ -455,6 +469,13 @@
     "excluded": null
   },
   {
+    "file": "ru/observations/2026-10-17-consultant-selection/index.html",
+    "route": "/ru/observations/2026-10-17-consultant-selection/",
+    "family": "research",
+    "lang": "ru",
+    "excluded": null
+  },
+  {
     "file": "ru/ongoing/index.html",
     "route": "/ru/ongoing/",
     "family": "service",
@@ -465,6 +486,13 @@
     "file": "ru/pochemu-ai-znaet-no-ne-rekomenduet/index.html",
     "route": "/ru/pochemu-ai-znaet-no-ne-rekomenduet/",
     "family": "reference",
+    "lang": "ru",
+    "excluded": null
+  },
+  {
+    "file": "ru/research/index.html",
+    "route": "/ru/research/",
+    "family": "research",
     "lang": "ru",
     "excluded": null
   },
