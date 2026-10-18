@@ -1,0 +1,34 @@
+{
+  "publicationDate": "2026-10-18",
+  "agentVersion": "2026-10-18.1",
+  "base": "54f86d4c43c8295a310e91041647abaefe9fd991",
+  "updatedPages": [
+    "index.html",
+    "ru/index.html",
+    "audit/index.html",
+    "ru/audit/index.html"
+  ],
+  "newPages": [
+    "advisory/index.html",
+    "ru/advisory/index.html"
+  ],
+  "apiOfferingChanges": {
+    "platform": {
+      "name": "Legibi",
+      "description": "AI legibility platform in development, created by Ekaterina Shalel. Early access starts with a scope discussion; available tools, deliverables, price and timing are agreed before commitment.",
+      "url": "https://legibi.ai/"
+    },
+    "companies": {
+      "name": "Legibility work for companies",
+      "description": "A scoped review of how AI describes and recommends a company, with findings and prioritized changes. Tools, markets, languages, price and timing are agreed before work begins. Implementation, monitoring and re-measurement are separate options.",
+      "url": "https://katyashalel.com/brands/"
+    },
+    "advisory": {
+      "name": "One-to-one positioning and AI legibility",
+      "description": "Direct individual work with Ekaterina Shalel on positioning, audience, expertise and offer. Agreed wording, evidence review and public-profile priorities. Scope, deliverables, review rounds, price, timing and language are agreed before work begins. Written collaboration is available; calls only by agreement. No prior audit required. Separate from the $350 audit. AI testing, implementation, publishing and monitoring require an agreed scope. No guaranteed recommendations or sales.",
+      "url": "https://katyashalel.com/advisory/",
+      "alternate_url": "https://katyashalel.com/ru/advisory/"
+    },
+    "service_details_updated": "2026-10-18"
+  }
+}

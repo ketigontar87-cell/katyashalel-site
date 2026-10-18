@@ -13,6 +13,8 @@ on:
       - '.github/scripts/audit_*'
       - '.github/scripts/public_fit_review.py'
       - 'docs/public-fit-revision.json'
+      - 'docs/advisory-revision.json'
+      - '.github/scripts/human_first_manifest.json'
       - 'observations/**'
       - 'api/agent.js'
       - 'api/lead.js'

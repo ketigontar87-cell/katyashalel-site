@@ -5,7 +5,8 @@ import hashlib, html, json, re
 root = Path(__file__).resolve().parents[2]
 revision = json.loads((root / 'docs/public-fit-revision.json').read_text())
 clean = lambda s: re.sub(r'\s+', ' ', html.unescape(re.sub('<[^>]*>', '', s))).strip()
-for filename in revision['updatedPages'] + revision['newPages']:
+advisory = json.loads((root / 'docs/advisory-revision.json').read_text())
+for filename in revision['updatedPages'] + revision['newPages'] + advisory['newPages']:
     source = (root / filename).read_text()
     route = '/' + filename.removesuffix('index.html')
     assert f'rel="canonical" href="https://katyashalel.com{route}"' in source
@@ -45,3 +46,21 @@ for prefix in ['', 'ru/']:
     assert 'Consumer brands, beauty and personal care companies, retailers' not in source
     assert 'mailto:shalelekaterina@gmail.com' in source
 print(json.dumps({'bilingualPages': 8, 'preservedResponse': 'sha256 verified', 'strictT0': False, 'status': 'passed'}))
+
+# The advisory is a separate, linked offer. Preserve the fixed written audit package.
+for prefix in ['', 'ru/']:
+    page = (root / prefix / 'advisory/index.html').read_text()
+    assert 'mailto:shalelekaterina@gmail.com' in page
+    assert 'id="scope"' in page and 'id="contact"' in page
+    assert f'href="/{prefix}audit/"' in page
+    assert f'href="/{prefix}advisory/"' in (root / prefix / 'index.html').read_text()
+    assert f'href="/{prefix}advisory/"' in (root / prefix / 'audit/index.html').read_text()
+    graph = json.loads(re.search(r'<script type="application/ld\+json">(.*?)</script>', page, re.S)[1])['@graph']
+    service = next(n for n in graph if n['@type']=='Service')
+    assert service['provider']=={'@id':'https://katyashalel.com/#person'}
+    assert service['url']=='https://katyashalel.com/'+prefix+'advisory/'
+    assert 'offers' not in service, 'Do not invent an advisory price'
+    assert '$350' in page, 'Distinguish the existing audit package'
+for path in ['llms.txt','llms-core.txt','README.md']:
+    assert 'https://katyashalel.com/advisory/' in (root/path).read_text()
+assert json.loads((root/'.well-known/agent-card.json').read_text())['version']==advisory['agentVersion']

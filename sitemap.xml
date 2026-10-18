@@ -2,13 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://katyashalel.com/</loc>
-    <lastmod>2026-10-12</lastmod>
+    <lastmod>2026-10-18</lastmod>
     <xhtml:link rel="alternate" hreflang="ru" href="https://katyashalel.com/ru/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://katyashalel.com/"/>
   </url>
   <url>
     <loc>https://katyashalel.com/ru/</loc>
-    <lastmod>2026-10-12</lastmod>
+    <lastmod>2026-10-18</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://katyashalel.com/"/>
     <xhtml:link rel="alternate" hreflang="ru" href="https://katyashalel.com/ru/"/>
   </url>
@@ -192,7 +192,7 @@
   </url>
   <url>
     <loc>https://katyashalel.com/audit/</loc>
-    <lastmod>2026-10-12</lastmod>
+    <lastmod>2026-10-18</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://katyashalel.com/audit/"/>
     <xhtml:link rel="alternate" hreflang="ru" href="https://katyashalel.com/ru/audit/"/>
   </url>
@@ -383,7 +383,7 @@
   </url>
   <url>
     <loc>https://katyashalel.com/ru/audit/</loc>
-    <lastmod>2026-10-12</lastmod>
+    <lastmod>2026-10-18</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://katyashalel.com/audit/"/>
     <xhtml:link rel="alternate" hreflang="ru" href="https://katyashalel.com/ru/audit/"/>
   </url>
@@ -427,4 +427,6 @@
     <xhtml:link rel="alternate" hreflang="ru" href="https://katyashalel.com/ru/observations/2026-10-17-consultant-selection/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://katyashalel.com/observations/2026-10-17-consultant-selection/"/>
   </url>
+  <url><loc>https://katyashalel.com/advisory/</loc><lastmod>2026-10-18</lastmod></url>
+  <url><loc>https://katyashalel.com/ru/advisory/</loc><lastmod>2026-10-18</lastmod></url>
 </urlset>

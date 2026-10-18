@@ -95,3 +95,10 @@ Russian record: https://katyashalel.com/ru/observations/2026-10-17-consultant-se
 One preserved ChatGPT consumer-interface answer with analyst review; Ekaterina Shalel and Legibi were not named. Exact model version and exit geography were unverified, and the post-answer personalization check was incomplete. Excluded from strict T0. Other failed or unsent attempts are not absences. No improvement, causal or market-frequency claim.
 
 Research status: protocols and exploratory observations are labeled separately. The July and August field notes in the revised essay are self-reported historical observations without attached raw runs; they are not a reproducible baseline.
+
+## Individual advisory, service details updated 2026-10-18
+
+Ekaterina Shalel works directly with independent specialists, experts and founders to clarify their positioning, audience, expertise and offer. Deliverables can include agreed wording, an evidence review and priorities for public profiles and the website. Scope, deliverables, review rounds, price, timing and language are agreed before work begins. Written collaboration is available; calls are arranged only by agreement. No prior audit is required. AI testing, implementation, publishing and monitoring are separately agreed. No guaranteed AI recommendations or sales.
+English: https://katyashalel.com/advisory/
+Russian: https://katyashalel.com/ru/advisory/
+This is separate from the $350 written personal audit, which uses two agreed AI tools and includes three copy blocks and one round of written revisions. Current audit terms: https://katyashalel.com/audit/
