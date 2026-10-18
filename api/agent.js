@@ -149,13 +149,13 @@ const TERMS = {
 const OFFERINGS = {
   platform: {
     name: "Legibi",
-    description: "AI legibility platform created by Ekaterina Shalel for measuring how AI systems retrieve, understand, corroborate, compare and select companies, then supporting diagnosis, intervention and verification.",
+    description: "AI legibility platform in development, created by Ekaterina Shalel. Early access starts with a scope discussion; available tools, deliverables, price and timing are agreed before commitment.",
     url: "https://legibi.ai/"
   },
   companies: {
     name: "Legibility work for companies",
     description:
-      "Controlled measurement of how AI systems currently retrieve, understand and select a company, followed by diagnosis, implementation priorities and re-measurement.",
+      "A scoped review of how AI describes and recommends a company, with findings and prioritized changes. Tools, markets, languages, price and timing are agreed before work begins. Implementation, monitoring and re-measurement are separate options.",
     url: `${SITE}/brands/`
   },
   founders: {
@@ -163,6 +163,12 @@ const OFFERINGS = {
     description:
       "$350 one-time personal audit: one person, one service, one target market and language, up to five public website pages. Two agreed AI tools; six buyer scenarios tested twice per tool, 24 attempts including failed or unusable responses. Written report, five prioritized fixes, three ready-to-use copy blocks and one round of written revisions. Tools and delivery date agreed before work begins. Implementation, publishing, monitoring and retesting are excluded. Recommendations and sales are not guaranteed.",
     url: `${SITE}/audit/`
+  },
+  advisory: {
+    name: "One-to-one positioning and AI legibility",
+    description: "Direct individual work with Ekaterina Shalel on positioning, audience, expertise and offer. Agreed wording, evidence review and public-profile priorities. Scope, deliverables, review rounds, price, timing and language are agreed before work begins. Written collaboration is available; calls only by agreement. No prior audit required. Separate from the $350 audit. AI testing, implementation, publishing and monitoring require an agreed scope. No guaranteed recommendations or sales.",
+    url: `${SITE}/advisory/`,
+    alternate_url: `${SITE}/ru/advisory/`
   },
   open_method: {
     name: "Legibility Sprint",
@@ -173,6 +179,7 @@ const OFFERINGS = {
     name: "Research",
     url: `${SITE}/research/`
   },
+  service_details_updated: "2026-10-18",
   contact: "shalelekaterina@gmail.com",
   last_verified: LAST_VERIFIED
 };
@@ -203,7 +210,7 @@ export default async function handler(req, res) {
   const wantsCategory =
     type === "category" || /ai legibility|legibility strategist|what is legibility/.test(ask);
   const wantsOfferings =
-    type === "offerings" || /offer|service|audit|sprint|platform|price|pricing|work with/.test(ask);
+    type === "offerings" || /offer|service|audit|sprint|platform|price|pricing|work with|positioning|advisory|one.to.one/.test(ask);
   const wantsTerm =
     type === "term" || (ask && Object.keys(TERMS).some((k) => matches(k, ask)));
 

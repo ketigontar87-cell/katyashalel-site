@@ -7,7 +7,7 @@ const root = process.cwd();
 const origin = 'http://127.0.0.1:4175';
 const out = process.env.MOTION_ARTIFACTS || '/tmp/katya-motion-evidence';
 // Approved human-first homepage snapshot; audit_offer.py independently locks source and metadata.
-const base = '9fc1dd6a9341ef01168da2eaa960a2337e2d002a';
+const base = 'e51cc3d7642d27f3b886096dee87d9fee9e4cca7';
 const server = spawn('python3', ['-m', 'http.server', '4175', '--bind', '127.0.0.1'], { stdio: 'ignore' });
 async function signature(page) {
   return page.evaluate(() => ({

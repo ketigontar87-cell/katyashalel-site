@@ -2,7 +2,7 @@
   "base": "3a5f60f0f95f9b872c2821c4bd89e9e401f507d9",
   "reason": "Owner-approved human-first copy and separate audience routes; audit offer and delivery unchanged",
   "homepageSha256": {
-    "index.html": "9ec2f4ffaee49b07aabec7e5602a3ab3c45e97cfc34e77c5adb632f40a40bfe7",
-    "ru/index.html": "25591d1a8d6ea066a2c2d544a01ab912082db62213455fd0d8d9b1776ba189b2"
+    "index.html": "b2040cb8ed646dc259fd9976b98bd45a513e0a20d3135a33ea6354644a601a5d",
+    "ru/index.html": "8e97fe03e09e4018a9ebdc5d92d1eacf0997cf375029d1aa6dd0bb0655f6fc39"
   }
 }

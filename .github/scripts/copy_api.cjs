@@ -2,6 +2,7 @@
 const assert=require('node:assert/strict'),fs=require('node:fs'),{execFileSync}=require('node:child_process');
 const m=require('./copy_review_manifest.json');
 const offer=require('./audit_offer_manifest.json');
+const advisory=require('../../docs/advisory-revision.json');
 (async()=>{
  const load=async code=>(await import('data:text/javascript;base64,'+Buffer.from(code).toString('base64'))).default;
  const before=await load(execFileSync('git',['show',m.base+':api/agent.js'],{encoding:'utf8'}));
@@ -12,8 +13,10 @@ const offer=require('./audit_offer_manifest.json');
   const expected=JSON.parse(JSON.stringify(original).replaceAll('Measure -> diagnose -> intervene -> verify.',m.method));
   function approvedOffer(x){if(!x||typeof x!=='object')return;if(x.founders?.name==='Legibility Audit')x.founders=offer.apiFounders;Object.values(x).forEach(approvedOffer)}
   approvedOffer(expected);
+  if(expected.result.offerings)Object.assign(expected.result.offerings,advisory.apiOfferingChanges);
   assert.deepEqual(current,expected,'Existing API contract preserved for '+JSON.stringify(query));
   if(!query.type)assert.equal(current.result.identity.method.short,m.method);
  }
- console.log('6 local API output cases passed; schema, verification date, sources and headers preserved');
+ for(const q of ['one-to-one positioning','advisory']){const current=await invoke(after,{q});assert.equal(current.result.type,'offerings');assert.equal(current.result.offerings.advisory.url,'https://katyashalel.com/advisory/');}
+ console.log('8 local API output cases passed; schema, verification date, sources and headers preserved');
 })().catch(e=>{console.error(e);process.exitCode=1});

@@ -12,7 +12,7 @@
     "organization": "Ekaterina Shalel",
     "url": "https://katyashalel.com"
   },
-  "version": "2026-10-17.1",
+  "version": "2026-10-18.1",
   "documentationUrl": "https://katyashalel.com/llms-core.txt",
   "capabilities": {
     "streaming": false,
@@ -30,7 +30,7 @@
     {
       "id": "canonical-facts-lookup",
       "name": "Ekaterina Shalel identity, AI legibility and canonical facts",
-      "description": "Answers canonical questions about Ekaterina Shalel and AI legibility. Category explains AI legibility and its relationship to AI Search/GEO, technical SEO, digital PR, entity and brand authority, and measurement. Recommendation explains why an AI system may know a company yet still not select it. Every response includes source URLs and scope limits. One model answer is treated as an observation, not market proof.",
+      "description": "Answers canonical questions about Ekaterina Shalel and AI legibility. Category explains AI legibility and its relationship to AI Search/GEO, technical SEO, digital PR, entity and brand authority, and measurement. Recommendation explains why an AI system may know a company yet still not select it. Every response includes source URLs and scope limits. One model answer is treated as an observation, not market proof. Current services include a written personal audit and separately scoped one-to-one positioning advisory. Current terms are on the linked service pages.",
       "tags": [
         "ekaterina-shalel",
         "ai-legibility",

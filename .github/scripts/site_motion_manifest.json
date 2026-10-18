@@ -7,6 +7,13 @@
     "excluded": null
   },
   {
+    "file": "advisory/index.html",
+    "route": "/advisory/",
+    "family": "service",
+    "lang": "en",
+    "excluded": null
+  },
+  {
     "file": "ai-legibility/index.html",
     "route": "/ai-legibility/",
     "family": "reference",
@@ -290,6 +297,13 @@
     "file": "ru/about/index.html",
     "route": "/ru/about/",
     "family": "profile",
+    "lang": "ru",
+    "excluded": null
+  },
+  {
+    "file": "ru/advisory/index.html",
+    "route": "/ru/advisory/",
+    "family": "service",
     "lang": "ru",
     "excluded": null
   },

@@ -6,9 +6,10 @@ const {chromium}=require('playwright');
 const manifest=require('./site_motion_manifest.json');
 const copyReview=require('./copy_review_manifest.json');
 const publicRevision=require('../../docs/public-fit-revision.json');
+const advisoryRevision=require('../../docs/advisory-revision.json');
 // Homepage content is locked by the owner-approved human_first_manifest and audit_offer.py.
-const revisedPages=new Set([...publicRevision.updatedPages,...publicRevision.newPages,'index.html','ru/index.html']);
-const newPages=new Set(publicRevision.newPages);
+const revisedPages=new Set([...publicRevision.updatedPages,...publicRevision.newPages,...advisoryRevision.newPages,...advisoryRevision.updatedPages,'index.html','ru/index.html']);
+const newPages=new Set([...publicRevision.newPages,...advisoryRevision.newPages]);
 const base='1062f45669884a5c0aa700c22a06eac360135151';
 const origin='http://127.0.0.1:4185';
 const out=process.env.SITE_MOTION_ARTIFACTS||'/tmp/katya-site-motion/results';
