@@ -114,7 +114,7 @@ async function ready(page){await page.evaluate(async()=>{await document.fonts.re
     }
     if(mode==='motion'){
      await p.evaluate(()=>scrollTo({top:0,behavior:'instant'}));await p.screenshot({path:`${out}/${row.file.replaceAll('/','_')}-${width}.png`});
-     const last=p.locator('.motion-heading:visible').last();await last.evaluate(e=>e.scrollIntoView({block:'center',behavior:'instant'}));await p.waitForFunction(()=>[...document.querySelectorAll('.motion-heading')].filter(e=>e.getClientRects().length>0).at(-1)?.classList.contains('is-registered'));
+     const last=p.locator('.motion-heading:not(details:not([open]) *)').last();await last.evaluate(e=>e.scrollIntoView({block:'center',behavior:'instant'}));await p.waitForFunction(()=>[...document.querySelectorAll('.motion-heading')].filter(e=>!e.closest('details:not([open])')).at(-1)?.classList.contains('is-registered'));
      if(['service','profile','research','archive'].includes(row.family)||row.file.includes('water-against')||row.file==='ru/guides/dictionary/index.html')await p.screenshot({path:`${out}/${row.file.replaceAll('/','_')}-${width}-reading.png`});
     }
     assert.deepEqual(errors,[],`${row.route}: JS errors`);p.off('pageerror',capture);
