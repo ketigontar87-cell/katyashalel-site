@@ -109,12 +109,12 @@ async function ready(page){await page.evaluate(async()=>{await document.fonts.re
      if(mode==='reduced')assert.equal(await first.evaluate(e=>getComputedStyle(e,'::before').transitionDuration),'0s');
     }
     const disclosure=p.locator('details:visible').first();if(await disclosure.count()){
-     await disclosure.locator('summary').focus();await p.keyboard.press('Enter');assert.equal(await disclosure.getAttribute('open'),'',`${row.route} keyboard disclosure`);await p.keyboard.press('Enter');
-     if(width===390){await disclosure.locator('summary').tap();assert.equal(await disclosure.getAttribute('open'),'',`${row.route} touch disclosure`);await disclosure.locator('summary').tap();}
+     await disclosure.locator(':scope > summary').focus();await p.keyboard.press('Enter');assert.equal(await disclosure.getAttribute('open'),'',`${row.route} keyboard disclosure`);await p.keyboard.press('Enter');
+     if(width===390){await disclosure.locator(':scope > summary').tap();assert.equal(await disclosure.getAttribute('open'),'',`${row.route} touch disclosure`);await disclosure.locator(':scope > summary').tap();}
     }
     if(mode==='motion'){
      await p.evaluate(()=>scrollTo({top:0,behavior:'instant'}));await p.screenshot({path:`${out}/${row.file.replaceAll('/','_')}-${width}.png`});
-     const last=p.locator('.motion-heading').last();await last.evaluate(e=>e.scrollIntoView({block:'center',behavior:'instant'}));await p.waitForFunction(()=>[...document.querySelectorAll('.motion-heading')].at(-1)?.classList.contains('is-registered'));
+     const last=p.locator('.motion-heading:visible').last();await last.evaluate(e=>e.scrollIntoView({block:'center',behavior:'instant'}));await p.waitForFunction(()=>[...document.querySelectorAll('.motion-heading')].filter(e=>e.getClientRects().length>0).at(-1)?.classList.contains('is-registered'));
      if(['service','profile','research','archive'].includes(row.family)||row.file.includes('water-against')||row.file==='ru/guides/dictionary/index.html')await p.screenshot({path:`${out}/${row.file.replaceAll('/','_')}-${width}-reading.png`});
     }
     assert.deepEqual(errors,[],`${row.route}: JS errors`);p.off('pageerror',capture);
