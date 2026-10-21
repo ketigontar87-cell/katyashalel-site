@@ -123,19 +123,21 @@ xml=ET.fromstring((root/'sitemap.xml').read_text());entries={u.find('s:loc',ns).
 evidence=json.loads((root/'docs/sitemap-date-evidence.json').read_text())
 revision=json.loads((root/'docs/public-fit-revision.json').read_text())
 advisory=json.loads((root/'docs/advisory-revision.json').read_text())
+case_revision=json.loads((root/'docs/personal-case-revision.json').read_text())
+case_routes={'https://katyashalel.com/'+f.removesuffix('index.html') for f in case_revision['updatedPages']}
 advisory_routes={'https://katyashalel.com/'+f.removesuffix('index.html') for f in advisory['updatedPages']+advisory['newPages']}
 revision_routes={'https://katyashalel.com/'+f.removesuffix('index.html') for f in revision['updatedPages']+revision['newPages']}
 historical_routes={'https://katyashalel.com'+e['route'] for e in evidence}
 new_routes={'https://katyashalel.com/'+f.removesuffix('index.html') for f in revision['newPages']}
 assert set(entries)==historical_routes|new_routes|advisory_routes
 assert all(entries[u]==advisory['publicationDate'] for u in advisory_routes)
-assert all(entries[u]==revision['publicationDate'] for u in revision_routes)
+assert all(entries[u]==(case_revision['publicationDate'] if u in case_routes else revision['publicationDate']) for u in revision_routes)
 assert len(evidence)==71
 for e in evidence:
- assert entries['https://katyashalel.com'+e['route']]==(advisory['publicationDate'] if e['file'] in advisory['updatedPages'] else revision['publicationDate'] if e['file'] in revision['updatedPages'] else offer['publicationDate'] if e['file'] in offer['htmlPages'] else e['lastmod'])
+ assert entries['https://katyashalel.com'+e['route']]==(case_revision['publicationDate'] if e['file'] in case_revision['updatedPages'] else advisory['publicationDate'] if e['file'] in advisory['updatedPages'] else revision['publicationDate'] if e['file'] in revision['updatedPages'] else offer['publicationDate'] if e['file'] in offer['htmlPages'] else e['lastmod'])
  assert e['lastmod']==subprocess.check_output(['git','show','-s','--format=%cs',e['publishedCommit']],cwd=root,text=True).strip()
  subprocess.run(['git','merge-base','--is-ancestor',e['publishedCommit'],base],cwd=root,check=True)
 assert entries['https://katyashalel.com/']==advisory['publicationDate']
 assert len(set(entries.values()))>1
-assert json.loads((root/'.well-known/agent-card.json').read_text())['version']==advisory['agentVersion']
+assert json.loads((root/'.well-known/agent-card.json').read_text())['version']==case_revision['agentVersion']
 print(json.dumps({'html_documents':len(all_html),'json_ld_blocks':count,'copy_pages':len(manifest['pages']),'sitemap_dates_with_published_evidence':len(evidence),'styles_structure_and_behavior':'unchanged','status':'passed'}))

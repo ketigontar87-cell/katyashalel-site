@@ -30,5 +30,25 @@
       "destination": "/guides/sprint/",
       "permanent": true
     }
+  ],
+  "headers": [
+    {
+      "source": "/observations/2026-10-17-consultant-selection/record.json",
+      "headers": [
+        {
+          "key": "X-Robots-Tag",
+          "value": "noindex"
+        }
+      ]
+    },
+    {
+      "source": "/observations/2026-10-17-consultant-selection/answer.txt",
+      "headers": [
+        {
+          "key": "X-Robots-Tag",
+          "value": "noindex"
+        }
+      ]
+    }
   ]
 }
