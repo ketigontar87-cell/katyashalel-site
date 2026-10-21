@@ -16,7 +16,7 @@ const origin='http://127.0.0.1:4187';const server=spawn('python3',['-m','http.se
  assert.equal(await page.locator('article img').count(),0);
  const details=page.locator('[data-nosnippet] > details');assert.equal(await details.getAttribute('open'),null);
  await details.locator(':scope > summary').focus();await page.keyboard.press('Enter');assert.equal(await details.getAttribute('open'),'');
- await details.locator('details > summary').click();assert.ok(await details.locator('pre').isVisible());
+ await details.locator('details').locator(':scope > summary').click();assert.ok(await details.locator('pre').isVisible());
  await details.locator(':scope > summary').click();
  await page.screenshot({path:`artifacts/website-browser/personal-case/${pre?'ru':'en'}-${width}.png`,fullPage:true});
  const cta=page.locator('.footer-cta .btn');assert.equal(await cta.getAttribute('href'),'/'+pre+'audit/');
