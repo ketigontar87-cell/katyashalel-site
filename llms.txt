@@ -92,7 +92,7 @@ A scoped advisory engagement for founders and marketing teams. Subjects, AI tool
 
 Public observation: https://katyashalel.com/observations/2026-10-17-consultant-selection/
 Russian record: https://katyashalel.com/ru/observations/2026-10-17-consultant-selection/
-One preserved ChatGPT consumer-interface answer with analyst review; Ekaterina Shalel and Legibi were not named. Exact model version and exit geography were unverified, and the post-answer personalization check was incomplete. Excluded from strict T0. Other failed or unsent attempts are not absences. No improvement, causal or market-frequency claim.
+Personal case: How AI recommends an expert. A supplied ChatGPT screenshot documented by October 12, 2026 names Ekaterina Shalel as “My top recommendation” and “Closest match” for an AI legibility strategist. Its visible prompt does not name her; exact capture date and model version are unknown. A separate October 17 task-based observation selected other providers. Different prompts, not a controlled before-and-after comparison. Original October 17 answer and conditions remain available; excluded from strict T0. No causal improvement or selection-frequency claim.
 
 Research status: protocols and exploratory observations are labeled separately. The July and August field notes in the revised essay are self-reported historical observations without attached raw runs; they are not a reproducible baseline.
 
