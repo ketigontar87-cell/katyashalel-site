@@ -26,6 +26,21 @@
 <link rel="stylesheet" href="/assets/motion/site.css">
 <script defer src="/assets/motion/site.js"></script>
 <noscript><style>html{scroll-behavior:auto}</style></noscript>
+<style data-founder-layout>
+/* Approved homepage copy, compact responsive hero. Portrait and content order retained. */
+.hero{padding-top:32px;padding-bottom:44px;gap:clamp(32px,4vw,64px)}
+.hero h1{font-size:clamp(44px,4.7vw,68px);line-height:1.03;margin:16px 0 20px}
+.hero .lede{font-size:18px;line-height:1.55}
+.hero .actions{margin-top:22px}
+.hero .portrait{min-height:560px}
+@media(max-width:899px){
+ .hero{padding-top:20px;gap:24px}
+ .hero .portrait{min-height:240px;background-position:center 20%}
+ .hero h1{font-size:clamp(36px,7.8vw,48px);margin:12px 0 18px}
+ .hero .lede{font-size:17px;line-height:1.5}
+ .hero .actions{margin-top:18px}
+}
+</style>
 </head>
 <body data-motion-family="home">
 <header class="top"><div class="wrap"><a class="logo" href="/">Ekaterina Shalel</a><nav class="nav" aria-label="Main navigation"><a href="https://legibi.ai/">Legibi</a><a href="#method">My approach</a><a href="#about">About</a><a href="/research/">Research</a><a href="/ru/">RU</a></nav><details class="mobile-nav"><summary>Menu</summary><nav aria-label="Mobile navigation"><a href="https://legibi.ai/">Legibi</a><a href="#method">My approach</a><a href="#about">About</a><a href="/research/">Research</a><a href="/ru/">RU</a></nav></details></div></header>

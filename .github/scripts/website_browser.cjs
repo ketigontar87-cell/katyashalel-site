@@ -32,6 +32,10 @@ async function run() {
           assert.equal(await page.getByRole('heading', { level: 1 }).innerText().then(s => s.replace(/\s+/g, ' ')), expected);
           assert.equal(await page.locator('.hero .actions a').count(), 2);
           await page.screenshot({ path: `${out}/${lang}-${width}-hero.png` });
+          await page.locator('.hero').screenshot({ path: `${out}/${lang}-${width}-hero-complete.png` });
+          const primaryBottom = await page.locator('.hero .btn.primary').evaluate(e=>e.getBoundingClientRect().bottom+scrollY);
+          if(width===1440) assert.ok(primaryBottom<=900,'Desktop primary CTA stays within the first 900px viewport');
+          if(width===390) assert.ok(primaryBottom<=1200,'Compact mobile hero keeps the CTA within a short initial scroll');
           const menu = page.locator('.mobile-nav');
           if (await menu.isVisible()) {
             await menu.locator('summary').focus();

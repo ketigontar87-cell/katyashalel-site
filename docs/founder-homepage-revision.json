@@ -4,8 +4,8 @@
   "sourceLibraryFileId": "libfile_61491e35b06c8191abdb33a927aeddf8",
   "publicationStatus": "draft-not-published",
   "homepageSha256": {
-    "index.html": "61f6c274689bad1bc3d65f46b48ea2a863c526b0eaa4daa3cd8e1f2cd24c5edd",
-    "ru/index.html": "0391e21b6247c053b5d2b95f3335fe73a318f3fc73f77b12e2f3262885e2f3c4"
+    "index.html": "2605506e47273284c1f9b1f003c42f183a6c85b0dc3e49746b90d6b2bb299c93",
+    "ru/index.html": "7c0d5d99db5e04f10de823f372177c31935c22adc91e286db3cbb73e2ab44dd0"
   },
   "copy": {
     "en": {
@@ -60,5 +60,6 @@
     "Keep PR36 separate; do not merge its observation repair incidentally.",
     "At authorized publication, reconcile sitemap lastmod and agent-card version with current main.",
     "Homepage capability statements describe planned work, not released self-service capability."
-  ]
+  ],
+  "approvedLayoutStyle": "<style data-founder-layout>\n/* Approved homepage copy, compact responsive hero. Portrait and content order retained. */\n.hero{padding-top:32px;padding-bottom:44px;gap:clamp(32px,4vw,64px)}\n.hero h1{font-size:clamp(44px,4.7vw,68px);line-height:1.03;margin:16px 0 20px}\n.hero .lede{font-size:18px;line-height:1.55}\n.hero .actions{margin-top:22px}\n.hero .portrait{min-height:560px}\n@media(max-width:899px){\n .hero{padding-top:20px;gap:24px}\n .hero .portrait{min-height:240px;background-position:center 20%}\n .hero h1{font-size:clamp(36px,7.8vw,48px);margin:12px 0 18px}\n .hero .lede{font-size:17px;line-height:1.5}\n .hero .actions{margin-top:18px}\n}\n</style>"
 }

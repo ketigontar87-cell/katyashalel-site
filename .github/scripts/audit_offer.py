@@ -8,7 +8,8 @@ human=json.loads((root/'docs/founder-homepage-revision.json').read_text())
 for f in ['index.html','ru/index.html']:
  s=(root/f).read_text()
  before=subprocess.check_output(['git','show',human['base']+':'+f],cwd=root,text=True)
- assert hashlib.sha256(s.encode()).hexdigest()==human['homepageSha256'][f],f+' approved human-first copy'
+ assert hashlib.sha256(s.encode()).hexdigest()==human['homepageSha256'][f],f+' approved founder-first copy'
+ assert s.count(human['approvedLayoutStyle'])==1,f+' exact approved compact hero styles'
  for pattern in [r'<style>.*?</style>',r'<script(?![^>]*application/ld\+json)[^>]*>.*?</script>',r'<link[^>]*(?:rel="canonical"|hreflang=)[^>]*>']:
   assert re.findall(pattern,s,re.S)==re.findall(pattern,before,re.S),f+' preserve runtime, identity and language metadata'
  prefix='ru/' if f.startswith('ru/') else ''
