@@ -21,6 +21,7 @@ for f in ['index.html','ru/index.html']:
  assert c['headline'] in clean(s)
  assert all(t in clean(s) for t in c['paragraphs'])
  assert c['title'] in s and c['description'] in s
+ assert c['signature'] in clean(s),f+' full founder signature'
 for lang in ['en','ru']:
  f=('ru/' if lang=='ru' else '')+'audit/index.html';s=(root/f).read_text();before=old(f);c=m['copy'][lang]
  assert re.findall(r'<style>.*?</style>',before,re.S)==[x.replace(m['addedStyle'],'') for x in re.findall(r'<style>.*?</style>',s,re.S)],f+' preserve styles except list spacing'
@@ -68,5 +69,5 @@ new_routes={'https://katyashalel.com/'+f.removesuffix('index.html') for f in rev
 changed_routes={'https://katyashalel.com/'+f.removesuffix('index.html') for f in revision['updatedPages']}
 assert set(b)==set(a)|new_routes
 assert all(b[u]==(advisory['publicationDate'] if u in advisory_routes else revision['publicationDate']) for u in new_routes)
-for url in a:assert b[url]==(advisory['publicationDate'] if url in advisory_routes else revision['publicationDate'] if url in changed_routes else m['publicationDate'] if url in ['https://katyashalel.com'+p for p in ['/','/ru/','/audit/','/ru/audit/']] else a[url])
+for url in a:assert b[url]==(human['publicationDate'] if url in ['https://katyashalel.com/','https://katyashalel.com/ru/'] else advisory['publicationDate'] if url in advisory_routes else revision['publicationDate'] if url in changed_routes else m['publicationDate'] if url in ['https://katyashalel.com'+p for p in ['/','/ru/','/audit/','/ru/audit/']] else a[url])
 print(json.dumps({'offerLanguages':2,'approvedBulletsPerLanguage':6,'changedHomepageCTAs':2,'sitemapDates':4,'backend':'approved email delivery; contract tests required','status':'passed'}))

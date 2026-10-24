@@ -2,18 +2,18 @@
   "base": "3938e1f52dd513c33cb8b3d05eee6363796e100c",
   "approvedAt": "2026-10-24",
   "sourceLibraryFileId": "libfile_61491e35b06c8191abdb33a927aeddf8",
-  "publicationStatus": "draft-not-published",
+  "publicationStatus": "authorized-release-candidate",
   "homepageSha256": {
-    "index.html": "2605506e47273284c1f9b1f003c42f183a6c85b0dc3e49746b90d6b2bb299c93",
-    "ru/index.html": "7c0d5d99db5e04f10de823f372177c31935c22adc91e286db3cbb73e2ab44dd0"
+    "index.html": "e57d1f17fc49eaf145dee5622398912d82ca02b4dc38bebb63540b3fd54046c7",
+    "ru/index.html": "19fb389e8d1c82e8783868da73e859c5af9465909d1d5f3ec840620816d518e9"
   },
   "copy": {
     "en": {
       "title": "Ekaterina Shalel | Founder of Legibi",
-      "description": "Founder of Legibi, building a platform to help teams understand AI recommendations, identify information gaps and decide what to improve next.",
+      "description": "Founder of Legibi, building an AI legibility platform for independent professionals, founders and marketing teams to understand AI answers and decide what to improve.",
       "headline": "See how AI presents your business. Decide what to improve.",
       "paragraphs": [
-        "I’m building Legibi for founders and marketing teams who need to understand how AI describes their business, compares alternatives and recommends a fit for the buyer’s needs.",
+        "We're building Legibi for independent professionals, founders and marketing teams who need to understand how AI presents their offer when a potential customer compares options or checks credibility.",
         "We’re designing it to connect the answers and sources with clear priorities for your team.",
         "Legibi is in development. Request early access to discuss availability and fit.",
         "Start with a buying situation that matters to the business. Preserve the answer and its visible sources. Record a mention, a shortlist appearance and an explicit recommendation separately.",
@@ -29,14 +29,15 @@
       "heroLinks": [
         "https://legibi.ai/",
         "/guides/sprint/"
-      ]
+      ],
+      "signature": "Ekaterina Shalel, founder of Legibi, an AI legibility platform (legibi.ai)."
     },
     "ru": {
       "title": "Екатерина Шалель | Основательница Legibi",
-      "description": "Основательница Legibi. Создаю платформу, которая поможет командам разобраться в AI-рекомендациях, найти пробелы в информации и выбрать, что улучшать дальше.",
+      "description": "Основательница Legibi. Создаём платформу AI legibility для независимых специалистов, основателей и маркетинговых команд: разобраться в ответах AI и выбрать, что улучшать.",
       "headline": "Узнайте, как AI представляет ваш бизнес. Поймите, что улучшать.",
       "paragraphs": [
-        "Я создаю Legibi для основателей и маркетинговых команд, которым важно понимать, как AI описывает их бизнес, сравнивает варианты и рекомендует решение под задачу покупателя.",
+        "Мы создаём Legibi для независимых специалистов, основателей и маркетинговых команд, которым важно понимать, как AI представляет их предложение, когда потенциальный клиент сравнивает варианты или проверяет доверие.",
         "Мы строим продукт, который свяжет ответы и источники с понятными приоритетами для вашей команды.",
         "Legibi в разработке. Оставьте заявку на ранний доступ: обсудим вашу задачу и возможность участия.",
         "Начинаю с ситуации выбора, важной для бизнеса. Сохраняю ответ и видимые источники. Упоминание, попадание в список вариантов и прямую рекомендацию учитываю отдельно.",
@@ -52,14 +53,17 @@
       "heroLinks": [
         "https://legibi.ai/",
         "/ru/guides/sprint/"
-      ]
+      ],
+      "signature": "Екатерина Шалель, основательница Legibi, платформы AI legibility (legibi.ai)."
     }
   },
   "sourceSha256": "172ca495182156fcd185de4130ceb3237988101111aa5f9a2256537b2f84677d",
   "releaseNotes": [
-    "Keep PR36 separate; do not merge its observation repair incidentally.",
-    "At authorized publication, reconcile sitemap lastmod and agent-card version with current main.",
-    "Homepage capability statements describe planned work, not released self-service capability."
+    "PR37 publication authorized 2026-10-24. PR36 is not included.",
+    "Personal audit scope, forms, research and observation evidence unchanged."
   ],
-  "approvedLayoutStyle": "<style data-founder-layout>\n/* Approved homepage copy, compact responsive hero. Portrait and content order retained. */\n.hero{padding-top:32px;padding-bottom:44px;gap:clamp(32px,4vw,64px)}\n.hero h1{font-size:clamp(44px,4.7vw,68px);line-height:1.03;margin:16px 0 20px}\n.hero .lede{font-size:18px;line-height:1.55}\n.hero .actions{margin-top:22px}\n.hero .portrait{min-height:560px}\n@media(max-width:899px){\n .hero{padding-top:20px;gap:24px}\n .hero .portrait{min-height:240px;background-position:center 20%}\n .hero h1{font-size:clamp(36px,7.8vw,48px);margin:12px 0 18px}\n .hero .lede{font-size:17px;line-height:1.5}\n .hero .actions{margin-top:18px}\n}\n</style>"
+  "approvedLayoutStyle": "<style data-founder-layout>\n/* Approved homepage copy, compact responsive hero. Portrait and content order retained. */\n.hero{padding-top:32px;padding-bottom:44px;gap:clamp(32px,4vw,64px)}\n.hero h1{font-size:clamp(44px,4.7vw,68px);line-height:1.03;margin:16px 0 20px}\n.hero .lede{font-size:18px;line-height:1.55}\n.hero .actions{margin-top:22px}\n.hero .portrait{min-height:560px}\n@media(max-width:899px){\n .hero{padding-top:20px;gap:24px}\n .hero .portrait{min-height:240px;background-position:center 20%}\n .hero h1{font-size:clamp(36px,7.8vw,48px);margin:12px 0 18px}\n .hero .lede{font-size:17px;line-height:1.5}\n .hero .actions{margin-top:18px}\n}\n</style>",
+  "publicationDate": "2026-10-24",
+  "agentVersion": "2026-10-24.1",
+  "audienceApproval": "2026-10-24: independent professionals, founders and marketing teams; personal audit remains separate; person-mode planned only."
 }

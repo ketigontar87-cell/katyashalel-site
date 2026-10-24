@@ -6,6 +6,8 @@ root = Path(__file__).resolve().parents[2]
 revision = json.loads((root / 'docs/public-fit-revision.json').read_text())
 clean = lambda s: re.sub(r'\s+', ' ', html.unescape(re.sub('<[^>]*>', '', s))).strip()
 advisory = json.loads((root / 'docs/advisory-revision.json').read_text())
+founder=json.loads((root/'docs/founder-homepage-revision.json').read_text())
+founder_routes={'https://katyashalel.com/','https://katyashalel.com/ru/'}
 for filename in revision['updatedPages'] + revision['newPages'] + advisory['newPages']:
     source = (root / filename).read_text()
     route = '/' + filename.removesuffix('index.html')
@@ -63,4 +65,4 @@ for prefix in ['', 'ru/']:
     assert '$350' in page, 'Distinguish the existing audit package'
 for path in ['llms.txt','llms-core.txt','README.md']:
     assert 'https://katyashalel.com/advisory/' in (root/path).read_text()
-assert json.loads((root/'.well-known/agent-card.json').read_text())['version']==advisory['agentVersion']
+assert json.loads((root/'.well-known/agent-card.json').read_text())['version']==founder['agentVersion']
