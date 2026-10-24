@@ -1,0 +1,64 @@
+{
+  "base": "3938e1f52dd513c33cb8b3d05eee6363796e100c",
+  "approvedAt": "2026-10-24",
+  "sourceLibraryFileId": "libfile_61491e35b06c8191abdb33a927aeddf8",
+  "publicationStatus": "draft-not-published",
+  "homepageSha256": {
+    "index.html": "61f6c274689bad1bc3d65f46b48ea2a863c526b0eaa4daa3cd8e1f2cd24c5edd",
+    "ru/index.html": "0391e21b6247c053b5d2b95f3335fe73a318f3fc73f77b12e2f3262885e2f3c4"
+  },
+  "copy": {
+    "en": {
+      "title": "Ekaterina Shalel | Founder of Legibi",
+      "description": "Founder of Legibi, building a platform to help teams understand AI recommendations, identify information gaps and decide what to improve next.",
+      "headline": "See how AI presents your business. Decide what to improve.",
+      "paragraphs": [
+        "I’m building Legibi for founders and marketing teams who need to understand how AI describes their business, compares alternatives and recommends a fit for the buyer’s needs.",
+        "We’re designing it to connect the answers and sources with clear priorities for your team.",
+        "Legibi is in development. Request early access to discuss availability and fit.",
+        "Start with a buying situation that matters to the business. Preserve the answer and its visible sources. Record a mention, a shortlist appearance and an explicit recommendation separately.",
+        "Then compare what AI says with the actual offer and available evidence. Separate factual errors from possible explanations, and identify changes worth testing.",
+        "The output should make the next step clear: which claim to clarify, which page to update, what evidence to add and what to check again. That is the workflow we’re building into Legibi.",
+        "Every change competes for your team’s time and budget. Before commissioning more content or another website rewrite, you need a reason to believe that work addresses the problem.",
+        "A documented review gives you something concrete to evaluate and act on. A follow-up check can show what changed. Recommendations, enquiries and sales remain separate outcomes to measure.",
+        "I’m Ekaterina Shalel, founder of Legibi. My background spans running businesses and building AI products, including SKINBOT in beauty retail.",
+        "My focus now is making AI recommendation analysis useful to the people deciding what to change in a business. Here I share the method, research and documented observations behind that work.",
+        "Explore how I define a test, preserve evidence and turn findings into priorities. Read the research on AI recommendations and what different measurements can tell a business.",
+        "Explore Legibi and tell us what you want to understand. Availability, supported capabilities and any pricing will be discussed before you commit."
+      ],
+      "heroLinks": [
+        "https://legibi.ai/",
+        "/guides/sprint/"
+      ]
+    },
+    "ru": {
+      "title": "Екатерина Шалель | Основательница Legibi",
+      "description": "Основательница Legibi. Создаю платформу, которая поможет командам разобраться в AI-рекомендациях, найти пробелы в информации и выбрать, что улучшать дальше.",
+      "headline": "Узнайте, как AI представляет ваш бизнес. Поймите, что улучшать.",
+      "paragraphs": [
+        "Я создаю Legibi для основателей и маркетинговых команд, которым важно понимать, как AI описывает их бизнес, сравнивает варианты и рекомендует решение под задачу покупателя.",
+        "Мы строим продукт, который свяжет ответы и источники с понятными приоритетами для вашей команды.",
+        "Legibi в разработке. Оставьте заявку на ранний доступ: обсудим вашу задачу и возможность участия.",
+        "Начинаю с ситуации выбора, важной для бизнеса. Сохраняю ответ и видимые источники. Упоминание, попадание в список вариантов и прямую рекомендацию учитываю отдельно.",
+        "Затем сопоставляю ответ AI с реальным предложением и доступными подтверждениями. Отделяю ошибки в фактах от возможных объяснений и определяю изменения, которые стоит проверить.",
+        "На выходе должно быть понятно: какое утверждение уточнить, какую страницу обновить, какие доказательства добавить и что проверить повторно. Именно такой процесс мы закладываем в Legibi.",
+        "Каждое изменение требует времени и бюджета команды. Прежде чем заказывать новый контент или ещё раз переписывать сайт, важно понять, есть ли основания считать, что эта работа решает вашу проблему.",
+        "Документированный разбор даёт конкретный материал для решения и действий. Повторная проверка позволяет увидеть изменения. Рекомендации, обращения и продажи при этом требуют отдельного учёта.",
+        "Я Екатерина Шалель, основательница Legibi. За моими проектами стоит опыт собственного бизнеса и создания AI-продуктов, включая SKINBOT в beauty retail.",
+        "Сейчас я работаю над тем, чтобы анализ AI-рекомендаций помогал людям принимать конкретные решения об изменениях в бизнесе. Здесь делюсь методикой, исследованиями и зафиксированными наблюдениями, на которых строится эта работа.",
+        "Как сформулировать проверку, сохранить доказательства и превратить находки в приоритеты. Что можно понять об AI-рекомендациях из источников и разных измерений.",
+        "Посмотрите Legibi и расскажите о своей задаче. Возможность участия, доступные функции и стоимость обсудим до того, как вы примете решение."
+      ],
+      "heroLinks": [
+        "https://legibi.ai/",
+        "/ru/guides/sprint/"
+      ]
+    }
+  },
+  "sourceSha256": "172ca495182156fcd185de4130ceb3237988101111aa5f9a2256537b2f84677d",
+  "releaseNotes": [
+    "Keep PR36 separate; do not merge its observation repair incidentally.",
+    "At authorized publication, reconcile sitemap lastmod and agent-card version with current main.",
+    "Homepage capability statements describe planned work, not released self-service capability."
+  ]
+}

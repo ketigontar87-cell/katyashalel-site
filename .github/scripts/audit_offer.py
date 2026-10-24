@@ -4,16 +4,22 @@ import json,re,subprocess,html,hashlib,xml.etree.ElementTree as ET
 root=Path(__file__).resolve().parents[2];m=json.loads((root/'.github/scripts/audit_offer_manifest.json').read_text())
 def old(f):return subprocess.check_output(['git','show',m['base']+':'+f],cwd=root,text=True)
 def clean(s):return re.sub(r'\s+',' ',html.unescape(re.sub('<[^>]*>','',s))).strip()
-human=json.loads((root/'.github/scripts/human_first_manifest.json').read_text())
+human=json.loads((root/'docs/founder-homepage-revision.json').read_text())
 for f in ['index.html','ru/index.html']:
  s=(root/f).read_text()
  before=subprocess.check_output(['git','show',human['base']+':'+f],cwd=root,text=True)
  assert hashlib.sha256(s.encode()).hexdigest()==human['homepageSha256'][f],f+' approved human-first copy'
- for pattern in [r'<style>.*?</style>',r'<script[^>]*>.*?</script>',r'<link[^>]*(?:rel="canonical"|hreflang=)[^>]*>']:
+ for pattern in [r'<style>.*?</style>',r'<script(?![^>]*application/ld\+json)[^>]*>.*?</script>',r'<link[^>]*(?:rel="canonical"|hreflang=)[^>]*>']:
   assert re.findall(pattern,s,re.S)==re.findall(pattern,before,re.S),f+' preserve runtime, identity and language metadata'
  prefix='ru/' if f.startswith('ru/') else ''
  hero=re.search(r'<div class="actions">(.*?)</div>',s,re.S).group(1)
- assert re.findall(r'href="([^"]+)"',hero)==['/'+prefix+'audit/','/'+prefix+'brands/'],f+' two audience routes'
+ assert re.findall(r'href="([^"]+)"',hero)==['https://legibi.ai/','/'+prefix+'guides/sprint/'],f+' founder-first product and method routes'
+ schemas=lambda x:[json.loads(v) for v in re.findall(r'<script type="application/ld\+json">(.*?)</script>',x,re.S)]
+ assert schemas(s)==[v for v in schemas(before) if v.get('@type')!='FAQPage'],f+' preserve Person identity; remove absent service FAQ'
+ c=human['copy']['ru' if prefix else 'en']
+ assert c['headline'] in clean(s)
+ assert all(t in clean(s) for t in c['paragraphs'])
+ assert c['title'] in s and c['description'] in s
 for lang in ['en','ru']:
  f=('ru/' if lang=='ru' else '')+'audit/index.html';s=(root/f).read_text();before=old(f);c=m['copy'][lang]
  assert re.findall(r'<style>.*?</style>',before,re.S)==[x.replace(m['addedStyle'],'') for x in re.findall(r'<style>.*?</style>',s,re.S)],f+' preserve styles except list spacing'
