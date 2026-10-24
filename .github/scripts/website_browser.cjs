@@ -3,6 +3,7 @@ const assert = require('node:assert/strict');
 const { mkdir, writeFile } = require('node:fs/promises');
 const { spawn } = require('node:child_process');
 const { chromium } = require('playwright');
+const founder = require('../../docs/founder-homepage-revision.json');
 const origin = 'http://127.0.0.1:4174';
 const out = 'artifacts/website-browser';
 const server = spawn('python3', ['-m', 'http.server', '4174', '--bind', '127.0.0.1'], { stdio: 'ignore' });
@@ -23,35 +24,43 @@ async function run() {
         await page.goto(origin + path, { waitUntil: 'networkidle' });
         assert.equal(await page.getByRole('heading', { level: 1 }).count(), 1);
         assert.equal(await page.locator('html').getAttribute('lang'), lang);
-        assert.equal(await page.locator('.faq details').count(), 4);
+        assert.equal(await page.locator('.faq details').count(), ['/', '/ru/'].includes(path) ? 0 : 4);
         const layout = await page.evaluate(() => ({ width: innerWidth, scroll: document.documentElement.scrollWidth }));
         assert.ok(layout.scroll <= width + 1, JSON.stringify({ path, ...layout }));
         if (path === '/' || path === '/ru/') {
-          const expected = lang === 'en' ? 'Does AI recommend you when your customers ask?' : 'Рекомендует ли вас AI вашим потенциальным клиентам?';
+          const expected = founder.copy[lang].headline;
           assert.equal(await page.getByRole('heading', { level: 1 }).innerText().then(s => s.replace(/\s+/g, ' ')), expected);
           assert.equal(await page.locator('.hero .actions a').count(), 2);
           await page.screenshot({ path: `${out}/${lang}-${width}-hero.png` });
+          await page.locator('.hero').screenshot({ path: `${out}/${lang}-${width}-hero-complete.png` });
+          const primaryBottom = await page.locator('.hero .btn.primary').evaluate(e=>e.getBoundingClientRect().bottom+scrollY);
+          if(width===1440) assert.ok(primaryBottom<=900,'Desktop primary CTA stays within the first 900px viewport');
+          if(width===390) assert.ok(primaryBottom<=1200,'Compact mobile hero keeps the CTA within a short initial scroll');
           const menu = page.locator('.mobile-nav');
           if (await menu.isVisible()) {
             await menu.locator('summary').focus();
             await page.keyboard.press('Enter');
             assert.equal(await menu.getAttribute('open'), '');
-            assert.ok(await menu.getByRole('link', { name: lang === 'en' ? 'For companies' : 'Для компаний' }).isVisible());
+            assert.ok(await menu.getByRole('link', { name: 'Legibi', exact: true }).isVisible());
             await page.keyboard.press('Enter');
           }
           await page.locator('#method').screenshot({ path: `${out}/${lang}-${width}-method.png` });
-          const routes = lang === 'en' ? ['/audit/', '/brands/'] : ['/ru/audit/', '/ru/brands/'];
+          const routes = founder.copy[lang].heroLinks;
           for (let i = 0; i < routes.length; i++) {
+            assert.equal(await page.locator('.hero .actions a').nth(i).getAttribute('href'), routes[i]);
+            if (routes[i].startsWith('https://')) continue; // Assert external destination without leaving local-only QA.
             await page.locator('.hero .actions a').nth(i).click();
             assert.equal(new URL(page.url()).pathname, routes[i]);
             assert.equal(await page.getByRole('heading', { level: 1 }).count(), 1);
             await page.goto(origin + path, { waitUntil: 'networkidle' });
           }
         }
+        if (!['/', '/ru/'].includes(path)) {
         const disclosure = page.locator('.faq summary').first();
         await disclosure.focus();
         await page.keyboard.press('Enter');
         assert.equal(await page.locator('.faq details').first().getAttribute('open'), '');
+        }
         if (lang === 'en' && path !== '/') {
           await page.locator('#f-send').click();
           assert.match(await page.locator('#f-note').innerText(), /valid email/);

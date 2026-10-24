@@ -6,6 +6,8 @@ root = Path(__file__).resolve().parents[2]
 revision = json.loads((root / 'docs/public-fit-revision.json').read_text())
 clean = lambda s: re.sub(r'\s+', ' ', html.unescape(re.sub('<[^>]*>', '', s))).strip()
 advisory = json.loads((root / 'docs/advisory-revision.json').read_text())
+founder=json.loads((root/'docs/founder-homepage-revision.json').read_text())
+founder_routes={'https://katyashalel.com/','https://katyashalel.com/ru/'}
 for filename in revision['updatedPages'] + revision['newPages'] + advisory['newPages']:
     source = (root / filename).read_text()
     route = '/' + filename.removesuffix('index.html')
@@ -53,7 +55,7 @@ for prefix in ['', 'ru/']:
     assert 'mailto:shalelekaterina@gmail.com' in page
     assert 'id="scope"' in page and 'id="contact"' in page
     assert f'href="/{prefix}audit/"' in page
-    assert f'href="/{prefix}advisory/"' in (root / prefix / 'index.html').read_text()
+    assert f'href="/{prefix}audit/"' in (root / prefix / 'index.html').read_text(), 'Homepage retains secondary access to the unchanged audit and linked advisory'
     assert f'href="/{prefix}advisory/"' in (root / prefix / 'audit/index.html').read_text()
     graph = json.loads(re.search(r'<script type="application/ld\+json">(.*?)</script>', page, re.S)[1])['@graph']
     service = next(n for n in graph if n['@type']=='Service')
@@ -63,4 +65,4 @@ for prefix in ['', 'ru/']:
     assert '$350' in page, 'Distinguish the existing audit package'
 for path in ['llms.txt','llms-core.txt','README.md']:
     assert 'https://katyashalel.com/advisory/' in (root/path).read_text()
-assert json.loads((root/'.well-known/agent-card.json').read_text())['version']==advisory['agentVersion']
+assert json.loads((root/'.well-known/agent-card.json').read_text())['version']==founder['agentVersion']

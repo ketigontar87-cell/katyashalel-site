@@ -7,7 +7,7 @@ const root = process.cwd();
 const origin = 'http://127.0.0.1:4175';
 const out = process.env.MOTION_ARTIFACTS || '/tmp/katya-motion-evidence';
 // Approved human-first homepage snapshot; audit_offer.py independently locks source and metadata.
-const base = 'e51cc3d7642d27f3b886096dee87d9fee9e4cca7';
+const founder = require('../../docs/founder-homepage-revision.json');
 const server = spawn('python3', ['-m', 'http.server', '4175', '--bind', '127.0.0.1'], { stdio: 'ignore' });
 async function signature(page) {
   return page.evaluate(() => ({
@@ -27,7 +27,7 @@ async function signature(page) {
   try {
     for(const width of [390,768,1440]) for(const lang of ['en','ru']) {
       const path=lang==='en'?'/':'/ru/';
-      const html=execFileSync('git',['show',`${base}:${lang==='en'?'index.html':'ru/index.html'}`],{encoding:'utf8',cwd:root}).replace('Вопросы, которые люди задают на самом деле','Возможно, вы узнаете свою задачу');
+      const html=await fs.readFile(lang==='en'?'index.html':'ru/index.html','utf8'); // Approved source hash independently locked by audit_offer.py.
       let baseline;
       for(const mode of ['baseline','motion','reduced','no-js']) {
         const context=await browser.newContext({viewport:{width,height:900},javaScriptEnabled:mode!=='no-js',reducedMotion:mode==='reduced'?'reduce':'no-preference',hasTouch:width===390});
@@ -67,9 +67,11 @@ async function signature(page) {
           if(mode==='no-js')assert.equal(await page.locator('.motion-replay').count(),0);
           const menu=page.locator('.mobile-nav');
           if(await menu.isVisible()){await menu.locator('summary').focus();await page.keyboard.press('Enter');assert.equal(await menu.getAttribute('open'),'');await page.keyboard.press('Enter');}
-          const routes=lang==='en'?['/audit/','/brands/']:['/ru/audit/','/ru/brands/'];
+          const routes=founder.copy[lang].heroLinks;
           assert.equal(await page.locator('.hero .actions a').count(),2);
           for(let i=0;i<routes.length;i++){
+            assert.equal(await page.locator('.hero .actions a').nth(i).getAttribute('href'),routes[i]);
+            if(routes[i].startsWith('https://'))continue; // External product link verified without submission or remote navigation.
             await page.locator('.hero .actions a').nth(i).click();
             assert.equal(new URL(page.url()).pathname,routes[i]);
             assert.ok(await page.locator('h1').isVisible());

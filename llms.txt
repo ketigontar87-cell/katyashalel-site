@@ -2,6 +2,8 @@
 
 > Ekaterina Shalel (Katya Shalel, Екатерина Шалель, Катя Шалель) is the creator and founder of Legibi (https://legibi.ai/) and a legibility strategist working on AI legibility: measuring and improving how AI systems retrieve, understand, corroborate, compare and select entities under real decision conditions.
 
+Current product audience (2026-10-24): independent professionals, founders and marketing teams. Legibi is in development. Person-mode is a planned direction, not a claim of current availability. The existing $350 personal audit remains a separate service with its published scope, not a required entry to the platform.
+
 Canonical site: https://katyashalel.com/
 Russian site: https://katyashalel.com/ru/
 Canonical AI Legibility definition: https://katyashalel.com/ai-legibility/

@@ -150,8 +150,8 @@ async function activate(locator,width){if(width===390)await locator.tap();else{a
   const c=await browser.newContext({viewport:{width,height:900},hasTouch:width<900,javaScriptEnabled:mode!=='no-js',reducedMotion:mode==='reduced'?'reduce':'no-preference'});
   await c.route('**/*',r=>[origin,'https://fonts.googleapis.com','https://fonts.gstatic.com'].includes(new URL(r.request().url()).origin)?r.continue():r.abort());
   const p=await c.newPage();await p.goto(origin+route);await p.evaluate(()=>document.fonts.ready);
-  assert.equal(await p.locator('.content-copy a[href="https://legibi.ai/"]').count(),1);
-  for(const target of ['#about','#contact']){
+  assert.equal(await p.locator('.hero .btn.primary').getAttribute('href'),'https://legibi.ai/');
+  for(const target of ['#about','#method']){
    const mobile=p.locator('.mobile-nav');const nav=width<900?mobile:p.locator('.nav');
    if(width<900){if(await mobile.getAttribute('open')===null)await mobile.locator('summary').click();assert.ok(await nav.locator(`a[href="${target}"]`).evaluate(e=>e.getBoundingClientRect().height>=44));}
    const link=nav.locator(`a[href="${target}"]`);
@@ -160,7 +160,7 @@ async function activate(locator,width){if(width===390)await locator.tap();else{a
    if(width<900&&mode!=='no-js'){assert.equal(await mobile.getAttribute('open'),null);assert.equal(await p.evaluate(()=>document.activeElement.id),target.slice(1));}
    const covered=await p.locator(target+' h2,'+target+' .display').first().evaluate(e=>{const header=document.querySelector('.top').getBoundingClientRect();const r=e.getBoundingClientRect();return Math.min(header.bottom,innerHeight)>r.top;});
    assert.equal(covered,false,`${route} ${width} ${mode}: anchor heading obscured`);
-   if(target==='#contact'&&width===500)await p.screenshot({path:path.join(out,`${route==='/ru/'?'ru':'en'}-500-${mode}-contact.png`)});
+   if(target==='#method'&&width===500)await p.screenshot({path:path.join(out,`${route==='/ru/'?'ru':'en'}-500-${mode}-contact.png`)});
   }
   if(width===1440&&mode==='motion')await p.locator('.content-copy').first().screenshot({path:path.join(out,`${route==='/ru/'?'ru':'en'}-strategy.png`)});
   // Incoming links start in another document, not a same-document test-driver navigation.
