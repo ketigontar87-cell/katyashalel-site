@@ -53,7 +53,7 @@ for prefix in ['', 'ru/']:
     assert 'mailto:shalelekaterina@gmail.com' in page
     assert 'id="scope"' in page and 'id="contact"' in page
     assert f'href="/{prefix}audit/"' in page
-    assert f'href="/{prefix}advisory/"' in (root / prefix / 'index.html').read_text()
+    assert f'href="/{prefix}audit/"' in (root / prefix / 'index.html').read_text(), 'Homepage retains secondary access to the unchanged audit and linked advisory'
     assert f'href="/{prefix}advisory/"' in (root / prefix / 'audit/index.html').read_text()
     graph = json.loads(re.search(r'<script type="application/ld\+json">(.*?)</script>', page, re.S)[1])['@graph']
     service = next(n for n in graph if n['@type']=='Service')
