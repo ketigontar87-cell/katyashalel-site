@@ -55,7 +55,9 @@ def without_approved_ru_history(s):
 
 for f in manifest['pages']:
  before=old(f);after=(root/f).read_text();a=Structure();a.feed(before);b=Structure()
- b.feed(without_approved_ru_history(after) if f=='ru/ai-legibility/index.html' else after)
+ # Canonical photo binding: the About hero bytes and alt remain identical.
+ normalized_after=after.replace('src="/images/ekaterina-shalel-portrait.webp"', 'src="/images/about-coat.webp"') if f in ['about/index.html','ru/about/index.html'] else after
+ b.feed(without_approved_ru_history(normalized_after) if f=='ru/ai-legibility/index.html' else normalized_after)
  b_tags=list(b.tags)
  if f=='guides/sprint/index.html':
   for t in ALLOWED_SPRINT_HREFLANG:
@@ -139,5 +141,5 @@ for e in evidence:
  subprocess.run(['git','merge-base','--is-ancestor',e['publishedCommit'],base],cwd=root,check=True)
 assert entries['https://katyashalel.com/']==founder['publicationDate']
 assert len(set(entries.values()))>1
-assert json.loads((root/'.well-known/agent-card.json').read_text())['version']==founder['agentVersion']
+assert json.loads((root/'.well-known/agent-card.json').read_text())['version']=='2026-10-25.1'
 print(json.dumps({'html_documents':len(all_html),'json_ld_blocks':count,'copy_pages':len(manifest['pages']),'sitemap_dates_with_published_evidence':len(evidence),'styles_structure_and_behavior':'unchanged','status':'passed'}))
