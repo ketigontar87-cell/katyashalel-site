@@ -1,12 +1,13 @@
 """Acceptance for the owner-approved personal audit offer; no network or submissions."""
 from pathlib import Path
+from photo_binding import original_home_photo
 import json,re,subprocess,html,hashlib,xml.etree.ElementTree as ET
 root=Path(__file__).resolve().parents[2];m=json.loads((root/'.github/scripts/audit_offer_manifest.json').read_text())
 def old(f):return subprocess.check_output(['git','show',m['base']+':'+f],cwd=root,text=True)
 def clean(s):return re.sub(r'\s+',' ',html.unescape(re.sub('<[^>]*>','',s))).strip()
 human=json.loads((root/'docs/founder-homepage-revision.json').read_text())
 for f in ['index.html','ru/index.html']:
- s=(root/f).read_text()
+ s=original_home_photo((root/f).read_text())
  before=subprocess.check_output(['git','show',human['base']+':'+f],cwd=root,text=True)
  assert hashlib.sha256(s.encode()).hexdigest()==human['homepageSha256'][f],f+' approved founder-first copy'
  assert s.count(human['approvedLayoutStyle'])==1,f+' exact approved compact hero styles'

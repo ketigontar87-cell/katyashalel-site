@@ -40,6 +40,7 @@ jobs:
           node-version: 22
       - name: Validate editorial claims, dates and API contract
         run: |
+          python3 .github/scripts/photo_binding.py
           python3 .github/scripts/copy_review.py
           python3 .github/scripts/audit_offer.py
           python3 .github/scripts/public_fit_review.py
