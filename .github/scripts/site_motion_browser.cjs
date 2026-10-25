@@ -85,7 +85,14 @@ async function ready(page){await page.evaluate(async()=>{await document.fonts.re
      if(!copyExpected)copyExpected=actual;else assert.deepEqual(actual,copyExpected,`${row.route}: approved offer visible in every JS/motion mode`);
     }else if(copyReview.pages.includes(row.file)){
      // Authorized editorial changes can reflow text; styles/structure are locked by copy_review.py.
-     assert.deepEqual(actual.images,expected.images,`${row.route}: images preserved`);
+     const photoPage=['about/index.html','ru/about/index.html'].includes(row.file);
+     if(photoPage){
+      const portrait=p.locator('img.hero');
+      assert.equal(await portrait.getAttribute('src'),'/images/ekaterina-shalel-portrait.webp');
+      assert.deepEqual(await portrait.evaluate(i=>[i.complete,i.naturalWidth,i.naturalHeight]),[true,1100,1650],`${row.route}: canonical portrait loads`);
+     }
+     const preservedImages=photoPage?actual.images.map(([src,alt])=>[src==='/images/ekaterina-shalel-portrait.webp'?'/images/about-coat.webp':src,alt]):actual.images;
+     assert.deepEqual(preservedImages,expected.images,`${row.route}: images and alt preserved except approved canonical filename`);
      const authorizedSprintHreflang=['<link rel="alternate" hreflang="en" href="https://katyashalel.com/guides/sprint/">','<link rel="alternate" hreflang="ru" href="https://katyashalel.com/ru/guides/sprint/">','<link rel="alternate" hreflang="x-default" href="https://katyashalel.com/guides/sprint/">'];
      const fixedMeta=items=>items.filter(s=>!/(?:name|property)="(?:description|og:description|twitter:description)"/.test(s)&&!authorizedSprintHreflang.includes(s));
      assert.deepEqual(fixedMeta(actual.meta),fixedMeta(expected.meta),`${row.route}: non-copy metadata preserved`);
