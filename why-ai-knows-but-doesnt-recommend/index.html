@@ -29,7 +29,7 @@
   "description": "A practical explanation of why recognition by an AI system does not guarantee recommendation, and how to diagnose the boundary between being known, corroborated and selected.",
   "url": "https://katyashalel.com/why-ai-knows-but-doesnt-recommend/",
   "datePublished": "2026-09-01",
-  "dateModified": "2026-09-01",
+  "dateModified": "2026-10-26",
   "inLanguage": "en",
   "author": {"@id": "https://katyashalel.com/#person"},
   "publisher": {"@id": "https://katyashalel.com/#person"},
@@ -81,6 +81,7 @@ a{color:var(--red)}.top{max-width:860px;margin:0 auto;padding:28px 24px;display:
 <body data-motion-family="reference">
 <div class="top"><a class="name" href="/">Ekaterina Shalel</a><a href="/ru/pochemu-ai-znaet-no-ne-rekomenduet/">RU</a></div>
 <main>
+<article id="article">
   <div class="kicker">AI Legibility · Recommendation boundary</div>
   <h1>Why does AI know my company but still not recommend it?</h1>
   <p class="lead">Because recognition and recommendation are different tasks. A model can know who you are, describe you correctly, and still choose someone else when the question becomes: who should I hire, buy from, trust for this case, or put on the shortlist?</p>
@@ -120,8 +121,8 @@ a{color:var(--red)}.top{max-width:860px;margin:0 auto;padding:28px 24px;display:
   <div class="method">
     <div><b>Measure</b>Freeze the prompts and record the baseline.</div>
     <div><b>Diagnose</b>Trace sources, contradictions and missing evidence.</div>
-    <div><b>Intervene</b>Change the controlled surfaces or evidence environment.</div>
-    <div><b>Verify</b>Run the same conditions again and report what actually changed.</div>
+    <div><b>Fix</b>Change the controlled surfaces or evidence environment.</div>
+    <div><b>Measure again</b>Run the same conditions again and report what actually changed.</div>
   </div>
   <p>Repeated runs matter because generative answers are stochastic. Retrieval state matters because a searched answer and a closed-book answer are not the same measurement. Citation metrics stay surface-local because ChatGPT, Claude, Gemini and Perplexity do not expose identical retrieval and citation behavior.</p>
 
@@ -138,6 +139,8 @@ a{color:var(--red)}.top{max-width:860px;margin:0 auto;padding:28px 24px;display:
     <details><summary>Can anyone guarantee that ChatGPT will recommend my company?</summary><p>No. Model outputs vary by surface, model version, market, language, retrieval mode, personalization and stochastic sampling. A practitioner can measure, diagnose and intervene in the public evidence environment, but cannot guarantee a specific recommendation.</p></details>
     <details><summary>How do you measure recommendation visibility?</summary><p>Use a frozen prompt set, repeated clean-session runs, recorded retrieval conditions, raw outputs and surface-local metrics. Compare recognition, description, corroboration and selection without treating a before-and-after change as automatic proof of causality.</p></details>
   </section>
+
+</article>
 
   <section class="cta">
     <h2>Measure the recommendation boundary</h2>
