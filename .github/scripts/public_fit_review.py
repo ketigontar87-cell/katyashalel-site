@@ -65,4 +65,4 @@ for prefix in ['', 'ru/']:
     assert '$350' in page, 'Distinguish the existing audit package'
 for path in ['llms.txt','llms-core.txt','README.md']:
     assert 'https://katyashalel.com/advisory/' in (root/path).read_text()
-assert json.loads((root/'.well-known/agent-card.json').read_text())['version']=='2026-10-25.1'
+assert json.loads((root/'.well-known/agent-card.json').read_text())['version']=='2026-10-26.1'

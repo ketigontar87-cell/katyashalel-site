@@ -39,6 +39,14 @@ async function approvedContactRemoval(page){await page.evaluate(()=>{
   const a=document.createElement('a');a.href='/ru/guides/sprint/';a.textContent='RU';document.querySelector('.top').append(a);
  }
 
+ // Owner-approved 2026-10-26 method labels and truthful modification date.
+ // Preserve strict historical layout/content comparison around this small revision.
+ if(['/why-ai-knows-but-doesnt-recommend/','/ru/pochemu-ai-znaet-no-ne-rekomenduet/'].includes(location.pathname)){
+  const labels=document.querySelectorAll('.method b');labels[2].textContent='Fix';labels[3].textContent='Measure again';
+  for(const script of document.querySelectorAll('script[type="application/ld+json"]')){
+   const data=JSON.parse(script.textContent);if(data['@type']==='TechArticle'){data.dateModified='2026-10-26';script.textContent=JSON.stringify(data);}
+  }
+ }
  if(location.pathname==='/'||location.pathname==='/ru/')document.querySelector('.hero .actions a.btn.primary').setAttribute('href','/audit/#request');
 });}
 async function signature(page){return page.evaluate(()=>{
