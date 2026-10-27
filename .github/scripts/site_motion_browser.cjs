@@ -8,7 +8,7 @@ const copyReview=require('./copy_review_manifest.json');
 const publicRevision=require('../../docs/public-fit-revision.json');
 const advisoryRevision=require('../../docs/advisory-revision.json');
 // Homepage content is locked by the owner-approved human_first_manifest and audit_offer.py.
-const revisedPages=new Set([...publicRevision.updatedPages,...publicRevision.newPages,...advisoryRevision.newPages,...advisoryRevision.updatedPages,'index.html','ru/index.html']);
+const revisedPages=new Set([...publicRevision.updatedPages,...publicRevision.newPages,...advisoryRevision.newPages,...advisoryRevision.updatedPages,'essays/ai-can-find-you-will-it-choose-you/index.html','ru/essays/ai-mozhet-vas-nayti-no-vyberet-li-on-vas/index.html','index.html','ru/index.html']);
 const newPages=new Set([...publicRevision.newPages,...advisoryRevision.newPages]);
 const base='1062f45669884a5c0aa700c22a06eac360135151';
 const origin='http://127.0.0.1:4185';

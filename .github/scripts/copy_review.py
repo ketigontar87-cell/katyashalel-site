@@ -136,10 +136,10 @@ assert all(entries[u]==(founder['publicationDate'] if u in founder_routes else a
 assert all(entries[u]==revision['publicationDate'] for u in revision_routes)
 assert len(evidence)==71
 for e in evidence:
- assert entries['https://katyashalel.com'+e['route']]==(founder['publicationDate'] if e['file'] in ['index.html','ru/index.html'] else advisory['publicationDate'] if e['file'] in advisory['updatedPages'] else revision['publicationDate'] if e['file'] in revision['updatedPages'] else offer['publicationDate'] if e['file'] in offer['htmlPages'] else '2026-10-26' if e['file'] in ['why-ai-knows-but-doesnt-recommend/index.html','ru/pochemu-ai-znaet-no-ne-rekomenduet/index.html'] else e['lastmod'])
+ assert entries['https://katyashalel.com'+e['route']]==(founder['publicationDate'] if e['file'] in ['index.html','ru/index.html'] else advisory['publicationDate'] if e['file'] in advisory['updatedPages'] else revision['publicationDate'] if e['file'] in revision['updatedPages'] else offer['publicationDate'] if e['file'] in offer['htmlPages'] else '2026-10-26' if e['file'] in ['why-ai-knows-but-doesnt-recommend/index.html','ru/pochemu-ai-znaet-no-ne-rekomenduet/index.html'] else '2026-10-27' if e['file'] in ['essays/ai-can-find-you-will-it-choose-you/index.html', 'ru/essays/ai-mozhet-vas-nayti-no-vyberet-li-on-vas/index.html'] else e['lastmod'])
  assert e['lastmod']==subprocess.check_output(['git','show','-s','--format=%cs',e['publishedCommit']],cwd=root,text=True).strip()
  subprocess.run(['git','merge-base','--is-ancestor',e['publishedCommit'],base],cwd=root,check=True)
 assert entries['https://katyashalel.com/']==founder['publicationDate']
 assert len(set(entries.values()))>1
-assert json.loads((root/'.well-known/agent-card.json').read_text())['version']=='2026-10-26.1'
+assert json.loads((root/'.well-known/agent-card.json').read_text())['version']=='2026-10-27.1'
 print(json.dumps({'html_documents':len(all_html),'json_ld_blocks':count,'copy_pages':len(manifest['pages']),'sitemap_dates_with_published_evidence':len(evidence),'styles_structure_and_behavior':'unchanged','status':'passed'}))
