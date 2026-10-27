@@ -169,15 +169,6 @@
     <link rel="enclosure" type="image/jpeg" href="https://katyashalel.com/assets/covers/loreal-openai-answer.png"/>
   </entry>
   <entry>
-    <title>The Week Beauty Retail Went Agentic</title>
-    <link href="https://katyashalel.com/essays/the-week-beauty-retail-went-agentic/" rel="alternate" type="text/html"/>
-    <id>https://katyashalel.com/essays/the-week-beauty-retail-went-agentic/</id>
-    <published>2026-07-14T09:00:00+00:00</published>
-    <updated>2026-07-14T09:00:00+00:00</updated>
-    <summary type="text">Ulta and Google, L'Oreal and OpenAI, Haut.AI's Skin.Chat and Perfect Corp's public skin analysis APIs landed in one week of July 2026. What the agentic shift means for every retailer who will never build their own Gemini, and why a neutral decision layer is the answer.</summary>
-    <link rel="enclosure" type="image/jpeg" href="https://katyashalel.com/assets/covers/agentic-week-cover.png"/>
-  </entry>
-  <entry>
     <title>The Customer Who Rejected You Was Right</title>
     <link href="https://katyashalel.com/essays/the-first-customer-tax/" rel="alternate" type="text/html"/>
     <id>https://katyashalel.com/essays/the-first-customer-tax/</id>
@@ -185,6 +176,15 @@
     <updated>2026-07-14T09:00:00+00:00</updated>
     <summary type="text">On the First Customer Tax: why the first buyer who says no is doing correct math, and how founders reprice the deal instead of sharpening the pitch.</summary>
     <link rel="enclosure" type="image/jpeg" href="https://substackcdn.com/image/fetch/$s_!1Q1V!,w_1200,h_675,c_fill,f_jpg,q_auto:good,fl_progressive:steep,g_auto/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F78ed3e52-b561-4261-b904-e13f8655281a_941x1672.png"/>
+  </entry>
+  <entry>
+    <title>The Week Beauty Retail Went Agentic</title>
+    <link href="https://katyashalel.com/essays/the-week-beauty-retail-went-agentic/" rel="alternate" type="text/html"/>
+    <id>https://katyashalel.com/essays/the-week-beauty-retail-went-agentic/</id>
+    <published>2026-07-14T09:00:00+00:00</published>
+    <updated>2026-07-14T09:00:00+00:00</updated>
+    <summary type="text">Ulta and Google, L'Oreal and OpenAI, Haut.AI's Skin.Chat and Perfect Corp's public skin analysis APIs landed in one week of July 2026. What the agentic shift means for every retailer who will never build their own Gemini, and why a neutral decision layer is the answer.</summary>
+    <link rel="enclosure" type="image/jpeg" href="https://katyashalel.com/assets/covers/agentic-week-cover.png"/>
   </entry>
   <entry>
     <title>Your Website Has Two Readers. You Built It for One</title>
