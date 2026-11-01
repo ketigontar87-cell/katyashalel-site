@@ -161,7 +161,7 @@ const OFFERINGS = {
   founders: {
     name: "AI Legibility Audit",
     description:
-      "$350 one-time personal audit: one person, one service, one target market and language, up to five public website pages. Two agreed AI tools; six buyer scenarios tested twice per tool, 24 attempts including failed or unusable responses. Written report, five prioritized fixes, three ready-to-use copy blocks and one round of written revisions. Tools and delivery date agreed before work begins. Implementation, publishing, monitoring and retesting are excluded. Recommendations and sales are not guaranteed.",
+      "$350 one-time AI visibility audit for founders and independent professionals, also named the AI Legibility Audit. One person, one service, one target market and language, up to five public website pages. Two agreed AI tools; six buyer scenarios tested twice per tool, 24 attempts including failed or unusable responses. The audit tests how the tools describe the person's expertise and whom they recommend. Written report of who was recommended, five prioritized fixes, three ready-to-use copy blocks and one round of written revisions. Tools and delivery date agreed before work begins. Implementation, publishing, monitoring and retesting are excluded. Recommendations and sales are not guaranteed. Offered by Ekaterina Shalel, founder of Legibi. The Legibi platform is in development and is not this audit.",
     url: `${SITE}/audit/`
   },
   advisory: {

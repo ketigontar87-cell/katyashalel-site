@@ -11,6 +11,8 @@
   "copy": {
     "en": {
       "title": "AI Legibility Audit",
+      "buyerTitle": "AI visibility audit for founders and independent professionals",
+      "audience": "Founders and independent professionals",
       "price": "$350 · One-time",
       "headline": "See what AI tells potential clients before they hire someone like you.",
       "intro": "I test how two AI tools describe your expertise and recommend specialists for the problems you solve. You’ll get a documented review and practical improvements you can use.",
@@ -38,6 +40,8 @@
     },
     "ru": {
       "title": "AI Legibility Audit",
+      "buyerTitle": "Аудит видимости в нейросетях для предпринимателей и независимых экспертов",
+      "audience": "Предприниматели и независимые эксперты",
       "price": "$350 · Разовый аудит",
       "headline": "Узнайте, что AI рассказывает потенциальным клиентам, прежде чем они выберут специалиста вроде вас.",
       "intro": "Я проверю, как два AI-инструмента описывают вашу экспертизу и рекомендуют специалистов для задач, которые вы решаете. Вы получите документированный разбор и практические улучшения, которые сможете использовать.",
@@ -67,7 +71,7 @@
   "addedStyle": ".audit-inclusions{padding-left:1.2em;margin:0 0 22px}.audit-inclusions li{margin-bottom:12px}",
   "apiFounders": {
     "name": "AI Legibility Audit",
-    "description": "$350 one-time personal audit: one person, one service, one target market and language, up to five public website pages. Two agreed AI tools; six buyer scenarios tested twice per tool, 24 attempts including failed or unusable responses. Written report, five prioritized fixes, three ready-to-use copy blocks and one round of written revisions. Tools and delivery date agreed before work begins. Implementation, publishing, monitoring and retesting are excluded. Recommendations and sales are not guaranteed.",
+    "description": "$350 one-time AI visibility audit for founders and independent professionals, also named the AI Legibility Audit. One person, one service, one target market and language, up to five public website pages. Two agreed AI tools; six buyer scenarios tested twice per tool, 24 attempts including failed or unusable responses. The audit tests how the tools describe the person's expertise and whom they recommend. Written report of who was recommended, five prioritized fixes, three ready-to-use copy blocks and one round of written revisions. Tools and delivery date agreed before work begins. Implementation, publishing, monitoring and retesting are excluded. Recommendations and sales are not guaranteed. Offered by Ekaterina Shalel, founder of Legibi. The Legibi platform is in development and is not this audit.",
     "url": "https://katyashalel.com/audit/"
   }
 }

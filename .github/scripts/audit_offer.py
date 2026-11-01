@@ -40,11 +40,21 @@ for lang in ['en','ru']:
  assert sum(x.get('@type')=='FAQPage' for x in schemas)==1,f+' exactly one FAQPage'
  assert sum(x.get('@type')=='Service' for x in schemas)==1,f+' exactly one Service'
  service=next(x for x in schemas if x['@type']=='Service');faq=next(x for x in schemas if x['@type']=='FAQPage')
- assert service['name']==c['title'] and service['offers']=={'@type':'Offer','price':'350','priceCurrency':'USD','url':'https://katyashalel.com/audit/#request','description':c['price']}
- assert service['description']==c['intro']+' '+c['scope']+' '+c['limits']
+ assert service['name']==c['title']
+ assert service['alternateName']==c['buyerTitle'] and service['serviceType']==c['buyerTitle']
+ assert service['audience']=={'@type':'Audience','audienceType':c['audience']} and c['audience'] in clean(s)
+ assert re.search(r'<h1>'+re.escape(c['buyerTitle'])+r'</h1>',s)
+ assert c['buyerTitle'] in re.search(r'<title>(.*?)</title>',s).group(1)
+ assert c['buyerTitle'] in re.search(r'<meta name="description" content="([^"]*)"',s).group(1)
+ assert service['offers']=={'@type':'Offer','price':'350','priceCurrency':'USD','url':'https://katyashalel.com/audit/#request','description':c['price'],'seller':{'@id':'https://katyashalel.com/#person'}}
+ assert service['description']==c['buyerTitle']+'. '+c['intro']+' '+c['scope']+' '+c['limits']
  assert service['provider']=={'@id':'https://katyashalel.com/#person'}
+ org=next(x for x in schemas if x.get('@type')=='Organization')
+ assert org=={'@context':'https://schema.org','@type':'Organization','@id':'https://legibi.ai/#organization','name':'Legibi','url':'https://legibi.ai/','founder':{'@id':'https://katyashalel.com/#person'}}
+ assert sum(x.get('@type')=='Organization' for x in schemas)==1
  visible={clean(q):clean(a) for q,a in re.findall(r'<summary>(.*?)</summary><p>(.*?)</p>',s,re.S)}
- assert len(visible)==4
+ assert len(visible)==8
+ assert list(visible.values())[-4:]==c['answers']
  for q in faq['mainEntity']:assert q['acceptedAnswer']['text']==visible[q['name']]
  links=r'<link[^>]*(?:rel="canonical"|hreflang=)[^>]*>'
  assert re.findall(links,before)==re.findall(links,s),'Canonical/hreflang unchanged'
@@ -60,7 +70,10 @@ delivery=json.loads((root/'.github/scripts/audit_delivery_manifest.json').read_t
 assert hashlib.sha256((root/'api/lead.js').read_bytes()).hexdigest()==delivery['backendSha256'],'Approved email delivery backend'
 for f in ['llms.txt','llms-core.txt']:
  assert re.findall(r'Last verified:.*',(root/f).read_text())==re.findall(r'Last verified:.*',old(f))
- assert 'Personal AI Legibility Audit: $350 one-time.' in (root/f).read_text()
+ text=(root/f).read_text()
+ assert 'Personal AI Legibility Audit: $350 one-time.' in text
+ assert 'AI visibility audit for founders and independent professionals' in text
+ assert 'аудит видимости в нейросетях для предпринимателей и независимых экспертов' in text
 ns={'s':'http://www.sitemaps.org/schemas/sitemap/0.9'}
 def dates(s):return {u.find('s:loc',ns).text:(u.find('s:lastmod',ns).text if u.find('s:lastmod',ns) is not None else None) for u in ET.fromstring(s).findall('s:url',ns)}
 a=dates(old('sitemap.xml'));b=dates((root/'sitemap.xml').read_text());revision=json.loads((root/'docs/public-fit-revision.json').read_text())

@@ -141,5 +141,5 @@ for e in evidence:
  subprocess.run(['git','merge-base','--is-ancestor',e['publishedCommit'],base],cwd=root,check=True)
 assert entries['https://katyashalel.com/']==founder['publicationDate']
 assert len(set(entries.values()))>1
-assert json.loads((root/'.well-known/agent-card.json').read_text())['version']=='2026-10-27.1'
+assert json.loads((root/'.well-known/agent-card.json').read_text())['version']=='2026-11-01.1'
 print(json.dumps({'html_documents':len(all_html),'json_ld_blocks':count,'copy_pages':len(manifest['pages']),'sitemap_dates_with_published_evidence':len(evidence),'styles_structure_and_behavior':'unchanged','status':'passed'}))
