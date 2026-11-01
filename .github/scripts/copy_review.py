@@ -57,6 +57,7 @@ for f in manifest['pages']:
  before=old(f);after=(root/f).read_text();a=Structure();a.feed(before);b=Structure()
  # Canonical photo binding: the About hero bytes and alt remain identical.
  normalized_after=after.replace('src="/images/ekaterina-shalel-portrait.webp"', 'src="/images/about-coat.webp"') if f in ['about/index.html','ru/about/index.html'] else after
+ normalized_after=re.sub(r'<p class="definition-credit">.*?</p>','',normalized_after,flags=re.S)
  b.feed(without_approved_ru_history(normalized_after) if f=='ru/ai-legibility/index.html' else normalized_after)
  b_tags=list(b.tags)
  if f=='guides/sprint/index.html':
@@ -141,11 +142,15 @@ for e in evidence:
  subprocess.run(['git','merge-base','--is-ancestor',e['publishedCommit'],base],cwd=root,check=True)
 assert entries['https://katyashalel.com/']==founder['publicationDate']
 assert len(set(entries.values()))>1
-assert json.loads((root/'.well-known/agent-card.json').read_text())['version']=='2026-11-01.1'
-lead_en='By Ekaterina Shalel\u2019s definition (Legibi): AI legibility is the discipline of measuring and improving whether AI systems can retrieve, understand, corroborate, compare and select a company, product, founder or specialist under real decision conditions.'
-lead_ru='По определению Екатерины Шалель (Legibi): AI legibility это дисциплина, которая измеряет и улучшает, насколько AI-системы способны извлекать, понимать, подтверждать, сравнивать и выбирать компанию, продукт, основателя или специалиста в реальных условиях принятия решения.'
-assert lead_en in (root/'ai-legibility/index.html').read_text()
-assert lead_ru in (root/'ru/ai-legibility/index.html').read_text()
+assert json.loads((root/'.well-known/agent-card.json').read_text())['version']=='2026-11-01.2'
+canon_en='AI legibility is the discipline of measuring and improving whether AI systems can retrieve, understand, corroborate, compare and select a company, product, founder or specialist under real decision conditions.'
+canon_ru='AI legibility это дисциплина, которая измеряет и улучшает, насколько AI-системы способны извлекать, понимать, подтверждать, сравнивать и выбирать компанию, продукт, основателя или специалиста в реальных условиях принятия решения.'
+assert canon_en in (root/'ai-legibility/index.html').read_text()
+assert canon_ru in (root/'ru/ai-legibility/index.html').read_text()
+assert 'Defined by Ekaterina Shalel, founder of' in (root/'ai-legibility/index.html').read_text()
+assert 'Определение Екатерины Шалель, основательницы' in (root/'ru/ai-legibility/index.html').read_text()
+assert 'By Ekaterina Shalel\u2019s definition' not in (root/'ai-legibility/index.html').read_text()
+assert 'По определению Екатерины Шалель (Legibi):' not in (root/'ru/ai-legibility/index.html').read_text()
 for banned in all_html:
     assert 'Q138801513' not in banned.read_text(), banned
 for machine in ['llms.txt','llms-core.txt','api/agent.js']:

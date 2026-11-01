@@ -9,21 +9,40 @@ def original_home_photo(source):
     exact=json.dumps(IMAGE,ensure_ascii=False)
     assert source.count('"image": '+exact)==1,'Expected exactly one canonical Person image'
     return source.replace('"image": '+exact,'"image": "https://katyashalel.com/images/hero-portrait.jpg"',1)
-# Q138801513 does not resolve. The definition clause is unchanged; the lead names its author.
+# Q138801513 does not resolve. The v1.3 sentence stays verbatim; attribution is the next line.
 DEAD_WIKIDATA='https://www.wikidata.org/wiki/Q138801513'
-OLD_EN='AI legibility is the discipline of measuring and improving whether AI systems can retrieve, understand, corroborate, compare and select a company, product, founder or specialist under real decision conditions.'
-NEW_EN='By Ekaterina Shalel\u2019s definition (Legibi): '+OLD_EN
-OLD_RU='AI legibility это дисциплина, которая измеряет и улучшает, насколько AI-системы способны извлекать, понимать, подтверждать, сравнивать и выбирать компанию, продукт, основателя или специалиста в реальных условиях принятия решения.'
-NEW_RU='По определению Екатерины Шалель (Legibi): '+OLD_RU
+CANON_EN='AI legibility is the discipline of measuring and improving whether AI systems can retrieve, understand, corroborate, compare and select a company, product, founder or specialist under real decision conditions.'
+CANON_RU='AI legibility это дисциплина, которая измеряет и улучшает, насколько AI-системы способны извлекать, понимать, подтверждать, сравнивать и выбирать компанию, продукт, основателя или специалиста в реальных условиях принятия решения.'
 SHORT_EN='AI legibility: measuring and improving whether AI systems can retrieve, understand, corroborate, compare and select a company, product, founder or specialist under real decision conditions.'
-SHORT_EN_NEW='AI legibility, as defined by Ekaterina Shalel (Legibi): measuring and improving whether AI systems can retrieve, understand, corroborate, compare and select a company, product, founder or specialist under real decision conditions.'
 SHORT_RU='AI legibility: измеряет и улучшает, насколько AI-системы способны извлекать, понимать, подтверждать, сравнивать и выбирать компанию, продукт, основателя или специалиста в реальных условиях принятия решения.'
-SHORT_RU_NEW='AI legibility, по определению Екатерины Шалель (Legibi): измеряет и улучшает, насколько AI-системы способны извлекать, понимать, подтверждать, сравнивать и выбирать компанию, продукт, основателя или специалиста в реальных условиях принятия решения.'
+CREDIT_EN='<p class="definition-credit">Defined by Ekaterina Shalel, founder of <a href="https://legibi.ai/">Legibi</a>.</p>'
+CREDIT_RU='<p class="definition-credit">Определение Екатерины Шалель, основательницы <a href="https://legibi.ai/">Legibi</a>.</p>'
+HOME_EN='<p>AI legibility is the name for that work: whether AI systems can find a business, understand it and choose it. <a href="/ai-legibility/">Canonical definition</a>.</p>'
+HOME_RU='<p>AI legibility это имя этой работы: может ли AI найти бизнес, понять его и выбрать. <a href="/ru/ai-legibility/">Каноническое определение</a>.</p>'
 def approve_attribution(text):
     text=text.replace('\n      "'+DEAD_WIKIDATA+'",','')
     text=text.replace(', "'+DEAD_WIKIDATA+'"','')
     text=text.replace('"'+DEAD_WIKIDATA+'",','')
-    return text.replace(OLD_EN,NEW_EN).replace(OLD_RU,NEW_RU).replace(SHORT_EN,SHORT_EN_NEW).replace(SHORT_RU,SHORT_RU_NEW)
+    text=text.replace(SHORT_EN,CANON_EN).replace(SHORT_RU,CANON_RU)
+    def credit_paragraphs(fragment, sentence, credit):
+        def repl(m):
+            block=m.group(0)
+            if 'definition-credit' in block or sentence not in block:return block
+            return block+credit
+        return re.sub(r'<p\b[^>]*>.*?</p>',repl,fragment,flags=re.S)
+    parts=re.split(r'(<script\b[^>]*>.*?</script>)',text,flags=re.S)
+    built=[]
+    for i,part in enumerate(parts):
+        if i%2==0:
+            if CANON_RU in part:part=credit_paragraphs(part,CANON_RU,CREDIT_RU)
+            elif CANON_EN in part:part=credit_paragraphs(part,CANON_EN,CREDIT_EN)
+        built.append(part)
+    text=''.join(built)
+    en_anchor='Here I share the method, research and documented observations behind that work.</p>'
+    ru_anchor='Здесь делюсь методикой, исследованиями и зафиксированными наблюдениями, на которых строится эта работа.</p>'
+    if en_anchor in text and HOME_EN not in text:text=text.replace(en_anchor,en_anchor+HOME_EN,1)
+    if ru_anchor in text and HOME_RU not in text:text=text.replace(ru_anchor,ru_anchor+HOME_RU,1)
+    return text
 def validate():
     assert (ROOT/'images/about-coat.webp').read_bytes()==(ROOT/'images/ekaterina-shalel-portrait.webp').read_bytes(),'Portrait bytes must be unchanged'
     for path in ['index.html','ru/index.html','about/index.html','ru/about/index.html']:

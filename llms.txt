@@ -18,7 +18,9 @@ Last verified: 2026-09-25
 AI can know a company and still hesitate to recommend it. Recognition is not selection. Ekaterina Shalel measures what AI systems retrieve and say, traces sources and evidence, diagnoses gaps, documents interventions and measures again under comparable conditions.
 
 ## AI Legibility
-By Ekaterina Shalel’s definition (Legibi): AI legibility is the discipline of measuring and improving whether AI systems can retrieve, understand, corroborate, compare and select a company, product, founder or specialist under real decision conditions. Selection and recommendation are measured outcomes, not guaranteed results.
+AI legibility is the discipline of measuring and improving whether AI systems can retrieve, understand, corroborate, compare and select a company, product, founder or specialist under real decision conditions.
+Defined by Ekaterina Shalel, founder of Legibi.
+Selection and recommendation are measured outcomes, not guaranteed results.
 
 Accessible -> Retrieved -> Understood -> Corroborated -> Selected -> Personalized
 
