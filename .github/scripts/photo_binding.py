@@ -14,6 +14,12 @@ def validate():
     for path in ['index.html','ru/index.html','about/index.html','ru/about/index.html']:
         source=(ROOT/path).read_text()
         old=subprocess.check_output(['git','show',BASE+':'+path],cwd=ROOT,text=True)
+        if path=='ru/about/index.html':
+            # Owner-approved title correction, 2026-11-01. All other bytes stay protected.
+            before='<title>Обо мне · Ekaterina Shalel</title>'
+            after='<title>Екатерина Шалель, основательница Legibi</title>'
+            assert old.count(before)==1 and source.count(after)==1,'Expected approved Russian About title'
+            old=old.replace(before,after,1)
         def normalize(match):
             raw=match[1]; data=json.loads(raw)
             for node in data.get('@graph',[data]):
