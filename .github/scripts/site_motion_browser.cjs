@@ -17,6 +17,16 @@ const server=spawn('python3',['-m','http.server','4185','--bind','127.0.0.1'],{s
 const sources=new Map(manifest.filter(r=>!newPages.has(r.file)).map(r=>[r.route,execFileSync('git',['show',`${base}:${r.file}`],{encoding:'utf8'})]));
 // Independent DOM interpretation of the owner's exact contact removal scope.
 async function approvedContactRemoval(page){await page.evaluate(()=>{
+ const oldEn='AI legibility is the discipline of measuring and improving whether AI systems can retrieve, understand, corroborate, compare and select a company, product, founder or specialist under real decision conditions.';
+ const newEn='By Ekaterina Shalel\u2019s definition (Legibi): '+oldEn;
+ const oldRu='AI legibility это дисциплина, которая измеряет и улучшает, насколько AI-системы способны извлекать, понимать, подтверждать, сравнивать и выбирать компанию, продукт, основателя или специалиста в реальных условиях принятия решения.';
+ const newRu='По определению Екатерины Шалель (Legibi): '+oldRu;
+ const dead='https://www.wikidata.org/wiki/Q138801513';
+ const cite=s=>s.replaceAll(oldEn,newEn).replaceAll(oldRu,newRu).replaceAll('\n      "'+dead+'",','').replaceAll(', "'+dead+'"','').replaceAll('"'+dead+'",','');
+ const walker=document.createTreeWalker(document.body,NodeFilter.SHOW_TEXT);
+ const nodes=[];while(walker.nextNode())nodes.push(walker.currentNode);
+ for(const node of nodes)if(node.nodeValue.includes(oldEn)||node.nodeValue.includes(oldRu))node.nodeValue=cite(node.nodeValue);
+ for(const script of document.querySelectorAll('script[type="application/ld+json"]'))script.textContent=cite(script.textContent);
  for(const a of document.querySelectorAll('a[href="https://t.me/shalel_notes"]')){
   if(a.closest('.tg'))a.closest('.tg').remove();
   else if(a.parentElement.tagName==='P' && a.parentElement.textContent.includes('Живая лента'))a.parentElement.remove();

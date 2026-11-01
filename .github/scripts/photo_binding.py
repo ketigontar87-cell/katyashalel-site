@@ -9,6 +9,21 @@ def original_home_photo(source):
     exact=json.dumps(IMAGE,ensure_ascii=False)
     assert source.count('"image": '+exact)==1,'Expected exactly one canonical Person image'
     return source.replace('"image": '+exact,'"image": "https://katyashalel.com/images/hero-portrait.jpg"',1)
+# Q138801513 does not resolve. The definition clause is unchanged; the lead names its author.
+DEAD_WIKIDATA='https://www.wikidata.org/wiki/Q138801513'
+OLD_EN='AI legibility is the discipline of measuring and improving whether AI systems can retrieve, understand, corroborate, compare and select a company, product, founder or specialist under real decision conditions.'
+NEW_EN='By Ekaterina Shalel\u2019s definition (Legibi): '+OLD_EN
+OLD_RU='AI legibility это дисциплина, которая измеряет и улучшает, насколько AI-системы способны извлекать, понимать, подтверждать, сравнивать и выбирать компанию, продукт, основателя или специалиста в реальных условиях принятия решения.'
+NEW_RU='По определению Екатерины Шалель (Legibi): '+OLD_RU
+SHORT_EN='AI legibility: measuring and improving whether AI systems can retrieve, understand, corroborate, compare and select a company, product, founder or specialist under real decision conditions.'
+SHORT_EN_NEW='AI legibility, as defined by Ekaterina Shalel (Legibi): measuring and improving whether AI systems can retrieve, understand, corroborate, compare and select a company, product, founder or specialist under real decision conditions.'
+SHORT_RU='AI legibility: измеряет и улучшает, насколько AI-системы способны извлекать, понимать, подтверждать, сравнивать и выбирать компанию, продукт, основателя или специалиста в реальных условиях принятия решения.'
+SHORT_RU_NEW='AI legibility, по определению Екатерины Шалель (Legibi): измеряет и улучшает, насколько AI-системы способны извлекать, понимать, подтверждать, сравнивать и выбирать компанию, продукт, основателя или специалиста в реальных условиях принятия решения.'
+def approve_attribution(text):
+    text=text.replace('\n      "'+DEAD_WIKIDATA+'",','')
+    text=text.replace(', "'+DEAD_WIKIDATA+'"','')
+    text=text.replace('"'+DEAD_WIKIDATA+'",','')
+    return text.replace(OLD_EN,NEW_EN).replace(OLD_RU,NEW_RU).replace(SHORT_EN,SHORT_EN_NEW).replace(SHORT_RU,SHORT_RU_NEW)
 def validate():
     assert (ROOT/'images/about-coat.webp').read_bytes()==(ROOT/'images/ekaterina-shalel-portrait.webp').read_bytes(),'Portrait bytes must be unchanged'
     for path in ['index.html','ru/index.html','about/index.html','ru/about/index.html']:
@@ -20,6 +35,8 @@ def validate():
             after='<title>Екатерина Шалель, основательница Legibi</title>'
             assert old.count(before)==1 and source.count(after)==1,'Expected approved Russian About title'
             old=old.replace(before,after,1)
+        assert DEAD_WIKIDATA not in source, path
+        old=approve_attribution(old)
         def normalize(match):
             raw=match[1]; data=json.loads(raw)
             for node in data.get('@graph',[data]):

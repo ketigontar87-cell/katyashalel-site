@@ -141,5 +141,13 @@ for e in evidence:
  subprocess.run(['git','merge-base','--is-ancestor',e['publishedCommit'],base],cwd=root,check=True)
 assert entries['https://katyashalel.com/']==founder['publicationDate']
 assert len(set(entries.values()))>1
-assert json.loads((root/'.well-known/agent-card.json').read_text())['version']=='2026-10-27.1'
+assert json.loads((root/'.well-known/agent-card.json').read_text())['version']=='2026-11-01.1'
+lead_en='By Ekaterina Shalel\u2019s definition (Legibi): AI legibility is the discipline of measuring and improving whether AI systems can retrieve, understand, corroborate, compare and select a company, product, founder or specialist under real decision conditions.'
+lead_ru='По определению Екатерины Шалель (Legibi): AI legibility это дисциплина, которая измеряет и улучшает, насколько AI-системы способны извлекать, понимать, подтверждать, сравнивать и выбирать компанию, продукт, основателя или специалиста в реальных условиях принятия решения.'
+assert lead_en in (root/'ai-legibility/index.html').read_text()
+assert lead_ru in (root/'ru/ai-legibility/index.html').read_text()
+for banned in all_html:
+    assert 'Q138801513' not in banned.read_text(), banned
+for machine in ['llms.txt','llms-core.txt','api/agent.js']:
+    assert 'Q138801513' not in (root/machine).read_text(), machine
 print(json.dumps({'html_documents':len(all_html),'json_ld_blocks':count,'copy_pages':len(manifest['pages']),'sitemap_dates_with_published_evidence':len(evidence),'styles_structure_and_behavior':'unchanged','status':'passed'}))

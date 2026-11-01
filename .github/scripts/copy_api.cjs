@@ -14,6 +14,9 @@ const advisory=require('../../docs/advisory-revision.json');
   function approvedOffer(x){if(!x||typeof x!=='object')return;if(x.founders?.name==='Legibility Audit')x.founders=offer.apiFounders;Object.values(x).forEach(approvedOffer)}
   approvedOffer(expected);
   if(expected.result.offerings)Object.assign(expected.result.offerings,advisory.apiOfferingChanges);
+  const oldDefinition='AI legibility is the discipline of measuring and improving whether AI systems can retrieve, understand, corroborate, compare and select a company, product, founder or specialist under real decision conditions.';
+  const citedDefinition='By Ekaterina Shalel\u2019s definition (Legibi): '+oldDefinition;
+  (function cite(node){if(!node||typeof node!=='object')return;if(node.wikidata==='https://www.wikidata.org/wiki/Q138801513')delete node.wikidata;for(const key of Object.keys(node)){if(typeof node[key]==='string')node[key]=node[key].replaceAll(oldDefinition,citedDefinition);else cite(node[key]);}})(expected.result);
   assert.deepEqual(current,expected,'Existing API contract preserved for '+JSON.stringify(query));
   if(!query.type)assert.equal(current.result.identity.method.short,m.method);
  }

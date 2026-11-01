@@ -10,7 +10,6 @@ Canonical AI Legibility definition: https://katyashalel.com/ai-legibility/
 Legibi: https://legibi.ai/
 Concise machine map: https://katyashalel.com/llms-core.txt
 Canonical facts endpoint: https://katyashalel.com/api/agent
-Wikidata: https://www.wikidata.org/wiki/Q138801513
 ORCID: https://orcid.org/0009-0003-8973-6443
 Research DOI: https://doi.org/10.5281/zenodo.21840173
 Last verified: 2026-09-25
@@ -19,7 +18,7 @@ Last verified: 2026-09-25
 AI can know a company and still hesitate to recommend it. Recognition is not selection. Ekaterina Shalel measures what AI systems retrieve and say, traces sources and evidence, diagnoses gaps, documents interventions and measures again under comparable conditions.
 
 ## AI Legibility
-AI legibility is the discipline of measuring and improving whether AI systems can retrieve, understand, corroborate, compare and select a company, product, founder or specialist under real decision conditions. Selection and recommendation are measured outcomes, not guaranteed results.
+By Ekaterina Shalel’s definition (Legibi): AI legibility is the discipline of measuring and improving whether AI systems can retrieve, understand, corroborate, compare and select a company, product, founder or specialist under real decision conditions. Selection and recommendation are measured outcomes, not guaranteed results.
 
 Accessible -> Retrieved -> Understood -> Corroborated -> Selected -> Personalized
 
