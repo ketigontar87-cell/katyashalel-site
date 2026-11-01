@@ -25,14 +25,22 @@ for f in ['index.html','ru/index.html']:
  assert c['signature'] in clean(s),f+' full founder signature'
 for lang in ['en','ru']:
  f=('ru/' if lang=='ru' else '')+'audit/index.html';s=(root/f).read_text();before=old(f);c=m['copy'][lang]
- assert re.findall(r'<style>.*?</style>',before,re.S)==[x.replace(m['addedStyle'],'') for x in re.findall(r'<style>.*?</style>',s,re.S)],f+' preserve styles except list spacing'
+ styles_before=re.findall(r'<style>.*?</style>',before,re.S);styles_after=re.findall(r'<style>.*?</style>',s,re.S)
+ if lang=='en':
+  assert styles_before==[x.replace(m['addedStyle'],'') for x in styles_after],f+' preserve styles except list spacing'
+ else:
+  assert styles_before==[styles_after[0].replace(m['addedStyle'],'')],f+' preserve published styles'
+  assert len(styles_after)==2 and 'form-grid' in styles_after[1],f+' Russian request form styles'
  js=r'<script(?![^>]*application/ld\+json)[^>]*>.*?</script>'
  before_scripts=re.findall(js,before,re.S);after_scripts=re.findall(js,s,re.S)
  if lang=='en':
   delivery=json.loads((root/'.github/scripts/audit_delivery_manifest.json').read_text())
   assert len(before_scripts)==len(after_scripts) and before_scripts[:-1]==after_scripts[:-1],f+' preserve other runtime'
   assert hashlib.sha256(after_scripts[-1].encode()).hexdigest()==delivery['runtimeSha256'],f+' approved email recovery runtime'
- else:assert before_scripts==after_scripts,f+' preserve runtime'
+ else:
+  assert after_scripts[:-1]==before_scripts,f+' preserve published runtime'
+  assert hashlib.sha256(after_scripts[-1].encode()).hexdigest()==m['ruRuntimeSha256'],f+' Russian request runtime'
+  assert "fetch('/api/lead'" in after_scripts[-1] and 'id="f-email" autocomplete="email" required' in s
  for key in ['title','price','headline','intro','scope','included','process','limits','cta']:
   assert c[key] in clean(s),key
  assert [clean(x) for x in re.findall(r'<li>(.*?)</li>',s,re.S)]==c['items']
@@ -46,16 +54,25 @@ for lang in ['en','ru']:
  assert re.search(r'<h1>'+re.escape(c['buyerTitle'])+r'</h1>',s)
  assert c['buyerTitle'] in re.search(r'<title>(.*?)</title>',s).group(1)
  assert c['buyerTitle'] in re.search(r'<meta name="description" content="([^"]*)"',s).group(1)
- assert service['offers']=={'@type':'Offer','price':'350','priceCurrency':'USD','url':'https://katyashalel.com/audit/#request','description':c['price'],'seller':{'@id':'https://katyashalel.com/#person'}}
+ offer_url='https://katyashalel.com/audit/#request' if lang=='en' else 'https://katyashalel.com/ru/audit/#request'
+ assert service['offers']=={'@type':'Offer','price':'350','priceCurrency':'USD','url':offer_url,'description':c['price'],'seller':{'@id':'https://katyashalel.com/#person'}}
  assert service['description']==c['buyerTitle']+'. '+c['intro']+' '+c['scope']+' '+c['limits']
  assert service['provider']=={'@id':'https://katyashalel.com/#person'}
  org=next(x for x in schemas if x.get('@type')=='Organization')
  assert org=={'@context':'https://schema.org','@type':'Organization','@id':'https://legibi.ai/#organization','name':'Legibi','url':'https://legibi.ai/','founder':{'@id':'https://katyashalel.com/#person'}}
  assert sum(x.get('@type')=='Organization' for x in schemas)==1
  visible={clean(q):clean(a) for q,a in re.findall(r'<summary>(.*?)</summary><p>(.*?)</p>',s,re.S)}
- assert len(visible)==8
- assert list(visible.values())[-4:]==c['answers']
- for q in faq['mainEntity']:assert q['acceptedAnswer']['text']==visible[q['name']]
+ assert list(visible.items())==[(q['name'],q['text']) for q in c['faq']]
+ assert [(q['name'],q['acceptedAnswer']['text']) for q in faq['mainEntity']]==[(q['name'],q['text']) for q in c['faq']]
+ for banned in ['Другая валюта не указана','Постоянный набор инструментов','Оплаты на этой странице нет','No other currency','fixed list of assistants','no payment checkout','is not this audit','не является платформой']:
+  assert banned not in s,banned
+ if lang=='en':
+  assert 'Payment is arranged after the request.' in s and 'early access by request' in s
+  assert 'Terms updated: 18 October 2026.' in s and 'Page revised: 1 November 2026.' in s
+ else:
+  assert 'Оплату согласуем после заявки.' in s and 'ранний доступ по заявке' in s
+  assert 'Условия обновлены: 18 октября 2026 года.' in s and 'Страница обновлена: 1 ноября 2026 года.' in s
+  assert 'href="#request"' in s and 'href="/audit/#request"' not in s
  links=r'<link[^>]*(?:rel="canonical"|hreflang=)[^>]*>'
  assert re.findall(links,before)==re.findall(links,s),'Canonical/hreflang unchanged'
  assert ('href="/ongoing/"' if lang=='en' else 'href="/ru/ongoing/"') in s

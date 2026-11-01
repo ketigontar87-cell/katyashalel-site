@@ -14,8 +14,8 @@
       "buyerTitle": "AI visibility audit for founders and independent professionals",
       "audience": "Founders and independent professionals",
       "price": "$350 · One-time",
-      "headline": "See what AI tells potential clients before they hire someone like you.",
-      "intro": "I test how two AI tools describe your expertise and recommend specialists for the problems you solve. You’ll get a documented review and practical improvements you can use.",
+      "headline": "See where you stand against other specialists when someone asks an AI whom to hire.",
+      "intro": "I look at what two AI tools say about you and whom they name instead. You see whether you are described, whether you are on the shortlist, and whether you are recommended. A shortlist place is measured. It is not guaranteed.",
       "scope": "For one person, one service, one target market and language, and up to five public website pages.",
       "included": "What’s included:",
       "items": [
@@ -30,12 +30,16 @@
       "limits": "Website changes, publishing, ongoing monitoring, and retesting after changes are outside this package. AI responses vary. Recommendations and sales aren’t guaranteed.",
       "cta": "Request an audit",
       "ongoing": "Ongoing work is a separate option",
-      "faqTitle": "Choosing the right scope",
-      "answers": [
-        "This $350 one-time package covers one person, one service, one target market and language, and up to five public website pages. It includes the documented review, five prioritized fixes, three ready-to-use copy blocks and one round of written revisions.",
-        "Ongoing monitoring, website changes, publishing and retesting after changes are outside this package. Any further work needs a separate agreed scope.",
-        "No. AI responses vary. Recommendations and sales aren’t guaranteed. The report separates observations from hypotheses and records failed or unusable responses.",
-        "Retesting after changes is outside this package. If agreed separately, it requires comparable scenarios and documented conditions; a changed answer alone does not establish what caused it."
+      "faqTitle": "Questions",
+      "faq": [
+        {
+          "name": "Do you test questions that use my name, and questions a buyer would ask without it?",
+          "text": "Yes. Both are included. The report keeps a description, a shortlist place, and a recommendation separate."
+        },
+        {
+          "name": "How will we know whether a change helped?",
+          "text": "If a later check is agreed, it uses the same kind of scenarios and records the conditions. One changed answer does not show what caused it."
+        }
       ]
     },
     "ru": {
@@ -43,8 +47,8 @@
       "buyerTitle": "Аудит видимости в нейросетях для предпринимателей и независимых экспертов",
       "audience": "Предприниматели и независимые эксперты",
       "price": "$350 · Разовый аудит",
-      "headline": "Узнайте, что AI рассказывает потенциальным клиентам, прежде чем они выберут специалиста вроде вас.",
-      "intro": "Я проверю, как два AI-инструмента описывают вашу экспертизу и рекомендуют специалистов для задач, которые вы решаете. Вы получите документированный разбор и практические улучшения, которые сможете использовать.",
+      "headline": "Посмотрите, какое место вы занимаете, когда клиент спрашивает нейросеть, к кому обратиться.",
+      "intro": "Я смотрю, что два AI-инструмента говорят о вас и кого называют вместо вас. Вы видите, описывают ли вас, есть ли вы в шорт-листе и рекомендуют ли вас. Место в шорт-листе измеряется. Оно не гарантируется.",
       "scope": "Для одного человека, одной услуги, одного целевого рынка и языка, с разбором до пяти публичных страниц сайта.",
       "included": "Что входит:",
       "items": [
@@ -59,19 +63,24 @@
       "limits": "Изменения сайта, публикация, постоянный мониторинг и повторная проверка после изменений не входят в пакет. Ответы AI меняются. Рекомендации и продажи не гарантируются.",
       "cta": "Запросить аудит",
       "ongoing": "Дальнейшая работа обсуждается отдельно",
-      "faqTitle": "Как выбрать объём работы",
-      "answers": [
-        "Разовый пакет за $350 рассчитан на одного человека, одну услугу, один целевой рынок и язык и до пяти публичных страниц сайта. В него входят документированный разбор, пять приоритетных исправлений, три готовых текстовых блока и один раунд письменных правок.",
-        "Постоянный мониторинг, изменения сайта, публикация и повторная проверка после изменений не входят в этот пакет. Дальнейшая работа требует отдельного согласования.",
-        "Нет. Ответы AI меняются. Рекомендации и продажи не гарантируются. В отчёте наблюдения отделены от гипотез, а неудачные и непригодные ответы зафиксированы.",
-        "Повторная проверка после изменений не входит в пакет. Если её согласовать отдельно, нужны сопоставимые сценарии и документированные условия; один изменившийся ответ не устанавливает причину."
+      "faqTitle": "Вопросы",
+      "faq": [
+        {
+          "name": "Вы проверяете и вопросы с моим именем, и вопросы покупателя без названия?",
+          "text": "Да, в проверку входят оба. В отчёте описание, место в шорт-листе и рекомендация стоят отдельно."
+        },
+        {
+          "name": "Как понять, помогло ли изменение?",
+          "text": "Если позже согласуем повторную проверку, она идёт по похожим сценариям, и условия записываются. Один изменившийся ответ не показывает причину."
+        }
       ]
     }
   },
   "addedStyle": ".audit-inclusions{padding-left:1.2em;margin:0 0 22px}.audit-inclusions li{margin-bottom:12px}",
   "apiFounders": {
     "name": "AI Legibility Audit",
-    "description": "$350 one-time AI visibility audit for founders and independent professionals, also named the AI Legibility Audit. One person, one service, one target market and language, up to five public website pages. Two agreed AI tools; six buyer scenarios tested twice per tool, 24 attempts including failed or unusable responses. The audit tests how the tools describe the person's expertise and whom they recommend. Written report of who was recommended, five prioritized fixes, three ready-to-use copy blocks and one round of written revisions. Tools and delivery date agreed before work begins. Implementation, publishing, monitoring and retesting are excluded. Recommendations and sales are not guaranteed. Offered by Ekaterina Shalel, founder of Legibi. The Legibi platform is in development and is not this audit.",
+    "description": "$350 one-time AI visibility audit for founders and independent professionals, also named the AI Legibility Audit. One person, one service, one target market and language, up to five public website pages. Two AI tools, agreed with the client before work starts, including questions that use the person's name and buyer questions that do not. Six buyer scenarios tested twice per tool, 24 attempts including failed or unusable responses. The report shows whether the person is described, shortlisted, or recommended, and who is named instead. Shortlist status is measured and is not guaranteed. Five prioritized fixes, three ready-to-use copy blocks and one round of written revisions. Tools and delivery date agreed before work begins. Implementation, publishing, monitoring and retesting are excluded. Recommendations and sales are not guaranteed. Payment is arranged after the request. Offered by Ekaterina Shalel personally. Legibi is in development, with early access by request. This audit is a separate service.",
     "url": "https://katyashalel.com/audit/"
-  }
+  },
+  "ruRuntimeSha256": "eaa5acdbdd4a132647140741de2f74f34e6019ceead3d8bcfec73a6df8b0e3d7"
 }
