@@ -17,7 +17,19 @@ for f in ['index.html','ru/index.html']:
  hero=re.search(r'<div class="actions">(.*?)</div>',s,re.S).group(1)
  assert re.findall(r'href="([^"]+)"',hero)==['https://legibi.ai/','/'+prefix+'guides/sprint/'],f+' founder-first product and method routes'
  schemas=lambda x:[json.loads(v) for v in re.findall(r'<script type="application/ld\+json">(.*?)</script>',x,re.S)]
- assert schemas(s)==[v for v in schemas(before) if v.get('@type')!='FAQPage'],f+' preserve Person identity; remove absent service FAQ'
+ dead='https://www.wikidata.org/wiki/Q138801513'
+ def drop_dead(nodes):
+  def walk(v):
+   if isinstance(v,dict):
+    if isinstance(v.get('sameAs'),list):v['sameAs']=[x for x in v['sameAs'] if x!=dead]
+    for item in v.values():walk(item)
+   elif isinstance(v,list):
+    for item in v:walk(item)
+  for node in nodes:walk(node)
+  return nodes
+ assert dead not in s, f
+ live,base=drop_dead(schemas(s)),drop_dead(schemas(before))
+ assert live==[v for v in base if v.get('@type')!='FAQPage'],f+' preserve Person identity; remove absent service FAQ'
  c=human['copy']['ru' if prefix else 'en']
  assert c['headline'] in clean(s)
  assert all(t in clean(s) for t in c['paragraphs'])

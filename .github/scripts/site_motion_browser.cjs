@@ -17,6 +17,29 @@ const server=spawn('python3',['-m','http.server','4185','--bind','127.0.0.1'],{s
 const sources=new Map(manifest.filter(r=>!newPages.has(r.file)).map(r=>[r.route,execFileSync('git',['show',`${base}:${r.file}`],{encoding:'utf8'})]));
 // Independent DOM interpretation of the owner's exact contact removal scope.
 async function approvedContactRemoval(page){await page.evaluate(()=>{
+ const oldEn='AI legibility is the discipline of measuring and improving whether AI systems can retrieve, understand, corroborate, compare and select a company, product, founder or specialist under real decision conditions.';
+ const oldRu='AI legibility это дисциплина, которая измеряет и улучшает, насколько AI-системы способны извлекать, понимать, подтверждать, сравнивать и выбирать компанию, продукт, основателя или специалиста в реальных условиях принятия решения.';
+ const dead='https://www.wikidata.org/wiki/Q138801513';
+ const shortEn='AI legibility: measuring and improving whether AI systems can retrieve, understand, corroborate, compare and select a company, product, founder or specialist under real decision conditions.';
+ const shortRu='AI legibility: измеряет и улучшает, насколько AI-системы способны извлекать, понимать, подтверждать, сравнивать и выбирать компанию, продукт, основателя или специалиста в реальных условиях принятия решения.';
+ const strip=s=>s.replaceAll('\n      "'+dead+'",','').replaceAll(', "'+dead+'"','').replaceAll('"'+dead+'",','').replaceAll(shortEn,oldEn).replaceAll(shortRu,oldRu);
+ const walker=document.createTreeWalker(document.body,NodeFilter.SHOW_TEXT);
+ const nodes=[];while(walker.nextNode())nodes.push(walker.currentNode);
+ for(const node of nodes)if(node.nodeValue.includes(shortEn)||node.nodeValue.includes(shortRu))node.nodeValue=node.nodeValue.replaceAll(shortEn,oldEn).replaceAll(shortRu,oldRu);
+ for(const script of document.querySelectorAll('script[type="application/ld+json"]'))script.textContent=strip(script.textContent);
+ for(const p of [...document.querySelectorAll('p')]){
+  const t=p.textContent.replace(/\s+/g,' ').trim();
+  if(p.classList.contains('definition-credit')||(!t.includes(oldEn)&&!t.includes(oldRu)))continue;
+  if(p.nextElementSibling?.classList.contains('definition-credit'))continue;
+  const credit=document.createElement('p');
+  credit.className='definition-credit';
+  credit.append(t.includes(oldRu)?'Определение Екатерины Шалель, основательницы ':'Defined by Ekaterina Shalel, founder of ');
+  const a=document.createElement('a');
+  a.setAttribute('href','https://legibi.ai/');
+  a.textContent='Legibi';
+  credit.append(a,'.');
+  p.after(credit);
+ }
  for(const a of document.querySelectorAll('a[href="https://t.me/shalel_notes"]')){
   if(a.closest('.tg'))a.closest('.tg').remove();
   else if(a.parentElement.tagName==='P' && a.parentElement.textContent.includes('Живая лента'))a.parentElement.remove();

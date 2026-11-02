@@ -57,6 +57,7 @@ for f in manifest['pages']:
  before=old(f);after=(root/f).read_text();a=Structure();a.feed(before);b=Structure()
  # Canonical photo binding: the About hero bytes and alt remain identical.
  normalized_after=after.replace('src="/images/ekaterina-shalel-portrait.webp"', 'src="/images/about-coat.webp"') if f in ['about/index.html','ru/about/index.html'] else after
+ normalized_after=re.sub(r'<p class="definition-credit">.*?</p>','',normalized_after,flags=re.S)
  b.feed(without_approved_ru_history(normalized_after) if f=='ru/ai-legibility/index.html' else normalized_after)
  b_tags=list(b.tags)
  if f=='guides/sprint/index.html':
@@ -142,4 +143,16 @@ for e in evidence:
 assert entries['https://katyashalel.com/']==founder['publicationDate']
 assert len(set(entries.values()))>1
 assert json.loads((root/'.well-known/agent-card.json').read_text())['version']=='2026-11-01.2'
+canon_en='AI legibility is the discipline of measuring and improving whether AI systems can retrieve, understand, corroborate, compare and select a company, product, founder or specialist under real decision conditions.'
+canon_ru='AI legibility это дисциплина, которая измеряет и улучшает, насколько AI-системы способны извлекать, понимать, подтверждать, сравнивать и выбирать компанию, продукт, основателя или специалиста в реальных условиях принятия решения.'
+assert canon_en in (root/'ai-legibility/index.html').read_text()
+assert canon_ru in (root/'ru/ai-legibility/index.html').read_text()
+assert 'Defined by Ekaterina Shalel, founder of' in (root/'ai-legibility/index.html').read_text()
+assert 'Определение Екатерины Шалель, основательницы' in (root/'ru/ai-legibility/index.html').read_text()
+assert 'By Ekaterina Shalel\u2019s definition' not in (root/'ai-legibility/index.html').read_text()
+assert 'По определению Екатерины Шалель (Legibi):' not in (root/'ru/ai-legibility/index.html').read_text()
+for banned in all_html:
+    assert 'Q138801513' not in banned.read_text(), banned
+for machine in ['llms.txt','llms-core.txt','api/agent.js']:
+    assert 'Q138801513' not in (root/machine).read_text(), machine
 print(json.dumps({'html_documents':len(all_html),'json_ld_blocks':count,'copy_pages':len(manifest['pages']),'sitemap_dates_with_published_evidence':len(evidence),'styles_structure_and_behavior':'unchanged','status':'passed'}))

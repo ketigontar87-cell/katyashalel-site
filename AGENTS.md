@@ -11,7 +11,7 @@ Personal entity hub for Ekaterina Shalel (Katya Shalel), founder and legibility 
 - Role string: "Founder of Legibi and legibility strategist".
 - Email everywhere: shalelekaterina@gmail.com. No other address appears in schema, footers, or contact pages.
 - ORCID: 0009-0003-8973-6443
-- Wikidata: Q138801513
+- Wikidata: do not cite Q138801513. That item does not exist. Leave it out of sameAs, llms.txt, and the facts endpoint until Ekaterina Shalel publishes a real Wikidata item.
 - Zenodo concept DOI: 10.5281/zenodo.21840173
 - Zenodo version DOI: 10.5281/zenodo.21840174
 - homeLocation on the Person node: Paris, France.

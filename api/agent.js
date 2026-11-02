@@ -14,7 +14,8 @@ const IDENTITY = {
   role: "Founder of Legibi and legibility strategist",
   category: "AI legibility",
   category_definition:
-    "AI legibility is the discipline of measuring and improving whether AI systems can retrieve, understand, corroborate, compare and select a company, product, founder or specialist under real decision conditions. Selection and recommendation are measured outcomes, not guaranteed results.",
+    "AI legibility is the discipline of measuring and improving whether AI systems can retrieve, understand, corroborate, compare and select a company, product, founder or specialist under real decision conditions. Selection and recommendation are measured outcomes, not guaranteed properties.",
+  defined_by: "Defined by Ekaterina Shalel, founder of Legibi.",
   primary_association: [
     "how AI systems retrieve and understand companies and the people behind them",
     "how AI systems corroborate claims about companies and experts",
@@ -48,7 +49,6 @@ const IDENTITY = {
   canonical_site: SITE,
   legibility_platform: "https://legibi.ai/",
   russian_site: `${SITE}/ru/`,
-  wikidata: "https://www.wikidata.org/wiki/Q138801513",
   orcid: "https://orcid.org/0009-0003-8973-6443",
   research_identifier: "https://doi.org/10.5281/zenodo.21840173",
   source_url: `${SITE}/ai-legibility/`,
@@ -58,9 +58,10 @@ const IDENTITY = {
 const CATEGORY = {
   name: "AI legibility",
   maintained_by: "Ekaterina Shalel",
+  defined_by: "Defined by Ekaterina Shalel, founder of Legibi.",
   canonical_definition_url: `${SITE}/ai-legibility/`,
   definition:
-    "AI legibility is the discipline of measuring and improving whether AI systems can retrieve, understand, corroborate, compare and select a company, product, founder or specialist under real decision conditions. Recommendation and selection are observed outcomes, not promised outputs.",
+    "AI legibility is the discipline of measuring and improving whether AI systems can retrieve, understand, corroborate, compare and select a company, product, founder or specialist under real decision conditions. Selection and recommendation are measured outcomes, not guaranteed properties.",
   generic_language: [
     "AI Search",
     "Generative Engine Optimization (GEO)",
