@@ -3,11 +3,12 @@ from pathlib import Path
 from photo_binding import original_home_photo
 import json,re,subprocess,html,hashlib,xml.etree.ElementTree as ET
 root=Path(__file__).resolve().parents[2];m=json.loads((root/'.github/scripts/audit_offer_manifest.json').read_text())
+UMAMI='<script defer src="/assets/umami-privacy.js"></script>\n<script defer src="https://stats.katyashalel.com/script.js" data-website-id="28863e5d-32dd-4b7d-9368-46d5ba6d6866" data-domains="katyashalel.com" data-exclude-search="true" data-exclude-hash="true" data-before-send="katyaUmamiBeforeSend"></script>\n'
 def old(f):return subprocess.check_output(['git','show',m['base']+':'+f],cwd=root,text=True)
 def clean(s):return re.sub(r'\s+',' ',html.unescape(re.sub('<[^>]*>','',s))).strip()
 human=json.loads((root/'docs/founder-homepage-revision.json').read_text())
 for f in ['index.html','ru/index.html']:
- s=original_home_photo((root/f).read_text())
+ s=original_home_photo((root/f).read_text().replace(UMAMI,'',1))
  before=subprocess.check_output(['git','show',human['base']+':'+f],cwd=root,text=True)
  assert hashlib.sha256(s.encode()).hexdigest()==human['homepageSha256'][f],f+' approved founder-first copy'
  assert s.count(human['approvedLayoutStyle'])==1,f+' exact approved compact hero styles'
@@ -28,7 +29,12 @@ for f in ['index.html','ru/index.html']:
   for node in nodes:walk(node)
   return nodes
  assert dead not in s, f
- live,base=drop_dead(schemas(s)),drop_dead(schemas(before))
+ def drop_getmai(nodes):
+  for node in nodes:
+   founder=node.get('founderOf')
+   if isinstance(founder,list):node['founderOf']=[item for item in founder if not (isinstance(item,dict) and item.get('@id')=='https://getmai.ai/#organization')]
+  return nodes
+ live,base=drop_getmai(drop_dead(schemas(s))),drop_getmai(drop_dead(schemas(before)))
  assert live==[v for v in base if v.get('@type')!='FAQPage'],f+' preserve Person identity; remove absent service FAQ'
  c=human['copy']['ru' if prefix else 'en']
  assert c['headline'] in clean(s)
@@ -36,7 +42,7 @@ for f in ['index.html','ru/index.html']:
  assert c['title'] in s and c['description'] in s
  assert c['signature'] in clean(s),f+' full founder signature'
 for lang in ['en','ru']:
- f=('ru/' if lang=='ru' else '')+'audit/index.html';s=(root/f).read_text();before=old(f);c=m['copy'][lang]
+ f=('ru/' if lang=='ru' else '')+'audit/index.html';s=(root/f).read_text().replace(UMAMI,'',1);before=old(f);c=m['copy'][lang]
  styles_before=re.findall(r'<style>.*?</style>',before,re.S);styles_after=re.findall(r'<style>.*?</style>',s,re.S)
  if lang=='en':
   assert styles_before==[x.replace(m['addedStyle'],'') for x in styles_after],f+' preserve styles except list spacing'

@@ -12,7 +12,7 @@
     "organization": "Ekaterina Shalel",
     "url": "https://katyashalel.com"
   },
-  "version": "2026-11-01.2",
+  "version": "2026-11-02.1",
   "documentationUrl": "https://katyashalel.com/llms-core.txt",
   "capabilities": {
     "streaming": false,

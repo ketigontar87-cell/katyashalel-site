@@ -21,7 +21,7 @@ Personal entity hub for Ekaterina Shalel (Katya Shalel), founder and legibility 
 ## Structured data rules
 
 1. The homepage Person node must declare an explicit @id. Every other reference to the person across the site points at that same @id, never at a duplicate inline Person object.
-2. founderOf on the Person node includes getmai.ai and Legibi. founder on the getmai.ai Organization node stays bidirectional. Legibi uses @id https://legibi.ai/#organization and its founder points back to https://katyashalel.com/#person.
+2. founderOf on the Person node is Legibi. Legibi uses @id https://legibi.ai/#organization and its founder points back to https://katyashalel.com/#person.
 3. Every essay carries BlogPosting plus DefinedTerm plus FAQPage JSON-LD.
 4. FAQPage question strings match the visible headline verbatim. No paraphrase, no punctuation drift.
 5. Validate JSON-LD parses before commit. A malformed block is a blocking bug.
