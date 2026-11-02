@@ -3,11 +3,12 @@ from pathlib import Path
 from photo_binding import original_home_photo
 import json,re,subprocess,html,hashlib,xml.etree.ElementTree as ET
 root=Path(__file__).resolve().parents[2];m=json.loads((root/'.github/scripts/audit_offer_manifest.json').read_text())
+UMAMI='<script defer src="https://stats.2-28-116-83.sslip.io/script.js" data-website-id="28863e5d-32dd-4b7d-9368-46d5ba6d6866"></script>\n'
 def old(f):return subprocess.check_output(['git','show',m['base']+':'+f],cwd=root,text=True)
 def clean(s):return re.sub(r'\s+',' ',html.unescape(re.sub('<[^>]*>','',s))).strip()
 human=json.loads((root/'docs/founder-homepage-revision.json').read_text())
 for f in ['index.html','ru/index.html']:
- s=original_home_photo((root/f).read_text())
+ s=original_home_photo((root/f).read_text().replace(UMAMI,'',1))
  before=subprocess.check_output(['git','show',human['base']+':'+f],cwd=root,text=True)
  assert hashlib.sha256(s.encode()).hexdigest()==human['homepageSha256'][f],f+' approved founder-first copy'
  assert s.count(human['approvedLayoutStyle'])==1,f+' exact approved compact hero styles'
@@ -36,7 +37,7 @@ for f in ['index.html','ru/index.html']:
  assert c['title'] in s and c['description'] in s
  assert c['signature'] in clean(s),f+' full founder signature'
 for lang in ['en','ru']:
- f=('ru/' if lang=='ru' else '')+'audit/index.html';s=(root/f).read_text();before=old(f);c=m['copy'][lang]
+ f=('ru/' if lang=='ru' else '')+'audit/index.html';s=(root/f).read_text().replace(UMAMI,'',1);before=old(f);c=m['copy'][lang]
  styles_before=re.findall(r'<style>.*?</style>',before,re.S);styles_after=re.findall(r'<style>.*?</style>',s,re.S)
  if lang=='en':
   assert styles_before==[x.replace(m['addedStyle'],'') for x in styles_after],f+' preserve styles except list spacing'

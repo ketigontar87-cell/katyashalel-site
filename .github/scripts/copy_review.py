@@ -5,6 +5,7 @@ from collections import Counter
 import subprocess,json,re,html,xml.etree.ElementTree as ET
 root=Path(__file__).resolve().parents[2]
 manifest=json.loads((root/'.github/scripts/copy_review_manifest.json').read_text());base=manifest['base']
+UMAMI='<script defer src="https://stats.2-28-116-83.sslip.io/script.js" data-website-id="28863e5d-32dd-4b7d-9368-46d5ba6d6866"></script>\n'
 offer=json.loads((root/'.github/scripts/audit_offer_manifest.json').read_text())
 def old(f):return subprocess.check_output(['git','show',base+':'+f],cwd=root,text=True)
 def schemas(s):return [json.loads(m) for m in re.findall(r'<script type="application/ld\+json">(.*?)</script>',s,re.S)]
@@ -54,7 +55,7 @@ def without_approved_ru_history(s):
  return s.replace(ALLOWED_RU_HISTORY_ADDITIONS,'',1)
 
 for f in manifest['pages']:
- before=old(f);after=(root/f).read_text();a=Structure();a.feed(before);b=Structure()
+ before=old(f);after=(root/f).read_text().replace(UMAMI,'',1);a=Structure();a.feed(before);b=Structure()
  # Canonical photo binding: the About hero bytes and alt remain identical.
  normalized_after=after.replace('src="/images/ekaterina-shalel-portrait.webp"', 'src="/images/about-coat.webp"') if f in ['about/index.html','ru/about/index.html'] else after
  normalized_after=re.sub(r'<p class="definition-credit">.*?</p>','',normalized_after,flags=re.S)

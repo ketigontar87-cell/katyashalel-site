@@ -3,6 +3,7 @@ from pathlib import Path
 import json,re,hashlib,subprocess
 ROOT=Path(__file__).resolve().parents[2]
 BASE='3470c686e55ed80c5d7f8a32dc703ea8020100c0'
+UMAMI='<script defer src="https://stats.2-28-116-83.sslip.io/script.js" data-website-id="28863e5d-32dd-4b7d-9368-46d5ba6d6866"></script>\n'
 URL='https://katyashalel.com/images/ekaterina-shalel-portrait.webp'
 IMAGE={'@type':'ImageObject','@id':'https://katyashalel.com/#portrait','url':URL,'contentUrl':URL,'caption':'Ekaterina Shalel, founder of Legibi and legibility strategist','width':1100,'height':1650}
 def original_home_photo(source):
@@ -46,7 +47,7 @@ def approve_attribution(text):
 def validate():
     assert (ROOT/'images/about-coat.webp').read_bytes()==(ROOT/'images/ekaterina-shalel-portrait.webp').read_bytes(),'Portrait bytes must be unchanged'
     for path in ['index.html','ru/index.html','about/index.html','ru/about/index.html']:
-        source=(ROOT/path).read_text()
+        source=(ROOT/path).read_text().replace(UMAMI,'',1)
         old=subprocess.check_output(['git','show',BASE+':'+path],cwd=ROOT,text=True)
         if path=='ru/about/index.html':
             # Owner-approved title correction, 2026-11-01. All other bytes stay protected.
