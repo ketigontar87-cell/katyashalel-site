@@ -4,7 +4,7 @@ from html.parser import HTMLParser
 import json,re,subprocess,xml.etree.ElementTree as ET
 ROOT=Path(__file__).resolve().parents[2]
 BASE='0e82a7799821f96f210dd24e891b00fb4daaf318'
-UMAMI='<script defer src="https://stats.2-28-116-83.sslip.io/script.js" data-website-id="28863e5d-32dd-4b7d-9368-46d5ba6d6866"></script>\n'
+UMAMI='<script src="/assets/umami-privacy.js"></script>\n<script defer src="https://stats.2-28-116-83.sslip.io/script.js" data-website-id="28863e5d-32dd-4b7d-9368-46d5ba6d6866" data-domains="katyashalel.com" data-exclude-search="true" data-exclude-hash="true" data-before-send="katyaUmamiBeforeSend"></script>\n'
 PAGES=['why-ai-knows-but-doesnt-recommend/index.html','ru/pochemu-ai-znaet-no-ne-rekomenduet/index.html']
 class Boundaries(HTMLParser):
  def __init__(self):super().__init__();self.article=False;self.count=0;self.headings=0;self.faq=False;self.cta=False

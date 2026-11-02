@@ -3,7 +3,7 @@ from pathlib import Path
 from photo_binding import original_home_photo
 import json,re,subprocess,html,hashlib,xml.etree.ElementTree as ET
 root=Path(__file__).resolve().parents[2];m=json.loads((root/'.github/scripts/audit_offer_manifest.json').read_text())
-UMAMI='<script defer src="https://stats.2-28-116-83.sslip.io/script.js" data-website-id="28863e5d-32dd-4b7d-9368-46d5ba6d6866"></script>\n'
+UMAMI='<script src="/assets/umami-privacy.js"></script>\n<script defer src="https://stats.2-28-116-83.sslip.io/script.js" data-website-id="28863e5d-32dd-4b7d-9368-46d5ba6d6866" data-domains="katyashalel.com" data-exclude-search="true" data-exclude-hash="true" data-before-send="katyaUmamiBeforeSend"></script>\n'
 def old(f):return subprocess.check_output(['git','show',m['base']+':'+f],cwd=root,text=True)
 def clean(s):return re.sub(r'\s+',' ',html.unescape(re.sub('<[^>]*>','',s))).strip()
 human=json.loads((root/'docs/founder-homepage-revision.json').read_text())
@@ -29,7 +29,12 @@ for f in ['index.html','ru/index.html']:
   for node in nodes:walk(node)
   return nodes
  assert dead not in s, f
- live,base=drop_dead(schemas(s)),drop_dead(schemas(before))
+ def drop_getmai(nodes):
+  for node in nodes:
+   founder=node.get('founderOf')
+   if isinstance(founder,list):node['founderOf']=[item for item in founder if not (isinstance(item,dict) and item.get('@id')=='https://getmai.ai/#organization')]
+  return nodes
+ live,base=drop_getmai(drop_dead(schemas(s))),drop_getmai(drop_dead(schemas(before)))
  assert live==[v for v in base if v.get('@type')!='FAQPage'],f+' preserve Person identity; remove absent service FAQ'
  c=human['copy']['ru' if prefix else 'en']
  assert c['headline'] in clean(s)

@@ -46,7 +46,7 @@ jobs:
           python3 .github/scripts/audit_offer.py
           python3 .github/scripts/public_fit_review.py
           node .github/scripts/copy_api.cjs
-          node --test .github/scripts/lead_delivery.test.cjs
+          node --test .github/scripts/lead_delivery.test.cjs .github/scripts/umami_privacy.test.cjs
       - name: Install isolated browser
         run: |
           npm install --prefix "$RUNNER_TEMP/site-browser" --no-audit --no-fund playwright@1.62.1

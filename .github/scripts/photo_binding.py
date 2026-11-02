@@ -3,7 +3,18 @@ from pathlib import Path
 import json,re,hashlib,subprocess
 ROOT=Path(__file__).resolve().parents[2]
 BASE='3470c686e55ed80c5d7f8a32dc703ea8020100c0'
-UMAMI='<script defer src="https://stats.2-28-116-83.sslip.io/script.js" data-website-id="28863e5d-32dd-4b7d-9368-46d5ba6d6866"></script>\n'
+UMAMI='<script src="/assets/umami-privacy.js"></script>\n<script defer src="https://stats.2-28-116-83.sslip.io/script.js" data-website-id="28863e5d-32dd-4b7d-9368-46d5ba6d6866" data-domains="katyashalel.com" data-exclude-search="true" data-exclude-hash="true" data-before-send="katyaUmamiBeforeSend"></script>\n'
+GETMAI_EDITS=[
+(', {"@type": "Organization", "@id": "https://getmai.ai/#organization", "name": "getmai.ai", "url": "https://getmai.ai/", "founder": {"@id": "https://katyashalel.com/#person"}}', ''),
+('"founderOf":{"@type":"Organization","@id":"https://getmai.ai/#organization","name":"getmai.ai","url":"https://getmai.ai/","description":"AI engineering company that designs, builds and integrates custom AI systems around real business operations and hands the production system over to the client team.","founder":{"@id":"https://katyashalel.com/#person"}}','"founderOf":{"@type":"Organization","@id":"https://legibi.ai/#organization","name":"Legibi","url":"https://legibi.ai/","founder":{"@id":"https://katyashalel.com/#person"}}'),
+(' and is also the founder of getmai.ai, a separate AI engineering company',''),
+(' и основала getmai.ai, отдельную AI engineering company',''),
+('<p>I also founded <a href="https://getmai.ai/">getmai.ai</a>, an AI engineering company that designs and builds custom systems around real business operations. It began with unusually deep knowledge of appointment and repeat-visit workflows, but it is not limited to that category. The intellectual thread is the same: what happens in the hidden layer between signal, decision and action.</p>\n',''),
+('<p>Я также основала <a href="https://getmai.ai/">getmai.ai</a>, AI engineering company, которая проектирует и строит custom AI systems вокруг реальных бизнес-процессов. Компания начинала с особенно глубокого знания appointment и repeat-visit workflows, но не ограничивается ими. Интеллектуальная линия та же: что происходит в скрытом слое между сигналом, решением и действием.</p>\n',''),
+]
+def without_getmai(text):
+    for old,new in GETMAI_EDITS:text=text.replace(old,new)
+    return text
 URL='https://katyashalel.com/images/ekaterina-shalel-portrait.webp'
 IMAGE={'@type':'ImageObject','@id':'https://katyashalel.com/#portrait','url':URL,'contentUrl':URL,'caption':'Ekaterina Shalel, founder of Legibi and legibility strategist','width':1100,'height':1650}
 def original_home_photo(source):
@@ -56,7 +67,8 @@ def validate():
             assert old.count(before)==1 and source.count(after)==1,'Expected approved Russian About title'
             old=old.replace(before,after,1)
         assert DEAD_WIKIDATA not in source, path
-        old=approve_attribution(old)
+        assert 'getmai' not in source.lower(), path
+        old=without_getmai(approve_attribution(old))
         def normalize(match):
             raw=match[1]; data=json.loads(raw)
             for node in data.get('@graph',[data]):

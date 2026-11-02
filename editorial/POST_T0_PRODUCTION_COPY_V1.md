@@ -101,7 +101,6 @@ That became my independent work on AI legibility and, more broadly, machine-medi
 
 Proof:
 - SKINBOT: live pilots in two markets
-- Founder of getmai.ai
 - Original research and named concepts
 - Public essays with disclosed evidence limits
 
@@ -124,8 +123,6 @@ While architecting SKINBOT and later studying how general-purpose AI systems des
 A model can know that a company exists, summarize it correctly and still leave it out when a user asks whom to hire, trust or buy from. That gap became my independent work on AI legibility.
 
 Today I measure what AI systems retrieve, how they understand an entity, what evidence they can corroborate, what alternatives they select instead and what changes after a controlled intervention. The method is measure, diagnose, intervene and verify. Selection is observed, not guaranteed.
-
-I also founded getmai.ai, an AI engineering company. It is a separate operating company, but the intellectual through-line is the same: what happens in the hidden layer between signal, decision and action.
 
 Medicine left me with a habit that matters here: separate observation from inference and never claim more than the evidence supports.
 
