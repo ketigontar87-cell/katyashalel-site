@@ -82,7 +82,7 @@ async function ready(page){await page.evaluate(async()=>{await document.fonts.re
 (async()=>{
  await fs.mkdir(out,{recursive:true});
  const files=execFileSync('git',['ls-files','*.html'],{encoding:'utf8'}).trim().split('\n').sort();assert.deepEqual(manifest.map(r=>r.file).sort(),files,'Every HTML file inventoried');
- const umami='<script defer src="/assets/umami-privacy.js"></script>\n<script defer src="https://stats.2-28-116-83.sslip.io/script.js" data-website-id="28863e5d-32dd-4b7d-9368-46d5ba6d6866" data-domains="katyashalel.com" data-exclude-search="true" data-exclude-hash="true" data-before-send="katyaUmamiBeforeSend"></script>\n';
+ const umami='<script defer src="/assets/umami-privacy.js"></script>\n<script defer src="https://stats.katyashalel.com/script.js" data-website-id="28863e5d-32dd-4b7d-9368-46d5ba6d6866" data-domains="katyashalel.com" data-exclude-search="true" data-exclude-hash="true" data-before-send="katyaUmamiBeforeSend"></script>\n';
  for(const row of manifest.filter(r=>r.excluded))assert.equal((await fs.readFile(row.file,'utf8')).replace(umami,''),sources.get(row.route),'Excluded utility source unchanged');
  for(let i=0;i<50;i++){try{if((await fetch(origin)).ok)break;}catch{}await new Promise(r=>setTimeout(r,100));}
  const browser=await chromium.launch(process.env.CHROMIUM_EXECUTABLE?{executablePath:process.env.CHROMIUM_EXECUTABLE}:{});

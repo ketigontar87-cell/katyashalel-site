@@ -6,7 +6,7 @@ from collections import Counter
 import subprocess,json,re,html,xml.etree.ElementTree as ET
 root=Path(__file__).resolve().parents[2]
 manifest=json.loads((root/'.github/scripts/copy_review_manifest.json').read_text());base=manifest['base']
-UMAMI='<script defer src="/assets/umami-privacy.js"></script>\n<script defer src="https://stats.2-28-116-83.sslip.io/script.js" data-website-id="28863e5d-32dd-4b7d-9368-46d5ba6d6866" data-domains="katyashalel.com" data-exclude-search="true" data-exclude-hash="true" data-before-send="katyaUmamiBeforeSend"></script>\n'
+UMAMI='<script defer src="/assets/umami-privacy.js"></script>\n<script defer src="https://stats.katyashalel.com/script.js" data-website-id="28863e5d-32dd-4b7d-9368-46d5ba6d6866" data-domains="katyashalel.com" data-exclude-search="true" data-exclude-hash="true" data-before-send="katyaUmamiBeforeSend"></script>\n'
 offer=json.loads((root/'.github/scripts/audit_offer_manifest.json').read_text())
 def old(f):return subprocess.check_output(['git','show',base+':'+f],cwd=root,text=True)
 def schemas(s):return [json.loads(m) for m in re.findall(r'<script type="application/ld\+json">(.*?)</script>',s,re.S)]

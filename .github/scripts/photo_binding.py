@@ -3,7 +3,7 @@ from pathlib import Path
 import json,re,hashlib,subprocess
 ROOT=Path(__file__).resolve().parents[2]
 BASE='3470c686e55ed80c5d7f8a32dc703ea8020100c0'
-UMAMI='<script defer src="/assets/umami-privacy.js"></script>\n<script defer src="https://stats.2-28-116-83.sslip.io/script.js" data-website-id="28863e5d-32dd-4b7d-9368-46d5ba6d6866" data-domains="katyashalel.com" data-exclude-search="true" data-exclude-hash="true" data-before-send="katyaUmamiBeforeSend"></script>\n'
+UMAMI='<script defer src="/assets/umami-privacy.js"></script>\n<script defer src="https://stats.katyashalel.com/script.js" data-website-id="28863e5d-32dd-4b7d-9368-46d5ba6d6866" data-domains="katyashalel.com" data-exclude-search="true" data-exclude-hash="true" data-before-send="katyaUmamiBeforeSend"></script>\n'
 GETMAI_EDITS=[
 (', {"@type": "Organization", "@id": "https://getmai.ai/#organization", "name": "getmai.ai", "url": "https://getmai.ai/", "founder": {"@id": "https://katyashalel.com/#person"}}', ''),
 ('"founderOf":{"@type":"Organization","@id":"https://getmai.ai/#organization","name":"getmai.ai","url":"https://getmai.ai/","description":"AI engineering company that designs, builds and integrates custom AI systems around real business operations and hands the production system over to the client team.","founder":{"@id":"https://katyashalel.com/#person"}}','"founderOf":{"@type":"Organization","@id":"https://legibi.ai/#organization","name":"Legibi","url":"https://legibi.ai/","founder":{"@id":"https://katyashalel.com/#person"}}'),
