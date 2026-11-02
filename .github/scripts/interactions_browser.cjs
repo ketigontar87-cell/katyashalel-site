@@ -77,15 +77,16 @@ async function activate(locator,width){if(width===390)await locator.tap();else{a
      await page.goto(origin+row.route);response=scenario;const posts=results.mockedPosts;
      await page.locator(email).fill(scenario==='invalid'?'invalid':'qa@example.invalid');
      const publicMessage='Русский & <example> + ? #\n'+('Public evidence. '.repeat(320));
-     if(row.route==='/audit/'&&kind==='lead')await page.locator('#f-message').fill(publicMessage);
+     const auditLead=row.route==='/audit/'||row.route==='/ru/audit/';
+     if(auditLead&&kind==='lead')await page.locator('#f-message').fill(publicMessage);
      await activate(button,width);
      if(scenario==='invalid'){await page.waitForTimeout(30);assert.equal(results.mockedPosts,posts,'Invalid email must not submit');}
      else{
       const note=page.locator(kind==='lead'?'#f-note':'.wl-form button');
-      await note.filter({hasText:scenario==='success'?/Thanks|You are in|Вы в листе/:/Something went wrong|Error, try again|Ошибка/}).waitFor();
+      await note.filter({hasText:scenario==='success'?/Thanks|You are in|Вы в листе|Спасибо/:/Something went wrong|Error, try again|Ошибка|Не удалось/}).waitFor();
       assert.equal(results.mockedPosts,posts+1);assert.equal(await button.isDisabled(),scenario==='success');
       if(scenario!=='success')assert.equal(await page.locator(email).inputValue(),'qa@example.invalid','Retain email for retry');
-      if(row.route==='/audit/'&&kind==='lead'){
+      if(auditLead&&kind==='lead'){
        assert.equal(await page.locator('#email-recovery').isVisible(),scenario!=='success');
        assert.equal(await page.locator('#f-message').inputValue(),publicMessage,'Retain complete message');
        if(scenario!=='success'){

@@ -24,7 +24,8 @@ async function run() {
         await page.goto(origin + path, { waitUntil: 'networkidle' });
         assert.equal(await page.getByRole('heading', { level: 1 }).count(), 1);
         assert.equal(await page.locator('html').getAttribute('lang'), lang);
-        assert.equal(await page.locator('.faq details').count(), ['/', '/ru/'].includes(path) ? 0 : 4);
+        const expectedFaq = path === '/' || path === '/ru/' ? 0 : (path === '/audit/' || path === '/ru/audit/' ? 2 : 4);
+        assert.equal(await page.locator('.faq details').count(), expectedFaq);
         const layout = await page.evaluate(() => ({ width: innerWidth, scroll: document.documentElement.scrollWidth }));
         assert.ok(layout.scroll <= width + 1, JSON.stringify({ path, ...layout }));
         if (path === '/' || path === '/ru/') {
