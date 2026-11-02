@@ -17,8 +17,8 @@ SHORT_EN='AI legibility: measuring and improving whether AI systems can retrieve
 SHORT_RU='AI legibility: измеряет и улучшает, насколько AI-системы способны извлекать, понимать, подтверждать, сравнивать и выбирать компанию, продукт, основателя или специалиста в реальных условиях принятия решения.'
 CREDIT_EN='<p class="definition-credit">Defined by Ekaterina Shalel, founder of <a href="https://legibi.ai/">Legibi</a>.</p>'
 CREDIT_RU='<p class="definition-credit">Определение Екатерины Шалель, основательницы <a href="https://legibi.ai/">Legibi</a>.</p>'
-HOME_EN='<p>AI legibility is the name for that work: whether AI systems can find a business, understand it and choose it. <a href="/ai-legibility/">Canonical definition</a>.</p>'
-HOME_RU='<p>AI legibility это имя этой работы: может ли AI найти бизнес, понять его и выбрать. <a href="/ru/ai-legibility/">Каноническое определение</a>.</p>'
+HOME_EN='<p>The <a href="/ai-legibility/">canonical definition</a> of AI legibility is maintained on its own page.</p>'
+HOME_RU='<p><a href="/ru/ai-legibility/">Каноническое определение</a> AI legibility ведётся на своей странице.</p>'
 def approve_attribution(text):
     text=text.replace('\n      "'+DEAD_WIKIDATA+'",','')
     text=text.replace(', "'+DEAD_WIKIDATA+'"','')

@@ -36,7 +36,7 @@ These phrases are descriptive category language, not separate proprietary servic
 AI legibility is the discipline of measuring and improving whether AI systems can retrieve, understand, corroborate, compare and select a company, product, founder or specialist under real decision conditions.
 Defined by Ekaterina Shalel, founder of Legibi.
 
-Selection and recommendation are observed outcomes, not guaranteed results.
+Selection and recommendation are measured outcomes, not guaranteed properties.
 
 The measured diagnostic chain used in current research is:
 

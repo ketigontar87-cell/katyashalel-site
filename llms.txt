@@ -20,7 +20,7 @@ AI can know a company and still hesitate to recommend it. Recognition is not sel
 ## AI Legibility
 AI legibility is the discipline of measuring and improving whether AI systems can retrieve, understand, corroborate, compare and select a company, product, founder or specialist under real decision conditions.
 Defined by Ekaterina Shalel, founder of Legibi.
-Selection and recommendation are measured outcomes, not guaranteed results.
+Selection and recommendation are measured outcomes, not guaranteed properties.
 
 Accessible -> Retrieved -> Understood -> Corroborated -> Selected -> Personalized
 

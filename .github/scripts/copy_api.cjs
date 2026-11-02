@@ -14,7 +14,8 @@ const advisory=require('../../docs/advisory-revision.json');
   function approvedOffer(x){if(!x||typeof x!=='object')return;if(x.founders?.name==='Legibility Audit')x.founders=offer.apiFounders;Object.values(x).forEach(approvedOffer)}
   approvedOffer(expected);
   if(expected.result.offerings)Object.assign(expected.result.offerings,advisory.apiOfferingChanges);
-  (function cite(node){if(!node||typeof node!=='object')return;if(node.wikidata==='https://www.wikidata.org/wiki/Q138801513')delete node.wikidata;if(typeof node.category_definition==='string')node.defined_by='Defined by Ekaterina Shalel, founder of Legibi.';if(node.maintained_by==='Ekaterina Shalel'&&typeof node.definition==='string')node.defined_by='Defined by Ekaterina Shalel, founder of Legibi.';for(const key of Object.keys(node))if(node[key]&&typeof node[key]==='object')cite(node[key]);})(expected.result);
+  const tail='Selection and recommendation are measured outcomes, not guaranteed properties.';
+  (function cite(node){if(!node||typeof node!=='object')return;if(node.wikidata==='https://www.wikidata.org/wiki/Q138801513')delete node.wikidata;for(const key of Object.keys(node)){if(typeof node[key]==='string')node[key]=node[key].replaceAll('Selection and recommendation are measured outcomes, not guaranteed results.',tail).replaceAll('Recommendation and selection are observed outcomes, not promised outputs.',tail);else if(node[key]&&typeof node[key]==='object')cite(node[key]);}if(typeof node.category_definition==='string')node.defined_by='Defined by Ekaterina Shalel, founder of Legibi.';if(node.maintained_by==='Ekaterina Shalel'&&typeof node.definition==='string')node.defined_by='Defined by Ekaterina Shalel, founder of Legibi.';})(expected.result);
   assert.deepEqual(current,expected,'Existing API contract preserved for '+JSON.stringify(query));
   if(!query.type)assert.equal(current.result.identity.method.short,m.method);
  }
