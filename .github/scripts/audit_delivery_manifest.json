@@ -1,6 +1,6 @@
 {
   "reason": "Automatic delivery through the existing verified email domain, with provider receipts, deterministic idempotency and an explicit draft fallback on failure.",
   "incident": "https://github.com/ketigontar87-cell/KATYA-OS/issues/330",
-  "runtimeSha256": "a6b152730996eda4b641c4f5e12647a058669971f2431a71f577f6128e8b485f",
-  "backendSha256": "c8b76499566025a44a5a2287f0ae4ffce43796f032adf83e3a837e610062d1cf"
+  "runtimeSha256": "5824478ed5c78fa426af5e8b471bc302b7e40706da714cc854cb1d9d26ff6713",
+  "backendSha256": "9b52f9203a09bd34014411c8d8113c070eb7c60f0ddcb29ae48e46c937f930a0"
 }

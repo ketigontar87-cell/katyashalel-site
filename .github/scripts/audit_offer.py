@@ -97,7 +97,8 @@ for lang in ['en','ru']:
  assert 'mailto:shalelekaterina@gmail.com' in s
  assert not re.search(r'five.day|5.day|пять дней|пятиднев|₽|\b(?:RUB|EUR)\b|€',s,re.I)
  if lang=='en':
-  assert sorted(re.findall(r'id="(f-[^"]+)"',s))==sorted(re.findall(r'id="(f-[^"]+)"',before))
+  expected=sorted([x for x in re.findall(r'id="(f-[^"]+)"',before) if x!='f-source']+['f-heard-about','f-heard-detail'])
+  assert sorted(re.findall(r'id="(f-[^"]+)"',s))==expected,'optional recollection fields replace the free-text source input'
   assert 'id="request"' in s and 'id="f-email" autocomplete="email" required' in s
   assert 'no passwords, API keys or confidential client documents' in s
   assert 'One person, one service' in s and '<option>Two or three</option>' not in s
