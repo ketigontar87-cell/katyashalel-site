@@ -54,7 +54,8 @@
       </select>
     </label>
     <label>Рынок и язык<input type="text" id="f-markets" placeholder="Россия; русский"></label>
-    <label class="wide">Откуда вы перешли<input type="text" id="f-source" placeholder="LinkedIn, знакомый, поиск"></label>
+    <label class="wide">Откуда вы о нас узнали?<select id="f-heard-about"><option value="">Необязательно</option><option value="search">Поиск</option><option value="ai_assistant">AI-ассистент</option><option value="social">Соцсети</option><option value="recommendation">Рекомендация</option><option value="other">Другое</option><option value="dont_remember">Не помню</option></select></label>
+    <label class="wide">Уточнение, если хотите<input type="text" id="f-heard-detail" maxlength="80" autocomplete="off"></label>
     <label class="wide">Услуга, аудитория и публичные страницы<textarea id="f-message" rows="4"></textarea></label>
     <label class="hp" aria-hidden="true">Оставьте пустым<input type="text" id="f-website-url" tabindex="-1" autocomplete="off"></label>
   </div>
@@ -106,10 +107,13 @@
       recovery.hidden = true;
       return;
     }
+    var heardEl = document.getElementById('f-heard-about');
+    var heardText = heardEl && heardEl.value ? heardEl.options[heardEl.selectedIndex].text : '';
+    var heardDetail = val('f-heard-detail').trim();
     var request = {
       form: document.title, name: val('f-name'), email: email, company: val('f-company'),
       site: val('f-site'), entities: val('f-entities'), markets: val('f-markets'),
-      source: val('f-source'), message: val('f-message'), website_url: val('f-website-url')
+      heard_about: val('f-heard-about'), heard_about_detail: val('f-heard-detail'), message: val('f-message'), website_url: val('f-website-url')
     };
     var recipient = 'shalelekaterina@gmail.com';
     var subject = 'Заявка на аудит видимости';
@@ -117,7 +121,8 @@
       'Имя: ' + request.name, 'Почта для ответа: ' + email,
       'Чем вы занимаетесь: ' + request.company, 'Сайт: ' + request.site,
       'Объём: ' + request.entities, 'Рынок и язык: ' + request.markets,
-      'Откуда вы перешли: ' + request.source,
+      'Откуда вы о нас узнали: ' + heardText,
+      'Уточнение: ' + heardDetail,
       '', 'Услуга, аудитория и публичные страницы:', request.message
     ].join('\n');
     document.getElementById('email-open').href = 'mailto:' + recipient + '?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(body);

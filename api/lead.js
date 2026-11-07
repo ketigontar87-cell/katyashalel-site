@@ -10,6 +10,16 @@ const FIELDS = [
   ['entities', 'Scope', 80], ['markets', 'Markets and languages', 200],
   ['source', 'How they found this', 200], ['message', 'Message', 12000],
 ];
+// Visitor recollection only. This is not a referrer, UTM value, or the legacy free-text source field.
+const HEARD_ABOUT = {
+  search: 'Search',
+  ai_assistant: 'AI assistant',
+  social: 'Social',
+  recommendation: 'Recommendation',
+  other: 'Other',
+  dont_remember: "Don't remember",
+};
+const HEARD_DETAIL_MAX = 80;
 const RATE = new Map();
 const WINDOW_MS = 60000;
 
@@ -45,6 +55,8 @@ export default async function handler(req, res) {
     values[key] = value;
   }
   if (!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(values.email)) return res.status(400).json({ ok: false, error: 'invalid_email' });
+  const heard = readHeardAbout(body);
+  if (heard.error) return res.status(400).json({ ok: false, error: heard.error });
 
   const token = (process.env.RESEND_API_KEY || '').trim();
   const from = (process.env.LEAD_EMAIL_FROM || '').trim();
@@ -55,6 +67,8 @@ export default async function handler(req, res) {
   const form = typeof body.form === 'string' ? body.form.replace(/\s+/g, ' ').trim().slice(0, 100) : 'Website request';
   const lines = ['New enquiry from katyashalel.com', 'Form: ' + (form || 'Website request'), ''];
   for (const [key, label] of FIELDS) if (values[key]) lines.push(label + ': ' + values[key]);
+  if (heard.value) lines.push('Self-reported source: ' + HEARD_ABOUT[heard.value]);
+  if (heard.detail) lines.push('Self-reported detail: ' + heard.detail);
   const message = {
     from, to: [RECIPIENT], reply_to: values.email,
     subject: 'Website enquiry: ' + (form || 'Website request'), text: lines.join('\n'),
@@ -81,6 +95,18 @@ export default async function handler(req, res) {
     console.error('lead_delivery_unconfirmed');
     return res.status(502).json({ ok: false, error: 'delivery_unconfirmed' });
   }
+}
+
+function readHeardAbout(body) {
+  const present = body.heard_about != null && body.heard_about !== '';
+  if (present && typeof body.heard_about !== 'string') return { error: 'invalid_field' };
+  const value = present ? body.heard_about.trim() : '';
+  if (value && !Object.prototype.hasOwnProperty.call(HEARD_ABOUT, value)) return { error: 'invalid_field' };
+  const detailPresent = body.heard_about_detail != null && body.heard_about_detail !== '';
+  if (detailPresent && typeof body.heard_about_detail !== 'string') return { error: 'invalid_field' };
+  const detail = detailPresent ? body.heard_about_detail.replace(/\r\n?/g, '\n').trim() : '';
+  if (detail.length > HEARD_DETAIL_MAX) return { error: 'field_too_long' };
+  return { value, detail };
 }
 
 function isThrottled(ip) {

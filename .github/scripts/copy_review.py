@@ -55,8 +55,21 @@ def without_approved_ru_history(s):
  assert history and ALLOWED_RU_HISTORY_ADDITIONS+'    <p><strong>v1.3 · 23 сентября 2026.</strong>' in history[1],'RU history entries must immediately precede v1.3'
  return s.replace(ALLOWED_RU_HISTORY_ADDITIONS,'',1)
 
+def restore_sprint_source_field(html):
+ # The optional recollection control is checked separately. Restore the previous free-text field before the historical structure lock.
+ new_fields='<label class="wide">How did you hear about us?<select id="f-heard-about"><option value="">Optional</option><option value="search">Search</option><option value="ai_assistant">AI assistant</option><option value="social">Social</option><option value="recommendation">Recommendation</option><option value="other">Other</option><option value="dont_remember">I don\'t remember</option></select></label>\n    <label class="wide">Optional detail<input type="text" id="f-heard-detail" maxlength="80" autocomplete="off"></label>'
+ old_field='<label class="wide">How did you find this page?<input type="text" id="f-source" placeholder="LinkedIn, ChatGPT, a referral"></label>'
+ assert html.count(new_fields)==1,'Sprint recollection field missing'
+ html=html.replace(new_fields,old_field,1)
+ new_js="heard_about: val('f-heard-about'), heard_about_detail: val('f-heard-detail'), message: val('f-message'),"
+ old_js="source: val('f-source'), message: val('f-message'),"
+ assert html.count(new_js)==1,'Sprint recollection payload missing'
+ return html.replace(new_js,old_js,1)
+
 for f in manifest['pages']:
- before=without_getmai(old(f));after=(root/f).read_text().replace(UMAMI,'',1);a=Structure();a.feed(before);b=Structure()
+ before=without_getmai(old(f));after=(root/f).read_text().replace(UMAMI,'',1)
+ if f=='guides/sprint/index.html':after=restore_sprint_source_field(after)
+ a=Structure();a.feed(before);b=Structure()
  # Canonical photo binding: the About hero bytes and alt remain identical.
  normalized_after=after.replace('src="/images/ekaterina-shalel-portrait.webp"', 'src="/images/about-coat.webp"') if f in ['about/index.html','ru/about/index.html'] else after
  normalized_after=re.sub(r'<p class="definition-credit">.*?</p>','',normalized_after,flags=re.S)

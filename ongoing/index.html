@@ -186,7 +186,8 @@ a:focus-visible,button:focus-visible,summary:focus-visible{outline:3px solid #c4
       </select>
     </label>
     <label>Markets and languages<input type="text" id="f-markets" placeholder="Europe; English and Russian"></label>
-    <label class="wide">How did you find this page?<input type="text" id="f-source" placeholder="LinkedIn, ChatGPT, a referral"></label>
+    <label class="wide">How did you hear about us?<select id="f-heard-about"><option value="">Optional</option><option value="search">Search</option><option value="ai_assistant">AI assistant</option><option value="social">Social</option><option value="recommendation">Recommendation</option><option value="other">Other</option><option value="dont_remember">I don't remember</option></select></label>
+    <label class="wide">Optional detail<input type="text" id="f-heard-detail" maxlength="80" autocomplete="off"></label>
     <label class="wide">What are you trying to fix?<textarea id="f-message" rows="4"></textarea></label>
     <label class="hp" aria-hidden="true">Leave this empty<input type="text" id="f-website-url" tabindex="-1" autocomplete="off"></label>
   </div>
@@ -239,7 +240,7 @@ a:focus-visible,button:focus-visible,summary:focus-visible{outline:3px solid #c4
         form: document.title,
         name: val('f-name'), email: email, company: val('f-company'),
         site: val('f-site'), entities: val('f-entities'), markets: val('f-markets'),
-        source: val('f-source'), message: val('f-message'),
+        heard_about: val('f-heard-about'), heard_about_detail: val('f-heard-detail'), message: val('f-message'),
         website_url: val('f-website-url')
       })
     }).then(function (r) { if (!r.ok) throw new Error('Request failed'); return r.json(); }).then(function (d) {

@@ -134,6 +134,13 @@ async function ready(page){await page.evaluate(async()=>{await document.fonts.re
      assert.ok(actual.width<=Math.max(width,expected.width),`${row.route}: no new horizontal overflow`);
      if(!copyExpected)copyExpected=actual;
      else assert.deepEqual(actual,copyExpected,`${row.route}: approved copy is identical with reduced motion and JS disabled`);
+    }else if(row.file==='ongoing/index.html'){
+     assert.deepEqual(actual.links,expected.links,`${row.route}: links preserved`);
+     assert.deepEqual(actual.meta,expected.meta,`${row.route}: metadata preserved`);
+     assert.deepEqual(actual.images,expected.images,`${row.route}: images preserved`);
+     assert.deepEqual(actual.schema,expected.schema,`${row.route}: schema preserved`);
+     assert.ok(actual.width<=width,`${row.route}: ongoing does not overflow`);
+     if(!copyExpected)copyExpected=actual;else assert.deepEqual(actual,copyExpected,`${row.route}: recollection field matches in every JS/motion mode`);
     }else assert.deepEqual(actual,expected,`${row.route} ${width} ${mode}: copy/links/metadata/images/geometry`);
     if(row.file==='essays/who-owns-the-recommendation/index.html'){
      assert.ok(actual.width<=width,`${row.route} ${width} ${mode}: no document overflow after table wrap`);
